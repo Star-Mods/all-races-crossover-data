@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CConsoleSkin id="ConsoleTerran_CovertOps2" parent="ConsoleBase_Reward" race="Terran">
+        <Default value="1"/>
+        <ProductId value="47032"/>
+        <RequiredReward value="ConsoleSkinTerranDefault"/>
+        <ReleaseDate value="12/20/2018"/>
+        <MinimapPanelModel Model="Assets/UI/Console/Terran/ConsoleTerran_Nova/ConsoleTerran_Nova_00.m3"/>
+        <InfoPanelModel Model="Assets/UI/Console/Terran/ConsoleTerran_Nova/ConsoleTerran_Nova_01.m3"/>
+        <CommandPanelModel Model="Assets/UI/Console/Terran/ConsoleTerran_Nova/ConsoleTerran_Nova_02.m3"/>
+        <ThumbnailImage value="Assets/Textures/SC2_UI_Collection_HUDs_Thumb_ConsoleTerran_CovertOps.dds"/>
+        <FeaturedImage value="Assets/Textures/SC2_UI_Collection_HUDs_Large_ConsoleTerran_CovertOps.dds"/>
+        <SkinId value="SpecialForces"/>
+    </CConsoleSkin>
+</Catalog>

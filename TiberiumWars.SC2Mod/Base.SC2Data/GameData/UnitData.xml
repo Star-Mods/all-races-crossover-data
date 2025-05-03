@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CUnit default="1" id="CNCUnitBase">
+        <Mob value="Multiplayer"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <FlagArray index="PreventDestroy" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:CNC"/>
+        <ScoreResult value="BuildOrder"/>
+        <GlossaryAlias value="##id##"/>
+        <DeathRevealRadius value="3"/>
+        <Sight value="9"/>
+        <AttackTargetPriority value="11"/>
+        <ScoreMakeCostFactor index="Minerals" value="1"/>
+        <ScoreMakeCostFactor index="Vespene" value="1"/>
+        <ScoreKillCostFactor index="Minerals" value="1"/>
+        <ScoreKillCostFactor index="Vespene" value="1"/>
+    </CUnit>
+    <CUnit default="1" id="NodMissile" parent="MISSILE">
+        <Race value="Nod"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:CNC"/>
+    </CUnit>
+
+    <!--missiles-->
+    <CUnit id="AscendedMissileUp" parent="NodMissile">
+        <Mover value="DefenderMissile"/>
+    </CUnit>
+    <CUnit id="MantisUpWeapon" parent="NodMissile">
+        <Mover value="DefenderMissile"/>
+    </CUnit>
+    <CUnit id="NodBikeRocketUp" parent="NodMissile">
+        <Mover value="VikingFighterMissile"/>
+    </CUnit>
+    <CUnit id="NodRocketCC3Up" parent="NodMissile">
+        <Mover value="PunisherGrenadesWeapon"/>
+    </CUnit>
+    <CUnit id="NodVertigoweapon" parent="NodMissile">
+        <Mover value="ThorAA"/>
+    </CUnit>
+    <CUnit id="NodStealthRocketUP" parent="NodMissile">
+        <Mover value="VikingFighterMissile"/>
+    </CUnit>
+    <CUnit id="VenomWeaponup" parent="NodMissile">
+        <Mover value="LiberatorMissile"/>
+    </CUnit>
+    <CUnit id="MantisWeapon" parent="NodMissile">
+        <Mover value="DefenderMissile"/>
+    </CUnit>
+    <CUnit id="MantisMissile" parent="NodMissile">
+        <Mover value="DefenderMissile"/>
+    </CUnit>
+    <CUnit id="NodMCVRocket" parent="NodMissile">
+        <Mover value="NodDrunkenMissile"/>
+    </CUnit>
+    <CUnit id="NodMantisRocket2" parent="NodMissile">
+        <Mover value="Artillery"/>
+    </CUnit>
+    <CUnit id="NodMantisRocket3" parent="NodMissile">
+        <Mover value="Artillery"/>
+    </CUnit>
+    <CUnit id="SpecterWeapon" parent="NodMissile">
+        <Mover value="Artillery"/>
+    </CUnit>
+    <CUnit id="NodBikeRocketCC3" parent="NodMissile">
+        <Mover value="NodBikeMissile"/>
+    </CUnit>
+    <CUnit id="NodRocketCC3" parent="NodMissile">
+        <Mover value="PunisherGrenadesWeapon"/>
+    </CUnit>
+    <CUnit id="NodBlackHandRocket" parent="NodMissile">
+        <Mover value="NodBlackHandRocketMover"/>
+    </CUnit>
+    <CUnit id="CabalLeviathanRocket" parent="NodMissile">
+        <Mover value="VikingFighterMissile"/>
+    </CUnit>
+    <CUnit id="CabalSalamanderRocket" parent="NodMissile">
+        <Mover value="ThorAA"/>
+    </CUnit>
+    <CUnit id="NodArtillery" parent="NodMissile">
+        <Mover value="Artillery"/>
+    </CUnit>
+    <CUnit id="NodMantisRocket" parent="NodMissile">
+        <Mover value="Artillery"/>
+    </CUnit>
+    <CUnit id="VenomWeapon" parent="NodMissile">
+        <Mover value="LiberatorMissile"/>
+    </CUnit>
+    <CUnit id="EnlightenedLMWeapon" parent="NodMissile">
+        <Mover value="ATgunWeapon"/>
+    </CUnit>
+    <CUnit id="NodRedeemerRocket" parent="NodMissile">
+        <Mover value="ThorAA"/>
+    </CUnit>
+    <CUnit id="NodBikeRocket" parent="NodMissile">
+        <Mover value="ThorAA"/>
+    </CUnit>
+    <CUnit id="NodStealthRocket" parent="NodMissile">
+        <Mover value="VikingFighterMissile"/>
+    </CUnit>
+    <CUnit id="HailstormMissilesWeaponNod" parent="NodMissile">
+        <Mover value="NodDrunkenMissile"/>
+    </CUnit>
+    <CUnit id="ReckonerPlacement">
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="Unselectable" value="1"/>
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="NoScore" value="1"/>
+        <EditorFlags index="NoPlacement" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Colossus" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Small" value="1"/>
+        <BehaviorArray Link="ReckonerPlacementRemove"/>
+        <Radius value="1"/>
+        <SeparationRadius value="1"/>
+        <InnerRadius value="1"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:CNC"/>
+        <Race value="Nod"/>
+    </CUnit>
+    <CUnit id="DropPodNoddamage" parent="DESTRUCTIBLE">
+        <FlagArray index="Turnable" value="1"/>
+        <FlagArray index="Unselectable" value="1"/>
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="Undetectable" value="1"/>
+        <FlagArray index="Unradarable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="NoScore" value="1"/>
+        <FogVisibility value="Dimmed"/>
+        <LifeStart value="500"/>
+        <LifeMax value="500"/>
+        <BehaviorArray Link="GDIdroppodland"/>
+        <BehaviorArray Link="DroppodSuicide"/>
+        <InnerRadius value="0.5"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:CNC"/>
+        <Race value="Nod"/>
+    </CUnit>
+    <CUnit id="DropPodNod" parent="DESTRUCTIBLE">
+        <FlagArray index="Turnable" value="1"/>
+        <FlagArray index="Unselectable" value="1"/>
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="Undetectable" value="1"/>
+        <FlagArray index="Unradarable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="NoScore" value="1"/>
+        <FogVisibility value="Dimmed"/>
+        <LifeStart value="500"/>
+        <LifeMax value="500"/>
+        <InnerRadius value="0.5"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:CNC"/>
+        <BehaviorArray Link="DroppodSuicide"/>
+        <Race value="Nod"/>
+    </CUnit>
+    <CUnit id="NodAwakenBuggyEMP" parent="MISSILE_INVULNERABLE">
+        <Race value="Nod"/>
+        <Mover value="NodAwakenBuggyEMP2Weapon"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:CNC"/>
+    </CUnit>
+    <!--Neutral-->
+    <CUnit id="TibMineralField" parent="MineralFieldDefault">
+        <Name value="Unit/Name/TIBMineralField"/>
+        <Description value="Button/Tooltip/MineralFieldsmall"/>
+        <BehaviorArray index="0" Link="TiberiumMineralField50"/>
+        <BehaviorArray Link="TiberiumIrradiated"/>
+        <BehaviorArray Link="TiberiumGrow"/>
+        <Collide index="Ground" value="0"/>
+        <Collide index="Small" value="0"/>
+        <Footprint value="Footprint1x2TibField"/>
+        <PlacementFootprint value="Footprint1x2TibField"/>
+        <LifeStart value="50"/>
+        <LifeMax value="50"/>
+        <EditorCategories value="ObjectType:Resource,ObjectFamily:CNC"/>
+    </CUnit>
+    <CUnit id="Visceroid">
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:CNC"/>
+        <DeathRevealRadius value="3"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="NoScore" value="1"/>
+        <FlagArray index="AILifetime" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <Attributes index="Summoned" value="1"/>
+        <LifeRegenRate value="2"/>
+        <LifeArmorName value="Unit/LifeArmorName/ZergGroundArmor"/>
+        <Sight value="7"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="25"/>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.375"/>
+        <SubgroupPriority value="14"/>
+        <MinimapRadius value="0.375"/>
+        <TacticalAI value="Broodling"/>
+        <AIEvalFactor value="0"/>
+        <LeaderAlias value=""/>
+        <HotkeyAlias value="Broodling"/>
+        <Description value="Button/Tooltip/ve"/>
+        <Mob value="Multiplayer"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Small" value="1"/>
+        <LifeStart value="50"/>
+        <LifeMax value="50"/>
+        <LifeArmor value="5"/>
+        <LifeRegenDelay value="1"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ZergWildMutation"/>
+        <Speed value="3.836"/>
+        <SpeedMultiplierCreep value="1.3"/>
+        <Acceleration value="1000"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <CostCategory value="Army"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="move"/>
+        <WeaponArray Link="ClawsVisceroid"/>
+        <BehaviorArray Link="TiberiumProtection"/>
+        <BehaviorArray Link="TiberiumHeal"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+        </CardLayouts>
+        <GlossaryPriority value="200"/>
+        <GlossaryCategory value="Unit/Category/ZergUnits"/>
+        <HotkeyCategory value="Unit/Category/ZergStory"/>
+    </CUnit>
+</Catalog>

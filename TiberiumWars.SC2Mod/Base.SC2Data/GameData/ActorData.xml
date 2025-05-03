@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CActorPower id="CNCPower">
+        <On Terms="Behavior.CNCconstructionRadius.Create; !Option Model Low" Send="Create"/>
+        <On Terms="Behavior.CNCconstructionRadius.Destroy; !Option Model Low" Send="Destroy"/>
+        <PowerSource value="CNCconstructionRadius"/>
+        <VisualArray value="deployzone"/>
+        <VisualArray value="deployzone"/>
+    </CActorPower>
+    <CActorBlob id="deployzone">
+        <EditorCategories value=""/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="SplatEmitterAddBlob"/>
+        <On Terms="ActorCreation" Target="::Scene" Send="SplatEmitterUpdateTint 255,181,0,0"/>
+        <On Terms="Behavior.CNCconstructionRadius.Create; ValidateUnit CasterNotDead; ValidatePlayer IsPlayer" Send="Create"/>
+<!--        <On Terms="Behavior.CNCconstructionRadius.Create; ValidateUnit CasterNotDead" Send="Create"/>-->
+        <On Terms="Behavior.CNCconstructionRadius.Destroy" Send="Destroy"/>
+        <On Terms="Behavior.CNCconstructionRadius.Enable; ValidatePlayer IsPlayer" Send="Create"/>
+<!--        <On Terms="Behavior.CNCconstructionRadius.Enable" Send="Create"/>-->
+        <On Terms="Behavior.CNCconstructionRadius.Disable" Send="Destroy"/>
+        <MaxScale value="0.250000,0.250000"/>
+        <ScaleDeltaTime value="0.015000,0.015000"/>
+    </CActorBlob>
+    <CActorSplat id="DeployZoneVisual">
+        <FogVisibility value="Visible"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpShadow"/>
+        <FadeIn value="0.000000"/>
+        <FadeOut value="0.000000"/>
+        <HoldTime value="-1.000000"/>
+        <Layer value="PowerLayer"/>
+    </CActorSplat>
+
+    <CActorGlobalConfig id="SYSTEM_ActorConfig">
+        <SplatEmitterInit>
+            <TextureResolution value="512,512"/>
+            <ProjectorModel value="Deployzone"/>
+            <MaskBlobPath value="Assets\Textures\stetmannpowerfieldmask.dds"/>
+            <ScaleDeltaTime value="0.010000,0.010000"/>
+            <ScaleUpdateTime value="30"/>
+            <MaxBlobScale value="0.110000,0.110000"/>
+            <Tint value="255,255,255,255"/>
+            <TerrainUVTiling value="1.000000,1.000000,0.001000,-0.001000"/>
+            <MinHeightValue value="-1.000000"/>
+            <MaterialInfo>
+                <ReplacementLayers index="AlphaMask" value="1"/>
+            </MaterialInfo>
+            <MaterialInfo MaterialId="1">
+                <ReplacementLayers index="AlphaMask" value="1"/>
+                <ReplacementLayers index="AlphaMask2" value="1"/>
+            </MaterialInfo>
+        </SplatEmitterInit>
+    </CActorGlobalConfig>
+    <CActorModel id="FactoryRepair">
+        <AcceptedTransfers index="Position" value="0"/>
+        <AcceptedTransfers index="Rotation" value="0"/>
+        <EditorCategories value=""/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Stand Stand Death"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="AnimBracketState.*.AfterClosing; !AnimBracketExitReason ModelSwap; AnimName BSD" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="SetOpacity"/>
+        <On Terms="ActorCreation" Send="SetOpacity 0.500000 1.000000"/>
+        <On Terms="ActorCreation" Send="SetTintColor 255,0,0"/>
+        <On Terms="Behavior.MCVVReapirZonefactory.On" Send="Create"/>
+        <On Terms="Behavior.MCVVReapirZonefactory.Off" Send="AnimBracketStop BSD"/>
+        <AddToProximitySystem value="0"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpShadow"/>
+        <Model value="RepairZone"/>
+        <AutoScaleFactor value="1.000000"/>
+        <AnimBlendTime value="0.000000"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+        <ModelFlags index="AutomateGlobalLoops" value="1"/>
+        <ProximityPosition value="CenterActor"/>
+    </CActorModel>
+    <CActorText id="PickupTibText" parent="PickupTextDefault"/>
+
+
+
+
+<!--    <CActorProgress id="ProtossWarpIn">-->
+<!--        <On Terms="Abil.NodWarpGateTrain.TargetStart" Send="Create"/>-->
+<!--    </CActorProgress>-->
+    <CActorModel id="GenericStun" parent="ModelAnimationStyleContinuous">
+        <On Terms="Behavior.GenericStun.On" Send="Create"/>
+        <On Terms="Behavior.GenericStun.Off" Send="AnimBracketStop BSD"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachOverhead"/>
+        <ModelFlags index="AllowHitTest" value="0"/>
+        <ModelFlags index="AutomateGlobalLoops" value="1"/>
+    </CActorModel>
+    <CActorProgress id="TerranConstruction">
+        <On Terms="Abil.GDIBuild.BuiltStart" Send="Create"/>
+    </CActorProgress>
+
+    <CActorUnit id="TibMineralField" parent="MineralBase" unitName="TibMineralField">
+        <On Terms="ActorCreation; Option Shader Ultra" Send="ModelSwap MineralFieldHigh"/>
+        <On Terms="ActorCreation; Option Shader Extreme" Send="ModelSwap MineralFieldHigh"/>
+        <On Terms="BehaviorLevel.TiberiumMineralField50.Start; Level 0" Send="AnimGroupApply A"/>
+        <On Terms="BehaviorLevel.TiberiumMineralField50.Stop; Level 0" Send="AnimGroupRemove A"/>
+        <On Terms="BehaviorLevel.TiberiumMineralField50.Start; Level 1" Send="AnimGroupApply B"/>
+        <On Terms="BehaviorLevel.TiberiumMineralField50.Stop; Level 1" Send="AnimGroupRemove B"/>
+        <On Terms="BehaviorLevel.TiberiumMineralField50.Start; Level 2" Send="AnimGroupApply C"/>
+        <On Terms="BehaviorLevel.TiberiumMineralField50.Stop; Level 2" Send="AnimGroupRemove C"/>
+        <On Terms="BehaviorLevel.TiberiumMineralField50.Start; Level 3" Send="AnimGroupApply D"/>
+        <On Terms="BehaviorLevel.TiberiumMineralField50.Stop; Level 3" Send="AnimGroupRemove D"/>
+        <On Terms="BehaviorLevel.TiberiumMineralField50.Start; Level 0" Send="Create MineralFieldSplatSmall"/>
+        <On Terms="BehaviorLevel.TiberiumMineralField50.Stop; Level 0" Target="MineralFieldSplatSmall" Send="Destroy"/>
+        <On Terms="BehaviorLevel.TiberiumMineralField50.Start; Level 1" Send="Create MineralFieldSplatSmall"/>
+        <On Terms="BehaviorLevel.TiberiumMineralField50.Stop; Level 1" Target="MineralFieldSplatSmall" Send="Destroy"/>
+        <On Terms="BehaviorLevel.TiberiumMineralField50.Start; Level 2" Send="Create MineralFieldSplat"/>
+        <On Terms="BehaviorLevel.TiberiumMineralField50.Stop; Level 2" Target="MineralFieldSplat" Send="Destroy"/>
+        <On Terms="BehaviorLevel.TiberiumMineralField50.Start; Level 3" Send="Create MineralFieldSplat"/>
+        <On Terms="BehaviorLevel.TiberiumMineralField50.Stop; Level 3" Target="MineralFieldSplat" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="SetTintColor {0,255,0 2.500000}"/>
+        <On Terms="UnitBirth.TibMineralField" Send="Create LightOmniGreen"/>
+        <Model value="MineralField"/>
+        <BuildModel value="MineralField"/>
+        <DeathArray index="Normal" ModelLink="MineralField"/>
+        <PlacementModel value="MineralField"/>
+        <GroupIcon>
+            <Image value="Assets\textures\Wireframe-General-MineralField.dds"/>
+        </GroupIcon>
+        <HeroIcon value="Assets\textures\Wireframe-General-MineralField.dds"/>
+        <StatusBarFlags index="Shields" value="0"/>
+        <StatusBarFlags index="Life" value="0"/>
+        <StatusBarFlags index="Energy" value="0"/>
+        <StatusBarFlags index="Cargo" value="0"/>
+        <StatusBarFlags index="Progress" value="0"/>
+        <StatusBarFlags index="Duration" value="0"/>
+        <StatusBarFlags index="Magazine" value="0"/>
+        <UnitFlags index="ShowBlobShadow" value="0"/>
+        <UnitIcon value="Assets\textures\Wireframe-General-MineralField.dds"/>
+        <Wireframe>
+            <Image value="Assets\textures\Wireframe-General-MineralField.dds"/>
+        </Wireframe>
+    </CActorUnit>
+
+
+</Catalog>

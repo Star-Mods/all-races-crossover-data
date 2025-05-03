@@ -1,0 +1,2320 @@
+<Catalog>
+
+    <!--Vehicles-->
+    <CUnit id="CabalSlave" parent="NodGround">
+        <Race value="CABAL"/>
+        <FlagArray index="Worker" value="1"/>
+        <FlagArray index="ArmySelect" value="0"/>
+        <Collide index="Small" value="1"/>
+        <DefaultAcquireLevel value="Defensive"/>
+        <Response value="Flee"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="45"/>
+        <LifeMax value="45"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="8"/>
+        <Food value="-1"/>
+        <CostCategory value="Economy"/>
+        <CostResource index="Minerals" value="50"/>
+        <RepairTime value="8"/>
+        <AIOverideTargetPriority value="10"/>
+        <KillXP value="10"/>
+        <AbilArray Link="Repair"/>
+        <AbilArray Link="SCVHarvest"/>
+        <AbilArray Link="CabalSlaveBuild"/>
+        <WeaponArray Link="NodFusionCutter"/>
+        <AbilArray Link="DeployMCVSupport"/>
+        <AbilArray Link="DeployMCVOffense"/>
+        <AbilArray Link="DeployMCVDefense"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="AttackWorker" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="GatherTerr" Type="AbilCmd" AbilCmd="SCVHarvest,Gather" Row="1" Column="0"/>
+            <LayoutButtons Face="ReturnCargo" Type="AbilCmd" AbilCmd="SCVHarvest,Return" Row="1" Column="1"/>
+            <LayoutButtons Face="Halt" Type="AbilCmd" AbilCmd="CabalSlaveBuild,Halt" Row="2" Column="4"/>
+            <LayoutButtons Face="Repair" Type="AbilCmd" AbilCmd="Repair,Execute" Row="2" Column="2"/>
+            <LayoutButtons Face="TerranBuild" Type="Submenu" SubmenuCardId="TBl1" Row="2" Column="0"/>
+            <LayoutButtons Face="TerranBuildAdvanced" Type="Submenu" SubmenuCardId="TBl2" Row="2" Column="1"/>
+            <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
+        </CardLayouts>
+        <CardLayouts CardId="TBl1">
+            <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="CabalSlaveBuild,Build1"  Row="0" Column="0" Face="Outpost"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="CabalSlaveBuild,Build2"  Row="0" Column="1" Face="CabalControlNode"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="CabalSlaveBuild,Build3"  Row="0" Column="2" Face="NodTiberiumSilo"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="CabalSlaveBuild,Build8"  Row="0" Column="3" Face="CabalPyramid"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="CabalSlaveBuild,Build4"  Row="1" Column="0" Face="CabalMonitoringStation"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="CabalSlaveBuild,Build5"  Row="1" Column="1" Face="CabalShrine"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="CabalSlaveBuild,Build6"  Row="1" Column="2" Face="CabalWeaponsLaboratory"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="CabalSlaveBuild,Build7"  Row="1" Column="3" Face="CabalGrandTemple"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="DeployMCVOffense,Execute" Row="2" Column="0" Face="DeployOffenseMCV"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="DeployMCVDefense,Execute" Row="2" Column="1" Face="DeployDefenseMCV"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="DeployMCVSupport,Execute" Row="2" Column="2" Face="DeploySupportMCV"/>
+        </CardLayouts>
+        <CardLayouts CardId="TBl2">
+            <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="CabalSlaveBuild,Build10" Row="2" Column="0" Face="NodTurret"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="CabalSlaveBuild,Build11" Row="2" Column="1" Face="CabalMissilePod"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="CabalSlaveBuild,Build12" Row="2" Column="2" Face="CabalFlameColumn"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="CabalSlaveBuild,Build13" Row="2" Column="3" Face="CabalIncinerator"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="CabalSlaveBuild,Build14" Row="1" Column="0" Face="CabalObeliskOfLife"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="CabalSlaveBuild,Build15" Row="1" Column="1" Face="CabalShieldGenerator"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="CabalSlaveBuild,Build16" Row="0" Column="0" Face="CabalBomberPlatform"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.375"/>
+        <CargoSize value="1"/>
+        <ScoreMake value="50"/>
+        <ScoreKill value="50"/>
+        <SubgroupPriority value="6"/>
+        <MinimapRadius value="0.375"/>
+        <TacticalAIThink value="AIThinkSCV"/>
+        <GlossaryPriority value="10"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <Acceleration value="2.5"/>
+        <LateralAcceleration value="46"/>
+    </CUnit>
+    <CUnit id="CabalDefenseCrawlerDeployed" parent="NodStructure">
+        <EditorCategories value="ObjectType:Other,ObjectFamily:CNC"/>
+        <FlagArray index="PreventReveal" value="1"/>
+        <FlagArray index="TownCamera" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <LifeStart value="1500"/>
+        <LifeMax value="1500"/>
+        <LifeArmor value="3"/>
+        <Sight value="11"/>
+        <RepairTime value="150"/>
+        <BehaviorArray Link="CNCconstructionRadius"/>
+        <Radius value="3"/>
+        <SeparationRadius value="2.5"/>
+        <Footprint value="Footprint5x5Contour"/>
+        <PlacementFootprint value="Footprint5x5DropOff"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="2.5"/>
+        <TacticalAIThink value="AIThinkCommandCenter"/>
+        <AIEvalFactor value="0.7"/>
+        <Food value="14"/>
+
+        <AbilArray Link="NodGideonCrawlerTrain"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="CabalDefenseCrawlerPack"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="Slave" Type="AbilCmd" AbilCmd="NodGideonCrawlerTrain,Train1" Row="0" Column="0"/>
+            <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="RallyCommand,Rally1" Row="1" Column="4"/>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="que5PassiveCancelToSelection,CancelLast" Row="2" Column="4"/>
+            <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
+            <LayoutButtons Face="TerranBuild" Type="Submenu" SubmenuCardId="VEH" Row="2" Column="0"/>
+            <LayoutButtons Face="StopPlanetaryFortress" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="3"/>
+            <LayoutButtons Face="AttackBuildingPFort" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="CabalDefenseCrawlerPack" Type="AbilCmd" AbilCmd="CabalDefenseCrawlerPack,Execute" Row="2" Column="2"/>
+        </CardLayouts>
+
+        <AbilArray Link="NodGideonWarFactoryTrain"/>
+        <CardLayouts CardId="VEH">
+            <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonWarFactoryTrain,Train1"  Row="0" Column="0" Face="NodBike"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonWarFactoryTrain,Train2"  Row="0" Column="1" Face="CabalMarauder"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonWarFactoryTrain,Train3"  Row="0" Column="2" Face="NodAvenger"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonWarFactoryTrain,Train4"  Row="0" Column="3" Face="CabalTyrant"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonWarFactoryTrain,Train5"  Row="1" Column="0" Face="NodStealthTank"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonWarFactoryTrain,Train6"  Row="1" Column="1" Face="NodScorpion"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonWarFactoryTrain,Train11" Row="1" Column="2" Face="CabalSpider"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonWarFactoryTrain,Train7"  Row="1" Column="3" Face="CabalWidow"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonWarFactoryTrain,Train9"  Row="2" Column="0" Face="Aftershock"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonWarFactoryTrain,Train8"  Row="2" Column="1" Face="CabalUnderminer"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonWarFactoryTrain,Train10" Row="2" Column="2" Face="NodAvatar"/>
+            <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
+        </CardLayouts>
+        <TechTreeProducedUnitArray value="NodBike"/>
+        <TechTreeProducedUnitArray value="CabalMarauder"/>
+        <TechTreeProducedUnitArray value="CabalAvengerTank"/>
+        <TechTreeProducedUnitArray value="CabalTyrant"/>
+        <TechTreeProducedUnitArray value="StealthTank"/>
+        <TechTreeProducedUnitArray value="NodScorpion"/>
+        <TechTreeProducedUnitArray value="CabalWidow"/>
+        <TechTreeProducedUnitArray value="CabalUnderminer"/>
+        <TechTreeProducedUnitArray value="NodAvatar"/>
+        <TechTreeProducedUnitArray value="CabalAfterShock"/>
+
+
+        <Description value="Unit/Description/CabalDefenseCrawlerDeployed"/>
+        <CostResource index="Minerals" value="400"/>
+        <CostResource index="Vespene" value="150"/>
+        <AttackTargetPriority value="20"/>
+        <!--        <BehaviorArray Link="CabalShieldGenerator"/>-->
+        <WeaponArray Link="TwinObeliskDamage"/>
+        <ScoreMake value="1300"/>
+        <ScoreKill value="1300"/>
+        <SubgroupPriority value="2"/>
+        <TacticalAI value="PlanetaryFortress"/>
+        <GlossaryPriority value="241"/>
+        <EditorCategories value="ObjectType:Structure,ObjectFamily:CNC"/>
+        <BehaviorArray Link="DefenseMCVAura"/>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="CabalOffenseCrawlerDeployed" parent="NodStructure">
+        <EditorCategories value="ObjectType:Other,ObjectFamily:CNC"/>
+        <FlagArray index="PreventReveal" value="1"/>
+        <FlagArray index="TownCamera" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <LifeStart value="1500"/>
+        <LifeMax value="1500"/>
+        <LifeArmor value="3"/>
+        <Sight value="11"/>
+        <RepairTime value="150"/>
+        <BehaviorArray Link="CNCconstructionRadius"/>
+        <Radius value="3"/>
+        <SeparationRadius value="2.5"/>
+        <Footprint value="Footprint5x5Contour"/>
+        <PlacementFootprint value="Footprint5x5DropOff"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="2.5"/>
+        <TacticalAIThink value="AIThinkCommandCenter"/>
+        <AIEvalFactor value="0.7"/>
+        <Food value="14"/>
+        <AbilArray Link="NodGideonCrawlerTrain"/>
+
+
+        <CardLayouts index="0">
+            <LayoutButtons Face="Slave" Type="AbilCmd" AbilCmd="NodGideonCrawlerTrain,Train1" Row="0" Column="0"/>
+            <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="RallyCommand,Rally1" Row="1" Column="4"/>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="que5PassiveCancelToSelection,CancelLast" Row="2" Column="4"/>
+            <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
+            <LayoutButtons Face="TerranBuild" Type="Submenu" SubmenuCardId="INF" Row="2" Column="0"/>
+            <LayoutButtons Face="StopPlanetaryFortress" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="3"/>
+            <LayoutButtons Face="AttackBuildingPFort" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="CabalOffenseCrawlerPack" Type="AbilCmd" AbilCmd="CabalOffenseCrawlerPack,Execute" Row="2" Column="2"/>
+        </CardLayouts>
+
+        <AbilArray Link="NodGideonBarracksTrain"/>
+        <CardLayouts CardId="INF">
+            <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonBarracksTrain,Train1" Row="0" Column="0" Face="Devout"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonBarracksTrain,Train2" Row="0" Column="1" Face="Enlightened"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonBarracksTrain,Train3" Row="0" Column="2" Face="Ascended"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonBarracksTrain,Train4" Row="0" Column="3" Face="BlackHand"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonBarracksTrain,Train8" Row="1" Column="0" Face="NodEngineer"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonBarracksTrain,Train6" Row="1" Column="1" Face="CabalReaper"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonBarracksTrain,Train6" Row="1" Column="2" Face="NodHighConfessor"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonBarracksTrain,Train5" Row="1" Column="3" Face="CabalHijacker"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonBarracksTrain,Train7" Row="2" Column="1" Face="CabalDominator"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonBarracksTrain,Train9" Row="2" Column="0" Face="CabalCenturion"/>
+            <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
+        </CardLayouts>
+        <TechTreeProducedUnitArray value="Devout"/>
+        <TechTreeProducedUnitArray value="Enlightened"/>
+        <TechTreeProducedUnitArray value="Ascended"/>
+        <TechTreeProducedUnitArray value="BlackHand"/>
+        <TechTreeProducedUnitArray value="CabalHijacker"/>
+        <TechTreeProducedUnitArray value="CabalReaper"/>
+        <TechTreeProducedUnitArray value="HighConfessor"/>
+        <TechTreeProducedUnitArray value="CabalDominator"/>
+        <TechTreeProducedUnitArray value="NodEngineer"/>
+        <TechTreeProducedUnitArray value="CabalCenturion"/>
+
+
+        <Description value="Unit/Description/CabalOffenseCrawlerDeployed"/>
+        <CostResource index="Minerals" value="400"/>
+        <CostResource index="Vespene" value="300"/>
+        <AttackTargetPriority value="20"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="CabalOffenseCrawlerPack"/>
+        <!--        <BehaviorArray Link="CommandCenterQueue"/>-->
+        <BehaviorArray Link="FireSuppressionSystem"/>
+        <BehaviorArray Link="CNCconstructionRadius"/>
+        <!--        <BehaviorArray Link="MCVVReapirZone"/>-->
+        <WeaponArray Link="CabalOffenseCrawlerLaser" Turret="SiegeTankSieged"/>
+        <WeaponArray Link="NodArtillery" Turret="SiegeTankSieged"/>
+        <ScoreMake value="1500"/>
+        <ScoreKill value="1500"/>
+        <TacticalAI value="PlanetaryFortress"/>
+        <GlossaryPriority value="242"/>
+        <EditorCategories value="ObjectType:Structure,ObjectFamily:CNC"/>
+        <RepairTime value="48"/>
+        <LifeStart value="1200"/>
+        <LifeMax value="1200"/>
+        <LifeArmor value="1"/>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="CabalSupportCrawlerDeployed" parent="NodStructure">
+        <EditorCategories value="ObjectType:Other,ObjectFamily:CNC"/>
+        <FlagArray index="PreventReveal" value="1"/>
+        <FlagArray index="TownCamera" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <LifeStart value="1500"/>
+        <LifeMax value="1500"/>
+        <LifeArmor value="3"/>
+        <Sight value="11"/>
+        <RepairTime value="150"/>
+        <BehaviorArray Link="CNCconstructionRadius"/>
+        <Radius value="3"/>
+        <SeparationRadius value="2.5"/>
+        <Footprint value="Footprint5x5Contour"/>
+        <PlacementFootprint value="Footprint5x5DropOff"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="2.5"/>
+        <TacticalAIThink value="AIThinkCommandCenter"/>
+        <AIEvalFactor value="0.7"/>
+        <Food value="14"/>
+        <AbilArray Link="NodGideonCrawlerTrain"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="Slave" Type="AbilCmd" AbilCmd="NodGideonCrawlerTrain,Train1" Row="0" Column="0"/>
+            <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="RallyCommand,Rally1" Row="1" Column="4"/>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="que5PassiveCancelToSelection,CancelLast" Row="2" Column="4"/>
+            <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
+            <LayoutButtons Face="TerranBuild" Type="Submenu" SubmenuCardId="AIR" Row="2" Column="0"/>
+        </CardLayouts>
+        <AbilArray Link="NodGideonAirTowerTrain"/>
+
+        <CardLayouts CardId="AIR">
+            <LayoutButtons  Type="AbilCmd" AbilCmd="NodGideonAirTowerTrain,Train1" Row="0" Column="0" Face="NodBane"/>
+            <LayoutButtons  Type="AbilCmd" AbilCmd="NodGideonAirTowerTrain,Train2" Row="0" Column="1" Face="NodCobra"/>
+            <LayoutButtons  Type="AbilCmd" AbilCmd="NodGideonAirTowerTrain,Train3" Row="0" Column="2" Face="NodScalpel"/>
+            <LayoutButtons  Type="AbilCmd" AbilCmd="NodGideonAirTowerTrain,Train4" Row="0" Column="3" Face="CabalNodDropShip"/>
+            <LayoutButtons  Type="AbilCmd" AbilCmd="NodGideonAirTowerTrain,Train5" Row="1" Column="0" Face="NodMedusa"/>
+            <LayoutButtons  Type="AbilCmd" AbilCmd="NodGideonAirTowerTrain,Train6" Row="1" Column="1" Face="CabalSalamander"/>
+            <LayoutButtons  Type="AbilCmd" AbilCmd="NodGideonAirTowerTrain,Train7" Row="1" Column="2" Face="CabalBasilisk"/>
+            <LayoutButtons  Type="AbilCmd" AbilCmd="NodGideonAirTowerTrain,Train8" Row="2" Column="0" Face="CabalLeviathan"/>
+            <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
+        </CardLayouts>
+
+        <TechTreeProducedUnitArray value="Bane"/>
+        <TechTreeProducedUnitArray value="Cobra"/>
+        <TechTreeProducedUnitArray value="Scalpel"/>
+        <TechTreeProducedUnitArray value="CabalNodDropShip"/>
+        <TechTreeProducedUnitArray value="Medusa"/>
+        <TechTreeProducedUnitArray value="CabalSalamander"/>
+        <TechTreeProducedUnitArray value="CabalBasilisk"/>
+        <TechTreeProducedUnitArray value="CabalLeviathan"/>
+
+
+
+        <Description value="Unit/Description/CabalSupportCrawlerDeployed"/>
+        <CostResource index="Minerals" value="400"/>
+        <CostResource index="Vespene" value="400"/>
+        <AttackTargetPriority value="20"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="RallyCommand"/>
+        <AbilArray Link="CabalSupportCrawlerPack"/>
+        <!--        <BehaviorArray Link="MCVVReapirZone"/>-->
+        <WeaponArray Link="NodMCVRocket" Turret="SiegeTankSieged"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="StopPlanetaryFortress" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="3"/>
+            <LayoutButtons Face="AttackBuildingPFort" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Nodpack3" Type="AbilCmd" AbilCmd="CabalSupportCrawlerPack,Execute" Row="2" Column="2"/>
+        </CardLayouts>
+        <ScoreMake value="2000"/>
+        <ScoreKill value="2000"/>
+        <TacticalAI value="PlanetaryFortress"/>
+        <GlossaryPriority value="240"/>
+        <EditorCategories value="ObjectType:Structure,ObjectFamily:CNC"/>
+        <RepairTime value="45"/>
+        <LifeStart value="1200"/>
+        <LifeMax value="1200"/>
+        <LifeArmor value="1"/>
+        <Food value="-10"/>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="CabalDefenseCrawler"  parent="NodGround">
+        <Race value="CABAL"/>
+        <Food value="14"/>
+        <LifeArmorName value="Unit/LifeArmorName/TerranVehiclePlating"/>
+        <CostCategory value="Army"/>
+        <AttackTargetPriority value="20"/>
+        <FlagArray index="PreventReveal" value="1"/>
+        <FlagArray index="TownCamera" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Massive" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <LifeStart value="1500"/>
+        <LifeMax value="1500"/>
+        <LifeArmor value="3"/>
+        <Acceleration value="1.5"/>
+        <LateralAcceleration value="64"/>
+        <StationaryTurningRate value="58.711"/>
+        <TurningRate value="58.711"/>
+        <Sight value="11"/>
+        <RepairTime value="45"/>
+        <MinimapRadius value="2.5"/>
+        <AIEvalFactor value="1.5"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <PushPriority value="50"/>
+        <CostResource index="Minerals" value="400"/>
+        <KillXP value="1000"/>
+        <AbilArray Link="NodKaneMCVDeploy"/>
+
+        <FlagArray index="ArmySelect" value="1"/>
+        <PushPriority value="50"/>
+        <CostResource index="Minerals" value="400"/>
+        <CostResource index="Vespene" value="150"/>
+        <KillXP value="1100"/>
+        <AbilArray Link="CabalDefenseCrawlerDeploy"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
+            <LayoutButtons Face="CabalDefenseCrawlerDeploy" Type="AbilCmd" AbilCmd="CabalDefenseCrawlerDeploy,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+        <Radius value="2.5"/>
+        <SeparationRadius value="1"/>
+        <InnerRadius value="0.875"/>
+        <ScoreMake value="1100"/>
+        <ScoreKill value="1100"/>
+        <SubgroupPriority value="13"/>
+        <GlossaryPriority value="130"/>
+        <AlliedPushPriority value="50"/>
+        <Speed value="1.5"/>
+    </CUnit>
+    <CUnit id="CabalOffenseCrawler" parent="NodGround">
+        <Race value="CABAL"/>
+        <Food value="14"/>
+        <LifeArmorName value="Unit/LifeArmorName/TerranVehiclePlating"/>
+        <CostCategory value="Army"/>
+        <AttackTargetPriority value="20"/>
+        <FlagArray index="PreventReveal" value="1"/>
+        <FlagArray index="TownCamera" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Massive" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <LifeStart value="1500"/>
+        <LifeMax value="1500"/>
+        <LifeArmor value="3"/>
+        <Acceleration value="1.5"/>
+        <LateralAcceleration value="64"/>
+        <StationaryTurningRate value="58.711"/>
+        <TurningRate value="58.711"/>
+        <Sight value="11"/>
+        <RepairTime value="45"/>
+        <MinimapRadius value="2.5"/>
+        <AIEvalFactor value="1.5"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <PushPriority value="50"/>
+        <CostResource index="Minerals" value="400"/>
+        <KillXP value="1000"/>
+        <AbilArray Link="NodKaneMCVDeploy"/>
+
+        <FlagArray index="ArmySelect" value="1"/>
+        <Description value="Unit/Description/CabalOffenseCrawler"/>
+        <PushPriority value="50"/>
+        <CostResource index="Minerals" value="400"/>
+        <CostResource index="Vespene" value="300"/>
+        <KillXP value="50"/>
+        <AbilArray Link="CabalOffenseCrawlerDeploy"/>
+        <WeaponArray Link="CabalOffenseCrawlerLaser" Turret="SiegeTankSieged"/>
+        <WeaponArray Link="NodArtillery" Turret="SiegeTankSieged"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="CabalOffenseCrawlerDeploy" Type="AbilCmd" AbilCmd="CabalOffenseCrawlerDeploy,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+        <ScoreMake value="1500"/>
+        <ScoreKill value="1500"/>
+        <SubgroupPriority value="13"/>
+        <TacticalAI value="SiegeTank"/>
+        <GlossaryPriority value="130"/>
+        <AlliedPushPriority value="50"/>
+        <Speed value="1.5"/>
+        <LifeStart value="1200"/>
+        <LifeMax value="1200"/>
+        <LifeArmor value="1"/>
+        <RepairTime value="48"/>
+    </CUnit>
+    <CUnit id="CabalSupportCrawler"  parent="NodAir">
+        <Race value="CABAL"/>
+        <Food value="14"/>
+        <LifeArmorName value="Unit/LifeArmorName/TerranVehiclePlating"/>
+        <CostCategory value="Army"/>
+        <AttackTargetPriority value="20"/>
+        <FlagArray index="PreventReveal" value="1"/>
+        <FlagArray index="TownCamera" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Massive" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <LifeStart value="1500"/>
+        <LifeMax value="1500"/>
+        <LifeArmor value="3"/>
+        <Acceleration value="1.5"/>
+        <LateralAcceleration value="64"/>
+        <StationaryTurningRate value="58.711"/>
+        <TurningRate value="58.711"/>
+        <Sight value="11"/>
+        <RepairTime value="45"/>
+        <MinimapRadius value="2.5"/>
+        <AIEvalFactor value="1.5"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <PushPriority value="50"/>
+        <CostResource index="Minerals" value="400"/>
+        <KillXP value="1000"/>
+        <AbilArray Link="NodKaneMCVDeploy"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <Description value="Unit/Description/CabalSupportCrawler"/>
+        <PushPriority value="50"/>
+        <CostResource index="Minerals" value="400"/>
+        <CostResource index="Vespene" value="400"/>
+        <KillXP value="1500"/>
+        <AbilArray Link="CabalSupportCrawlerDeploy"/>
+        <WeaponArray Link="NodMCVRocket" Turret="SiegeTankSieged"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="CabalSupportCrawlerDeploy" Type="AbilCmd" AbilCmd="CabalSupportCrawlerDeploy,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+        <Radius value="2.5"/>
+        <SeparationRadius value="1"/>
+        <InnerRadius value="0.875"/>
+        <ScoreMake value="1500"/>
+        <ScoreKill value="1500"/>
+        <SubgroupPriority value="13"/>
+        <GlossaryPriority value="130"/>
+        <AlliedPushPriority value="50"/>
+        <Speed value="1.5"/>
+    </CUnit>
+
+    <CUnit id="NodBike" parent="NodGround">
+        <Race value="CABAL"/>
+        <FlagArray index="AISplash" value="1"/>
+        <PushPriority value="12"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="100"/>
+        <LifeMax value="100"/>
+        <Speed value="4.25"/>
+        <Acceleration value="4.25"/>
+        <LateralAcceleration value="46"/>
+        <StationaryTurningRate value="1499.9414"/>
+        <Sight value="10"/>
+        <Food value="-2"/>
+        <CostResource index="Minerals" value="100"/>
+        <RepairTime value="30"/>
+        <KillXP value="30"/>
+        <BehaviorArray Link="GDIZoneTrooperjump"/>
+        <BehaviorArray Link="NodBikeVeterancyUpgrade"/>
+        <WeaponArray Link="NodBikeRocket"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="NodAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.625"/>
+        <SeparationRadius value="0.625"/>
+        <InnerRadius value="0.5"/>
+        <ScoreMake value="300"/>
+        <ScoreKill value="600"/>
+        <SubgroupPriority value="8"/>
+        <MinimapRadius value="0.625"/>
+        <GlossaryPriority value="80"/>
+    </CUnit>
+    <CUnit id="CabalTyrant" parent="NodGround">
+        <DeathRevealRadius value="7"/>
+        <DeathRevealDuration value="3"/>
+        <FlagArray index="AlwaysThreatens" value="1"/>
+        <FlagArray index="AIThreatGround" value="1"/>
+        <FlagArray index="AIThreatAir" value="1"/>
+        <FlagArray index="AISplash" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="175"/>
+        <LifeMax value="175"/>
+        <Acceleration value="2.8125"/>
+        <StationaryTurningRate value="2292.8906"/>
+        <Sight value="7"/>
+        <Food value="-2"/>
+        <CostResource index="Minerals" value="100"/>
+        <CostResource index="Vespene" value="75"/>
+        <RepairTime value="35"/>
+        <AttackTargetPriority value="19"/>
+        <BehaviorArray Link="Detector11"/>
+        <BehaviorArray Link="Tech2"/>
+        <BehaviorArray Link="CabalTyrantVeterancyUpgrade"/>
+        <AbilArray Link="TyrantBurrow"/>
+        <AbilArray Link="NodDeepBurrow"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="TyrantBurrow,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="NodDeepBurrow" Type="AbilCmd" AbilCmd="NodDeepBurrow,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="NodAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <ScoreMake value="175"/>
+        <ScoreKill value="175"/>
+        <SubgroupPriority value="4"/>
+        <TacticalAIThink value="AIThinkWidowMine"/>
+        <GlossaryPriority value="129"/>
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Always"/>
+        <WeaponArray Link="CabalTyrantLaser" Turret="SiegeTank"/>
+        <Radius value="0.6875"/>
+        <SeparationRadius value="0.6875"/>
+        <PushPriority value="15"/>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="CabalTyrantBurrow" parent="NodGround">
+        <Name value="Unit/Name/CabalTyrant"/>
+        <Description value="Button/Tooltip/WidowMine"/>
+        <DeathRevealRadius value="7"/>
+        <DeathRevealDuration value="3"/>
+        <FlagArray index="Cloaked" value="1"/>
+        <FlagArray index="Buried" value="1"/>
+        <FlagArray index="AlwaysThreatens" value="1"/>
+        <FlagArray index="AIThreatGround" value="1"/>
+        <FlagArray index="AIThreatAir" value="1"/>
+        <FlagArray index="AISplash" value="1"/>
+        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="175"/>
+        <LifeMax value="175"/>
+        <Speed value="1"/>
+        <StationaryTurningRate value="2292.8906"/>
+        <Sight value="7"/>
+        <Food value="-2"/>
+        <CostResource index="Minerals" value="100"/>
+        <CostResource index="Vespene" value="75"/>
+        <RepairTime value="35"/>
+        <AbilArray Link="TyrantUnburrow"/>
+        <BehaviorArray Link="Detector11"/>
+        <BehaviorArray Link="WidowMineArmed"/>
+        <BehaviorArray Link="Tech2"/>
+        <BehaviorArray Link="CabalTyrantVeterancyUpgrade"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="TyrantUnburrow,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="NodAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <ScoreKill value="175"/>
+        <SubgroupPriority value="4"/>
+        <MinimapRadius value="0.375"/>
+        <TacticalAIThink value="AIThinkWidowMineBurrowed"/>
+        <LeaderAlias value="CabalTyrant"/>
+        <HotkeyAlias value="CabalTyrant"/>
+        <SelectAlias value="CabalTyrant"/>
+        <SubgroupAlias value="CabalTyrant"/>
+        <EquipmentArray Weapon="WidowMineDummy"/>
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Always"/>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="CabalAvengerTank" parent="NodGround">
+        <FlagArray index="AIPressForwardDisabled" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="160"/>
+        <LifeMax value="160"/>
+        <LifeArmor value="1"/>
+        <Speed value="2.6992"/>
+        <Acceleration value="2.25"/>
+        <LateralAcceleration value="64"/>
+        <TurningRate value="360"/>
+        <Sight value="11"/>
+        <Food value="-2"/>
+        <CostResource index="Minerals" value="100"/>
+        <CostResource index="Vespene" value="25"/>
+        <RepairTime value="30"/>
+        <KillXP value="50"/>
+        <AbilArray Link="FlameMine"/>
+        <AbilArray Link="Warpable"/>
+        <BehaviorArray Link="CabalAvengerTankVeterancyUpgrade"/>
+        <WeaponArray Link="NodAvenger90mmCannons" Turret="SiegeTank"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="FlameMine" Type="AbilCmd" AbilCmd="FlameMine,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="NodAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.875"/>
+        <SeparationRadius value="1"/>
+        <InnerRadius value="0.875"/>
+        <CargoSize value="4"/>
+        <ScoreMake value="125"/>
+        <ScoreKill value="125"/>
+        <SubgroupPriority value="13"/>
+        <MinimapRadius value="1"/>
+        <TacticalAI value="SiegeTank"/>
+        <AIEvalFactor value="1.5"/>
+        <GlossaryPriority value="130"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="StealthTank" parent="NodGround">
+        <FlagArray index="Cloaked" value="1"/>
+        <FlagArray index="AIPressForwardDisabled" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="150"/>
+        <LifeMax value="150"/>
+        <LifeArmor value="1"/>
+        <Speed value="3"/>
+        <Acceleration value="3"/>
+        <LateralAcceleration value="64"/>
+        <TurningRate value="360"/>
+        <Sight value="11"/>
+        <Food value="-2"/>
+        <CostResource index="Minerals" value="100"/>
+        <CostResource index="Vespene" value="100"/>
+        <RepairTime value="30"/>
+        <KillXP value="45"/>
+        <AbilArray Link="GhostHoldFire"/>
+        <AbilArray Link="GhostWeaponsFree"/>
+        <!--        <WeaponArray Link="NodTwlightStealthRocket" Turret="SiegeTank"/>-->
+        <WeaponArray Link="NodStealthRocket" Turret="SiegeTank"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="GhostHoldFire" Type="AbilCmd" AbilCmd="GhostHoldFire,Execute" Row="1" Column="2"/>
+            <LayoutButtons Face="WeaponsFree" Type="AbilCmd" AbilCmd="GhostWeaponsFree,Execute" Row="1" Column="3"/>
+            <LayoutButtons Face="NodAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.875"/>
+        <SeparationRadius value="1"/>
+        <InnerRadius value="0.875"/>
+        <CargoSize value="4"/>
+        <ScoreMake value="200"/>
+        <ScoreKill value="200"/>
+        <SubgroupPriority value="13"/>
+        <MinimapRadius value="1"/>
+        <TacticalAI value="SiegeTank"/>
+        <AIEvalFactor value="1.5"/>
+        <GlossaryPriority value="130"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <BehaviorArray Link="DistortAB"/>
+        <BehaviorArray Link="Tech2"/>
+        <BehaviorArray Link="StealthTankVeterancyUpgrade"/>
+        <BehaviorArray Link="CloakSpecter"/>
+        <PushPriority value="15"/>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="CabalSpider" parent="NodGround">
+        <FlagArray index="AISplash" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="120"/>
+        <LifeMax value="120"/>
+        <Speed value="4.25"/>
+        <Acceleration value="4.25"/>
+        <LateralAcceleration value="46"/>
+        <StationaryTurningRate value="1499.9414"/>
+        <Sight value="10"/>
+        <Food value="-1.5"/>
+        <CostResource index="Minerals" value="100"/>
+        <RepairTime value="30"/>
+        <KillXP value="30"/>
+        <AbilArray Link="NodDeepBurrow"/>
+        <WeaponArray Link="SpiderWeapon"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="NodDeepBurrow" Type="AbilCmd" AbilCmd="NodDeepBurrow,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="NodAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.625"/>
+        <SeparationRadius value="0.625"/>
+        <InnerRadius value="0.5"/>
+        <CargoSize value="1"/>
+        <ScoreMake value="100"/>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="8"/>
+        <MinimapRadius value="0.625"/>
+        <GlossaryPriority value="80"/>
+        <BehaviorArray Link="CabalSpiderVeterancyUpgrade"/>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="CabalAfterShock" parent="NodGround">
+        <FlagArray index="AIPressForwardDisabled" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Massive" value="1"/>
+        <LifeStart value="500"/>
+        <LifeMax value="500"/>
+        <LifeArmor value="1"/>
+        <Speed value="1.8984"/>
+        <Acceleration value="1.875"/>
+        <LateralAcceleration value="64"/>
+        <TurningRate value="360"/>
+        <Sight value="11"/>
+        <Food value="-6"/>
+        <CostResource index="Minerals" value="300"/>
+        <CostResource index="Vespene" value="300"/>
+        <RepairTime value="45"/>
+        <KillXP value="50"/>
+        <AbilArray Link="NodSpawnTib"/>
+        <BehaviorArray Link="NodSpawnTibSmallOnDeath"/>
+        <BehaviorArray Link="EarthquakeSearch"/>
+        <BehaviorArray Link="CabalAfterShockVeterancyUpgrade"/>
+        <WeaponArray Link="AftershockWeapon"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="NodSpawnTib" Type="AbilCmd" AbilCmd="NodSpawnTib,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="NodAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.875"/>
+        <SeparationRadius value="1"/>
+        <InnerRadius value="0.875"/>
+        <CargoSize value="4"/>
+        <ScoreMake value="600"/>
+        <ScoreKill value="600"/>
+        <SubgroupPriority value="13"/>
+        <MinimapRadius value="1"/>
+        <TacticalAI value="SiegeTank"/>
+        <AIEvalFactor value="1.5"/>
+        <GlossaryPriority value="130"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <PushPriority value="20"/>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="CabalUnderminer" parent="NodGround">
+        <FlagArray index="AIPressForwardDisabled" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Massive" value="1"/>
+        <LifeStart value="300"/>
+        <LifeMax value="300"/>
+        <LifeArmor value="1"/>
+        <Speed value="1.8984"/>
+        <LateralAcceleration value="64"/>
+        <TurningRate value="360"/>
+        <Sight value="11"/>
+        <Food value="-5"/>
+        <CostResource index="Minerals" value="250"/>
+        <CostResource index="Vespene" value="200"/>
+        <RepairTime value="45"/>
+        <KillXP value="50"/>
+        <BehaviorArray Link="Tech3"/>
+        <BehaviorArray Link="CabalUnderminerVeterancyUpgrade"/>
+        <WeaponArray Link="UnderminerWeapon"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="NodAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.9375"/>
+        <SeparationRadius value="1"/>
+        <InnerRadius value="0.9375"/>
+        <CargoSize value="8"/>
+        <ScoreMake value="450"/>
+        <ScoreKill value="450"/>
+        <SubgroupPriority value="13"/>
+        <MinimapRadius value="1"/>
+        <TacticalAI value="SiegeTank"/>
+        <AIEvalFactor value="1.5"/>
+        <GlossaryPriority value="130"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <PushPriority value="19"/>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="CabalMarauder" parent="NodGround">
+        <FlagArray index="AISplash" value="1"/>
+        <PushPriority value="12"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="150"/>
+        <LifeMax value="150"/>
+        <Speed value="3.5"/>
+        <Acceleration value="3.5"/>
+        <LateralAcceleration value="46"/>
+        <StationaryTurningRate value="1499.9414"/>
+        <Sight value="10"/>
+        <Food value="-3"/>
+        <CostResource index="Minerals" value="125"/>
+        <RepairTime value="30"/>
+        <KillXP value="30"/>
+        <BehaviorArray Link="CabalMarauderVeterancyUpgrade"/>
+        <WeaponArray Link="CabalMarauderWeapon" Turret="Hellion"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="NodAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.625"/>
+        <SeparationRadius value="0.625"/>
+        <InnerRadius value="0.5"/>
+        <CargoSize value="4"/>
+        <ScoreMake value="275"/>
+        <ScoreKill value="275"/>
+        <SubgroupPriority value="8"/>
+        <MinimapRadius value="0.625"/>
+        <GlossaryPriority value="80"/>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="NodAvatar" parent="NodGround">
+        <FlagArray index="TurnBeforeMove" value="1"/>
+        <FlagArray index="AIPressForwardDisabled" value="1"/>
+        <PushPriority value="30"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Massive" value="1"/>
+        <LifeStart value="600"/>
+        <LifeMax value="600"/>
+        <LifeArmor value="2"/>
+        <Speed value="1.75"/>
+        <LateralAcceleration value="64"/>
+        <StationaryTurningRate value="119.8828"/>
+        <TurningRate value="119.8828"/>
+        <Sight value="11"/>
+        <Food value="-3"/>
+        <CostResource index="Minerals" value="300"/>
+        <CostResource index="Vespene" value="200"/>
+        <RepairTime value="45"/>
+        <KillXP value="50"/>
+        <BehaviorArray Link="Tech3"/>
+        <BehaviorArray Link="NodAvatarVeterancyUpgrade"/>
+        <WeaponArray Link="NodAvatar90mmCannons"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="NodGideonHolyOneTaunt" Type="AbilCmd" AbilCmd="NodGideonHolyOneTaunt,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="NodAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="1"/>
+        <SeparationRadius value="1"/>
+        <InnerRadius value="1"/>
+        <CargoSize value="8"/>
+        <ScoreMake value="275"/>
+        <ScoreKill value="275"/>
+        <SubgroupPriority value="13"/>
+        <MinimapRadius value="1"/>
+        <TacticalAI value="SiegeTank"/>
+        <AIEvalFactor value="1.5"/>
+        <GlossaryPriority value="130"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <AbilArray Link="NodGideonHolyOneTaunt"/>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="CabalCenturion" parent="NodGround">
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="275"/>
+        <LifeMax value="275"/>
+        <Speed value="2.6875"/>
+        <LateralAcceleration value="115.1875"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Food value="-3"/>
+        <CostResource index="Minerals" value="125"/>
+        <CostResource index="Vespene" value="100"/>
+        <RepairTime value="33.3332"/>
+        <KillXP value="30"/>
+        <WeaponArray Link="CabalCenturionWeapon"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="NodAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.6875"/>
+        <SeparationRadius value="0.65"/>
+        <ScoreMake value="200"/>
+        <ScoreKill value="400"/>
+        <SubgroupPriority value="1"/>
+        <MinimapRadius value="0.65"/>
+        <GlossaryPriority value="100"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <BehaviorArray/>
+        <BehaviorArray Link="CabalCenturionShield"/>
+        <BehaviorArray Link="CabalCenturionVeterancyUpgrade"/>
+        <PushPriority value="15"/>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="CabalWidow" parent="NodGround">
+        <FlagArray index="TurnBeforeMove" value="1"/>
+        <FlagArray index="AIPressForwardDisabled" value="1"/>
+        <PushPriority value="30"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Massive" value="1"/>
+        <LifeStart value="600"/>
+        <LifeMax value="600"/>
+        <LifeArmor value="3"/>
+        <Speed value="2.25"/>
+        <Acceleration value="2.25"/>
+        <LateralAcceleration value="64"/>
+        <TurningRate value="360"/>
+        <Sight value="11"/>
+        <Food value="-3"/>
+        <CostResource index="Minerals" value="250"/>
+        <CostResource index="Vespene" value="175"/>
+        <RepairTime value="45"/>
+        <KillXP value="50"/>
+        <AbilArray Link="NodDeepBurrow"/>
+        <AbilArray Link="WidowTransport"/>
+        <AbilArray Link="CabalWidowWreckage"/>
+        <AbilArray Link="CabalWidowTrain"/>
+        <AbilArray Link="que5"/>
+        <BehaviorArray Link="SpiderCount2"/>
+        <BehaviorArray Link="SpiderCount3"/>
+        <BehaviorArray Link="SpiderCount4"/>
+        <BehaviorArray Link="SpiderCount5"/>
+        <BehaviorArray Link="SpiderCount6"/>
+        <BehaviorArray Link="WidowDontDie"/>
+        <BehaviorArray Link="Tech3"/>
+        <BehaviorArray Link="CabalWidowVeterancyUpgrade"/>
+        <WeaponArray Link="CabalWidowLaser" Turret="SiegeTank"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="NodDeepBurrow" Type="AbilCmd" AbilCmd="NodDeepBurrow,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="BunkerLoad" Type="AbilCmd" AbilCmd="WidowTransport,Load" Row="2" Column="2"/>
+            <LayoutButtons Face="BunkerUnloadAll" Type="AbilCmd" AbilCmd="WidowTransport,UnloadAll" Row="2" Column="3"/>
+            <LayoutButtons Face="NodAramUpgrade" Type="Passive" Row="1" Column="0"/>
+            <LayoutButtons Face="CabalSpider" Type="AbilCmd" AbilCmd="CabalWidowTrain,Train1" Row="2" Column="1"/>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="que5,CancelLast" Row="2" Column="4"/>
+        </CardLayouts>
+        <Radius value="0.875"/>
+        <SeparationRadius value="1"/>
+        <InnerRadius value="0.875"/>
+        <CargoSize value="8"/>
+        <ScoreMake value="275"/>
+        <ScoreKill value="275"/>
+        <SubgroupPriority value="13"/>
+        <MinimapRadius value="1"/>
+        <TacticalAI value="SiegeTank"/>
+        <AIEvalFactor value="1.5"/>
+        <GlossaryPriority value="130"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="CabalWidowWreckage" parent="NodGround">
+        <ReviveType value="Thor"/>
+        <Facing value="135"/>
+        <FlagArray index="Movable" value="0"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Massive" value="1"/>
+        <LifeStart value="100"/>
+        <LifeMax value="100"/>
+        <Speed value="1.875"/>
+        <LateralAcceleration value="46.0625"/>
+        <TurningRate value="360"/>
+        <Sight value="11"/>
+        <Food value="-6"/>
+        <CostResource index="Minerals" value="250"/>
+        <RepairTime value="60"/>
+        <AttackTargetPriority value="18"/>
+        <KillXP value="100"/>
+        <AbilArray Link="WidowReborn"/>
+        <WeaponArray Link="JavelinMissileLaunchers"/>
+        <WeaponArray Link="ThorsHammer"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="CabalWidowRebuiltfromWreckage" Type="AbilCmd" AbilCmd="WidowReborn,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="250mmStrikeCannons,Cancel" Row="2" Column="4"/>
+        </CardLayouts>
+        <Radius value="0.9375"/>
+        <SeparationRadius value="1"/>
+        <InnerRadius value="0.8125"/>
+        <ScoreMake value="500"/>
+        <ScoreKill value="500"/>
+        <SubgroupPriority value="2"/>
+        <MinimapRadius value="1"/>
+        <TacticalAIThink value="AIThinkThor"/>
+        <HotkeyAlias value="Thor"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="10"/>
+            <ChanceArray index="Idle" value="90"/>
+        </Fidget>
+        <TauntDuration index="Cheer" value="5"/>
+        <TauntDuration index="Dance" value="5"/>
+        <ReviveInfoBase>
+            <Charge Link="Thor/Revive"/>
+            <Cooldown Link="Thor/Revive"/>
+        </ReviveInfoBase>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="NodScorpion" parent="NodGround">
+        <DeathRevealDuration value="3"/>
+        <Race value="CABAL"/>
+        <FlagArray index="AlwaysThreatens" value="1"/>
+        <FlagArray index="AIThreatGround" value="1"/>
+        <FlagArray index="AIThreatAir" value="1"/>
+        <FlagArray index="AISplash" value="1"/>
+        <PushPriority value="15"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="200"/>
+        <LifeMax value="200"/>
+        <Acceleration value="2.8125"/>
+        <StationaryTurningRate value="2292.8906"/>
+        <Sight value="7"/>
+        <Food value="-3"/>
+        <CostResource index="Minerals" value="125"/>
+        <CostResource index="Vespene" value="100"/>
+        <RepairTime value="20"/>
+        <AttackTargetPriority value="19"/>
+        <AbilArray Link="ScorpionBurrow"/>
+        <AbilArray Link="NodDeepBurrow"/>
+        <BehaviorArray Link="NodScorpionVeterancyUpgrade"/>
+        <WeaponArray Link="NodScorpionLaser" Turret="SiegeTank"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="ScorpionBurrow,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="ScorpionUnburrow,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="NodDeepBurrow" Type="AbilCmd" AbilCmd="NodDeepBurrow,Execute" Row="2" Column="2"/>
+            <LayoutButtons Face="NodAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.875"/>
+        <CargoSize value="4"/>
+        <ScoreMake value="100"/>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="4"/>
+        <TacticalAIThink value="AIThinkWidowMine"/>
+        <GlossaryPriority value="129"/>
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Always"/>
+        <LeaderAlias value="NodScorpion"/>
+        <HotkeyAlias value="NodScorpion"/>
+        <SelectAlias value="NodScorpion"/>
+        <SubgroupAlias value="NodScorpion"/>
+    </CUnit>
+    <CUnit id="NodScorpionBurrow" parent="NodScorpion">
+        <FlagArray index="Cloaked" value="1"/>
+        <FlagArray index="Buried" value="1"/>
+        <Collide index="Small" value="0"/>
+        <Collide index="Burrow" value="1"/>
+        <Speed value="1"/>
+        <AbilArray index="3" Link="ScorpionUnburrow"/>
+        <TacticalAIThink value="AIThinkWidowMineBurrowed"/>
+    </CUnit>
+    <!--Infantry-->
+    <CUnit id="Devout" parent="NodGround">
+        <Collide index="Small" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <LifeStart value="55"/>
+        <LifeMax value="55"/>
+        <Speed value="2.25"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="10"/>
+        <Food value="-1"/>
+        <CostResource index="Minerals" value="50"/>
+        <RepairTime value="20"/>
+        <BehaviorArray Link="DevoutVeterancyUpgrade"/>
+        <WeaponArray Link="Devoutweapon"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="NodAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.375"/>
+        <CargoSize value="1"/>
+        <ScoreMake value="50"/>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="15"/>
+        <MinimapRadius value="0.375"/>
+        <TacticalAI value="Marine"/>
+        <GlossaryPriority value="31"/>
+        <AIEvaluateAlias value="Marine"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="Ascended" parent="NodGround">
+        <Collide index="Small" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <LifeStart value="65"/>
+        <LifeMax value="65"/>
+        <Speed value="2.25"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="10"/>
+        <Food value="-1"/>
+        <CostResource index="Minerals" value="50"/>
+        <CostResource index="Vespene" value="25"/>
+        <RepairTime value="20"/>
+        <WeaponArray Link="AscendedMissile"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="NodAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.375"/>
+        <CargoSize value="1"/>
+        <ScoreMake value="75"/>
+        <ScoreKill value="75"/>
+        <SubgroupPriority value="15"/>
+        <MinimapRadius value="0.375"/>
+        <TacticalAI value="Marine"/>
+        <GlossaryPriority value="31"/>
+        <AIEvaluateAlias value="Marine"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <BehaviorArray Link="AscendedVeterancyUpgrade"/>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="CabalHijacker" parent="NodGround">
+        <Race value="CABAL"/>
+        <FlagArray index="Cloaked" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <LifeStart value="60"/>
+        <LifeMax value="60"/>
+        <Speed value="2.25"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="10"/>
+        <Food value="-1"/>
+        <CostResource index="Minerals" value="75"/>
+        <CostResource index="Vespene" value="100"/>
+        <RepairTime value="20"/>
+        <AbilArray Link="CabalHijackerAttack"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="EMPCabalHijacker" Type="AbilCmd" AbilCmd="CabalHijackerAttack,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.375"/>
+        <CargoSize value="1"/>
+        <ScoreMake value="50"/>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="15"/>
+        <MinimapRadius value="0.375"/>
+        <TacticalAI value="Marine"/>
+        <GlossaryPriority value="31"/>
+        <AIEvaluateAlias value="Marine"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <BehaviorArray Link="PermanentlyCloaked"/>
+        <BehaviorArray Link="Detector12"/>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="CabalDominator" parent="NodGround">
+        <Race value="CABAL"/>
+        <FlagArray index="Hero" value="1"/>
+        <PushPriority value="20"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <LifeStart value="150"/>
+        <LifeMax value="150"/>
+        <LifeRegenRate value="2"/>
+        <Speed value="2.25"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="10"/>
+        <Food value="-3"/>
+        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Vespene" value="100"/>
+        <RepairTime value="20"/>
+        <AbilArray Link="NodDominateMachine"/>
+        <BehaviorArray Link="Tech3"/>
+        <BehaviorArray Link="NodCommandoVeterancyUpgrade"/>
+        <BehaviorArray Link="CloakNod"/>
+        <WeaponArray Link="NodCommandoWeaponUpgrade"/>
+        <WeaponArray Link="NodCommandoWeapon"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="DominationMechanical" Type="AbilCmd" AbilCmd="NodDominateMachine,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="NodAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.375"/>
+        <ScoreMake value="50"/>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="15"/>
+        <MinimapRadius value="0.375"/>
+        <TacticalAI value="Marine"/>
+        <GlossaryPriority value="31"/>
+        <AIEvaluateAlias value="Marine"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="Enlightened" parent="NodGround">
+        <Race value="CABAL"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <LifeStart value="80"/>
+        <LifeMax value="80"/>
+        <Speed value="2.25"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="10"/>
+        <Food value="-1"/>
+        <CostResource index="Minerals" value="50"/>
+        <RepairTime value="20"/>
+        <BehaviorArray Link="EnlightenedExplosion"/>
+        <BehaviorArray Link="EnlightenedVeterancyUpgrade"/>
+        <WeaponArray Link="EnlightenedWeapon"/>
+        <WeaponArray Link="NodEnlightenedLaser"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="NodAramUpgrade" Type="Passive" Row="1" Column="0"/>
+            <LayoutButtons Face="NodGenericAwakenBuggyEMP" Type="AbilCmd" AbilCmd="NodEMP7range,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.375"/>
+        <CargoSize value="1"/>
+        <ScoreMake value="75"/>
+        <ScoreKill value="75"/>
+        <SubgroupPriority value="15"/>
+        <MinimapRadius value="0.375"/>
+        <TacticalAI value="Marine"/>
+        <GlossaryPriority value="31"/>
+        <AIEvaluateAlias value="Marine"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+    </CUnit>
+    <CUnit id="NodEngineer" parent="NodGround">
+        <Race value="CABAL"/>
+        <FlagArray index="AIPressForwardDisabled" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <LifeStart value="100"/>
+        <LifeMax value="100"/>
+        <LifeRegenDelay value="10"/>
+        <LifeRegenRate value="2"/>
+        <Mover value="CliffJumper"/>
+        <Speed value="2.3984"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Food value="-1"/>
+        <CostResource index="Minerals" value="75"/>
+        <CostResource index="Vespene" value="75"/>
+        <RepairTime value="20"/>
+        <KillXP value="20"/>
+        <AbilArray Link="NodGideonEngineerheal"/>
+        <BehaviorArray Link="ReaperJump"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="GDIHeal" Type="AbilCmd" AbilCmd="NodGideonEngineerheal,Execute" Row="2" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.375"/>
+        <CargoSize value="1"/>
+        <ScoreMake value="150"/>
+        <ScoreKill value="150"/>
+        <SubgroupPriority value="7"/>
+        <MinimapRadius value="0.375"/>
+        <TacticalAI value="Reaper"/>
+        <AIEvalFactor value="1.5"/>
+        <GlossaryPriority value="50"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+    </CUnit>
+    <CUnit id="BlackHand" parent="NodGround">
+        <PushPriority value="11"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <LifeStart value="125"/>
+        <LifeMax value="125"/>
+        <Speed value="2.25"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="10"/>
+        <Food value="-2"/>
+        <CostResource index="Minerals" value="75"/>
+        <CostResource index="Vespene" value="25"/>
+        <RepairTime value="20"/>
+        <AbilArray Link="TibBomb"/>
+        <BehaviorArray Link="BlackHandLeadergive"/>
+        <BehaviorArray Link="Tech2"/>
+        <BehaviorArray Link="BlackHandVeterancyUpgrade"/>
+        <WeaponArray Link="BlackHandFlamethrower"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="TibBomb" Type="AbilCmd" AbilCmd="TibBomb,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="NodAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.375"/>
+        <CargoSize value="1"/>
+        <ScoreMake value="100"/>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="15"/>
+        <MinimapRadius value="0.375"/>
+        <TacticalAI value="Marine"/>
+        <GlossaryPriority value="31"/>
+        <AIEvaluateAlias value="Marine"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="CabalReaper" parent="NodGround">
+        <Race value="CABAL"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <LifeStart value="150"/>
+        <LifeMax value="150"/>
+        <Speed value="2.25"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="10"/>
+        <Food value="-2"/>
+        <CostResource index="Minerals" value="75"/>
+        <CostResource index="Vespene" value="45"/>
+        <RepairTime value="20"/>
+        <AbilArray Link="ObeliskCharge"/>
+        <AbilArray Link="NodTwlightReaperGuerrillaCharge"/>
+        <WeaponArray Link="CabalReaperWeapon"/>
+        <WeaponArray Link="CabalReaperWeaponUpgrade"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="NodTwlightReaperGuerrillaCharge" Type="AbilCmd" AbilCmd="NodTwlightReaperGuerrillaCharge,Execute" Row="2" Column="0"/>
+            <!--            <LayoutButtons Face="NodEnergize" Type="AbilCmd" AbilCmd="ObeliskCharge,Execute" Row="2" Column="0"/>-->
+            <LayoutButtons Face="NodAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.375"/>
+        <ScoreMake value="100"/>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="15"/>
+        <MinimapRadius value="0.375"/>
+        <TacticalAI value="Marine"/>
+        <GlossaryPriority value="31"/>
+        <AIEvaluateAlias value="Marine"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <BehaviorArray Link="Tech2"/>
+        <BehaviorArray Link="CabalReaperVeterancyUpgrade"/>
+    </CUnit>
+    <CUnit id="HighConfessor" parent="NodGround">
+        <Collide index="Small" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Biological" value="1"/>
+        <LifeStart value="150"/>
+        <LifeMax value="150"/>
+        <Speed value="2.25"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="10"/>
+        <Food value="-2"/>
+        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Vespene" value="100"/>
+        <RepairTime value="20"/>
+        <WeaponArray Link="NodHCWeapon"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="NodAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.375"/>
+        <SeparationRadius value="0.375"/>
+        <InnerRadius value="0.375"/>
+        <ScoreMake value="50"/>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="15"/>
+        <MinimapRadius value="0.375"/>
+        <TacticalAI value="Marine"/>
+        <GlossaryPriority value="31"/>
+        <AIEvaluateAlias value="Marine"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <BehaviorArray Link="Tech3"/>
+        <BehaviorArray Link="HighConfessorVeterancyUpgrade"/>
+        <Race value="CABAL"/>
+    </CUnit>
+    <!--props-->
+    <CUnit id="FlameMine">
+        <Description value="Button/Tooltip/SpiderMineVulture"/>
+        <DeathRevealRadius value="3"/>
+        <Race value="CABAL"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="Cloaked" value="1"/>
+        <FlagArray index="Buried" value="1"/>
+        <FlagArray index="NoScore" value="1"/>
+        <FlagArray index="NoPortraitTalk" value="1"/>
+        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Collide index="Burrow" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Structure" value="1"/>
+        <LifeStart value="25"/>
+        <LifeMax value="25"/>
+        <LifeArmorName value="Unit/LifeArmorName/TerranVehiclePlating"/>
+        <Acceleration value="1000"/>
+        <StationaryTurningRate value="2292.8906"/>
+        <Sight value="4"/>
+        <CostResource index="Minerals" value="25"/>
+        <RepairTime value="33.3332"/>
+        <AbilArray Link="FlameMineAttack"/>
+        <CardLayouts>
+            <LayoutButtons Face="FlameMineAttack" Type="AbilCmd" AbilCmd="FlameMineAttack,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.125"/>
+        <SeparationRadius value="0"/>
+        <SubgroupPriority value="15"/>
+        <MinimapRadius value="0.25"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:CNC"/>
+        <TacticalAI value="SpiderMineVultureBurrowed"/>
+    </CUnit>
+    <!--aircraft-->
+    <CUnit id="CabalNodDropShip" parent="NodAir">
+        <Race value="CABAL"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="150"/>
+        <LifeMax value="150"/>
+        <LifeArmor value="1"/>
+        <Acceleration value="2.3125"/>
+        <StationaryTurningRate value="359.4726"/>
+        <TurningRate value="359.4726"/>
+        <Sight value="11"/>
+        <Food value="-2"/>
+        <CostResource index="Minerals" value="100"/>
+        <RepairTime value="10"/>
+        <KillXP value="40"/>
+        <AbilArray Link="NodCarryallTransport"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="NodCarryallLoad" Type="AbilCmd" AbilCmd="NodCarryall,Load" Row="2" Column="0"/>
+            <LayoutButtons Face="NodCarryallUnloadAll" Type="AbilCmd" AbilCmd="NodCarryall,UnloadAt" Row="2" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.75"/>
+        <SeparationRadius value="0.75"/>
+        <ScoreMake value="100"/>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="10"/>
+        <MinimapRadius value="0.75"/>
+        <LeaderAlias value=""/>
+    </CUnit>
+    <CUnit id="Scalpel" parent="NodAir">
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="100"/>
+        <LifeMax value="100"/>
+        <EnergyRegenRate value="0.5625"/>
+        <Speed value="3.75"/>
+        <Acceleration value="3.75"/>
+        <Sight value="8"/>
+        <Food value="-2"/>
+        <CostResource index="Minerals" value="50"/>
+        <CostResource index="Vespene" value="100"/>
+        <RepairTime value="16"/>
+        <KillXP value="50"/>
+        <AbilArray Link="healCNC"/>
+        <BehaviorArray Link="Detector11"/>
+        <BehaviorArray Link="ScavengingSystemsMechDeath"/>
+        <BehaviorArray Link="CloakDistortionField"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="GDIHeal" Type="AbilCmd" AbilCmd="healCNC,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.625"/>
+        <SeparationRadius value="0.625"/>
+        <ScoreMake value="150"/>
+        <ScoreKill value="150"/>
+        <SubgroupPriority value="14"/>
+        <MinimapRadius value="0.625"/>
+        <GlossaryPriority value="160"/>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="Medusa" parent="NodAir">
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Massive" value="1"/>
+        <LifeStart value="350"/>
+        <LifeMax value="350"/>
+        <LifeArmor value="3"/>
+        <Speed value="1.875"/>
+        <Acceleration value="1.875"/>
+        <Sight value="12"/>
+        <Food value="-6"/>
+        <CostResource index="Minerals" value="300"/>
+        <CostResource index="Vespene" value="200"/>
+        <RepairTime value="90"/>
+        <KillXP value="140"/>
+        <AbilArray Link="NodHealingField"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="Healingfield" Type="AbilCmd" AbilCmd="NodHealingField,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="NodAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="1.25"/>
+        <SeparationRadius value="1.25"/>
+        <ScoreMake value="650"/>
+        <ScoreKill value="650"/>
+        <SubgroupPriority value="16"/>
+        <MinimapRadius value="1.25"/>
+        <TacticalAIThink value="AIThinkBattleCruiser"/>
+        <AIEvalFactor value="0.9"/>
+        <Mass value="0.6"/>
+        <GlossaryPriority value="210"/>
+        <WeaponArray Link="MedusaWeaponS"/>
+        <BehaviorArray Link="Tech3"/>
+        <BehaviorArray Link="Detector11"/>
+        <BehaviorArray Link="MedusaVeterancyUpgrade"/>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="CabalSalamander" parent="NodAir">
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Massive" value="1"/>
+        <LifeStart value="350"/>
+        <LifeMax value="350"/>
+        <Speed value="2.25"/>
+        <Acceleration value="1.875"/>
+        <Sight value="12"/>
+        <Food value="-4"/>
+        <CostResource index="Minerals" value="325"/>
+        <CostResource index="Vespene" value="225"/>
+        <RepairTime value="70"/>
+        <KillXP value="140"/>
+        <AbilArray Link="LiquidTib"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="LiquidTib" Type="AbilCmd" AbilCmd="LiquidTib,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="NodAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="1.25"/>
+        <SeparationRadius value="1.25"/>
+        <ScoreMake value="550"/>
+        <ScoreKill value="550"/>
+        <SubgroupPriority value="16"/>
+        <MinimapRadius value="1.25"/>
+        <TacticalAIThink value="AIThinkBattleCruiser"/>
+        <AIEvalFactor value="0.9"/>
+        <Mass value="0.6"/>
+        <GlossaryPriority value="210"/>
+        <BehaviorArray Link="CabalSalamanderWeaponSearch"/>
+        <BehaviorArray Link="Tech3"/>
+        <BehaviorArray Link="CabalSalamanderVeterancyUpgrade"/>
+        <WeaponArray Link="CabalSalamanderRocket"/>
+        <WeaponArray Link="CabalSalamanderRocket2"/>
+        <WeaponArray Link="CabalSalamanderRocket3"/>
+        <WeaponArray Link="CabalSalamanderRocket4"/>
+        <WeaponArray Link="SalmanderFlamethrower"/>
+        <SpeedMaximum value="1.875"/>
+        <Deceleration value="1"/>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="CabalBasilisk" parent="NodAir">
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Massive" value="1"/>
+        <LifeStart value="150"/>
+        <LifeMax value="150"/>
+        <LifeArmor value="1"/>
+        <Speed value="1.875"/>
+        <Acceleration value="1.875"/>
+        <Sight value="12"/>
+        <Food value="-4"/>
+        <CostResource index="Minerals" value="300"/>
+        <CostResource index="Vespene" value="200"/>
+        <RepairTime value="35"/>
+        <KillXP value="140"/>
+        <AbilArray Link="NodStasisField"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="NodStasisField" Type="AbilCmd" AbilCmd="NodStasisField,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="NodAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="1.25"/>
+        <SeparationRadius value="1.25"/>
+        <ScoreMake value="500"/>
+        <ScoreKill value="500"/>
+        <SubgroupPriority value="16"/>
+        <MinimapRadius value="1.25"/>
+        <TacticalAIThink value="AIThinkBattleCruiser"/>
+        <AIEvalFactor value="0.9"/>
+        <Mass value="0.6"/>
+        <GlossaryPriority value="210"/>
+        <WeaponArray Link="CabalBasiliskWeapon"/>
+        <BehaviorArray Link="Tech3"/>
+        <BehaviorArray Link="CabalBasiliskVeterancyUpgrade"/>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="CabalAscender" parent="NodAir">
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Massive" value="1"/>
+        <LifeStart value="150"/>
+        <LifeMax value="150"/>
+        <LifeArmor value="1"/>
+        <Speed value="1.875"/>
+        <Acceleration value="1.875"/>
+        <Sight value="12"/>
+        <Food value="-4"/>
+        <CostResource index="Minerals" value="300"/>
+        <CostResource index="Vespene" value="200"/>
+        <RepairTime value="35"/>
+        <KillXP value="140"/>
+        <AbilArray Link="NodStasisField"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="NodStasisField" Type="AbilCmd" AbilCmd="NodStasisField,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="NodAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="1.25"/>
+        <SeparationRadius value="1.25"/>
+        <ScoreMake value="500"/>
+        <ScoreKill value="500"/>
+        <SubgroupPriority value="16"/>
+        <MinimapRadius value="1.25"/>
+        <TacticalAIThink value="AIThinkBattleCruiser"/>
+        <AIEvalFactor value="0.9"/>
+        <Mass value="0.6"/>
+        <GlossaryPriority value="210"/>
+        <WeaponArray Link="CabalBasiliskWeapon"/>
+        <BehaviorArray Link="Tech3"/>
+        <BehaviorArray Link="CabalBasiliskVeterancyUpgrade"/>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="Bane" parent="NodAir">
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="100"/>
+        <LifeMax value="100"/>
+        <Speed value="3.75"/>
+        <Acceleration value="3.75"/>
+        <Sight value="8"/>
+        <Food value="-2"/>
+        <CostResource index="Minerals" value="100"/>
+        <CostResource index="Vespene" value="50"/>
+        <RepairTime value="42"/>
+        <KillXP value="50"/>
+        <BehaviorArray Link="ScavengingSystemsMechDeath"/>
+        <BehaviorArray Link="CloakDistortionField"/>
+        <BehaviorArray Link="CloakVenom"/>
+        <BehaviorArray Link="VenomVeterancyUpgrade"/>
+        <WeaponArray Link="VenomMissile"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="NodAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.625"/>
+        <SeparationRadius value="0.625"/>
+        <ScoreMake value="150"/>
+        <ScoreKill value="150"/>
+        <SubgroupPriority value="14"/>
+        <MinimapRadius value="0.625"/>
+        <GlossaryPriority value="160"/>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="Cobra" parent="NodAir">
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="140"/>
+        <LifeMax value="140"/>
+        <Speed value="3.75"/>
+        <Acceleration value="3.75"/>
+        <Sight value="8"/>
+        <Food value="-2"/>
+        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Vespene" value="100"/>
+        <RepairTime value="18"/>
+        <KillXP value="50"/>
+        <BehaviorArray Link="ScavengingSystemsMechDeath"/>
+        <BehaviorArray Link="CloakDistortionField"/>
+        <BehaviorArray Link="CloakCobra"/>
+        <BehaviorArray Link="CobraVeterancyUpgrade"/>
+        <WeaponArray Link="CobraWeapon"/>
+        <WeaponArray Link="NodCobraLaser"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="NodAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.625"/>
+        <SeparationRadius value="0.625"/>
+        <ScoreMake value="250"/>
+        <ScoreKill value="250"/>
+        <SubgroupPriority value="14"/>
+        <MinimapRadius value="0.625"/>
+        <GlossaryPriority value="160"/>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="NodInterceptor">
+        <Description value="Button/Tooltip/NodInterceptorUnit"/>
+        <DeathRevealRadius value="3"/>
+        <Race value="CABAL"/>
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="Unselectable" value="1"/>
+        <FlagArray index="UseLineOfSight" value="1"/>
+        <FlagArray index="AILifetime" value="1"/>
+        <FlagArray index="ArmySelect" value="1"/>
+        <EditorFlags index="NoPlacement" value="1"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="FlyingEscorts" value="1"/>
+        <DefaultAcquireLevel value="None"/>
+        <Response value="Nothing"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="30"/>
+        <LifeMax value="30"/>
+        <LifeArmorName value="Unit/LifeArmorName/ProtossPlating"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <Mover value="Fly"/>
+        <Speed value="7.5"/>
+        <Acceleration value="1000"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
+        <Sight value="7"/>
+        <Height value="3.25"/>
+        <VisionHeight value="4"/>
+        <CostCategory value="Army"/>
+        <CostResource index="Minerals" value="15"/>
+        <AttackTargetPriority value="20"/>
+        <DamageDealtXP value="1"/>
+        <DamageTakenXP value="1"/>
+        <KillXP value="5"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="move"/>
+        <WeaponArray Link="InterceptorBeamNod"/>
+        <CardLayouts>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+        </CardLayouts>
+        <Radius value="0.25"/>
+        <SeparationRadius value="0.25"/>
+        <ScoreMake value="25"/>
+        <ScoreKill value="25"/>
+        <SubgroupPriority value="19"/>
+        <MinimapRadius value="0.25"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:CNC"/>
+        <AIEvalFactor value="0"/>
+        <Mass value="0.2"/>
+        <GlossaryCategory value="Unit/Category/ProtossUnits"/>
+        <GlossaryPriority value="180"/>
+        <GlossaryAlias value="Interceptor"/>
+        <RepairTime value="3"/>
+    </CUnit>
+    <CUnit id="CabalLeviathan" parent="NodAir">
+        <FlagArray index="Turnable" value="0"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Massive" value="1"/>
+        <LifeStart value="600"/>
+        <LifeMax value="600"/>
+        <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
+        <Speed value="1.1054"/>
+        <Acceleration value="1.375"/>
+        <Deceleration value="1"/>
+        <Sight value="14"/>
+        <Food value="-10"/>
+        <CostResource index="Minerals" value="400"/>
+        <CostResource index="Vespene" value="400"/>
+        <KillXP value="50"/>
+        <AbilArray Link="HangarQueue5"/>
+        <AbilArray Link="CabalLeviathanHangar"/>
+        <!--        <BehaviorArray Link="NodSpawnTibSmallOnDeath"/>-->
+        <BehaviorArray Link="LeviathanWeaponSearch"/>
+        <BehaviorArray Link="Tech3"/>
+        <BehaviorArray Link="CabalLeviathanVeterancyUpgrade"/>
+        <WeaponArray Link="LeviathanMissile1"/>
+        <WeaponArray Link="LeviathanMissile2"/>
+        <WeaponArray Link="LeviathanMissile3"/>
+        <WeaponArray Link="NodLaserCannon"/>
+        <WeaponArray Link="InterceptorLaunchNod"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="InterceptorNod" Type="AbilCmd" AbilCmd="CabalLeviathanHangar,Ammo1" Row="2" Column="0"/>
+            <LayoutButtons Face="InterceptorLaunch" Type="Passive" AbilCmd="launchinterceptor,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="NodAramUpgrade" Type="Passive" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="1.375"/>
+        <SeparationRadius value="1.375"/>
+        <ScoreMake value="600"/>
+        <ScoreKill value="600"/>
+        <SubgroupPriority value="18"/>
+        <MinimapRadius value="1.375"/>
+        <TacticalAIThink value="AIThinkMothership"/>
+        <AIEvalFactor value="0.8"/>
+        <GlossaryPriority value="190"/>
+        <RepairTime value="30"/>
+        <Race value="CABAL"/>
+        <LifeArmorLevel value="3"/>
+    </CUnit>
+
+    <!--structures-->
+    <CUnit id="CabalControlNode" parent="NodStructure">
+        <BehaviorArray Link="Deployable"/>
+        <BehaviorArray Link="TerranBuildingBurnDown"/>
+        <Facing value="225"/>
+        <LifeStart value="500"/>
+        <LifeMax value="500"/>
+        <CostResource index="Minerals" value="100"/>
+        <RepairTime value="30"/>
+        <ScoreMake value="100"/>
+        <ScoreKill value="100"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <Food value="12"/>
+        <Race value="CABAL"/>
+        <CostCategory value="Economy"/>
+        <Radius value="1.25"/>
+        <SeparationRadius value="1.25"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="1.25"/>
+        <TacticalAI value="SupplyDepot"/>
+        <GlossaryPriority value="248"/>
+    </CUnit>
+    <CUnit id="CabalOutpost" parent="NodStructure">
+        <Facing value="225"/>
+        <LifeStart value="400"/>
+        <LifeMax value="400"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <CostCategory value="Economy"/>
+        <CostResource index="Minerals" value="100"/>
+        <RepairTime value="30"/>
+        <BehaviorArray Link="TerranBuildingBurnDown"/>
+        <BehaviorArray Link="CNCconstructionRadius"/>
+        <Radius value="1.25"/>
+        <SeparationRadius value="1.25"/>
+        <ScoreMake value="100"/>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="1.25"/>
+        <TacticalAI value="SupplyDepot"/>
+        <GlossaryPriority value="248"/>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="CabalTunnel" parent="NodStructure">
+        <BehaviorArray Link="Deployable"/>
+        <Facing value="315"/>
+        <LifeStart value="500"/>
+        <LifeMax value="500"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <Sight value="10"/>
+        <CostResource index="Minerals" value="75"/>
+        <CostResource index="Vespene" value="75"/>
+        <RepairTime value="34"/>
+        <AbilArray Link="Rally"/>
+        <AbilArray Link="CabalTunnelTransport"/>
+        <AbilArray Link="stop"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="SetRallyPoint" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="1" Column="4"/>
+            <LayoutButtons Face="Load" Type="AbilCmd" AbilCmd="NydusWormTransport,Load" Row="2" Column="0"/>
+            <LayoutButtons Face="NydusCanalUnloadAll" Type="AbilCmd" AbilCmd="NydusWormTransport,UnloadAll" Row="2" Column="1"/>
+        </CardLayouts>
+        <Radius value="1.625"/>
+        <SeparationRadius value="1.625"/>
+        <Footprint value="Footprint2x2Contour"/>
+        <PlacementFootprint value="Footprint2x2"/>
+        <ScoreMake value="150"/>
+        <ScoreKill value="150"/>
+        <MinimapRadius value="1.625"/>
+        <GlossaryPriority value="261"/>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="CabalBomberPlatform" parent="NodStructure">
+        <Race value="CABAL"/>
+        <BehaviorArray Link="Deployable"/>
+        <Facing value="315"/>
+        <LifeStart value="600"/>
+        <LifeMax value="600"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Vespene" value="100"/>
+        <RepairTime value="18"/>
+        <AbilArray Link="CarrierHangarNod"/>
+        <AbilArray Link="VertigoAttack"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="1" Column="4"/>
+            <LayoutButtons Face="NodVertigo" Type="AbilCmd" AbilCmd="CarrierHangarNod,Ammo1" Row="0" Column="0"/>
+            <LayoutButtons Face="VertigoAttack" Type="AbilCmd" AbilCmd="VertigoAttack,Execute" Row="0" Column="4"/>
+        </CardLayouts>
+        <Radius value="1.625"/>
+        <SeparationRadius value="1.625"/>
+        <ScoreMake value="250"/>
+        <ScoreKill value="250"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="1.625"/>
+        <TacticalAI value="Starport"/>
+        <GlossaryPriority value="329"/>
+        <TechTreeProducedUnitArray value="VikingFighter"/>
+        <TechTreeProducedUnitArray value="Medivac"/>
+        <TechTreeProducedUnitArray value="Liberator"/>
+        <TechTreeProducedUnitArray value="Raven"/>
+        <TechTreeProducedUnitArray value="Banshee"/>
+        <TechTreeProducedUnitArray value="Battlecruiser"/>
+    </CUnit>
+    <CUnit id="CabalGrandTemple" parent="NodStructure">
+        <Race value="CABAL"/>
+        <LifeStart value="750"/>
+        <LifeMax value="750"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Vespene" value="150"/>
+        <RepairTime value="10"/>
+        <BehaviorArray Link="Deployable"/>
+        <Radius value="1.25"/>
+        <SeparationRadius value="1.25"/>
+        <ScoreMake value="300"/>
+        <ScoreKill value="300"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="1.75"/>
+        <GlossaryPriority value="256"/>
+    </CUnit>
+    <CUnit id="CabalWeaponsLaboratory" parent="NodStructure">
+        <Race value="CABAL"/>
+        <LifeStart value="750"/>
+        <LifeMax value="750"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Vespene" value="150"/>
+        <RepairTime value="10"/>
+        <BehaviorArray Link="Deployable"/>
+        <Radius value="1.25"/>
+        <SeparationRadius value="1.25"/>
+        <ScoreMake value="300"/>
+        <ScoreKill value="300"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="1.75"/>
+        <GlossaryPriority value="256"/>
+    </CUnit>
+    <CUnit id="CabalShrine" parent="NodStructure">
+        <Race value="CABAL"/>
+        <LifeStart value="750"/>
+        <LifeMax value="750"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Vespene" value="150"/>
+        <RepairTime value="10"/>
+        <BehaviorArray Link="Deployable"/>
+        <Radius value="1.25"/>
+        <SeparationRadius value="1.25"/>
+        <ScoreMake value="300"/>
+        <ScoreKill value="300"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="1.75"/>
+        <GlossaryPriority value="256"/>
+    </CUnit>
+    <CUnit id="CabalPyramid" parent="NodStructure">
+        <Race value="CABAL"/>
+        <LifeStart value="750"/>
+        <LifeMax value="750"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Vespene" value="150"/>
+        <RepairTime value="10"/>
+        <BehaviorArray Link="Deployable"/>
+        <Radius value="1.25"/>
+        <SeparationRadius value="1.25"/>
+        <ScoreMake value="300"/>
+        <ScoreKill value="300"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="1.75"/>
+        <GlossaryPriority value="256"/>
+    </CUnit>
+    <CUnit id="CabalMonitoringStation" parent="NodStructure">
+        <Race value="CABAL"/>
+        <BehaviorArray Link="Deployable"/>
+        <BehaviorArray Link="TerranBuildingBurnDown"/>
+        <LifeStart value="750"/>
+        <LifeMax value="750"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <CostResource index="Minerals" value="125"/>
+        <RepairTime value="18"/>
+        <Radius value="1.25"/>
+        <SeparationRadius value="1.25"/>
+        <ScoreMake value="125"/>
+        <ScoreKill value="125"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="1.75"/>
+        <GlossaryPriority value="256"/>
+    </CUnit>
+
+    <CUnit id="CabalFlameColumn" parent="NodStructure">
+        <BehaviorArray Link="Deployable"/>
+        <FlagArray index="AIDefense" value="1"/>
+        <LifeStart value="500"/>
+        <LifeMax value="500"/>
+        <Sight value="11"/>
+        <CostResource index="Minerals" value="200"/>
+        <CostResource index="Vespene" value="150"/>
+        <RepairTime value="25"/>
+        <AttackTargetPriority value="19"/>
+        <WeaponArray Link="NodArtilleryStructure" Turret="SiegeTankSieged"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="stop"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.75"/>
+        <SeparationRadius value="0.75"/>
+        <Footprint value="Footprint2x2Contour"/>
+        <PlacementFootprint value="Footprint2x2"/>
+        <ScoreMake value="100"/>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="0.75"/>
+        <GlossaryPriority value="310"/>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="CabalIncinerator" parent="NodStructure">
+        <BehaviorArray Link="Deployable"/>
+        <FlagArray index="AIDefense" value="1"/>
+        <LifeStart value="550"/>
+        <LifeMax value="550"/>
+        <Sight value="11"/>
+        <CostResource index="Minerals" value="300"/>
+        <CostResource index="Vespene" value="300"/>
+        <RepairTime value="25"/>
+        <AttackTargetPriority value="19"/>
+        <WeaponArray Link="CabalIncineratorWeapon" Turret="SiegeTankSieged"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="stop"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+        </CardLayouts>
+        <Radius value="0.75"/>
+        <SeparationRadius value="0.75"/>
+        <ScoreMake value="100"/>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="0.75"/>
+        <GlossaryPriority value="310"/>
+        <Race value="CABAL"/>
+    </CUnit>
+    <CUnit id="CabalMissilePodO" parent="NodStructure">
+        <Race value="CABAL"/>
+        <BehaviorArray Link="Deployable"/>
+        <BehaviorArray Link="Detector11"/>
+        <FlagArray index="AIDefense" value="1"/>
+        <LifeStart value="350"/>
+        <LifeMax value="350"/>
+        <Sight value="7"/>
+        <CostResource index="Minerals" value="150"/>
+        <RepairTime value="30"/>
+        <Radius value="0.75"/>
+        <SeparationRadius value="0.75"/>
+        <Footprint value="Footprint2x2Contour"/>
+        <PlacementFootprint value="Footprint2x2"/>
+        <ScoreMake value="125"/>
+        <ScoreKill value="125"/>
+        <SubgroupPriority value="12"/>
+        <MinimapRadius value="0.75"/>
+        <GlossaryPriority value="230"/>
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Always"/>
+        <WeaponArray Link="NodHailstormMissilePods" Turret="SiegeTank"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="stop"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Detector" Type="Passive" Behavior="DistortionSensors" Row="2" Column="3"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="CabalMissilePodBurrow,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="CabalMissilePodcastUnburrow,Execute" Row="2" Column="2"/>
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="CabalMissilePod" parent="CabalMissilePodO">
+        <AbilArray Link="CabalMissilePodBurrow"/>
+        <BehaviorArray Link="CabalMissilePodBurrow"/>
+    </CUnit>
+    <CUnit id="CabalMissilePodUG" parent="CabalMissilePod">
+        <FlagArray index="Buried" value="1"/>
+        <AbilArray Link="CabalMissilePodcastUnburrow"/>
+    </CUnit>
+    <CUnit id="NodTurretO" parent="NodStructure">
+        <Race value="CABAL"/>
+        <BehaviorArray Link="Deployable"/>
+        <BehaviorArray Link="NodTurretBurrow"/>
+        <BehaviorArray Link="Detector11"/>
+        <FlagArray index="AIDefense" value="1"/>
+        <LifeStart value="250"/>
+        <LifeMax value="250"/>
+        <Sight value="7"/>
+        <CostResource index="Minerals" value="100"/>
+        <RepairTime value="25"/>
+        <WeaponArray Link="NodTurretWeaponO" Turret="SiegeTank"/>
+        <Radius value="0.75"/>
+        <SeparationRadius value="0.75"/>
+        <Footprint value="Footprint2x2Contour"/>
+        <PlacementFootprint value="Footprint2x2"/>
+        <ScoreMake value="50"/>
+        <ScoreKill value="150"/>
+        <SubgroupPriority value="12"/>
+        <MinimapRadius value="0.75"/>
+        <GlossaryPriority value="230"/>
+        <KillDisplay value="Always"/>
+        <RankDisplay value="Always"/>
+        <AbilArray Link="attack"/>
+        <AbilArray Link="stop"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Detector" Type="Passive" Behavior="DistortionSensors" Row="2" Column="3"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="BurrowDown" Type="AbilCmd" AbilCmd="NodTurretBurrow,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="BurrowUp" Type="AbilCmd" AbilCmd="NodTurretUnburrow,Execute" Row="2" Column="2"/>
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="NodTurret" parent="NodTurretO">
+        <AbilArray Link="NodTurretBurrow"/>
+        <BehaviorArray Link="NodTurretBurrow"/>
+    </CUnit>
+    <CUnit id="NodTurretUG" parent="NodTurretO">
+        <FlagArray index="Buried" value="1"/>
+        <AbilArray Link="NodTurretUnburrow"/>
+    </CUnit>
+    <CUnit id="CabalObeliskOfLife" parent="NodStructure">
+        <Race value="CABAL"/>
+        <BehaviorArray Link="Deployable"/>
+        <FlagArray index="AIDefense" value="1"/>
+        <LifeStart value="350"/>
+        <LifeMax value="350"/>
+        <Sight value="11"/>
+        <CostResource index="Minerals" value="100"/>
+        <CostResource index="Vespene" value="50"/>
+        <RepairTime value="25"/>
+        <AttackTargetPriority value="19"/>
+        <AbilArray Link="healCNCObelisk"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="MedicHealObelisk" Type="AbilCmd" AbilCmd="healCNCObelisk,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.75"/>
+        <SeparationRadius value="0.75"/>
+        <Footprint value="Footprint2x2Contour"/>
+        <PlacementFootprint value="Footprint2x2"/>
+        <ScoreMake value="150"/>
+        <ScoreKill value="150"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="0.75"/>
+        <GlossaryPriority value="310"/>
+    </CUnit>
+    <CUnit id="CabalShieldGenerator" parent="NodStructure">
+        <Race value="CABAL"/>
+        <BehaviorArray Link="Deployable"/>
+        <BehaviorArray Link="CabalShieldGenerator"/>
+        <Facing value="315"/>
+        <LifeStart value="300"/>
+        <LifeMax value="300"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <RepairTime value="35"/>
+        <Radius value="1.25"/>
+        <SeparationRadius value="1.25"/>
+        <Footprint value="Footprint2x2"/>
+        <PlacementFootprint value="Footprint2x2"/>
+        <ScoreMake value="125"/>
+        <ScoreKill value="125"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="1.25"/>
+        <GlossaryPriority value="256"/>
+        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Vespene" value="150"/>
+    </CUnit>
+
+
+    <CUnit default="1" id="VertigoBase" parent="NodAir">
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="Unselectable" value="1"/>
+        <FlagArray index="Cloaked" value="1"/>
+        <FlagArray index="AILifetime" value="1"/>
+        <LifeStart value="200"/>
+        <LifeMax value="200"/>
+        <Sight value="6"/>
+        <Food value="-2"/>
+        <CostResource index="Minerals" value="100"/>
+        <CostResource index="Vespene" value="100"/>
+        <RepairTime value="42"/>
+        <KillXP value="50"/>
+        <BehaviorArray Link="VertigoVeterancyUpgrade"/>
+        <CardLayouts/>
+        <Radius value="0.625"/>
+        <SeparationRadius value="0.625"/>
+        <ScoreMake value="400"/>
+        <ScoreKill value="800"/>
+        <SubgroupPriority value="14"/>
+        <MinimapRadius value="0.625"/>
+        <GlossaryPriority value="160"/>
+    </CUnit>
+    <CUnit id="Vertigo" parent="VertigoBase">
+        <Speed value="7.4492"/>
+        <Acceleration value="15"/>
+        <Height value="5"/>
+        <AbilArray Link="VertigoBomb"/>
+        <AbilArray Link="VertigoLand"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="LandVertigo" Type="AbilCmd" AbilCmd="VertigoLand,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="VertigoBomb" Type="AbilCmd" AbilCmd="VertigoBomb,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+        <CostResource index="Minerals" value="125"/>
+        <CostResource index="Vespene" value="50"/>
+        <RepairTime value="10"/>
+        <KillXP value="40"/>
+        <ScoreMake value="175"/>
+        <ScoreKill value="175"/>
+        <LifeArmor value="2"/>
+    </CUnit>
+    <CUnit id="Vertigolanded" parent="VertigoBase">
+        <BehaviorArray Link="NodRepair"/>
+        <Facing value="315"/>
+        <PlaneArray index="Ground" value="1"/>
+        <Height value="1.5"/>
+        <VisionHeight value="1"/>
+        <AbilArray Link="Vertigotakeoff"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="Vertigotakeoff" Type="AbilCmd" AbilCmd="Vertigotakeoff,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="RavenRepairDroneHeal" Type="Passive" Row="2" Column="0"/>
+        </CardLayouts>
+        <CostResource index="Minerals" value="125"/>
+        <CostResource index="Vespene" value="50"/>
+        <RepairTime value="10"/>
+        <KillXP value="40"/>
+        <ScoreMake value="175"/>
+        <ScoreKill value="175"/>
+        <LifeArmor value="2"/>
+    </CUnit>
+</Catalog>

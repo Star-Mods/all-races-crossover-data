@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CLight>
+        <ToDInfoArray index="0" Id="CLight"/>
+    </CLight>
+    <CLight id="IceWorldNight">
+        <ToDInfoArray index="0" Id="IceWorldNight" AmbientColor="0.435294,0.435294,0.435294">
+            <Param index="HDRExposure" value="1.000000"/>
+            <Param index="HDRSpecMultiplier" value="4.390000"/>
+            <Param index="ColorizationContrast" value="1.000000"/>
+            <DirectionalLight index="Key" Color="0.752941,0.752941,0.752941"/>
+            <DirectionalLight index="Fill" Color="0.121569,0.333333,0.545098"/>
+            <DirectionalLight index="Back" Color="0.176471,0.200000,0.203922"/>
+        </ToDInfoArray>
+    </CLight>
+    <CLight id="Starship">
+        <ToDInfoArray index="0" Id="Starship"/>
+    </CLight>
+</Catalog>

@@ -1,0 +1,287 @@
+<Catalog>
+    <CSound id="NodInfantryYes" parent="Voice">
+        <EditorCategories value="Race:Nod"/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="NodInfantryAttack" parent="Combat">
+        <EditorCategories value="Race:Nod"/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="NodInfantryHelp" parent="Alert">
+        <EditorCategories value="Race:Nod"/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="NodInfantryReady" parent="Ready">
+        <EditorCategories value="Race:Nod"/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="NodInfantryWhat" parent="Voice">
+        <EditorCategories value="Race:Nod"/>
+        <Volume value="3.000000,3.000000"/>
+    </CSound>
+    <CSound id="NodInfantryDeath" parent="Death">
+        <EditorCategories value="Race:Nod"/>
+        <Flags index="Stream" value="1"/>
+        <ReverbBalance Room="-1500"/>
+        <SustainFade index="1" Time="250"/>
+    </CSound>
+    
+    
+    
+    <CSound id="NodMilitant_Yes" parent="NodInfantryYes">
+        <AssetArray File="Assets\Sounds\NUMilit_VoiMovea.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiMoveb.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiMovec.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiMoved.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiMovee.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiMovef.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiMoveg.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiMoveh.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiMovei.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiMovej.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiMovek.ogg"/>
+    </CSound>
+    <CSound id="NodMilitant_Attack" parent="NodInfantryAttack">
+        <AssetArray File="Assets\Sounds\NUMilit_VoiAttacka.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiAttackb.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiAttackc.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiAttackd.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiAttacke.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiAttackf.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiAttackg.ogg"/>
+    </CSound>
+    <CSound id="NodMilitant_Help" parent="NodInfantryHelp">
+        <AssetArray File="Assets\Sounds\NUMilit_VoiSelBata.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiSelBatb.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiSelBatc.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiSelBatd.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiSelBate.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiSelBatf.ogg"/>
+    </CSound>
+    <CSound id="NodMilitant_Ready" parent="NodInfantryReady">
+        <AssetArray File="Assets\Sounds\NUMilit_VoiCreatea.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiCreateb.ogg"/>
+    </CSound>
+    <CSound id="NodMilitant_What" parent="NodInfantryWhat">
+        <AssetArray File="Assets\Sounds\NUMilit_VoiSelecta.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiSelectb.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiSelectc.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiSelectd.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiSelecte.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiSelectf.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiSelectg.ogg"/>
+    </CSound>
+    <CSound id="NodMilitant_Death" parent="NodInfantryDeath">
+        <AssetArray File="Assets\Sounds\NUMilit_VoiDiea.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiDieb.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiDiec.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiDied.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiDiee.ogg"/>
+    </CSound>
+
+
+    <CSound id="NodConfessor_Yes" parent="NodInfantryYes">
+        <AssetArray File="Assets\Sounds\NUConfe_voicMovea.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicMoveb.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicMovec.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicMoved.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicMovee.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicMovef.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicMoveg.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicMoveh.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicMovei.ogg"/>
+    </CSound>
+    <CSound id="NodConfessor_Attack" parent="NodInfantryAttack">
+        <AssetArray File="Assets\Sounds\NUConfe_voicAttaa.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicAttab.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicAttac.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicAttad.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicAttae.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicAttaf.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicAttag.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicAttah.ogg"/>
+    </CSound>
+    <CSound id="NodConfessor_Help" parent="NodInfantryHelp">
+        <AssetArray File="Assets\Sounds\NUConfe_voicRetra.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicRetrb.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicRetrc.ogg"/>
+    </CSound>
+    <CSound id="NodConfessor_Ready" parent="NodInfantryReady">
+        <AssetArray File="Assets\Sounds\NUConfe_voicCreaa.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicCreab.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicCreac.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicCread.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicCreae.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicCreaf.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicCreag.ogg"/>
+    </CSound>
+    <CSound id="NodConfessor_What" parent="NodInfantryWhat">
+        <AssetArray File="Assets\Sounds\NUConfe_voicSelea.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicSeleb.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicSelec.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicSeled.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicSelee.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicSelef.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicSeleg.ogg"/>
+        <AssetArray File="Assets\Sounds\NUConfe_voicSeleh.ogg"/>
+    </CSound>
+    <CSound id="NodConfessor_Death" parent="NodInfantryDeath">
+        <AssetArray File="Assets\Sounds\NUMilit_VoiDiea.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiDieb.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiDiec.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiDied.ogg"/>
+        <AssetArray File="Assets\Sounds\NUMilit_VoiDiee.ogg"/>
+    </CSound>
+
+
+
+    <CSound id="NodFanatic_Yes" parent="NodInfantryYes">
+        <AssetArray File="Assets\Sounds\NUFanat_VoiMovea.ogg"/>
+        <AssetArray File="Assets\Sounds\NUFanat_VoiMoveb.ogg"/>
+        <AssetArray File="Assets\Sounds\NUFanat_VoiMovec.ogg"/>
+        <AssetArray File="Assets\Sounds\NUFanat_VoiMoved.ogg"/>
+        <AssetArray File="Assets\Sounds\NUFanat_VoiMovee.ogg"/>
+        <AssetArray File="Assets\Sounds\NUFanat_VoiMovef.ogg"/>
+    </CSound>
+    <CSound id="NodFanatic_Attack" parent="NodInfantryAttack">
+        <AssetArray File="Assets\Sounds\NUFanat_VoiAttacka.ogg"/>
+        <AssetArray File="Assets\Sounds\NUFanat_VoiAttackb.ogg"/>
+        <AssetArray File="Assets\Sounds\NUFanat_VoiAttackc.ogg"/>
+        <AssetArray File="Assets\Sounds\NUFanat_VoiAttackd.ogg"/>
+        <AssetArray File="Assets\Sounds\NUFanat_VoiAttacke.ogg"/>
+        <AssetArray File="Assets\Sounds\NUFanat_VoiAttackf.ogg"/>
+        <AssetArray File="Assets\Sounds\NUFanat_VoiAttackg.ogg"/>
+        <AssetArray File="Assets\Sounds\NUFanat_VoiAttackh.ogg"/>
+        <AssetArray File="Assets\Sounds\NUFanat_VoiAttacki.ogg"/>
+        <AssetArray File="Assets\Sounds\NUFanat_VoiAttackj.ogg"/>
+        <AssetArray File="Assets\Sounds\NUFanat_VoiAttackk.ogg"/>
+    </CSound>
+    <CSound id="NodFanatic_Help" parent="NodInfantryHelp">
+        <AssetArray File="Assets\Sounds\NUFanat_VoiSupprea.ogg"/>
+        <AssetArray File="Assets\Sounds\NUFanat_VoiSuppreb.ogg"/>
+        <AssetArray File="Assets\Sounds\NUFanat_VoiSupprec.ogg"/>
+        <AssetArray File="Assets\Sounds\NUFanat_VoiSuppred.ogg"/>
+    </CSound>
+    <CSound id="NodFanatic_Ready" parent="NodInfantryReady">
+        <AssetArray File="Assets\Sounds\NUFanat_VoiCreatea.ogg"/>
+        <AssetArray File="Assets\Sounds\NUFanat_VoiCreateb.ogg"/>
+    </CSound>
+    <CSound id="NodFanatic_What" parent="NodInfantryWhat">
+        <AssetArray File="Assets\Sounds\NUFanat_VoiSelecta.ogg"/>
+        <AssetArray File="Assets\Sounds\NUFanat_VoiSelectb.ogg"/>
+        <AssetArray File="Assets\Sounds\NUFanat_VoiSelectc.ogg"/>
+        <AssetArray File="Assets\Sounds\NUFanat_VoiSelectd.ogg"/>
+        <AssetArray File="Assets\Sounds\NUFanat_VoiSelecte.ogg"/>
+        <AssetArray File="Assets\Sounds\NUFanat_VoiSelectf.ogg"/>
+        <AssetArray File="Assets\Sounds\NUFanat_VoiSelectg.ogg"/>
+    </CSound>
+    <CSound id="NodFanatic_Death" parent="NodInfantryDeath">
+        <AssetArray File="Assets\Sounds\NUFanat_Voidiea.ogg"/>
+        <AssetArray File="Assets\Sounds\NUFanat_Voidieb.ogg"/>
+        <AssetArray File="Assets\Sounds\NUFanat_Voidiec.ogg"/>
+        <AssetArray File="Assets\Sounds\NUFanat_Voidied.ogg"/>
+        <AssetArray File="Assets\Sounds\NUFanat_Voidiee.ogg"/>
+    </CSound>
+
+
+
+    <CSound id="NodSaboteur_Yes" parent="NodInfantryYes">
+        <AssetArray File="Assets\Sounds\NUSabot_VoiMovea.ogg"/>
+        <AssetArray File="Assets\Sounds\NUSabot_VoiMoveb.ogg"/>
+        <AssetArray File="Assets\Sounds\NUSabot_VoiMovec.ogg"/>
+        <AssetArray File="Assets\Sounds\NUSabot_VoiMoved.ogg"/>
+        <AssetArray File="Assets\Sounds\NUSabot_VoiMovee.ogg"/>
+        <AssetArray File="Assets\Sounds\NUSabot_VoiMovef.ogg"/>
+        <AssetArray File="Assets\Sounds\NUSabot_VoiMoveg.ogg"/>
+        <AssetArray File="Assets\Sounds\NUSabot_VoiMoveh.ogg"/>
+    </CSound>
+    <CSound id="NodSaboteur_Attack" parent="NodInfantryAttack">
+        <AssetArray File="Assets\Sounds\NUSabot_VoiCaptua.ogg"/>
+        <AssetArray File="Assets\Sounds\NUSabot_VoiCaptub.ogg"/>
+        <AssetArray File="Assets\Sounds\NUSabot_VoiCaptuc.ogg"/>
+        <AssetArray File="Assets\Sounds\NUSabot_VoiCaptud.ogg"/>
+        <AssetArray File="Assets\Sounds\NUSabot_VoiCaptue.ogg"/>
+        <AssetArray File="Assets\Sounds\NUSabot_VoiCaptuf.ogg"/>
+        <AssetArray File="Assets\Sounds\NUSabot_VoiCaptug.ogg"/>
+    </CSound>
+    <CSound id="NodSaboteur_Help" parent="NodInfantryHelp">
+        <AssetArray File="Assets\Sounds\NUSabot_VoiSupprea.ogg"/>
+        <AssetArray File="Assets\Sounds\NUSabot_VoiSuppreb.ogg"/>
+        <AssetArray File="Assets\Sounds\NUSabot_VoiSupprec.ogg"/>
+    </CSound>
+    <CSound id="NodSaboteur_Ready" parent="NodInfantryReady">
+        <AssetArray File="Assets\Sounds\NUSabot_VoiCreatea.ogg"/>
+        <AssetArray File="Assets\Sounds\NUSabot_VoiCreateb.ogg"/>
+    </CSound>
+    <CSound id="NodSaboteur_What" parent="NodInfantryWhat">
+        <AssetArray File="Assets\Sounds\NUSabot_VoiSelecta.ogg"/>
+        <AssetArray File="Assets\Sounds\NUSabot_VoiSelectb.ogg"/>
+        <AssetArray File="Assets\Sounds\NUSabot_VoiSelectc.ogg"/>
+        <AssetArray File="Assets\Sounds\NUSabot_VoiSelectd.ogg"/>
+        <AssetArray File="Assets\Sounds\NUSabot_VoiSelecte.ogg"/>
+        <AssetArray File="Assets\Sounds\NUSabot_VoiSelectf.ogg"/>
+        <AssetArray File="Assets\Sounds\NUSabot_VoiSelectg.ogg"/>
+        <AssetArray File="Assets\Sounds\NUSabot_VoiSelecth.ogg"/>
+        <AssetArray File="Assets\Sounds\NUSabot_VoiSelecti.ogg"/>
+    </CSound>
+    <CSound id="NodSaboteur_Death" parent="NodInfantryDeath">
+        <AssetArray File="Assets\Sounds\NUSabot_Voidiea.ogg"/>
+        <AssetArray File="Assets\Sounds\NUSabot_Voidieb.ogg"/>
+        <AssetArray File="Assets\Sounds\NUSabot_Voidiec.ogg"/>
+        <AssetArray File="Assets\Sounds\NUSabot_Voidied.ogg"/>
+        <AssetArray File="Assets\Sounds\NUSabot_Voidiee.ogg"/>
+        <AssetArray File="Assets\Sounds\NUSabot_Voidief.ogg"/>
+    </CSound>
+
+
+    <CSound id="NodShadowFlying_Yes" parent="NodInfantryYes">
+        <AssetArray File="Assets\Sounds\NUShado_VoiMovAira.ogg.ogg"/>
+        <AssetArray File="Assets\Sounds\NUShado_VoiMovAirb.ogg.ogg"/>
+        <AssetArray File="Assets\Sounds\NUShado_VoiMovAirc.ogg.ogg"/>
+        <AssetArray File="Assets\Sounds\NUShado_VoiMovAird.ogg.ogg"/>
+    </CSound>
+    <CSound id="NodShadow_Yes" parent="NodInfantryYes">
+        <AssetArray File="Assets\Sounds\NUShado_VoiMovea.ogg"/>
+        <AssetArray File="Assets\Sounds\NUShado_VoiMoveb.ogg"/>
+        <AssetArray File="Assets\Sounds\NUShado_VoiMovec.ogg"/>
+        <AssetArray File="Assets\Sounds\NUShado_VoiMoved.ogg"/>
+        <AssetArray File="Assets\Sounds\NUShado_VoiMovee.ogg"/>
+        <AssetArray File="Assets\Sounds\NUShado_VoiMovef.ogg"/>
+        <AssetArray File="Assets\Sounds\NUShado_VoiMoveg.ogg"/>
+    </CSound>
+    <CSound id="NodShadow_Attack" parent="NodInfantryAttack">
+        <AssetArray File="Assets\Sounds\NUShado_VoiAttacka.ogg"/>
+        <AssetArray File="Assets\Sounds\NUShado_VoiAttackb.ogg"/>
+        <AssetArray File="Assets\Sounds\NUShado_VoiAttackc.ogg"/>
+        <AssetArray File="Assets\Sounds\NUShado_VoiAttackd.ogg"/>
+        <AssetArray File="Assets\Sounds\NUShado_VoiAttacke.ogg"/>
+        <AssetArray File="Assets\Sounds\NUShado_VoiAttackf.ogg"/>
+    </CSound>
+    <CSound id="NodShadow_Help" parent="NodInfantryHelp">
+        <AssetArray File="Assets\Sounds\NUShado_VoiSupprea.ogg"/>
+        <AssetArray File="Assets\Sounds\NUShado_VoiSuppreb.ogg"/>
+        <AssetArray File="Assets\Sounds\NUShado_VoiSupprec.ogg"/>
+    </CSound>
+    <CSound id="NodShadow_Ready" parent="NodInfantryReady">
+        <AssetArray File="Assets\Sounds\NUShado_VoiCreatea.ogg"/>
+    </CSound>
+    <CSound id="NodShadow_What" parent="NodInfantryWhat">
+        <AssetArray File="Assets\Sounds\NUShado_VoiSelecta.ogg"/>
+        <AssetArray File="Assets\Sounds\NUShado_VoiSelectb.ogg"/>
+        <AssetArray File="Assets\Sounds\NUShado_VoiSelectc.ogg"/>
+        <AssetArray File="Assets\Sounds\NUShado_VoiSelectd.ogg"/>
+        <AssetArray File="Assets\Sounds\NUShado_VoiSelecte.ogg"/>
+        <AssetArray File="Assets\Sounds\NUShado_VoiSelectf.ogg"/>
+        <AssetArray File="Assets\Sounds\NUShado_VoiSelectg.ogg"/>
+    </CSound>
+    <CSound id="NodShadow_Death" parent="NodInfantryDeath">
+        <AssetArray File="Assets\Sounds\NUShado_VoiDiea.ogg"/>
+        <AssetArray File="Assets\Sounds\NUShado_VoiDieb.ogg"/>
+        <AssetArray File="Assets\Sounds\NUShado_VoiDiec.ogg"/>
+        <AssetArray File="Assets\Sounds\NUShado_VoiDied.ogg"/>
+        <AssetArray File="Assets\Sounds\NUShado_VoiDiee.ogg"/>
+        <AssetArray File="Assets\Sounds\NUShado_VoiDief.ogg"/>
+        <AssetArray File="Assets\Sounds\NUShado_VoiDieg.ogg"/>
+    </CSound>
+
+</Catalog>

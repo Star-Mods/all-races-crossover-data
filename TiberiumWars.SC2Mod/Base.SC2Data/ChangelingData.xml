@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CEffectSwitch id="DisguiseEx3">
+        <CaseArray Validator="DisguiseAsCNC" Effect="DisguiseAsCNCSwitch"/>
+    </CEffectSwitch>
+    <CEffectSwitch id="DisguiseAsCNCSwitch">
+        <CaseArray Validator="isNodRace" Effect="DisguiseAsMilitantCU"/>
+        <CaseArray Validator="isGDIRace" Effect="DisguiseAsGDIZoneTrooperCU"/>
+        <CaseArray Validator="isCABALRace" Effect="DisguiseAsDevoutCU"/>
+        <CaseDefault value="DisguiseAsMilitantCU"/>
+    </CEffectSwitch>
+    <CEffectCreateUnit id="DisguiseAsMilitantCU" parent="DisguiseEx3CU">
+        <SpawnUnit value="ChangelingMilitant"/>
+    </CEffectCreateUnit>
+    <CEffectCreateUnit id="DisguiseAsDevoutCU" parent="DisguiseEx3CU">
+        <SpawnUnit value="ChangelingDevout"/>
+    </CEffectCreateUnit>
+    <CEffectCreateUnit id="DisguiseAsGDIZoneTrooperCU" parent="DisguiseEx3CU">
+        <SpawnUnit value="ChangelingGDIZoneTrooper"/>
+    </CEffectCreateUnit>
+    <CAbilMorph id="DisguiseAsMilitant" parent="DisguiseChangeling">
+        <Name value="Abil/Name/DisguiseAsMilitant"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="UPLTrainMilitant"/>
+        <InfoArray Unit="ChangelingMilitant">
+            <SectionArray index="Actor">
+                <DurationArray index="Delay" value="0.5"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorph>
+    <CAbilMorph id="DisguiseAsDevout" parent="DisguiseChangeling">
+        <Name value="Abil/Name/DisguiseAsDevout"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="UPLTrainDevout"/>
+        <InfoArray Unit="ChangelingDevout">
+            <SectionArray index="Actor">
+                <DurationArray index="Delay" value="0.5"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorph>
+    <CAbilMorph id="DisguiseAsGDIZoneTrooper" parent="DisguiseChangeling">
+        <Name value="Abil/Name/DisguiseAsGDIZoneTrooper"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="UPLTrainGDIZoneTrooper"/>
+        <InfoArray Unit="ChangelingGDIZoneTrooper">
+            <SectionArray index="Actor">
+                <DurationArray index="Delay" value="0.5"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorph>
+    <CValidatorUnitCompareField id="isNodRace">
+        <Field value="Race"/>
+        <Value value="Nod"/>
+    </CValidatorUnitCompareField>
+    <CValidatorUnitCompareField id="isGDIRace">
+        <Field value="Race"/>
+        <Value value="GDI"/>
+    </CValidatorUnitCompareField>
+    <CValidatorUnitCompareField id="isCABALRace">
+        <Field value="Race"/>
+        <Value value="CABAL"/>
+    </CValidatorUnitCompareField>
+    <CValidatorPlayerRequirement id="DisguiseAsDevout">
+        <Find value="1"/>
+        <Value value="UseNodFactionMOK"/>
+        <WhichPlayer Value="Target"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorCombine id="DisguiseAsCNC">
+        <CombineArray value="isNodRace"/>
+        <CombineArray value="isGDIRace"/>
+        <CombineArray value="isCABALRace"/>
+    </CValidatorCombine>
+    <CActorUnit id="ChangelingMilitant" parent="NodMilitant" unitName="ChangelingMilitant">
+        <AcceptedHostedPropTransfers index="Scale" value="0"/>
+        <On index="0" Terms="UnitBirth.ChangelingMilitant" Send="Create SoundEmitter ChangelingVolt_Ambience"/>
+        <On index="1" Terms="UnitBirth.ChangelingMilitant"/>
+        <On index="2" Terms="UnitRevive.ChangelingMilitant"/>
+        <On index="3" Terms="UnitRevive.ChangelingMilitant"/>
+        <On index="4" Terms="UnitConstruction.ChangelingMilitant"/>
+        <On index="5" Terms="UnitConstruction.ChangelingMilitant"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo ChangelingMilitant" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom ChangelingMilitant" Send="Destroy"/>
+        <SoundArray index="Ready" value="Changeling_Ready"/>
+        <SoundArray index="What" value="Changeling_What"/>
+        <SoundArray index="Yes" value="Changeling_Yes"/>
+        <DeathArray index="Normal" ModelLink="ChangelingDeath" SoundLink="Changeling_Death"/>
+    </CActorUnit>
+    <CActorUnit id="ChangelingDevout" parent="Devout" unitName="ChangelingDevout">
+        <AcceptedHostedPropTransfers index="Scale" value="0"/>
+        <On index="0" Terms="UnitBirth.ChangelingDevout" Send="Create SoundEmitter ChangelingVolt_Ambience"/>
+        <On index="1" Terms="UnitBirth.ChangelingDevout"/>
+        <On index="2" Terms="UnitRevive.ChangelingDevout"/>
+        <On index="3" Terms="UnitRevive.ChangelingDevout"/>
+        <On index="4" Terms="UnitConstruction.ChangelingDevout"/>
+        <On index="5" Terms="UnitConstruction.ChangelingDevout"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo ChangelingDevout" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom ChangelingDevout" Send="Destroy"/>
+        <SoundArray index="Ready" value="Changeling_Ready"/>
+        <SoundArray index="What" value="Changeling_What"/>
+        <SoundArray index="Yes" value="Changeling_Yes"/>
+        <DeathArray index="Normal" ModelLink="ChangelingDeath" SoundLink="Changeling_Death"/>
+    </CActorUnit>
+    <CActorUnit id="ChangelingGDIZoneTrooper" parent="GDIZoneTrooper" unitName="ChangelingGDIZoneTrooper">
+        <AcceptedHostedPropTransfers index="Scale" value="0"/>
+        <On index="0" Terms="UnitBirth.ChangelingGDIZoneTrooper" Send="Create SoundEmitter ChangelingVolt_Ambience"/>
+        <On index="1" Terms="UnitBirth.ChangelingGDIZoneTrooper"/>
+        <On index="2" Terms="UnitRevive.ChangelingGDIZoneTrooper"/>
+        <On index="3" Terms="UnitRevive.ChangelingGDIZoneTrooper"/>
+        <On index="4" Terms="UnitConstruction.ChangelingGDIZoneTrooper"/>
+        <On index="5" Terms="UnitConstruction.ChangelingGDIZoneTrooper"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo ChangelingGDIZoneTrooper" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom ChangelingGDIZoneTrooper" Send="Destroy"/>
+        <SoundArray index="Ready" value="Changeling_Ready"/>
+        <SoundArray index="What" value="Changeling_What"/>
+        <SoundArray index="Yes" value="Changeling_Yes"/>
+        <DeathArray index="Normal" ModelLink="ChangelingDeath" SoundLink="Changeling_Death"/>
+    </CActorUnit>
+    <CUnit id="ChangelingMilitant" parent="NodMilitant">
+        <Name value="Unit/Name/ChangelingMilitant"/>
+        <Race value="Zerg"/>
+        <BehaviorArray Link="ChangelingDisable"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="4" Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
+            <LayoutButtons index="5" Face="" Type="Undefined" Row="0" Column="0"/>
+            <LayoutButtons Row="0" Column="0"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+        </CardLayouts>
+        <LeaderAlias value="Changeling"/>
+        <HotkeyAlias value="Changeling"/>
+        <SelectAlias value="Changeling"/>
+        <SubgroupAlias value="Changeling"/>
+        <RepairTime value="30.4"/>
+        <WeaponArray index="0" removed="1"/>
+        <ScoreKill value="50"/>
+        <LifeStart value="45"/>
+        <LifeMax value="45"/>
+    </CUnit>
+    <CUnit id="ChangelingDevout" parent="Devout">
+        <Name value="Unit/Name/ChangelingDevout"/>
+        <Race value="Zerg"/>
+        <BehaviorArray Link="ChangelingDisable"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="4" Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
+            <LayoutButtons index="5" Face="" Type="Undefined" Row="0" Column="0"/>
+            <LayoutButtons Row="0" Column="0"/>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+        </CardLayouts>
+        <LeaderAlias value="Changeling"/>
+        <HotkeyAlias value="Changeling"/>
+        <SelectAlias value="Changeling"/>
+        <SubgroupAlias value="Changeling"/>
+        <RepairTime value="30.4"/>
+        <WeaponArray index="0" removed="1"/>
+        <ScoreKill value="50"/>
+        <LifeStart value="45"/>
+        <LifeMax value="45"/>
+    </CUnit>
+    <CUnit id="ChangelingGDIZoneTrooper" parent="GDIZoneTrooper">
+        <Name value="Unit/Name/ChangelingGDIZoneTrooper"/>
+        <Race value="Zerg"/>
+        <BehaviorArray Link="ChangelingDisable"/>
+        <CardLayouts index="0">
+            <LayoutButtons index="4" Face="AcquireMove" Type="AbilCmd" AbilCmd="move,AcquireMove" Row="0" Column="4"/>
+            <LayoutButtons index="5" Face="" Type="Undefined" AbilCmd="JumpPack,Execute" Row="0" Column="0"/>
+            <LayoutButtons index="6">
+                <Face value=""/>
+                <Type value="Undefined"/>
+                <AbilCmd value="255,255"/>
+                <Requirements value=""/>
+                <Row value="0"/>
+                <Column value="0"/>
+            </LayoutButtons>
+            <LayoutButtons index="7" Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
+        </CardLayouts>
+        <LeaderAlias value="Changeling"/>
+        <HotkeyAlias value="Changeling"/>
+        <SelectAlias value="Changeling"/>
+        <SubgroupAlias value="Changeling"/>
+        <RepairTime value="30.4"/>
+        <WeaponArray index="0" removed="1"/>
+        <ScoreKill value="50"/>
+        <LifeStart value="45"/>
+        <LifeMax value="45"/>
+    </CUnit>
+</Catalog>

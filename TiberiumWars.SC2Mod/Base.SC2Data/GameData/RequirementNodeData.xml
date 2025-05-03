@@ -1,0 +1,737 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <!--UNIT Complete-->
+    <CRequirementCountUnit default="1" id="UC">
+        <?token id="unit" type="CUnitLink"?>
+        <Count Link="##unit##" State="CompleteOnly"/>
+    </CRequirementCountUnit>
+    <!--UNIT Queued-->
+    <CRequirementCountUnit default="1" id="UQ">
+        <?token id="unit" type="CUnitLink" value="CBaseNod"?>
+        <Count Link="##unit##" State="QueuedOrBetter"/>
+    </CRequirementCountUnit>
+    <!--Unit NOT QUEUED and NOT EXIST-->
+    <CRequirementEq default="1" id="UN">
+        <?token id="unit" type="CUnitLink" value="CBaseNod"?>
+        <OperandArray index="0" value="UQ_##unit##"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <!--Research Complete-->
+    <CRequirementCountUpgrade default="1" id="RC">
+        <?token id="upgrade" type="CUpgradeLink"?>
+        <Count Link="##upgrade##" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <!--Research Queued-->
+    <CRequirementCountUpgrade default="1" id="RQ">
+        <?token id="upgrade" type="CUpgradeLink" value="NodUpgrade"?>
+        <Count Link="##upgrade##" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <!--Research NOT QUEUED and NOT EXIST-->
+    <CRequirementNot default="1" id="RN">
+        <?token id="unit" type="CUpgradeLink" value="NodUpgrade"?>
+        <OperandArray index="0" value="RQ_##upgrade##"/>
+    </CRequirementNot>
+    <CRequirementAnd id="AndCountUnitNodShrineCompleteOnlyTechTreeCheatEq1277349106CountUnitNodKaneCommandoQueuedOrBetterTechTreeCheat0">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray value="CountUnitNodShrineCompleteOnlyTechTreeCheat"/>
+        <OperandArray value="Eq1277349106CountUnitNodKaneCommandoQueuedOrBetterTechTreeCheat0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndOr2790159111CountUnitNodPowerPlant2CompleteOnlyTechTreeCheatCountUnitNodPowerPlantCompleteOnlyTechTreeCheatCountUnitNodPowerPlantUpgradeCompleteOnlyTechTreeCheatCountUnitNodKaneBarracksCompleteOnlyTechTreeCheat">
+        <OperandArray value="Or2790159111CountUnitNodPowerPlant2CompleteOnlyTechTreeCheatCountUnitNodPowerPlantCompleteOnlyTechTreeCheatCountUnitNodPowerPlantUpgradeCompleteOnlyTechTreeCheat"/>
+        <OperandArray value="CountUnitNodKaneBarracksCompleteOnlyTechTreeCheat"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndOr2790159111CountUnitNodPowerPlant2CompleteOnlyTechTreeCheatCountUnitNodPowerPlantCompleteOnlyTechTreeCheatCountUnitNodPowerPlantUpgradeCompleteOnlyTechTreeCheatCountUnitNodShrineCompleteOnlyTechTr3731317178">
+        <OperandArray value="Or2790159111CountUnitNodPowerPlant2CompleteOnlyTechTreeCheatCountUnitNodPowerPlantCompleteOnlyTechTreeCheatCountUnitNodPowerPlantUpgradeCompleteOnlyTechTreeCheat"/>
+        <OperandArray value="CountUnitNodShrineCompleteOnlyTechTreeCheat"/>
+        <OperandArray value="CountUnitNodChemicalPlantCompleteOnlyTechTreeCheat"/>
+        <OperandArray value="EqCountUnitNodTempleOfNodQueuedOrBetterTechTreeCheat0"/>
+    </CRequirementAnd>
+    <CRequirementCountUnit id="CountUnitNodChemicalPlantCompleteOnlyTechTreeCheat">
+        <Count Link="NodChemicalPlant" State="CompleteOnly"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitNodKaneBarracksCompleteOnlyTechTreeCheat">
+        <Count Link="NodKaneBarracks" State="CompleteOnly"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitNodKaneCommandoQueuedOrBetterTechTreeCheat">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="NodKaneCommando" State="QueuedOrBetter"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitNodPowerPlant2CompleteOnlyTechTreeCheat">
+        <Count Link="NodPowerPlant2" State="CompleteOnly"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitNodPowerPlantCompleteOnlyTechTreeCheat">
+        <Count Link="NodPowerPlant" State="CompleteOnly"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitNodPowerPlantUpgradeCompleteOnlyTechTreeCheat">
+        <Count Link="NodPowerPlantUpgrade" State="CompleteOnly"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitNodShrineCompleteOnlyTechTreeCheat">
+        <Count Link="NodShrine" State="CompleteOnly"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitNodTempleOfNodQueuedOrBetterTechTreeCheat">
+        <Count Link="NodTempleOfNod" State="QueuedOrBetter"/>
+    </CRequirementCountUnit>
+    <CRequirementEq id="Eq1277349106CountUnitNodKaneCommandoQueuedOrBetterTechTreeCheat0">
+        <OperandArray index="0" value="CountUnitNodKaneCommandoQueuedOrBetterTechTreeCheat"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUnitNodTempleOfNodQueuedOrBetterTechTreeCheat0">
+        <OperandArray index="0" value="CountUnitNodTempleOfNodQueuedOrBetterTechTreeCheat"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementOr id="Or2790159111CountUnitNodPowerPlant2CompleteOnlyTechTreeCheatCountUnitNodPowerPlantCompleteOnlyTechTreeCheatCountUnitNodPowerPlantUpgradeCompleteOnlyTechTreeCheat">
+        <OperandArray value="CountUnitNodPowerPlant2CompleteOnlyTechTreeCheat"/>
+        <OperandArray value="CountUnitNodPowerPlantCompleteOnlyTechTreeCheat"/>
+        <OperandArray value="CountUnitNodPowerPlantUpgradeCompleteOnlyTechTreeCheat"/>
+    </CRequirementOr>
+    <CRequirementCountUnit id="UC_BarracksGDI" parent="UC" unit="GDIBarracks"/>
+    <CRequirementCountUnit id="UC_ComandPost" parent="UC" unit="GDICommandPost"/>
+    <CRequirementCountUnit id="UC_NodWarFactory" parent="UC" unit="NodKaneWarFactory"/>
+    <CRequirementCountUnit id="UC_NodHangar" parent="UC" unit="NodKaneAirTower"/>
+    <CRequirementCountUnit id="UC_NodVertigoPlatform" parent="UC" unit="CabalBomberPlatform"/>
+    <CRequirementCountUnit id="UC_NodOPCenter" parent="UC" unit="NodOPCenter"/>
+    <CRequirementCountUnit id="UC_NodPowerPlant2" parent="UC" unit="NodPowerPlant2"/>
+    <CRequirementCountUnit id="UC_NodPowerPlant" parent="UC" unit="NodPowerPlant"/>
+    <CRequirementCountUnit id="UC_NodPowerPlantUpgrade" parent="UC" unit="NodPowerPlantUpgrade"/>
+    <CRequirementCountUnit id="UC_NodShrine" parent="UC" unit="NodShrine"/>
+    <CRequirementCountUnit id="UC_NodTechLab" parent="UC" unit="NodTechLab"/>
+    <CRequirementCountUnit id="UC_NodTempleOfNod" parent="UC" unit="NodTempleOfNod"/>
+    <CRequirementCountUnit id="UC_NodTiberiumRefinery" parent="UC" unit="NodTiberiumRefinery"/>
+    <CRequirementCountUnit id="UC_Vertigolanded" parent="UC" unit="Vertigolanded"/>
+    <CRequirementCountUnit id="UQ_CabalOffenseCrawler" parent="UQ" unit="CabalOffenseCrawler"/>
+    <CRequirementCountUnit id="UQ_CabalSupportCrawler" parent="UQ" unit="CabalSupportCrawler"/>
+    <CRequirementCountUnit id="UQ_CabalDefenseCrawler" parent="UQ" unit="CabalDefenseCrawler"/>
+    <CRequirementCountUnit id="UQ_CabalDefenseCrawlerDeployed" parent="UQ" unit="CabalDefenseCrawlerDeployed"/>
+    <CRequirementCountUnit id="UQ_CabalOffenseCrawlerDeployed" parent="UQ" unit="CabalOffenseCrawlerDeployed"/>
+    <CRequirementCountUnit id="UQ_CabalSupportCrawlerDeployed" parent="UQ" unit="CabalSupportCrawlerDeployed"/>
+    <CRequirementCountUnit id="UQ_NodRedeemer" parent="UQ" unit="NodRedeemer"/>
+    <CRequirementCountUnit id="UQ_CabalLeviathan" parent="UQ" unit="CabalLeviathan"/>
+    <CRequirementCountUnit id="UQ_NodCrane" parent="UQ" unit="NodCrane"/>
+    <CRequirementCountUnit id="UQ_CabalDominator" parent="UQ" unit="CabalDominator"/>
+    <CRequirementCountUnit id="UQ_ChemicalPlant" parent="UQ" unit="NodChemicalPlant"/>
+    <!--UNIT Queued at unit-->
+    <CRequirementCountUnit id="UQU_NodInterceptor">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NodInterceptor" State="QueuedOrBetterAtUnit"/>
+    </CRequirementCountUnit>
+    <CRequirementEq id="UN_CabalSupportCrawler" parent="UN" unit="CabalSupportCrawler"/>
+    <CRequirementEq id="UN_CabalOffenseCrawler" parent="UN" unit="CabalOffenseCrawler"/>
+    <CRequirementEq id="UN_CabalDefenseCrawler" parent="UN" unit="CabalDefenseCrawler"/>
+    <CRequirementEq id="UN_CabalDefenseCrawlerDeployed" parent="UN" unit="CabalDefenseCrawlerDeployed"/>
+    <CRequirementEq id="UN_CabalOffenseCrawlerDeployed" parent="UN" unit="CabalOffenseCrawlerDeployed"/>
+    <CRequirementEq id="UN_CabalSupportCrawlerDeployed" parent="UN" unit="CabalSupportCrawlerDeployed"/>
+    <CRequirementEq id="UN_CabalLeviathan" parent="UN" unit="CabalLeviathan"/>
+    <CRequirementEq id="UN_NodRedeemer" parent="UN" unit="NodRedeemer"/>
+    <CRequirementEq id="UN_CabalDominator" parent="UN" unit="CabalDominator"/>
+    <CRequirementEq id="UN_ChemicalPlant" parent="UN" unit="NodChemicalPlant">
+        <OperandArray index="0" value="UQ_ChemicalPlant"/>
+    </CRequirementEq>
+    <CRequirementCountUpgrade id="RC_BikeSpeed" parent="RC" upgrade="BikeSpeed"/>
+    <CRequirementCountUpgrade id="RC_BirthObelisk" parent="RC" upgrade="BirthObelisk"/>
+    <CRequirementCountUpgrade id="RC_BuildTurret" parent="RC" upgrade="BuildTurret"/>
+    <CRequirementCountUpgrade id="RC_DarkArmorDevout" parent="RC" upgrade="DarkArmorDevout"/>
+    <CRequirementCountUpgrade id="RC_FactorySpeed" parent="RC" upgrade="FactorySpeed"/>
+    <CRequirementCountUpgrade id="RC_FlameZone" parent="RC" upgrade="FlameZone"/>
+    <CRequirementCountUpgrade id="RC_GDIJetPack" parent="RC" upgrade="GDIJetPack"/>
+    <CRequirementCountUpgrade id="RC_HealObelisk" parent="RC" upgrade="HealObelisk"/>
+    <CRequirementCountUpgrade id="RC_InvertWarHead" parent="RC" upgrade="InvertWarHead"/>
+    <CRequirementCountUpgrade id="RC_Leader" parent="RC" upgrade="Leader"/>
+    <CRequirementCountUpgrade id="RC_CobraStealth" parent="RC" upgrade="CobraStealth"/>
+    <CRequirementCountUpgrade id="RC_MantisRocketrag" parent="RC" upgrade="MantisRocketrag"/>
+    <CRequirementCountUpgrade id="RC_MarkofKane" parent="RC" upgrade="MarkofKane"/>
+    <CRequirementCountUpgrade id="RC_MedusaHalo" parent="RC" upgrade="MedusaHalo"/>
+    <CRequirementCountUpgrade id="RC_MedusaHeal" parent="RC" upgrade="MedusaHeal"/>
+    <CRequirementCountUpgrade id="RC_NodNuke" parent="RC" upgrade="NodNuke"/>
+    <CRequirementCountUpgrade id="RC_ObeliskCharge" parent="RC" upgrade="ObeliskCharge"/>
+    <CRequirementCountUpgrade id="RC_RadiusofReapair" parent="RC" upgrade="RadiusofReapair"/>
+    <CRequirementCountUpgrade id="RC_SpecterStealth" parent="RC" upgrade="SpecterStealth"/>
+    <CRequirementCountUpgrade id="RC_StealthInvertField" parent="RC" upgrade="StealthInvertField"/>
+    <CRequirementCountUpgrade id="RC_SuicideEnlightened" parent="RC" upgrade="SuicideEnlightened"/>
+    <CRequirementCountUpgrade id="RC_TechII" parent="RC" upgrade="TechII"/>
+    <CRequirementCountUpgrade id="RC_TechIII" parent="RC" upgrade="TechIII"/>
+    <CRequirementCountUpgrade id="RC_TibBomb" parent="RC" upgrade="TibBomb"/>
+    <CRequirementCountUpgrade id="RC_VenomStealth" parent="RC" upgrade="VenomStealth"/>
+    <CRequirementCountUpgrade id="RC_accuracyUpgrade" parent="RC" upgrade="accuracyUpgrade"/>
+    <CRequirementCountUpgrade id="RC_NodFactionMOK" parent="RC" upgrade="NodFactionMOK"/>
+    <CRequirementCountUpgrade id="RC_NodFactionNBH" parent="RC" upgrade="NodFactionNBH"/>
+    <CRequirementCountUpgrade id="RC_NodFactionNod" parent="RC" upgrade="NodFactionNod"/>
+    <CRequirementCountUpgrade id="RQ_accuracyUpgrade" parent="RQ" upgrade="accuracyUpgrade"/>
+    <CRequirementCountUpgrade id="RQ_TibBomb" parent="RQ" upgrade="TibBomb"/>
+    <CRequirementCountUpgrade id="RQ_TibField" parent="RQ" upgrade="TibField"/>
+    <CRequirementCountUpgrade id="RQ_TechIII" parent="RQ" upgrade="TechIII"/>
+    <CRequirementCountUpgrade id="RQ_TechII" parent="RQ" upgrade="TechII"/>
+    <CRequirementCountUpgrade id="RQ_SpeedUpgrade" parent="RQ" upgrade="SpeedUpgrade"/>
+    <CRequirementCountUpgrade id="RQ_CobraStealth" parent="RQ" upgrade="CobraStealth"/>
+    <CRequirementCountUpgrade id="RQ_DarkArmor" parent="RQ" upgrade="DarkArmor"/>
+    <CRequirementCountUpgrade id="RQ_FlameZone" parent="RQ" upgrade="FlameZone"/>
+    <CRequirementCountUpgrade id="RQ_GDIJetPack" parent="RQ" upgrade="GDIJetPack"/>
+    <CRequirementCountUpgrade id="RQ_MedusaHeal" parent="RQ" upgrade="MedusaHeal"/>
+    <CRequirementCountUpgrade id="RQ_ObeliskCharge" parent="RQ" upgrade="ObeliskCharge"/>
+    <CRequirementCountUpgrade id="RQ_RangeUpgrade" parent="RQ" upgrade="RangeUpgrade"/>
+    <CRequirementCountUpgrade id="RQ_ReloadUpgrade" parent="RQ" upgrade="ReloadUpgrade"/>
+    <CRequirementCountUpgrade id="RQ_RepairUpgrade" parent="RQ" upgrade="RepairUpgrade"/>
+    <CRequirementCountUpgrade id="RQ_AirStealthUpgrade" parent="RQ" upgrade="AirStealthUpgrade"/>
+    <CRequirementCountUpgrade id="RQ_NodFactionMOK" parent="RQ" upgrade="NodFactionMOK"/>
+    <CRequirementCountUpgrade id="RQ_NodFactionNBH" parent="RQ" upgrade="NodFactionNBH"/>
+    <CRequirementCountUpgrade id="RQ_NodFactionNod" parent="RQ" upgrade="NodFactionNod"/>
+    <CRequirementNot id="RN_GDIJetPack" parent="RN" upgrade="GDIJetPack"/>
+    <CRequirementNot id="RN_TibField" parent="RN" upgrade="TibField"/>
+    <CRequirementNot id="RN_AirStealthUpgrade" parent="RN" upgrade="AirStealthUpgrade"/>
+    <CRequirementNot id="RN_DarkArmor" parent="RN" upgrade="DarkArmor"/>
+    <CRequirementNot id="RN_FlameZone" parent="RN" upgrade="FlameZone"/>
+    <CRequirementNot id="RN_MedusaHeal" parent="RN" upgrade="MedusaHeal"/>
+    <CRequirementNot id="RN_ObeliskCharge" parent="RN" upgrade="ObeliskCharge"/>
+    <CRequirementNot id="RN_RangeUpgrade" parent="RN" upgrade="RangeUpgrade"/>
+    <CRequirementNot id="RN_ReloadUpgrade" parent="RN" upgrade="ReloadUpgrade"/>
+    <CRequirementNot id="RN_RepairUpgrade" parent="RN" upgrade="RepairUpgrade"/>
+    <CRequirementNot id="RN_SpeedUpgrade" parent="RN" upgrade="SpeedUpgrade"/>
+    <CRequirementNot id="RN_TechIII" parent="RN" upgrade="TechIII"/>
+    <CRequirementNot id="RN_TechII" parent="RN" upgrade="TechII"/>
+    <CRequirementNot id="RN_TibBomb" parent="RN" upgrade="TibBomb"/>
+    <CRequirementNot id="RN_accuracyUpgrade" parent="RN" upgrade="accuracyUpgrade"/>
+    <CRequirementNot id="RN_NodFactionMOK" parent="RN" upgrade="NodFactionMOK"/>
+    <CRequirementNot id="RN_NodFactionNBH" parent="RN" upgrade="NodFactionNBH"/>
+    <CRequirementNot id="RN_NodFactionNod" parent="RN" upgrade="NodFactionNod"/>
+    <!--Construction-->
+    <CRequirementOr id="REQC_NodPower">
+        <OperandArray value="UC_NodPowerPlant2"/>
+        <OperandArray value="UC_NodPowerPlant"/>
+        <OperandArray value="UC_NodPowerPlantUpgrade"/>
+    </CRequirementOr>
+    <CRequirementAnd id="REQC_NodHangar">
+        <OperandArray value="REQC_NodPower"/>
+        <OperandArray value="UC_NodHangar"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="REQC_NodWarFactory">
+        <OperandArray value="REQC_NodPower"/>
+        <OperandArray value="UC_NodWarFactory"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="REQ_CabalLeviathan">
+        <OperandArray value="UC_NodTempleOfNod"/>
+        <OperandArray value="UN_CabalLeviathan"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="REQ_NodRedeemer">
+        <OperandArray value="UC_NodTempleOfNod"/>
+        <OperandArray value="UN_NodRedeemer"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="REQ_MCVSupport">
+        <OperandArray value="UN_CabalSupportCrawler"/>
+        <OperandArray value="UN_CabalSupportCrawlerDeployed"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="REQ_MCVOffense">
+        <OperandArray value="UN_CabalOffenseCrawler"/>
+        <OperandArray value="UN_CabalOffenseCrawlerDeployed"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="REQ_MCVDefense">
+        <OperandArray value="UN_CabalDefenseCrawler"/>
+        <OperandArray value="UN_CabalDefenseCrawlerDeployed"/>
+    </CRequirementAnd>
+    <!--Ability-->
+    <CRequirementAnd id="REQ_AirStrike">
+        <OperandArray value="UC_Vertigolanded"/>
+        <OperandArray value="UC_NodVertigoPlatform"/>
+    </CRequirementAnd>
+    <CRequirementLT id="REQ_NodInterceptor">
+        <OperandArray index="0" value="UQU_NodInterceptor"/>
+        <OperandArray index="1" value="8"/>
+    </CRequirementLT>
+    <!--Other-->
+    <CRequirementAnd id="REQ_LearnFaction">
+        <OperandArray value="RN_NodFactionMOK"/>
+        <OperandArray value="RN_NodFactionNBH"/>
+        <OperandArray value="RN_NodFactionNod"/>
+    </CRequirementAnd>
+    <CRequirementOr id="REQ_UseNodFactionAny">
+        <OperandArray value="RC_NodFactionMOK"/>
+        <OperandArray value="RC_NodFactionNBH"/>
+        <OperandArray value="RC_NodFactionNod"/>
+    </CRequirementOr>
+    <CRequirementAnd id="REQC_BomberPlatform">
+        <OperandArray value="REQC_NodHangar"/>
+        <OperandArray value="RC_NodFactionNod"/>
+    </CRequirementAnd>
+    <!--    terrarn-->
+    <CRequirementAnd id="AndEqCountUpgradeDarkArmorCompleteOnly1GTECountUnitNodShrineCompleteOnly1">
+        <OperandArray value="EqCountUpgradeDarkArmorCompleteOnly1"/>
+        <OperandArray value="GTECountUnitNodShrineCompleteOnly1"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeLevel1TiberiumAssiminationUpgradeCompleteOnly1GTECountUnitNodShrineCompleteOnly1">
+        <OperandArray value="EqCountUpgradeLevel1TiberiumAssiminationUpgradeCompleteOnly1"/>
+        <OperandArray value="GTECountUnitNodShrineCompleteOnly1"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeLevel1TiberiumProtectionUpgradeCompleteOnly1GTECountUnitNodShrineCompleteOnly1">
+        <OperandArray value="EqCountUpgradeLevel1TiberiumProtectionUpgradeCompleteOnly1"/>
+        <OperandArray value="GTECountUnitNodShrineCompleteOnly1"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeLevel2DarkArmorCompleteOnly1GTECountUnitNodTechLabQueuedOnly1">
+        <OperandArray value="EqCountUpgradeLevel2DarkArmorCompleteOnly1"/>
+        <OperandArray value="GTECountUnitNodTechLabQueuedOnly1"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeLevel2TiberiumAssiminationUpgradeCompleteOnly1GTECountUnitNodShrineCompleteOnly1">
+        <OperandArray value="EqCountUpgradeLevel2TiberiumAssiminationUpgradeCompleteOnly1"/>
+        <OperandArray value="GTECountUnitNodShrineCompleteOnly1"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeLevel2TiberiumProtectionUpgradeCompleteOnly1GTECountUnitNodTechLabCompleteOnly1">
+        <OperandArray value="EqCountUpgradeLevel2TiberiumProtectionUpgradeCompleteOnly1"/>
+        <OperandArray value="GTECountUnitNodTechLabCompleteOnly1"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeIntelligenceHighgroundQueuedOrBetter0">
+        <OperandArray value="EqCountUpgradeNodFactionMOKQueuedOrBetter1"/>
+        <OperandArray value="EqCountUpgradeIntelligenceHighgroundQueuedOrBetter0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeMedusaHealQueuedOrBetter0">
+        <OperandArray value="EqCountUpgradeNodFactionMOKQueuedOrBetter1"/>
+        <OperandArray value="EqCountUpgradeMedusaHealQueuedOrBetter0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeNodGideonSurvivorBugQueuedOrBetter0">
+        <OperandArray value="EqCountUpgradeNodFactionMOKQueuedOrBetter1"/>
+        <OperandArray value="EqCountUpgradeNodGideonSurvivorBugQueuedOrBetter0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeNodGideonWidowLongeronsQueuedOrBetter0">
+        <OperandArray value="EqCountUpgradeNodFactionMOKQueuedOrBetter1"/>
+        <OperandArray value="EqCountUpgradeNodGideonWidowLongeronsQueuedOrBetter0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeNodGideonWidowReconstitutionStructureQueuedOrBetter0">
+        <OperandArray value="EqCountUpgradeNodFactionMOKQueuedOrBetter1"/>
+        <OperandArray value="EqCountUpgradeNodGideonWidowReconstitutionStructureQueuedOrBetter0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeFlameZoneQueuedOrBetter0">
+        <OperandArray value="EqCountUpgradeNodFactionNBHQueuedOrBetter1"/>
+        <OperandArray value="EqCountUpgradeFlameZoneQueuedOrBetter0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeNodTwlightDevoutUpgradeGuardianGroupQueuedOrBetter0">
+        <OperandArray value="EqCountUpgradeNodFactionNBHQueuedOrBetter1"/>
+        <OperandArray value="EqCountUpgradeNodTwlightDevoutUpgradeGuardianGroupQueuedOrBetter0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeNodTwlightFlameMineQueuedOrBetter0">
+        <OperandArray value="EqCountUpgradeNodFactionNBHQueuedOrBetter1"/>
+        <OperandArray value="EqCountUpgradeNodTwlightFlameMineQueuedOrBetter0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeNodTwlightLeviathanWeaponSystemQueuedOrBetter0">
+        <OperandArray value="EqCountUpgradeNodFactionNBHQueuedOrBetter1"/>
+        <OperandArray value="EqCountUpgradeNodTwlightLeviathanWeaponSystemQueuedOrBetter0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeTacticalChargeDeviceQueuedOrBetter0">
+        <OperandArray value="EqCountUpgradeNodFactionNBHQueuedOrBetter1"/>
+        <OperandArray value="EqCountUpgradeTacticalChargeDeviceQueuedOrBetter0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeTibBombQueuedOrBetter0">
+        <OperandArray value="EqCountUpgradeNodFactionNBHQueuedOrBetter1"/>
+        <OperandArray value="EqCountUpgradeTibBombQueuedOrBetter0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeAirStealthUpgradeQueuedOrBetter0">
+        <OperandArray value="EqCountUpgradeNodFactionNodQueuedOrBetter1"/>
+        <OperandArray value="EqCountUpgradeAirStealthUpgradeQueuedOrBetter0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeNodGenericBlackDiscipleQueuedOrBetter0">
+        <OperandArray value="EqCountUpgradeNodFactionNodQueuedOrBetter1"/>
+        <OperandArray value="EqCountUpgradeNodGenericBlackDiscipleQueuedOrBetter0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeNodGenericChargedPracticeBeamQueuedOrBetter0">
+        <OperandArray value="EqCountUpgradeNodFactionNodQueuedOrBetter1"/>
+        <OperandArray value="EqCountUpgradeNodGenericChargedPracticeBeamQueuedOrBetter0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeNodGenericDozerBladeQueuedOrBetter0">
+        <OperandArray value="EqCountUpgradeNodFactionNodQueuedOrBetter1"/>
+        <OperandArray value="EqCountUpgradeNodGenericDozerBladeQueuedOrBetter0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeNodGenericPurifyingFlamesQueuedOrBetter0">
+        <OperandArray value="EqCountUpgradeNodFactionNodQueuedOrBetter1"/>
+        <OperandArray value="EqCountUpgradeNodGenericPurifyingFlamesQueuedOrBetter0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeObeliskChargeQueuedOrBetter0">
+        <OperandArray value="EqCountUpgradeNodFactionNodQueuedOrBetter1"/>
+        <OperandArray value="EqCountUpgradeObeliskChargeQueuedOrBetter0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeSpeedUpgradeQueuedOrBetter0">
+        <OperandArray value="EqCountUpgradeNodFactionNodQueuedOrBetter1"/>
+        <OperandArray value="EqCountUpgradeSpeedUpgradeQueuedOrBetter0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeVenomcloakingQueuedOrBetter0">
+        <OperandArray value="EqCountUpgradeNodFactionNodQueuedOrBetter1"/>
+        <OperandArray value="EqCountUpgradeVenomcloakingQueuedOrBetter0"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeNodInfantryAccuracyUpgradeLevel2CompleteOnly1GTECountUnitNodTechLabCompleteOnly1">
+        <OperandArray value="EqCountUpgradeNodInfantryAccuracyUpgradeLevel2CompleteOnly1"/>
+        <OperandArray value="GTECountUnitNodTechLabCompleteOnly1"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndEqCountUpgradeaccuracyUpgradeCompleteOnly1GTECountUnitNodShrineCompleteOnly1">
+        <OperandArray value="EqCountUpgradeaccuracyUpgradeCompleteOnly1"/>
+        <OperandArray value="GTECountUnitNodShrineCompleteOnly1"/>
+    </CRequirementAnd>
+    <CRequirementCountUnit id="CountUnitNodShrineCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NodShrine" State="CompleteOnly"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitNodTechLabCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NodTechLab" State="CompleteOnly"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitNodTechLabQueuedOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NodTechLab"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUpgrade id="CountUpgradeAirStealthUpgradeCompleteOnlyTechTreeCheat">
+        <Count Link="AirStealthUpgrade" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeAirStealthUpgradeQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="AirStealthUpgrade" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeDarkArmorCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="DarkArmor" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeDarkArmorQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="DarkArmor" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeFlameZoneQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="FlameZone" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeIntelligenceHighgroundCompleteOnlyTechTreeCheat">
+        <Count Link="IntelligenceHighground" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeIntelligenceHighgroundQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="IntelligenceHighground" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeLevel1TiberiumAssiminationUpgradeCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Level1TiberiumAssiminationUpgrade" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeLevel1TiberiumAssiminationUpgradeQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Level1TiberiumAssiminationUpgrade" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeLevel1TiberiumProtectionUpgradeCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Level1TiberiumProtectionUpgrade" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeLevel1TiberiumProtectionUpgradeQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Level1TiberiumProtectionUpgrade" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeLevel2DarkArmorCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Level2DarkArmor" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeLevel2DarkArmorQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Level2DarkArmor" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeLevel2TiberiumAssiminationUpgradeCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Level2TiberiumAssiminationUpgrade" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeLevel2TiberiumAssiminationUpgradeQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Level2TiberiumAssiminationUpgrade" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeLevel2TiberiumProtectionUpgradeCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Level2TiberiumProtectionUpgrade" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeLevel2TiberiumProtectionUpgradeQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Level2TiberiumProtectionUpgrade" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeLevel3DarkArmorQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Level3DarkArmor" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeLevel3TiberiumAssiminationUpgradeQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Level3TiberiumAssiminationUpgrade" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeLevel3TiberiumProtectionUpgradeQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Level3TiberiumProtectionUpgrade" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeMedusaHealQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="MedusaHeal" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNodFactionMOKQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NodFactionMOK" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNodFactionNBHQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NodFactionNBH" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNodFactionNodQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NodFactionNod" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNodGenericBlackDiscipleQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NodGenericBlackDisciple" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNodGenericChargedPracticeBeamQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NodGenericChargedPracticeBeam" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNodGenericDozerBladeQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NodGenericDozerBlade" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNodGenericPurifyingFlamesQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NodGenericPurifyingFlames" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNodGideonSurvivorBugQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NodGideonSurvivorBug" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNodGideonWidowLongeronsQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NodGideonWidowLongerons" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNodGideonWidowReconstitutionStructureQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NodGideonWidowReconstitutionStructure" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNodInfantryAccuracyUpgradeLevel2CompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NodInfantryAccuracyUpgradeLevel2" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNodInfantryAccuracyUpgradeLevel2QueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NodInfantryAccuracyUpgradeLevel2" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNodInfantryAccuracyUpgradeLevel3QueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NodInfantryAccuracyUpgradeLevel3" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNodTwlightDevoutUpgradeGuardianGroupQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NodTwlightDevoutUpgradeGuardianGroup" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNodTwlightFlameMineCompleteOnlyTechTreeCheat">
+        <Count Link="NodTwlightFlameMine" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNodTwlightFlameMineQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NodTwlightFlameMine" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeNodTwlightLeviathanWeaponSystemQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="NodTwlightLeviathanWeaponSystem" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeObeliskChargeQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="ObeliskCharge" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeSpeedUpgradeQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="SpeedUpgrade" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeTacticalChargeDeviceCompleteOnlyTechTreeCheat">
+        <Count Link="TacticalChargeDevice" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeTacticalChargeDeviceQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="TacticalChargeDevice" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeTibBombQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="TibBomb" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeVenomcloakingCompleteOnlyTechTreeCheat">
+        <Count Link="Venomcloaking" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeVenomcloakingQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="Venomcloaking" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeaccuracyUpgradeCompleteOnly">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="accuracyUpgrade" State="CompleteOnly"/>
+    </CRequirementCountUpgrade>
+    <CRequirementCountUpgrade id="CountUpgradeaccuracyUpgradeQueuedOrBetter">
+        <Flags index="TechTreeCheat" value="0"/>
+        <Count Link="accuracyUpgrade" State="QueuedOrBetter"/>
+    </CRequirementCountUpgrade>
+    <CRequirementEq id="EqCountUpgradeAirStealthUpgradeQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeAirStealthUpgradeQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeDarkArmorCompleteOnly1">
+        <OperandArray index="0" value="CountUpgradeDarkArmorCompleteOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeDarkArmorQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeDarkArmorQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeFlameZoneQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeFlameZoneQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeIntelligenceHighgroundQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeIntelligenceHighgroundQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeLevel1TiberiumAssiminationUpgradeCompleteOnly1">
+        <OperandArray index="0" value="CountUpgradeLevel1TiberiumAssiminationUpgradeCompleteOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeLevel1TiberiumAssiminationUpgradeQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeLevel1TiberiumAssiminationUpgradeQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeLevel1TiberiumProtectionUpgradeCompleteOnly1">
+        <OperandArray index="0" value="CountUpgradeLevel1TiberiumProtectionUpgradeCompleteOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeLevel1TiberiumProtectionUpgradeQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeLevel1TiberiumProtectionUpgradeQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeLevel2DarkArmorCompleteOnly1">
+        <OperandArray index="0" value="CountUpgradeLevel2DarkArmorCompleteOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeLevel2DarkArmorQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeLevel2DarkArmorQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeLevel2TiberiumAssiminationUpgradeCompleteOnly1">
+        <OperandArray index="0" value="CountUpgradeLevel2TiberiumAssiminationUpgradeCompleteOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeLevel2TiberiumAssiminationUpgradeQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeLevel2TiberiumAssiminationUpgradeQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeLevel2TiberiumProtectionUpgradeCompleteOnly1">
+        <OperandArray index="0" value="CountUpgradeLevel2TiberiumProtectionUpgradeCompleteOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeLevel2TiberiumProtectionUpgradeQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeLevel2TiberiumProtectionUpgradeQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeLevel3DarkArmorQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeLevel3DarkArmorQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeLevel3TiberiumAssiminationUpgradeQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeLevel3TiberiumAssiminationUpgradeQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeLevel3TiberiumProtectionUpgradeQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeLevel3TiberiumProtectionUpgradeQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeMedusaHealQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeMedusaHealQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeNodFactionMOKQueuedOrBetter1">
+        <OperandArray index="0" value="CountUpgradeNodFactionMOKQueuedOrBetter"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeNodFactionNBHQueuedOrBetter1">
+        <OperandArray index="0" value="CountUpgradeNodFactionNBHQueuedOrBetter"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeNodFactionNodQueuedOrBetter1">
+        <OperandArray index="0" value="CountUpgradeNodFactionNodQueuedOrBetter"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeNodGenericBlackDiscipleQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeNodGenericBlackDiscipleQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeNodGenericChargedPracticeBeamQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeNodGenericChargedPracticeBeamQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeNodGenericDozerBladeQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeNodGenericDozerBladeQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeNodGenericPurifyingFlamesQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeNodGenericPurifyingFlamesQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeNodGideonSurvivorBugQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeNodGideonSurvivorBugQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeNodGideonWidowLongeronsQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeNodGideonWidowLongeronsQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeNodGideonWidowReconstitutionStructureQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeNodGideonWidowReconstitutionStructureQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeNodInfantryAccuracyUpgradeLevel2CompleteOnly1">
+        <OperandArray index="0" value="CountUpgradeNodInfantryAccuracyUpgradeLevel2CompleteOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeNodInfantryAccuracyUpgradeLevel2QueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeNodInfantryAccuracyUpgradeLevel2QueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeNodInfantryAccuracyUpgradeLevel3QueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeNodInfantryAccuracyUpgradeLevel3QueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeNodTwlightDevoutUpgradeGuardianGroupQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeNodTwlightDevoutUpgradeGuardianGroupQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeNodTwlightFlameMineQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeNodTwlightFlameMineQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeNodTwlightLeviathanWeaponSystemQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeNodTwlightLeviathanWeaponSystemQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeObeliskChargeQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeObeliskChargeQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeSpeedUpgradeQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeSpeedUpgradeQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeTacticalChargeDeviceQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeTacticalChargeDeviceQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeTibBombQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeTibBombQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeVenomcloakingQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeVenomcloakingQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeaccuracyUpgradeCompleteOnly1">
+        <OperandArray index="0" value="CountUpgradeaccuracyUpgradeCompleteOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementEq>
+    <CRequirementEq id="EqCountUpgradeaccuracyUpgradeQueuedOrBetter0">
+        <OperandArray index="0" value="CountUpgradeaccuracyUpgradeQueuedOrBetter"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
+    <CRequirementGTE id="GTECountUnitNodShrineCompleteOnly1">
+        <OperandArray index="0" value="CountUnitNodShrineCompleteOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementGTE>
+    <CRequirementGTE id="GTECountUnitNodTechLabCompleteOnly1">
+        <OperandArray index="0" value="CountUnitNodTechLabCompleteOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementGTE>
+    <CRequirementGTE id="GTECountUnitNodTechLabQueuedOnly1">
+        <OperandArray index="0" value="CountUnitNodTechLabQueuedOnly"/>
+        <OperandArray index="1" value="1"/>
+    </CRequirementGTE>
+</Catalog>

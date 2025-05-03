@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CMoverMissile id="NodAwakenBuggyEMP2Weapon">
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Acceleration value="8"/>
+            <Speed value="30"/>
+            <MaxSpeed value="8"/>
+            <ClearanceAcceleration value="75"/>
+            <Outro value="-1"/>
+            <ThrowBandYaw value="-360,-360,-360,-360"/>
+            <ThrowBandPitch value="-360,-360,-360,-360"/>
+            <YawPitchRoll value="719.2968"/>
+        </MotionPhases>
+        <MotionPhases YawPitchRoll="MAX"/>
+    </CMoverMissile>
+    <CMoverMissile id="NodBikeMissile">
+        <PathMode value="Flying"/>
+        <MotionPhases>
+            <Driver value="Throw"/>
+            <Speed value="2"/>
+            <MaxSpeed value="2"/>
+            <Outro value="0.2,0.55"/>
+            <Timeout value="10"/>
+            <ThrowRotationType value="LookAtTarget"/>
+            <ThrowVector value="0,-1,1"/>
+            <YawPitchRoll value="506.25"/>
+        </MotionPhases>
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Acceleration value="56"/>
+            <Speed value="2"/>
+            <MaxSpeed value="28"/>
+            <Outro value="0.56,1.5"/>
+            <Timeout value="10"/>
+            <YawPitchRoll value="MAX"/>
+        </MotionPhases>
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <MaxSpeed value="3200"/>
+            <Timeout value="10"/>
+            <YawPitchRoll value="5568.75"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="NodBlackHandRocketMover">
+        <MotionPhases>
+            <Driver value="Ballistic"/>
+            <Acceleration value="-1"/>
+            <Speed value="10"/>
+            <MaxSpeed value="20"/>
+            <Gravity value="60"/>
+            <ClearanceLookahead value="3"/>
+            <YawPitchRoll value="MAX"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="NodDrunkenMissile">
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Acceleration value="18"/>
+            <MaxSpeed value="16"/>
+            <Outro value="-1"/>
+            <YawPitchRoll value="719.2968"/>
+            <Overlays Scale="1,0.5"/>
+        </MotionPhases>
+        <MotionPhases YawPitchRoll="MAX"/>
+        <MotionOverlays>
+            <Type value="Revolver"/>
+            <Polarity value="Random"/>
+            <Axis value="0,-1,0"/>
+            <Wavelength value="0,0.8"/>
+            <WavelengthChangeProbability value="0.8"/>
+            <RevolverSpeed value="179.2968"/>
+            <RevolverSpeedRange value="179.2968"/>
+            <RevolverMaxSpeed value="719.2968"/>
+            <RevolverMaxSpeedRange value="0"/>
+            <RevolverAccel value="337.5"/>
+            <RevolverAccelRange value="337.5"/>
+        </MotionOverlays>
+        <MotionOverlays>
+            <Type value="Wave"/>
+            <Wavelength value="0"/>
+            <WavelengthChangeProbability value="0"/>
+            <RevolverSpeed value="0"/>
+            <RevolverSpeedRange value="0"/>
+            <RevolverMaxSpeed value="0"/>
+            <RevolverMaxSpeedRange value="0"/>
+            <RevolverAccel value="0"/>
+            <RevolverAccelRange value="0"/>
+        </MotionOverlays>
+    </CMoverMissile>
+    <CMoverMissile id="ATgunWeapon">
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Acceleration value="3200"/>
+            <MaxSpeed value="50"/>
+            <YawPitchRoll value="MAX"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="Artillery">
+        <MotionPhases>
+            <Driver value="Ballistic"/>
+            <Acceleration value="3200"/>
+            <Speed value="10"/>
+            <MaxSpeed value="18.75"/>
+            <Gravity value="20"/>
+            <ClearanceAcceleration value="75"/>
+            <YawPitchRoll value="719.2968"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="DefenderMissile">
+        <PathMode value="Flying"/>
+        <MotionPhases>
+            <Driver value="Throw"/>
+            <Speed value="2"/>
+            <MaxSpeed value="2"/>
+            <Outro value="0.2,0.55"/>
+            <Timeout value="10"/>
+            <ThrowRotationType value="LookAtTarget"/>
+            <ThrowVector value="0,-1,1"/>
+            <YawPitchRoll value="506.25"/>
+        </MotionPhases>
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Acceleration value="56"/>
+            <Speed value="2"/>
+            <MaxSpeed value="28"/>
+            <Outro value="0.56,1.5"/>
+            <Timeout value="10"/>
+            <YawPitchRoll value="MAX"/>
+        </MotionPhases>
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <MaxSpeed value="3200"/>
+            <Timeout value="10"/>
+            <YawPitchRoll value="5568.75"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="JumpPackMover">
+        <MotionPhases>
+            <Driver value="AdaptableParabola"/>
+            <Acceleration value="-1"/>
+            <Gravity value="30"/>
+            <ClearanceLookahead value="3"/>
+            <RotationActorType value="Upright"/>
+            <YawPitchRoll value="MAX"/>
+            <FlightTime value="0.5"/>
+        </MotionPhases>
+    </CMoverMissile>
+    <CMoverMissile id="ZoneJumpUp">
+        <PathMode value="Jumper"/>
+        <MotionPhases>
+            <Driver value="AdaptableParabola"/>
+            <MinSpeed value="2"/>
+            <MaxSpeed value="15"/>
+            <ActorTracking value="Actual"/>
+            <AdaptableParabolaIsUpright value="1"/>
+            <AdaptableParabolaClearance value="1.75,0.5"/>
+            <AdaptableParabolaDistances index="Launch" value="3"/>
+            <AdaptableParabolaDistances index="PreApex" value="1.2"/>
+            <AdaptableParabolaDistances index="PostApex" value="0"/>
+            <AdaptableParabolaDistances index="Land" value="1.2"/>
+            <AdaptableParabolaAccels index="Launch" value="15"/>
+            <AdaptableParabolaAccels index="Ascent" value="1"/>
+            <AdaptableParabolaAccels index="Apex" value="-14"/>
+            <AdaptableParabolaAccels index="Descent" value="20"/>
+            <AdaptableParabolaAccels index="Land" value="-15"/>
+        </MotionPhases>
+        <RespectUnitHeightAtDestination value="1"/>
+    </CMoverMissile>
+
+
+
+    <CMoverMissile id="NodShadowLand">
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Acceleration value="20"/>
+            <MaxSpeed value="40"/>
+            <ArrivalTestType value="3D"/>
+            <YawPitchRoll value="MAX"/>
+        </MotionPhases>
+        <Flags index="RestoreHeight" value="1"/>
+        <Flags index="IgnoreNoFlyZones" value="1"/>
+        <RestoreHeightDuration value="0.625"/>
+        <RotationIgnoredByUnit value="1"/>
+    </CMoverMissile>
+    <CMoverMissile id="NodShadowGlide">
+        <MotionPhases>
+            <Driver value="Guidance"/>
+            <Acceleration value="20"/>
+            <MaxSpeed value="40"/>
+            <ArrivalTestType value="3D"/>
+            <YawPitchRoll value="MAX"/>
+        </MotionPhases>
+        <RotationIgnoredByUnit value="1"/>
+    </CMoverMissile>
+</Catalog>

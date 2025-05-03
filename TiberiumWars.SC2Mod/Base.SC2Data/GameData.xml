@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Includes>
+    <Catalog path="GameData/Nod/ActorData.xml"/>
+    <Catalog path="GameData/Nod/ModelData.xml"/>
+    <Catalog path="GameData/Nod/UnitData.xml"/>
+    <Catalog path="GameData/Nod/WeaponData.xml"/>
+    <Catalog path="GameData/Nod/EffectData.xml"/>
+    <Catalog path="GameData/Nod/SoundData.xml"/>
+    <Catalog path="GameData/CABAL/UnitData.xml"/>
+    <Catalog path="GameData/GDI/AbilData.xml"/>
+    <Catalog path="GameData/GDI/UnitData.xml"/>
+    <Catalog path="GameData/GDI/ActorData.xml"/>
+    <Catalog path="GameData/GDI/EffectData.xml"/>
+    <Catalog path="GameData/GDI/ButtonData.xml"/>
+    <Catalog path="GameData/GDI/ModelData.xml"/>
+    <Catalog path="GameData/Scrin/AbilData.xml"/>
+    <Catalog path="GameData/Scrin/ActorData.xml"/>
+    <Catalog path="GameData/Scrin/ModelData.xml"/>
+    <Catalog path="GameData/Scrin/UnitData.xml"/>
+    <Catalog path="ChangelingData.xml"/>
+    <Catalog path="TurretHubBuild.xml"/>
+    <Catalog path="NodSaboteur.xml"/>
+</Includes>

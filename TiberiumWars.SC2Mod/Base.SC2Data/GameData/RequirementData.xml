@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <!--Hide Upgrade If Research Already Started-->
+    <CRequirement default="1" id="NodLearnUpgrade">
+        <?token id="upgrade" type="CUpgradeLink" value="Bogus"?>
+        <EditorCategories value="Race:Nod,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="RN_##upgrade##"/>
+    </CRequirement>
+    <!--Allow Ability if Upgrade Complete-->
+    <CRequirement default="1" id="NodRequireUpgrade">
+        <?token id="upgrade" type="CUpgradeLink" value="Bogus"?>
+        <EditorCategories value="Race:Nod,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="RC_##upgrade##"/>
+    </CRequirement>
+    <!--Unit Requirements-->
+    <CRequirement default="1" id="NodRequirementUnit">
+        <?token id="requirement" type="CRequirementLink" value="Bogus"?>
+        <EditorCategories value="Race:Nod,TechType:Unit"/>
+        <CanBeSuppressed index="Use" value="0"/>
+        <NodeArray index="Use" Link="##requirement##"/>
+    </CRequirement>
+    <!--    <CRequirement parent="NodLearnUpgrade" id="NodLearnEnergize" upgrade="ObeliskCharge"/>-->
+    <!--    <CRequirement parent="NodLearnUpgrade" id="NodLearnMedusaHeal" upgrade="MedusaHeal"/>-->
+    <!--    <CRequirement parent="NodLearnUpgrade" id="NodLearnTibBomb" upgrade="TibBomb"/>-->
+    <!--    <CRequirement parent="NodLearnUpgrade" id="NodLearnFlameZone" upgrade="FlameZone"/>-->
+    <CRequirement id="LearnAccuracyUpgrade" parent="NodLearnUpgrade" upgrade="accuracyUpgrade"/>
+    <CRequirement id="LearnRangeUpgrade" parent="NodLearnUpgrade" upgrade="RangeUpgrade"/>
+    <CRequirement id="LearnNodCloak" parent="NodLearnUpgrade" upgrade="AirStealthUpgrade"/>
+    <CRequirement id="LearnSelfRepairUpgrade" parent="NodLearnUpgrade" upgrade="RepairUpgrade"/>
+    <CRequirement id="LearnReloadUpgrade" parent="NodLearnUpgrade" upgrade="ReloadUpgrade"/>
+    <CRequirement id="learnDarkArmor" parent="NodLearnUpgrade" upgrade="DarkArmor"/>
+    <!--    <CRequirement parent="NodLearnUpgrade" id="learnAirCloak" upgrade="AirStealthUpgrade"/>-->
+    <CRequirement id="learnTECHIII" parent="NodLearnUpgrade" upgrade="TechIII"/>
+    <CRequirement id="learnspeedupgrade" parent="NodLearnUpgrade" upgrade="SpeedUpgrade"/>
+    <CRequirement id="learnTECHII" parent="NodLearnUpgrade" upgrade="TechII"/>
+    <CRequirement id="ChemicalFactoryUp" parent="NodLearnUpgrade" upgrade="TibField"/>
+    <CRequirement id="LearnGDIjetpack" parent="NodLearnUpgrade" upgrade="GDIJetPack"/>
+    <CRequirement id="NodLearnNodFactionMOK" parent="NodLearnUpgrade">
+        <NodeArray index="Show" Link="REQ_LearnFaction"/>
+    </CRequirement>
+    <CRequirement id="NodLearnNodFactionNBH" parent="NodLearnUpgrade">
+        <NodeArray index="Show" Link="REQ_LearnFaction"/>
+    </CRequirement>
+    <CRequirement id="NodLearnNodFactionNod" parent="NodLearnUpgrade">
+        <NodeArray index="Show" Link="REQ_LearnFaction"/>
+    </CRequirement>
+    <CRequirement id="LearnRocketRag" parent="NodRequireUpgrade" upgrade="MantisRocketrag"/>
+    <CRequirement id="LearnHealMedusa" parent="NodRequireUpgrade" upgrade="MedusaHeal"/>
+    <CRequirement id="LearnTibBomb" parent="NodRequireUpgrade" upgrade="TibBomb"/>
+    <CRequirement id="NodNuke" parent="NodRequireUpgrade" upgrade="NodNuke"/>
+    <CRequirement id="MarkOfKane" parent="NodRequireUpgrade" upgrade="MarkofKane"/>
+    <CRequirement id="FactorySpeed" parent="NodRequireUpgrade" upgrade="FactorySpeed"/>
+    <CRequirement id="MedusaEffect" parent="NodRequireUpgrade" upgrade="MedusaHalo"/>
+    <CRequirement id="InvertWarhead" parent="NodRequireUpgrade" upgrade="InvertWarHead"/>
+    <CRequirement id="NodRepairRange" parent="NodRequireUpgrade" upgrade="RadiusofReapair"/>
+    <CRequirement id="BlackHandLeader" parent="NodRequireUpgrade" upgrade="Leader"/>
+    <CRequirement id="LiquidTibFLameTank" parent="NodRequireUpgrade" upgrade="FlameZone"/>
+    <CRequirement id="TechIINod" parent="NodRequireUpgrade" upgrade="TechII"/>
+    <CRequirement id="StealhField" parent="NodRequireUpgrade" upgrade="StealthInvertField"/>
+    <CRequirement id="ObeliskCharge" parent="NodRequireUpgrade" upgrade="ObeliskCharge"/>
+    <CRequirement id="BUildTurret" parent="NodRequireUpgrade" upgrade="BuildTurret"/>
+    <CRequirement id="EnlightenedSuicide" parent="NodRequireUpgrade" upgrade="SuicideEnlightened"/>
+    <CRequirement id="TechIIINod" parent="NodRequireUpgrade" upgrade="TechIII"/>
+    <CRequirement id="UseDarkArmorBlackHand" parent="NodRequireUpgrade" upgrade="TibBomb"/>
+    <CRequirement id="UseBIkeUpgrade" parent="NodRequireUpgrade" upgrade="BikeSpeed"/>
+    <!--    <CRequirement parent="NodRequireUpgrade" id="UseNodCloakVenom" upgrade="VenomStealth"/>-->
+    <CRequirement id="UseDarkArmorDevout" parent="NodRequireUpgrade" upgrade="DarkArmorDevout"/>
+    <CRequirement id="UseNodSpecterCloak" parent="NodRequireUpgrade" upgrade="SpecterStealth"/>
+    <CRequirement id="HaveGDIjetpack" parent="NodRequireUpgrade" upgrade="GDIJetPack"/>
+    <CRequirement id="AccuracyUpgradeUes" parent="NodRequireUpgrade" upgrade="accuracyUpgrade"/>
+    <CRequirement id="UseNodCobraCloak" parent="NodRequireUpgrade" upgrade="CobraStealth"/>
+    <CRequirement id="UseNodFactionMOK" parent="NodRequireUpgrade" upgrade="NodFactionMOK">
+        <NodeArray index="Show" Link="RC_NodFactionMOK"/>
+    </CRequirement>
+    <CRequirement id="UseNodFactionNBH" parent="NodRequireUpgrade" upgrade="NodFactionNBH">
+        <NodeArray index="Show" Link="RC_NodFactionNBH"/>
+    </CRequirement>
+    <CRequirement id="UseNodFactionNod" parent="NodRequireUpgrade" upgrade="NodFactionNod">
+        <NodeArray index="Show" Link="RC_NodFactionNod"/>
+    </CRequirement>
+    <CRequirement id="UseNodFactionAny" parent="NodRequireUpgrade">
+        <NodeArray index="Use" Link="REQ_UseNodFactionAny"/>
+    </CRequirement>
+    <CRequirement id="NoMCVSupport" parent="NodRequirementUnit" requirement="REQ_MCVSupport"/>
+    <CRequirement id="NoMCVOffense" parent="NodRequirementUnit" requirement="REQ_MCVOffense"/>
+    <CRequirement id="NoMCVDefense" parent="NodRequirementUnit" requirement="REQ_MCVDefense"/>
+    <CRequirement id="HaveNodVertigo" parent="NodRequirementUnit" requirement="REQ_AirStrike"/>
+    <CRequirement id="NodTempleRequirements" parent="NodRequirementUnit" requirement="REQC_NodTempleOfNod">
+        <NodeArray index="Use" Link="AndOr2790159111CountUnitNodPowerPlant2CompleteOnlyTechTreeCheatCountUnitNodPowerPlantCompleteOnlyTechTreeCheatCountUnitNodPowerPlantUpgradeCompleteOnlyTechTreeCheatCountUnitNodShrineCompleteOnlyTechTr3731317178"/>
+    </CRequirement>
+    <CRequirement id="HaveNodHand" parent="NodRequirementUnit" requirement="REQC_NodHand">
+        <NodeArray index="Use" Link="AndOr2790159111CountUnitNodPowerPlant2CompleteOnlyTechTreeCheatCountUnitNodPowerPlantCompleteOnlyTechTreeCheatCountUnitNodPowerPlantUpgradeCompleteOnlyTechTreeCheatCountUnitNodKaneBarracksCompleteOnlyTechTreeCheat"/>
+    </CRequirement>
+    <CRequirement id="HaveNodPowerPlant" parent="NodRequirementUnit" requirement="REQC_NodPower"/>
+    <CRequirement id="HaveNodAirTower" parent="NodRequirementUnit" requirement="REQC_NodHangar"/>
+    <CRequirement id="HaveNodWarfactory" parent="NodRequirementUnit" requirement="REQC_NodWarFactory"/>
+    <CRequirement id="LeviathanRequirements" parent="NodRequirementUnit" requirement="REQ_CabalLeviathan"/>
+    <CRequirement id="NodKaneCommandoRequirements" parent="NodRequirementUnit" requirement="REQ_NodKaneCommando">
+        <NodeArray index="Use" Link="AndCountUnitNodShrineCompleteOnlyTechTreeCheatEq1277349106CountUnitNodKaneCommandoQueuedOrBetterTechTreeCheat0"/>
+    </CRequirement>
+    <CRequirement id="RedeemerRequirements" parent="NodRequirementUnit" requirement="REQ_NodRedeemer"/>
+    <CRequirement id="NodArmInterceptor" parent="NodRequirementUnit" requirement="REQ_NodInterceptor"/>
+    <CRequirement id="HaveChemiclaPlant" parent="NodRequirementUnit" requirement="UC_ChemicalPlant">
+        <NodeArray index="Use" Link="CountUnitNodChemicalPlantCompleteOnlyTechTreeCheat"/>
+    </CRequirement>
+    <CRequirement id="HaveNodShrine" parent="NodRequirementUnit" requirement="UC_NodShrine"/>
+    <CRequirement id="HaveNodRefinery" parent="NodRequirementUnit" requirement="UC_NodTiberiumRefinery"/>
+    <CRequirement id="HaveNodTechPlant" parent="NodRequirementUnit" requirement="UC_NodTechLab"/>
+    <CRequirement id="HaveNodOPcenter" parent="NodRequirementUnit" requirement="UC_NodOPCenter"/>
+    <CRequirement id="HaveBarracksGDI" parent="NodRequirementUnit" requirement="UC_BarracksGDI"/>
+    <CRequirement id="HaveGDICommandpost" parent="NodRequirementUnit" requirement="UC_ComandPost"/>
+    <CRequirement id="HaveHangarAndNodFactionNod">
+        <NodeArray index="Use" Link="REQC_BomberPlatform"/>
+        <NodeArray index="Show" Link="RC_NodFactionNod"/>
+    </CRequirement>
+    <!--    Terrarn-->
+    <CRequirement id="NodTwlightGuerillaChargeUseRequirement" upgrade="FlameZone">
+        <NodeArray index="Use" Link="CountUpgradeTacticalChargeDeviceCompleteOnlyTechTreeCheat"/>
+    </CRequirement>
+    <CRequirement id="NodGideonTauntUseRequirement" upgrade="FlameZone">
+        <NodeArray index="Use" Link="CountUpgradeIntelligenceHighgroundCompleteOnlyTechTreeCheat"/>
+    </CRequirement>
+    <CRequirement id="NodTwlightTacticalChargedWeaponGuerillaChargedBeam">
+        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeTacticalChargeDeviceQueuedOrBetter0"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeTacticalChargeDeviceQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="NodTwlightGuardianGroupRequirement">
+        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeNodTwlightDevoutUpgradeGuardianGroupQueuedOrBetter0"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeNodTwlightDevoutUpgradeGuardianGroupQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="NodGideonBugSurvivor">
+        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeNodGideonSurvivorBugQueuedOrBetter0"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeNodGideonSurvivorBugQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="NodGideonHolyOneTauntAbilityUpgrade">
+        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeIntelligenceHighgroundQueuedOrBetter0"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeIntelligenceHighgroundQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="WidowLongeronsUpgradeRequirement">
+        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeNodGideonWidowLongeronsQueuedOrBetter0"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeNodGideonWidowLongeronsQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="NodTwlightFlameMine" upgrade="FlameZone">
+        <NodeArray index="Use" Link="CountUpgradeNodTwlightFlameMineCompleteOnlyTechTreeCheat"/>
+    </CRequirement>
+    <CRequirement id="NodGenericBlackDisciple">
+        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeNodGenericBlackDiscipleQueuedOrBetter0"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeNodGenericBlackDiscipleQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="DozerBladeUpgradeRequirement">
+        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeNodGenericDozerBladeQueuedOrBetter0"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeNodGenericDozerBladeQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="InfantrySpeedUpgradeRequirement">
+        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeSpeedUpgradeQueuedOrBetter0"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeSpeedUpgradeQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="ChargedParticleBeamsUpgradeRequirement">
+        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeNodGenericChargedPracticeBeamQueuedOrBetter0"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeNodGenericChargedPracticeBeamQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="Level1InfantryAccuracyRequirement">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="EqCountUpgradeaccuracyUpgradeQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="Level1VehicleArmorUpgradeRequirement">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="EqCountUpgradeLevel1TiberiumProtectionUpgradeQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="Level1TiberiumShockwaveRequirement">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="EqCountUpgradeLevel1TiberiumAssiminationUpgradeQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="Level1InfantryBlackArmorRequirement">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="EqCountUpgradeDarkArmorQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="Level2VehicleArmorUpgradeRequirement">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AndEqCountUpgradeLevel1TiberiumProtectionUpgradeCompleteOnly1GTECountUnitNodShrineCompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountUpgradeLevel2TiberiumProtectionUpgradeQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="Level2TiberiumShockwaveRequirement">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AndEqCountUpgradeLevel1TiberiumAssiminationUpgradeCompleteOnly1GTECountUnitNodShrineCompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountUpgradeLevel2TiberiumAssiminationUpgradeQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="Level2InfantryBlackArmorRequirement">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AndEqCountUpgradeDarkArmorCompleteOnly1GTECountUnitNodShrineCompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountUpgradeLevel2DarkArmorQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="Level2InfantryAccuracyRequirement">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AndEqCountUpgradeaccuracyUpgradeCompleteOnly1GTECountUnitNodShrineCompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountUpgradeNodInfantryAccuracyUpgradeLevel2QueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="Level3VehicleArmorUpgradeRequirement">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AndEqCountUpgradeLevel2TiberiumProtectionUpgradeCompleteOnly1GTECountUnitNodTechLabCompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountUpgradeLevel3TiberiumProtectionUpgradeQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="Level3TiberiumShockwaveRequirement">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AndEqCountUpgradeLevel2TiberiumAssiminationUpgradeCompleteOnly1GTECountUnitNodShrineCompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountUpgradeLevel3TiberiumAssiminationUpgradeQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="Level3InfantryBlackArmorRequirement">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AndEqCountUpgradeLevel2DarkArmorCompleteOnly1GTECountUnitNodTechLabQueuedOnly1"/>
+        <NodeArray index="Show" Link="EqCountUpgradeLevel3DarkArmorQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="Level3InfantryAccuracyRequirement">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="AndEqCountUpgradeNodInfantryAccuracyUpgradeLevel2CompleteOnly1GTECountUnitNodTechLabCompleteOnly1"/>
+        <NodeArray index="Show" Link="EqCountUpgradeNodInfantryAccuracyUpgradeLevel3QueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="NodGenericPurifyingFlameUpgrade">
+        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeNodGenericPurifyingFlamesQueuedOrBetter0"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeNodGenericPurifyingFlamesQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="WidowReconsititutionRequirement">
+        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeNodGideonWidowReconstitutionStructureQueuedOrBetter0"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeNodGideonWidowReconstitutionStructureQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="LeviathanWeaponSystemRequirement">
+        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeNodTwlightLeviathanWeaponSystemQueuedOrBetter0"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeNodTwlightLeviathanWeaponSystemQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="NodUseVenomCloaking" parent="NodRequireUpgrade" upgrade="VenomStealth">
+        <NodeArray index="Use" Link="CountUpgradeVenomcloakingCompleteOnlyTechTreeCheat"/>
+    </CRequirement>
+    <CRequirement id="UseNodCloakVenom" parent="NodRequireUpgrade" upgrade="VenomStealth">
+        <NodeArray index="Use" Link="CountUpgradeAirStealthUpgradeCompleteOnlyTechTreeCheat"/>
+    </CRequirement>
+    <CRequirement id="NodLearnEnergize" parent="NodLearnUpgrade" upgrade="ObeliskCharge">
+        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeObeliskChargeQueuedOrBetter0"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeObeliskChargeQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="NodTwlightLearnFlameMine" parent="NodLearnUpgrade" upgrade="FlameZone">
+        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeNodTwlightFlameMineQueuedOrBetter0"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeNodTwlightFlameMineQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="NodLearnMedusaHeal" parent="NodLearnUpgrade" upgrade="MedusaHeal">
+        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeMedusaHealQueuedOrBetter0"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeMedusaHealQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="NodLearnTibBomb" parent="NodLearnUpgrade" upgrade="TibBomb">
+        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeTibBombQueuedOrBetter0"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeTibBombQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="NodLearnFlameZone" parent="NodLearnUpgrade" upgrade="FlameZone">
+        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeFlameZoneQueuedOrBetter0"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeFlameZoneQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="NodGenericVenomCloakingRequirement" parent="NodLearnUpgrade" upgrade="AirStealthUpgrade">
+        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeVenomcloakingQueuedOrBetter0"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeVenomcloakingQueuedOrBetter0"/>
+    </CRequirement>
+    <CRequirement id="learnAirCloak" parent="NodLearnUpgrade" upgrade="AirStealthUpgrade">
+        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeAirStealthUpgradeQueuedOrBetter0"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeAirStealthUpgradeQueuedOrBetter0"/>
+    </CRequirement>
+</Catalog>

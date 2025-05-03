@@ -1,0 +1,67 @@
+<Catalog>
+    <CWeaponLegacy id="NodMilitantWeapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Icons\Nod\NodLightWeapon.dds"/>
+        <DisplayEffect value="NodMilitantDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Period value="0.75"/>
+        <DisplayAttackCount value="2"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="NodMilitantWCP"/>
+        <MinScanRange value="4"/>
+        <Range value="4"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodConfessorWeapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Icons\Nod\NodLightWeapon.dds"/>
+        <DisplayEffect value="NodMilitantDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Period value="0.4"/>
+        <DisplayAttackCount value="2"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="NodConfessorWeaponCP"/>
+        <MinScanRange value="5"/>
+        <Range value="5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodRocketCC3">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Icons\Nod\NodLightWeapon.dds"/>
+        <DisplayEffect value="NodMilitantRocketDamage"/>
+        <DisplayAttackCount value="1"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <Arc value="1.9995"/>
+        <Period value="1.85"/>
+        <Effect value="NodMilitantRocketMissilePackCP"/>
+        <MinScanRange value="6"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="BlackHandFlamethrowerCC3">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Icons\Nod\NodLightWeapon.dds"/>
+        <DisplayEffect value="BlackHandFlameThrowerDamageCC3"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="4"/>
+        <Range value="5"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <Period value="2"/>
+        <Effect value="BlackHandFlameThrowerSet2"/>
+        <AllowedMovement value="Slowing"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodShadowPistol">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Icons\Nod\NodLightWeapon.dds"/>
+        <DisplayAttackCount value="2"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="5.5"/>
+        <Range value="6"/>
+        <Period value="1.2"/>
+        <DamagePoint value="0"/>
+        <Backswing value="0.75"/>
+        <Effect value="NodShadowPistolSet"/>
+    </CWeaponLegacy>
+
+</Catalog>

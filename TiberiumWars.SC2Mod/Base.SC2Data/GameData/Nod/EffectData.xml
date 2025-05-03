@@ -1,0 +1,63 @@
+<Catalog>
+
+    <CEffectDamage id="NodMilitantDamage">
+        <EditorCategories value="Race:Nod"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <ArmorReduction value="1"/>
+        <Flags index="Notification" value="1"/>
+        <Kind value="Ranged"/>
+        <Amount value="4"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+        <SearchFlags index="OffsetByUnitRadius" value="1"/>
+    </CEffectDamage>
+    <CEffectDamage id="NodMilitantDummy">
+        <EditorCategories value="Race:Nod"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <ArmorReduction value="1"/>
+        <Flags index="Notification" value="1"/>
+        <Kind value="Ranged"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+        <SearchFlags index="OffsetByUnitRadius" value="1"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="NodMilitantWCP">
+        <EditorCategories value="Race:Nod"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <InitialEffect value="NodMilitantDamage"/>
+        <PeriodCount value="4"/>
+        <PeriodicEffectArray value="NodMilitantDummy"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0.15"/>
+        <PeriodicPeriodArray value="0.15"/>
+        <PeriodicPeriodArray value="0.15"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="NodConfessorWeaponCP">
+        <EditorCategories value="Race:Nod"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <InitialEffect value="NodConfessorDamage"/>
+        <PeriodCount value="4"/>
+        <PeriodicEffectArray value="NodMilitantDummy"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0.15"/>
+        <PeriodicPeriodArray value="0.15"/>
+        <PeriodicPeriodArray value="0.15"/>
+    </CEffectCreatePersistent>
+
+
+    <CEffectDamage id="NodConfessorDamage">
+        <EditorCategories value="Race:Nod"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <ArmorReduction value="1"/>
+        <Flags index="Notification" value="1"/>
+        <Kind value="Ranged"/>
+        <Amount value="7"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+        <SearchFlags index="OffsetByUnitRadius" value="1"/>
+    </CEffectDamage>
+</Catalog>

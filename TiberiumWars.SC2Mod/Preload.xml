@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Preload>
+<Actor id="SYSTEM_ActorConfig"/>
+<Behavior id="NodGroundDrop"/>
+<Race id="Zerg"/>
+<Race id="Nod"/>
+<Sound id="Medivac_Unload" Variations="0"/>
+<Sound id="Vertigo_Attack"/>
+<Sound id="GDIDropPodImpact"/>
+<Unit id="DropPodNoddamage"/>
+<Unit id="DropPodGDI"/>
+</Preload>

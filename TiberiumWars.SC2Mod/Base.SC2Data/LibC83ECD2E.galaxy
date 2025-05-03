@@ -1,0 +1,874 @@
+include "TriggerLibs/NativeLib"
+
+include "LibC83ECD2E_h"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Mods - CNC
+//--------------------------------------------------------------------------------------------------
+// External Library Initialization
+void libC83ECD2E_InitLibraries () {
+    libNtve_InitVariables();
+}
+
+// Variable Initialization
+bool libC83ECD2E_InitVariables_completed = false;
+
+void libC83ECD2E_InitVariables () {
+    int init_i;
+
+    if (libC83ECD2E_InitVariables_completed) {
+        return;
+    }
+
+    libC83ECD2E_InitVariables_completed = true;
+
+    for (init_i = 0; init_i <= libC83ECD2E_gv_platformMaxCountRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel; init_i += 1) {
+        libC83ECD2E_gv_bomberPFUnitsGroupRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel[init_i] = UnitGroupEmpty();
+    }
+    libC83ECD2E_gv_bomberPlatformTempGroup = UnitGroupEmpty();
+    libC83ECD2E_gv_bomberFighterDebugGroup = UnitGroupEmpty();
+    libC83ECD2E_gv_bomberFighterTempGroup = UnitGroupEmpty();
+    libC83ECD2E_gv_nodTopPanelRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = c_invalidDialogControlId;
+    libC83ECD2E_gv_nodPanelRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = c_invalidDialogId;
+    libC83ECD2E_gv_mCVDeploymentPanelRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = c_invalidDialogControlId;
+    libC83ECD2E_gv_mCVDeploymentTip = c_invalidDialogControlId;
+    libC83ECD2E_gv_decoration = c_invalidDialogControlId;
+    libC83ECD2E_gv_mCVPanel = c_invalidDialogId;
+    libC83ECD2E_gv_cNC_TP_DropPod_Units = UnitGroupEmpty();
+}
+
+// Presets
+// Functions
+void libC83ECD2E_gf_ApplyPlayerVoicePack (int lp_player, string lp_voiceID) {
+    // Variable Declarations
+    string lv_voicePackReward;
+
+    // Automatic Variable Declarations
+    int auto7577C56C_catalog;
+    string auto7577C56C_entry;
+    string auto7577C56C_fieldPath;
+    int auto7577C56C_player;
+    int auto7577C56C_i;
+    int auto1B59D74B_ae;
+    int auto1B59D74B_var;
+
+    // Variable Initialization
+    lv_voicePackReward = "";
+
+    // Implementation
+    auto7577C56C_catalog = c_gameCatalogVoicePack;
+    auto7577C56C_entry = lp_voiceID;
+    auto7577C56C_fieldPath = "UnlockedRewardArray";
+    auto7577C56C_player = lp_player;
+    auto7577C56C_i = 0;
+    for ( ; auto7577C56C_i <= CatalogFieldValueCount(c_gameCatalogVoicePack,auto7577C56C_entry,auto7577C56C_fieldPath,auto7577C56C_player)-1 ; auto7577C56C_i += 1 ) {
+        lv_voicePackReward = CatalogFieldValueGet(c_gameCatalogVoicePack,auto7577C56C_entry,auto7577C56C_fieldPath+"["+IntToString(auto7577C56C_i)+"]",auto7577C56C_player);
+        auto1B59D74B_ae = (CatalogFieldValueCount(c_gameCatalogReward, lv_voicePackReward, "ReplacementArray", lp_player) - 1);
+        auto1B59D74B_var = 0;
+        for ( ; auto1B59D74B_var <= auto1B59D74B_ae; auto1B59D74B_var += 1 ) {
+            CatalogLinkReplace(lp_player, c_gameCatalogSound, CatalogFieldValueGet(c_gameCatalogReward, lv_voicePackReward, "ReplacementArray[" + IntToString(auto1B59D74B_var) + "].From", lp_player), CatalogFieldValueGet(c_gameCatalogReward, lv_voicePackReward, "ReplacementArray[" + IntToString(auto1B59D74B_var) + "].To", lp_player));
+        }
+    }
+}
+
+trigger auto_libC83ECD2E_gf_NodAirRaid_Trigger = null;
+unit auto_libC83ECD2E_gf_NodAirRaid_lp_unit;
+region auto_libC83ECD2E_gf_NodAirRaid_lp_area;
+
+void libC83ECD2E_gf_NodAirRaid (unit lp_unit, region lp_area) {
+    auto_libC83ECD2E_gf_NodAirRaid_lp_unit = lp_unit;
+    auto_libC83ECD2E_gf_NodAirRaid_lp_area = lp_area;
+
+    if (auto_libC83ECD2E_gf_NodAirRaid_Trigger == null) {
+        auto_libC83ECD2E_gf_NodAirRaid_Trigger = TriggerCreate("auto_libC83ECD2E_gf_NodAirRaid_TriggerFunc");
+    }
+
+    TriggerExecute(auto_libC83ECD2E_gf_NodAirRaid_Trigger, false, false);
+}
+
+bool auto_libC83ECD2E_gf_NodAirRaid_TriggerFunc (bool testConds, bool runActions) {
+    unit lp_unit = auto_libC83ECD2E_gf_NodAirRaid_lp_unit;
+    region lp_area = auto_libC83ECD2E_gf_NodAirRaid_lp_area;
+
+    // Variable Declarations
+    unit lv_jTargetUnit;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+
+    // Implementation
+    Wait(2.0, c_timeGame);
+    UnitIssueOrder(lp_unit, OrderTargetingPoint(AbilityCommand("VertigoBomb", 0), RegionRandomPoint(lp_area)), c_orderQueueAddToEnd);
+    return true;
+}
+
+void libC83ECD2E_gf_ShowhideNodtoppanel (bool lp_showHide, int lp_player) {
+    // Automatic Variable Declarations
+    bool auto18566EEF_val;
+
+    // Implementation
+    auto18566EEF_val = lp_showHide;
+    if (auto18566EEF_val == true) {
+        DialogSetVisible(libC83ECD2E_gv_nodPanelRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel, PlayerGroupSingle(lp_player), true);
+    }
+    else if (auto18566EEF_val == false) {
+        DialogSetVisible(libC83ECD2E_gv_nodPanelRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel, PlayerGroupSingle(lp_player), false);
+    }
+    else {
+    }
+}
+
+void libC83ECD2E_gf_Showhidetoppanel (bool lp_showHide) {
+    // Automatic Variable Declarations
+    bool auto3C28B5E4_val;
+
+    // Implementation
+    auto3C28B5E4_val = lp_showHide;
+    if (auto3C28B5E4_val == true) {
+        DialogSetVisible(libC83ECD2E_gv_mCVPanel, PlayerGroupAll(), true);
+    }
+    else if (auto3C28B5E4_val == false) {
+        DialogSetVisible(libC83ECD2E_gv_mCVPanel, PlayerGroupAll(), false);
+    }
+    else {
+    }
+}
+
+void libC83ECD2E_gf__NodDropPod (point lp_location, unitgroup lp_units, int lp_player) {
+    // Variable Declarations
+    unit lv_selectedUnit;
+    unit lv_dropPod;
+    point lv_dropPodLocationRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel;
+    fixed lv_angleRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel;
+    point lv_dropLocationRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel;
+    unit lv_creep;
+
+    // Automatic Variable Declarations
+    unitgroup autoE3C154DA_g;
+    int autoE3C154DA_u;
+    unitgroup autoB2ED511A_g;
+    int autoB2ED511A_u;
+
+    // Variable Initialization
+
+    // Implementation
+    autoE3C154DA_g = lp_units;
+    autoE3C154DA_u = UnitGroupCount(autoE3C154DA_g, c_unitCountAll);
+    for (;; autoE3C154DA_u -= 1) {
+        lv_selectedUnit = UnitGroupUnitFromEnd(autoE3C154DA_g, autoE3C154DA_u);
+        if (lv_selectedUnit == null) { break; }
+        libNtve_gf_ShowHideUnit(lv_selectedUnit, false);
+        libNtve_gf_PauseUnit(lv_selectedUnit, true);
+    }
+    libNtve_gf_CreateUnitsAtPoint2(1, "DropPodNoddamage", 0, lp_player, lp_location);
+    lv_dropPod = UnitLastCreated();
+    lv_dropPodLocationRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = UnitGetPosition(lv_dropPod);
+    lv_angleRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = 0.0;
+    autoB2ED511A_g = lp_units;
+    autoB2ED511A_u = UnitGroupCount(autoB2ED511A_g, c_unitCountAll);
+    for (;; autoB2ED511A_u -= 1) {
+        lv_selectedUnit = UnitGroupUnitFromEnd(autoB2ED511A_g, autoB2ED511A_u);
+        if (lv_selectedUnit == null) { break; }
+        UnitBehaviorAddPlayer(lv_selectedUnit, "NodGroundDrop", 1, 1);
+        UnitSetPosition(lv_selectedUnit, lv_dropPodLocationRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel, false);
+        libNtve_gf_ShowHideUnit(lv_selectedUnit, true);
+        libNtve_gf_PauseUnit(lv_selectedUnit, false);
+    }
+    Wait(4.0, c_timeGame);
+    UnitKill(lv_dropPod);
+}
+
+void libC83ECD2E_gf__GDIDropPod (point lp_location, unitgroup lp_units, int lp_player) {
+    // Variable Declarations
+    unit lv_selectedUnit;
+    unit lv_dropPod;
+    point lv_dropPodLocationRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel;
+    fixed lv_angle;
+    fixed lv_angleStart;
+    point lv_dropPoint;
+    fixed lv_range;
+    int lv_subgroupIndex;
+    point lv_movePosition;
+    int lv_countPerRow;
+
+    // Automatic Variable Declarations
+    unitgroup auto683F72BB_g;
+    int auto683F72BB_u;
+    unitgroup auto24E2264C_g;
+    int auto24E2264C_u;
+
+    // Variable Initialization
+
+    // Implementation
+    auto683F72BB_g = lp_units;
+    auto683F72BB_u = UnitGroupCount(auto683F72BB_g, c_unitCountAll);
+    for (;; auto683F72BB_u -= 1) {
+        lv_selectedUnit = UnitGroupUnitFromEnd(auto683F72BB_g, auto683F72BB_u);
+        if (lv_selectedUnit == null) { break; }
+        libNtve_gf_ShowHideUnit(lv_selectedUnit, false);
+        libNtve_gf_PauseUnit(lv_selectedUnit, true);
+    }
+    libNtve_gf_CreateUnitsAtPoint2(1, "DropPodGDI", 0, lp_player, lp_location);
+    lv_dropPod = UnitLastCreated();
+    libNtve_gf_PlayAnimation(libNtve_gf_MainActorofUnit(lv_dropPod), c_animNameDefault, "Birth", c_animFlagNonLooping, c_animTimeDefault);
+    Wait(3.5, c_timeGame);
+    SoundPlayAtPoint(SoundLink("GDIDropPodImpact", -1), PlayerGroupAll(), lv_dropPoint, 0.0, 200.0, 0.0);
+    lv_countPerRow = 4;
+    if ((UnitGroupCount(lp_units, c_unitCountAlive) > 16)) {
+        lv_countPerRow = ((UnitGroupCount(lp_units, c_unitCountAlive) + 3) / 4);
+    }
+
+    lv_dropPodLocationRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = UnitGetPosition(lv_dropPod);
+    lv_range = (0.8 + ((IntToFixed((UnitGroupCount(lp_units, c_unitCountAlive) + 3)) / IntToFixed(lv_countPerRow)) * 0.8));
+    lv_subgroupIndex = 1;
+    lv_angleStart = 225.0;
+    lv_angle = lv_angleStart;
+    auto24E2264C_g = lp_units;
+    auto24E2264C_u = UnitGroupCount(auto24E2264C_g, c_unitCountAll);
+    for (;; auto24E2264C_u -= 1) {
+        lv_selectedUnit = UnitGroupUnitFromEnd(auto24E2264C_g, auto24E2264C_u);
+        if (lv_selectedUnit == null) { break; }
+        lv_dropPoint = PointWithOffsetPolar(lv_dropPodLocationRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel, 1.0, lv_angle);
+        SoundPlayAtPoint(SoundLink("Medivac_Unload", 0), PlayerGroupAll(), lv_dropPoint, 0.0, 100.0, 0.0);
+        Wait(0.125, c_timeGame);
+        UnitSetPosition(lv_selectedUnit, lv_dropPoint, false);
+        libNtve_gf_ShowHideUnit(lv_selectedUnit, true);
+        libNtve_gf_PauseUnit(lv_selectedUnit, false);
+        lv_movePosition = PointWithOffsetPolar(lv_dropPodLocationRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel, lv_range, lv_angle);
+        if ((lv_subgroupIndex == lv_countPerRow)) {
+            lv_subgroupIndex = 1;
+            lv_angle = lv_angleStart;
+            lv_range -= 0.8;
+        }
+        else {
+            lv_subgroupIndex += 1;
+            lv_angle += 10.0;
+        }
+    }
+    UnitKill(lv_dropPod);
+}
+
+void libC83ECD2E_gf_CreateDropPod (int lp_race, point lp_location, unitgroup lp_units, bool lp_waitDontWait, int lp_playerinteger) {
+    // Variable Declarations
+    point lv_dropPoint;
+    unitgroup lv_dropUnitsRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel;
+    int lv_localPlayerIntegerRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel;
+
+    // Automatic Variable Declarations
+    int auto10E1EA31_val;
+
+    // Variable Initialization
+    lv_dropUnitsRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = UnitGroupEmpty();
+
+    // Implementation
+    lv_dropPoint = Point(PointGetX(lp_location), PointGetY(lp_location));
+    lv_dropUnitsRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = UnitGroupCopy(lp_units);
+    lv_localPlayerIntegerRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = lp_playerinteger;
+    auto10E1EA31_val = lp_race;
+    if (auto10E1EA31_val == libC83ECD2E_ge_DropPodRace_Terran) {
+        if ((lp_waitDontWait == true)) {
+            libC83ECD2E_gf__GDIDropPod(lv_dropPoint, lv_dropUnitsRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel, lp_playerinteger);
+        }
+        else {
+            libC83ECD2E_gv_cNC_TP_DropPod_LocationRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = lv_dropPoint;
+            libC83ECD2E_gv_cNC_TP_DropPod_Units = lv_dropUnitsRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel;
+            libC83ECD2E_gv_playerIntegerRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = lv_localPlayerIntegerRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel;
+            TriggerExecute(libC83ECD2E_gt__GDIDropPod, true, false);
+        }
+    }
+    else if (auto10E1EA31_val == libC83ECD2E_ge_DropPodRace_Zerg) {
+        if ((lp_waitDontWait == true)) {
+            libC83ECD2E_gf__NodDropPod(lv_dropPoint, lv_dropUnitsRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel, lp_playerinteger);
+        }
+        else {
+            libC83ECD2E_gv_cNC_TP_DropPod_LocationRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = lv_dropPoint;
+            libC83ECD2E_gv_cNC_TP_DropPod_Units = lv_dropUnitsRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel;
+            libC83ECD2E_gv_playerIntegerRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = lv_localPlayerIntegerRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel;
+            TriggerExecute(libC83ECD2E_gt__NodDropPodStarchainTest, true, false);
+        }
+    }
+    else {
+    }
+}
+
+// Triggers
+//--------------------------------------------------------------------------------------------------
+// Trigger: Test
+//--------------------------------------------------------------------------------------------------
+bool libC83ECD2E_gt_Test_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    PlayerOptionOverride(1, "simplecommandcard", "0");
+    PlayerSetRace(1, "Nod");
+    PlayerSetAlliance(2, c_allianceIdVision, 1, true);
+    PlayerSetAlliance(2, c_allianceIdControl, 1, true);
+    PlayerSetRace(2, "Zerg");
+    GameSetSpeedValue(c_gameSpeedFaster);
+    TriggerExecute(libC83ECD2E_gt_PlayNod, true, false);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libC83ECD2E_gt_Test_Init () {
+    libC83ECD2E_gt_Test = TriggerCreate("libC83ECD2E_gt_Test_Func");
+    TriggerAddEventMapInit(libC83ECD2E_gt_Test);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Play Nod
+//--------------------------------------------------------------------------------------------------
+bool libC83ECD2E_gt_PlayNod_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    playergroup autoC0198CC5_g;
+    int autoC0198CC5_var;
+    string auto0F65D74F_val;
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    autoC0198CC5_g = PlayerGroupAll();
+    autoC0198CC5_var = -1;
+    while (true) {
+        autoC0198CC5_var = PlayerGroupNextPlayer(autoC0198CC5_g, autoC0198CC5_var);
+        if (autoC0198CC5_var < 0) { break; }
+        auto0F65D74F_val = PlayerRace(autoC0198CC5_var);
+        if (auto0F65D74F_val == "Nod") {
+            libNtve_gf_SetUpgradeLevelForPlayer(autoC0198CC5_var, "NodFactionNod", 1);
+        }
+        else if (auto0F65D74F_val == "NBH") {
+            libNtve_gf_SetUpgradeLevelForPlayer(autoC0198CC5_var, "NodFactionNBH", 1);
+        }
+        else if (auto0F65D74F_val == "CABAL") {
+            libNtve_gf_SetUpgradeLevelForPlayer(autoC0198CC5_var, "NodFactionMOK", 1);
+        }
+        else {
+            libNtve_gf_SetUpgradeLevelForPlayer(autoC0198CC5_var, "NodFactionNULL", 1);
+        }
+    }
+    TriggerEnable(libC83ECD2E_gt_Borrowedbombercustomreturntrajectory, true);
+    TriggerEnable(libC83ECD2E_gt_BorrowedbombercreationbindingStarchainTest, true);
+    TriggerEnable(libC83ECD2E_gt_LaunchairstrikeStarchainTest, true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libC83ECD2E_gt_PlayNod_Init () {
+    libC83ECD2E_gt_PlayNod = TriggerCreate("libC83ECD2E_gt_PlayNod_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Borrowed bomber custom return trajectory
+//--------------------------------------------------------------------------------------------------
+bool libC83ECD2E_gt_Borrowedbombercustomreturntrajectory_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    int lv_defaultIntRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel;
+    int lv_diyInit;
+    unit lv_airPlane;
+    point lv_airStrikePoint;
+    fixed lv_airStrikeAngle;
+    int lv_porNNumber;
+    int lv_times;
+    int lv_negativeRandom;
+    fixed lv_unitSpeed;
+    fixed lv_temp;
+
+    // Automatic Variable Declarations
+    int auto97AF4E93_ae;
+    const int auto97AF4E93_ai = 1;
+
+    // Variable Initialization
+    lv_diyInit = 1;
+    lv_airPlane = EventPlayerEffectUsedUnit(c_effectUnitCaster);
+    lv_airStrikePoint = EventPlayerEffectUsedPoint(c_effectLocationTargetPoint);
+    lv_airStrikeAngle = UnitGetFacing(lv_airPlane);
+    lv_porNNumber = 1;
+    lv_temp = 0.75;
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_unitSpeed = UnitGetPropertyFixed(lv_airPlane, c_unitPropMovementSpeed, c_unitPropCurrent);
+    lv_negativeRandom = RandomInt(0, 1);
+    if ((lv_negativeRandom == 1)) {
+        lv_porNNumber = -1;
+    }
+
+    while ((lv_times <= 2)) {
+        if ((lv_times == 0)) {
+            UnitIssueOrder(lv_airPlane, OrderTargetingPoint(AbilityCommand("move", 0), PointWithOffsetPolar(UnitGetPosition(lv_airPlane), (lv_diyInit * (lv_temp * lv_unitSpeed)), lv_airStrikeAngle)), c_orderQueueReplace);
+            lv_airStrikeAngle += (lv_porNNumber * 112.5);
+        }
+        else {
+            UnitIssueOrder(lv_airPlane, OrderTargetingPoint(AbilityCommand("move", 0), PointWithOffsetPolar(UnitGetPosition(lv_airPlane), ((0.76 * lv_diyInit) * (lv_temp * lv_unitSpeed)), lv_airStrikeAngle)), c_orderQueueReplace);
+            lv_airStrikeAngle += (lv_porNNumber * 45.0);
+        }
+        Wait((lv_temp * lv_diyInit), c_timeGame);
+        lv_times += 1;
+    }
+    auto97AF4E93_ae = (libC83ECD2E_gv_platformMaxCountRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel - 1);
+    lv_defaultIntRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = 0;
+    for ( ; ( (auto97AF4E93_ai >= 0 && lv_defaultIntRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel <= auto97AF4E93_ae) || (auto97AF4E93_ai < 0 && lv_defaultIntRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel >= auto97AF4E93_ae) ) ; lv_defaultIntRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel += auto97AF4E93_ai ) {
+        if ((UnitGroupHasUnit(libC83ECD2E_gv_bomberPFUnitsGroupRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel[lv_defaultIntRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel], lv_airPlane) == true)) {
+            UnitIssueOrder(lv_airPlane, OrderTargetingPoint(AbilityCommand("VertigoLand", 0), UnitGetPosition(UnitGroupUnit(libC83ECD2E_gv_bomberPFUnitsGroupRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel[lv_defaultIntRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel], 1))), c_orderQueueReplace);
+            break;
+        }
+
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libC83ECD2E_gt_Borrowedbombercustomreturntrajectory_Init () {
+    libC83ECD2E_gt_Borrowedbombercustomreturntrajectory = TriggerCreate("libC83ECD2E_gt_Borrowedbombercustomreturntrajectory_Func");
+    TriggerEnable(libC83ECD2E_gt_Borrowedbombercustomreturntrajectory, false);
+    TriggerAddEventPlayerEffectUsed(libC83ECD2E_gt_Borrowedbombercustomreturntrajectory, c_playerAny, "VertigoSearchArea");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Borrowed bomber creation bindingStarchain Test
+//--------------------------------------------------------------------------------------------------
+bool libC83ECD2E_gt_BorrowedbombercreationbindingStarchainTest_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_bomber;
+    unit lv_platformRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel;
+    int lv_defaultIntRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel;
+
+    // Automatic Variable Declarations
+    int autoA5C0725A_ae;
+    const int autoA5C0725A_ai = 1;
+
+    // Variable Initialization
+    lv_bomber = EventPlayerEffectUsedUnit(c_effectUnitTarget);
+    lv_platformRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = EventPlayerEffectUsedUnit(c_effectUnitCaster);
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitGroupAdd(libC83ECD2E_gv_bomberFighterTempGroup, lv_bomber);
+    if ((UnitGroupHasUnit(libC83ECD2E_gv_bomberPlatformTempGroup, lv_platformRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel) == false)) {
+        UnitGroupAdd(libC83ECD2E_gv_bomberPlatformTempGroup, lv_platformRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel);
+        UnitGroupAdd(libC83ECD2E_gv_bomberPFUnitsGroupRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel[libC83ECD2E_gv_platformNowCountRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel], lv_platformRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel);
+        UnitGroupAdd(libC83ECD2E_gv_bomberPFUnitsGroupRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel[libC83ECD2E_gv_platformNowCountRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel], lv_bomber);
+        libC83ECD2E_gv_platformNowCountRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel += 1;
+    }
+    else {
+        autoA5C0725A_ae = (libC83ECD2E_gv_platformMaxCountRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel - 1);
+        lv_defaultIntRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = 0;
+        for ( ; ( (autoA5C0725A_ai >= 0 && lv_defaultIntRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel <= autoA5C0725A_ae) || (autoA5C0725A_ai < 0 && lv_defaultIntRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel >= autoA5C0725A_ae) ) ; lv_defaultIntRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel += autoA5C0725A_ai ) {
+            if ((UnitGroupHasUnit(libC83ECD2E_gv_bomberPFUnitsGroupRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel[lv_defaultIntRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel], lv_platformRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel) == true)) {
+                UnitGroupClear(libC83ECD2E_gv_bomberPFUnitsGroupRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel[lv_defaultIntRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel]);
+                UnitGroupAdd(libC83ECD2E_gv_bomberPFUnitsGroupRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel[lv_defaultIntRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel], lv_platformRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel);
+                UnitGroupAdd(libC83ECD2E_gv_bomberPFUnitsGroupRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel[lv_defaultIntRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel], lv_bomber);
+                break;
+            }
+
+        }
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libC83ECD2E_gt_BorrowedbombercreationbindingStarchainTest_Init () {
+    libC83ECD2E_gt_BorrowedbombercreationbindingStarchainTest = TriggerCreate("libC83ECD2E_gt_BorrowedbombercreationbindingStarchainTest_Func");
+    TriggerEnable(libC83ECD2E_gt_BorrowedbombercreationbindingStarchainTest, false);
+    TriggerAddEventPlayerEffectUsed(libC83ECD2E_gt_BorrowedbombercreationbindingStarchainTest, c_playerAny, "VertigoCreate");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Launch airstrikeStarchain Test
+//--------------------------------------------------------------------------------------------------
+bool libC83ECD2E_gt_LaunchairstrikeStarchainTest_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    fixed lv_range;
+    region lv_areaRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel;
+    int lv_defaultIntRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel;
+
+    // Automatic Variable Declarations
+    unitgroup autoBA573FEE_g;
+    int autoBA573FEE_u;
+    unit autoBA573FEE_var;
+
+    // Variable Initialization
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    lv_range = 8.0;
+    lv_areaRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = RegionCircle(EventPlayerEffectUsedPoint(c_effectLocationTargetPoint), lv_range);
+    libC83ECD2E_gv_aOEStrikeCasterTemp = EventPlayerEffectUsedUnit(c_effectUnitCaster);
+    SoundPlayForPlayer(SoundLink("Vertigo_Attack", -1), c_maxPlayers, PlayerGroupAll(), 100.0, 0.0);
+    autoBA573FEE_g = libC83ECD2E_gv_bomberFighterTempGroup;
+    autoBA573FEE_u = UnitGroupCount(autoBA573FEE_g, c_unitCountAll);
+    for (;; autoBA573FEE_u -= 1) {
+        autoBA573FEE_var = UnitGroupUnitFromEnd(autoBA573FEE_g, autoBA573FEE_u);
+        if (autoBA573FEE_var == null) { break; }
+        if ((UnitGetType(autoBA573FEE_var) == "Vertigolanded") && (UnitGetOwner(autoBA573FEE_var) == EventPlayer())) {
+            UnitIssueOrder(autoBA573FEE_var, Order(AbilityCommand("Vertigotakeoff", 0)), c_orderQueueReplace);
+            libC83ECD2E_gv_bomberUsable -= 1;
+            Wait(0.125, c_timeGame);
+            libC83ECD2E_gf_NodAirRaid(autoBA573FEE_var, lv_areaRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel);
+        }
+
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libC83ECD2E_gt_LaunchairstrikeStarchainTest_Init () {
+    libC83ECD2E_gt_LaunchairstrikeStarchainTest = TriggerCreate("libC83ECD2E_gt_LaunchairstrikeStarchainTest_Func");
+    TriggerEnable(libC83ECD2E_gt_LaunchairstrikeStarchainTest, false);
+    TriggerAddEventPlayerEffectUsed(libC83ECD2E_gt_LaunchairstrikeStarchainTest, c_playerAny, "VertigoAttackSet");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Unlock all unitsStarchain Test
+//--------------------------------------------------------------------------------------------------
+bool libC83ECD2E_gt_UnlockallunitsStarchainTest_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TechTreeUnitAllow(1, "ZoneEnforcer", true);
+    TechTreeUnitAllow(1, "GDIEngineer", true);
+    TechTreeUnitAllow(1, "GDIZoneTrooper", true);
+    TechTreeUnitAllow(1, "GDIZoneDefender", true);
+    TechTreeUnitAllow(1, "GDIShepherdTank", true);
+    TechTreeUnitAllow(1, "GDIBunker", true);
+    TechTreeUnitAllow(1, "GDIBarracks", true);
+    TechTreeUnitAllow(1, "GDIWarFactory", true);
+    TechTreeUnitAllow(1, "ComandPost", true);
+    TechTreeUnitAllow(1, "GDIRefinery", true);
+    TechTreeUnitAllow(1, "ComandPost", true);
+    TechTreeUnitAllow(1, "Dozer", true);
+    TechTreeUnitAllow(1, "NodBike", true);
+    TechTreeUnitAllow(1, "NodRaider", true);
+    TechTreeUnitAllow(1, "CabalMarauder", true);
+    TechTreeUnitAllow(1, "Ascended", true);
+    TechTreeUnitAllow(1, "Enlightened", true);
+    TechTreeUnitAllow(1, "Devout", true);
+    TechTreeUnitAllow(1, "CabalAvengerTank", true);
+    TechTreeUnitAllow(1, "FlameTank", true);
+    TechTreeUnitAllow(1, "CabalCenturion", true);
+    TechTreeUnitAllow(1, "StealthTank", true);
+    TechTreeUnitAllow(1, "NodScorpion", true);
+    TechTreeUnitAllow(1, "CabalTyrant", true);
+    TechTreeUnitAllow(1, "CabalUnderminer", true);
+    TechTreeUnitAllow(1, "NodSpecter", true);
+    TechTreeUnitAllow(1, "CabalAfterShock", true);
+    TechTreeUnitAllow(1, "BlackHand", true);
+    TechTreeUnitAllow(1, "HighConfessor", true);
+    TechTreeUnitAllow(1, "CabalHijacker", true);
+    TechTreeUnitAllow(1, "CabalReaper", true);
+    TechTreeUnitAllow(1, "Bane", true);
+    TechTreeUnitAllow(1, "CabalSalamander", true);
+    TechTreeUnitAllow(1, "Scalpel", true);
+    TechTreeUnitAllow(1, "CabalBasilisk", true);
+    TechTreeUnitAllow(1, "Medusa", true);
+    TechTreeUnitAllow(1, "CabalLeviathan", true);
+    TechTreeUnitAllow(1, "NodAvatar", true);
+    TechTreeUnitAllow(1, "CabalWidow", true);
+    TechTreeUnitAllow(1, "NodRedeemer", true);
+    TechTreeUnitAllow(1, "CabalDominator", true);
+    TechTreeUnitAllow(1, "NodMantis", true);
+    TechTreeUnitAllow(1, "NodTurretO", true);
+    TechTreeUnitAllow(1, "CabalMissilePodO", true);
+    TechTreeUnitAllow(1, "NodObeliskOfLight", true);
+    TechTreeUnitAllow(1, "CabalIncinerator", true);
+    TechTreeUnitAllow(1, "CabalFlameColumn", true);
+    TechTreeUnitAllow(1, "NodKaneCommando", true);
+    TechTreeUnitAllow(1, "NodEngineer", true);
+    TechTreeUnitAllow(1, "Cobra", true);
+    TechTreeUnitAllow(1, "NodWarFactorySP", true);
+    TechTreeUnitAllow(1, "NodHangarSPDefense", true);
+    TechTreeUnitAllow(1, "NodPowerPlantSP", true);
+    TechTreeUnitAllow(1, "NodOPCenterSP", true);
+    TechTreeUnitAllow(1, "NodCraneSP", true);
+    TechTreeUnitAllow(1, "NodTurret", true);
+    TechTreeUnitAllow(1, "NodTurretO", true);
+    TechTreeUnitAllow(1, "CabalMissilePod", true);
+    TechTreeUnitAllow(1, "CabalMissilePodO", true);
+    TechTreeUnitAllow(1, "NodChemicalPlantSP", true);
+    TechTreeUnitAllow(1, "NodShrineSP", true);
+    TechTreeUnitAllow(1, "NodTechLabSP", true);
+    TechTreeUnitAllow(1, "CabalSpider", true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libC83ECD2E_gt_UnlockallunitsStarchainTest_Init () {
+    libC83ECD2E_gt_UnlockallunitsStarchainTest = TriggerCreate("libC83ECD2E_gt_UnlockallunitsStarchainTest_Func");
+    TriggerAddEventChatMessage(libC83ECD2E_gt_UnlockallunitsStarchainTest, c_playerAny, "wdnmd", true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Nod Top PanelStarchain Test
+//--------------------------------------------------------------------------------------------------
+bool libC83ECD2E_gt_NodTopPanelStarchainTest_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TriggerEnable(TriggerGetCurrent(), false);
+    libNtve_gf_CreateUnitsWithDefaultFacing(1, "NodCaster", c_unitCreateIgnorePlacement, 1, Point(3.0, 3.0));
+    libC83ECD2E_gv_nodCasterRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = UnitLastCreated();
+    DialogCreate(150, 550, c_anchorRight, 0, -80, true);
+    DialogSetImageVisible(DialogLastCreated(), false);
+    libC83ECD2E_gv_nodPanelRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = DialogLastCreated();
+    DialogControlCreateFromTemplate(libC83ECD2E_gv_nodPanelRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel, c_triggerControlTypeCommandPanel, "NodTopPanel/SoACommandPanelTemplate");
+    libC83ECD2E_gv_nodTopPanelRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = DialogControlLastCreated();
+    DialogControlSetPosition(libC83ECD2E_gv_nodTopPanelRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel, PlayerGroupAll(), c_anchorCenter, 160, 76);
+    libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(libC83ECD2E_gv_nodCasterRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel), PlayerGroupAll());
+    DialogSetVisible(libC83ECD2E_gv_nodPanelRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel, PlayerGroupAll(), true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libC83ECD2E_gt_NodTopPanelStarchainTest_Init () {
+    libC83ECD2E_gt_NodTopPanelStarchainTest = TriggerCreate("libC83ECD2E_gt_NodTopPanelStarchainTest_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: MCV Deploy PanelStarchain Test
+//--------------------------------------------------------------------------------------------------
+bool libC83ECD2E_gt_MCVDeployPanelStarchainTest_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TriggerEnable(TriggerGetCurrent(), false);
+    libNtve_gf_CreateUnitsWithDefaultFacing(1, "MCVDeployCaster", c_unitCreateIgnorePlacement, 1, Point(3.0, 3.0));
+    libC83ECD2E_gv_mCVCasterRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = UnitLastCreated();
+    DialogCreate(900, 400, c_anchorTop, 0, 0, true);
+    libC83ECD2E_gv_mCVPanel = DialogLastCreated();
+    DialogControlCreateFromTemplate(libC83ECD2E_gv_mCVPanel, c_triggerControlTypeCommandPanel, "DeployMCVPanel/MCVDeployPanelTemplate");
+    libC83ECD2E_gv_mCVDeploymentPanelRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = DialogControlLastCreated();
+    DialogControlSetPosition(libC83ECD2E_gv_mCVDeploymentPanelRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel, PlayerGroupAll(), c_anchorTop, -70, 30);
+    libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(libC83ECD2E_gv_mCVCasterRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel), PlayerGroupAll());
+    libNtve_gf_CreateDialogItemLabel(DialogLastCreated(), 300, 50, c_anchorBottom, 30, 30, StringExternal("Param/Value/lib_C83ECD2E_991E0E3C"), ColorWithAlpha(0,0,0,0), true, 2.0);
+    DialogSetVisible(libC83ECD2E_gv_mCVPanel, PlayerGroupAll(), true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libC83ECD2E_gt_MCVDeployPanelStarchainTest_Init () {
+    libC83ECD2E_gt_MCVDeployPanelStarchainTest = TriggerCreate("libC83ECD2E_gt_MCVDeployPanelStarchainTest_Func");
+    TriggerEnable(libC83ECD2E_gt_MCVDeployPanelStarchainTest, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Deployment detectionStarchain Test
+//--------------------------------------------------------------------------------------------------
+bool libC83ECD2E_gt_DeploymentdetectionStarchainTest_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((UnitGetType(EventUnit()) == "MCVDeployCaster"))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    DialogSetVisible(libC83ECD2E_gv_mCVPanel, PlayerGroupAll(), false);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libC83ECD2E_gt_DeploymentdetectionStarchainTest_Init () {
+    libC83ECD2E_gt_DeploymentdetectionStarchainTest = TriggerCreate("libC83ECD2E_gt_DeploymentdetectionStarchainTest_Func");
+    TriggerEnable(libC83ECD2E_gt_DeploymentdetectionStarchainTest, false);
+    TriggerAddEventUnitAbility(libC83ECD2E_gt_DeploymentdetectionStarchainTest, null, null, c_unitAbilStageAll, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Disable other MCVsStarchain Test
+//--------------------------------------------------------------------------------------------------
+bool libC83ECD2E_gt_DisableotherMCVsStarchainTest_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Conditions
+    if (testConds) {
+        if (!((UnitGetOwner(EventUnit()) == 1))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((UnitGetType(EventUnit()) == "CabalOffenseCrawler")) {
+        TechTreeAbilityAllow(1, AbilityCommand("DeployMCVDefense", 0), false);
+        TechTreeAbilityAllow(1, AbilityCommand("DeployMCVSupport", 0), false);
+    }
+
+    if ((UnitGetType(EventUnit()) == "CabalDefenseCrawler")) {
+        TechTreeAbilityAllow(1, AbilityCommand("DeployMCVOffense", 0), false);
+        TechTreeAbilityAllow(1, AbilityCommand("DeployMCVSupport", 0), false);
+    }
+
+    if ((UnitGetType(EventUnit()) == "CabalSupportCrawler")) {
+        TechTreeAbilityAllow(1, AbilityCommand("DeployMCVDefense", 0), false);
+        TechTreeAbilityAllow(1, AbilityCommand("DeployMCVOffense", 0), false);
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libC83ECD2E_gt_DisableotherMCVsStarchainTest_Init () {
+    libC83ECD2E_gt_DisableotherMCVsStarchainTest = TriggerCreate("libC83ECD2E_gt_DisableotherMCVsStarchainTest_Func");
+    TriggerEnable(libC83ECD2E_gt_DisableotherMCVsStarchainTest, false);
+    TriggerAddEventUnitRegion(libC83ECD2E_gt_DisableotherMCVsStarchainTest, null, RegionEntireMap(), true);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: MCV redeployStarchain Test
+//--------------------------------------------------------------------------------------------------
+bool libC83ECD2E_gt_MCVredeployStarchainTest_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((UnitGetType(EventUnit()) == "CabalOffenseCrawler")) {
+        UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/lib_C83ECD2E_C33C01A4"));
+        Wait(0.5, c_timeGame);
+        DialogSetVisible(libC83ECD2E_gv_mCVPanel, PlayerGroupAll(), true);
+    }
+
+    if ((UnitGetType(EventUnit()) == "CabalDefenseCrawler")) {
+        UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/lib_C83ECD2E_06F7264C"));
+        Wait(0.5, c_timeGame);
+        DialogSetVisible(libC83ECD2E_gv_mCVPanel, PlayerGroupAll(), true);
+    }
+
+    if ((UnitGetType(EventUnit()) == "CabalSupportCrawler")) {
+        UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/lib_C83ECD2E_75FED3F4"));
+        Wait(0.5, c_timeGame);
+        DialogSetVisible(libC83ECD2E_gv_mCVPanel, PlayerGroupAll(), true);
+    }
+
+    if ((UnitGetType(EventUnit()) == "CabalDefenseCrawlerDeployed")) {
+        UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/lib_C83ECD2E_4337F561"));
+        Wait(0.5, c_timeGame);
+        DialogSetVisible(libC83ECD2E_gv_mCVPanel, PlayerGroupAll(), true);
+    }
+
+    if ((UnitGetType(EventUnit()) == "CabalOffenseCrawlerDeployed")) {
+        UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/lib_C83ECD2E_B653B3CD"));
+        Wait(0.5, c_timeGame);
+        DialogSetVisible(libC83ECD2E_gv_mCVPanel, PlayerGroupAll(), true);
+    }
+
+    if ((UnitGetType(EventUnit()) == "CabalSupportCrawlerDeployed")) {
+        UIDisplayMessage(PlayerGroupAll(), c_messageAreaSubtitle, StringExternal("Param/Value/lib_C83ECD2E_1A61AA67"));
+        Wait(0.5, c_timeGame);
+        DialogSetVisible(libC83ECD2E_gv_mCVPanel, PlayerGroupAll(), true);
+    }
+
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libC83ECD2E_gt_MCVredeployStarchainTest_Init () {
+    libC83ECD2E_gt_MCVredeployStarchainTest = TriggerCreate("libC83ECD2E_gt_MCVredeployStarchainTest_Func");
+    TriggerEnable(libC83ECD2E_gt_MCVredeployStarchainTest, false);
+    TriggerAddEventUnitDied(libC83ECD2E_gt_MCVredeployStarchainTest, null);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: _Nod Drop PodStarchain Test
+//--------------------------------------------------------------------------------------------------
+bool libC83ECD2E_gt__NodDropPodStarchainTest_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libC83ECD2E_gf__NodDropPod(libC83ECD2E_gv_cNC_TP_DropPod_LocationRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel, libC83ECD2E_gv_cNC_TP_DropPod_Units, libC83ECD2E_gv_playerIntegerRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libC83ECD2E_gt__NodDropPodStarchainTest_Init () {
+    libC83ECD2E_gt__NodDropPodStarchainTest = TriggerCreate("libC83ECD2E_gt__NodDropPodStarchainTest_Func");
+    TriggerEnable(libC83ECD2E_gt__NodDropPodStarchainTest, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: _GDI Drop Pod
+//--------------------------------------------------------------------------------------------------
+bool libC83ECD2E_gt__GDIDropPod_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    libC83ECD2E_gf__GDIDropPod(libC83ECD2E_gv_cNC_TP_DropPod_LocationRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel, libC83ECD2E_gv_cNC_TP_DropPod_Units, libC83ECD2E_gv_playerIntegerRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libC83ECD2E_gt__GDIDropPod_Init () {
+    libC83ECD2E_gt__GDIDropPod = TriggerCreate("libC83ECD2E_gt__GDIDropPod_Func");
+    TriggerEnable(libC83ECD2E_gt__GDIDropPod, false);
+}
+
+void libC83ECD2E_InitTriggers () {
+    libC83ECD2E_gt_Test_Init();
+    libC83ECD2E_gt_PlayNod_Init();
+    libC83ECD2E_gt_Borrowedbombercustomreturntrajectory_Init();
+    libC83ECD2E_gt_BorrowedbombercreationbindingStarchainTest_Init();
+    libC83ECD2E_gt_LaunchairstrikeStarchainTest_Init();
+    libC83ECD2E_gt_UnlockallunitsStarchainTest_Init();
+    libC83ECD2E_gt_NodTopPanelStarchainTest_Init();
+    libC83ECD2E_gt_MCVDeployPanelStarchainTest_Init();
+    libC83ECD2E_gt_DeploymentdetectionStarchainTest_Init();
+    libC83ECD2E_gt_DisableotherMCVsStarchainTest_Init();
+    libC83ECD2E_gt_MCVredeployStarchainTest_Init();
+    libC83ECD2E_gt__NodDropPodStarchainTest_Init();
+    libC83ECD2E_gt__GDIDropPod_Init();
+}
+
+//--------------------------------------------------------------------------------------------------
+// Library Initialization
+//--------------------------------------------------------------------------------------------------
+bool libC83ECD2E_InitLib_completed = false;
+
+void libC83ECD2E_InitLib () {
+    if (libC83ECD2E_InitLib_completed) {
+        return;
+    }
+
+    libC83ECD2E_InitLib_completed = true;
+
+    libC83ECD2E_InitLibraries();
+    libC83ECD2E_InitVariables();
+    libC83ECD2E_InitTriggers();
+}
+

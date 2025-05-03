@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CEffectSet id="NodTurretsHubBuildSet">
+        <EffectArray value="NodTurretsHubSuicideWithCaster"/>
+        <EffectArray value="MakePrecursor"/>
+        <!--        <EffectArray value="NodTurretsHubBuildLaunchMissile"/>-->
+        <EditorCategories value="Race:Nod"/>
+    </CEffectSet>
+    <CEffectApplyBehavior id="NodTurretsHubSuicideWithCaster">
+        <ValidatorArray index="0" value=""/>
+        <EditorCategories value="Race:Nod"/>
+    </CEffectApplyBehavior>
+    <CEffectLaunchMissile id="NodTurretsHubBuildLaunchMissile">
+        <ImpactEffect value="RemovePrecursor"/>
+        <Flags index="TravelValidation" value="1"/>
+        <AmmoUnit value="NodTurretsHubBuildMissile"/>
+        <LaunchEffect value="NodTurretsHubBuildCreatePersistant"/>
+        <EditorCategories value="Race:Nod"/>
+    </CEffectLaunchMissile>
+    <CEffectCreatePersistent id="NodTurretsHubBuildCreatePersistant">
+        <WhichLocation Value="SourceUnit"/>
+        <Flags index="PersistUntilDestroyed" value="1"/>
+        <InitialDelay value="0.1875"/>
+        <PeriodicValidator value="SourceNotDead"/>
+        <PeriodicEffectArray value="NodTurretsHubBuildCreateUnit"/>
+        <PeriodicPeriodArray value="0.0625"/>
+        <EditorCategories value="Race:Nod"/>
+    </CEffectCreatePersistent>
+    <CEffectCreateUnit id="NodTurretsHubBuildCreateUnit">
+        <WhichLocation Value="SourceUnit"/>
+        <Origin Value="SourceUnit"/>
+        <CreateFlags index="SetFacing" value="1"/>
+        <SpawnEffect value="NodTurretsHubBuildIssueOrder"/>
+        <SpawnUnit value="NodTurretsHubBuildUnit"/>
+        <SpawnRange value="0"/>
+        <EditorCategories value="Race:Nod"/>
+    </CEffectCreateUnit>
+    <CEffectIssueOrder id="NodTurretsHubBuildIssueOrder">
+        <Abil value="NodTurretsHubBuildApplyBehavior"/>
+        <CmdFlags index="Preempt" value="1"/>
+        <Target Effect="NodTurretsHubBuildLaunchMissile" Value="TargetUnit"/>
+        <EditorCategories value="Race:Nod"/>
+    </CEffectIssueOrder>
+    <CEffectApplyBehavior id="NodTurretsHubBuildApplyBehavior">
+        <EditorCategories value="Race:Nod"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="NodTurretsHubBuildRemoveBehavior">
+        <WhichUnit Value="Caster"/>
+        <EditorCategories value="Race:Nod"/>
+    </CEffectRemoveBehavior>
+    <CAbilBuild id="NodTurretsHubBuild">
+        <Range value="5"/>
+        <EffectArray index="Start" value="NodTurretsHubBuildSet"/>
+        <InfoArray index="Build1" Unit="NodShredderTurret">
+            <Charge>
+                <CountMax value="3"/>
+                <CountStart value="3"/>
+                <CountUse value="1"/>
+                <Link value="NodTurretsHubBuild"/>
+                <Flags index="EnableChargeTimeQueuing" value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="NodShredderTurret"/>
+            <ValidatorArray value="HasVision"/>
+        </InfoArray>
+        <InfoArray index="Build2" Unit="NodLaserTurret">
+            <Charge>
+                <CountMax value="3"/>
+                <CountStart value="3"/>
+                <CountUse value="1"/>
+                <Link value="NodTurretsHubBuild"/>
+                <Flags index="EnableChargeTimeQueuing" value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="NodLaserTurret"/>
+            <ValidatorArray value="HasVision"/>
+        </InfoArray>
+        <InfoArray index="Build3" Unit="NodMissileTurret">
+            <Charge>
+                <CountMax value="3"/>
+                <CountStart value="3"/>
+                <CountUse value="1"/>
+                <Link value="NodTurretsHubBuild"/>
+                <Flags index="EnableChargeTimeQueuing" value="1"/>
+            </Charge>
+            <Button DefaultButtonFace="NodMissileTurret"/>
+            <ValidatorArray value="HasVision"/>
+        </InfoArray>
+    </CAbilBuild>
+    <CAbilEffectInstant id="NodTurretsHubBuildApplyBehavior">
+        <Flags index="AbortOnAllianceChange" value="0"/>
+        <Flags index="RequireTargetVision" value="0"/>
+        <Range value="500"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+    </CAbilEffectInstant>
+    <CActorAction id="NodTurretsHubBuild" parent="GenericAttack" effectImpact="RemovePrecursor" effectLaunch="NodTurretsHubBuildLaunchMissile">
+        <LaunchAttachQuery Methods="Origin 0"/>
+        <ImpactSiteOps Ops="SOpAttachOrigin"/>
+        <ShieldFlashType value="None"/>
+    </CActorAction>
+    <CActorMissile id="NodTurretsHubBuildMissile" parent="GenericAttackMissile" unitName="NodTurretsHubBuildMissile">
+        <Model value="Invisible"/>
+    </CActorMissile>
+    <CActorRange id="NodTurretsHubBuildRange" parent="RangeAbil" abil="NodTurretsHubBuild">
+        <Icon value="Assets\Textures\RadarIcon2.dds"/>
+    </CActorRange>
+    <CActorUnit id="NodTurretsHubBuildUnit" parent="GenericUnitMinimal" unitName="NodTurretsHubBuildUnit">
+        <On Terms="ActorCreation" Send="SetScale 0.500000,1.000000,0.062500 0.000000 Birth"/>
+        <On Terms="ActorCreation" Send="ClearScale 1.000000 Birth"/>
+        <On Terms="ActorCreation" Send="Create NodTurretsHubBuildCracks"/>
+        <On Terms="UnitDeathCustomize; ModelVariation 0" Send="DeathCustomize Variation0"/>
+        <On Terms="UnitDeathCustomize; ModelVariation 1" Send="DeathCustomize Variation1"/>
+        <On Terms="UnitDeathCustomize; ModelVariation 2" Send="DeathCustomize Variation2"/>
+        <DeathActorModel value="NodTurretsHubBuildDeathModel"/>
+        <DeathActorModelLow value="NodTurretsHubBuildDeathModel"/>
+        <HighlightTooltip value="Unit/Name/Bogus"/>
+        <UnitFlags index="ShowBlobShadow" value="0"/>
+        <DeathCustoms AnimProps="Stand" ModelLink="NodTurretsHubBuildDeath0" Name="Variation0"/>
+        <DeathCustoms AnimProps="Stand" ModelLink="NodTurretsHubBuildDeath1" Name="Variation1"/>
+        <DeathCustoms AnimProps="Stand" ModelLink="NodTurretsHubBuildDeath2" Name="Variation2"/>
+    </CActorUnit>
+    <CModel id="NodTurretsHubBuildUnit" parent="PersistentSpellFX">
+        <Model value="Assets\Doodads\CharIntestines\CharIntestines.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.062500,0.125000,0.062500"/>
+        <ScaleMin value="0.125000,0.250000,0.125000"/>
+        <VariationCount value="3"/>
+    </CModel>
+    <CMoverMissile id="NodTurretsHubBuildMissile">
+        <MotionPhases Driver="Guidance" Speed="8" YawPitchRoll="MAX"/>
+    </CMoverMissile>
+    <CUnit id="NodTurretsHubBuildMissile" parent="MISSILE_INVULNERABLE">
+        <Race value="Nod"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:CNC"/>
+    </CUnit>
+    <CUnit id="NodTurretsHubBuildUnit" parent="MISSILE_INVULNERABLE">
+        <Race value="Nod"/>
+        <FlagArray index="Turnable" value="1"/>
+        <FlagArray index="Movable" value="0"/>
+        <FlagArray index="Missile" value="0"/>
+        <FogVisibility value="Snapshot"/>
+        <StationaryTurningRate value="2879.8242"/>
+        <TurningRate value="2879.8242"/>
+        <AbilArray Link="NodTurretsHubBuildApplyBehavior"/>
+        <BehaviorArray Link="NodTurretsHubBuildRemoveBehavior"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:CNC"/>
+    </CUnit>
+    <CBehaviorBuff id="NodTurretsHubSuicideWithCaster">
+        <RemoveValidatorArray value="CasterNotDead"/>
+        <FinalEffect value="Kill"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodTurretsHubBuildApplyBehavior">
+        <InfoFlags index="Hidden" value="1"/>
+        <!--        <RemoveValidatorArray value="NotRazorback2"/>-->
+        <MaxStackCount value="65535"/>
+        <InitialEffect value="NodTurretsHubBuildRemoveBehavior"/>
+        <RefreshEffect value="NodTurretsHubBuildRemoveBehavior"/>
+        <FinalEffect value="KillCaster"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodTurretsHubBuildRemoveBehavior">
+        <Duration value="0.125"/>
+        <ExpireEffect value="KillCaster"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+    </CBehaviorBuff>
+</Catalog>
