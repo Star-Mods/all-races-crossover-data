@@ -352,6 +352,7 @@
         <TacticalAIThink value="AIThinkCommandCenter"/>
         <AIEvalFactor value="0.7"/>
         <TechAliasArray value="Alias_CommandCenter"/>
+        <BehaviorArray Link="CNCTabConstruction"/>
     </CUnit>
     <!--MCV-->
     <CUnit id="GDIMCVCC3" parent="GDIGround">
@@ -485,6 +486,7 @@
         <AbilArray Link="GDIBarracksTrain"/>
         <AbilArray Link="Rally"/>
         <BehaviorArray Link="Deployable"/>
+        <BehaviorArray Link="CNCTabInfantry"/>
         <CardLayouts index="0">
             <LayoutButtons Face="GDIZoneEnforcer" Type="AbilCmd" AbilCmd="GDIBarracksTrain,Train1" Row="0" Column="0"/>
             <LayoutButtons Face="GDIZoneTrooper" Type="AbilCmd" AbilCmd="GDIBarracksTrain,Train4" Row="0" Column="1"/>
@@ -512,6 +514,7 @@
         <TechTreeProducedUnitArray value="GDIEngineer"/>
     </CUnit>
     <CUnit id="GDIRefinery" parent="GDIStructure">
+        <BehaviorArray Link="CNCTabEconomy"/>
         <BehaviorArray Link="Deployable"/>
         <FlagArray index="TownCamera" value="1"/>
         <ResourceDropOff index="Minerals" value="1"/>
@@ -594,6 +597,7 @@
         <AbilArray Link="GDIAirfieldTrain"/>
         <AbilArray Link="Rally"/>
         <BehaviorArray Link="Deployable"/>
+        <BehaviorArray Link="CNCTabAirforce"/>
         <CardLayouts index="0">
             <LayoutButtons Face="GDIHammerhead" Type="AbilCmd" AbilCmd="GDIAirfieldTrain,Train1" Row="0" Column="0"/>
             <LayoutButtons Face="GDIArgus" Type="AbilCmd" AbilCmd="GDIAirfieldTrain,Train2" Row="0" Column="1"/>
@@ -643,6 +647,7 @@
         <RepairTime value="60"/>
         <AbilArray Link="GDIFactoryTrain"/>
         <AbilArray Link="Rally"/>
+        <BehaviorArray Link="CNCTabVehicles"/>
         <CardLayouts index="0">
             <LayoutButtons Face="GDIStriker" Type="AbilCmd" AbilCmd="GDIFactoryTrain,Train1" Row="0" Column="0"/>
             <LayoutButtons Face="GDITitan" Type="AbilCmd" AbilCmd="GDIFactoryTrain,Train2" Row="0" Column="1"/>

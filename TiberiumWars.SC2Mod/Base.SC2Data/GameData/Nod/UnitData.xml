@@ -107,8 +107,12 @@
         <!--        <AbilArray Link="Deployable"/>-->
         <SubgroupPriority value="15"/>
     </CUnit>
+    <CUnit default="1" id="NodMissile" parent="MISSILE">
+        <Race value="Nod"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:CNC"/>
+    </CUnit>
     <CUnit id="NodHarvester" parent="NodGround">
-        <SubgroupPriority value="20"/>
+        <SubgroupPriority value="6"/>
         <Speed value="2.1484"/>
         <FlagArray index="Worker" value="1"/>
         <FlagArray index="ArmySelect" value="0"/>
@@ -143,7 +147,6 @@
         <InnerRadius value="0.375"/>
         <ScoreMake value="50"/>
         <ScoreKill value="50"/>
-        <SubgroupPriority value="6"/>
         <MinimapRadius value="0.375"/>
         <TacticalAIThink value="AIThinkSCV"/>
         <GlossaryPriority value="10"/>
@@ -156,7 +159,7 @@
         <LateralAcceleration value="46"/>
     </CUnit>
     <CUnit id="NodEmissary" parent="NodGround">
-        <SubgroupPriority value="25"/>
+        <SubgroupPriority value="6"/>
         <FlagArray index="Worker" value="1"/>
         <FlagArray index="ArmySelect" value="0"/>
         <Collide index="Small" value="1"/>
@@ -182,7 +185,6 @@
         <InnerRadius value="0.375"/>
         <ScoreMake value="50"/>
         <ScoreKill value="50"/>
-        <SubgroupPriority value="6"/>
         <MinimapRadius value="0.375"/>
         <TacticalAIThink value="AIThinkSCV"/>
         <GlossaryPriority value="10"/>
@@ -197,7 +199,7 @@
         </CardLayouts>
     </CUnit>
     <CUnit id="NodEmissaryDeployed" parent="NodStructure">
-        <SubgroupPriority value="1"/>
+        <SubgroupPriority value="3"/>
         <LifeStart value="200"/>
         <LifeMax value="200"/>
         <StationaryTurningRate value="719.4726"/>
@@ -208,19 +210,19 @@
         <BehaviorArray Link="CNCconstructionRadius"/>
         <ScoreMake value="100"/>
         <ScoreKill value="100"/>
-        <SubgroupPriority value="3"/>
         <MinimapRadius value="1.25"/>
         <GlossaryPriority value="248"/>
         <Footprint value="Footprint2x2Contour"/>
         <PlacementFootprint value="Footprint2x2"/>
     </CUnit>
     <CUnit id="NodConstructionYard" parent="NodStructure">
-        <SubgroupPriority value="99"/>
+        <SubgroupPriority value="3"/>
         <AbilArray Link="NodBuild"/>
         <AbilArray Link="NodDefenseBuild"/>
         <AbilArray Link="NodConstructionYardPack"/>
         <AbilArray Link="NodConstructionYardTrain"/>
         <AbilArray Link="Rally"/>
+        <BehaviorArray Link="CNCTabConstruction"/>
         <CardLayouts index="0">
             <LayoutButtons Face="NodEmissary" Type="AbilCmd" AbilCmd="NodConstructionYardTrain,Train1" Row="0" Column="0"/>
             <LayoutButtons Face="TerranBuild" Type="Submenu" SubmenuCardId="BLD" Row="2" Column="0"/>
@@ -277,15 +279,15 @@
         <SeparationRadius value="2.5"/>
         <Footprint value="Footprint4x4Contour"/>
         <PlacementFootprint value="Footprint4x4"/>
-        <SubgroupPriority value="3"/>
         <MinimapRadius value="2.5"/>
         <TacticalAIThink value="AIThinkCommandCenter"/>
         <AIEvalFactor value="0.7"/>
         <Food value="14"/>
     </CUnit>
     <CUnit id="NodCrane" parent="NodStructure">
-        <SubgroupPriority value="98"/>
+        <SubgroupPriority value="3"/>
         <BehaviorArray Link="Deployable"/>
+        <BehaviorArray Link="CNCTabConstruction"/>
         <AbilArray Link="NodBuild"/>
         <CardLayouts index="0">
             <LayoutButtons Face="TerranBuild" Type="Submenu" SubmenuCardId="BLD" Row="2" Column="0"/>
@@ -317,12 +319,13 @@
         <SeparationRadius value="1.75"/>
         <ScoreMake value="150"/>
         <ScoreKill value="150"/>
-        <SubgroupPriority value="3"/>
         <MinimapRadius value="1.75"/>
         <GlossaryPriority value="252"/>
     </CUnit>
-    <CUnit id="NodKaneMCV" parent="NodGround">
-        <SubgroupPriority value="97"/>
+    <CUnit id="NodMCV" parent="NodGround">
+        <FlagArray index="Worker" value="1"/>
+        <FlagArray index="ArmySelect" value="0"/>
+        <SubgroupPriority value="13"/>
         <Food value="14"/>
         <FlagArray index="PreventReveal" value="1"/>
         <FlagArray index="TownCamera" value="1"/>
@@ -359,13 +362,57 @@
         <InnerRadius value="0.875"/>
         <ScoreMake value="1000"/>
         <ScoreKill value="1000"/>
-        <SubgroupPriority value="13"/>
         <GlossaryPriority value="130"/>
         <CargoSize value="8"/>
         <AlliedPushPriority value="50"/>
         <Speed value="1.5"/>
     </CUnit>
-    <CUnit id="FlameTank" parent="NodGround">
+    <CUnit id="NodFlameTank" parent="NodGround">
+        <FlagArray index="AIPressForwardDisabled" value="1"/>
+        <PushPriority value="15"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="175"/>
+        <LifeMax value="175"/>
+        <LifeArmor value="2"/>
+        <Speed value="2"/>
+        <Acceleration value="2.25"/>
+        <LateralAcceleration value="64"/>
+        <TurningRate value="360"/>
+        <Sight value="11"/>
+        <Food value="-3"/>
+        <CostResource index="Minerals" value="100"/>
+        <CostResource index="Vespene" value="75"/>
+        <RepairTime value="34"/>
+        <KillXP value="30"/>
+        <AbilArray Link="Warpable"/>
+        <AbilArray Link="LiquidTibFlameTank"/>
+        <BehaviorArray Link="Tech2"/>
+        <BehaviorArray Link="FlameTankVeterancyUpgrade"/>
+        <WeaponArray Link="FlameTankFlamethrower" Turret="SiegeTank"/>
+        <WeaponArray Link="NodFlameTankFlamethrowerBlue" Turret="SiegeTank"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="LiquidTibFlameTank" Type="AbilCmd" AbilCmd="LiquidTibFlameTank,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.875"/>
+        <SeparationRadius value="1"/>
+        <InnerRadius value="0.875"/>
+        <CargoSize value="4"/>
+        <ScoreMake value="175"/>
+        <ScoreKill value="175"/>
+        <SubgroupPriority value="13"/>
+        <MinimapRadius value="1"/>
+        <TacticalAI value="SiegeTank"/>
+        <AIEvalFactor value="1.5"/>
+        <GlossaryPriority value="130"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+    </CUnit>
+    <CUnit id="CabalFlameTank" parent="NodGround">
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <PushPriority value="15"/>
         <Collide index="Small" value="1"/>
@@ -431,7 +478,40 @@
         <BehaviorArray Link="NodRaiderVeterancyUpgrade"/>
         <WeaponArray Link="NodRaiderweapon" Turret="Hellion"/>
         <CardLayouts index="0">
-            <LayoutButtons Face="NodGenericAwakenBuggyEMP" Type="AbilCmd" AbilCmd="NodEMP7range,255" Row="2" Column="0"/>
+            <LayoutButtons Face="NodGenericAwakenBuggyEMP" Type="AbilCmd" AbilCmd="NodEMP7range,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.625"/>
+        <SeparationRadius value="0.625"/>
+        <InnerRadius value="0.625"/>
+        <ScoreMake value="100"/>
+        <ScoreKill value="100"/>
+        <SubgroupPriority value="8"/>
+        <MinimapRadius value="0.625"/>
+        <GlossaryPriority value="80"/>
+        <AbilArray Link="NodEMP7range"/>
+    </CUnit>
+    <CUnit id="CabalRaider" parent="NodGround">
+        <FlagArray index="AISplash" value="1"/>
+        <PushPriority value="12"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Light" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="65"/>
+        <LifeMax value="65"/>
+        <Speed value="3.6015"/>
+        <Acceleration value="4.25"/>
+        <LateralAcceleration value="46"/>
+        <StationaryTurningRate value="1499.9414"/>
+        <Sight value="10"/>
+        <Food value="-2"/>
+        <CostResource index="Minerals" value="100"/>
+        <RepairTime value="10"/>
+        <KillXP value="30"/>
+        <BehaviorArray Link="GDIZoneTrooperjump"/>
+        <BehaviorArray Link="NodRaiderVeterancyUpgrade"/>
+        <WeaponArray Link="NodRaiderweapon" Turret="Hellion"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="NodGenericAwakenBuggyEMP" Type="AbilCmd" AbilCmd="NodEMP7range,Execute" Row="2" Column="0"/>
         </CardLayouts>
         <Radius value="0.625"/>
         <SeparationRadius value="0.625"/>
@@ -444,6 +524,48 @@
         <AbilArray Link="NodEMP7range"/>
     </CUnit>
     <CUnit id="NodMantis" parent="NodGround">
+        <FlagArray index="TurnBeforeMove" value="1"/>
+        <FlagArray index="AIPressForwardDisabled" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="200"/>
+        <LifeMax value="200"/>
+        <LifeArmor value="1"/>
+        <Speed value="2.25"/>
+        <Acceleration value="2.25"/>
+        <LateralAcceleration value="64"/>
+        <TurningRate value="360"/>
+        <Sight value="11"/>
+        <Food value="-3"/>
+        <CostResource index="Minerals" value="125"/>
+        <CostResource index="Vespene" value="100"/>
+        <RepairTime value="45"/>
+        <KillXP value="50"/>
+        <AbilArray Link="Warpable"/>
+        <WeaponArray Link="MantisMissile"/>
+        <Radius value="0.875"/>
+        <SeparationRadius value="1"/>
+        <InnerRadius value="0.875"/>
+        <CargoSize value="4"/>
+        <ScoreMake value="275"/>
+        <ScoreKill value="275"/>
+        <SubgroupPriority value="13"/>
+        <MinimapRadius value="1"/>
+        <TacticalAI value="SiegeTank"/>
+        <AIEvalFactor value="1.5"/>
+        <GlossaryPriority value="130"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <StationaryTurningRate value="360"/>
+        <PushPriority value="15"/>
+        <BehaviorArray Link="Tech2"/>
+        <BehaviorArray Link="NodMantisVeterancyUpgrade"/>
+    </CUnit>
+    <CUnit id="CabalMantis" parent="NodGround">
         <FlagArray index="TurnBeforeMove" value="1"/>
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <Collide index="Small" value="1"/>
@@ -489,8 +611,8 @@
         <BehaviorArray Link="Tech2"/>
         <BehaviorArray Link="NodMantisVeterancyUpgrade"/>
     </CUnit>
-    <CUnit id="ReckonerUnpack" parent="NodGround">
-        <SubgroupPriority value="25"/>
+    <CUnit id="NodReckonerUnpack" parent="NodGround">
+        <SubgroupPriority value="13"/>
         <Facing value="45"/>
         <FlagArray index="Turnable" value="0"/>
         <Collide index="Small" value="1"/>
@@ -507,7 +629,7 @@
         <KillXP value="50"/>
         <AbilArray Link="BunkerStop"/>
         <AbilArray Link="BunkerAttack"/>
-        <AbilArray Link="ReckonerPack"/>
+        <AbilArray Link="NodReckonerPack"/>
         <AbilArray Link="AttackRedirect"/>
         <AbilArray Link="healRedirect"/>
         <AbilArray Link="Rally"/>
@@ -515,7 +637,7 @@
         <CardLayouts index="0">
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="BunkerStop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="BunkerAttack,Execute" Row="0" Column="4"/>
-            <LayoutButtons Face="Reckonerpack2" Type="AbilCmd" AbilCmd="ReckonerPack,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="NodReckonerPack2" Type="AbilCmd" AbilCmd="NodReckonerPack,Execute" Row="2" Column="1"/>
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="1" Column="4"/>
             <LayoutButtons Face="BunkerLoad" Type="AbilCmd" AbilCmd="BunkerTransport,Load" Row="2" Column="2"/>
             <LayoutButtons Face="BunkerUnloadAll" Type="AbilCmd" AbilCmd="BunkerTransport,UnloadAll" Row="2" Column="3"/>
@@ -526,7 +648,6 @@
         <InnerRadius value="1"/>
         <Footprint value="FootprintSieged"/>
         <ScoreKill value="150"/>
-        <SubgroupPriority value="13"/>
         <MinimapRadius value="0.875"/>
         <TacticalAI value="SiegeTankSieged"/>
         <SelectAlias value="SiegeTank"/>
@@ -537,8 +658,8 @@
         <CargoSize value="4"/>
         <ScoreMake value="150"/>
     </CUnit>
-    <CUnit id="Reckonerpack" parent="NodGround">
-        <SubgroupPriority value="55"/>
+    <CUnit id="NodReckonerPack" parent="NodGround">
+        <SubgroupPriority value="13"/>
         <FlagArray index="TurnBeforeMove" value="1"/>
         <Collide index="Small" value="1"/>
         <Attributes index="Armored" value="1"/>
@@ -553,11 +674,100 @@
         <CostResource index="Minerals" value="150"/>
         <RepairTime value="50"/>
         <KillXP value="50"/>
-        <AbilArray Link="ReckonerUnpack"/>
+        <AbilArray Link="NodReckonerUnpack"/>
+        <AbilArray Link="BunkerTransport"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="NodReckonerUnpack" Type="AbilCmd" AbilCmd="NodReckonerUnpack,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="BunkerLoad" Type="AbilCmd" AbilCmd="BunkerTransport,Load" Row="2" Column="2"/>
+            <LayoutButtons Face="BunkerUnloadAll" Type="AbilCmd" AbilCmd="BunkerTransport,UnloadAll" Row="2" Column="3"/>
+        </CardLayouts>
+        <Radius value="1"/>
+        <SeparationRadius value="1"/>
+        <InnerRadius value="0.875"/>
+        <CargoSize value="4"/>
+        <ScoreMake value="150"/>
+        <ScoreKill value="150"/>
+        <MinimapRadius value="0.875"/>
+        <TacticalAI value="SiegeTank"/>
+        <LeaderAlias value="SiegeTank"/>
+        <SelectAlias value="SiegeTank"/>
+        <GlossaryPriority value="142"/>
+        <AIEvaluateAlias value="SiegeTank"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <PushPriority value="15"/>
+    </CUnit>
+    <CUnit id="CabalReckonerUnpack" parent="NodGround">
+        <SubgroupPriority value="13"/>
+        <Facing value="45"/>
+        <FlagArray index="Turnable" value="0"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="240"/>
+        <LifeMax value="240"/>
+        <LifeArmor value="1"/>
+        <Sight value="11"/>
+        <Food value="-2"/>
+        <Speed value="0"/>
+        <CostResource index="Minerals" value="150"/>
+        <RepairTime value="50"/>
+        <KillXP value="50"/>
+        <AbilArray Link="BunkerStop"/>
+        <AbilArray Link="BunkerAttack"/>
+        <AbilArray Link="NodReckonerPack"/>
+        <AbilArray Link="AttackRedirect"/>
+        <AbilArray Link="healRedirect"/>
+        <AbilArray Link="Rally"/>
+        <AbilArray Link="BunkerTransport"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="BunkerStop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="BunkerAttack,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="NodReckonerPack2" Type="AbilCmd" AbilCmd="NodReckonerPack,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="1" Column="4"/>
+            <LayoutButtons Face="BunkerLoad" Type="AbilCmd" AbilCmd="BunkerTransport,Load" Row="2" Column="2"/>
+            <LayoutButtons Face="BunkerUnloadAll" Type="AbilCmd" AbilCmd="BunkerTransport,UnloadAll" Row="2" Column="3"/>
+            <LayoutButtons Face="GDIHeal" Type="AbilCmd" AbilCmd="healRedirect,Execute" Row="1" Column="0"/>
+        </CardLayouts>
+        <Radius value="1"/>
+        <SeparationRadius value="1"/>
+        <InnerRadius value="1"/>
+        <Footprint value="FootprintSieged"/>
+        <ScoreKill value="150"/>
+        <MinimapRadius value="0.875"/>
+        <TacticalAI value="SiegeTankSieged"/>
+        <SelectAlias value="SiegeTank"/>
+        <SubgroupAlias value="SiegeTank"/>
+        <GlossaryPriority value="143"/>
+        <AIEvaluateAlias value="SiegeTankSieged"/>
+        <BehaviorArray Link="SuppressMoving"/>
+        <CargoSize value="4"/>
+        <ScoreMake value="150"/>
+    </CUnit>
+    <CUnit id="CabalReckonerPack" parent="NodGround">
+        <SubgroupPriority value="13"/>
+        <FlagArray index="TurnBeforeMove" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="160"/>
+        <LifeMax value="160"/>
+        <LifeArmor value="1"/>
+        <Speed value="2.6015"/>
+        <LateralAcceleration value="46.0625"/>
+        <Sight value="11"/>
+        <Food value="-2"/>
+        <CostResource index="Minerals" value="150"/>
+        <RepairTime value="50"/>
+        <KillXP value="50"/>
+        <AbilArray Link="NodReckonerUnpack"/>
         <AbilArray Link="BunkerTransport"/>
         <AbilArray Link="NodDeepBurrow"/>
         <CardLayouts index="0">
-            <LayoutButtons Face="ReckonerUnpack" Type="AbilCmd" AbilCmd="ReckonerUnpack,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="NodReckonerUnpack" Type="AbilCmd" AbilCmd="NodReckonerUnpack,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="BunkerLoad" Type="AbilCmd" AbilCmd="BunkerTransport,Load" Row="2" Column="2"/>
             <LayoutButtons Face="BunkerUnloadAll" Type="AbilCmd" AbilCmd="BunkerTransport,UnloadAll" Row="2" Column="3"/>
             <LayoutButtons Face="NodDeepBurrow" Type="AbilCmd" AbilCmd="NodDeepBurrow,Execute" Row="1" Column="0"/>
@@ -568,7 +778,6 @@
         <CargoSize value="4"/>
         <ScoreMake value="150"/>
         <ScoreKill value="150"/>
-        <SubgroupPriority value="13"/>
         <MinimapRadius value="0.875"/>
         <TacticalAI value="SiegeTank"/>
         <LeaderAlias value="SiegeTank"/>
@@ -763,8 +972,8 @@
             <ChanceArray index="Turn" value="33"/>
         </Fidget>
     </CUnit>
-    <CUnit id="NodSpecter" parent="NodGround">
-        <SubgroupPriority value="45"/>
+    <CUnit id="CabalSpecter" parent="NodGround">
+        <SubgroupPriority value="13"/>
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <Collide index="Small" value="1"/>
         <Attributes index="Armored" value="1"/>
@@ -790,7 +999,47 @@
         <CargoSize value="4"/>
         <ScoreMake value="275"/>
         <ScoreKill value="275"/>
+        <MinimapRadius value="1"/>
+        <TacticalAI value="SiegeTank"/>
+        <AIEvalFactor value="1.5"/>
+        <GlossaryPriority value="130"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+        <PushPriority value="20"/>
+        <BehaviorArray Link="CloakSpecter"/>
+        <BehaviorArray Link="Tech3"/>
+        <BehaviorArray Link="NodSpecterVeterancyUpgrade"/>
+    </CUnit>
+    <CUnit id="NodSpecter" parent="NodGround">
         <SubgroupPriority value="13"/>
+        <FlagArray index="AIPressForwardDisabled" value="1"/>
+        <Collide index="Small" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <LifeStart value="300"/>
+        <LifeMax value="300"/>
+        <LifeArmor value="1"/>
+        <Speed value="1.8984"/>
+        <Acceleration value="1.875"/>
+        <LateralAcceleration value="64"/>
+        <TurningRate value="360"/>
+        <Sight value="11"/>
+        <Food value="-3"/>
+        <CostResource index="Minerals" value="150"/>
+        <CostResource index="Vespene" value="175"/>
+        <RepairTime value="45"/>
+        <KillXP value="50"/>
+        <WeaponArray Link="SpecterWeapon" Turret="SiegeTank"/>
+        <WeaponArray Link="SpecterWeaponUpgrade" Turret="SiegeTank"/>
+        <Radius value="0.875"/>
+        <SeparationRadius value="1"/>
+        <InnerRadius value="0.875"/>
+        <CargoSize value="4"/>
+        <ScoreMake value="275"/>
+        <ScoreKill value="275"/>
         <MinimapRadius value="1"/>
         <TacticalAI value="SiegeTank"/>
         <AIEvalFactor value="1.5"/>
@@ -806,7 +1055,7 @@
         <BehaviorArray Link="NodSpecterVeterancyUpgrade"/>
     </CUnit>
     <CUnit id="StealthTankCC3" parent="NodGround">
-        <SubgroupPriority value="55"/>
+        <SubgroupPriority value="13"/>
         <FlagArray index="Cloaked" value="1"/>
         <FlagArray index="TurnBeforeMove" value="1"/>
         <FlagArray index="AIPressForwardDisabled" value="1"/>
@@ -839,7 +1088,6 @@
         <CargoSize value="4"/>
         <ScoreMake value="275"/>
         <ScoreKill value="275"/>
-        <SubgroupPriority value="13"/>
         <MinimapRadius value="1"/>
         <TacticalAI value="SiegeTank"/>
         <AIEvalFactor value="1.5"/>
@@ -853,7 +1101,7 @@
         <BehaviorArray Link="StealthTankCC3VeterancyUpgrade"/>
     </CUnit>
     <CUnit id="NodRedeemer" parent="NodGround">
-        <SubgroupPriority value="80"/>
+        <SubgroupPriority value="13"/>
         <FlagArray index="TurnBeforeMove" value="1"/>
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <PlaneArray index="Air" value="1"/>
@@ -894,7 +1142,6 @@
         <InnerRadius value="0.5"/>
         <ScoreMake value="275"/>
         <ScoreKill value="275"/>
-        <SubgroupPriority value="13"/>
         <MinimapRadius value="1"/>
         <TacticalAI value="SiegeTank"/>
         <AIEvalFactor value="1.5"/>
@@ -1134,7 +1381,6 @@
         <KillDisplay value="Always"/>
         <RankDisplay value="Always"/>
         <BehaviorArray Link="Frenzy"/>
-
         <EquipmentArray Weapon="NodVolatileBurstDummy"/>
         <AbilArray Link="NodFanaticExplode"/>
         <AbilArray Link="NodVolatileBurstBuilding"/>
@@ -1147,7 +1393,6 @@
             <LayoutButtons Face="EnableBuildingAttack" Type="AbilCmd" AbilCmd="NodVolatileBurstBuilding,On" Row="2" Column="1"/>
             <LayoutButtons Face="DisableBuildingAttack" Type="AbilCmd" AbilCmd="NodVolatileBurstBuilding,Off" Row="2" Column="2"/>
         </CardLayouts>
-
     </CUnit>
     <CUnit id="NodSaboteur" parent="NodGround">
         <SubgroupPriority value="45"/>
@@ -1202,7 +1447,6 @@
         <TurningRate value="999.8437"/>
         <Sight value="8"/>
         <Food value="1"/>
-        <CostResource index="Minerals" value="75"/>
         <CostResource index="Minerals" value="50"/>
         <RepairTime value="20"/>
         <BehaviorArray Link="NodMilitantVeterancyUpgrade"/>
@@ -1542,7 +1786,6 @@
     </CUnit>
     <CUnit id="NodPowerPlant2" parent="NodStructure">
         <BehaviorArray Link="Deployable"/>
-        <BehaviorArray Link="TerranBuildingBurnDown"/>
         <Facing value="225"/>
         <LifeStart value="500"/>
         <LifeMax value="500"/>
@@ -1576,6 +1819,7 @@
     </CUnit>
     <!--production-->
     <CUnit id="NodTiberiumRefinery" parent="NodStructure">
+        <BehaviorArray Link="CNCTabEconomy"/>
         <BehaviorArray Link="Deployable"/>
         <FlagArray index="TownCamera" value="1"/>
         <ResourceDropOff index="Minerals" value="1"/>
@@ -1618,6 +1862,7 @@
         <InnerRadius value="2.5"/>
     </CUnit>
     <CUnit id="NodKaneBarracks" parent="NodStructure">
+        <BehaviorArray Link="CNCTabInfantry"/>
         <BehaviorArray Link="Deployable"/>
         <LifeStart value="900"/>
         <LifeMax value="900"/>
@@ -1667,6 +1912,7 @@
         <CostResource index="Vespene" value="100"/>
         <RepairTime value="32"/>
         <AbilArray Link="NodKaneWarFactoryTrain"/>
+        <BehaviorArray Link="CNCTabVehicles"/>
         <AbilArray Link="Rally"/>
         <Radius value="1.625"/>
         <SeparationRadius value="1.625"/>
@@ -1687,14 +1933,14 @@
             <LayoutButtons Face="NodBeamCNC3" Type="AbilCmd" AbilCmd="NodKaneWarFactoryTrain,Train6" Row="1" Column="2"/>
             <LayoutButtons Face="NodSpecter" Type="AbilCmd" AbilCmd="NodKaneWarFactoryTrain,Train7" Row="1" Column="3"/>
             <LayoutButtons Face="NodMCV" Type="AbilCmd" AbilCmd="NodKaneWarFactoryTrain,Train11" Row="2" Column="0"/>
-            <LayoutButtons Face="Reckoner" Type="AbilCmd" AbilCmd="NodKaneWarFactoryTrain,Train9" Row="2" Column="1"/>
+            <LayoutButtons Face="NodReckoner" Type="AbilCmd" AbilCmd="NodKaneWarFactoryTrain,Train9" Row="2" Column="1"/>
             <LayoutButtons Face="NodPurifierCNC3" Type="AbilCmd" AbilCmd="NodKaneWarFactoryTrain,Train10" Row="2" Column="2"/>
         </CardLayouts>
         <TechTreeProducedUnitArray value="NodBikeCNC3"/>
         <TechTreeProducedUnitArray value="NodRaider"/>
         <TechTreeProducedUnitArray value="NodScorpionCNC3"/>
         <TechTreeProducedUnitArray value="NodFlameTank"/>
-        <TechTreeProducedUnitArray value="Reckoner"/>
+        <TechTreeProducedUnitArray value="NodReckoner"/>
         <TechTreeProducedUnitArray value="NodMantis"/>
         <TechTreeProducedUnitArray value="NodStealthTankCNC3"/>
         <TechTreeProducedUnitArray value="NodBeamCNC3"/>
@@ -1737,6 +1983,7 @@
         <PlacementFootprint value="Footprint4x4"/>
     </CUnit>
     <CUnit id="NodKaneAirTower" parent="NodStructure">
+        <BehaviorArray Link="CNCTabAirforce"/>
         <BehaviorArray Link="Deployable"/>
         <BehaviorArray Link="MCVVReapirZonefactory"/>
         <BehaviorArray Link="FastBuild"/>
@@ -1844,7 +2091,6 @@
     </CUnit>
     <CUnit id="NodOPCenter" parent="NodStructure">
         <BehaviorArray Link="Deployable"/>
-        <BehaviorArray Link="TerranBuildingBurnDown"/>
         <LifeStart value="750"/>
         <LifeMax value="750"/>
         <StationaryTurningRate value="719.4726"/>
@@ -1904,7 +2150,6 @@
     </CUnit>
     <CUnit id="NodShrine" parent="NodStructure">
         <BehaviorArray Link="Deployable"/>
-        <BehaviorArray Link="TerranBuildingBurnDown"/>
         <LifeStart value="1000"/>
         <LifeMax value="1000"/>
         <StationaryTurningRate value="719.4726"/>
@@ -2110,4 +2355,182 @@
     <CUnit id="NodMilitantRocketWeapon" parent="NodMissile">
         <Mover value="PunisherGrenadesWeapon"/>
     </CUnit>
+
+
+    <!--missiles-->
+    <CUnit id="AscendedMissileUp" parent="NodMissile">
+        <Mover value="DefenderMissile"/>
+    </CUnit>
+    <CUnit id="MantisUpWeapon" parent="NodMissile">
+        <Mover value="DefenderMissile"/>
+    </CUnit>
+    <CUnit id="NodBikeRocketUp" parent="NodMissile">
+        <Mover value="VikingFighterMissile"/>
+    </CUnit>
+    <CUnit id="NodRocketCC3Up" parent="NodMissile">
+        <Mover value="PunisherGrenadesWeapon"/>
+    </CUnit>
+    <CUnit id="NodVertigoweapon" parent="NodMissile">
+        <Mover value="ThorAA"/>
+    </CUnit>
+    <CUnit id="NodStealthRocketUP" parent="NodMissile">
+        <Mover value="VikingFighterMissile"/>
+    </CUnit>
+    <CUnit id="VenomWeaponup" parent="NodMissile">
+        <Mover value="LiberatorMissile"/>
+    </CUnit>
+    <CUnit id="MantisWeapon" parent="NodMissile">
+        <Mover value="DefenderMissile"/>
+    </CUnit>
+    <CUnit id="MantisMissile" parent="NodMissile">
+        <Mover value="DefenderMissile"/>
+    </CUnit>
+    <CUnit id="NodMCVRocket" parent="NodMissile">
+        <Mover value="NodDrunkenMissile"/>
+    </CUnit>
+    <CUnit id="NodMantisRocket2" parent="NodMissile">
+        <Mover value="Artillery"/>
+    </CUnit>
+    <CUnit id="NodMantisRocket3" parent="NodMissile">
+        <Mover value="Artillery"/>
+    </CUnit>
+    <CUnit id="SpecterWeapon" parent="NodMissile">
+        <Mover value="Artillery"/>
+    </CUnit>
+    <CUnit id="NodBikeRocketCC3" parent="NodMissile">
+        <Mover value="NodBikeMissile"/>
+    </CUnit>
+    <CUnit id="NodRocketCC3" parent="NodMissile">
+        <Mover value="PunisherGrenadesWeapon"/>
+    </CUnit>
+    <CUnit id="NodBlackHandRocket" parent="NodMissile">
+        <Mover value="NodBlackHandRocketMover"/>
+    </CUnit>
+    <CUnit id="CabalLeviathanRocket" parent="NodMissile">
+        <Mover value="VikingFighterMissile"/>
+    </CUnit>
+    <CUnit id="CabalSalamanderRocket" parent="NodMissile">
+        <Mover value="ThorAA"/>
+    </CUnit>
+    <CUnit id="NodArtillery" parent="NodMissile">
+        <Mover value="Artillery"/>
+    </CUnit>
+    <CUnit id="NodMantisRocket" parent="NodMissile">
+        <Mover value="Artillery"/>
+    </CUnit>
+    <CUnit id="VenomWeapon" parent="NodMissile">
+        <Mover value="LiberatorMissile"/>
+    </CUnit>
+    <CUnit id="EnlightenedLMWeapon" parent="NodMissile">
+        <Mover value="ATgunWeapon"/>
+    </CUnit>
+    <CUnit id="NodRedeemerRocket" parent="NodMissile">
+        <Mover value="ThorAA"/>
+    </CUnit>
+    <CUnit id="NodBikeRocket" parent="NodMissile">
+        <Mover value="ThorAA"/>
+    </CUnit>
+    <CUnit id="NodStealthRocket" parent="NodMissile">
+        <Mover value="VikingFighterMissile"/>
+    </CUnit>
+    <CUnit id="HailstormMissilesWeaponNod" parent="NodMissile">
+        <Mover value="NodDrunkenMissile"/>
+    </CUnit>
+    <CUnit id="ReckonerPlacement">
+        <FlagArray index="Uncommandable" value="1"/>
+        <FlagArray index="Unselectable" value="1"/>
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="NoScore" value="1"/>
+        <EditorFlags index="NoPlacement" value="1"/>
+        <Collide index="Ground" value="1"/>
+        <Collide index="Colossus" value="1"/>
+        <Collide index="ForceField" value="1"/>
+        <Collide index="Small" value="1"/>
+        <BehaviorArray Link="ReckonerPlacementRemove"/>
+        <Radius value="1"/>
+        <SeparationRadius value="1"/>
+        <InnerRadius value="1"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:CNC"/>
+        <Race value="Nod"/>
+    </CUnit>
+    <CUnit id="DropPodNoddamage" parent="DESTRUCTIBLE">
+        <FlagArray index="Turnable" value="1"/>
+        <FlagArray index="Unselectable" value="1"/>
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="Undetectable" value="1"/>
+        <FlagArray index="Unradarable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="NoScore" value="1"/>
+        <FogVisibility value="Dimmed"/>
+        <LifeStart value="500"/>
+        <LifeMax value="500"/>
+        <BehaviorArray Link="GDIdroppodland"/>
+        <BehaviorArray Link="DroppodSuicide"/>
+        <InnerRadius value="0.5"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:CNC"/>
+        <Race value="Nod"/>
+    </CUnit>
+    <CUnit id="DropPodNod" parent="DESTRUCTIBLE">
+        <FlagArray index="Turnable" value="1"/>
+        <FlagArray index="Unselectable" value="1"/>
+        <FlagArray index="Untargetable" value="1"/>
+        <FlagArray index="Undetectable" value="1"/>
+        <FlagArray index="Unradarable" value="1"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <FlagArray index="NoScore" value="1"/>
+        <FogVisibility value="Dimmed"/>
+        <LifeStart value="500"/>
+        <LifeMax value="500"/>
+        <InnerRadius value="0.5"/>
+        <EditorCategories value="ObjectType:Other,ObjectFamily:CNC"/>
+        <BehaviorArray Link="DroppodSuicide"/>
+        <Race value="Nod"/>
+    </CUnit>
+    <CUnit id="NodAwakenBuggyEMP" parent="MISSILE_INVULNERABLE">
+        <Race value="Nod"/>
+        <Mover value="NodAwakenBuggyEMP2Weapon"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:CNC"/>
+    </CUnit>
+    <CUnit id="NodBoobyTrap">
+        <LifeStart value="5"/>
+        <LifeMax value="5"/>
+        <Race value="Nod"/>
+        <AbilArray Link="NodBoobyTrapActivate"/>
+        <FlagArray index="Cloaked" value="1"/>
+        <!--        <FlagArray index="Unselectable" value="1"/>-->
+        <!--        <FlagArray index="Untargetable" value="1"/>-->
+        <Attributes index="Structure" value="1"/>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:CNC"/>
+        <AINotifyEffect value="KD8SearchArea"/>
+        <GlossaryPriority value="250"/>
+        <CardLayouts>
+            <LayoutButtons Face="ActivateStasisWard" Type="Passive" AbilCmd="NodBoobyTrapActivate,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="PermanentlyCloakedStasis" Type="Passive" Row="2" Column="1"/>
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="NodArtilleryBeacon">
+        <Race value="Nod"/>
+        <FlagArray index="Cloaked" value="1"/>
+        <!--        <FlagArray index="Unselectable" value="1"/>-->
+        <!--        <FlagArray index="Untargetable" value="1"/>-->
+        <Attributes index="Structure" value="1"/>
+        <LifeStart value="30"/>
+        <LifeMax value="30"/>
+        <Sight value="7"/>
+        <CardLayouts>
+            <LayoutButtons Face="PermanentlyCloakedStasis" Type="Passive" Row="2" Column="1"/>
+        </CardLayouts>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:CNC"/>
+        <AINotifyEffect value="KD8SearchArea"/>
+        <GlossaryPriority value="250"/>
+    </CUnit>
+    <CUnit id="NodHallucinogenicGrenadeWeapon" parent="MISSILE">
+        <Race value="Nod"/>
+        <FlagArray index="Invulnerable" value="1"/>
+        <Mover value="NodHallucinogenicGrenade"/>
+        <EditorCategories value="ObjectType:Projectile,ObjectFamily:CNC"/>
+        <TacticalAI value="BonesTossGrenadeWeapon"/>
+    </CUnit>
+
 </Catalog>

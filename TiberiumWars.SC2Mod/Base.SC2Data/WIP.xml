@@ -1,5 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
+<!--    <CValidatorUnitType id="TargetIsNotNodConfessor">-->
+<!--        <Find value="0"/>-->
+<!--        <Value value="NodConfessor"/>-->
+<!--    </CValidatorUnitType>-->
+
+<!--    <CUpgrade default="1" id="ZergMeleeWeapons">-->
+<!--        <EffectArray Reference="Effect,NodVolatileBurstU,Amount" Value="2"/>-->
+<!--        <EffectArray Reference="Effect,NodVolatileBurstU2,Amount" Value="5"/>-->
+<!--        <EffectArray Reference="Effect,NodVolatileBurstFriendlyUnitDamage,Amount" Value="2"/>-->
+<!--        <EffectArray Reference="Effect,NodVolatileBurstFriendlyBuildingDamage,Amount" Value="5"/>-->
+<!--        <EffectArray Reference="Weapon,NodVolatileBurstDummy,Level" Value="1"/>-->
+<!--        <EffectArray Reference="Effect,NodVolatileBurstU,AttributeBonus[Light]" Value="2.000000"/>-->
+<!--        <EffectArray Reference="Effect,NodVolatileBurstFriendlyUnitDamage,AttributeBonus[Light]" Value="2.000000"/>-->
+<!--    </CUpgrade>-->
+
+
+
     <CEffectSet id="NodTurretsHubBuildSet">
         <EffectArray value="NodTurretsHubSuicideWithCaster"/>
         <EffectArray value="MakePrecursor"/>

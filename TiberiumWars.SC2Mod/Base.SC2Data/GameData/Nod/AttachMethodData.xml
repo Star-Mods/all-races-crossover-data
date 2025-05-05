@@ -8,20 +8,6 @@
         <Keyword value="Weapon"/>
         <Driver value="NodLaserCannonDamage"/>
     </CAttachMethodPattern>
-    <CAttachMethodPattern id="AMPatternMastodon">
-        <Keyword value="Weapon"/>
-        <Driver value="MastodonDamageMissileLM"/>
-    </CAttachMethodPattern>
-    <CAttachMethodPattern id="GDIHammerHeadRocket">
-        <Keyword value="Weapon"/>
-        <Driver value="HammerHeadRocketLaunchMissile"/>
-    </CAttachMethodPattern>
-    <CAttachMethodFilter id="MastodonFilter">
-        <Keys Keyword="Weapon" Index="3"/>
-        <Keys Keyword="Weapon" Index="1"/>
-        <Keys Keyword="Weapon" Index="2"/>
-        <Logic value="OR"/>
-    </CAttachMethodFilter>
     <CAttachMethodPattern id="NodBikeRocketUp">
         <Keyword value="Weapon"/>
         <Driver value="NodBikeRocketUpLaunchMissile"/>
@@ -54,11 +40,15 @@
         <Keyword value="Weapon"/>
         <Driver value="NodBikeRocketLaunchMissile"/>
     </CAttachMethodPattern>
-    <CAttachMethodFilter id="HammerHeadFilter">
-        <Keys Keyword="Weapon" Index="4"/>
-        <Keys Keyword="Weapon" Index="5"/>
+    <CAttachMethodFilter id="Weapon0203">
+        <Keys Keyword="Weapon" Index="2"/>
+        <Keys Keyword="Weapon" Index="3"/>
+        <Logic value="OR"/>
+    </CAttachMethodFilter>
+    <CAttachMethodFilter id="Weapon010203">
         <Keys Keyword="Weapon" Index="1"/>
         <Keys Keyword="Weapon" Index="2"/>
+        <Keys Keyword="Weapon" Index="3"/>
         <Logic value="OR"/>
     </CAttachMethodFilter>
 </Catalog>

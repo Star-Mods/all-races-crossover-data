@@ -2,11 +2,12 @@
 <Preload>
 <Actor id="SYSTEM_ActorConfig"/>
 <Behavior id="NodGroundDrop"/>
-<Race id="Zerg"/>
+<Race id="Terr"/>
 <Race id="Nod"/>
 <Sound id="Medivac_Unload" Variations="0"/>
 <Sound id="Vertigo_Attack"/>
-<Sound id="GDIDropPodImpact"/>
 <Unit id="DropPodNoddamage"/>
 <Unit id="DropPodGDI"/>
+<Unit id="MCVDeployCaster"/>
+<Unit id="NodCaster"/>
 </Preload>

@@ -75,12 +75,6 @@
     </CActorModel>
     <CActorText id="PickupTibText" parent="PickupTextDefault"/>
 
-
-
-
-<!--    <CActorProgress id="ProtossWarpIn">-->
-<!--        <On Terms="Abil.NodWarpGateTrain.TargetStart" Send="Create"/>-->
-<!--    </CActorProgress>-->
     <CActorModel id="GenericStun" parent="ModelAnimationStyleContinuous">
         <On Terms="Behavior.GenericStun.On" Send="Create"/>
         <On Terms="Behavior.GenericStun.Off" Send="AnimBracketStop BSD"/>
@@ -135,6 +129,5 @@
             <Image value="Assets\textures\Wireframe-General-MineralField.dds"/>
         </Wireframe>
     </CActorUnit>
-
 
 </Catalog>

@@ -36,3 +36,7 @@ UI/ResourceIconNoBackground0_CABAL=Assets\textures\icon-mineral-nod_nobg.dds
 UI/LeaderPanelRaceIcon_CABAL=Assets\icons\factions\mok-white.dds
 UI/LeaderPanelRaceIcon_Nod=Assets\icons\factions\nod-white.dds
 UI/LeaderPanelRaceIcon_GDI=Assets\icons\factions\gdi-white.dds
+
+
+
+UI/MenuBar/DiscordButton=Assets\Images\ui_console_icon_discord.dds

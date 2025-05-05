@@ -727,4 +727,58 @@
         <SearchFlags index="CallForHelp" value="1"/>
         <SearchFlags index="OffsetByUnitRadius" value="1"/>
     </CEffectDamage>
+
+
+    <CEffectCreatePersistent id="machinegunCP">
+        <EditorCategories value="Race:Nod"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <PeriodCount value="5"/>
+        <PeriodicEffectArray value="GDIShepherdMachineGunDamage"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0.15"/>
+        <PeriodicPeriodArray value="0.15"/>
+        <PeriodicPeriodArray value="0.15"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="EnforcerDamage">
+        <EditorCategories value="Race:GDI"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <AttributeBonus index="Light" value="3"/>
+        <Flags index="Notification" value="1"/>
+        <Kind value="Ranged"/>
+        <Amount value="1"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+        <SearchFlags index="OffsetByUnitRadius" value="1"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="DefenderA">
+        <EditorCategories value="Race:Nod"/>
+        <WhichLocation Value="TargetUnit"/>
+        <Flags index="Channeled" value="1"/>
+        <InitialEffect value="DefenderALM2"/>
+        <PeriodCount value="1"/>
+        <PeriodicEffectArray value="DefenderALM"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0.21"/>
+    </CEffectCreatePersistent>
+    <CEffectLaunchMissile id="DefenderALM">
+        <EditorCategories value="Race:Nod"/>
+        <ImpactEffect value="DefenderAU"/>
+        <AmmoUnit value="DefenderWeapon"/>
+    </CEffectLaunchMissile>
+    <CEffectDamage id="DefenderAU" parent="DU_WEAP_MISSILE">
+        <EditorCategories value="Race:Nod"/>
+        <AttributeBonus index="Armored" value="10"/>
+        <Amount value="5"/>
+    </CEffectDamage>
+    <CEffectEnumArea id="JumpPackSearchArea">
+        <AINotifyFlags index="HurtEnemy" value="1"/>
+        <AINotifyFlags index="MinorDanger" value="1"/>
+        <SearchFilters value="Ground;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="2" Effect="KD8ChargeEndSet"/>
+        <EditorCategories value="Race:Nod"/>
+    </CEffectEnumArea>
+
+
 </Catalog>

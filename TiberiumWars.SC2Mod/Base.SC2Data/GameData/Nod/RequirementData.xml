@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+
 <Catalog>
     <!--Hide Upgrade If Research Already Started-->
     <CRequirement default="1" id="NodLearnUpgrade">
@@ -34,7 +34,6 @@
     <CRequirement id="learnspeedupgrade" parent="NodLearnUpgrade" upgrade="SpeedUpgrade"/>
     <CRequirement id="learnTECHII" parent="NodLearnUpgrade" upgrade="TechII"/>
     <CRequirement id="ChemicalFactoryUp" parent="NodLearnUpgrade" upgrade="TibField"/>
-    <CRequirement id="LearnGDIjetpack" parent="NodLearnUpgrade" upgrade="GDIJetPack"/>
     <CRequirement id="NodLearnNodFactionMOK" parent="NodLearnUpgrade">
         <NodeArray index="Show" Link="REQ_LearnFaction"/>
     </CRequirement>
@@ -62,7 +61,7 @@
     <CRequirement id="EnlightenedSuicide" parent="NodRequireUpgrade" upgrade="SuicideEnlightened"/>
     <CRequirement id="TechIIINod" parent="NodRequireUpgrade" upgrade="TechIII"/>
     <CRequirement id="UseDarkArmorBlackHand" parent="NodRequireUpgrade" upgrade="TibBomb"/>
-    <CRequirement id="UseBIkeUpgrade" parent="NodRequireUpgrade" upgrade="BikeSpeed"/>
+    <CRequirement id="UseBikeUpgrade" parent="NodRequireUpgrade" upgrade="BikeSpeed"/>
     <!--    <CRequirement parent="NodRequireUpgrade" id="UseNodCloakVenom" upgrade="VenomStealth"/>-->
     <CRequirement id="UseDarkArmorDevout" parent="NodRequireUpgrade" upgrade="DarkArmorDevout"/>
     <CRequirement id="UseNodSpecterCloak" parent="NodRequireUpgrade" upgrade="SpecterStealth"/>

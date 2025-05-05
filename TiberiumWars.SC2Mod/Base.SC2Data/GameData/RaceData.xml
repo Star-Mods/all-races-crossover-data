@@ -85,7 +85,7 @@
             <Offset value="-2,-3"/>
             <Offset value="-1,-3"/>
         </StartingUnitArray>
-        <StartingUnitArray Unit="NodKaneMCV">
+        <StartingUnitArray Unit="NodMCV">
             <Offset value="0,-3"/>
             <Offset value="1,-3"/>
             <Offset value="2,-3"/>

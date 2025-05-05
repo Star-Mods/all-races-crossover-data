@@ -24,7 +24,7 @@
         <EditorCategories value="Race:GDI"/>
     </CModel>
     <CModel id="GDIMCVPackCC3" parent="SiegeTankMorphBase">
-        <Model value="Assets\Models\NodKaneMCV\NodKaneMCVMorph.m3"/>
+        <Model value="Assets\Models\NodMCV\NodKaneMCVMorph.m3"/>
         <ScaleMax value="1.000000,1.000000,1.000000"/>
         <ScaleMin value="1.000000,1.000000,1.000000"/>
         <SelectionRadius value="2.000000"/>

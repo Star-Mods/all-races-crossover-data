@@ -64,4 +64,1154 @@
         <Effect value="NodShadowPistolSet"/>
     </CWeaponLegacy>
 
+    <CWeaponLegacy id="NodGideonBlackHandFlamethrower">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Icon value="Assets\Icons\NodLightWeapon.dds"/>
+        <DisplayEffect value="NodGideonBlackHandFlameThrowerDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="4"/>
+        <Range value="4"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <Period value="2"/>
+        <Effect value="GideonBlackHandFlameThrowerSet"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodGideonAwakenWeapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Icons\NodLightWeapon.dds"/>
+        <DisplayEffect value="GideonAwakenDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <Period value="1.7"/>
+        <DamagePoint value="0"/>
+        <Backswing value="0"/>
+        <Effect value="GideonAwakenLaunchMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodGideonSaintHCWeapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="NodEideonSaintHCShockwaveDamage"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <TeleportResetRange value="0"/>
+        <Cost>
+            <Cooldown Location="Unit"/>
+        </Cost>
+        <Period value="0.7"/>
+        <Effect value="NodEideonSaintHCShockwaveDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodGideonReaperWeapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="NodGideonReaperShockwaveDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="4"/>
+        <TeleportResetRange value="0"/>
+        <Cost>
+            <Cooldown Location="Unit"/>
+        </Cost>
+        <Period value="1.3"/>
+        <Effect value="NodGideonReaperShockwaveDamage"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodTwlightStealthRocket">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Textures\FXGDI_MissleStormUpgrade.dds"/>
+        <DisplayEffect value="NodTwlightStealthRocketDamage"/>
+        <DisplayAttackCount value="5"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <RangeSlop value="0"/>
+        <Period value="4"/>
+        <Backswing value="0.25"/>
+        <Effect value="NodTwlightStealthRocketCreatePersistentNod"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="TwlightFlameTankFlamethrower">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Icon value="Assets\Icons\NodLightWeapon.dds"/>
+        <DisplayEffect value="TwlightFlameTankFlameThrowerDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="4"/>
+        <Range value="4"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <Period value="1"/>
+        <Effect value="TwlightFlameTankFlameThrowerSet"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="TwlightNodFlameTankFlamethrowerBlue">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="Hidden" value="1"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Icon value="Assets\Icons\NodLightWeapon.dds"/>
+        <DisplayEffect value="TwlightFlameTankFlameThrowerDamageBlue"/>
+        <TargetFilters value="Visible;Air,Ground,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="4"/>
+        <Range value="4"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <Period value="1"/>
+        <Effect value="TwlightFlameTankFlameThrowerSetBlue2"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodFusionCutter">
+        <LegacyOptions index="NoDeceleration" value="1"/>
+        <AllowedMovement value="Slowing"/>
+        <Range value="0.2"/>
+        <Period value="1.5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodAvatar90mmCannons">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Icons\NodLightWeapon.dds"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="8"/>
+        <Period value="3"/>
+        <Effect value="AvatarWeaponSet"/>
+        <DisplayAttackCount value="5"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodAvenger90mmCannons">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Icon value="Assets\Icons\NodLightWeapon.dds"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <Period value="1.86"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="CabalCenturionWeapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Icons\NodLightWeapon.dds"/>
+        <DisplayEffect value="CabalCenturionWeaponDamage"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <Period value="1.8"/>
+        <Effect value="CabalCenturionWeaponDamage"/>
+        <DamagePoint value="0"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodAvatarLaser">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="AvatarBeamDamage"/>
+        <DisplayAttackCount value="1"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <Arc value="11.997"/>
+        <Period value="4"/>
+        <Backswing value="2"/>
+        <Effect value="AvatarBeamDamage"/>
+        <LegacyOptions index="FaceTargetWhileInCooldown" value="0"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodAvatarFlameThrower">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Icons\NodLightWeapon.dds"/>
+        <DisplayEffect value="AvatarFlameThrowerDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <Arc value="180"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <Period value="1.876"/>
+        <Backswing value="1"/>
+        <Effect value="AvatarFlameThrowerSet"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodBeamCannonWeapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="BeamWeaponCC3Damage"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="10"/>
+        <TeleportResetRange value="0"/>
+        <Period value="3"/>
+        <Effect value="BeamWeaponCC3Damage"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodCobraLaser">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="Disabled" value="1"/>
+        <Options index="Hidden" value="1"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Icon value="Assets\Icons\NodLightWeapon.dds"/>
+        <DisplayEffect value="CobraDamageLaser"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <Arc value="360"/>
+        <Period value="2"/>
+        <Effect value="CobraDamageLaser"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodGideonAwakenLaser">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="Disabled" value="1"/>
+        <Icon value="Assets\Icons\NodLightWeapon.dds"/>
+        <DisplayEffect value="GideonAwakenWeaponDamageLaser"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <Arc value="9.9975"/>
+        <Period value="1.7"/>
+        <Effect value="GideonAwakenWeaponDamageLaser"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodFlameTankFlamethrowerBlue">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="Hidden" value="1"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Icon value="Assets\Icons\NodLightWeapon.dds"/>
+        <DisplayEffect value="FlameTankFlameThrowerDamageBlue"/>
+        <TargetFilters value="Visible;Air,Ground,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="4"/>
+        <Range value="4"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <Period value="1"/>
+        <Effect value="FlameTankFlameThrowerSetBlue"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodArtilleryStructure">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Icons\NodLightWeapon.dds"/>
+        <DisplayEffect value="NodArtilleryDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="12"/>
+        <Period value="3"/>
+        <DamagePoint value="0"/>
+        <Backswing value="0"/>
+        <Effect value="NodArtilleryWeaponlaunch"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodLaserCannon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="NodLaserCannonDamage"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="8"/>
+        <TeleportResetRange value="0"/>
+        <Cost>
+            <Cooldown Location="Unit"/>
+        </Cost>
+        <Period value="3.5"/>
+        <Effect value="NodLaserCannonDamage"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <LegacyOptions index="FaceTargetWhileInCooldown" value="0"/>
+        <AllowedMovement value="Moving"/>
+        <Arc value="360"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodObeliskWeaponNew">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="NodObeliskWeaponNewDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="9"/>
+        <Arc value="360"/>
+        <Cost>
+            <Cooldown Location="Unit"/>
+        </Cost>
+        <Period value="3"/>
+        <Effect value="NodObeliskWeaponNewDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodVertigoWeapon">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Icons\NodLightWeapon.dds"/>
+        <DisplayEffect value="NodVertigoweaponDamage"/>
+        <DisplayAttackCount value="1"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="9"/>
+        <Arc value="360"/>
+        <Period value="2"/>
+        <Effect value="NodVertigoweaponLaunchMissile"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="CabalReaperWeaponUpgrade">
+        <EditorCategories value="Race:Protoss"/>
+        <Options index="Hidden" value="1"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="CabalReaperShockwaveDamageUp"/>
+        <TargetFilters value="Visible;Air,Ground,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <TeleportResetRange value="0"/>
+        <Cost>
+            <Cooldown Location="Unit"/>
+        </Cost>
+        <Period value="1.6"/>
+        <Effect value="CabalReaperShockwaveDamageUp"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SalmanderFlamethrower">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="Hidden" value="1"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Icons\NodLightWeapon.dds"/>
+        <DisplayEffect value="LiquidweaponDummyWeapon"/>
+        <TargetFilters value="Visible;Air,Ground,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="2"/>
+        <Range value="2"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <Period value="1.5"/>
+        <Effect value="LiquidTibSetWeapon"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="MantisMissile">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\FXGDI_MissleStormUpgrade.dds"/>
+        <DisplayEffect value="MantisWeaponMissilePackCP"/>
+        <DisplayAttackCount value="2"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <Arc value="29.9926"/>
+        <Period value="1.4"/>
+        <Effect value="MantisMissilePack"/>
+    </CWeaponLegacy>
+    <CWeaponStrafe id="InterceptorBeamNod">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="PulseCannonDamageNod"/>
+        <DisplayAttackCount value="2"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="2"/>
+        <TeleportResetRange value="0"/>
+        <Arc value="19.6875"/>
+        <Period value="1.5"/>
+    </CWeaponStrafe>
+    <CWeaponLegacy id="NodCommandoWeaponUpgrade">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="NodCommandoShockwaveDamage2"/>
+        <TargetFilters value="Visible;Air,Ground,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <TeleportResetRange value="0"/>
+        <Cost>
+            <Cooldown Location="Unit"/>
+        </Cost>
+        <Period value="0.86"/>
+        <Effect value="NodCommandoShockwaveDamage2"/>
+        <Options index="Hidden" value="1"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodCommandoweaponCC3Upgrade">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="Hidden" value="1"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="NodCpmmandoWeaponUpgradedDamage"/>
+        <DisplayAttackCount value="2"/>
+        <TargetFilters value="Visible;Air,Ground,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Period value="1.76"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="CC3CommaWeaponCPUpgrade"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodHailstormMissilePodsO">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Textures\FXGDI_MissleStormUpgrade.dds"/>
+        <DisplayEffect value="NodHailstormMissilePodsDamage"/>
+        <DisplayAttackCount value="8"/>
+        <TargetFilters value="Air,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <RangeSlop value="0"/>
+        <Period value="2"/>
+        <Backswing value="0.25"/>
+        <Effect value="NodHailstormMissilePodsLaunchMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="CabalIncineratorWeapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="CabalIncineratorWeaponDamage"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="11"/>
+        <TeleportResetRange value="0"/>
+        <Period value="1"/>
+        <Effect value="CabalIncineratorBeamCP"/>
+        <LegacyOptions index="CanRetargetWhileChanneling" value="1"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodMCVRocket">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Textures\FXGDI_MissleStormUpgrade.dds"/>
+        <DisplayEffect value="NodMCVRocketDamage"/>
+        <DisplayAttackCount value="3"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <RangeSlop value="0"/>
+        <Period value="2.5"/>
+        <Backswing value="0.25"/>
+        <Effect value="NodMCVRocketCreatePersistent"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="CabalOffenseCrawlerLaser">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="CabalOffenseCrawlerLaserDamage"/>
+        <DisplayAttackCount value="1"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <Arc value="360"/>
+        <Period value="4"/>
+        <Effect value="CabalOffenseCrawlerLaserCP"/>
+        <LegacyOptions index="FaceTargetWhileInCooldown" value="0"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodTurretWeaponO">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds"/>
+        <DisplayEffect value="NodTurretWeaponDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <Period value="1.04"/>
+        <Effect value="NodTurretWeaponDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="CabalWidowLaser">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="CabalWidowLaserDamage"/>
+        <DisplayAttackCount value="1"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="8"/>
+        <Arc value="19.995"/>
+        <Period value="3"/>
+        <Effect value="CabalWidowLaserDamage"/>
+        <LegacyOptions index="FaceTargetWhileInCooldown" value="0"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="AftershockWeapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Icons\NodLightWeapon.dds"/>
+        <DisplayEffect value="earthquakedamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="12"/>
+        <Arc value="360"/>
+        <Period value="7"/>
+        <DamagePoint value="0"/>
+        <Backswing value="0"/>
+        <Effect value="EarthquakeCP"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodArtillery">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Icons\NodLightWeapon.dds"/>
+        <DisplayEffect value="NodArtilleryDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="12"/>
+        <Period value="7"/>
+        <DamagePoint value="0"/>
+        <Backswing value="0"/>
+        <Effect value="NodArtilleryWeaponlaunch"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SpecterWeaponUpgrade">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="Disabled" value="1"/>
+        <Options index="Hidden" value="1"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Icon value="Assets\Icons\NodLightWeapon.dds"/>
+        <DisplayEffect value="NodSpecterDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="12"/>
+        <Period value="3"/>
+        <DamagePoint value="0"/>
+        <Backswing value="0"/>
+        <Effect value="NodSpecterWeaponUpgrade"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="UnderminerWeapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Icons\NodLightWeapon.dds"/>
+        <DisplayEffect value="UnderminerAttack"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="12"/>
+        <Period value="3"/>
+        <DamagePoint value="0"/>
+        <Backswing value="0"/>
+        <Effect value="UnderminerAttackCP"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SpiderWeapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="SpiderWeaponDamage"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <TeleportResetRange value="0"/>
+        <Period value="3.5"/>
+        <Effect value="SpiderWeaponDamage"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="SpecterWeapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Icons\NodLightWeapon.dds"/>
+        <DisplayEffect value="NodSpecterDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="12"/>
+        <Period value="3"/>
+        <DamagePoint value="0"/>
+        <Backswing value="0"/>
+        <Effect value="NodSpecterLaunchMissile"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodVenomparticlebeam">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="VenomparticlebeamDamage"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <TeleportResetRange value="0"/>
+        <Cost>
+            <Cooldown Location="Unit"/>
+        </Cost>
+        <Period value="2.66"/>
+        <Effect value="VenomExposedWhenAttackingSet"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodCommandoweaponCC3">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="CpmmandoweaponDamage"/>
+        <DisplayAttackCount value="2"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Period value="1.76"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="CC3CommaCP"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodBikeRocketCC3">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Textures\FXGDI_MissleStormUpgrade.dds"/>
+        <DisplayEffect value="NodBikeRocketDamageCC3"/>
+        <DisplayAttackCount value="1"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <RangeSlop value="0"/>
+        <Period value="3"/>
+        <Backswing value="0.25"/>
+        <Effect value="NodBikeRocketCreatePersistentNodCC3"/>
+        <MinScanRange value="6"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodScorpionLaser">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="ScorpionBeamDamage"/>
+        <DisplayAttackCount value="1"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <Arc value="360"/>
+        <Period value="4"/>
+        <Effect value="ScorpionBeamDamage"/>
+        <LegacyOptions index="FaceTargetWhileInCooldown" value="0"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="ScorpionWeaponCC3">
+        <EditorCategories value="Race:Protoss"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="ScorpionWeaponCC3Damage"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <TeleportResetRange value="0"/>
+        <Period value="1.876"/>
+        <Effect value="ScorpionWeaponCC3Damage"/>
+        <AllowedMovement value="Moving"/>
+        <MinScanRange value="6"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="CabalMarauderWeapon">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Icon value="Assets\Icons\NodLightWeapon.dds"/>
+        <DisplayEffect value="CabalMarauderDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="10"/>
+        <Period value="1.8"/>
+        <Effect value="CabalMarauderDamage"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodMilitantRocketMissile">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\FXGDI_MissleStormUpgrade.dds"/>
+        <DisplayEffect value="NodMilitantRocketAU"/>
+        <DisplayAttackCount value="2"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <Arc value="29.9926"/>
+        <Period value="2"/>
+        <Effect value="NodMilitantRocketA2"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="CabalBasiliskWeapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="HCShockwaveDamage2"/>
+        <TargetFilters value="Air,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="12"/>
+        <TeleportResetRange value="0"/>
+        <Cost>
+            <Cooldown Location="Unit"/>
+        </Cost>
+        <Period value="3"/>
+        <Effect value="HCShockwaveDamage2"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="InterceptorLaunchNod">
+        <EditorCategories value="Race:Protoss"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Icons\InterceptorIcon.dds"/>
+        <DisplayEffect value="Carrier"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="8"/>
+        <Arc value="360"/>
+        <Period value="3"/>
+        <DamagePoint value="0"/>
+        <Backswing value="0"/>
+        <Effect value="InterceptorLaunchPersistent"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="LeviathanMissile1">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="Hidden" value="1"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Icons\NodLightWeapon.dds"/>
+        <DisplayEffect value="LeviathanLiquidTibDamage"/>
+        <DisplayAttackCount value="3"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="8"/>
+        <Arc value="360"/>
+        <Period value="2"/>
+        <Effect value="CabalLeviathanLaunchMissile"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="LeviathanMissile2">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="Hidden" value="1"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Icons\NodLightWeapon.dds"/>
+        <DisplayEffect value="LeviathanLiquidTibDamage"/>
+        <DisplayAttackCount value="1"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="8"/>
+        <Arc value="360"/>
+        <Period value="2"/>
+        <Effect value="CabalLeviathanLaunchMissile2"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="LeviathanMissile3">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="Hidden" value="1"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Icons\NodLightWeapon.dds"/>
+        <DisplayEffect value="LeviathanLiquidTibDamage"/>
+        <DisplayAttackCount value="1"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="8"/>
+        <Arc value="360"/>
+        <Period value="2"/>
+        <Effect value="CabalLeviathanLaunchMissile3"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="MedusaWeaponS">
+        <EditorCategories value="Race:Nod"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="MedusaWeaponSBeamDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <TeleportResetRange value="0"/>
+        <Period value="0.5"/>
+        <Effect value="MedusaWeaponSBeam"/>
+        <LegacyOptions index="CanRetargetWhileChanneling" value="1"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodCommandoWeapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="NodCommandoShockwaveDamage"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <TeleportResetRange value="0"/>
+        <Cost>
+            <Cooldown Location="Unit"/>
+        </Cost>
+        <Period value="1.75"/>
+        <Effect value="NodCommandoShockwaveDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="CabalReaperWeapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="CabalReaperShockwaveDamage"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <TeleportResetRange value="0"/>
+        <Cost>
+            <Cooldown Location="Unit"/>
+        </Cost>
+        <Period value="1.6"/>
+        <Effect value="CabalReaperShockwaveDamage"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="CabalSalamanderRocket">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Textures\FXGDI_MissleStormUpgrade.dds"/>
+        <DisplayEffect value="CabalSalamanderRocketDamage"/>
+        <DisplayAttackCount value="8"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <RangeSlop value="0"/>
+        <Arc value="360"/>
+        <Period value="2"/>
+        <Backswing value="0.25"/>
+        <Effect value="CabalSalamanderocketCreatePersistentNod"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="CabalSalamanderRocket2">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Textures\FXGDI_MissleStormUpgrade.dds"/>
+        <DisplayEffect value="CabalSalamanderRocketDamage"/>
+        <DisplayAttackCount value="8"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <RangeSlop value="0"/>
+        <Arc value="360"/>
+        <Period value="2"/>
+        <Backswing value="0.25"/>
+        <Effect value="CabalSalamanderocketCreatePersistentNod2"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="CabalSalamanderRocket3">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Textures\FXGDI_MissleStormUpgrade.dds"/>
+        <DisplayEffect value="CabalSalamanderRocketDamage"/>
+        <DisplayAttackCount value="8"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <RangeSlop value="0"/>
+        <Arc value="360"/>
+        <Period value="2"/>
+        <Backswing value="0.25"/>
+        <Effect value="CabalSalamanderocketCreatePersistentNod3"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="CabalSalamanderRocket4">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Textures\FXGDI_MissleStormUpgrade.dds"/>
+        <DisplayEffect value="CabalSalamanderRocketDamage"/>
+        <DisplayAttackCount value="8"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <RangeSlop value="0"/>
+        <Arc value="360"/>
+        <Period value="2"/>
+        <Backswing value="0.25"/>
+        <Effect value="CabalSalamanderocketCreatePersistentNod4"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodHCWeapon">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="HCShockwaveDamage"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="10"/>
+        <TeleportResetRange value="0"/>
+        <Cost>
+            <Cooldown Location="Unit"/>
+        </Cost>
+        <Period value="1.86"/>
+        <Effect value="HCShockwaveDamage"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="RedeemerLaserAOE">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="ThermalLancesMU2"/>
+        <DisplayAttackCount value="2"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AcquirePrioritization value="ByDistanceFromTarget"/>
+        <Range value="9"/>
+        <RangeSlop value="0"/>
+        <Arc value="29.9926"/>
+        <Period value="3.396"/>
+        <DamagePoint value="0.0832"/>
+        <Effect value="ThermalLances2"/>
+        <LegacyOptions index="KeepChanneling" value="1"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="VenomMissile">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\FXGDI_MissleStormUpgrade.dds"/>
+        <DisplayEffect value="VenomAU"/>
+        <DisplayAttackCount value="2"/>
+        <TargetFilters value="Air,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <Arc value="29.9926"/>
+        <Period value="2"/>
+        <Effect value="VenomA"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="CobraWeapon">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Icon value="Assets\Icons\NodLightWeapon.dds"/>
+        <DisplayEffect value="90mmCannonsCobra"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <Period value="2"/>
+        <Effect value="90mmCannonsCobra"/>
+        <AllowedMovement value="Moving"/>
+        <Arc value="360"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="AscendedMissile">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\FXGDI_MissleStorm.dds"/>
+        <DisplayEffect value="Ascendeddamage"/>
+        <DisplayAttackCount value="2"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <Arc value="29.9926"/>
+        <Period value="2"/>
+        <Effect value="AscendedMissilePack"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="EnlightenedWeapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Icons\NodLightWeapon.dds"/>
+        <DisplayEffect value="EnlightenedDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <Period value="1.8"/>
+        <DamagePoint value="0"/>
+        <Backswing value="0"/>
+        <Effect value="EnlightenedLaunchMissile"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="Devoutweapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Icons\NodLightWeapon.dds"/>
+        <DisplayEffect value="DevoutDamage"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Period value="1.06"/>
+        <DamagePoint value="0.05"/>
+        <Backswing value="0.75"/>
+        <Effect value="DevoutWCP"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="BlackHandFlamethrower">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Icon value="Assets\Icons\NodLightWeapon.dds"/>
+        <DisplayEffect value="BlackHandFlameThrowerDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="4"/>
+        <Range value="4"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <Period value="2"/>
+        <Effect value="BlackHandFlameThrowerSet"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="RedeemerFlameThrower">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="RedeemerFlameThrowerDamage2"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <Arc value="180"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <Period value="2"/>
+        <Effect value="RedeemerFlameThrowerSet"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodRedeemerRocket">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Textures\FXGDI_MissleStormUpgrade.dds"/>
+        <DisplayEffect value="NodRedeemerRocketDamage"/>
+        <DisplayAttackCount value="3"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <RangeSlop value="0"/>
+        <Arc value="180"/>
+        <Period value="1.7"/>
+        <Backswing value="0.25"/>
+        <Effect value="NodRedeemerRocketCreatePersistentNod"/>
+        <AllowedMovement value="Moving"/>
+        <MinScanRange value="7"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="CabalTyrantLaser">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="TyrantBeamDamage"/>
+        <DisplayAttackCount value="1"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <Arc value="360"/>
+        <Period value="2.8"/>
+        <Effect value="TyrantBeamDamage"/>
+        <LegacyOptions index="FaceTargetWhileInCooldown" value="0"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodStealthRocket">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Textures\FXGDI_MissleStormUpgrade.dds"/>
+        <DisplayEffect value="NodStealthRocketDamage"/>
+        <DisplayAttackCount value="5"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="12"/>
+        <RangeSlop value="0"/>
+        <Period value="3.4"/>
+        <Backswing value="0.25"/>
+        <Effect value="NodStealthRocketCreatePersistentNod"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodHailstormMissilePods">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Textures\FXGDI_MissleStormUpgrade.dds"/>
+        <DisplayEffect value="NodHailstormMissilePodsDamage"/>
+        <DisplayAttackCount value="8"/>
+        <TargetFilters value="Air,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <RangeSlop value="0"/>
+        <Period value="2"/>
+        <Backswing value="0.25"/>
+        <Effect value="HailstormMissilePodsCreatePersistentNod"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodBikeRocket">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Textures\FXGDI_MissleStormUpgrade.dds"/>
+        <DisplayEffect value="NodBikeRocketDamage"/>
+        <DisplayAttackCount value="3"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <RangeSlop value="0"/>
+        <Period value="2.8"/>
+        <Backswing value="0.25"/>
+        <Effect value="NodBikeRocketCreatePersistentNod"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodTurretWeapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Textures\btn-upgrade-terran-vehicleweaponslevel0.dds"/>
+        <DisplayEffect value="NodTurretWeaponDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="7"/>
+        <Period value="1.04"/>
+        <Effect value="NodTurretWeaponSet"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="FlameTankFlamethrower">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Icons\NodLightWeapon.dds"/>
+        <DisplayEffect value="FlameTankFlameThrowerDamage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="4"/>
+        <Range value="4"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <Period value="1"/>
+        <Effect value="FlameTankFlameThrowerSet"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="RedeemerLaser">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="RedeemerBeamDamage"/>
+        <DisplayAttackCount value="1"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="9"/>
+        <Arc value="19.995"/>
+        <Period value="5"/>
+        <DamagePoint value="0.7"/>
+        <Effect value="RedeemerWeaponSet"/>
+        <LegacyOptions index="FaceTargetWhileInCooldown" value="0"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodRaiderweapon">
+        <EditorCategories value="Race:Terran"/>
+        <Icon value="Assets\Icons\NodLightWeapon.dds"/>
+        <DisplayEffect value="NodRaiderDamage"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Period value="2.75"/>
+        <Backswing value="0.75"/>
+        <Effect value="NodRaiderWS"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <AllowedMovement value="Moving"/>
+        <DisplayAttackCount value="6"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodObeliskLaser">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="ObeliskBeam1"/>
+        <DisplayAttackCount value="1"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="9"/>
+        <Arc value="360"/>
+        <Period value="3"/>
+        <Effect value="ObeliskBeam1"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="TwinObeliskDamage">
+        <EditorCategories value="Race:Terran"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="CabalDefenseCrawlerCannon"/>
+        <TargetFilters value="Visible;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="9"/>
+        <Arc value="360"/>
+        <Period value="4"/>
+        <Effect value="CabalDefenseCrawlerCannon"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="MedusaChargeBeamBase">
+        <EditorCategories value="Race:Protoss"/>
+        <Icon value="Assets\Icons\FXNod_LasersAddonUpgrade.dds"/>
+        <DisplayEffect value="MedusaChargeBeamBaseDamageCharge1"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="6"/>
+        <RangeSlop value="2"/>
+        <ArcSlop value="39.9902"/>
+        <Period value="0.5"/>
+        <Backswing value="0.75"/>
+        <LegacyOptions index="CanRetargetWhileChanneling" value="1"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodVolatileBurstDummy">
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-ability-zerg-banelingspooge.dds"/>
+        <DisplayEffect value="NodVolatileBurstU"/>
+        <TargetFilters value="Ground,Visible;Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.25"/>
+        <Cost>
+            <Cooldown Link="Weapon/NodVolatileBurst"/>
+        </Cost>
+        <Period value="0.833"/>
+        <DamagePoint value="0"/>
+        <LegacyOptions index="NoDeceleration" value="1"/>
+        <AllowedMovement value="Moving"/>
+        <Effect value=""/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodVolatileBurst">
+        <Icon value="Assets\Textures\btn-ability-zerg-explode.dds"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.25"/>
+        <Period value="0.833"/>
+        <DamagePoint value="0"/>
+        <AllowedMovement value="Moving"/>
+        <Options index="Hidden" value="1"/>
+        <Options index="Melee" value="1"/>
+        <LegacyOptions index="NoDeceleration" value="1"/>
+        <AcquireFilters value="Ground,Visible;Self,Player,Ally,Neutral,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodVolatileBurstBuilding">
+        <Options index="Disabled" value="1"/>
+        <Options index="Hidden" value="1"/>
+        <Options index="Melee" value="1"/>
+        <Icon value="Assets\Textures\btn-ability-zerg-explode.dds"/>
+        <DisplayEffect value="VolatileBurst"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AcquireFilters value="Ground,Visible;Self,Player,Ally,Neutral,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="0.25"/>
+        <Period value="0.833"/>
+        <DamagePoint value="0"/>
+        <LegacyOptions index="NoDeceleration" value="1"/>
+        <AllowedMovement value="Moving"/>
+        <Effect value="VolatileBurst"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+    </CWeaponLegacy>
+    <CMoverMissile id="NodHallucinogenicGrenade">
+        <MotionPhases Driver="Ballistic" Gravity="12" FlightTime="0.5"/>
+    </CMoverMissile>
 </Catalog>

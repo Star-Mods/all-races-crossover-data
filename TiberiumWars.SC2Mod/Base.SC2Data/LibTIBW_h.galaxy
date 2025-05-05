@@ -1,0 +1,77 @@
+include "TriggerLibs/natives"
+
+//--------------------------------------------------------------------------------------------------
+// Library: Mods - CNC
+//--------------------------------------------------------------------------------------------------
+// Preset Declarations
+const int libTIBW_ge_DropPodRace_Terran = 0;
+const int libTIBW_ge_DropPodRace_Zerg = 1;
+
+// Constants
+const int libTIBW_gv_beaconGroups = 5;
+const int libTIBW_gv_platformMaxCountRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = 100;
+
+// Variable Declarations
+string[libTIBW_gv_beaconGroups + 1] libTIBW_gv_watchTypes;
+unitgroup[16][libTIBW_gv_beaconGroups + 1] libTIBW_gv_productionUnits;
+int[libTIBW_gv_beaconGroups + 1] libTIBW_gv_labels;
+int[libTIBW_gv_beaconGroups + 1] libTIBW_gv_buttons;
+playergroup libTIBW_gv_aF_SlimUI_PlayerGroup;
+int libTIBW_gv_platformNowCountRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel;
+int libTIBW_gv_bomberUsable;
+unitgroup[libTIBW_gv_platformMaxCountRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel + 1] libTIBW_gv_bomberPFUnitsGroupRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel;
+unitgroup libTIBW_gv_bomberPlatformTempGroup;
+unitgroup libTIBW_gv_bomberFighterDebugGroup;
+unitgroup libTIBW_gv_bomberFighterTempGroup;
+unit libTIBW_gv_aOEStrikeCasterTemp;
+int libTIBW_gv_nodTopPanelRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel;
+int libTIBW_gv_nodPanelRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel;
+unit libTIBW_gv_nodCasterRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel;
+int libTIBW_gv_mCVDeploymentPanelRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel;
+int libTIBW_gv_mCVDeploymentTip;
+int libTIBW_gv_decoration;
+int libTIBW_gv_mCVPanel;
+unit libTIBW_gv_mCVCasterRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel;
+point libTIBW_gv_cNC_TP_DropPod_LocationRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel;
+unitgroup libTIBW_gv_cNC_TP_DropPod_Units;
+int libTIBW_gv_playerIntegerRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel;
+
+// Function Declarations
+void libTIBW_gf_RegisterUnit (unit lp_unit, int lp_player);
+void libTIBW_gf_UnRegisterUnit (unit lp_unit, int lp_player);
+void libTIBW_gf_AddproductionUnit (unit lp_unit, int lp_player, int lp_productionTabIndex);
+void libTIBW_gf_DeleteProductionUnit (unit lp_unit, int lp_player, int lp_productionTabIndex);
+void libTIBW_gf_ApplyPlayerVoicePack (int lp_player, string lp_voiceID);
+void libTIBW_gf_NodAirRaid (unit lp_unit, region lp_area);
+void libTIBW_gf_ShowhideNodtoppanel (bool lp_showHide, int lp_player);
+void libTIBW_gf_Showhidetoppanel (bool lp_showHide);
+void libTIBW_gf__NodDropPod (point lp_location, unitgroup lp_units, int lp_player);
+void libTIBW_gf__GDIDropPod (point lp_location, unitgroup lp_units, int lp_player);
+void libTIBW_gf_CreateDropPod (int lp_race, point lp_location, unitgroup lp_units, bool lp_waitDontWait, int lp_playerinteger);
+
+// Trigger Declarations
+trigger libTIBW_gt_WatchUnitCreation;
+trigger libTIBW_gt_WatchUnitOwner;
+trigger libTIBW_gt_WatchUnitDeath;
+trigger libTIBW_gt_WatchUnitBehaviors;
+trigger libTIBW_gt_RecalculateBeacons;
+trigger libTIBW_gt_InitBeaconsButton;
+trigger libTIBW_gt_BeaconsButtonUsed;
+trigger libTIBW_gt_AF_SlimUI;
+trigger libTIBW_gt_Test;
+trigger libTIBW_gt_PlayNod;
+trigger libTIBW_gt_Borrowedbombercustomreturntrajectory;
+trigger libTIBW_gt_BorrowedbombercreationbindingStarchainTest;
+trigger libTIBW_gt_LaunchairstrikeStarchainTest;
+trigger libTIBW_gt_UnlockallunitsStarchainTest;
+trigger libTIBW_gt_NodTopPanelStarchainTest;
+trigger libTIBW_gt_MCVDeployPanelStarchainTest;
+trigger libTIBW_gt_DeploymentdetectionStarchainTest;
+trigger libTIBW_gt_DisableotherMCVsStarchainTest;
+trigger libTIBW_gt_MCVredeployStarchainTest;
+trigger libTIBW_gt__NodDropPodStarchainTest;
+trigger libTIBW_gt__GDIDropPod;
+
+// Library Initialization
+void libTIBW_InitVariables ();
+

@@ -187,9 +187,6 @@
     </CButton>
     <CButton id="NodEnergize" parent="NodButton" icon="FXNod_AmplificationOverridesUpgrade"/>
     <CButton id="FlameTrail" parent="NodButton" icon="FXNod_TrailOfFlameUpgrade"/>
-    <CButton id="Reckonerpack2" parent="NodButton" icon="RealizerIcon">
-        <HotkeySet value="TankModes"/>
-    </CButton>
     <CButton id="Reloadmineral" parent="NodButton" icon="ChemicalPlantIcon"/>
     <CButton id="NodMCV" parent="NodButton" icon="CNC3MCVIcon"/>
     <CButton id="DropFlameMine" parent="NodButton" icon="btn-nodmine"/>
@@ -205,7 +202,8 @@
     <CButton id="NodSpawnTib" parent="NodButton" icon="FXNod_TiberiumCatalystUpgrade"/>
     <CButton id="NodObelisk" parent="NodButton" icon="BrightstoneIcon"/>
     <CButton id="CabalShieldGenerator" parent="NodButton" icon="btn-nodgenerator"/>
-    <CButton id="NodMantis" parent="NodButton" icon="MantisIcon"/>
+    <CButton id="NodMantis" parent="NodButton" icon="NUMantis"/>
+    <CButton id="CabalMantis" parent="NodButton" icon="MantisIcon"/>
     <CButton id="NodDeploy2" parent="NodButton" icon="NodDefenseGroupConstructionPlantIcon">
         <HotkeySet value="TankModes"/>
     </CButton>
@@ -245,7 +243,8 @@
     <CButton id="NodScorpion" parent="NodButton" icon="ScorpioIcon"/>
     <CButton id="NodKaneCommando" parent="NodButton" icon="NUCommando"/>
     <CButton id="CabalCenturion" parent="NodButton" icon="CabalCenturionIcon"/>
-    <CButton id="NodSpecter" parent="NodButton" icon="GhostIcon"/>
+    <CButton id="CabalSpecter" parent="NodButton" icon="GhostIcon"/>
+    <CButton id="NodSpecter" parent="NodButton" icon="NUMorningStar"/>
     <CButton id="CabalSpider" parent="NodButton" icon="SpiderTankIcon"/>
     <CButton id="CabalWidow" parent="NodButton" icon="WidowmakerIcon"/>
     <CButton id="NodScorpionCNC3" parent="NodButton" icon="CNC3ScorpionIcon"/>
@@ -281,7 +280,8 @@
     </CButton>
     <CButton id="NodBike" parent="NodButton" icon="MotorcycleIcon"/>
     <CButton id="NodCobra" parent="NodButton" icon="CobraIcon"/>
-    <CButton id="NodFlameTank" parent="NodButton" icon="FlameTankIcon"/>
+    <CButton id="NodFlameTank" parent="NodButton" icon="NUFlameTank"/>
+    <CButton id="CabalFlameTank" parent="NodButton" icon="FlameTankIcon"/>
     <CButton id="NodScalpel" parent="NodButton" icon="ScalpelIcon"/>
     <CButton id="NodCallRedeemer" parent="NodButton" icon="RedeemerIcon"/>
     <CButton id="NodStasisField" parent="NodButton" icon="FXNod_UA_CloakModuleUpgrade"/>
@@ -296,15 +296,11 @@
     <CButton id="Outpost" parent="NodButton" icon="CabalOutpostIcon"/>
     <CButton id="NodCloak" parent="NodButton" icon="CloakModuleUpgrade"/>
     <CButton id="SpeedUpgrade" parent="NodButton" icon="SpeedupgradeBTN"/>
-    <CButton id="ReckonerUnpack" parent="NodButton" icon="RealizerDeploymentIcon">
-        <HotkeySet value="TankModes"/>
-    </CButton>
-    <CButton id="Reckoner" parent="NodButton" icon="RealizerIcon">
-        <HotkeySet value="TankModes"/>
-    </CButton>
-    <CButton id="Reckonerpack" parent="NodButton" icon="RealizerIcon">
-        <HotkeySet value="TankModes"/>
-    </CButton>
+    <CButton id="NodReckoner" parent="NodButton" icon="NUReckoner"/>
+    <CButton id="CaabalReckoner" parent="NodButton" icon="RealizerIcon"/>
+    <CButton id="NodReckonerUnpack" parent="NodButton" icon="RealizerDeploymentIcon"><HotkeySet value="TankModes"/></CButton>
+    <CButton id="NodReckonerPack" parent="NodButton" icon="RealizerIcon"><HotkeySet value="TankModes"/></CButton>
+    <CButton id="NodReckonerPack2" parent="NodButton" icon="RealizerIcon"><HotkeySet value="TankModes"/></CButton>
     <CButton id="NodDeepBurrow" parent="NodButton">
         <Icon value="Assets\textures\btn-ability-zerg-deeptunnel.dds"/>
     </CButton>
@@ -390,4 +386,10 @@
     <CButton id="CabalAscender" parent="NodButton" icon="NUAscender"/>
     <CButton id="NodArmageddon" parent="NodButton" icon="NUArmageddon"/>
     <CButton id="NodKaneVertigo" parent="NodButton" icon="NUVertigo"/>
+    <CButton id="NodSabotage" parent="NodButton" icon="NACapture"/>
+    <CButton id="NodBoobyTrap" parent="NodButton" icon="NABoobyTrap"/>
+    <CButton id="NodFanaticExplode">
+        <Icon value="Assets\Textures\btn-ability-zerg-explode-color.dds"/>
+        <AlertIcon value="Assets\Textures\btn-ability-zerg-explode-color.dds"/>
+    </CButton>
 </Catalog>

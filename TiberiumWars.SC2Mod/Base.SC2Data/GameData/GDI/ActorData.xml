@@ -2014,7 +2014,7 @@
         <Model value="GDIRaiderChargeWeapon"/>
     </CActorMissile>
     <CActorMissile id="HammerHeadMissile" parent="GenericAttackMissile" unitName="HammerHeadRocket">
-        <On Terms="ActorDestruction" Send="Create HailstormMissileVolleyDeath"/>
+        <On Terms="ActorDestruction" Send="Create NodMissileDeath"/>
     </CActorMissile>
     <CActorAction id="HammerHeadRocketVolley" parent="GenericAttack" effectImpact="HammerHeadRocketDamage" effectLaunch="HammerHeadRocketLaunchMissile">
         <LaunchAttachQuery Methods="HammerHeadFilter GDIHammerHeadRocket"/>

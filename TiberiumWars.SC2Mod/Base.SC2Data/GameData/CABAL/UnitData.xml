@@ -82,6 +82,8 @@
         <LateralAcceleration value="46"/>
     </CUnit>
     <CUnit id="CabalDefenseCrawlerDeployed" parent="NodStructure">
+        <BehaviorArray Link="CNCTabEconomy"/>
+        <BehaviorArray Link="CNCTabVehicles"/>
         <EditorCategories value="ObjectType:Other,ObjectFamily:CNC"/>
         <FlagArray index="PreventReveal" value="1"/>
         <FlagArray index="TownCamera" value="1"/>
@@ -160,6 +162,8 @@
         <Race value="CABAL"/>
     </CUnit>
     <CUnit id="CabalOffenseCrawlerDeployed" parent="NodStructure">
+        <BehaviorArray Link="CNCTabEconomy"/>
+        <BehaviorArray Link="CNCTabInfantry"/>
         <EditorCategories value="ObjectType:Other,ObjectFamily:CNC"/>
         <FlagArray index="PreventReveal" value="1"/>
         <FlagArray index="TownCamera" value="1"/>
@@ -244,6 +248,8 @@
         <Race value="CABAL"/>
     </CUnit>
     <CUnit id="CabalSupportCrawlerDeployed" parent="NodStructure">
+        <BehaviorArray Link="CNCTabEconomy"/>
+        <BehaviorArray Link="CNCTabAirforce"/>
         <EditorCategories value="ObjectType:Other,ObjectFamily:CNC"/>
         <FlagArray index="PreventReveal" value="1"/>
         <FlagArray index="TownCamera" value="1"/>

@@ -9,6 +9,16 @@
         <ShadowRadius value="0.340800"/>
         <UnitGlossaryCamera value="Star2CameraMid03"/>
     </CModel>
+    <CModel default="1" id="CabalUnit" parent="Unit">
+        <?token id="model" value="##id##"?>
+        <Model value="Assets\Units\Cabal\##model##.m3"/>
+        <EditorCategories value="Race:Cabal"/>
+        <Occlusion value="Show"/>
+        <Radius value="0.375000"/>
+        <SelectionRadius value="0.340800"/>
+        <ShadowRadius value="0.340800"/>
+        <UnitGlossaryCamera value="Star2CameraMid03"/>
+    </CModel>
     <CModel default="1" id="NodBuilding" parent="Unit">
         <?token id="model" value="##id##"?>
         <Model value="Assets\Buildings\Nod\##model##.m3"/>
@@ -80,22 +90,8 @@
         <ShadowRadius value="0.340800"/>
         <UnitGlossaryCamera value="Star2CameraMid03"/>
     </CModel>
-    <CModel id="RaiderNod" parent="Unit">
-        <Model value="Assets\Models\Raider\Nod Raider.m3"/>
-        <Occlusion value="Show"/>
-        <PlanetPanelCamera value="Star2CameraMid06"/>
-        <Radius value="0.650000"/>
-        <SelectionRadius value="0.866400"/>
-        <ShadowRadius value="0.866400"/>
-        <SquibTypeDefault value="Metal"/>
-        <TechPurchaseCamera value="TechPurchaseVehicle"/>
-        <Tipability value="0.750000"/>
-        <TipabilityLength value="0.600000"/>
-        <TipabilityWidth value="0.400000"/>
-        <UnitGlossaryCamera value="Star2CameraMid06"/>
-        <ScaleMax value="1.200000,1.200000,1.200000"/><ScaleMin value="1.200000,1.200000,1.200000"/>
-        <EditorCategories value="Race:Nod"/>
-    </CModel>
+    <CModel id="NodRaider" parent="NodUnit"><ScaleMax value="1.200000,1.200000,1.200000"/><ScaleMin value="1.200000,1.200000,1.200000"/></CModel>
+    <CModel id="CabalRaider" parent="CabalUnit"><ScaleMax value="1.200000,1.200000,1.200000"/><ScaleMin value="1.200000,1.200000,1.200000"/></CModel>
     <CModel id="BlackHandUpgrade" parent="Unit">
         <Model value="Assets\Models\Nod Black Hand\Nod Black Hand Upgrade.m3"/>
         <EditorCategories value="Race:Nod"/>
@@ -122,21 +118,6 @@
         <SelectionRadius value="0.340800"/>
         <ShadowRadius value="0.340800"/>
         <UnitGlossaryCamera value="Star2CameraMid03"/>
-    </CModel>
-    <CModel id="RaiderNodUpgrade" parent="Unit">
-        <Model value="Assets\Models\Raider\Nod Raider Upgrade.m3"/>
-        <Occlusion value="Show"/>
-        <PlanetPanelCamera value="Star2CameraMid06"/>
-        <Radius value="0.650000"/>
-        <SelectionRadius value="0.866400"/>
-        <ShadowRadius value="0.866400"/>
-        <SquibTypeDefault value="Metal"/>
-        <TechPurchaseCamera value="TechPurchaseVehicle"/>
-        <Tipability value="0.750000"/>
-        <TipabilityLength value="0.600000"/>
-        <TipabilityWidth value="0.400000"/>
-        <UnitGlossaryCamera value="Star2CameraMid06"/>
-        <EditorCategories value="Race:Nod"/>
     </CModel>
     <CModel id="NodCaster" parent="Unit">
         <Model value="Assets\Buildings\Protoss\ShipGeneratorSmall\ShipGeneratorSmall.m3"/>
@@ -305,7 +286,8 @@
         <UnitGlossaryCamera value="Star2CameraMid06"/>
         <EditorCategories value="Race:Nod"/>
     </CModel>
-    <CModel id="Reckonerpack" parent="Unit">
+    <CModel id="NodReckoner" parent="NodUnit"/>
+    <CModel id="CabalReckonerPack" parent="NodUnit">
         <Model value="Assets\Models\Nod Reckoner\Nod Reckoner Upgrade.m3"/>
         <EditorCategories value="Race:Nod"/>
         <Occlusion value="Show"/>
@@ -317,7 +299,7 @@
         <TipabilityWidth value="0.400000"/>
         <UnitGlossaryCamera value="Star2CameraMid08"/>
     </CModel>
-    <CModel id="ReckonerUnpack" parent="Unit">
+    <CModel id="CabalReckonerUnpack" parent="NodUnit">
         <Model value="Assets\Models\Nod Reckoner\Nod Reckoner Upgrade Deploy.m3"/>
         <EditorCategories value="Race:Nod"/>
         <Occlusion value="Show"/>
@@ -328,6 +310,18 @@
         <TipabilityLength value="0.800000"/>
         <TipabilityWidth value="0.400000"/>
         <UnitGlossaryCamera value="Star2CameraMid08"/>
+    </CModel>
+    <CModel id="CabalReckonerPackDeath" parent="UnitDeath">
+        <Model value="Assets\Models\Nod Reckoner\Nod Reckoner Upgrade Death.m3"/>
+        <LowQualityModel value="TerranLargeUnitDeathLow"/>
+        <EditorCategories value="Race:Nod"/>
+        <Occlusion value="Show"/>
+    </CModel>
+    <CModel id="CabalReckonerUnpackDeath" parent="UnitDeath">
+        <Model value="Assets\Models\Nod Reckoner\Nod Reckoner Upgrade Deploy Death.m3"/>
+        <LowQualityModel value="TerranLargeUnitDeathLow"/>
+        <EditorCategories value="Race:Nod"/>
+        <Occlusion value="Show"/>
     </CModel>
     <CModel id="NodCarryall" parent="Unit">
         <Model value="Assets\Models\Nod Carryall\nodCarryall.m3"/>
@@ -360,7 +354,7 @@
         <UnitGlossaryCamera value="Star2CameraMid03"/>
     </CModel>
     <CModel id="Ascended" parent="Unit">
-        <Model value="Assets\Models\Nod Ascended\Ascended Upgrade.m3"/>
+        <Model value="Assets\Units\Cabal\CabalAscended.m3"/>
         <EditorCategories value="Race:Nod"/>
         <Occlusion value="Show"/>
         <Radius value="0.375000"/>
@@ -565,7 +559,7 @@
         <ShadowRadius value="1.000000"/>
         <EditorCategories value="Race:Nod"/>
     </CModel>
-    <CModel id="NodMantis" parent="Unit">
+    <CModel id="CabalMantis" parent="Unit">
         <Model value="Assets\Models\Nod Mantis\Nod Mantis.m3"/>
         <RequiredAnims index="0" removed="1"/>
         <AttachProps index="0" removed="1"/>
@@ -602,7 +596,7 @@
         <EditorCategories value="Race:Nod"/>
     </CModel>
     <CModel id="CabalAfterShock" parent="Unit">
-        <Model value="Assets\Models\Nod Aftershock\Nod Aftershock.m3"/>
+        <Model value="Assets\Units\Cabal\CabalAftershock.m3"/>
         <RequiredAnims index="0" removed="1"/>
         <AttachProps index="0" removed="1"/>
         <SelectionRadius value="1.000000"/>
@@ -666,14 +660,6 @@
         <AttachProps index="0" removed="1"/>
         <EditorCategories value="Race:Nod"/>
     </CModel>
-    <CModel id="NodSpecter" parent="Unit">
-        <Model value="Assets\Models\Nod Specter\Nod Specter Upgrade.m3"/>
-        <RequiredAnims index="0" removed="1"/>
-        <AttachProps index="0" removed="1"/>
-        <SelectionRadius value="1.000000"/>
-        <ShadowRadius value="1.000000"/>
-        <EditorCategories value="Race:Nod"/>
-    </CModel>
     <CModel id="StealthTankTankCC3" parent="Unit">
         <Model value="Assets\Models\CNC3NodStealthTank\CNC3Nod Stealth Tank.m3"/>
         <RequiredAnims index="0" removed="1"/>
@@ -706,14 +692,6 @@
     </CModel>
     <CModel id="StealthTankTank" parent="Unit">
         <Model value="Assets\Models\Nod Stealth Tank\Nod Stealth Tank Upgrade.m3"/>
-        <SelectionRadius value="1.000000"/>
-        <ShadowRadius value="1.000000"/>
-        <RequiredAnims index="0" removed="1"/>
-        <AttachProps index="0" removed="1"/>
-        <EditorCategories value="Race:Nod"/>
-    </CModel>
-    <CModel id="FlameTank" parent="Unit">
-        <Model value="Assets\Models\Nod Flame Tank\Nod Flame Tank Upgrade.m3"/>
         <SelectionRadius value="1.000000"/>
         <ShadowRadius value="1.000000"/>
         <RequiredAnims index="0" removed="1"/>
@@ -1333,18 +1311,6 @@
         <Occlusion value="Show"/>
         <Radius value="1.400000"/>
     </CModel>
-    <CModel id="ReckonerpackDeath" parent="UnitDeath">
-        <Model value="Assets\Models\Nod Reckoner\Nod Reckoner Upgrade Death.m3"/>
-        <LowQualityModel value="TerranLargeUnitDeathLow"/>
-        <EditorCategories value="Race:Nod"/>
-        <Occlusion value="Show"/>
-    </CModel>
-    <CModel id="ReckonerUnpackDeath" parent="UnitDeath">
-        <Model value="Assets\Models\Nod Reckoner\Nod Reckoner Upgrade Deploy Death.m3"/>
-        <LowQualityModel value="TerranLargeUnitDeathLow"/>
-        <EditorCategories value="Race:Nod"/>
-        <Occlusion value="Show"/>
-    </CModel>
     <CModel id="NodSpecterDeath" parent="UnitDeath">
         <Model value="Assets\Models\Nod Specter\Nod Specter Death Upgrade.m3"/>
         <AttachProps index="0" removed="1"/>
@@ -1492,6 +1458,16 @@
 
 
 
+    <CModel id="CabalFlameTank" parent="Unit">
+        <Model value="Assets\Models\Nod Flame Tank\Nod Flame Tank Upgrade.m3"/>
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+        <RequiredAnims index="0" removed="1"/>
+        <AttachProps index="0" removed="1"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="NodMantis" parent="NodUnit"/>
+    <CModel id="NodFlameTank" parent="NodUnit"/>
     <CModel id="NodConfessor" parent="NodUnit"/>
     <CModel id="NodFanatic" parent="NodUnit"/>
 
@@ -1621,7 +1597,7 @@
         <SelectionRadius value="2.000000"/>
         <ShadowRadius value="2.000000"/>
     </CModel>
-    <CModel id="NodKaneMCV" parent="NodUnit" model="NodMCV">
+    <CModel id="NodMCV" parent="NodUnit" model="NodMCV">
         <Radius value="2.000000"/>
         <SelectionRadius value="2.000000"/>
         <ShadowRadius value="2.000000"/>
@@ -1632,6 +1608,859 @@
     </CModel>
     <CModel id="NodKaneMCVDeath" parent="NodUnit" model="NodMCVDeath">
     </CModel>
+    <CModel id="NodSpecter" parent="NodUnit"/>
+    <CModel id="CabalSpecter" parent="Unit">
+        <Model value="Assets\Models\Nod Specter\Nod Specter Upgrade.m3"/>
+        <RequiredAnims index="0" removed="1"/>
+        <AttachProps index="0" removed="1"/>
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
 
 
+
+    <!--Portraits-->
+    <CModel id="NodPortrait" parent="Portrait" Race="Terran">
+        <Model value="Assets\Models\Nod Portrait.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <Image value="Assets\Textures\Nod.dds"/>
+        <Lighting value="FemaleCivilian4Portrait"/>
+    </CModel>
+    <!--Effects-->
+    <CModel id="CarryHighYieldMineralFieldMinerals">
+        <Model value="Assets\Buildings\Resources\Crystal\Crystal.m3"/>
+    </CModel>
+    <CModel id="CarryHighYieldMineralFieldMineralsDeath">
+        <Model value="Assets\Units\Neutral\Crystal_Death\Crystal_Death.m3"/>
+    </CModel>
+    <CModel id="GenericStun" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Neutral\Stun_Void\Stun_Void.m3"/>
+        <EditorCategories value="Race:Neutral"/>
+    </CModel>
+    <CModel id="DeployZoneVisual" parent="UIFeedback">
+        <Model value="Assets\Models\CNCnodRadius.m3"/>
+        <ScaleMax value="2.100000,2.100000,2.100000"/>
+        <ScaleMin value="2.100000,2.100000,2.100000"/>
+    </CModel>
+    <CModel id="Deployzone">
+        <Model value="Assets\Models\DeployZone.m3"/>
+        <EditorCategories value="Race:Neut"/>
+    </CModel>
+    <CModel id="RepairZone" parent="PersistentSpellFX">
+        <Model value="Assets\Splats\TerranCircle_Ex3\TerranCircle_Ex3.m3"/>
+        <ScaleMax value="1.600000,1.600000,1.600000"/>
+        <ScaleMin value="1.600000,1.600000,1.600000"/>
+        <EditorCategories value="Race:Neut"/>
+    </CModel>
+    <CModel id="BlackHandLeader2" parent="Glaze">
+        <Model value="Assets\Effects\Glaze\Glaze_Alarak_COOP_Empower\Glaze_Alarak_COOP_Empower.m3"/>
+        <Priority value="32"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="NodAwakenBuggyEMP2Weapon" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\EMPMissile\EMPMissile.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="CommandoCC3DroneAttackBeamUpgrade" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\Karax_BasicAttack_Beam\Karax_BasicAttack_Beam.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="DefenderAirAttackImpact22" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\GoliathAirMissileImpact\GoliathAirMissileImpact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="DefenderAirAttackLaunch22" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\VikingFighterMissileLaunch\VikingFighterMissileLaunch.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="EnlightenedExplodeImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\RipWaveMissileImpact\RipWaveMissileImpact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="1.500000,1.500000,1.000000"/>
+        <ScaleMin value="1.500000,1.500000,1.000000"/>
+    </CModel>
+    <CModel id="FlameTankAttackLaunchBlue" parent="LaunchFX">
+        <Model value="Assets\Effects\Storm_FX_Firebat_Base_BunkerDrop_GroundFireBlue.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <SelectionRadius value="0.833200"/>
+        <ShadowRadius value="0.833200"/>
+    </CModel>
+    <CModel id="NodLightattackbeam" parent="PersistentSpellFX">
+        <Model value="Assets\Models\Snipe Beam\GhostSnipeBeamRed.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <AnimSpeed value="2.000000"/>
+    </CModel>
+    <CModel id="BlackHandLeader" parent="Glaze">
+        <Model value="Assets\Effects\Glaze\Glaze_Alarak_COOP_Empower\Glaze_Alarak_COOP_Empower.m3"/>
+        <Priority value="32"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="EnlightenedWeaponAttackBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\Alarak_COOP_LightningStrikes_Beam\Alarak_COOP_LightningStrikes_Beam.m3"/>
+        <LowQualityModel value="ArchonAttackBeamLow"/>
+        <AnimSpeed value="4.000000"/>
+        <EditorCategories value="Race:Nod"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="AscendedMissileUpWeapon" parent="MissileFX">
+        <Model value="Assets\Models\Nod Tib Missile.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
+    </CModel>
+    <CModel id="NodLaserCannonAttackBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\Alarak_COOP_LightningStrikes_Beam\Alarak_COOP_LightningStrikes_Beam.m3"/>
+        <LowQualityModel value="ArchonAttackBeamLow"/>
+        <AnimSpeed value="4.000000"/>
+        <EditorCategories value="Race:Nod"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="NodObeliskWeaponNewAttackBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\Alarak_COOP_LightningStrikes_Beam\Alarak_COOP_LightningStrikes_Beam.m3"/>
+        <LowQualityModel value="ArchonAttackBeamLow"/>
+        <AnimSpeed value="4.000000"/>
+        <EditorCategories value="Race:Nod"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="NodRocketCC3WeaponUp" parent="MissileFX">
+        <Model value="Assets\Models\Nod Tib Missile.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
+    </CModel>
+    <CModel id="NodC4Charge" parent="PersistentSpellFX">
+        <Model value="Assets\Units\Terran\MagneticMine\MagneticMine.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="1.800000,1.800000,1.800000"/>
+        <ScaleMin value="1.800000,1.800000,1.800000"/>
+        <Radius value="1.000000"/>
+        <AnimSpeed value="2.500000"/>
+    </CModel>
+    <CModel id="CabalSalamanderWeaponAttackImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\Badger_AttackMissile_Impact\Badger_AttackMissile_Impact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+    </CModel>
+    <CModel id="MantisWeaponUp" parent="MissileFX">
+        <Model value="Assets\Models\Nod Tib Missile.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="NodBikeRocketUp" parent="MissileFX">
+        <Model value="Assets\Models\Nod Tib Missile.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
+        <SelectionRadius value="0.666500"/>
+        <ShadowRadius value="0.666500"/>
+    </CModel>
+    <CModel id="NodVertigoweapon" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Terran\MiraHorner_NapalmBomb_Coop_Fire\MiraHorner_NapalmBomb_Coop_Fire.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <Lighting value="DefensiveMatrix"/>
+        <ScaleMax value="1.300000,1.300000,1.300000"/>
+        <ScaleMin value="1.300000,1.300000,1.300000"/>
+        <SelectionRadius value="1.250000"/>
+        <ShadowRadius value="1.250000"/>
+    </CModel>
+    <CModel id="LiquidTibimpact" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Storm_FX_Firebat_Base_JetPropulsion_Impact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <Lighting value="DefensiveMatrix"/>
+        <SelectionRadius value="1.250000"/>
+        <ShadowRadius value="1.250000"/>
+    </CModel>
+    <CModel id="NodVertigoweaponImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Storm_FX_Firebat_Base_JetPropulsion_Impact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="NodCommandoAttackBeamUpgrade" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\Karax_BasicAttack_Beam\Karax_BasicAttack_Beam.m3"/>
+        <LowQualityModel value="ArchonAttackBeamLow"/>
+        <AnimSpeed value="4.000000"/>
+        <EditorCategories value="Race:Nod"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="NodVertigoweaponRocket" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\ArchAngel_Xanthos_Experimentation_EMPMissile\ArchAngel_Xanthos_Experimentation_EMPMissile.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <SelectionRadius value="0.666500"/>
+        <ShadowRadius value="0.666500"/>
+    </CModel>
+    <CModel id="CabalReaperAttackBeamUpgrade" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\Karax_BasicAttack_Beam\Karax_BasicAttack_Beam.m3"/>
+        <LowQualityModel value="ArchonAttackBeamLow"/>
+        <AnimSpeed value="4.000000"/>
+        <EditorCategories value="Race:Nod"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="NodInvertWarheadExplode2" parent="OneShotSpellFX">
+        <Model value="Assets\Models\Storm_FX_Thrall_Base_Earthquake.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="NodInvertWarheadExplode3" parent="OneShotSpellFX">
+        <Model value="Assets\COOP\Mengsk\Effects\Artillery_Mengsk_COOP_DirtyBomb_Impact\Artillery_Mengsk_COOP_DirtyBomb_Impact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <RadiusLoose value="1.000000"/>
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
+    </CModel>
+    <CModel id="NodSpecterAttackUpgradeImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Protoss\DarkImmortalMissileImpact\DarkImmortalMissileImpact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
+    </CModel>
+    <CModel id="NodSpecterAttackUpgradeLaunch" parent="LaunchFX">
+        <Model value="Assets\COOP\Zeratul\Effects\Immortal_Zeratul_COOP_CannonLaunch\Immortal_Zeratul_COOP_CannonLaunch.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="NodStealthRocketUP" parent="MissileFX">
+        <Model value="Assets\Models\Nod Tib Missile.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
+        <SelectionRadius value="0.666500"/>
+        <ShadowRadius value="0.666500"/>
+    </CModel>
+    <CModel id="SpecterWeaponUpgrade" parent="MissileFX">
+        <Model value="Assets\Effects\Zerg\Infested_Stukov_Missile\Infested_Stukov_Missile.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="VenomWeaponUp" parent="MissileFX">
+        <Model value="Assets\Models\Nod Tib Missile.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="NodChargeBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Terran\TargetingDroneBeam\TargetingDroneBeam.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="RedeemerAttackBeam2" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\ColossusBeam_Upgrade\ColossusBeam_Upgrade.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="MantisWeapon" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\ThorShoulderMissile\ThorShoulderMissile.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="MantisWeaponAttackImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\GoliathAirMissileImpact\GoliathAirMissileImpact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="MantisWeaponAttackLaunch" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\VikingFighterMissileLaunch\VikingFighterMissileLaunch.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="NodNukeExplode" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Terran\Nuke\Nuke.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="MarkofKane" parent="Glaze">
+        <Model value="Assets\Effects\Glaze\Glaze_Purifier_Zealot_Resurrection_Alarm\Glaze_Purifier_Zealot_Resurrection_Alarm.m3"/>
+        <Priority value="32"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="CabalIncineratorWeaponBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Terran\LaserDrillBeam\LaserDrillBeam.m3"/>
+        <LowQualityModel value="SentryAttackBeamLow"/>
+        <EditorCategories value="Race:Nod"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="NodArtilleryLaunch" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\SiegeTankWeaponLaunch\SiegeTankWeaponLaunch.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="NodArtilleryImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Storm_FX_Firebat_Base_JetPropulsion_Impact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="NodInvertWarheadExplode" parent="OneShotSpellFX">
+        <Model value="Assets\COOP\Mengsk\Effects\Artillery_Mengsk_COOP_Impact\Artillery_Mengsk_COOP_Impact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <RadiusLoose value="1.000000"/>
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
+    </CModel>
+    <CModel id="NodNukeExplodeEMP" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Protoss\XelNagaArtifactSpell\XelNagaArtifactSpell.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <RadiusLoose value="1.000000"/>
+        <ScaleMax value="0.300000,0.300000,0.300000"/>
+        <ScaleMin value="0.300000,0.300000,0.300000"/>
+    </CModel>
+    <CModel id="CabalShieldGeneratorImpact" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\SentryShieldImpact\SentryShieldImpact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="MCVReapirImpact" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Zerg\RegenerativeBileBuff\RegenerativeBileBuff.m3"/>
+        <EditorCategories value="Race:Neut"/>
+        <Flags index="Wait" value="1"/>
+        <Priority value="32"/>
+    </CModel>
+    <CModel id="CommandoCC3DroneAttackBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Terran\TargetingDroneBeam\TargetingDroneBeam.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="NodWarpIn" parent="ZealotWarpInBase">
+        <Model value="Assets\Units\Protoss\WarpIn_Void\WarpIn_Void.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="NodVisionImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Zerg\PulseImpact\PulseImpact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="1.200000,1.200000,1.200000"/>
+        <ScaleMin value="1.200000,1.200000,1.200000"/>
+        <SelectionRadius value="0.333200"/>
+        <ShadowRadius value="0.333200"/>
+    </CModel>
+    <CModel id="NodAOECursorSplat" parent="UI">
+        <Model value="Assets\Models\TargetNodAOE.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="2.200000,2.200000,2.200000"/>
+        <ScaleMin value="2.200000,2.200000,2.200000"/>
+        <SelectionRadius value="2.500000"/>
+        <ShadowRadius value="2.500000"/>
+    </CModel>
+    <CModel id="CabalShieldGeneratorShield">
+        <Model value="Assets\Effects\Protoss\SentryShieldBubble\SentryShieldBubble.m3"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="ShadowShieldGeneratorSmall2" parent="Building" Race="Terran">
+        <Model value="Assets\Models\Nod Shield\Nod Shield.m3"/>
+        <Radius value="1.000000"/>
+        <SelectionLayer value="2"/>
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+        <SquibTypeDefault value="Metal"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="NodArtilleryWeapon" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\Liberator_Missile\Liberator_Missile.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="MantisRocket" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\PlanetaryFortressRocket\PlanetaryFortressRocket.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
+    </CModel>
+    <CModel id="earthquake" parent="OneShotSpellFX">
+        <Model value="Assets\Models\Storm_FX_Thrall_Base_Earthquake.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <SelectionRadius value="0.250000"/>
+        <ShadowRadius value="0.250000"/>
+        <AnimSpeed value="0.500000"/>
+    </CModel>
+    <CModel id="UnderminerExplosion" parent="OneShotSpellFX">
+        <Model value="Assets\COOP\Mengsk\Effects\Artillery_Mengsk_COOP_Impact\Artillery_Mengsk_COOP_Impact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <SelectionRadius value="0.250000"/>
+        <ShadowRadius value="0.250000"/>
+    </CModel>
+    <CModel id="NodDeepBurrowSplat" parent="Splat">
+        <Model value="Assets\Splats\Splat_ZerglingBurrowed\Splat_ZerglingBurrowed.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <VariationCount value="3"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="NodSpecterAttackLaunch" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\SiegeTankWeaponLaunch\SiegeTankWeaponLaunch.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="NodSpecterAttackImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\MiraHorner_NapalmBomb_Coop_Explosion\MiraHorner_NapalmBomb_Coop_Explosion.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="BeamWeaponCC3CC3AttackBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\Alarak_COOP_LightningStrikes_Beam\Alarak_COOP_LightningStrikes_Beam.m3"/>
+        <LowQualityModel value="ArchonAttackBeamLow"/>
+        <AnimSpeed value="4.000000"/>
+        <EditorCategories value="Race:Nod"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="CabalWidowLaserAttackBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\Alarak_COOP_LightningStrikes_Beam\Alarak_COOP_LightningStrikes_Beam.m3"/>
+        <LowQualityModel value="DiamondbackAttackBeamLow"/>
+        <AnimSpeed value="3.000000"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="NodDeepBurrow" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Zerg\Dehaka_Coop_Young_Leap\Dehaka_Coop_Young_Leap.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="1.200000,1.200000,1.200000"/>
+        <ScaleMin value="1.200000,1.200000,1.200000"/>
+    </CModel>
+    <CModel id="UnderminerAttackDirectedImpact" parent="ImpactFX">
+        <Model value="Assets\COOP\Mengsk\Effects\Artillery_Mengsk_COOP_Impact\Artillery_Mengsk_COOP_Impact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="1.500000,1.500000,1.500000"/>
+        <ScaleMin value="1.500000,1.500000,1.500000"/>
+    </CModel>
+    <CModel id="UnderminerExplosion2" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Zerg\Dehaka_Coop_Young_Leap\Dehaka_Coop_Young_Leap.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <SelectionRadius value="0.250000"/>
+        <ShadowRadius value="0.250000"/>
+    </CModel>
+    <CModel id="VenomparticlebeamAttackBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\Karax_BasicAttack_Beam\Karax_BasicAttack_Beam.m3"/>
+        <LowQualityModel value="ArchonAttackBeamLow"/>
+        <AnimSpeed value="4.000000"/>
+        <EditorCategories value="Race:Nod"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="ScorpionWeaponCC3AttackBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\Alarak_COOP_LightningStrikes_Beam\Alarak_COOP_LightningStrikes_Beam.m3"/>
+        <LowQualityModel value="ArchonAttackBeamLow"/>
+        <AnimSpeed value="4.000000"/>
+        <EditorCategories value="Race:Nod"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="NodMilitantattackbeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Terran\GhostSnipeBeam\GhostSnipeBeam.m3"/>
+        <AnimSpeed value="2.000000"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="RedeemerConfusionCastImpactModel">
+        <Model value="Assets\Effects\Protoss\DarkArchon_Confusion\DarkArchon_Confusion.m3"/>
+        <ScaleMax value="6.000000,6.000000,6.000000"/>
+        <ScaleMin value="6.000000,6.000000,6.000000"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="RedeemerConfusionModel">
+        <Model value="Assets\Effects\Protoss\DarkArchon_Confusion_State\DarkArchon_Confusion_State.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="MedusaHealingImpactModel" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Protoss\Artanis_AstralWinds_Impact\Artanis_AstralWinds_Impact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="NodBlackHandRocket" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\ArchAngel_Xanthos_Experimentation_EMPMissile\ArchAngel_Xanthos_Experimentation_EMPMissile.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <SelectionRadius value="0.666500"/>
+        <ShadowRadius value="0.666500"/>
+    </CModel>
+    <CModel id="MedusaHealImpactModel" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Zerg\KerriganRespawnImpact\KerriganRespawnImpact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="HCAttackBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\Colossus_Purifier_Coop_TimeBeam\Colossus_Purifier_Coop_TimeBeam.m3"/>
+        <LowQualityModel value="ArchonAttackBeamLow"/>
+        <AnimSpeed value="4.000000"/>
+        <EditorCategories value="Race:Nod"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="DefenderAWeapon2" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\WraithMissile\WraithMissile.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="CabalBasiliskAttackBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\ColossusBeam_Upgrade\ColossusBeam_Upgrade.m3"/>
+        <LowQualityModel value="ArchonAttackBeamLow"/>
+        <AnimSpeed value="4.000000"/>
+        <EditorCategories value="Race:Nod"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="CabalReaperAttackBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\DarkArchon_Beam\DarkArchon_Beam.m3"/>
+        <LowQualityModel value="ArchonAttackBeamLow"/>
+        <AnimSpeed value="4.000000"/>
+        <EditorCategories value="Race:Nod"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="CabalHijackerEMPImpactModel" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\HyperionEMPImpact\HyperionEMPImpact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.300000,0.300000,0.300000"/>
+        <ScaleMin value="0.300000,0.300000,0.300000"/>
+    </CModel>
+    <CModel id="CabalMarauderAttackImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\Nova_Shotgun_Impact\Nova_Shotgun_Impact.m3"/>
+        <LowQualityModel value="SiegeTankAttackImpactLow"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="CabalMarauderAttackLaunch" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\Nova_Shotgun_Launch\Nova_Shotgun_Launch.m3"/>
+        <LowQualityModel value="SiegeTankAttackLaunchLow"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="StassisFieldImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Protoss\StasisWardImpact\StasisWardImpact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <Radius value="1.000000"/>
+    </CModel>
+    <CModel id="StasisFieldModel" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\StasisWardShockwave\StasisWardShockwave.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <RadiusLoose value="1.000000"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="LiquidTibLeviathan" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Terran\MiraHorner_NapalmBomb_Coop_Fire\MiraHorner_NapalmBomb_Coop_Fire.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <Lighting value="DefensiveMatrix"/>
+        <ScaleMax value="1.300000,1.300000,1.300000"/>
+        <ScaleMin value="1.300000,1.300000,1.300000"/>
+        <SelectionRadius value="1.250000"/>
+        <ShadowRadius value="1.250000"/>
+    </CModel>
+    <CModel id="CabalLeviathanRocket" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\ArchAngel_Xanthos_Experimentation_EMPMissile\ArchAngel_Xanthos_Experimentation_EMPMissile.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <SelectionRadius value="0.666500"/>
+        <ShadowRadius value="0.666500"/>
+    </CModel>
+    <CModel id="NodCommandoAttackBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\Alarak_COOP_LightningStrikes_Beam\Alarak_COOP_LightningStrikes_Beam.m3"/>
+        <LowQualityModel value="ArchonAttackBeamLow"/>
+        <AnimSpeed value="4.000000"/>
+        <EditorCategories value="Race:Nod"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="CabalSalamanderRocket" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\Badger_AttackMissile_Missile\Badger_AttackMissile_Missile.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
+        <SelectionRadius value="0.666500"/>
+        <ShadowRadius value="0.666500"/>
+    </CModel>
+    <CModel id="LiquidTib" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Terran\MiraHorner_NapalmBomb_Coop_Fire\MiraHorner_NapalmBomb_Coop_Fire.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <Lighting value="DefensiveMatrix"/>
+        <ScaleMax value="1.300000,1.300000,1.300000"/>
+        <ScaleMin value="1.300000,1.300000,1.300000"/>
+        <SelectionRadius value="1.250000"/>
+        <ShadowRadius value="1.250000"/>
+    </CModel>
+    <CModel id="MedusaWeaponSAttackBeam2" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Terran\LaserDrillBeam\LaserDrillBeam.m3"/>
+        <LowQualityModel value="SentryAttackBeamLow"/>
+        <EditorCategories value="Race:Nod"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="CabalHijackerLockLaserBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\TargetLockBeam\TargetLockBeam.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="NodRocketCC3Weapon" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\Cyclone_BigMissile\Cyclone_BigMissile.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
+    </CModel>
+    <CModel id="VenomWeapon" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\WraithMissile\WraithMissile.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="DefenderAirAttackImpact2" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\GoliathAirMissileImpact\GoliathAirMissileImpact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="VenomAirAttackImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\GoliathAirMissileImpact\GoliathAirMissileImpact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="DefenderAirAttackLaunch2" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\VikingFighterMissileLaunch\VikingFighterMissileLaunch.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="VenomrAirAttackLaunch" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\VikingFighterMissileLaunch\VikingFighterMissileLaunch.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="DropPodNod2damage" parent="PersistentSpellFX">
+        <Model value="Assets\Models\NodDroppod\NodDroppod.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="BlackHandAttackLaunch" parent="LaunchFX">
+        <Model value="Assets\Effects\Storm_FX_Firebat_Base_BunkerDrop_GroundFire.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <SelectionRadius value="0.833200"/>
+        <ShadowRadius value="0.833200"/>
+        <AnimSpeed value="2.500000"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="ImpactModelBlackHand" parent="ImpactFX">
+        <Model value="Assets\Effects\Storm_FX_Firebat_Base_Combustion_Impact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="NodDevoutattackbeam" parent="PersistentSpellFX">
+        <Model value="Assets\Models\Snipe Beam\GhostSnipeBeamRed.m3"/>
+        <AnimSpeed value="2.000000"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="CabalDefenseCrawlerAttackImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Protoss\ColossusBeamImpact\ColossusBeamImpact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="CabalDefenseCrawlerAttackLaunch" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\BattleCruiserPlasmaLaunch\BattleCruiserPlasmaLaunch.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="RedeemerAttackBeamImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Protoss\ColossusBeamBurn_Upgrade\ColossusBeamBurn_Upgrade.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="RedeemerTurretAttackLaunch" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\FlameTurretLaunch\FlameTurretLaunch.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="1.000000,1.500000,1.000000"/>
+        <ScaleMin value="1.000000,1.500000,1.000000"/>
+    </CModel>
+    <CModel id="ImpactModelFlameTank" parent="ImpactFX">
+        <Model value="Assets\Effects\Storm_FX_Firebat_Base_Combustion_Impact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="ImpactModelFlames2" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\FireImpact\FireImpact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="NodRedeemerRocket" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\MissileTurretMissile\MissileTurretMissile.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
+        <SelectionRadius value="0.666500"/>
+        <ShadowRadius value="0.666500"/>
+    </CModel>
+    <CModel id="NodAvatarAttackImpact2" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\TankWeaponImpact\TankWeaponImpact.m3"/>
+        <LowQualityModel value="SiegeTankAttackImpactLow"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="NodAvatarAttackImpact3" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\TankWeaponImpact\TankWeaponImpact.m3"/>
+        <LowQualityModel value="SiegeTankAttackImpactLow"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="NodAvatarAttackImpact4" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\TankWeaponImpact\TankWeaponImpact.m3"/>
+        <LowQualityModel value="SiegeTankAttackImpactLow"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="NodAvatarAttackLaunch2" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\TankWeaponLaunch\TankWeaponLaunch.m3"/>
+        <LowQualityModel value="SiegeTankAttackLaunchLow"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="NodAvatarAttackLaunch3" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\TankWeaponLaunch\TankWeaponLaunch.m3"/>
+        <LowQualityModel value="SiegeTankAttackLaunchLow"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="NodAvatarAttackLaunch4" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\TankWeaponLaunch\TankWeaponLaunch.m3"/>
+        <LowQualityModel value="SiegeTankAttackLaunchLow"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="FlameTankAttackLaunch" parent="LaunchFX">
+        <Model value="Assets\Effects\Storm_FX_Firebat_Base_BunkerDrop_GroundFire.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <SelectionRadius value="0.833200"/>
+        <ShadowRadius value="0.833200"/>
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+        <AnimSpeed value="2.500000"/>
+    </CModel>
+    <CModel id="NodAvatarAttackImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\TankWeaponImpact\TankWeaponImpact.m3"/>
+        <LowQualityModel value="SiegeTankAttackImpactLow"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="NodAvatarAttackLaunch" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\TankWeaponLaunch\TankWeaponLaunch.m3"/>
+        <LowQualityModel value="SiegeTankAttackLaunchLow"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="TyrantAttackBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\Alarak_COOP_LightningStrikes_Beam\Alarak_COOP_LightningStrikes_Beam.m3"/>
+        <LowQualityModel value="DiamondbackAttackBeamLow"/>
+        <EditorCategories value="Race:Nod"/>
+        <AnimSpeed value="3.000000"/>
+    </CModel>
+    <CModel id="RedeemerAttackBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\ColossusBeam_Upgrade\ColossusBeam_Upgrade.m3"/>
+        <LowQualityModel value="DiamondbackAttackBeamLow"/>
+        <EditorCategories value="Race:Nod"/>
+        <AnimSpeed value="2.000000"/>
+    </CModel>
+    <CModel id="MedusaAttackBeam" parent="MissileFX">
+        <Model value="Assets\Effects\Protoss\WarpRayMissile\WarpRayMissile.m3"/>
+        <LowQualityModel value="VoidRayAttackBeamLow"/>
+        <EditorCategories value="Race:Nod"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+    <CModel id="MedusaChargeBase" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\WarpRayBeam\WarpRayBeam.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="EnlightenedExplosion" parent="OneShotSpellFX">
+        <Model value="Assets\Doodads\DOM_Explosion_Sm\DOM_Explosion_Sm.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <SelectionRadius value="0.250000"/>
+        <ShadowRadius value="0.250000"/>
+    </CModel>
+    <CModel id="EnlightenedAttackLaunch" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\SiegeTankWeaponLaunch\SiegeTankWeaponLaunch.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="EnlightenedBaseAttackImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\TankWeaponImpact\TankWeaponImpact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="NodEvade" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\DisplacementFieldImpact\DisplacementFieldImpact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="2.000000,2.000000,2.000000"/>
+        <ScaleMin value="2.000000,2.000000,2.000000"/>
+    </CModel>
+    <CModel id="SpecterWeapon" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\Liberator_Missile\Liberator_Missile.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="NodBikeRocket" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\MissileTurretMissile\MissileTurretMissile.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
+        <SelectionRadius value="0.666500"/>
+        <ShadowRadius value="0.666500"/>
+    </CModel>
+    <CModel id="NodStealthRocket" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\Cyclone_BigMissile\Cyclone_BigMissile.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
+        <SelectionRadius value="0.666500"/>
+        <ShadowRadius value="0.666500"/>
+    </CModel>
+    <CModel id="HailstormMissilesWeaponNod" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\Badger_AttackMissile_Missile\Badger_AttackMissile_Missile.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
+        <SelectionRadius value="0.666500"/>
+        <ShadowRadius value="0.666500"/>
+    </CModel>
+    <CModel id="ObeliskAttackBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\ColossusBeam_Upgrade\ColossusBeam_Upgrade.m3"/>
+        <LowQualityModel value="DiamondbackAttackBeamLow"/>
+        <EditorCategories value="Race:Nod"/>
+        <AnimSpeed value="2.500000"/>
+    </CModel>
+    <CModel id="CNCHealBeam" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Terran\MedivacBeamUpgrade\MedivacBeamUpgrade.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+    </CModel>
+    <CModel id="CNCHealModel" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Terran\NanoRepairBeamImpact\NanoRepairBeamImpact.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="NodSabotageEffect" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Terran\NanoRepairBeamImpact\NanoRepairBeamImpact.m3"/>
+        <ScaleMax value="1.300000,1.300000,1.300000"/>
+        <ScaleMin value="1.300000,1.300000,1.300000"/>
+        <EditorCategories value="Race:UPL"/>
+    </CModel>
+    <CModel id="NodBoobyTrap" parent="Unit" Race="Terran">
+        <SelectionLayer value="3"/>
+        <Model value="Assets\Units\Terran\MagneticMine\MagneticMine.m3"/>
+        <LowQualityModel value="KD8ChargeLow"/>
+    </CModel>
+    <CModel id="NodConfessorInspiredSplat" parent="Splat">
+        <Model value="Assets\COOP\Zeratul\Effects\Construct_Essence_Zeratul_COOP_Evolution\Construct_Essence_Zeratul_COOP_Evolution.m3"/>
+        <EditorCategories value="Race:UPL"/>
+    </CModel>
+    <CModel id="NodConfessorInspired" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Zerg\BanelingEggNestBuffDamage\BanelingEggNestBuffDamage.m3"/>
+        <EditorCategories value="Race:UPL"/>
+        <Events>
+            <Anim value="Birth,00"/>
+            <Name value="SoundStart"/>
+            <Type value="Custom"/>
+            <Time value="0.010000"/>
+        </Events>
+        <Events>
+            <Anim value="Stand,01"/>
+            <Name value="SoundLoopStart"/>
+            <Type value="Custom"/>
+            <Time value="0.010000"/>
+        </Events>
+        <Events>
+            <Anim value="Death,00"/>
+            <Name value="SoundLoopEnd"/>
+            <Type value="Custom"/>
+            <Time value="0.010000"/>
+        </Events>
+        <ScaleMax value="0.250000,0.250000,0.250000"/>
+        <ScaleMin value="0.250000,0.250000,0.250000"/>
+    </CModel>
+    <CModel id="TychusTossGrenade" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Terran\PodMissile\PodMissile.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <ScaleMax value="0.600000,0.600000,0.600000"/>
+        <ScaleMin value="0.600000,0.600000,0.600000"/>
+        <SelectionRadius value="0.833200"/>
+        <ShadowRadius value="0.833200"/>
+    </CModel>
+    <CModel id="NodHallucinogenicGrenadeImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\TerranLargeUnitDeath\TerranLargeUnitDeath.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+    <CModel id="NodCommandoC4Impact" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\TerranLargeUnitDeath\TerranLargeUnitDeath.m3"/>
+    </CModel>
+    <CModel id="NodFanaticExplosionImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\TerranLargeUnitDeath\TerranLargeUnitDeath.m3"/>
+    </CModel>
+    <CModel id="NodMissileDeath" parent="ImpactFX">
+        <Model value="Assets\Effects\Terran\VikingFighterMissileImpact\VikingFighterMissileImpact.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <ScaleMax value="0.500000,0.500000,0.500000"/>
+        <ScaleMin value="0.500000,0.500000,0.500000"/>
+        <SelectionRadius value="0.250000"/>
+        <ShadowRadius value="0.250000"/>
+    </CModel>
 </Catalog>

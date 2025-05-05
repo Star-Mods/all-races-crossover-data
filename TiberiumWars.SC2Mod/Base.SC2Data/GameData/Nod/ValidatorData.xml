@@ -1,0 +1,231 @@
+<Catalog>
+
+    <CValidatorUnitType id="IsSlave">
+        <Value value="CabalSlave"/>
+    </CValidatorUnitType>
+    <CValidatorPlayerRequirement id="HasDarkArmorDevout">
+        <Find value="1"/>
+        <Value value="UseDarkArmorDevout"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HasDarkArmorBlackHand">
+        <Find value="1"/>
+        <Value value="LearnTibBomb"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HasDarkArmorBlackhand">
+        <Find value="1"/>
+        <Value value="UseDarkArmorBlackHand"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HasBikeUpgrade">
+        <Find value="1"/>
+        <Value value="UseBikeUpgrade"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="HasMantisRocket">
+        <Find value="1"/>
+        <Value value="LearnRocketRag"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorCombine id="NodDominateMachine">
+        <Type value="And"/>
+        <CombineArray value="NotDead"/>
+        <CombineArray value="CasterNotDead"/>
+    </CValidatorCombine>
+    <CValidatorUnitFilters id="NodC4Targets">
+        <Filters value="Ground,Visible;Self,Light,Biological,RawResource,HarvestableResource,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitCompareBehaviorCount id="HasNoTiberiumProtection">
+        <Compare value="LE"/>
+        <Behavior value="TiberiumProtection"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="SpiderCountmorethan2">
+        <Compare value="GE"/>
+        <Value value="2"/>
+        <Behavior value="SpiderTankloaded"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="SpiderCountlessthan2">
+        <Compare value="LT"/>
+        <Value value="2"/>
+        <Behavior value="SpiderTankloaded"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="SpiderCountmorethan3">
+        <Compare value="GE"/>
+        <Value value="3"/>
+        <Behavior value="SpiderTankloaded"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="SpiderCountmorethan4">
+        <Compare value="GE"/>
+        <Value value="4"/>
+        <Behavior value="SpiderTankloaded"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="SpiderCountmorethan5">
+        <Compare value="GE"/>
+        <Value value="5"/>
+        <Behavior value="SpiderTankloaded"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="SpiderCountmorethan6">
+        <Compare value="GE"/>
+        <Value value="6"/>
+        <Behavior value="SpiderTankloaded"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorLocationArc id="LeviathanCValid">
+        <Arc value="119.9926"/>
+    </CValidatorLocationArc>
+    <CValidatorUnitCompareBehaviorCount id="LeviathanMissile1">
+        <Value value="1"/>
+        <Behavior value="LeviathanMissileTarget1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="LeviathanMissile2">
+        <Value value="1"/>
+        <Behavior value="LeviathanMissileTarget2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="LeviathanMissile3">
+        <Value value="1"/>
+        <Behavior value="LeviathanMissileTarget3"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="LeviathanTarget2">
+        <ResultFailed value="TargetIsOutOfRange"/>
+        <Compare value="GT"/>
+        <Behavior value="LeviathanMissileTarget2"/>
+        <RequireCasterUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="LeviathanTarget3">
+        <ResultFailed value="TargetIsOutOfRange"/>
+        <Compare value="GT"/>
+        <Behavior value="LeviathanMissileTarget3"/>
+        <RequireCasterUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="SalmanderAarget1">
+        <ResultFailed value="TargetIsOutOfRange"/>
+        <Compare value="GT"/>
+        <Behavior value="CabalSalamanderMissileTarget1"/>
+        <RequireCasterUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorLocationArc id="CabalSalamanderCValid">
+        <Arc value="119.9926"/>
+    </CValidatorLocationArc>
+    <CValidatorUnitCompareBehaviorCount id="CabalSalamanderMissile1">
+        <Value value="1"/>
+        <Behavior value="CabalSalamanderMissileTarget1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="CabalSalamanderMissile2">
+        <Value value="1"/>
+        <Behavior value="CabalSalamanderMissileTarget2"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="CabalSalamanderMissile3">
+        <Value value="1"/>
+        <Behavior value="CabalSalamanderMissileTarget3"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="CabalSalamanderMissile4">
+        <Value value="1"/>
+        <Behavior value="CabalSalamanderMissileTarget4"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="LeviathanTarget1">
+        <ResultFailed value="TargetIsOutOfRange"/>
+        <Compare value="GT"/>
+        <Behavior value="LeviathanMissileTarget1"/>
+        <RequireCasterUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="SalmanderAarget2">
+        <ResultFailed value="TargetIsOutOfRange"/>
+        <Compare value="GT"/>
+        <Behavior value="CabalSalamanderMissileTarget2"/>
+        <RequireCasterUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="SalmanderAarget3">
+        <ResultFailed value="TargetIsOutOfRange"/>
+        <Compare value="GT"/>
+        <Behavior value="CabalSalamanderMissileTarget3"/>
+        <RequireCasterUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="SalmanderAarget4">
+        <ResultFailed value="TargetIsOutOfRange"/>
+        <Compare value="GT"/>
+        <Behavior value="CabalSalamanderMissileTarget4"/>
+        <RequireCasterUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorLocationEnumArea id="FlameMineAttackEnemyCheck">
+        <WhichLocation Value="CasterUnit"/>
+        <AreaArray Compare="GE" Count="1" Radius="1"/>
+        <SearchFilters value="Ground;Self,Player,Ally,Neutral,Hover,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorUnitCompareBehaviorCount id="DoesNothaveAbathurSymbiote">
+        <Behavior value="SymbMarker"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitType id="isCabalSpider">
+        <ResultFailed value="Error,1sspider"/>
+        <Value value="CabalSpider"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="isObelisk">
+        <ResultFailed value="Error,1sspider"/>
+        <Value value="NodObeliskOfLight"/>
+    </CValidatorUnitType>
+
+
+
+    <CValidatorUnitType id="SourceIsNodShadow">
+        <WhichUnit Value="Source"/>
+        <Value value="NodShadow"/>
+    </CValidatorUnitType>
+    <CValidatorUnitType id="SourceIsNodShadowFlying">
+        <WhichUnit Value="Source"/>
+        <Value value="NodShadowFlying"/>
+    </CValidatorUnitType>
+    <CValidatorUnitMover id="NotMoverNodShadowLand">
+        <Value value="NodShadowLand"/>
+        <WhichUnit Effect="Source"/>
+    </CValidatorUnitMover>
+
+    <CValidatorUnitType id="TargetIsNodPurifierWreckage">
+        <Value value="NodPurifierWreckage"/>
+    </CValidatorUnitType>
+    <CValidatorUnitFilters id="NodSabotageTargetFilters">
+        <Filters value="Ground,Structure;Self,Air,Biological,Missile,Stasis,UnderConstruction,Dead,Hidden"/>
+        <ResultFailed value="RequiresRepairTarget"/>
+    </CValidatorUnitFilters>
+    <CValidatorCombine id="NodChannelSabotageValidators">
+        <Type value="And"/>
+        <!--        <CombineArray value="NodChannelSabotageBehaviorValidator"/>-->
+        <CombineArray value="NodChannelSabotageCasterFilters"/>
+        <CombineArray value="NodChannelSabotageTargetFilters"/>
+        <CombineArray value="NodChannelSabotageRange"/>
+    </CValidatorCombine>
+    <CValidatorLocationCompareRange id="NodChannelSabotageRange">
+        <WhichLocation Value="TargetUnit"/>
+        <Compare value="LE"/>
+        <Range value="1.5"/>
+    </CValidatorLocationCompareRange>
+    <CValidatorUnitFilters id="NodChannelSabotageTargetFilters">
+        <Filters value="Ground,Structure,Visible;Player,Ally,Destructible,Stasis,Dead,Hidden,Invulnerable"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="NodChannelSabotageCasterFilters">
+        <WhichUnit Value="Caster"/>
+        <Filters value="-;Stasis,Dead,Hidden,Stunned"/>
+    </CValidatorUnitFilters>
+    <CValidatorLocationEnumArea id="ActivateNodBoobyTrapTargetInRange">
+        <ResultFailed value="CantFindEnoughTargets"/>
+        <WhichLocation Value="SourceUnit"/>
+        <AreaArray>
+            <Compare value="GE"/>
+            <Count value="1"/>
+            <Radius value="2"/>
+            <Validator value="ActivateNodBoobyTrapValidators"/>
+        </AreaArray>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
+        <SearchFilters value="Ground,Visible;Player,Ally,Neutral,Structure,Missile,Dead,Hidden"/>
+    </CValidatorLocationEnumArea>
+    <CValidatorCombine id="ActivateNodBoobyTrapValidators">
+        <Type value="And"/>
+        <CombineArray value="IsNotPhasedUnit"/>
+        <CombineArray value="TargetNotUntargetable"/>
+        <CombineArray value="IsNotDisguisedChangeling"/>
+        <CombineArray value="IsNotNexusMassRecallWarpingOut"/>
+    </CValidatorCombine>
+    <CValidatorUnitFilters id="NodBoobyTrapTargets">
+        <Filters value="Ground,Structure,Visible;Player,Ally,Enemy,Stasis,Dead,Hidden"/>
+        <ResultFailed value="RequiresRepairTarget"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="NodVolatileBurstFallbackEnemyNeutralUnit">
+        <Filters value="Ground;Player,Ally,Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CValidatorUnitFilters>
+    <CValidatorUnitFilters id="NodVolatileBurstFallbackEnemyNeutralBuilding">
+        <Filters value="Ground,Structure;Self,Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CValidatorUnitFilters>
+</Catalog>

@@ -58,6 +58,8 @@ Abil/Name/NodKaneBarracksTrainAI=NodBarracks Training AI
 Abil/Name/NodKaneMCVDeploy=Deploy MCV
 Abil/Name/NodNukeStrike=Nod Nuke Strike
 Abil/Name/NodNukeStrikeEMP=Nod Nuke Strike EMP
+Abil/Name/NodReckonerPack=NodReckonerPack
+Abil/Name/NodReckonerUnpack=Reckoner Unpack
 Abil/Name/NodSellChemicalPlant=Sell Chemical Plant and Temple of Nod
 Abil/Name/NodSellColumnofFire=Sell Column of Fire
 Abil/Name/NodSellCraneandOutpost=Sell Crane and Outpost
@@ -88,8 +90,6 @@ Abil/Name/NodWarpGateTrain=Training
 Abil/Name/Nodupgrade=nod strengthen
 Abil/Name/ObeliskCharge=Obelisk Charge
 Abil/Name/PsiStormtemplet=PsiStormtemplet
-Abil/Name/ReckonerPack=ReckonerPack
-Abil/Name/ReckonerUnpack=Reckoner Unpack
 Abil/Name/RedeemerConfusion=Confusion
 Abil/Name/Reinforce=Reinforcement
 Abil/Name/ScorpionBurrow=Scorpion Burrow
@@ -382,6 +382,10 @@ Button/Name/NodObeliskOfLight=Build the Obelisk of Light
 Button/Name/NodPowerPlant=Build a power plant
 Button/Name/NodPurifierCNC3=Construct Purifier
 Button/Name/NodRaider=Build Raider
+Button/Name/NodReckoner=Build Reckoner
+Button/Name/NodReckonerPack=NodReckonerPack
+Button/Name/NodReckonerPack2=Reckoner pack
+Button/Name/NodReckonerUnpack=Reckoner Unpack
 Button/Name/NodRefinery=Construct Liquefied Tiberium Silo
 Button/Name/NodRefinery2=Liquefied Tiberium Silo
 Button/Name/NodReinforcement=Reinforcement
@@ -432,10 +436,6 @@ Button/Name/Outpost=Construct Outpost
 Button/Name/OutpostPassive=Outpost
 Button/Name/PlantC4=Plant C4
 Button/Name/RangeUpgrade=Range Upgrade
-Button/Name/Reckoner=Build Reckoner
-Button/Name/ReckonerUnpack=Reckoner Unpack
-Button/Name/Reckonerpack=Reckonerpack
-Button/Name/Reckonerpack2=Reckoner pack
 Button/Name/RedeemerConfusion=Confusion
 Button/Name/ReloadUpgrade=Reload Upgrade
 Button/Name/Reloadmineral=Chemical Factory Resource Replenishment
@@ -675,7 +675,7 @@ Button/Tooltip/NodInvertWarhead=Use the conversion warhead to hit the target are
 Button/Tooltip/NodKaneAirTower=Air unit production facility. <n/><n/><c val="ffff8a">Open:</c><n/>- Viking<n/>- Medical Transport
 Button/Tooltip/NodKaneBarracks=Produces Nod infantry
 Button/Tooltip/NodKaneCommando=Elite Infantry. Good against light units. Explosives can be placed on buildings.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
-Button/Tooltip/NodKaneMCV=Nod Defense Team Construction Factory. Can be expanded to serve as a Nod base. <n/><n/><c val="FFFF8A">Can be used against air and ground. </c>
+Button/Tooltip/NodMCV=Nod Defense Team Construction Factory. Can be expanded to serve as a Nod base. <n/><n/><c val="FFFF8A">Can be used against air and ground. </c>
 Button/Tooltip/NodKaneMCVDeploy=Expand to construction factory
 Button/Tooltip/NodKaneWarFactory=War vehicle production facility. <n/><n/><c val="ffff8a">Enable:</c><n/>- Hellfire<n/>- Vulture
 Button/Tooltip/NodMCV=Produce MCV
@@ -699,6 +699,10 @@ Button/Tooltip/NodPowerPlantUpgrade=Provides supplies to Nod troops, <n/>increas
 Button/Tooltip/NodPurifier=A powerful infantry mecha that can cause a lot of damage. <n/><n/><c val="#ColorAttackInfo">Can target the ground. </c>
 Button/Tooltip/NodPurifierCNC3=Heavy infantry combat mecha<n/><n/><c val="#ColorAttackInfo">can attack the ground. </c>
 Button/Tooltip/NodRaider=High mobility, good at fighting light armored units. <n/><n/><c val="#ColorAttackInfo">Can be used against ground. </c>
+Button/Tooltip/NodReckoner=Transport vehicle, when deployed, members can fire from inside the vehicle. <n/><n/><c val="#ColorAttackInfo">
+Button/Tooltip/NodReckonerPack=Restore mobile mode. <n/><n/><c val="#ColorAttackInfo">
+Button/Tooltip/NodReckonerPack2=Restore mobile mode. <n/><n/><c val="#ColorAttackInfo">
+Button/Tooltip/NodReckonerUnpack=Unpack the vehicle, allowing the crew to fire outwards. <n/>
 Button/Tooltip/NodRedeemer=Nod's ultimate mecha, equipped with a rocket launcher and missile pod, capable of releasing waves of chaos. <n/><n/><c val="FFFF8A">Can be used against ground and air. </c>
 Button/Tooltip/NodRedeemerSP=Provides power to the base
 Button/Tooltip/NodRefinery=Used to extract Tiberium gas from extractors.<n/>
@@ -768,10 +772,6 @@ Button/Tooltip/OutpostPassive=Can be build by Slaves. Used to expand the constru
 Button/Tooltip/PickupTibText=<s val="Kicker_Minerals">+3 </s><IMG path="Assets\Textures\icon-mineral-terran.dds" height="28" width="28"/><s val="Kicker_Gas">+2 </s><IMG path="Assets\Textures\icon-gas-terran.dds" height="28" width="28"/>
 Button/Tooltip/PlantC4=Deploy piercing explosives that can be used to damage structures. Not effective against lightly armored units
 Button/Tooltip/RangeUpgrade=Increases the range of the base unit.
-Button/Tooltip/Reckoner=Transport vehicle, when deployed, members can fire from inside the vehicle. <n/><n/><c val="#ColorAttackInfo">
-Button/Tooltip/ReckonerUnpack=Unpack the vehicle, allowing the crew to fire outwards. <n/>
-Button/Tooltip/Reckonerpack=Restore mobile mode. <n/><n/><c val="#ColorAttackInfo">
-Button/Tooltip/Reckonerpack2=Restore mobile mode. <n/><n/><c val="#ColorAttackInfo">
 Button/Tooltip/RedeemerConfusion=All Enemies in 7 range from Redeemer will Attack each other during 3 seconds
 Button/Tooltip/ReloadUpgrade=Increases the base unit's attack speed.
 Button/Tooltip/Reloadmineral=Click here to refresh the chemical factory's mineral reserves when its technology expires
@@ -1419,13 +1419,16 @@ Effect/Name/VoidRayChargeBeamPhase2AB=Void Ray Charge Beam Phase2 AB
 Effect/Name/earthquakedamage=earthquake damage
 Effect/Name/machinegunCP=machinegun Weapon CP
 Effect/Name/randomFlameMine=Random Flame Mine
-Param/Value/lib_C83ECD2E_06F7264C=MCV was destroyed! Redeployment coming soon
-Param/Value/lib_C83ECD2E_1A61AA67=MCV was destroyed! Redeployment coming soon
-Param/Value/lib_C83ECD2E_4337F561=MCV was destroyed! Redeployment coming soon
-Param/Value/lib_C83ECD2E_75FED3F4=MCV was destroyed! Redeployment coming soon
-Param/Value/lib_C83ECD2E_991E0E3C=<s val="ZPlanetPanelObjective">Deploy an MCV (cannot be changed after deployment)</s>
-Param/Value/lib_C83ECD2E_B653B3CD=MCV is destroyed! Redeployment coming soon
-Param/Value/lib_C83ECD2E_C33C01A4=MCV is destroyed! Redeployment coming soon
+Param/Value/lib_TIBW_06F7264C=MCV was destroyed! Redeployment coming soon
+Param/Value/lib_TIBW_1A61AA67=MCV was destroyed! Redeployment coming soon
+Param/Value/lib_TIBW_4337F561=MCV was destroyed! Redeployment coming soon
+Param/Value/lib_TIBW_450B571B=Beacons
+Param/Value/lib_TIBW_75FED3F4=MCV was destroyed! Redeployment coming soon
+Param/Value/lib_TIBW_991E0E3C=<s val="ZPlanetPanelObjective">Deploy an MCV (cannot be changed after deployment)</s>
+Param/Value/lib_TIBW_B653B3CD=MCV is destroyed! Redeployment coming soon
+Param/Value/lib_TIBW_BD95D571=<c val="FF8000">SlimUI deactivated</c>
+Param/Value/lib_TIBW_C33C01A4=MCV is destroyed! Redeployment coming soon
+Param/Value/lib_TIBW_D8DA35AF=<c val="FF8000">SlimUI activated</c>
 Race/Name/CABAL=CABAL
 Race/Name/GDI=GDI
 Race/Name/Nod=Nod
@@ -1434,6 +1437,7 @@ RequirementNode/Tooltip/Eq1277349106CountUnitNodKaneCommandoQueuedOrBetterTechTr
 RequirementNode/Tooltip/Or2790159111CountUnitNodPowerPlant2CompleteOnlyTechTreeCheatCountUnitNodPowerPlantCompleteOnlyTechTreeCheatCountUnitNodPowerPlantUpgradeCompleteOnlyTechTreeCheat=Nod Power Plant
 RequirementNode/Tooltip/REQC_NodPower=Nod Power Plant
 UI/Hotkey/Tooltip/WarpIn=Select All Construction Facilities
+UI/MenuBar/DiscordButton=All Races Discord Link (Opens a new Window)
 UI/ResourceSupplyToolTip_Nod=All living units cost supply. Build Power Plants to increase supply.
 Unit/LifeArmorName/NodInfantryArmor=Nod Infantry Armor
 Unit/LifeArmorName/NodStarship=Nod Starship Armor
@@ -1636,7 +1640,7 @@ Unit/Name/NodInterceptor=Leviathan Interceptor
 Unit/Name/NodKaneAirTower=Helipad
 Unit/Name/NodKaneBarracks=Hand of Nod
 Unit/Name/NodKaneCommando=Commando
-Unit/Name/NodKaneMCV=MCV
+Unit/Name/NodMCV=MCV
 Unit/Name/NodKaneWarFactory=War Factory
 Unit/Name/NodLaserTurret=Laser Turret
 Unit/Name/NodMCVRocket=NodMCVRocket
@@ -1658,6 +1662,8 @@ Unit/Name/NodPowerPlantUpgrade=Power Plant
 Unit/Name/NodPurifier=Purifier
 Unit/Name/NodRaider=Four-wheel drive
 Unit/Name/NodReckoner=Reckoner
+Unit/Name/NodReckonerPack=NodReckonerPack
+Unit/Name/NodReckonerUnpack=Reckoner
 Unit/Name/NodRedeemer=Redeemer
 Unit/Name/NodRedeemerRocket=NodRedeemerRocket
 Unit/Name/NodRedeemerSP=Redeemer Vest
@@ -1698,8 +1704,6 @@ Unit/Name/NodWarFactorySPSupport=War Vehicle Factory Vest Support Team
 Unit/Name/NodWarFactorySupport=War Vehicle Factory
 Unit/Name/OPCenterSP=Operation Center
 Unit/Name/Oildrums=Oildrums
-Unit/Name/ReckonerUnpack=Reckoner
-Unit/Name/Reckonerpack=Reckonerpack
 Unit/Name/Scalpel=Scalpel
 Unit/Name/SiegeTank=Siege Tank
 Unit/Name/SpecterWeapon=SpecterWeapon
