@@ -7,6 +7,7 @@ Abil/Name/CabalMissilePodBurrow=Missile Pod Rise
 Abil/Name/CabalMissilePodcastUnburrow=Missile pod lowered
 Abil/Name/CabalOffenseCrawlerDeploy=Place deployment
 Abil/Name/CabalOffenseCrawlerPack=Nod Offense MCV pack
+Abil/Name/CabalSlaveBuild=Cabal Slave Build
 Abil/Name/CabalSupportCrawlerDeploy=Abandoned department
 Abil/Name/CabalSupportCrawlerPack=Nod Support Group MCVCollapse
 Abil/Name/CabalWidowWreckage=Widow Wreckage
@@ -33,7 +34,7 @@ Abil/Name/LaunchRocket=Launch Rocket
 Abil/Name/LiquidTib=Liquified Tiberium
 Abil/Name/LiquidTibFlameTank=Fire the ground on fire
 Abil/Name/MarkofKane=Mark of Kane
-Abil/Name/NodBuild=NodBuild
+Abil/Name/NodBuild=Nod Build
 Abil/Name/NodBuildAI=NodBuildAI
 Abil/Name/NodBuildCaster=Nod Build Caster
 Abil/Name/NodBuildDefense=NodBuildDefenseGroup
@@ -42,6 +43,7 @@ Abil/Name/NodBuildSupport=Nod Build Support Team
 Abil/Name/NodCarryallTransport=Load-Unload (Carryall)
 Abil/Name/NodConstructionYardPack=NodMCVCollapse
 Abil/Name/NodDeepBurrow=Burrowing Burrow
+Abil/Name/NodDefenseBuild=Nod Build Defense
 Abil/Name/NodDominateMachine=Domination Machine
 Abil/Name/NodDropFlameMines=Nod Drop Flame Mines
 Abil/Name/NodEMP7range=Awaken EMP
@@ -84,6 +86,7 @@ Abil/Name/NodStasisField=NodStasisField
 Abil/Name/NodSwitchFaction=Nod Switch Faction
 Abil/Name/NodTurretBurrow=Viper Turret Raised
 Abil/Name/NodTurretUnburrow=Adder turret lowered
+Abil/Name/NodTurretsHubBuild=Nod Build TurretsHub
 Abil/Name/NodTwlightReaperGuerrillaCharge=Guerrilla Charge
 Abil/Name/NodVision=Nod Vision
 Abil/Name/NodWarpGateTrain=Training
@@ -306,7 +309,7 @@ Button/Name/NodAirTower=Build a Helipad
 Button/Name/NodAramUpgrade=Upgrade
 Button/Name/NodArmageddon=Armageddon
 Button/Name/NodArtilleryBeacon=Deploy Artillery Beacon
-Button/Name/NodAvatar=Build the Holy Spirit
+Button/Name/CabalHolySpirit=Build the Holy Spirit
 Button/Name/NodAvenger=Build Avenger Tank
 Button/Name/NodBane=Build Bane
 Button/Name/NodBeamCNC3=Construct Beam Cannon
@@ -408,8 +411,8 @@ Button/Name/NodShrine=Build a shrine
 Button/Name/NodSpawnTib=Spawning Tiberium
 Button/Name/NodSpecter=Build Specter
 Button/Name/NodStasisField=NodStasisField
-Button/Name/NodStealthTank=Build a Stealth Tank
-Button/Name/NodStealthTankCNC3=Construct a Stealth Tank
+Button/Name/CabalStealthTank=Build a Stealth Tank
+Button/Name/NodStealthTank=Construct a Stealth Tank
 Button/Name/NodTechII=Level 2 License
 Button/Name/NodTechIII=Level 3 License
 Button/Name/NodTechLab=Build Research Station
@@ -585,7 +588,7 @@ Button/Tooltip/NodAramUpgrade=The troops to which Nod belongs do not have the co
 Button/Tooltip/NodArmageddon=Armageddon
 Button/Tooltip/NodArtilleryBeacon=Deploys a beacon at the selected location, allowing Specters to fire in the surrounding area.
 Button/Tooltip/NodAttackBike=<sp/>
-Button/Tooltip/NodAvatar=A slow but powerful massive mecha that can cause a lot of damage. <n/><n/><c val="#ColorAttackInfo">Can target the ground. </c>
+Button/Tooltip/CabalHolySpirit=A slow but powerful massive mecha that can cause a lot of damage. <n/><n/><c val="#ColorAttackInfo">Can target the ground. </c>
 Button/Tooltip/NodAvenger=An anti-ground battle tank, good at fighting armored units. Can deploy flame mines. <n/><n/><c val="#ColorAttackInfo">Can target the ground. </c>
 Button/Tooltip/NodBane=Aerial unit, good at fighting other aircraft. <n/><n/><c val="#ColorAttackInfo">Can be used against ground and air</c>
 Button/Tooltip/NodBanshee=Banshee
@@ -675,7 +678,6 @@ Button/Tooltip/NodInvertWarhead=Use the conversion warhead to hit the target are
 Button/Tooltip/NodKaneAirTower=Air unit production facility. <n/><n/><c val="ffff8a">Open:</c><n/>- Viking<n/>- Medical Transport
 Button/Tooltip/NodKaneBarracks=Produces Nod infantry
 Button/Tooltip/NodKaneCommando=Elite Infantry. Good against light units. Explosives can be placed on buildings.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c>
-Button/Tooltip/NodMCV=Nod Defense Team Construction Factory. Can be expanded to serve as a Nod base. <n/><n/><c val="FFFF8A">Can be used against air and ground. </c>
 Button/Tooltip/NodKaneMCVDeploy=Expand to construction factory
 Button/Tooltip/NodKaneWarFactory=War vehicle production facility. <n/><n/><c val="ffff8a">Enable:</c><n/>- Hellfire<n/>- Vulture
 Button/Tooltip/NodMCV=Produce MCV
@@ -728,8 +730,8 @@ Button/Tooltip/NodShrineSP=Chariot production facility. <n/><n/><c val="ffff8a">
 Button/Tooltip/NodSpawnTib=Spawn a small amount of Tiberium in a certain area
 Button/Tooltip/NodSpecter=Medium-sized artillery, invisible<n/><n/><c val="#ColorAttackInfo">can target the ground. </c>
 Button/Tooltip/NodStasisField=Stabilizes enemies in the target area for 4 seconds. Stationary units cannot be attacked
-Button/Tooltip/NodStealthTank=Invisible unit, good at launching surprise attacks. <n/><n/><c val="#ColorAttackInfo">Can be used against ground and air. </c>
-Button/Tooltip/NodStealthTankCNC3=An old generation stealth tank that is exposed when attacking<n/><n/><c val="#ColorAttackInfo">and can target ground and air. </c>
+Button/Tooltip/CabalStealthTank=Invisible unit, good at launching surprise attacks. <n/><n/><c val="#ColorAttackInfo">Can be used against ground and air. </c>
+Button/Tooltip/NodStealthTank=An old generation stealth tank that is exposed when attacking<n/><n/><c val="#ColorAttackInfo">and can target ground and air. </c>
 Button/Tooltip/NodTechII=Upgrade weapons and armor for Flame Tank, Stealth Tank, Tyrant, Mantis, Black Hand, and Reaper.
 Button/Tooltip/NodTechIII=Upgrade weapons and armor for CabalSalamander, Medusa, Ghost, Widow, Redeemer, Saint, Leviathan, Seismo Cannon, Lizard, Holy Spirit and Commando.
 Button/Tooltip/NodTechLab=Unlock Nod Phase 2 Upgrade
@@ -782,7 +784,7 @@ Button/Tooltip/Slave=Basic work unit. Used to gather resources, construct human 
 Button/Tooltip/SpeedUpgrade=Increases the infantry unit's movement speed.
 Button/Tooltip/SpiderMineVulture=After detonating, it ignites the ground, causing burning damage.
 Button/Tooltip/StealthTank=Assault unit, uncloaked when attacking. <n/><n/><c val="FFFF8A">Can be used against ground and air. </c>
-Button/Tooltip/StealthTankCC3=Assault unit, uncloaked when attacking. <n/><n/><c val="FFFF8A">Can be used against ground and air. </c>
+Button/Tooltip/NodStealthTank=Assault unit, uncloaked when attacking. <n/><n/><c val="FFFF8A">Can be used against ground and air. </c>
 Button/Tooltip/TibBomb=Ignite the target area. </n></n><c val="ffff8a">Will not cause damage to friendly units. </c>
 Button/Tooltip/TraintheAwaken=Basic infantry unit, good at dealing with armored units. <n/><n/><c val="#ColorAttackInfo">Can target the ground. </c>
 Button/Tooltip/TwlightNodFlameTank=Assault unit, good at attacking buildings. <n/><n/><c val="#ColorAttackInfo">Can target the ground. </c>
@@ -1177,11 +1179,11 @@ Effect/Name/MissilepodWeaponCreatePersistent=Missile Pod Weapon (Create Persiste
 Effect/Name/ModifyResources=Modify unit resources
 Effect/Name/NodArtilleryDamage=Nod Artillery Damage
 Effect/Name/NodArtilleryWeaponlaunch=Nod Artillery Weapon launch
-Effect/Name/NodAvatar90mmCannons=NodAvatar Cannon (Damage)
-Effect/Name/NodAvatar90mmCannons2=NodAvatar Cannon (Damage)2
-Effect/Name/NodAvatar90mmCannons3=NodAvatar Cannon (Damage)3
-Effect/Name/NodAvatar90mmCannons4=NodAvatar Cannon (Damage)4
-Effect/Name/NodAvatar90mmCannons5=NodAvatar Cannon (Damage)5
+Effect/Name/NodAvatar90mmCannons=CabalHolySpirit Cannon (Damage)
+Effect/Name/NodAvatar90mmCannons2=CabalHolySpirit Cannon (Damage)2
+Effect/Name/NodAvatar90mmCannons3=CabalHolySpirit Cannon (Damage)3
+Effect/Name/NodAvatar90mmCannons4=CabalHolySpirit Cannon (Damage)4
+Effect/Name/NodAvatar90mmCannons5=CabalHolySpirit Cannon (Damage)5
 Effect/Name/NodAvenger90mmCannons=AvengerTank weapon
 Effect/Name/NodBikeRocketCreatePersistentNod=NodBikeRocket (Create Persistent)
 Effect/Name/NodBikeRocketCreatePersistentNodCC3=NodBikeRocket (Create Persistent)CC3
@@ -1572,7 +1574,7 @@ Unit/Name/NodArmageddon=Armageddon
 Unit/Name/NodArtillery=Nod Artillery
 Unit/Name/NodArtilleryBeacon=Artillery Beacon
 Unit/Name/NodAttackBike=Attack Bike
-Unit/Name/NodAvatar=Holy One
+Unit/Name/CabalHolySpirit=Holy One
 Unit/Name/NodAwakenBuggyEMP=Nod - Awaken - Buggy EMP
 Unit/Name/NodBanshee=Banshee
 Unit/Name/NodBeam=Beam Cannon
@@ -1640,9 +1642,9 @@ Unit/Name/NodInterceptor=Leviathan Interceptor
 Unit/Name/NodKaneAirTower=Helipad
 Unit/Name/NodKaneBarracks=Hand of Nod
 Unit/Name/NodKaneCommando=Commando
-Unit/Name/NodMCV=MCV
 Unit/Name/NodKaneWarFactory=War Factory
 Unit/Name/NodLaserTurret=Laser Turret
+Unit/Name/NodMCV=MCV
 Unit/Name/NodMCVRocket=NodMCVRocket
 Unit/Name/NodMantis=Mantis Tank
 Unit/Name/NodMantisRocket=Nod Mantis Rocket
@@ -1709,7 +1711,7 @@ Unit/Name/SiegeTank=Siege Tank
 Unit/Name/SpecterWeapon=SpecterWeapon
 Unit/Name/SpecterWeaponUpgrade=SpecterWeapon Upgrade
 Unit/Name/StealthTank=Stealth Tank
-Unit/Name/StealthTankCC3=Stealth Tank
+Unit/Name/NodStealthTank=Stealth Tank
 Unit/Name/SupportMCV=Nod support group MCV
 Unit/Name/TIBMineralField=Tiberium Mineral Field
 Unit/Name/TIBMineralFieldsmall=Tiberium Mineral Field

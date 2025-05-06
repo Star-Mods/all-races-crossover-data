@@ -990,7 +990,7 @@ bool libTIBW_gt_UnlockallunitsStarchainTest_Func (bool testConds, bool runAction
     TechTreeUnitAllow(1, "CabalBasilisk", true);
     TechTreeUnitAllow(1, "Medusa", true);
     TechTreeUnitAllow(1, "CabalLeviathan", true);
-    TechTreeUnitAllow(1, "NodAvatar", true);
+    TechTreeUnitAllow(1, "CabalHolySpirit", true);
     TechTreeUnitAllow(1, "CabalWidow", true);
     TechTreeUnitAllow(1, "NodRedeemer", true);
     TechTreeUnitAllow(1, "CabalDominator", true);

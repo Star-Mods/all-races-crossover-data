@@ -69,28 +69,4 @@
         <Field value="Radius"/>
         <Value value="1.0"/>
     </CValidatorUnitCompareField>
-    <!--neutral-->
-    <CValidatorLocationPlacement id="TiberiumFieldPlacementCheck">
-        <Range value="2"/>
-        <Unit value="TibMineralField"/>
-    </CValidatorLocationPlacement>
-    <CValidatorCombine id="TiberiumRadiation@DamageValidator">
-        <Type value="And"/>
-        <CombineArray value="HasNoTiberiumProtection"/>
-        <CombineArray value="TiberiumRadiation@DamageFilters"/>
-        <CombineArray value="IsNotLarva"/>
-        <CombineArray value="IsNotEgg"/>
-        <CombineArray value="IsNotWorker"/>
-    </CValidatorCombine>
-    <CValidatorUnitFilters id="TiberiumRadiation@DamageFilters">
-        <ResultFailed value="CantTargetThatUnit"/>
-        <Filters value="Ground,Biological;Self,Structure,RawResource,HarvestableResource,Stasis,Dead,Hidden,Invulnerable"/>
-    </CValidatorUnitFilters>
-    <CValidatorPlayerRequirement id="UseBikeUpgrade">
-        <Find value="1"/>
-        <Value value="UseBikeUpgrade"/>
-    </CValidatorPlayerRequirement>
-    <CValidatorPlayerRequirement id="NoBikeUpgrade">
-        <Value value="UseBikeUpgrade"/>
-    </CValidatorPlayerRequirement>
 </Catalog>

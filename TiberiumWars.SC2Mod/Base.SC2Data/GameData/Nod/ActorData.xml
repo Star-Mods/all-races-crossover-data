@@ -2377,65 +2377,8 @@
         <GroupSoundArray index="Attack" value="Cobra_Attack"/>
         <GroupSoundArray index="Pissed" value="Cobra_What"/>
     </CActorUnit>
-    <CActorUnit id="NodPurifier" parent="NodUnitBase" wireframe="CNC3PurifierWireframe" unitName="NodPurifier" icon="CNC3PurifierIcon">
-        <Aliases value="_UnitLarge"/>
-        <Macros value="UnloadDropAnim"/>
-        <Macros value="TerrainSquibAnimations"/>
-        <Macros value="PhysicsDeathsSwarmGround"/>
-        <Macros value="PhysicsDeathsVoidGround"/>
-        <Inherits index="ModelMaterials" value="1"/>
-        <AcceptedTransfers index="ModelMaterials" value="1"/>
-        <On index="65" Terms="WeaponStart.NodAvatarLaser.AttackStart" Send="AnimBracketStart Attack Attack"/>
-        <On index="67" Terms="WeaponStop.NodAvatarLaser.AttackStop" Send="AnimBracketStop Attack"/>
-        <On Terms="UnitHeightUpdate.*.Land" Send="Create SiegeTank_Land"/>
-        <CreepHeightClass value="Tiny"/>
-        <DeathArray index="Normal" ModelLink="NodAvatarDeathRagdoll" SoundLink="SiegeTank_Explode"/>
-        <DeathCustomData Name="RagdollBasic"/>
-        <DeathActorModel value="UnitDeathModelWithDeathMotionGround"/>
-        <StandAnimTurnTime value="3.33"/>
-        <TerrainSquibs>
-            <MovementDistance value="0.150000,0.150000"/>
-            <IdlePeriod value="0.100000,0.250000"/>
-            <RangeUp value="1.000000"/>
-            <RangeDown value="1.000000"/>
-            <AttachQuery Methods="AMFilterCenter"/>
-            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleSiegeTank"/>
-        </TerrainSquibs>
-        <AbilSoundArray/>
-        <BarOffset value="80"/>
-        <BarWidth value="102"/>
-        <ErrorArray Error="CantSeeBuildLocation" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
-        <ErrorArray Error="CantSeeLandLocation" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
-        <ErrorArray Error="CantBuildLocationInvalid" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
-        <ErrorArray Error="CantLandLocationInvalid" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
-        <ErrorArray Error="CouldntReachTarget" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
-        <SoundArray index="Movement" value="NodAvatarMovement"/>
-        <!--                <On Terms="AbilMorph.*.Finish; MorphTo ##unitName##" Send="Create"/>-->
-        <!--                <On Terms="AbilMorph.*.Start; MorphFrom ##unitName##" Send="Destroy"/>-->
-        <!--        <On Terms="AbilMorph.*.Finish; MorphTo ##unitName##" Send="$Stand PlayForever,NonLooping"/>-->
-        <!--        <On Terms="ActorCreation" Send="AnimPlay MorphStart Morph,Start"/>-->
-        <!--        <On Terms="AnimDone; AnimName MorphStart" Send="AnimPlay Morph Morph 0 -1.000000 -1.000000 8.233000 AsDuration"/>-->
-        <!--        <On Terms="AnimDone; AnimName Morph" Send="AnimPlay MorphEnd Morph,End"/>-->
-        <!--        <On Terms="AnimDone; AnimName MorphEnd" Send="$Stand PlayForever,NonLooping"/>-->
-    </CActorUnit>
-    <CActorUnit id="NodPurifierWreckage" parent="NodUnitBase" wireframe="CNC3PurifierWireframe" unitName="NodPurifierWreckage" icon="CNC3PurifierIcon">
-        <Aliases value="_UnitLarge"/>
-        <Macros value="UnloadDropAnim"/>
-        <Macros value="TerrainSquibAnimations"/>
-        <Macros value="PhysicsDeathsSwarmGround"/>
-        <Macros value="PhysicsDeathsVoidGround"/>
-        <Inherits index="ModelMaterials" value="1"/>
-        <AcceptedTransfers index="ModelMaterials" value="1"/>
-        <CreepHeightClass value="Tiny"/>
-        <DeathArray index="Normal" ModelLink="NodAvatarDeathRagdoll" SoundLink="SiegeTank_Explode"/>
-        <DeathCustomData Name="RagdollBasic"/>
-        <DeathActorModel value="UnitDeathModelWithDeathMotionGround"/>
-        <BarWidth value="102"/>
-        <!--            <On Terms="AbilMorph.*.Finish; MorphTo ##unitName##" Send="Create"/>-->
-        <!--            <On Terms="AbilMorph.*.Start; MorphFrom ##unitName##" Send="Destroy"/>-->
-        <!--        <On Terms="AbilMorph.*.Finish; MorphTo NodPurifierWreckage" Send="$Birth 0 1.000000 1.000000"/>-->
-        <!--        <On Terms="AnimDone; AnimName Birth" Send="$Stand PlayForever,NonLooping"/>-->
-    </CActorUnit>
+
+
     <CActorUnit id="NodBeam" parent="NodUnitBase" wireframe="CNC3BeamCannonWireframe" unitName="NodBeam" icon="CNC3BeamCannonIcon">
         <Aliases value="_UnitLarge"/>
         <Macros value="UnloadDropAnim"/>
@@ -2587,7 +2530,7 @@
         <SoundArray index="Turning" value="SpiderMineTurning"/>
         <SoundArray index="Board" value="SpiderMineBoard"/>
     </CActorUnit>
-    <CActorUnit id="StealthTankCC3" parent="NodUnitBase" wireframe="CNC3StealthTankWireframe" unitName="StealthTankCC3" icon="CNC3StealthTankIcon">
+    <CActorUnit id="NodStealthTank" parent="NodUnitBase" wireframe="CNC3StealthTankWireframe" unitName="NodStealthTank" icon="CNC3StealthTankIcon">
         <Aliases value="_UnitLarge"/>
         <Macros value="UnloadDropAnim"/>
         <Macros value="TerrainSquibAnimations"/>
@@ -2714,7 +2657,7 @@
         <VitalNames index="Shields" value="Vital/ZergShields"/>
         <WireframeShieldColor value="255,0,128,0"/>
     </CActorUnit>
-    <CActorUnit id="NodAvatar" parent="NodUnitBase" wireframe="HolySpiritWireframe" unitName="NodAvatar" icon="HolySpiritIcon">
+    <CActorUnit id="CabalHolySpirit" parent="NodUnitBase" wireframe="HolySpiritWireframe" unitName="CabalHolySpirit" icon="HolySpiritIcon">
         <Aliases value="_UnitLarge"/>
         <Macros value="UnloadDropAnim"/>
         <Macros value="TerrainSquibAnimations"/>
@@ -2879,13 +2822,13 @@
         <Inherits index="ModelMaterials" value="1"/>
         <AcceptedTransfers index="ModelMaterials" value="1"/>
         <On Terms="UnitHeightUpdate.*.Land" Send="Create SiegeTank_Land"/>
-        <Model value="CabalAvengerTankTank"/>
+        <Model value="CabalAvengerTank"/>
         <CreepHeightClass value="Tiny"/>
         <BuildModel value="NodWarpIn"/>
         <DeathArray index="Normal" ModelLink="CabalAvengerTankDeathRagdoll" SoundLink="SiegeTank_Explode"/>
         <DeathCustomData Name="RagdollBasic"/>
         <DeathActorModel value="UnitDeathModelWithDeathMotionGround"/>
-        <PlacementModel value="CabalAvengerTankTank"/>
+        <PlacementModel value="CabalAvengerTank"/>
         <StandAnimTurnTime value="3.33"/>
         <TerrainSquibs>
             <MovementDistance value="0.150000,0.150000"/>
@@ -3933,21 +3876,53 @@
         <ImpactSiteOps Ops="SOpTargetPointStationary SOpShadow SOpMoveUpByDot1"/>
     </CActorAction>
     <CActorMissile id="NodSpecterAttackMissile" parent="GenericAttackMissile" unitName="SpecterWeapon"/>
-    <CActorAction id="AvatarAttack" parent="GenericAttack" effectAttack="AvatarBeamDamage">
+
+
+    <CActorAction id="AvatarAttack" parent="GenericAttack" effectAttack="NodAvatarLaserDamage">
         <LaunchAttachQuery Methods="AMFilterWeapon01"/>
         <LaunchAssets Sound="Avatar_AttackLaunch"/>
         <ImpactMap index="None" Model="RedeemerAttackBeamImpact" Sound="RedeemerAttackImpact" ModelReaction="RedeemerAttackImpactReaction"/>
         <ImpactMap index="Shield" Sound="RedeemerAttackImpactShield" ModelReaction="RedeemerAttackImpactReactionShield"/>
         <ImpactPhysics Name="RailgunImpact" MatchKeys="Basic" Physics="MengskDiamondbackAttackDeathForce"/>
     </CActorAction>
+    <CActorAction id="NodAvatarBeamCannonAttack" parent="GenericAttack" effectAttack="NodAvatarBeamCannonDamage">
+        <LaunchAttachQuery Methods="AMFilterWeapon03"/>
+        <LaunchAssets Sound="BeamWeaponCC3_AttackLaunch"/>
+        <ImpactMap index="None" Model="RedeemerAttackBeamImpact" Sound="RedeemerAttackImpact" ModelReaction="RedeemerAttackImpactReaction"/>
+        <ImpactMap index="Shield" Sound="RedeemerAttackImpactShield" ModelReaction="RedeemerAttackImpactReactionShield"/>
+        <ImpactPhysics Name="RailgunImpact" MatchKeys="Basic" Physics="MengskDiamondbackAttackDeathForce"/>
+    </CActorAction>
+<!--    <CActorAction id="NodAvatarBeamCannonDamageAttack" parent="GenericAttack" effectAttack="NodAvatarBeamCannonDamage">-->
+<!--        <LaunchAssets Sound="BeamWeaponCC3_AttackLaunch"/>-->
+<!--        <BeamScope value="Caster"/>-->
+<!--        <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeNoVizEnhance VoidRaySOpForwardLaunch"/>-->
+<!--        <ImpactMap index="None" Model="" Sound="HC_AttackImpact"/>-->
+<!--        <ActionFlags index="ImpactMonitorsTeleports" value="1"/>-->
+<!--    </CActorAction>-->
+    <CActorBeamSimple id="NodAvatarBeamCannonAttackBeam" parent="BeamSimpleAnimationStyleOneShot">
+        <Macros value="ActionTargetTeleportDestroy"/>
+        <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="ModelSwap DarkArchonAttackBeam"/>
+        <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="AnimBracketStart BSDb Birth Stand Death ContentPlayOnce"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSDb" Send="Destroy"/>
+        <Model value="BeamWeaponCC3CC3AttackBeam"/>
+        <Scale value="0.500000"/>
+    </CActorBeamSimple>
+
+    <CActorAction id="PurifierAttack" parent="GenericAttack" effectAttack="PurifierBeamDamage">
+        <LaunchAttachQuery Methods="AMFilterWeapon"/>
+        <LaunchAssets Sound="Avatar_AttackLaunch"/>
+        <ImpactMap index="None" Model="RedeemerAttackBeamImpact" Sound="RedeemerAttackImpact" ModelReaction="RedeemerAttackImpactReaction"/>
+        <ImpactMap index="Shield" Sound="RedeemerAttackImpactShield" ModelReaction="RedeemerAttackImpactReactionShield"/>
+        <ImpactPhysics Name="RailgunImpact" MatchKeys="Basic" Physics="MengskDiamondbackAttackDeathForce"/>
+    </CActorAction>
     <CActorBeamSimple id="AvatarAttackBeam" parent="GenericAttackBeam">
-        <On Terms="ActorCreation; ValidateEffect DiamondbackCharged" Send="ModelSwap DiamondbackAttackBeamCharged"/>
         <On Terms="ActorOrphan" Send="Destroy"/>
         <Model value="TyrantAttackBeam"/>
     </CActorBeamSimple>
     <CActorAction id="AvatarFlameAttack" parent="GenericAttackBase">
-        <On Terms="Effect.AvatarFlameThrowerSet.Start; At Caster" Send="Create"/>
-        <On Terms="Effect.DutchTurretFlameThrowerDamage.Start; At Caster; FromEffectTreeDescendant" Send="ActionDamage"/>
+        <On Terms="Effect.NodAvatarFlameThrowerSet.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.NodPurifierFlameThrowerSet.Start; At Caster" Send="Create"/>
+<!--        <On Terms="Effect.DutchTurretFlameThrowerDamage.Start; At Caster; FromEffectTreeDescendant" Send="ActionDamage"/>-->
         <LaunchAttachQuery Methods="Weapon 2"/>
         <LaunchAssets Model="RedeemerTurretAttackLaunch" Sound="Swann_TurretAttackLaunch2"/>
         <ImpactMap index="None" Sound="Redeemer_FlameAttackImpact"/>
@@ -3960,6 +3935,8 @@
         <HostSiteOps Ops="SOpAttachRandomDamage"/>
         <Model value="ImpactModelFlames2"/>
     </CActorModel>
+
+
     <CActorAction id="BeamWeaponCC3Attack" parent="GenericAttack" effectAttack="BeamWeaponCC3Damage">
         <LaunchAssets Sound="BeamWeaponCC3_AttackLaunch"/>
         <BeamScope value="Caster"/>
@@ -3983,7 +3960,6 @@
         <ImpactPhysics Name="RailgunImpact" MatchKeys="Basic" Physics="MengskDiamondbackAttackDeathForce"/>
     </CActorAction>
     <CActorBeamSimple id="CabalWidowLaserAttackBeam" parent="GenericAttackBeam">
-        <On Terms="ActorCreation; ValidateEffect DiamondbackCharged" Send="ModelSwap DiamondbackAttackBeamCharged"/>
         <On Terms="ActorOrphan" Send="Destroy"/>
     </CActorBeamSimple>
     <CActorSplat id="NodDeepBurrowSplatFinish" parent="BurrowedSplatBase">
@@ -4602,7 +4578,6 @@
         <ImpactPhysics Name="RailgunImpact" MatchKeys="Basic" Physics="MengskDiamondbackAttackDeathForce"/>
     </CActorAction>
     <CActorBeamSimple id="ScorpionAttackBeam" parent="GenericAttackBeam">
-        <On Terms="ActorCreation; ValidateEffect DiamondbackCharged" Send="ModelSwap DiamondbackAttackBeamCharged"/>
         <On Terms="ActorOrphan" Send="Destroy"/>
         <Model value="TyrantAttackBeam"/>
     </CActorBeamSimple>
@@ -4723,12 +4698,10 @@
         <ImpactMap index="Shield" Sound="RedeemerAttackImpactShield" ModelReaction="RedeemerAttackImpactReactionShield"/>
     </CActorAction>
     <CActorBeamSimple id="RedeemerAttackBeam2" parent="GenericAttackBeam">
-        <On Terms="ActorCreation; ValidateEffect DiamondbackCharged" Send="ModelSwap DiamondbackAttackBeamCharged"/>
         <On Terms="ActorOrphan" Send="Destroy"/>
         <Model value="RedeemerAttackBeam"/>
     </CActorBeamSimple>
     <CActorBeamSimple id="RedeemerAttackBeam3" parent="GenericAttackBeam">
-        <On Terms="ActorCreation; ValidateEffect DiamondbackCharged" Send="ModelSwap DiamondbackAttackBeamCharged"/>
         <On Terms="ActorOrphan" Send="Destroy"/>
         <Model value="RedeemerAttackBeam"/>
     </CActorBeamSimple>
@@ -4818,7 +4791,6 @@
         <ImpactMap index="Shield" Sound="RedeemerAttackImpactShield" ModelReaction="RedeemerAttackImpactReactionShield"/>
     </CActorAction>
     <CActorBeamSimple id="ObeliskAttackBeam" parent="GenericAttackBeam">
-        <On Terms="ActorCreation; ValidateEffect DiamondbackCharged" Send="ModelSwap DiamondbackAttackBeamCharged"/>
         <On Terms="ActorOrphan" Send="Destroy"/>
     </CActorBeamSimple>
     <CActorAction id="FlameTankTurretAttack" parent="GenericAttackBase">
@@ -4846,7 +4818,6 @@
         <ImpactMap index="None" Model="RedeemerAttackBeamImpact"/>
     </CActorAction>
     <CActorBeamSimple id="TyrantAttackBeam" parent="GenericAttackBeam">
-        <On Terms="ActorCreation; ValidateEffect DiamondbackCharged" Send="ModelSwap DiamondbackAttackBeamCharged"/>
         <On Terms="ActorOrphan" Send="Destroy"/>
     </CActorBeamSimple>
     <CActorAction id="NodTurretAttack" parent="GenericAttack" effectAttack="NodTurretWeaponDamage">
@@ -4870,7 +4841,6 @@
         <ImpactMap index="Shield" Sound="RedeemerAttackImpactShield" ModelReaction="RedeemerAttackImpactReactionShield"/>
     </CActorAction>
     <CActorBeamSimple id="RedeemerAttackBeam" parent="GenericAttackBeam">
-        <On Terms="ActorCreation; ValidateEffect DiamondbackCharged" Send="ModelSwap DiamondbackAttackBeamCharged"/>
         <On Terms="ActorOrphan" Send="Destroy"/>
     </CActorBeamSimple>
     <CActorAction id="EnlightenedAttack" parent="MarauderAttackBase" effectImpact="EnlightenedDamage" effectLaunch="PunisherGrenadesLM">
@@ -5118,8 +5088,6 @@
         <On Terms="AbilMorph.*.Start; MorphTo NodShadow" Send="Create"/>
         <On Terms="AbilMorph.*.Start; MorphTo NodShadow" Send="AnimPlay Morph Morph NonLooping"/>
         <On Terms="AbilMorph.*.Start; MorphFrom NodShadow" Send="Destroy"/>
-        <!--        <On Terms="AbilMorph.*.Finish; MorphFrom NodShadow" Send="TimerSet 0.5 MorphEnd"/>-->
-        <!--        <On Terms="TimerExpired; TimerName MorphEnd" Send="AnimClear MorphEnd"/>-->
         <On Terms="UnitMovementUpdate.*.Walk" Send="AnimClear Morph"/>
         <On Terms="WeaponStart.*.AttackStart" Send="AnimClear Morph"/>
         <On Terms="UnitMovementUpdate.*.Walk" Send="AnimClear Spell"/>
@@ -5142,7 +5110,6 @@
         <Macros value="TerrainSquibAnimations"/>
         <Macros value="PhysicsDeathsSwarmGround"/>
         <On Terms="AbilMorph.*.Start; MorphTo NodShadowFlying" Send="Create"/>
-        <!--        <On Terms="AbilMorph.*.Start; MorphTo NodShadowFlying" Send="AnimPlay Morph Morph NonLooping"/>-->
         <On Terms="AbilMorph.*.Start; MorphTo NodShadowFlying" Send="AnimBracketStart Fly Morph Walk"/>
         <On Terms="AbilMorph.*.Finish; MorphFrom NodShadowFlying" Send="Destroy"/>
         <On Terms="UnitBirth.NodShadowPlacement" Send="Create"/>
@@ -5627,4 +5594,130 @@
         <Inherits index="Scale" value="1"/>
         <Host Subject="_Missile"/>
     </CActorModel>
+
+
+
+
+    <CActorUnit id="NodAvatar" parent="NodVehicleBase" wireframe="NUAvatar" unitName="NodAvatar" icon="NUAvatar">
+        <On index="65" Terms="WeaponStart.NodAvatarLaser.AttackStart" Send="AnimBracketStart Attack Attack"/>
+        <On index="67" Terms="WeaponStop.NodAvatarLaser.AttackStop" Send="AnimBracketStop Attack"/>
+        <On index="65" Terms="WeaponStart.NodAvatarBeamCannon.AttackStart" Send="AnimBracketStart Attack Attack,B"/>
+        <On index="67" Terms="WeaponStop.NodAvatarBeamCannon.AttackStop" Send="AnimBracketStop Attack,B"/>
+        <!--        <DeathArray index="Normal" ModelLink="NodAvatarDeathRagdoll" SoundLink="SiegeTank_Explode"/>-->
+        <!--        <DeathCustomData Name="RagdollBasic"/>-->
+        <!--        <DeathActorModel value="UnitDeathModelWithDeathMotionGround"/>-->
+        <StandAnimTurnTime value="3.33"/>
+        <BarOffset value="80"/>
+        <BarWidth value="102"/>
+        <SoundArray index="Movement" value="NodAvatarMovement"/>
+        <StandAnimTurnTime value="5"/>
+        <WalkAnimMoveSpeed value="2"/>
+        <DeathArray index="Normal" ModelLink="NodAvatar" SoundLink="SiegeTank_Explode"/>
+
+
+        <!--        <On Terms="AbilMorph.*.Start; MorphTo NodShadow" Send="Create"/>-->
+        <!--        <On Terms="AbilMorph.*.Start; MorphTo NodShadow" Send="AnimPlay Morph Morph NonLooping"/>-->
+        <!--        <On Terms="AbilMorph.*.Start; MorphFrom NodShadow" Send="Destroy"/>-->
+
+        <!--        <On Terms="AbilMorph.*.Start; MorphTo NodShadowFlying" Send="Create"/>-->
+        <!--        <On Terms="AbilMorph.*.Start; MorphTo NodShadowFlying" Send="AnimBracketStart Fly Morph Walk"/>-->
+        <!--        <On Terms="AbilMorph.*.Finish; MorphFrom NodShadowFlying" Send="Destroy"/>-->
+
+        <On Terms="ActorCreation; ValidateUnit HasNoFlameCannon" Send="AnimPlay CoverA Cover,A PlayForever 0.000000"/>
+        <On Terms="ActorCreation; ValidateUnit HasNoStealthGenerator" Send="AnimPlay CoverB Cover,B PlayForever 0.000000"/>
+        <On Terms="ActorCreation; ValidateUnit HasNoDetector" Send="AnimPlay CoverC Cover,C PlayForever 0.000000"/>
+        <On Terms="ActorCreation; ValidateUnit HasNoBeamCannon" Send="AnimPlay CoverD Cover,D PlayForever 0.000000"/>
+
+<!--        <On Terms="Behavior.NodAvatarFlameCannon.Add" Send="AnimClear CoverA"/>-->
+<!--        <On Terms="Behavior.NodAvatarStealthGenerator.Add" Send="AnimClear CoverB"/>-->
+<!--        <On Terms="Behavior.NodAvatarDetector.Add" Send="AnimClear CoverC"/>-->
+<!--        <On Terms="Behavior.NodAvatarBeamCannon.Add" Send="AnimClear CoverD"/>-->
+
+
+        <On Terms="Effect.NodAvatarFlameCannon.Start; At Caster" Send="AnimClear CoverA"/>
+        <On Terms="Effect.NodAvatarStealthGenerator.Start; At Caster" Send="AnimClear CoverB"/>
+        <On Terms="Effect.NodAvatarDetector.Start; At Caster" Send="AnimClear CoverC"/>
+        <On Terms="Effect.NodAvatarBeamCannon.Start; At Caster" Send="AnimClear CoverD"/>
+        <On Terms="Effect.NodAvatarFlameCannon.Start; At Caster" Send="AnimPlay Spell Spell,A"/>
+        <On Terms="Effect.NodAvatarStealthGenerator.Start; At Caster" Send="AnimPlay Spell Spell,B"/>
+        <On Terms="Effect.NodAvatarDetector.Start; At Caster" Send="AnimPlay Spell Spell,C"/>
+        <On Terms="Effect.NodAvatarBeamCannon.Start; At Caster" Send="AnimPlay Spell Spell,D"/>
+
+        <On Terms="AbilMorph.*.Finish; MorphTo NodAvatar" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom NodAvatar" Send="Destroy"/>
+
+        <On Terms="UnitDeath.##unitName##; AnimPlaying CoverA" Target="_DeathModel" Send="AnimPlay CoverA Cover,A PlayForever"/>
+        <On Terms="UnitDeath.##unitName##; AnimPlaying CoverB" Target="_DeathModel" Send="AnimPlay CoverB Cover,B PlayForever"/>
+        <On Terms="UnitDeath.##unitName##; AnimPlaying CoverC" Target="_DeathModel" Send="AnimPlay CoverC Cover,C PlayForever"/>
+        <On Terms="UnitDeath.##unitName##; AnimPlaying CoverD" Target="_DeathModel" Send="AnimPlay CoverD Cover,D PlayForever"/>
+
+<!--        <On Terms="AbilMorph.*.Start; MorphTo NodAvatarWreckage" Send="AnimPlay Death Death NonLooping"/>-->
+        <!--        <On Terms="AbilMorph.*.Finish; MorphTo ##unitName##" Send="$Stand PlayForever,NonLooping"/>-->
+        <!--        <On Terms="ActorCreation" Send="AnimPlay MorphStart Morph,Start"/>-->
+        <!--        <On Terms="AnimDone; AnimName MorphStart" Send="AnimPlay Morph Morph 0 -1.000000 -1.000000 8.233000 AsDuration"/>-->
+        <!--        <On Terms="AnimDone; AnimName Morph" Send="AnimPlay MorphEnd Morph,End"/>-->
+        <!--        <On Terms="AnimDone; AnimName MorphEnd" Send="$Stand PlayForever,NonLooping"/>-->
+    </CActorUnit>
+    <CActorUnit id="NodAvatarWreckage" parent="NodVehicleBase" wireframe="NUAvatarWreckage" unitName="NodAvatarWreckage" icon="NUAvatarWreckage">
+<!--        <DeathCustomData Name="RagdollBasic"/>-->
+<!--        <DeathActorModel value="UnitDeathModelWithDeathMotionGround"/>-->
+<!--        <BarWidth value="102"/>-->
+        <Model value="NodAvatar"/>
+        <DeathArray index="Normal" ModelLink="TerranBuildingDeath" SoundLink="SiegeTank_Explode"/>
+        <Baselines index="Stand" AnimProps="Stand,Death"/>
+        <Baselines index="Walk" AnimProps=""/>
+        <On Terms="AbilMorph.*.Start; MorphTo NodAvatarWreckage" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphTo NodAvatarWreckage" Send="AnimPlay DeathMorph Death NonLooping"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom NodAvatarWreckage" Send="AnimPlay RebornMorph Morph NonLooping"/>
+        <On Terms="AbilMorph.*.Finish; MorphFrom NodAvatarWreckage" Send="Destroy"/>
+
+        <On Terms="ActorCreation; ValidateUnit HasNoFlameCannon" Send="AnimPlay CoverA Cover,A PlayForever 0.000000"/>
+        <On Terms="ActorCreation; ValidateUnit HasNoStealthGenerator" Send="AnimPlay CoverB Cover,B PlayForever 0.000000"/>
+        <On Terms="ActorCreation; ValidateUnit HasNoDetector" Send="AnimPlay CoverC Cover,C PlayForever 0.000000"/>
+        <On Terms="ActorCreation; ValidateUnit HasNoBeamCannon" Send="AnimPlay CoverD Cover,D PlayForever 0.000000"/>
+        <!--        <On Terms="AbilMorph.*.Start; MorphTo NodAvatarWreckage" Send="Create"/>-->
+        <!--        <On Terms="AbilMorph.*.Finish; MorphFrom NodAvatarWreckage" Send="Destroy"/>-->
+        <!--        <On Terms="AbilMorph.*.Finish; MorphFrom NodAvatarWreckage" Send="AnimPlay Morph Morph NonLooping"/>-->
+        <!--            <On Terms="AbilMorph.*.Start; MorphFrom ##unitName##" Send="Destroy"/>-->
+        <!--            <On Terms="AbilMorph.*.Finish; MorphTo ##unitName##" Send="Create"/>-->
+        <!--        <On Terms="AbilMorph.*.Finish; MorphTo NodPurifierWreckage" Send="$Birth 0 1.000000 1.000000"/>-->
+        <!--        <On Terms="AnimDone; AnimName Birth" Send="$Stand PlayForever,NonLooping"/>-->
+    </CActorUnit>
+    <CActorAction id="NodAvatarExplosion" parent="GenericAttack" effectLaunch="NodAvatarWreckageSet">
+        <ImpactMap index="None" Model="NodFanaticExplosionImpact" Sound="SiegeTank_Explode"/>
+    </CActorAction>
+
+
+
+    <CActorUnit id="NodPurifier" parent="NodVehicleBase" wireframe="CNC3PurifierWireframe" unitName="NodPurifier" icon="CNC3PurifierIcon">
+        <On index="65" Terms="WeaponStart.NodPurifierLaser.AttackStart" Send="AnimBracketStart Attack Attack"/>
+        <On index="67" Terms="WeaponStop.NodPurifierLaser.AttackStop" Send="AnimBracketStop Attack"/>
+        <DeathArray index="Normal" ModelLink="NodAvatarDeathRagdoll" SoundLink="SiegeTank_Explode"/>
+        <DeathCustomData Name="RagdollBasic"/>
+        <DeathActorModel value="UnitDeathModelWithDeathMotionGround"/>
+        <StandAnimTurnTime value="3.33"/>
+        <BarOffset value="80"/>
+        <BarWidth value="102"/>
+        <SoundArray index="Movement" value="NodAvatarMovement"/>
+        <!--                <On Terms="AbilMorph.*.Finish; MorphTo ##unitName##" Send="Create"/>-->
+        <!--                <On Terms="AbilMorph.*.Start; MorphFrom ##unitName##" Send="Destroy"/>-->
+        <!--        <On Terms="AbilMorph.*.Finish; MorphTo ##unitName##" Send="$Stand PlayForever,NonLooping"/>-->
+        <!--        <On Terms="ActorCreation" Send="AnimPlay MorphStart Morph,Start"/>-->
+        <!--        <On Terms="AnimDone; AnimName MorphStart" Send="AnimPlay Morph Morph 0 -1.000000 -1.000000 8.233000 AsDuration"/>-->
+        <!--        <On Terms="AnimDone; AnimName Morph" Send="AnimPlay MorphEnd Morph,End"/>-->
+        <!--        <On Terms="AnimDone; AnimName MorphEnd" Send="$Stand PlayForever,NonLooping"/>-->
+    </CActorUnit>
+    <CActorUnit id="NodPurifierWreckage" parent="NodVehicleBase" wireframe="CNC3PurifierWireframe" unitName="NodPurifierWreckage" icon="CNC3PurifierIcon">
+        <DeathArray index="Normal" ModelLink="NodAvatarDeathRagdoll" SoundLink="SiegeTank_Explode"/>
+        <DeathCustomData Name="RagdollBasic"/>
+        <DeathActorModel value="UnitDeathModelWithDeathMotionGround"/>
+        <BarWidth value="102"/>
+        <!--            <On Terms="AbilMorph.*.Finish; MorphTo ##unitName##" Send="Create"/>-->
+        <!--            <On Terms="AbilMorph.*.Start; MorphFrom ##unitName##" Send="Destroy"/>-->
+        <!--        <On Terms="AbilMorph.*.Finish; MorphTo NodPurifierWreckage" Send="$Birth 0 1.000000 1.000000"/>-->
+        <!--        <On Terms="AnimDone; AnimName Birth" Send="$Stand PlayForever,NonLooping"/>-->
+    </CActorUnit>
+
+
+
 </Catalog>

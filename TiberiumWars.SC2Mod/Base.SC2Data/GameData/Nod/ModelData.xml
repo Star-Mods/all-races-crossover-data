@@ -611,28 +611,6 @@
         <ShadowRadius value="1.000000"/>
         <EditorCategories value="Race:Nod"/>
     </CModel>
-    <CModel id="NodPurifier" parent="Unit">
-        <Model value="Assets\Models\CNC3Nod Purifer\CNC3NodPurifier.m3"/>
-        <SelectionRadius value="1.000000"/>
-        <ShadowRadius value="1.000000"/>
-        <RequiredAnims index="0" removed="1"/>
-        <AttachProps index="0" removed="1"/>
-        <Tipability value="0.100000"/>
-        <TipabilityLength value="0.100000"/>
-        <TipabilityWidth value="0.100000"/>
-        <EditorCategories value="Race:Nod"/>
-    </CModel>
-    <CModel id="NodPurifierWreckage" parent="Unit">
-        <Model value="Assets\Models\CNC3Nod Purifer\CNC3NodPurifierWreckage.m3"/>
-        <SelectionRadius value="1.000000"/>
-        <ShadowRadius value="1.000000"/>
-        <RequiredAnims index="0" removed="1"/>
-        <AttachProps index="0" removed="1"/>
-        <Tipability value="0.100000"/>
-        <TipabilityLength value="0.100000"/>
-        <TipabilityWidth value="0.100000"/>
-        <EditorCategories value="Race:Nod"/>
-    </CModel>
     <CModel id="NodBeam" parent="Unit">
         <Model value="Assets\Models\CNC3NodBeam\CNC3NodBeam.m3"/>
         <SelectionRadius value="1.000000"/>
@@ -679,7 +657,7 @@
         <AttachProps index="0" removed="1"/>
         <EditorCategories value="Race:Nod"/>
     </CModel>
-    <CModel id="NodAvatar" parent="Unit">
+    <CModel id="CabalHolySpirit" parent="Unit">
         <Model value="Assets\Models\Nod Avatar\Avatar Upgrade.m3"/>
         <SelectionRadius value="1.000000"/>
         <ShadowRadius value="1.000000"/>
@@ -698,7 +676,7 @@
         <AttachProps index="0" removed="1"/>
         <EditorCategories value="Race:Nod"/>
     </CModel>
-    <CModel id="CabalAvengerTankTank" parent="Unit">
+    <CModel id="CabalAvengerTank" parent="Unit">
         <Model value="Assets\Models\Avenger Tank\AvengerTank Upgrade.m3"/>
         <SelectionRadius value="1.000000"/>
         <ShadowRadius value="1.000000"/>
@@ -1338,10 +1316,6 @@
     <CModel id="CabalLeviathanDeathRagdoll" parent="UnitDeathRagdoll">
         <Model value="Assets\Models\Nod Leviathan\Nod Leviathan Death.m3"/>
         <PhysicsDeathMotionFactor value="2.000000,0.600000"/>
-        <EditorCategories value="Race:Nod"/>
-    </CModel>
-    <CModel id="NodAvatarDeathRagdoll" parent="UnitDeathRagdoll">
-        <Model value="Assets\Models\Nod Avatar\Nod Avater Death.m3"/>
         <EditorCategories value="Race:Nod"/>
     </CModel>
     <CModel id="CabalBasiliskDeathRagdoll" parent="UnitDeathRagdoll">
@@ -2462,5 +2436,28 @@
         <ScaleMin value="0.500000,0.500000,0.500000"/>
         <SelectionRadius value="0.250000"/>
         <ShadowRadius value="0.250000"/>
+    </CModel>
+    <CModel id="NodAvatar" parent="NodUnit"/>
+    <CModel id="NodPurifier" parent="Unit">
+        <Model value="Assets\Models\CNC3Nod Purifer\CNC3NodPurifier.m3"/>
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+        <RequiredAnims index="0" removed="1"/>
+        <AttachProps index="0" removed="1"/>
+        <Tipability value="0.100000"/>
+        <TipabilityLength value="0.100000"/>
+        <TipabilityWidth value="0.100000"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+    <CModel id="NodPurifierWreckage" parent="Unit">
+        <Model value="Assets\Models\CNC3Nod Purifer\CNC3NodPurifierWreckage.m3"/>
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+        <RequiredAnims index="0" removed="1"/>
+        <AttachProps index="0" removed="1"/>
+        <Tipability value="0.100000"/>
+        <TipabilityLength value="0.100000"/>
+        <TipabilityWidth value="0.100000"/>
+        <EditorCategories value="Race:Nod"/>
     </CModel>
 </Catalog>

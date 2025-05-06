@@ -176,6 +176,9 @@
     <CValidatorUnitType id="TargetIsNodPurifierWreckage">
         <Value value="NodPurifierWreckage"/>
     </CValidatorUnitType>
+    <CValidatorUnitFilters id="IsNotStructure">
+        <Filters value="-;Structure"/>
+    </CValidatorUnitFilters>
     <CValidatorUnitFilters id="NodSabotageTargetFilters">
         <Filters value="Ground,Structure;Self,Air,Biological,Missile,Stasis,UnderConstruction,Dead,Hidden"/>
         <ResultFailed value="RequiresRepairTarget"/>
@@ -228,4 +231,49 @@
     <CValidatorUnitFilters id="NodVolatileBurstFallbackEnemyNeutralBuilding">
         <Filters value="Ground,Structure;Self,Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
     </CValidatorUnitFilters>
+
+
+    <CValidatorUnitCompareBehaviorCount id="HasFlameCannon"><Value value="1"/><Behavior value="NodAvatarFlameCannon"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasStealthGenerator"><Value value="1"/><Behavior value="NodAvatarStealthGenerator"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasDetector"><Value value="1"/><Behavior value="NodAvatarDetector"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasBeamCannon"><Value value="1"/><Behavior value="NodAvatarBeamCannon"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNoFlameCannon"><Value value="0"/><Behavior value="NodAvatarFlameCannon"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNoStealthGenerator"><Value value="0"/><Behavior value="NodAvatarStealthGenerator"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNoDetector"><Value value="0"/><Behavior value="NodAvatarDetector"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNoBeamCannon"><Value value="0"/><Behavior value="NodAvatarBeamCannon"/></CValidatorUnitCompareBehaviorCount>
+
+
+    <CValidatorCombine id="IsNodAvatarCommandeerTechnologyTarget">
+        <CombineArray value="IsNodAvatarCommandeerTechnologyFlamer"/>
+        <CombineArray value="IsNodAvatarCommandeerTechnologyDetector"/>
+        <CombineArray value="IsNodAvatarCommandeerTechnologyBeam"/>
+        <CombineArray value="IsNodAvatarCommandeerTechnologyStealth"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="IsNodAvatarCommandeerTechnologyFlamer">
+        <CombineArray value="IsNodFlameTank"/>
+        <CombineArray value="IsCabalFlameTank"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="IsNodAvatarCommandeerTechnologyDetector">
+        <CombineArray value="IsNodAttackBike"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="IsNodAvatarCommandeerTechnologyBeam">
+        <CombineArray value="IsNodBeam"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="IsNodAvatarCommandeerTechnologyStealth">
+        <CombineArray value="IsNodStealthTank"/>
+    </CValidatorCombine>
+
+    <CValidatorUnitType id="IsNodFlameTank"><Value value="NodFlameTank"/></CValidatorUnitType>
+    <CValidatorUnitType id="IsCabalFlameTank"><Value value="CabalFlameTank"/></CValidatorUnitType>
+    <CValidatorUnitType id="IsNodAttackBike"><Value value="NodAttackBike"/></CValidatorUnitType>
+    <CValidatorUnitType id="IsNodBeam"><Value value="NodBeam"/></CValidatorUnitType>
+    <CValidatorUnitType id="IsNodStealthTank"><Value value="NodStealthTank"/></CValidatorUnitType>
+
+    <CValidatorPlayerRequirement id="UseBikeUpgrade">
+        <Find value="1"/>
+        <Value value="UseBikeUpgrade"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorPlayerRequirement id="NoBikeUpgrade">
+        <Value value="UseBikeUpgrade"/>
+    </CValidatorPlayerRequirement>
 </Catalog>

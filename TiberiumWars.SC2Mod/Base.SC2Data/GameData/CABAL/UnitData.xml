@@ -125,13 +125,13 @@
             <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonWarFactoryTrain,Train2"  Row="0" Column="1" Face="CabalMarauder"/>
             <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonWarFactoryTrain,Train3"  Row="0" Column="2" Face="NodAvenger"/>
             <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonWarFactoryTrain,Train4"  Row="0" Column="3" Face="CabalTyrant"/>
-            <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonWarFactoryTrain,Train5"  Row="1" Column="0" Face="NodStealthTank"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonWarFactoryTrain,Train5"  Row="1" Column="0" Face="CabalStealthTank"/>
             <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonWarFactoryTrain,Train6"  Row="1" Column="1" Face="NodScorpion"/>
             <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonWarFactoryTrain,Train11" Row="1" Column="2" Face="CabalSpider"/>
             <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonWarFactoryTrain,Train7"  Row="1" Column="3" Face="CabalWidow"/>
             <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonWarFactoryTrain,Train9"  Row="2" Column="0" Face="Aftershock"/>
             <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonWarFactoryTrain,Train8"  Row="2" Column="1" Face="CabalUnderminer"/>
-            <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonWarFactoryTrain,Train10" Row="2" Column="2" Face="NodAvatar"/>
+            <LayoutButtons Type="AbilCmd" AbilCmd="NodGideonWarFactoryTrain,Train10" Row="2" Column="2" Face="CabalHolySpirit"/>
             <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
         </CardLayouts>
         <TechTreeProducedUnitArray value="NodBike"/>
@@ -142,7 +142,7 @@
         <TechTreeProducedUnitArray value="NodScorpion"/>
         <TechTreeProducedUnitArray value="CabalWidow"/>
         <TechTreeProducedUnitArray value="CabalUnderminer"/>
-        <TechTreeProducedUnitArray value="NodAvatar"/>
+        <TechTreeProducedUnitArray value="CabalHolySpirit"/>
         <TechTreeProducedUnitArray value="CabalAfterShock"/>
 
 
@@ -866,7 +866,7 @@
         <GlossaryPriority value="80"/>
         <Race value="CABAL"/>
     </CUnit>
-    <CUnit id="NodAvatar" parent="NodGround">
+    <CUnit id="CabalHolySpirit" parent="NodGround">
         <FlagArray index="TurnBeforeMove" value="1"/>
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <PushPriority value="30"/>

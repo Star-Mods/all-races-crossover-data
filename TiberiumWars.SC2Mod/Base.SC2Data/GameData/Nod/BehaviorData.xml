@@ -2061,13 +2061,6 @@
         <ExpireEffect value="NodC4Damage"/>
         <InfoFlags index="Hidden" value="1"/>
     </CBehaviorBuff>
-    <CBehaviorBuff id="NodAvatarWreckageBenign">
-        <InfoFlags index="Hidden" value="1"/>
-        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
-        <Modification>
-            <StateFlags index="Benign" value="1"/>
-        </Modification>
-    </CBehaviorBuff>
 
     <CBehaviorBuff id="NodChannelSabotageCombat">
         <Alignment value="Positive"/>
@@ -2085,16 +2078,77 @@
         <DisplayDuration index="Enemy" value="1"/>
         <Duration value="4"/>
     </CBehaviorBuff>
-    <CBehaviorBuff id="NodPurifierDontDie">
+
+
+<!--    <CBehaviorBuff id="NodAvatarWreckageBenign">-->
+<!--        <InfoFlags index="Hidden" value="1"/>-->
+<!--        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>-->
+<!--        <Modification>-->
+<!--            <StateFlags index="Benign" value="1"/>-->
+<!--        </Modification>-->
+<!--    </CBehaviorBuff>-->
+    <CBehaviorBuff id="NodAvatarDontDie">
         <Alignment value="Positive"/>
         <InfoFlags index="Hidden" value="1"/>
         <InfoIcon value="Assets\Textures\BTN-techupgrade-terran-combatshield-color.dds"/>
         <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
         <!--        <Requirements value="UseMechanicalRebirth"/>-->
-        <DamageResponse Fatal="1" Handled="NodPurifierWreckageIO" ModifyFraction="0">
+        <DamageResponse Fatal="1" Handled="NodAvatarWreckageSet" ModifyFraction="0">
             <Chance value="1"/>
         </DamageResponse>
     </CBehaviorBuff>
+<!--    <CBehaviorBuff id="NodPurifierDontDie">-->
+<!--        <Alignment value="Positive"/>-->
+<!--        <InfoFlags index="Hidden" value="1"/>-->
+<!--        <InfoIcon value="Assets\Textures\BTN-techupgrade-terran-combatshield-color.dds"/>-->
+<!--        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>-->
+<!--        &lt;!&ndash;        <Requirements value="UseMechanicalRebirth"/>&ndash;&gt;-->
+<!--        <DamageResponse Fatal="1" Handled="NodPurifierWreckageIO" ModifyFraction="0">-->
+<!--            <Chance value="1"/>-->
+<!--        </DamageResponse>-->
+<!--    </CBehaviorBuff>-->
+
+    <CBehaviorBuff id="NodAvatarStealthGenerator">
+        <DisableValidatorArray value="IsNotStructure"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-cloak.dds"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Modification>
+            <StateFlags index="Cloak" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodAvatarDetector">
+        <InfoFlags index="Hidden" value="1"/>
+        <DisableValidatorArray value="IsNotStructure"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <Modification Detect="11"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodAvatarFlameCannon">
+        <DisableValidatorArray value="IsNotStructure"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <Modification>
+            <WeaponEnableArray value="NodAvatarFlameThrower"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodAvatarBeamCannon">
+        <DisableValidatorArray value="IsNotStructure"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <Modification>
+            <WeaponEnableArray value="NodAvatarBeamCannon"/>
+        </Modification>
+    </CBehaviorBuff>
+
+
+
+
+
+
+
+
     <CBehaviorBuff id="NodArtilleryBeaconTimedLife" parent="TimedLife">
         <InfoIcon value="Assets\Textures\btn-ability-zerg-explode.dds"/>
         <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>

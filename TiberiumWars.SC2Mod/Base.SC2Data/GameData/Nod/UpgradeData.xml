@@ -268,8 +268,8 @@
         <EffectArray Reference="Unit,NodMantis,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,NodBeam,LifeArmor" Value="1"/>
         <EffectArray Reference="Unit,NodBeam,LifeArmorLevel" Value="1"/>
-        <EffectArray Reference="Unit,StealthTankCC3,LifeArmor" Value="1"/>
-        <EffectArray Reference="Unit,StealthTankCC3,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,NodStealthTank,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,NodStealthTank,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,NodPurifier,LifeArmor" Value="1"/>
         <EffectArray Reference="Unit,NodPurifier,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,NodBike,LifeArmor" Value="1"/>
@@ -298,8 +298,8 @@
         <EffectArray Reference="Unit,CabalWidow,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,CabalWidowWreckage,LifeArmor" Value="1"/>
         <EffectArray Reference="Unit,CabalWidowWreckage,LifeArmorLevel" Value="1"/>
-        <EffectArray Reference="Unit,NodAvatar,LifeArmor" Value="1"/>
-        <EffectArray Reference="Unit,NodAvatar,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,CabalHolySpirit,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,CabalHolySpirit,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,CabalSlave,LifeArmor" Value="1"/>
         <EffectArray Reference="Unit,CabalSlave,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,NodGideonVisceroid,LifeArmor" Value="1"/>
@@ -353,8 +353,8 @@
         <EffectArray Reference="Unit,NodMantis,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,NodBeam,LifeArmor" Value="1"/>
         <EffectArray Reference="Unit,NodBeam,LifeArmorLevel" Value="1"/>
-        <EffectArray Reference="Unit,StealthTankCC3,LifeArmor" Value="1"/>
-        <EffectArray Reference="Unit,StealthTankCC3,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,NodStealthTank,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,NodStealthTank,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,NodPurifier,LifeArmor" Value="1"/>
         <EffectArray Reference="Unit,NodPurifier,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,NodBike,LifeArmor" Value="1"/>
@@ -383,8 +383,8 @@
         <EffectArray Reference="Unit,CabalWidow,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,CabalWidowWreckage,LifeArmor" Value="1"/>
         <EffectArray Reference="Unit,CabalWidowWreckage,LifeArmorLevel" Value="1"/>
-        <EffectArray Reference="Unit,NodAvatar,LifeArmor" Value="1"/>
-        <EffectArray Reference="Unit,NodAvatar,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,CabalHolySpirit,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,CabalHolySpirit,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,CabalSlave,LifeArmor" Value="1"/>
         <EffectArray Reference="Unit,CabalSlave,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,NodGideonVisceroid,LifeArmor" Value="1"/>
@@ -476,8 +476,8 @@
         <EffectArray Reference="Unit,NodMantis,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,NodBeam,LifeArmor" Value="1"/>
         <EffectArray Reference="Unit,NodBeam,LifeArmorLevel" Value="1"/>
-        <EffectArray Reference="Unit,StealthTankCC3,LifeArmor" Value="1"/>
-        <EffectArray Reference="Unit,StealthTankCC3,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,NodStealthTank,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,NodStealthTank,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,NodPurifier,LifeArmor" Value="1"/>
         <EffectArray Reference="Unit,NodPurifier,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,NodBike,LifeArmor" Value="1"/>
@@ -506,8 +506,8 @@
         <EffectArray Reference="Unit,CabalWidow,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,CabalWidowWreckage,LifeArmor" Value="1"/>
         <EffectArray Reference="Unit,CabalWidowWreckage,LifeArmorLevel" Value="1"/>
-        <EffectArray Reference="Unit,NodAvatar,LifeArmor" Value="1"/>
-        <EffectArray Reference="Unit,NodAvatar,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,CabalHolySpirit,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,CabalHolySpirit,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,CabalSlave,LifeArmor" Value="1"/>
         <EffectArray Reference="Unit,CabalSlave,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Unit,NodGideonVisceroid,LifeArmor" Value="1"/>
@@ -877,7 +877,7 @@
     <CUpgrade id="Leader" parent="NodUpgrade" icon="DarkArmamentsUpgrade"/>
     <CUpgrade id="SuicideEnlightened" parent="NodUpgrade" icon="FXNod_TiberiumCatalystUpgrade"/>
     <CUpgrade id="RepairUpgrade" parent="NodUpgrade" icon="BackUpSystemsUpgrade">
-        <EffectArray Reference="Unit,NodAvatar,LifeRegenRate" Value="3.000000"/>
+        <EffectArray Reference="Unit,CabalHolySpirit,LifeRegenRate" Value="3.000000"/>
         <EffectArray Reference="Unit,NodPurifier,LifeRegenRate" Value="3.000000"/>
         <EffectArray Reference="Unit,NodRedeemer,LifeRegenRate" Value="3.000000"/>
         <EffectArray Reference="Unit,CabalWidow,LifeRegenRate" Value="3.000000"/>

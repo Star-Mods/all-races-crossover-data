@@ -238,7 +238,7 @@
     <CButton id="Enlightened" parent="NodButton" icon="AwakenerIcon"/>
     <CButton id="Ascended" parent="NodButton" icon="AscendantIcon"/>
     <CButton id="NodAvenger" parent="NodButton" icon="AvengerTankIcon"/>
-    <CButton id="NodAvatar" parent="NodButton" icon="HolySpiritIcon"/>
+    <CButton id="CabalHolySpirit" parent="NodButton" icon="HolySpiritIcon"/>
     <CButton id="NodBeamCNC3" parent="NodButton" icon="CNC3BeamCannonIcon"/>
     <CButton id="NodScorpion" parent="NodButton" icon="ScorpioIcon"/>
     <CButton id="NodKaneCommando" parent="NodButton" icon="NUCommando"/>
@@ -266,7 +266,9 @@
     <CButton id="NodBane" parent="NodButton" icon="VenomIcon">
         <AlertName value="Button/Name/NodVenom"/>
     </CButton>
-    <CButton id="NodStealthTank" parent="NodButton" icon="StealthTankIcon"/>
+    <CButton id="CabalStealthTank" parent="NodButton" icon="StealthTankIcon"/>
+    <CButton id="NodStealthTank" parent="NodButton" icon="NUStealthTank"/>
+<!--    <CButton id="NodStealthTank" parent="NodButton" icon="CNC3StealthTankIcon"/>-->
     <CButton id="NodRaider" parent="NodButton" icon="4WDIcon"/>
     <CButton id="NodEngineer" parent="NodButton" icon="NodEngineerIcon"/>
     <CButton id="CabalDefenseCrawlerDeploy" parent="NodButton" icon="NodDefenseGroupConstructionPlantIcon">
@@ -286,7 +288,6 @@
     <CButton id="NodCallRedeemer" parent="NodButton" icon="RedeemerIcon"/>
     <CButton id="NodStasisField" parent="NodButton" icon="FXNod_UA_CloakModuleUpgrade"/>
     <CButton id="FlameMine" parent="NodButton" icon="btn-nodmine"/>
-    <CButton id="NodStealthTankCNC3" parent="NodButton" icon="CNC3StealthTankIcon"/>
     <CButton id="CabalUnderminer" parent="NodButton" icon="EarthquakeCannonIcon"/>
     <CButton id="PlantC4" parent="NodButton">
         <Icon value="Assets\textures\BTN-Ability-Terran-D8Charge.dds"/>
@@ -331,6 +332,7 @@
     <CButton id="CabalDefenseCrawlerPack" parent="NodButton" icon="NodDefenseGroupMCVIcon">
         <HotkeySet value="TankModes"/>
     </CButton>
+    <CButton id="NodAvatarCommandeerTechnology" parent="NodButton" icon="NAAvatarCommandeerTechnology"/>
     <CButton id="NodHallucinogenicGrenade" parent="NodButton" icon="NAHallucinogenicGrenades"/>
     <CButton id="NodConfessorAura" parent="NodButton" icon="NBConfessorAura"/>
     <CButton id="NodShrine" parent="NodButton" icon="NBSecretShrine"/>
