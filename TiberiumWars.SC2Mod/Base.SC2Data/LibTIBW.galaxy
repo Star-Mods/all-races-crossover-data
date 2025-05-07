@@ -393,6 +393,115 @@ void libTIBW_gf_CreateDropPod (int lp_race, point lp_location, unitgroup lp_unit
 
 // Triggers
 //--------------------------------------------------------------------------------------------------
+// Trigger: MoveCommandOverrideExecute
+//--------------------------------------------------------------------------------------------------
+bool libTIBW_gt_MoveCommandOverrideExecute_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_unit;
+    unit lv_target;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_unit = EventUnit();
+    lv_target = EventUnitTargetUnit();
+
+    // Conditions
+    if (testConds) {
+        if (!((ValidatorExecute("IsPilot", lv_unit, lv_unit) == 0))) {
+            return false;
+        }
+
+        if (!((UnitGetType(lv_target) == "NodAvatarWreckage"))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitBehaviorAdd(lv_unit, "NodAvatarPilot", lv_unit, 1);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libTIBW_gt_MoveCommandOverrideExecute_Init () {
+    libTIBW_gt_MoveCommandOverrideExecute = TriggerCreate("libTIBW_gt_MoveCommandOverrideExecute_Func");
+    TriggerAddEventUnitAbility(libTIBW_gt_MoveCommandOverrideExecute, null, AbilityCommand("move", 0), c_unitAbilStageExecute, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: MoveCommandOverrideCancel
+//--------------------------------------------------------------------------------------------------
+bool libTIBW_gt_MoveCommandOverrideCancel_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_unit;
+    unit lv_target;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_unit = EventUnit();
+    lv_target = EventUnitTargetUnit();
+
+    // Conditions
+    if (testConds) {
+        if (!((UnitHasBehavior2(lv_unit, "NodAvatarPilot") == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitBehaviorRemove(lv_unit, "NodAvatarPilot", 1);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libTIBW_gt_MoveCommandOverrideCancel_Init () {
+    libTIBW_gt_MoveCommandOverrideCancel = TriggerCreate("libTIBW_gt_MoveCommandOverrideCancel_Func");
+    TriggerAddEventUnitAbility(libTIBW_gt_MoveCommandOverrideCancel, null, AbilityCommand("move", 0), c_unitAbilStageCancel, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: MoveCommandOverrideComplete
+//--------------------------------------------------------------------------------------------------
+bool libTIBW_gt_MoveCommandOverrideComplete_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_unit;
+    unit lv_target;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_unit = EventUnit();
+    lv_target = EventUnitTargetUnit();
+
+    // Conditions
+    if (testConds) {
+        if (!((UnitHasBehavior2(lv_unit, "NodAvatarPilot") == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitBehaviorRemove(lv_unit, "NodAvatarPilot", 1);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libTIBW_gt_MoveCommandOverrideComplete_Init () {
+    libTIBW_gt_MoveCommandOverrideComplete = TriggerCreate("libTIBW_gt_MoveCommandOverrideComplete_Func");
+    TriggerAddEventUnitAbility(libTIBW_gt_MoveCommandOverrideComplete, null, AbilityCommand("move", 0), c_unitAbilStageComplete, false);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: Watch Unit Creation
 //--------------------------------------------------------------------------------------------------
 bool libTIBW_gt_WatchUnitCreation_Func (bool testConds, bool runActions) {
@@ -762,9 +871,6 @@ bool libTIBW_gt_PlayNod_Func (bool testConds, bool runActions) {
     TriggerEnable(libTIBW_gt_BorrowedbombercreationbindingStarchainTest, true);
     TriggerEnable(libTIBW_gt_LaunchairstrikeStarchainTest, true);
     TriggerExecute(libTIBW_gt_InitBeaconsButton, true, false);
-    UISetFrameVisible(PlayerGroupSingle(1), c_syncFrameTypeConsolePanel, false);
-    Wait(1.0, c_timeGame);
-    DialogControlSendAnimationEvent(DialogControlLastCreated(), PlayerGroupSingle(1), "SlimUI_On");
     return true;
 }
 
@@ -1251,6 +1357,9 @@ void libTIBW_gt__GDIDropPod_Init () {
 }
 
 void libTIBW_InitTriggers () {
+    libTIBW_gt_MoveCommandOverrideExecute_Init();
+    libTIBW_gt_MoveCommandOverrideCancel_Init();
+    libTIBW_gt_MoveCommandOverrideComplete_Init();
     libTIBW_gt_WatchUnitCreation_Init();
     libTIBW_gt_WatchUnitOwner_Init();
     libTIBW_gt_WatchUnitDeath_Init();

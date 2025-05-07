@@ -176,4 +176,102 @@
         <ExpireEffect value="KillCaster"/>
         <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
     </CBehaviorBuff>
+
+
+
+
+
+<!--    <CAbilTransport id="NodAvatarWreckageTransport">-->
+<!--        <MaxCargoCount value="1"/>-->
+<!--        <MaxCargoSize value="8"/>-->
+<!--        <TotalCargoSpace value="1020"/>-->
+<!--        <Range value="0"/>-->
+<!--        <LoadValidatorArray value="IsPilot"/>-->
+<!--        <LoadCargoEffect value="SuicideRemoveTarget"/>-->
+<!--        <LoadTransportEffect value="NodAvatarRebornIO"/>-->
+<!--    </CAbilTransport>-->
+    <!--    <CBehaviorBuff id="NodAvatarLifeCheck">-->
+    <!--        <Modification>-->
+    <!--            <AbilClassDisableArray index="CAbilTransport" value="1"/>-->
+    <!--        </Modification>-->
+    <!--        &lt;!&ndash;        <InfoFlags index="Hidden" value="1"/>&ndash;&gt;-->
+    <!--        <EditorCategories value="AbilityorEffectType:Units"/>-->
+    <!--        <Period value="0.25"/>-->
+    <!--        <RemoveValidatorArray value="TargetHasNoOrders"/>-->
+    <!--        <RemoveValidatorArray value="CasterLifeNotFull"/>-->
+    <!--    </CBehaviorBuff>-->
+    <!--    -->
+    <!--    <CAbilEffectTarget id="NodAvatarPilot">-->
+    <!--        <EditorCategories value="AbilityorEffectType:Units"/>-->
+    <!--        <Effect index="0" value="NodAvatarPilotSet"/>-->
+    <!--        <Flags index="AutoCast" value="1"/>-->
+    <!--        <Flags index="AutoCastOn" value="1"/>-->
+    <!--        <TargetFilters value="Ground;Self,Missile,UnderConstruction,Dead,Hidden,Invulnerable"/>-->
+    <!--        <Range value="2.5"/>-->
+    <!--        <AutoCastFilters value="Ground;Self"/>-->
+    <!--        <AutoCastRange value="2.5"/>-->
+    <!--        <ValidatorArray value="NodAvatarPilot"/>-->
+    <!--        <AutoCastValidatorArray value="NodAvatarPilot"/>-->
+    <!--        <CmdButtonArray index="Execute" DefaultButtonFace="MedicHeal">-->
+    <!--            <Flags index="ToSelection" value="1"/>-->
+    <!--        </CmdButtonArray>-->
+    <!--    </CAbilEffectTarget>-->
+
+    <CBehaviorBuff id="NodAvatarPilot">
+<!--        <BuffFlags index="Channeled" value="1"/>-->
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <DisplayDuration index="Enemy" value="1"/>
+        <Duration value="15"/>
+        <Period value="0.0625"/>
+        <PeriodicEffect value="NodAvatarPilotSearchArea"/>
+    </CBehaviorBuff>
+    <CEffectEnumArea id="NodAvatarPilotSearchArea">
+<!--        <MaxCount value="1"/>-->
+        <EditorCategories value="Race:Nod"/>
+<!--        <LaunchLocation Value="TargetPoint"/>-->
+<!--        <ImpactLocation Value="CasterUnit"/>-->
+        <SearchFilters value="-;Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Arc="360" Radius="0.5" Effect="NodAvatarPilotSet"/>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
+    </CEffectEnumArea>
+<!--    <CValidatorLocationCompareRange id="NodAvatarPilotTargetCheck">-->
+<!--        <Compare value="LE"/>-->
+<!--        <Range value="3"/>-->
+<!--        <WhichLocation Value="CasterUnit"/>-->
+<!--    </CValidatorLocationCompareRange>-->
+    <CEffectSet id="NodAvatarPilotSet">
+        <ValidatorArray value="IsNodAvatarWreckage"/>
+        <ValidatorArray value="TargetLifeFull"/>
+        <ValidatorArray value="NodAvatarNotReborning"/>
+<!--        <ValidatorArray value="NodAvatarPilotTargetCheck"/>-->
+        <EditorCategories value="Race:Nod"/>
+<!--        <EffectArray value="NodAvatarPilotRB"/>-->
+        <EffectArray value="NodAvatarPilotedChangeOwner"/>
+        <EffectArray value="NodAvatarRebornIOTarget"/>
+        <EffectArray value="NodAvatarPilotSuicide"/>
+    </CEffectSet>
+    <CEffectModifyUnit id="NodAvatarPilotedChangeOwner">
+        <ModifyFlags index="Owner" value="1"/>
+        <ModifyOwnerPlayer Value="Caster"/>
+        <ImpactUnit Value="Target"/>
+    </CEffectModifyUnit>
+    <CEffectIssueOrder id="NodAvatarRebornIOTarget">
+        <WhichUnit Value="Target"/>
+        <EditorCategories value="Race:Nod"/>
+        <Abil value="NodAvatarReborn"/>
+        <CmdFlags index="Preempt" value="1"/>
+    </CEffectIssueOrder>
+<!--    <CEffectApplyBehavior id="NodAvatarPilotRB">-->
+<!--        <EditorCategories value="Race:Nod"/>-->
+<!--        <Behavior value="NodAvatarPilot"/>-->
+<!--    </CEffectApplyBehavior>-->
+    <CEffectDamage id="NodAvatarPilotSuicide">
+<!--        <WhichUnit Value="Source"/>-->
+        <ImpactLocation Value="SourceUnit"/>
+        <Flags index="Kill" value="1"/>
+        <Death value="Remove"/>
+    </CEffectDamage>
+
+
 </Catalog>

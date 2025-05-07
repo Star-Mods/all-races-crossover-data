@@ -2080,13 +2080,6 @@
     </CBehaviorBuff>
 
 
-<!--    <CBehaviorBuff id="NodAvatarWreckageBenign">-->
-<!--        <InfoFlags index="Hidden" value="1"/>-->
-<!--        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>-->
-<!--        <Modification>-->
-<!--            <StateFlags index="Benign" value="1"/>-->
-<!--        </Modification>-->
-<!--    </CBehaviorBuff>-->
     <CBehaviorBuff id="NodAvatarDontDie">
         <Alignment value="Positive"/>
         <InfoFlags index="Hidden" value="1"/>
@@ -2198,5 +2191,7 @@
             <WeaponDisableArray value="NodVolatileBurst"/>
         </Modification>
     </CBehaviorBuff>
+
+
 
 </Catalog>

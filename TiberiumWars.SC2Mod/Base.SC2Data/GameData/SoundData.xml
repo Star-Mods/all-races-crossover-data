@@ -327,61 +327,62 @@
         <AssetArray File="Assets\Music\18 Heresy&apos;s Reward.mp3" FacialGroup=""/>
         <AssetArray File="Assets\Music\Nod We Rise.ogg" FacialGroup=""/>
     </CSound>
-    <CSound id="GameMusicNodearly" parent="MUSIC">
+    <CSound id="GameMusicNodearlyLow" parent="MUSIC">
         <AssetArray File="Assets\music\Aftermath.ogg" FacialGroup=""/>
         <AssetArray File="Assets\music\Base Repairs.ogg" FacialGroup=""/>
         <AssetArray File="Assets\music\Drop Attack.ogg" FacialGroup=""/>
         <AssetArray File="Assets\music\Global Response.ogg" FacialGroup=""/>
         <AssetArray File="Assets\music\Havoc.ogg" FacialGroup=""/>
     </CSound>
-    <CSound id="GameMusicNodearlyHigh" parent="MUSIC">
-        <AssetArray File="Assets\music\act on instinct remix.mp3"/>
-        <AssetArray File="Assets\music\Aftermath.mp3"/>
-        <AssetArray File="Assets\music\alien arrival.mp3"/>
-        <AssetArray File="Assets\music\Alien Substance.mp3"/>
-        <AssetArray File="Assets\music\Apocalypse.mp3"/>
-        <AssetArray File="Assets\music\base repairs.mp3"/>
-        <AssetArray File="Assets\music\Black Dawn.mp3"/>
-        <AssetArray File="Assets\music\bleak twilight.mp3"/>
-        <AssetArray File="Assets\music\Blue Control.mp3"/>
-        <AssetArray File="Assets\music\Blue Glory.mp3"/>
-        <AssetArray File="Assets\music\Crimson City.mp3"/>
-        <AssetArray File="Assets\music\Crystalline.mp3"/>
-        <AssetArray File="Assets\music\Deadly Force.mp3"/>
-        <AssetArray File="Assets\music\Defense Line.mp3"/>
-        <AssetArray File="Assets\music\Drop Attack.mp3"/>
-        <AssetArray File="Assets\music\Gathering Intel.mp3"/>
-        <AssetArray File="Assets\music\global response.mp3"/>
-        <AssetArray File="Assets\music\Guilty Pleasure.mp3"/>
-        <AssetArray File="Assets\music\Havoc.mp3"/>
-        <AssetArray File="Assets\music\Heavy Handed.mp3"/>
-        <AssetArray File="Assets\music\Infection.mp3"/>
-        <AssetArray File="Assets\music\Infestation.mp3"/>
-        <AssetArray File="Assets\music\Intelligence.mp3"/>
-        <AssetArray File="Assets\music\Light Infantry.mp3"/>
-        <AssetArray File="Assets\music\Maelstrom.mp3"/>
-        <AssetArray File="Assets\music\mechanical mind.mp3"/>
-        <AssetArray File="Assets\music\More Than We Bargained For.mp3"/>
-        <AssetArray File="Assets\music\Mourning Hour.mp3"/>
-        <AssetArray File="Assets\music\No Surrender.mp3"/>
-        <AssetArray File="Assets\music\Nod We Rise.ogg"/>
-        <AssetArray File="Assets\music\Radiation Alert.mp3"/>
-        <AssetArray File="Assets\music\Rebel Forces.mp3"/>
-        <AssetArray File="Assets\music\Red Ashes.mp3"/>
-        <AssetArray File="Assets\music\red dusk.mp3"/>
-        <AssetArray File="Assets\music\Red Life.mp3"/>
-        <AssetArray File="Assets\music\Renegade Attack.mp3"/>
-        <AssetArray File="Assets\music\Research Initiative.mp3"/>
-        <AssetArray File="Assets\music\Retaliation.mp3"/>
-        <AssetArray File="Assets\music\Returning To Base.mp3"/>
-        <AssetArray File="Assets\music\The Zenith.mp3"/>
-        <AssetArray File="Assets\music\Tiberian Influx.mp3"/>
-        <AssetArray File="Assets\music\Unleashed.mp3"/>
-        <AssetArray File="Assets\music\waiting game.mp3"/>
-        <AssetArray File="Assets\music\War Machine.mp3"/>
-        <AssetArray File="Assets\music\War Zone.mp3"/>
-        <AssetArray File="Assets\music\Yellow Dawn.mp3"/>
-        <AssetArray File="Assets\music\Yellow Explore.mp3"/>
+    <CSound id="GameMusicNodearly" parent="MUSIC">
+        <AssetArray File="Assets\musicHigh\Havoc.mp3"/>
+        <AssetArray File="Assets\musicHigh\Heavy Handed.mp3"/>
+        <AssetArray File="Assets\musicHigh\Infection.mp3"/>
+        <AssetArray File="Assets\musicHigh\Infestation.mp3"/>
+        <AssetArray File="Assets\musicHigh\Intelligence.mp3"/>
+        <AssetArray File="Assets\musicHigh\Light Infantry.mp3"/>
+        <AssetArray File="Assets\musicHigh\Maelstrom.mp3"/>
+        <AssetArray File="Assets\musicHigh\mechanical mind.mp3"/>
+        <AssetArray File="Assets\musicHigh\More Than We Bargained For.mp3"/>
+        <AssetArray File="Assets\musicHigh\Mourning Hour.mp3"/>
+        <AssetArray File="Assets\musicHigh\No Surrender.mp3"/>
+        <AssetArray File="Assets\musicHigh\Nod We Rise.ogg"/>
+        <AssetArray File="Assets\musicHigh\Radiation Alert.mp3"/>
+        <AssetArray File="Assets\musicHigh\Rebel Forces.mp3"/>
+        <AssetArray File="Assets\musicHigh\Red Ashes.mp3"/>
+        <AssetArray File="Assets\musicHigh\red dusk.mp3"/>
+        <AssetArray File="Assets\musicHigh\Red Life.mp3"/>
+        <AssetArray File="Assets\musicHigh\Renegade Attack.mp3"/>
+        <AssetArray File="Assets\musicHigh\Research Initiative.mp3"/>
+        <AssetArray File="Assets\musicHigh\Retaliation.mp3"/>
+        <AssetArray File="Assets\musicHigh\Returning To Base.mp3"/>
+        <AssetArray File="Assets\musicHigh\The Zenith.mp3"/>
+        <AssetArray File="Assets\musicHigh\Tiberian Influx.mp3"/>
+        <AssetArray File="Assets\musicHigh\Unleashed.mp3"/>
+        <AssetArray File="Assets\musicHigh\waiting game.mp3"/>
+        <AssetArray File="Assets\musicHigh\War Machine.mp3"/>
+        <AssetArray File="Assets\musicHigh\War Zone.mp3"/>
+        <AssetArray File="Assets\musicHigh\Yellow Dawn.mp3"/>
+        <AssetArray File="Assets\musicHigh\Yellow Explore.mp3"/>
+
+        <AssetArray File="Assets\musicHigh\act on instinct remix.mp3"/>
+        <AssetArray File="Assets\musicHigh\Aftermath.mp3"/>
+        <AssetArray File="Assets\musicHigh\alien arrival.mp3"/>
+        <AssetArray File="Assets\musicHigh\Alien Substance.mp3"/>
+        <AssetArray File="Assets\musicHigh\Apocalypse.mp3"/>
+        <AssetArray File="Assets\musicHigh\base repairs.mp3"/>
+        <AssetArray File="Assets\musicHigh\Black Dawn.mp3"/>
+        <AssetArray File="Assets\musicHigh\bleak twilight.mp3"/>
+        <AssetArray File="Assets\musicHigh\Blue Control.mp3"/>
+        <AssetArray File="Assets\musicHigh\Blue Glory.mp3"/>
+        <AssetArray File="Assets\musicHigh\Crimson City.mp3"/>
+        <AssetArray File="Assets\musicHigh\Crystalline.mp3"/>
+        <AssetArray File="Assets\musicHigh\Deadly Force.mp3"/>
+        <AssetArray File="Assets\musicHigh\Defense Line.mp3"/>
+        <AssetArray File="Assets\musicHigh\Drop Attack.mp3"/>
+        <AssetArray File="Assets\musicHigh\Gathering Intel.mp3"/>
+        <AssetArray File="Assets\musicHigh\global response.mp3"/>
+        <AssetArray File="Assets\musicHigh\Guilty Pleasure.mp3"/>
     </CSound>
     <CSound id="GameMusic12p6" parent="MUSIC">
         <AssetArray File="Assets\Music\12 The Prophet&apos;s AscensionP6.mp3" FacialGroup=""/>

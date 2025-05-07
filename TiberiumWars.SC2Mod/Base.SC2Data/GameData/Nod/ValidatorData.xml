@@ -243,6 +243,46 @@
     <CValidatorUnitCompareBehaviorCount id="HasNoBeamCannon"><Value value="0"/><Behavior value="NodAvatarBeamCannon"/></CValidatorUnitCompareBehaviorCount>
 
 
+    <CValidatorCombine id="IsPilot">
+        <CombineArray value="IsNodBlackHandCC3"/>
+        <CombineArray value="IsNodKaneCommando"/>
+        <CombineArray value="IsNodMilitantRocket"/>
+        <CombineArray value="IsNodMilitant"/>
+        <CombineArray value="IsNodConfessor"/>
+        <CombineArray value="IsNodFanatic"/>
+        <CombineArray value="IsNodSaboteur"/>
+        <CombineArray value="IsNodShadow"/>
+        <CombineArray value="IsMarine"/>
+        <CombineArray value="IsReaper"/>
+        <CombineArray value="IsGhost"/>
+        <CombineArray value="IsZealot"/>
+        <CombineArray value="IsAdept"/>
+        <CombineArray value="IsDarkTemplar"/>
+        <CombineArray value="IsHighTemplar"/>
+    </CValidatorCombine>
+
+    <CValidatorUnitType id="IsNodBlackHandCC3"><Value value="NodBlackHandCC3"/></CValidatorUnitType>
+    <CValidatorUnitType id="IsNodKaneCommando"><Value value="NodKaneCommando"/></CValidatorUnitType>
+    <CValidatorUnitType id="IsNodMilitantRocket"><Value value="NodMilitantRocket"/></CValidatorUnitType>
+    <CValidatorUnitType id="IsNodMilitant"><Value value="NodMilitant"/></CValidatorUnitType>
+    <CValidatorUnitType id="IsNodConfessor"><Value value="NodConfessor"/></CValidatorUnitType>
+    <CValidatorUnitType id="IsNodFanatic"><Value value="NodFanatic"/></CValidatorUnitType>
+    <CValidatorUnitType id="IsNodSaboteur"><Value value="NodSaboteur"/></CValidatorUnitType>
+    <CValidatorUnitType id="IsNodShadow"><Value value="NodShadow"/></CValidatorUnitType>
+
+    <CValidatorUnitType id="IsNodAvatarWreckage">
+        <Value value="NodAvatarWreckage"/>
+    </CValidatorUnitType>
+    <CValidatorUnitCompareOrderCount id="NodAvatarNotReborning">
+        <AbilLink value="NodAvatarReborn"/>
+    </CValidatorUnitCompareOrderCount>
+    <CValidatorUnitFilters id="IsEnemyOrNeutral">
+        <Filters value="-;Player,Ally,Neutral"/>
+    </CValidatorUnitFilters>
+
+
+
+
     <CValidatorCombine id="IsNodAvatarCommandeerTechnologyTarget">
         <CombineArray value="IsNodAvatarCommandeerTechnologyFlamer"/>
         <CombineArray value="IsNodAvatarCommandeerTechnologyDetector"/>
@@ -276,4 +316,8 @@
     <CValidatorPlayerRequirement id="NoBikeUpgrade">
         <Value value="UseBikeUpgrade"/>
     </CValidatorPlayerRequirement>
+    <CValidatorUnitCompareBehaviorCount id="NodAvatarPilot">
+        <Value value="1"/>
+        <Behavior value="NodAvatarPilot"/>
+    </CValidatorUnitCompareBehaviorCount>
 </Catalog>

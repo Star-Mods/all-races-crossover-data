@@ -3511,13 +3511,13 @@
     </CEffectCreateUnit>
     <CEffectSwitch id="NodSabotageSwitch">
         <EditorCategories value="Race:Protoss"/>
-        <CaseArray Validator="TargetIsNodPurifierWreckage" Effect="NodPurifierWreckageCaptureSet"/>
-        <CaseArray Validator="TargetIsNodAvatarWreckage" Effect="NodAvatarWreckageCaptureSet"/>
-        <CaseArray Validator="TargetIsEnemy" Effect="NodChannelSabotageInitialSet"/>
+<!--        <CaseArray Validator="TargetIsNodPurifierWreckage" Effect="NodPurifierWreckageCaptureSet"/>-->
+        <CaseArray Validator="IsNodAvatarWreckage" Effect="NodAvatarWreckageCaptureSet"/>
+        <CaseArray Validator="IsEnemyOrNeutral" Effect="NodChannelSabotageInitialSet"/>
         <CaseDefault value="NodSabotage"/>
     </CEffectSwitch>
     <CEffectModifyUnit id="NodSabotageChangeOwner">
-        <ValidatorArray value="TargetIsEnemy"/>
+        <ValidatorArray value="TargetIsEnemyOrNeutral"/>
         <EditorCategories value="Race:Zerg"/>
         <ModifyFlags index="Owner" value="1"/>
         <ModifyOwnerPlayer Value="Caster"/>
@@ -3726,10 +3726,13 @@
         <CmdFlags index="Preempt" value="1"/>
     </CEffectIssueOrder>
     <CEffectSet id="NodAvatarWreckageCaptureSet">
-        <EffectArray value="NodSabotage"/>
+        <EffectArray value="NodSabotageHeal"/>
+        <EffectArray value="NodSabotageChangeOwner"/>
         <EffectArray value="NodAvatarRebornIO"/>
+        <EffectArray value="SuicideRemove"/>
     </CEffectSet>
     <CEffectIssueOrder id="NodAvatarRebornIO">
+        <WhichUnit Value="Target"/>
         <EditorCategories value="Race:Nod"/>
         <Abil value="NodAvatarReborn"/>
         <CmdFlags index="Preempt" value="1"/>
@@ -3743,7 +3746,7 @@
     <CEffectModifyUnit id="NodAvatarWreckageHeal">
         <ImpactUnit Value="Source"/>
         <VitalArray index="Life">
-            <Change value="100"/>
+            <Change value="350"/>
         </VitalArray>
     </CEffectModifyUnit>
     <CEffectIssueOrder id="NodAvatarWreckageIO">
@@ -3870,4 +3873,11 @@
         <EffectArray value="NodAvatarFlameThrowerCreatePersistent"/>
         <EffectArray value="NodAvatarFlameThrowerDamage"/>
     </CEffectSet>
+<!--    <CEffectEnumTransport id="NodAvatarWreckageRemoveCargo">-->
+<!--        <EditorCategories value="Race:Nod"/>-->
+<!--        <Effect value="SuicideRemove"/>-->
+<!--    </CEffectEnumTransport>-->
+
+
+
 </Catalog>

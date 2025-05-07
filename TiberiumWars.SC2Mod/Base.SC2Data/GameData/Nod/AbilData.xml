@@ -2488,6 +2488,7 @@
         </RefundFraction>
         <InfoArray Score="1" Unit="NodAvatar">
             <SectionArray index="Abils">
+<!--                <EffectArray index="Start" value="NodAvatarWreckageRemoveCargo"/>-->
                 <DurationArray index="Delay" value="5"/>
             </SectionArray>
             <SectionArray index="Actor">
@@ -2571,4 +2572,5 @@
         <CmdButtonArray index="Execute" DefaultButtonFace="NodAvatarCommandeerTechnology"><Flags index="ShowInGlossary" value="1"/></CmdButtonArray>
         <PrepTime value="1"/>
     </CAbilEffectTarget>
+
 </Catalog>

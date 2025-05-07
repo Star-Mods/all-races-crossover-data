@@ -233,6 +233,7 @@ Button/Name/CabalDominator=Train Dominator
 Button/Name/CabalFlameColumn=Building Fire Column
 Button/Name/CabalGrandTemple=Build Grand Temple Of Nod
 Button/Name/CabalHijacker=Train CabalHijacker
+Button/Name/CabalHolySpirit=Build the Holy Spirit
 Button/Name/CabalIncinerator=Build Incinerator
 Button/Name/CabalLeviathan=Build Leviathan
 Button/Name/CabalMarauder=Build Marauder
@@ -243,6 +244,7 @@ Button/Name/CabalReaper=Training the Reaper
 Button/Name/CabalSalamander=Build CabalSalamander
 Button/Name/CabalShieldGenerator=Build Shield Generator
 Button/Name/CabalSpider=Build Spider Tank
+Button/Name/CabalStealthTank=Build a Stealth Tank
 Button/Name/CabalTyrant=Build Tyrant
 Button/Name/CabalUnderminer=Construct Seismic Cannon
 Button/Name/CabalWeaponsLaboratory=WeaponsLaboratory
@@ -309,7 +311,6 @@ Button/Name/NodAirTower=Build a Helipad
 Button/Name/NodAramUpgrade=Upgrade
 Button/Name/NodArmageddon=Armageddon
 Button/Name/NodArtilleryBeacon=Deploy Artillery Beacon
-Button/Name/CabalHolySpirit=Build the Holy Spirit
 Button/Name/NodAvenger=Build Avenger Tank
 Button/Name/NodBane=Build Bane
 Button/Name/NodBeamCNC3=Construct Beam Cannon
@@ -411,7 +412,6 @@ Button/Name/NodShrine=Build a shrine
 Button/Name/NodSpawnTib=Spawning Tiberium
 Button/Name/NodSpecter=Build Specter
 Button/Name/NodStasisField=NodStasisField
-Button/Name/CabalStealthTank=Build a Stealth Tank
 Button/Name/NodStealthTank=Construct a Stealth Tank
 Button/Name/NodTechII=Level 2 License
 Button/Name/NodTechIII=Level 3 License
@@ -476,6 +476,7 @@ Button/Tooltip/CabalDominator=Universal infantry. <n/><n/><c val="#ColorAttackIn
 Button/Tooltip/CabalFlameColumn=Powerful defensive building<n/>can attack ground and air
 Button/Tooltip/CabalGrandTemple=Provides upgrade options for human infantry units and buildings. <n/><n/><c val="ffff8a">Enable:</c><n/>- Allows SCV to build missile towers<n/>- Allows SCV to build sensor towers<n/>- Allows The command center can be upgraded to a planetary fortress
 Button/Tooltip/CabalHijacker=Auxiliary Infantry. Good at fighting mechanical units. <n/><n/><c val="#ColorAttackInfo">Can target the ground. </c>
+Button/Tooltip/CabalHolySpirit=A slow but powerful massive mecha that can cause a lot of damage. <n/><n/><c val="#ColorAttackInfo">Can target the ground. </c>
 Button/Tooltip/CabalIncinerator=Powerful defensive building<n/>can attack ground and air
 Button/Tooltip/CabalLeviathan=The ultimate battleship that can deal area damage and has interceptors. <n/><n/><c val="#ColorAttackInfo">Can be used against ground and air</c>
 Button/Tooltip/CabalLeviathanFlagship=Early model of Leviathan, equipped with laser weapons instead of fireballs. <n/><n/><c val="#ColorAttackInfo">Can be used against ground and air</c>
@@ -495,6 +496,7 @@ Button/Tooltip/CabalShieldGenerator=Generates a shield that lasts for a period o
 Button/Tooltip/CabalSlave=Basic working unit. Used to gather resources, construct human structures, and repair. <n/><n/><c val="#ColorAttackInfo">Can target the ground. </c>
 Button/Tooltip/CabalSlaveGideon=Basic working unit. Used to gather resources, construct human structures, and repair. <n/><n/><c val="#ColorAttackInfo">Can target the ground. </c>
 Button/Tooltip/CabalSpider=A small assault unit that provides buffs when loaded into the Widow<n/><n/><c val="#ColorAttackInfo">Can be used against ground and air. </c>
+Button/Tooltip/CabalStealthTank=Invisible unit, good at launching surprise attacks. <n/><n/><c val="#ColorAttackInfo">Can be used against ground and air. </c>
 Button/Tooltip/CabalSupportCrawler=Nod Defense Team Construction Factory. Can be expanded to serve as a Nod base. <n/><n/><c val="FFFF8A">Can be used against air and ground. </c>
 Button/Tooltip/CabalSupportCrawlerDeployed=Strong defensive fortress. <n/>Used to receive collected resources. <n/><n/><c val="ffff8a">Can target the ground. </c>
 Button/Tooltip/CabalTyrant=High mobility, can burrow into the ground, good at fighting heavy units. <n/><n/><c val="#ColorAttackInfo">Can be used against ground and air. </c><c val="FFE303">Detector</c>
@@ -588,7 +590,6 @@ Button/Tooltip/NodAramUpgrade=The troops to which Nod belongs do not have the co
 Button/Tooltip/NodArmageddon=Armageddon
 Button/Tooltip/NodArtilleryBeacon=Deploys a beacon at the selected location, allowing Specters to fire in the surrounding area.
 Button/Tooltip/NodAttackBike=<sp/>
-Button/Tooltip/CabalHolySpirit=A slow but powerful massive mecha that can cause a lot of damage. <n/><n/><c val="#ColorAttackInfo">Can target the ground. </c>
 Button/Tooltip/NodAvenger=An anti-ground battle tank, good at fighting armored units. Can deploy flame mines. <n/><n/><c val="#ColorAttackInfo">Can target the ground. </c>
 Button/Tooltip/NodBane=Aerial unit, good at fighting other aircraft. <n/><n/><c val="#ColorAttackInfo">Can be used against ground and air</c>
 Button/Tooltip/NodBanshee=Banshee
@@ -730,8 +731,7 @@ Button/Tooltip/NodShrineSP=Chariot production facility. <n/><n/><c val="ffff8a">
 Button/Tooltip/NodSpawnTib=Spawn a small amount of Tiberium in a certain area
 Button/Tooltip/NodSpecter=Medium-sized artillery, invisible<n/><n/><c val="#ColorAttackInfo">can target the ground. </c>
 Button/Tooltip/NodStasisField=Stabilizes enemies in the target area for 4 seconds. Stationary units cannot be attacked
-Button/Tooltip/CabalStealthTank=Invisible unit, good at launching surprise attacks. <n/><n/><c val="#ColorAttackInfo">Can be used against ground and air. </c>
-Button/Tooltip/NodStealthTank=An old generation stealth tank that is exposed when attacking<n/><n/><c val="#ColorAttackInfo">and can target ground and air. </c>
+Button/Tooltip/NodStealthTank=Assault unit, uncloaked when attacking. <n/><n/><c val="FFFF8A">Can be used against ground and air. </c>
 Button/Tooltip/NodTechII=Upgrade weapons and armor for Flame Tank, Stealth Tank, Tyrant, Mantis, Black Hand, and Reaper.
 Button/Tooltip/NodTechIII=Upgrade weapons and armor for CabalSalamander, Medusa, Ghost, Widow, Redeemer, Saint, Leviathan, Seismo Cannon, Lizard, Holy Spirit and Commando.
 Button/Tooltip/NodTechLab=Unlock Nod Phase 2 Upgrade
@@ -784,7 +784,6 @@ Button/Tooltip/Slave=Basic work unit. Used to gather resources, construct human 
 Button/Tooltip/SpeedUpgrade=Increases the infantry unit's movement speed.
 Button/Tooltip/SpiderMineVulture=After detonating, it ignites the ground, causing burning damage.
 Button/Tooltip/StealthTank=Assault unit, uncloaked when attacking. <n/><n/><c val="FFFF8A">Can be used against ground and air. </c>
-Button/Tooltip/NodStealthTank=Assault unit, uncloaked when attacking. <n/><n/><c val="FFFF8A">Can be used against ground and air. </c>
 Button/Tooltip/TibBomb=Ignite the target area. </n></n><c val="ffff8a">Will not cause damage to friendly units. </c>
 Button/Tooltip/TraintheAwaken=Basic infantry unit, good at dealing with armored units. <n/><n/><c val="#ColorAttackInfo">Can target the ground. </c>
 Button/Tooltip/TwlightNodFlameTank=Assault unit, good at attacking buildings. <n/><n/><c val="#ColorAttackInfo">Can target the ground. </c>
@@ -1467,6 +1466,7 @@ Unit/Name/CabalDominator=Dominator
 Unit/Name/CabalFlameColumn=Column of Fire
 Unit/Name/CabalGrandTemple=Grand Temple
 Unit/Name/CabalHijacker=CabalHijacker
+Unit/Name/CabalHolySpirit=Holy One
 Unit/Name/CabalIncinerator=Incinerator
 Unit/Name/CabalLeviathan=Leviathan
 Unit/Name/CabalLeviathanFlagship=Leviathan Flagship
@@ -1574,7 +1574,6 @@ Unit/Name/NodArmageddon=Armageddon
 Unit/Name/NodArtillery=Nod Artillery
 Unit/Name/NodArtilleryBeacon=Artillery Beacon
 Unit/Name/NodAttackBike=Attack Bike
-Unit/Name/CabalHolySpirit=Holy One
 Unit/Name/NodAwakenBuggyEMP=Nod - Awaken - Buggy EMP
 Unit/Name/NodBanshee=Banshee
 Unit/Name/NodBeam=Beam Cannon
@@ -1681,6 +1680,7 @@ Unit/Name/NodShrineSP=Shrine Vest
 Unit/Name/NodSpecter=Specter
 Unit/Name/NodStealthRocket=NodStealthRocket
 Unit/Name/NodStealthRocketUP=NodStealthRocket UP
+Unit/Name/NodStealthTank=Stealth Tank
 Unit/Name/NodTechLab=Research Station
 Unit/Name/NodTechLabSP=Scientific Research Station Vest
 Unit/Name/NodTechlabCP=Chariot Factory
@@ -1711,7 +1711,6 @@ Unit/Name/SiegeTank=Siege Tank
 Unit/Name/SpecterWeapon=SpecterWeapon
 Unit/Name/SpecterWeaponUpgrade=SpecterWeapon Upgrade
 Unit/Name/StealthTank=Stealth Tank
-Unit/Name/NodStealthTank=Stealth Tank
 Unit/Name/SupportMCV=Nod support group MCV
 Unit/Name/TIBMineralField=Tiberium Mineral Field
 Unit/Name/TIBMineralFieldsmall=Tiberium Mineral Field

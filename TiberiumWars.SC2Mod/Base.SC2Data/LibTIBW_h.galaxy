@@ -50,6 +50,9 @@ void libTIBW_gf__GDIDropPod (point lp_location, unitgroup lp_units, int lp_playe
 void libTIBW_gf_CreateDropPod (int lp_race, point lp_location, unitgroup lp_units, bool lp_waitDontWait, int lp_playerinteger);
 
 // Trigger Declarations
+trigger libTIBW_gt_MoveCommandOverrideExecute;
+trigger libTIBW_gt_MoveCommandOverrideCancel;
+trigger libTIBW_gt_MoveCommandOverrideComplete;
 trigger libTIBW_gt_WatchUnitCreation;
 trigger libTIBW_gt_WatchUnitOwner;
 trigger libTIBW_gt_WatchUnitDeath;

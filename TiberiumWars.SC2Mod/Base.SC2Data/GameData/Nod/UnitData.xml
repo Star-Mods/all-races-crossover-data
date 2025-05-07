@@ -876,24 +876,32 @@
         <!--        <Collide index="Locust" value="1"/>-->
         <PlaneArray index="Ground" value="1"/>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:CNC"/>
-        <BehaviorArray Link="NodAvatarWreckageBenign"/>
         <!--        <Collide index="Small" value="1"/>-->
         <Attributes index="Armored" value="1"/>
         <Attributes index="Mechanical" value="1"/>
         <Attributes index="Structure" value="1"/>
-        <LifeStart value="75"/>
+        <LifeStart value="375"/>
+        <StationaryTurningRate value="0"/>
+        <TurningRate value="0"/>
         <LifeMax value="400"/>
         <LifeArmor value="3"/>
         <LateralAcceleration value="64"/>
         <CostResource index="Minerals" value="200"/>
         <CostResource index="Vespene" value="150"/>
         <KillXP value="50"/>
-        <Radius value="0.875"/>
-        <SeparationRadius value="1"/>
-        <InnerRadius value="1"/>
         <MinimapRadius value="1"/>
         <AIEvalFactor value="1.5"/>
         <AbilArray Link="NodAvatarReborn"/>
+        <AbilArray Link="NodAvatarPilot"/>
+
+        <Radius value="1"/>
+        <SeparationRadius value="1"/>
+        <InnerRadius value="2"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="NodAvatarCommandeerTechnology" Type="AbilCmd" AbilCmd="NodAvatarPilot,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+<!--        <AbilArray Link="NodAvatarWreckageTransport"/>-->
+<!--        <BehaviorArray Link="NodAvatarLifeCheck"/>-->
     </CUnit>
     <CUnit id="NodPurifier" parent="NodGround">
         <FlagArray index="TurnBeforeMove" value="1"/>
@@ -951,7 +959,7 @@
         <Attributes index="Armored" value="1"/>
         <Attributes index="Mechanical" value="1"/>
         <Attributes index="Structure" value="1"/>
-        <LifeStart value="75"/>
+        <LifeStart value="400"/>
         <LifeMax value="400"/>
         <LifeArmor value="3"/>
         <LateralAcceleration value="64"/>
@@ -1227,60 +1235,57 @@
             <ChanceArray index="Turn" value="33"/>
         </Fidget>
     </CUnit>
+
     <!--Infantry-->
-    <CUnit id="NodBlackHandCC3" parent="NodGround">
-        <PushPriority value="11"/>
+    <CUnit default="1" id="NodInfantry" parent="NodGround">
         <Collide index="Small" value="1"/>
         <Attributes index="Light" value="1"/>
         <Attributes index="Biological" value="1"/>
-        <LifeStart value="45"/>
-        <LifeMax value="45"/>
-        <Speed value="2.25"/>
-        <LateralAcceleration value="46.0625"/>
-        <StationaryTurningRate value="999.8437"/>
-        <TurningRate value="999.8437"/>
-        <Sight value="8"/>
-        <Food value="-1"/>
-        <CostResource index="Minerals" value="50"/>
-        <CostResource index="Vespene" value="25"/>
-        <RepairTime value="20"/>
-        <BehaviorArray Link="NodBlackHandCC3VeterancyUpgrade"/>
-        <WeaponArray Link="BlackHandFlamethrowerCC3"/>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
         <InnerRadius value="0.375"/>
         <CargoSize value="1"/>
-        <ScoreMake value="50"/>
-        <ScoreKill value="100"/>
         <MinimapRadius value="0.375"/>
         <TacticalAI value="Marine"/>
-        <GlossaryPriority value="31"/>
         <AIEvaluateAlias value="Marine"/>
+        <Sight value="8"/>
+        <LateralAcceleration value="46.0625"/>
+        <StationaryTurningRate value="999.8437"/>
+        <TurningRate value="999.8437"/>
         <Fidget>
             <ChanceArray index="Anim" value="33"/>
             <ChanceArray index="Idle" value="33"/>
             <ChanceArray index="Turn" value="33"/>
         </Fidget>
+        <ScoreMake value="50"/>
+        <ScoreKill value="100"/>
+        <RepairTime value="20"/>
+        <Speed value="2.25"/>
     </CUnit>
-    <CUnit id="NodKaneCommando" parent="NodGround">
+    <CUnit id="NodBlackHandCC3" parent="NodInfantry">
+        <PushPriority value="11"/>
+        <LifeStart value="45"/>
+        <LifeMax value="45"/>
+        <CargoSize value="2"/>
+        <Food value="-1"/>
+        <CostResource index="Minerals" value="50"/>
+        <CostResource index="Vespene" value="25"/>
+        <BehaviorArray Link="NodBlackHandCC3VeterancyUpgrade"/>
+        <WeaponArray Link="BlackHandFlamethrowerCC3"/>
+        <GlossaryPriority value="31"/>
+    </CUnit>
+    <CUnit id="NodKaneCommando" parent="NodInfantry">
         <SubgroupPriority value="75"/>
         <FlagArray index="Hero" value="1"/>
         <PushPriority value="20"/>
-        <Collide index="Small" value="1"/>
-        <Attributes index="Biological" value="1"/>
-        <Attributes index="Heroic" value="1"/>
         <LifeStart value="150"/>
         <LifeMax value="150"/>
         <LifeRegenRate value="2"/>
-        <Speed value="2.25"/>
-        <LateralAcceleration value="46.0625"/>
-        <StationaryTurningRate value="999.8437"/>
-        <TurningRate value="999.8437"/>
+        <CargoSize value="2"/>
         <Sight value="10"/>
         <Food value="-3"/>
         <CostResource index="Minerals" value="150"/>
         <CostResource index="Vespene" value="150"/>
-        <RepairTime value="20"/>
         <AbilArray Link="GhostHoldFire"/>
         <AbilArray Link="GhostWeaponsFree"/>
         <AbilArray Link="CommandoC4"/>
@@ -1294,102 +1299,36 @@
             <LayoutButtons Face="WeaponsFree" Type="AbilCmd" AbilCmd="GhostWeaponsFree,Execute" Row="1" Column="2"/>
             <LayoutButtons Face="PlantC4" Type="AbilCmd" AbilCmd="CommandoC4,Execute" Row="2" Column="0"/>
         </CardLayouts>
-        <Radius value="0.375"/>
-        <SeparationRadius value="0.375"/>
-        <InnerRadius value="0.375"/>
         <ScoreMake value="200"/>
         <ScoreKill value="400"/>
-        <MinimapRadius value="0.375"/>
-        <TacticalAI value="Marine"/>
         <GlossaryPriority value="31"/>
-        <AIEvaluateAlias value="Marine"/>
-        <Fidget>
-            <ChanceArray index="Anim" value="33"/>
-            <ChanceArray index="Idle" value="33"/>
-            <ChanceArray index="Turn" value="33"/>
-        </Fidget>
     </CUnit>
-    <CUnit id="NodMilitantRocket" parent="NodGround">
-        <Collide index="Small" value="1"/>
-        <Attributes index="Light" value="1"/>
-        <Attributes index="Biological" value="1"/>
+    <CUnit id="NodMilitantRocket" parent="NodInfantry">
         <LifeStart value="30"/>
         <LifeMax value="30"/>
-        <Speed value="2.25"/>
-        <LateralAcceleration value="46.0625"/>
-        <StationaryTurningRate value="999.8437"/>
-        <TurningRate value="999.8437"/>
-        <Sight value="8"/>
         <Food value="-0.5"/>
         <CostResource index="Minerals" value="30"/>
         <CostResource index="Vespene" value="15"/>
-        <RepairTime value="20"/>
         <WeaponArray Link="NodRocketCC3"/>
-        <Radius value="0.275"/>
-        <SeparationRadius value="0.3"/>
-        <InnerRadius value="0.4"/>
-        <CargoSize value="1"/>
-        <ScoreMake value="50"/>
-        <ScoreKill value="100"/>
-        <MinimapRadius value="0.375"/>
-        <TacticalAI value="Marine"/>
         <GlossaryPriority value="31"/>
-        <AIEvaluateAlias value="Marine"/>
-        <Fidget>
-            <ChanceArray index="Anim" value="33"/>
-            <ChanceArray index="Idle" value="33"/>
-            <ChanceArray index="Turn" value="33"/>
-        </Fidget>
         <BehaviorArray Link="NodMilitantRocketVeterancyUpgrade"/>
     </CUnit>
-    <CUnit id="NodMilitant" parent="NodGround">
-        <Collide index="Small" value="1"/>
-        <Attributes index="Light" value="1"/>
-        <Attributes index="Biological" value="1"/>
+    <CUnit id="NodMilitant" parent="NodInfantry">
         <LifeStart value="30"/>
         <LifeMax value="30"/>
-        <Speed value="2.25"/>
-        <LateralAcceleration value="46.0625"/>
-        <StationaryTurningRate value="999.8437"/>
-        <TurningRate value="999.8437"/>
-        <Sight value="8"/>
         <Food value="-0.5"/>
         <CostResource index="Minerals" value="30"/>
-        <RepairTime value="20"/>
         <BehaviorArray Link="NodMilitantVeterancyUpgrade"/>
         <WeaponArray Link="NodMilitantWeapon"/>
-        <Radius value="0.3"/>
-        <SeparationRadius value="0.3"/>
-        <InnerRadius value="0.3"/>
-        <CargoSize value="1"/>
-        <ScoreMake value="50"/>
-        <ScoreKill value="100"/>
-        <MinimapRadius value="0.375"/>
-        <TacticalAI value="Marine"/>
         <GlossaryPriority value="31"/>
-        <AIEvaluateAlias value="Marine"/>
-        <Fidget>
-            <ChanceArray index="Anim" value="33"/>
-            <ChanceArray index="Idle" value="33"/>
-            <ChanceArray index="Turn" value="33"/>
-        </Fidget>
     </CUnit>
-    <CUnit id="NodConfessor" parent="NodGround">
+    <CUnit id="NodConfessor" parent="NodInfantry">
         <SubgroupPriority value="65"/>
-        <Collide index="Small" value="1"/>
-        <Attributes index="Light" value="1"/>
-        <Attributes index="Biological" value="1"/>
         <LifeStart value="50"/>
         <LifeMax value="50"/>
-        <Speed value="2.25"/>
-        <LateralAcceleration value="46.0625"/>
-        <StationaryTurningRate value="999.8437"/>
-        <TurningRate value="999.8437"/>
-        <Sight value="8"/>
         <Food value="-2"/>
         <CostResource index="Minerals" value="100"/>
         <CostResource index="Vespene" value="75"/>
-        <RepairTime value="20"/>
         <BehaviorArray Link="NodMilitantVeterancyUpgrade"/>
         <BehaviorArray Link="NodConfessorAura"/>
         <WeaponArray Link="NodConfessorWeapon"/>
@@ -1397,69 +1336,30 @@
             <LayoutButtons Face="NodHallucinogenicGrenade" Type="AbilCmd" AbilCmd="NodHallucinogenicGrenade,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="NodConfessorAura" Type="Passive" Row="1" Column="0"/>
         </CardLayouts>
-        <Radius value="0.3"/>
-        <SeparationRadius value="0.3"/>
-        <InnerRadius value="0.3"/>
-        <CargoSize value="1"/>
-        <ScoreMake value="50"/>
-        <ScoreKill value="100"/>
-        <MinimapRadius value="0.375"/>
-        <TacticalAI value="Marine"/>
+        <CargoSize value="2"/>
         <GlossaryPriority value="31"/>
-        <AIEvaluateAlias value="Marine"/>
-        <Fidget>
-            <ChanceArray index="Anim" value="33"/>
-            <ChanceArray index="Idle" value="33"/>
-            <ChanceArray index="Turn" value="33"/>
-        </Fidget>
         <AbilArray Link="NodHallucinogenicGrenade"/>
     </CUnit>
-    <CUnit id="NodFanatic" parent="NodGround">
+    <CUnit id="NodFanatic" parent="NodInfantry">
         <SubgroupPriority value="30"/>
-        <Collide index="Small" value="1"/>
-        <Attributes index="Light" value="1"/>
-        <Attributes index="Biological" value="1"/>
         <LifeStart value="30"/>
         <LifeMax value="30"/>
         <Speed value="2.9492"/>
-        <LateralAcceleration value="46.0625"/>
-        <StationaryTurningRate value="999.8437"/>
-        <TurningRate value="999.8437"/>
         <Sight value="8"/>
         <Food value="-0.5"/>
         <CostResource index="Minerals" value="50"/>
         <CostResource index="Vespene" value="25"/>
-        <RepairTime value="20"/>
-        <Radius value="0.3"/>
-        <SeparationRadius value="0.3"/>
-        <InnerRadius value="0.3"/>
-        <CargoSize value="1"/>
         <ScoreMake value="50"/>
         <ScoreKill value="100"/>
         <MinimapRadius value="0.375"/>
-        <TacticalAI value="Marine"/>
         <GlossaryPriority value="31"/>
-        <AIEvaluateAlias value="Marine"/>
-        <Fidget>
-            <ChanceArray index="Anim" value="33"/>
-            <ChanceArray index="Idle" value="33"/>
-            <ChanceArray index="Turn" value="33"/>
-        </Fidget>
         <TacticalAIThink value="AIThinkBaneling"/>
-        <GlossaryStrongArray value="Marine"/>
-        <GlossaryStrongArray value="Zealot"/>
-        <GlossaryStrongArray value="Zergling"/>
-        <GlossaryWeakArray value="Thor"/>
-        <GlossaryWeakArray value="Stalker"/>
-        <GlossaryWeakArray value="Roach"/>
         <Facing value="45"/>
-        <KillDisplay value="Always"/>
-        <RankDisplay value="Always"/>
         <BehaviorArray Link="Frenzy"/>
         <EquipmentArray Weapon="NodVolatileBurstDummy"/>
         <AbilArray Link="NodFanaticExplode"/>
         <AbilArray Link="NodVolatileBurstBuilding"/>
-        <!--        <BehaviorArray Link="NodFanaticExplode"/>-->
+        <!--<BehaviorArray Link="NodFanaticExplode"/> Commented to not Explode on death -->
         <WeaponArray Link="NodVolatileBurst"/>
         <WeaponArray Link="NodVolatileBurstBuilding"/>
         <CardLayouts index="0">
@@ -1469,35 +1369,15 @@
             <LayoutButtons Face="DisableBuildingAttack" Type="AbilCmd" AbilCmd="NodVolatileBurstBuilding,Off" Row="2" Column="2"/>
         </CardLayouts>
     </CUnit>
-    <CUnit id="NodSaboteur" parent="NodGround">
+    <CUnit id="NodSaboteur" parent="NodInfantry">
         <SubgroupPriority value="45"/>
-        <Collide index="Small" value="1"/>
-        <Attributes index="Light" value="1"/>
-        <Attributes index="Biological" value="1"/>
         <LifeStart value="35"/>
         <LifeMax value="35"/>
-        <Speed value="2.25"/>
-        <LateralAcceleration value="46.0625"/>
-        <StationaryTurningRate value="999.8437"/>
-        <TurningRate value="999.8437"/>
-        <Sight value="8"/>
-        <Food value="-0.5"/>
+        <Speed value="2"/>
+        <Food value="1"/>
         <CostResource index="Minerals" value="50"/>
         <CostResource index="Vespene" value="25"/>
-        <RepairTime value="20"/>
-        <BehaviorArray Link="NodMilitantVeterancyUpgrade"/>
-        <CargoSize value="1"/>
-        <ScoreMake value="50"/>
-        <ScoreKill value="100"/>
-        <MinimapRadius value="0.375"/>
-        <TacticalAI value="Marine"/>
         <GlossaryPriority value="31"/>
-        <AIEvaluateAlias value="Marine"/>
-        <Fidget>
-            <ChanceArray index="Anim" value="33"/>
-            <ChanceArray index="Idle" value="33"/>
-            <ChanceArray index="Turn" value="33"/>
-        </Fidget>
         <AbilArray Link="NodSabotage"/>
         <AbilArray Link="NodBoobyTrap"/>
         <CardLayouts index="0">
@@ -1505,43 +1385,17 @@
             <LayoutButtons Face="NodBoobyTrap" Type="AbilCmd" AbilCmd="NodBoobyTrap,Execute" Row="2" Column="1"/>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="NodSabotage,Cancel" Row="2" Column="4"/>
         </CardLayouts>
-        <Radius value="0.375"/>
-        <SeparationRadius value="0.375"/>
-        <InnerRadius value="0.375"/>
     </CUnit>
-    <CUnit id="NodShadow" parent="NodGround">
+    <CUnit id="NodShadow" parent="NodInfantry">
         <SubgroupPriority value="55"/>
-        <Collide index="Small" value="1"/>
-        <Attributes index="Light" value="1"/>
-        <Attributes index="Biological" value="1"/>
         <LifeStart value="50"/>
         <LifeMax value="50"/>
         <Speed value="2.3984"/>
-        <LateralAcceleration value="46.0625"/>
-        <StationaryTurningRate value="999.8437"/>
-        <TurningRate value="999.8437"/>
-        <Sight value="8"/>
-        <Food value="1"/>
         <CostResource index="Minerals" value="50"/>
-        <RepairTime value="20"/>
         <BehaviorArray Link="NodMilitantVeterancyUpgrade"/>
         <BehaviorArray Link="NodShadowJump"/>
         <BehaviorArray Link="CloakNod"/>
-        <Radius value="0.375"/>
-        <SeparationRadius value="0.375"/>
-        <InnerRadius value="0.375"/>
-        <CargoSize value="1"/>
-        <ScoreMake value="50"/>
-        <ScoreKill value="100"/>
-        <MinimapRadius value="0.375"/>
-        <TacticalAI value="Marine"/>
         <GlossaryPriority value="31"/>
-        <AIEvaluateAlias value="Marine"/>
-        <Fidget>
-            <ChanceArray index="Anim" value="33"/>
-            <ChanceArray index="Idle" value="33"/>
-            <ChanceArray index="Turn" value="33"/>
-        </Fidget>
         <Mover value="CliffJumper"/>
         <AbilArray Link="NodShadowFlyMorph"/>
         <AbilArray Link="NodShadowGlide"/>

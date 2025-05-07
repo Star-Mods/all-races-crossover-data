@@ -108,7 +108,7 @@
         <AcceptedTransfers index="ModelMaterials" value="1"/>
         <On Terms="UnitHeightUpdate.*.Land" Send="Create SiegeTank_Land"/>
         <CreepHeightClass value="Tiny"/>
-        <!--        <DeathArray index="Normal" ModelLink="CabalAvengerTankDeathRagdoll" SoundLink="SiegeTank_Explode"/>-->
+        <DeathArray index="Normal" ModelLink="CabalAvengerTankDeathRagdoll" SoundLink="SiegeTank_Explode"/>
         <DeathCustomData Name="RagdollBasic"/>
         <DeathActorModel value="UnitDeathModelWithDeathMotionGround"/>
         <StandAnimTurnTime value="3.33"/>
