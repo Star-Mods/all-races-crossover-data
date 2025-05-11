@@ -233,14 +233,6 @@
     </CValidatorUnitFilters>
 
 
-    <CValidatorUnitCompareBehaviorCount id="HasFlameCannon"><Value value="1"/><Behavior value="NodAvatarFlameCannon"/></CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="HasStealthGenerator"><Value value="1"/><Behavior value="NodAvatarStealthGenerator"/></CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="HasDetector"><Value value="1"/><Behavior value="NodAvatarDetector"/></CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="HasBeamCannon"><Value value="1"/><Behavior value="NodAvatarBeamCannon"/></CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="HasNoFlameCannon"><Value value="0"/><Behavior value="NodAvatarFlameCannon"/></CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="HasNoStealthGenerator"><Value value="0"/><Behavior value="NodAvatarStealthGenerator"/></CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="HasNoDetector"><Value value="0"/><Behavior value="NodAvatarDetector"/></CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="HasNoBeamCannon"><Value value="0"/><Behavior value="NodAvatarBeamCannon"/></CValidatorUnitCompareBehaviorCount>
 
 
     <CValidatorCombine id="IsPilot">
@@ -261,7 +253,7 @@
         <CombineArray value="IsHighTemplar"/>
     </CValidatorCombine>
 
-    <CValidatorUnitType id="IsNodBlackHandCC3"><Value value="NodBlackHandCC3"/></CValidatorUnitType>
+    <CValidatorUnitType id="IsNodBlackHandCC3"><Value value="NodBlackHand"/></CValidatorUnitType>
     <CValidatorUnitType id="IsNodKaneCommando"><Value value="NodKaneCommando"/></CValidatorUnitType>
     <CValidatorUnitType id="IsNodMilitantRocket"><Value value="NodMilitantRocket"/></CValidatorUnitType>
     <CValidatorUnitType id="IsNodMilitant"><Value value="NodMilitant"/></CValidatorUnitType>
@@ -270,6 +262,9 @@
     <CValidatorUnitType id="IsNodSaboteur"><Value value="NodSaboteur"/></CValidatorUnitType>
     <CValidatorUnitType id="IsNodShadow"><Value value="NodShadow"/></CValidatorUnitType>
 
+    <CValidatorUnitType id="IsNodRedeemer">
+        <Value value="NodRedeemer"/>
+    </CValidatorUnitType>
     <CValidatorUnitType id="IsNodAvatarWreckage">
         <Value value="NodAvatarWreckage"/>
     </CValidatorUnitType>
@@ -303,12 +298,6 @@
         <CombineArray value="IsNodStealthTank"/>
     </CValidatorCombine>
 
-    <CValidatorUnitType id="IsNodFlameTank"><Value value="NodFlameTank"/></CValidatorUnitType>
-    <CValidatorUnitType id="IsCabalFlameTank"><Value value="CabalFlameTank"/></CValidatorUnitType>
-    <CValidatorUnitType id="IsNodAttackBike"><Value value="NodAttackBike"/></CValidatorUnitType>
-    <CValidatorUnitType id="IsNodBeam"><Value value="NodBeam"/></CValidatorUnitType>
-    <CValidatorUnitType id="IsNodStealthTank"><Value value="NodStealthTank"/></CValidatorUnitType>
-
     <CValidatorPlayerRequirement id="UseBikeUpgrade">
         <Find value="1"/>
         <Value value="UseBikeUpgrade"/>
@@ -320,4 +309,153 @@
         <Value value="1"/>
         <Behavior value="NodAvatarPilot"/>
     </CValidatorUnitCompareBehaviorCount>
+
+    <CValidatorCombine id="TargetHasEmptyPilotSlot">
+        <CombineArray value="HasEmptyPilotSlot1"/>
+        <CombineArray value="HasEmptyPilotSlot2"/>
+    </CValidatorCombine>
+
+    <CValidatorUnitCompareBehaviorCount id="HasEmptyPilotSlot1">
+        <Value value="1"/>
+        <Behavior value="HasEmptyPilotSlot1"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasEmptyPilotSlot2">
+        <Value value="1"/>
+        <Behavior value="HasEmptyPilotSlot2"/>
+    </CValidatorUnitCompareBehaviorCount>
+
+
+    <CValidatorCombine id="SourceIsValidRedeemerPilot">
+        <CombineArray value="SourceIsNodMilitant"/>
+        <CombineArray value="SourceIsNodMilitantRocket"/>
+        <CombineArray value="SourceIsNodSaboteur"/>
+        <CombineArray value="SourceIsNodBlackHandCC3"/>
+<!--        <CombineArray value="SourceIsNodConfessor"/>-->
+<!--        <CombineArray value="SourceIsNodFanatic"/>-->
+<!--        <CombineArray value="SourceIsNodTiberiumTrooper"/>-->
+<!--        <CombineArray value="SourceIsNodSilent"/>-->
+<!--        <CombineArray value="SourceIsNodShadow"/>-->
+<!--        <CombineArray value="SourceIsNodCommando"/>-->
+    </CValidatorCombine>
+
+    <CValidatorUnitType id="SourceIsNodMilitant"><WhichUnit Value="Source"/><Value value="NodMilitant"/></CValidatorUnitType>
+    <CValidatorUnitType id="SourceIsNodMilitantRocket"><WhichUnit Value="Source"/><Value value="NodMilitantRocket"/></CValidatorUnitType>
+    <CValidatorUnitType id="SourceIsNodConfessor"><WhichUnit Value="Source"/><Value value="NodConfessor"/></CValidatorUnitType>
+    <CValidatorUnitType id="SourceIsNodFanatic"><WhichUnit Value="Source"/><Value value="NodFanatic"/></CValidatorUnitType>
+    <CValidatorUnitType id="SourceIsNodSaboteur"><WhichUnit Value="Source"/><Value value="NodSaboteur"/></CValidatorUnitType>
+    <CValidatorUnitType id="SourceIsNodBlackHandCC3"><WhichUnit Value="Source"/><Value value="NodBlackHand"/></CValidatorUnitType>
+    <CValidatorUnitType id="SourceIsNodTiberiumTrooper"><WhichUnit Value="Source"/><Value value="NodTiberiumTrooper"/></CValidatorUnitType>
+    <CValidatorUnitType id="SourceIsNodSilent"><WhichUnit Value="Source"/><Value value="NodSilent"/></CValidatorUnitType>
+    <CValidatorUnitType id="SourceIsNodCommando"><WhichUnit Value="Source"/><Value value="NodKaneCommando"/></CValidatorUnitType>
+
+    <CValidatorUnitCompareBehaviorCount id="HasFlameCannon"><Value value="1"/><Behavior value="NodAvatarFlameCannon"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasStealthGenerator"><Value value="1"/><Behavior value="NodAvatarStealthGenerator"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasDetector"><Value value="1"/><Behavior value="NodAvatarDetector"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasBeamCannon"><Value value="1"/><Behavior value="NodAvatarBeamCannon"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNoFlameCannon"><Value value="0"/><Behavior value="NodAvatarFlameCannon"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNoStealthGenerator"><Value value="0"/><Behavior value="NodAvatarStealthGenerator"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNoDetector"><Value value="0"/><Behavior value="NodAvatarDetector"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNoBeamCannon"><Value value="0"/><Behavior value="NodAvatarBeamCannon"/></CValidatorUnitCompareBehaviorCount>
+
+
+    <CValidatorUnitCompareBehaviorCount id="HasNoNodRedeemerMachinegunRight"><Value value="0"/><Behavior value="NodRedeemerMachinegunRight"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNoNodRedeemerMachinegunLeft"><Value value="0"/><Behavior value="NodRedeemerMachinegunLeft"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNoNodRedeemerRocketLauncherRight"><Value value="0"/><Behavior value="NodRedeemerRocketLauncherRight"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNoNodRedeemerRocketLauncherLeft"><Value value="0"/><Behavior value="NodRedeemerRocketLauncherLeft"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNoNodRFTRight"><Value value="0"/><Behavior value="NodRFTRight"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNoNodRFTLeft"><Value value="0"/><Behavior value="NodRFTLeft"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNoNodRedeemerRegeneratorRight"><Value value="0"/><Behavior value="NodRedeemerRegeneratorRight"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNoNodRedeemerRegeneratorLeft"><Value value="0"/><Behavior value="NodRedeemerRegeneratorLeft"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNoNodRedeemerTiberiumThrowerRight"><Value value="0"/><Behavior value="NodRedeemerTiberiumThrowerRight"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNoNodRedeemerTiberiumThrowerLeft"><Value value="0"/><Behavior value="NodRedeemerTiberiumThrowerLeft"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNoNodRedeemerConfessionRight"><Value value="0"/><Behavior value="NodRedeemerConfessionRight"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNoNodRedeemerConfessionLeft"><Value value="0"/><Behavior value="NodRedeemerConfessionLeft"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNoNodRedeemerExplosivesRight"><Value value="0"/><Behavior value="NodRedeemerExplosivesRight"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNoNodRedeemerExplosivesLeft"><Value value="0"/><Behavior value="NodRedeemerExplosivesLeft"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNoNodRedeemerArtilleryBeaconRight"><Value value="0"/><Behavior value="NodRedeemerArtilleryBeaconRight"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNoNodRedeemerArtilleryBeaconLeft"><Value value="0"/><Behavior value="NodRedeemerArtilleryBeaconLeft"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNoNodRedeemerEMPRight"><Value value="0"/><Behavior value="NodRedeemerEMPRight"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNoNodRedeemerEMPLeft"><Value value="0"/><Behavior value="NodRedeemerEMPLeft"/></CValidatorUnitCompareBehaviorCount>
+
+    <CValidatorUnitCompareBehaviorCount id="HasNodRedeemerConfessionRight"><Value value="1"/><Behavior value="NodRedeemerConfessionRight"/></CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="HasNodRedeemerConfessionLeft"><Value value="1"/><Behavior value="NodRedeemerConfessionLeft"/></CValidatorUnitCompareBehaviorCount>
+
+
+
+
+    <CValidatorUnitType id="IsNodFlameTank"><Value value="NodFlameTank"/></CValidatorUnitType>
+    <CValidatorUnitType id="IsCabalFlameTank"><Value value="CabalFlameTank"/></CValidatorUnitType>
+    <CValidatorUnitType id="IsNodAttackBike"><Value value="NodAttackBike"/></CValidatorUnitType>
+    <CValidatorUnitType id="IsNodBeam"><Value value="NodBeam"/></CValidatorUnitType>
+    <CValidatorUnitType id="IsNodStealthTank"><Value value="NodStealthTank"/></CValidatorUnitType>
+
+    <CValidatorUnitType id="IsGDIConyardCC3"><Value value="GDIConyardCC3"/></CValidatorUnitType>
+    <CValidatorUnitType id="IsNodConstructionYard"><Value value="NodConstructionYard"/></CValidatorUnitType>
+    <CValidatorUnitType id="IsNodCrane"><Value value="NodCrane"/></CValidatorUnitType>
+    <CValidatorUnitType id="IsCabalOffenseCrawlerDeployed"><Value value="CabalOffenseCrawlerDeployed"/></CValidatorUnitType>
+    <CValidatorUnitType id="IsGDIBarracks"><Value value="GDIBarracks"/></CValidatorUnitType>
+<!--    <CValidatorUnitType id="IsBarracks"><Value value="Barracks"/></CValidatorUnitType>-->
+<!--    <CValidatorUnitType id="IsWarpGate"><Value value="WarpGate"/></CValidatorUnitType>-->
+<!--    <CValidatorUnitType id="IsGateway"><Value value="Gateway"/></CValidatorUnitType>-->
+    <CValidatorUnitType id="IsNodKaneBarracks"><Value value="NodKaneBarracks"/></CValidatorUnitType>
+    <CValidatorUnitType id="IsCabalDefenseCrawlerDeployed"><Value value="CabalDefenseCrawlerDeployed"/></CValidatorUnitType>
+<!--    <CValidatorUnitType id="IsFactory"><Value value="Factory"/></CValidatorUnitType>-->
+<!--    <CValidatorUnitType id="IsRoboticsFacility"><Value value="RoboticsFacility"/></CValidatorUnitType>-->
+    <CValidatorUnitType id="IsGDIWarFactory"><Value value="GDIWarFactory"/></CValidatorUnitType>
+    <CValidatorUnitType id="IsNodKaneWarFactory"><Value value="NodKaneWarFactory"/></CValidatorUnitType>
+    <CValidatorUnitType id="IsCabalSupportCrawlerDeployed"><Value value="CabalSupportCrawlerDeployed"/></CValidatorUnitType>
+<!--    <CValidatorUnitType id="IsStarport"><Value value="Starport"/></CValidatorUnitType>-->
+<!--    <CValidatorUnitType id="IsStargate"><Value value="Stargate"/></CValidatorUnitType>-->
+    <CValidatorUnitType id="IsGDIAirfield"><Value value="GDIAirfield"/></CValidatorUnitType>
+    <CValidatorUnitType id="IsNodKaneAirTower"><Value value="NodKaneAirTower"/></CValidatorUnitType>
+<!--    <CValidatorUnitType id="IsCommandCenter"><Value value="CommandCenter"/></CValidatorUnitType>-->
+<!--    <CValidatorUnitType id="IsNexus"><Value value="Nexus"/></CValidatorUnitType>-->
+<!--    <CValidatorUnitType id="IsHatchery"><Value value="Hatchery"/></CValidatorUnitType>-->
+<!--    <CValidatorUnitType id="IsLair"><Value value="Lair"/></CValidatorUnitType>-->
+<!--    <CValidatorUnitType id="IsHive"><Value value="Hive"/></CValidatorUnitType>-->
+    <CValidatorUnitType id="IsNodTiberiumRefinery"><Value value="NodTiberiumRefinery"/></CValidatorUnitType>
+    <CValidatorUnitType id="IsGDIRefinery"><Value value="GDIRefinery"/></CValidatorUnitType>
+
+    <CValidatorCombine id="IsCNCTabConstruction">
+        <CombineArray value="IsGDIConyardCC3"/>
+        <CombineArray value="IsNodConstructionYard"/>
+        <CombineArray value="IsNodCrane"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="IsCNCTabInfantry">
+        <CombineArray value="IsCabalOffenseCrawlerDeployed"/>
+        <CombineArray value="IsGDIBarracks"/>
+        <CombineArray value="IsBarracks"/>
+        <CombineArray value="IsWarpgate"/>
+        <CombineArray value="IsLarva"/>
+        <CombineArray value="IsGateway"/>
+        <CombineArray value="IsNodKaneBarracks"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="IsCNCTabVehicles">
+        <CombineArray value="IsCabalDefenseCrawlerDeployed"/>
+        <CombineArray value="IsFactory"/>
+        <CombineArray value="IsRoboticsFacility"/>
+        <CombineArray value="IsGDIWarFactory"/>
+        <CombineArray value="IsNodKaneWarFactory"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="IsCNCTabAirforce">
+        <CombineArray value="IsCabalSupportCrawlerDeployed"/>
+        <CombineArray value="IsStarport"/>
+        <CombineArray value="IsStarGate"/>
+        <CombineArray value="IsGDIAirfield"/>
+        <CombineArray value="IsNodKaneAirTower"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="IsCNCTabEconomy">
+        <CombineArray value="IsCabalDefenseCrawlerDeployed"/>
+        <CombineArray value="IsCabalOffenseCrawlerDeployed"/>
+        <CombineArray value="IsCabalSupportCrawlerDeployed"/>
+        <CombineArray value="IsCommandCenter"/>
+        <CombineArray value="IsNexus"/>
+        <CombineArray value="IsHatchery"/>
+        <CombineArray value="IsLair"/>
+        <CombineArray value="IsHive"/>
+        <CombineArray value="IsNodTiberiumRefinery"/>
+        <CombineArray value="IsGDIRefinery"/>
+    </CValidatorCombine>
+
+
 </Catalog>

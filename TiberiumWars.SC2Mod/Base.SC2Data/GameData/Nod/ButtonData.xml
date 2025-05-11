@@ -5,9 +5,13 @@
         <EditorCategories value="Race:Nod"/>
         <Icon value="Assets\icons\Nod\##icon##.dds"/>
     </CButton>
-    <CButton id="NodRedeemerFacility">
-        <Icon value="Assets\Icons\RedeemerIcon.dds"/>
+    <CButton default="1" id="CabalButton">
+        <?token id="icon" value="##id##"?>
+        <EditorCategories value="Race:Nod"/>
+        <Icon value="Assets\icons\Cabal\##icon##.dds"/>
     </CButton>
+    <CButton id="CabalRaider" parent="CabalButton"/>
+    <CButton id="NodRedeemerFacility" parent="NodButton" icon="NBRedeemer"/>
     <CButton id="CabalGrandTemple" parent="NodButton" icon="NodTempleIcon">
         <Icon value="Assets\Icons\GrandShrineIcon.dds"/>
         <AlertName value="Button/Name/NodTemple2"/>
@@ -16,10 +20,10 @@
     <CButton id="NodBuildTunnel">
         <Icon value="Assets\Icons\CabalTunnel.dds"/>
     </CButton>
-    <CButton id="NodGideonHolyOneTaunt">
+    <CButton id="CabalHolyOneTaunt">
         <Icon value="Assets\Textures\btn-tips-rubble.dds"/>
     </CButton>
-    <CButton id="NodGideonWidowLongeron" parent="NodButton" icon="SpeedupgradeBTN">
+    <CButton id="CabalWidowLongeron" parent="NodButton" icon="SpeedupgradeBTN">
         <Icon value="Assets\Textures\btn-upgrade-zerg-stukov-researchqueenfungalgrowth.dds"/>
     </CButton>
     <CButton id="NodGenericVenomCloakingUpgrade" parent="NodButton" icon="CloakModuleUpgrade"/>
@@ -51,33 +55,33 @@
     <CButton id="Level3DarkArmorUpgrade" parent="NodButton" icon="DarkArmamentsUpgrade"/>
     <CButton id="Level2NodInfantryAccuracyUpgrade" parent="NodButton" icon="AccuracyUpgrade"/>
     <CButton id="Level3NodInfantryAccuracyUpgrade" parent="NodButton" icon="AccuracyUpgrade"/>
-    <CButton id="NodGideonWidowReconstitutionStructure" parent="NodButton" icon="SpeedupgradeBTN">
+    <CButton id="CabalWidowReconstitutionStructure" parent="NodButton" icon="SpeedupgradeBTN">
         <Icon value="Assets\Textures\btn-ability-protoss-carrierrepairdrones.dds"/>
     </CButton>
-    <CButton id="NodGideonSurvivorBug" parent="NodButton" icon="SpeedupgradeBTN">
+    <CButton id="CabalSurvivorBug" parent="NodButton" icon="SpeedupgradeBTN">
         <Icon value="Assets\Textures\btn-ability-protoss-carrierrepairdrones.dds"/>
     </CButton>
-    <CButton id="NodTwlightDevoutGuardianGroupUpgrade">
+    <CButton id="CabalDevoutGuardianGroupUpgrade">
         <Icon value="Assets\Textures\btn-upgrade-karax-anionpulsecrystals.dds"/>
     </CButton>
-    <CButton id="NodTwlightLeviathanWeaponSystem" parent="NodButton" icon="SpeedupgradeBTN">
+    <CButton id="CabalLeviathanWeaponSystem" parent="NodButton" icon="SpeedupgradeBTN">
         <Icon value="Assets\Textures\btn-tips-laserdrillantiair.dds"/>
     </CButton>
-    <CButton id="NodTwlightAvengerTankFlameMine" parent="NodButton" icon="SpeedupgradeBTN">
+    <CButton id="CabalAvengerTankFlameMine" parent="NodButton" icon="SpeedupgradeBTN">
         <Icon value="Assets\Textures\btn-ability-hornerhan-widowmine-deathblossom.dds"/>
     </CButton>
-    <CButton id="NodGideonTrainVisceroid" parent="NodButton" icon="CNC3CommandoIcon">
+    <CButton id="CabalTrainVisceroid" parent="NodButton" icon="CNC3CommandoIcon">
         <Icon value="Assets\Textures\btn-unit-zerg-creeperhostspawnflyer-mecha.dds"/>
     </CButton>
     <CButton id="Level2NodVehicleAttackUpgrade" parent="NodButton" icon="AccuracyUpgrade">
         <Icon value="Assets\Textures\btn-techupgrade-terran-attacksair.dds"/>
     </CButton>
     <CButton id="ChargedParticleBeam" parent="NodButton" icon="SpeedupgradeBTN"/>
-    <CButton id="NodTwlightReaperGuerrillaCharge">
+    <CButton id="CabalReaperGuerrillaCharge">
         <Icon value="Assets\Textures\btn-upgrade-terran-nova-superscience.dds"/>
     </CButton>
-    <CButton id="NodTwlightReaperTacticalChargeWeapon"/>
-    <CButton id="NodGideonIntelligenceHighGround">
+    <CButton id="CabalReaperTacticalChargeWeapon"/>
+    <CButton id="CabalIntelligenceHighGround">
         <Icon value="Assets\Textures\btn-unit-protoss-alarak-taldarim-roboticsfacility.dds"/>
     </CButton>
     <CButton id="CabalWidowRebuiltfromWreckage" parent="NodButton" icon="WidowmakerIcon">
@@ -217,9 +221,7 @@
     </CButton>
     <CButton id="NodVenomCNC3" parent="NodButton" icon="CNC3VenomFighterIcon"/>
     <CButton id="NodVision" parent="NodButton" icon="FXNod_SP_EyesOfThePeopleUpgrade"/>
-    <CButton id="NodEMPAttack" parent="NodButton">
-        <Icon value="Assets\icons\FXNod_EMPCountermeasures.Upgradedds.dds"/>
-    </CButton>
+    <CButton id="NodEMPAttack" parent="NodButton" icon="FXNOD_EMPCountermeasuresUpgrade"/>
     <CButton id="MarkofKane" parent="NodButton" icon="InfusionEngineUpgrade"/>
     <CButton id="NodReinforcement" parent="NodButton">
         <Icon value="Assets\textures\btn-ability-protoss-hallucination.dds"/>
@@ -233,16 +235,16 @@
     <CButton id="SelfRepairNod" parent="NodButton" icon="BackUpSystemsUpgrade"/>
     <CButton id="Aftershock" parent="NodButton" icon="AftershockIcon"/>
     <CButton id="BlackHand" parent="NodButton" icon="BlackHandIcon"/>
-    <CButton id="EMPCabalHijacker" parent="NodButton" icon="FXNod_EMPCountermeasures.Upgradedds"/>
+    <CButton id="EMPCabalHijacker" parent="NodButton" icon="FXNOD_EMPCountermeasuresUpgrade"/>
     <CButton id="Healingfield" parent="NodButton" icon="FXGDI_MedicalTrainingUpgrade"/>
     <CButton id="Enlightened" parent="NodButton" icon="AwakenerIcon"/>
     <CButton id="Ascended" parent="NodButton" icon="AscendantIcon"/>
-    <CButton id="NodAvenger" parent="NodButton" icon="AvengerTankIcon"/>
+    <CButton id="CabalAvenger" parent="NodButton" icon="AvengerTankIcon"/>
     <CButton id="CabalHolySpirit" parent="NodButton" icon="HolySpiritIcon"/>
     <CButton id="NodBeamCNC3" parent="NodButton" icon="CNC3BeamCannonIcon"/>
     <CButton id="NodScorpion" parent="NodButton" icon="ScorpioIcon"/>
     <CButton id="NodKaneCommando" parent="NodButton" icon="NUCommando"/>
-    <CButton id="CabalCenturion" parent="NodButton" icon="CabalCenturionIcon"/>
+    <CButton id="CabalCenturion" parent="NodButton" icon="CabalCenturion"/>
     <CButton id="CabalSpecter" parent="NodButton" icon="GhostIcon"/>
     <CButton id="NodSpecter" parent="NodButton" icon="NUMorningStar"/>
     <CButton id="CabalSpider" parent="NodButton" icon="SpiderTankIcon"/>
@@ -253,11 +255,12 @@
     <CButton id="NodMilitant" parent="NodButton" icon="NUMilitant"/>
     <CButton id="NodMilitantRocket" parent="NodButton" icon="NUMilitantRocket"/>
     <CButton id="NodBikeCNC3" parent="NodButton" icon="CNC3MotorcycleIcon"/>
-    <CButton id="NodPurifierCNC3" parent="NodButton" icon="CNC3PurifierIcon"/>
+    <CButton id="NodAvatar" parent="NodButton" icon="NUAvatar"/>
+    <CButton id="NodPurifier" parent="NodButton" icon="NUPurifier"/>
     <CButton id="CabalTyrant" parent="NodButton" icon="TyrantIcon"/>
     <CButton id="NodHighConfessor" parent="NodButton" icon="SalvatorIcon"/>
     <CButton id="CabalDominator" parent="NodButton" icon="NodCommandoIcon"/>
-    <CButton id="CabalReaper" parent="NodButton" icon="CabalReaperIcon"/>
+    <CButton id="CabalReaper" parent="NodButton" icon="CabalReaper"/>
     <CButton id="NodMedusa" parent="NodButton" icon="MedusaIcon"/>
     <CButton id="CabalHijacker" parent="NodButton" icon="CabalHijackerIcon"/>
     <CButton id="CabalSalamander" parent="NodButton" icon="CabalSalamanderIcon"/>
@@ -268,9 +271,8 @@
     </CButton>
     <CButton id="CabalStealthTank" parent="NodButton" icon="StealthTankIcon"/>
     <CButton id="NodStealthTank" parent="NodButton" icon="NUStealthTank"/>
-<!--    <CButton id="NodStealthTank" parent="NodButton" icon="CNC3StealthTankIcon"/>-->
-    <CButton id="NodRaider" parent="NodButton" icon="4WDIcon"/>
-    <CButton id="NodEngineer" parent="NodButton" icon="NodEngineerIcon"/>
+    <CButton id="NodRaider" parent="NodButton" icon="NURaider"/>
+    <CButton id="CabalEngineer" parent="NodButton" icon="NodEngineerIcon"/>
     <CButton id="CabalDefenseCrawlerDeploy" parent="NodButton" icon="NodDefenseGroupConstructionPlantIcon">
         <HotkeySet value="TankModes"/>
     </CButton>
@@ -280,12 +282,12 @@
     <CButton id="CabalSupportCrawlerDeploy" parent="NodButton" icon="NodDefenseGroupConstructionPlantIcon">
         <HotkeySet value="TankModes"/>
     </CButton>
-    <CButton id="NodBike" parent="NodButton" icon="MotorcycleIcon"/>
+    <CButton id="CabalBike" parent="NodButton" icon="MotorcycleIcon"/>
     <CButton id="NodCobra" parent="NodButton" icon="CobraIcon"/>
     <CButton id="NodFlameTank" parent="NodButton" icon="NUFlameTank"/>
     <CButton id="CabalFlameTank" parent="NodButton" icon="FlameTankIcon"/>
     <CButton id="NodScalpel" parent="NodButton" icon="ScalpelIcon"/>
-    <CButton id="NodCallRedeemer" parent="NodButton" icon="RedeemerIcon"/>
+    <CButton id="NodRedeemer" parent="NodButton" icon="RedeemerIcon"/>
     <CButton id="NodStasisField" parent="NodButton" icon="FXNod_UA_CloakModuleUpgrade"/>
     <CButton id="FlameMine" parent="NodButton" icon="btn-nodmine"/>
     <CButton id="CabalUnderminer" parent="NodButton" icon="EarthquakeCannonIcon"/>
@@ -299,9 +301,15 @@
     <CButton id="SpeedUpgrade" parent="NodButton" icon="SpeedupgradeBTN"/>
     <CButton id="NodReckoner" parent="NodButton" icon="NUReckoner"/>
     <CButton id="CaabalReckoner" parent="NodButton" icon="RealizerIcon"/>
-    <CButton id="NodReckonerUnpack" parent="NodButton" icon="RealizerDeploymentIcon"><HotkeySet value="TankModes"/></CButton>
-    <CButton id="NodReckonerPack" parent="NodButton" icon="RealizerIcon"><HotkeySet value="TankModes"/></CButton>
-    <CButton id="NodReckonerPack2" parent="NodButton" icon="RealizerIcon"><HotkeySet value="TankModes"/></CButton>
+    <CButton id="NodReckonerUnpack" parent="NodButton" icon="RealizerDeploymentIcon">
+        <HotkeySet value="TankModes"/>
+    </CButton>
+    <CButton id="NodReckonerPack" parent="NodButton" icon="RealizerIcon">
+        <HotkeySet value="TankModes"/>
+    </CButton>
+    <CButton id="NodReckonerPack2" parent="NodButton" icon="RealizerIcon">
+        <HotkeySet value="TankModes"/>
+    </CButton>
     <CButton id="NodDeepBurrow" parent="NodButton">
         <Icon value="Assets\textures\btn-ability-zerg-deeptunnel.dds"/>
     </CButton>
@@ -367,6 +375,7 @@
     <CButton id="NodShadowGlide" parent="NodButton" icon="NAShadowGlide"/>
     <CButton id="NodShadowLand" parent="NodButton" icon="NAShadowLand"/>
     <CButton id="NodEmissaryDeploy" parent="NodButton" icon="NUEmissaryDeployed"/>
+    <CButton id="NodEnlightened" parent="NodButton"/>
     <CButton id="NodHarvesterCloak">
         <Icon value="Assets\Textures\btn-ability-terran-cloak-color.dds"/>
         <AlertIcon value="Assets\Textures\btn-ability-terran-cloak-color.dds"/>
@@ -377,21 +386,18 @@
     <CButton id="CabalControlNode" parent="NodButton" icon="NBControlNode"/>
     <CButton id="NodTiberiumRefinery" parent="NodButton" icon="NBTiberiumRefinery"/>
     <CButton id="NodTiberiumSilo" parent="NodButton" icon="NBTiberiumSilo"/>
-    <!--    <CButton id="NodTiberiumSilo" parent="NodButton" icon="NBTiberiumSilo">-->
-    <!--        <AlertName value="Button/Name/NodRefinery2"/>-->
-    <!--        <HotkeyAlias value="NodRefinery"/>-->
-    <!--    </CButton>-->
+    <CButton id="NodSilent" parent="NodButton" icon="NUAwakened"/>
+    <CButton id="NodTiberiumTrooper" parent="NodButton" icon="NUTiberiumTrooper"/>
     <CButton id="NodHarpy" parent="NodButton" icon="NUHarpy"/>
     <CButton id="NodBanshee" parent="NodButton" icon="NUBanshee"/>
     <CButton id="NodBlade" parent="NodButton" icon="NUBlade"/>
-    <CButton id="CabalNodDropShip" parent="NodButton" icon="NUDropship"/>
-    <CButton id="CabalAscender" parent="NodButton" icon="NUAscender"/>
+    <CButton id="CabalDropShip" parent="CabalButton"/>
+    <CButton id="CabalAscender" parent="CabalButton"/>
     <CButton id="NodArmageddon" parent="NodButton" icon="NUArmageddon"/>
     <CButton id="NodKaneVertigo" parent="NodButton" icon="NUVertigo"/>
     <CButton id="NodSabotage" parent="NodButton" icon="NACapture"/>
     <CButton id="NodBoobyTrap" parent="NodButton" icon="NABoobyTrap"/>
     <CButton id="NodFanaticExplode">
         <Icon value="Assets\Textures\btn-ability-zerg-explode-color.dds"/>
-        <AlertIcon value="Assets\Textures\btn-ability-zerg-explode-color.dds"/>
     </CButton>
 </Catalog>

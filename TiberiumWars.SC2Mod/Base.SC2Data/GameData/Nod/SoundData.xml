@@ -3863,18 +3863,18 @@
         <DupeDestroyCount value="8"/>
         <DupeMaximumMethod value="Replace"/>
     </CSound>
-    <CSound id="Redeemer_FlameAttackImpact" parent="Combat">
-        <EditorCategories value="Race:Terran"/>
-        <AssetArray File="Assets\Sounds\Terran\Hellion\Hellion_AttackImpact0.wav"/>
-        <AssetArray File="Assets\Sounds\Terran\Hellion\Hellion_AttackImpact1.wav"/>
-        <AssetArray File="Assets\Sounds\Terran\Hellion\Hellion_AttackImpact2.wav"/>
-        <AssetArray File="Assets\Sounds\Terran\Hellion\Hellion_AttackImpact3.wav"/>
-        <AssetArray File="Assets\Sounds\Terran\Hellion\Hellion_AttackImpact4.wav"/>
-        <DupeDestroyCount value="8"/>
-        <DupeMaximumMethod value="Replace"/>
-        <Pitch value="1.640000,3.160000"/>
-        <Volume value="-3.100000,-1.940000"/>
-    </CSound>
+<!--    <CSound id="Redeemer_FlameAttackImpact" parent="Combat">-->
+<!--        <EditorCategories value="Race:Terran"/>-->
+<!--        <AssetArray File="Assets\Sounds\Terran\Hellion\Hellion_AttackImpact0.wav"/>-->
+<!--        <AssetArray File="Assets\Sounds\Terran\Hellion\Hellion_AttackImpact1.wav"/>-->
+<!--        <AssetArray File="Assets\Sounds\Terran\Hellion\Hellion_AttackImpact2.wav"/>-->
+<!--        <AssetArray File="Assets\Sounds\Terran\Hellion\Hellion_AttackImpact3.wav"/>-->
+<!--        <AssetArray File="Assets\Sounds\Terran\Hellion\Hellion_AttackImpact4.wav"/>-->
+<!--        <DupeDestroyCount value="8"/>-->
+<!--        <DupeMaximumMethod value="Replace"/>-->
+<!--        <Pitch value="1.640000,3.160000"/>-->
+<!--        <Volume value="-3.100000,-1.940000"/>-->
+<!--    </CSound>-->
     <CSound id="CabalBasilisk_Yes" parent="TerranAck">
         <AssetArray File="Assets\Sounds\NUBasil_voiMovea.ogg" FacialGroup=""/>
         <AssetArray File="Assets\Sounds\NUBasil_voiMoveb.ogg" FacialGroup=""/>
@@ -3888,7 +3888,7 @@
         <AssetArray File="Assets\Sounds\NUBasil_voiMovej.ogg" FacialGroup=""/>
         <Volume value="3.000000,3.000000"/>
     </CSound>
-    <CSound id="Swann_TurretAttackLaunch2" parent="Combat">
+    <CSound id="NodFlameAttacklaunch" parent="Combat">
         <EditorCategories value="Race:Terran"/>
         <AssetArray File="Assets\Sounds\Terran\Hellion\Hellion_AttackLaunch0.wav"/>
         <AssetArray File="Assets\Sounds\Terran\Hellion\Hellion_AttackLaunch1.wav"/>
@@ -4105,7 +4105,7 @@
         <AssetArray File="Assets\Sounds\GUDozer_InfU_moveStartf.ogg" FacialGroup=""/>
         <Volume value="-3.000000,-3.000000"/>
     </CSound>
-    <CSound id="SiegeTank_AttackLaunch2" parent="Combat">
+    <CSound id="GDIShepherdTankAttackLaunch" parent="Combat">
         <EditorCategories value="Race:Terran"/>
         <AssetArray File="Assets\Sounds\GUSheph_cannWeapFirea.ogg" FacialGroup=""/>
         <AssetArray File="Assets\Sounds\GUSheph_cannWeapFireb.ogg" FacialGroup=""/>

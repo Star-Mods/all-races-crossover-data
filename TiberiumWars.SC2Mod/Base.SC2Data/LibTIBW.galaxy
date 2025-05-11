@@ -1,4 +1,5 @@
 include "TriggerLibs/NativeLib"
+include "LibSPPN_h"
 
 include "LibTIBW_h"
 
@@ -8,6 +9,7 @@ include "LibTIBW_h"
 // External Library Initialization
 void libTIBW_InitLibraries () {
     libNtve_InitVariables();
+    libSPPN_InitVariables();
 }
 
 // Variable Initialization
@@ -38,14 +40,15 @@ void libTIBW_InitVariables () {
         libTIBW_gv_buttons[init_i] = c_invalidDialogControlId;
     }
     libTIBW_gv_aF_SlimUI_PlayerGroup = PlayerGroupEmpty();
+    libTIBW_gv_alliancepanel = c_invalidDialogControlId;
     for (init_i = 0; init_i <= libTIBW_gv_platformMaxCountRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel; init_i += 1) {
         libTIBW_gv_bomberPFUnitsGroupRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel[init_i] = UnitGroupEmpty();
     }
     libTIBW_gv_bomberPlatformTempGroup = UnitGroupEmpty();
     libTIBW_gv_bomberFighterDebugGroup = UnitGroupEmpty();
     libTIBW_gv_bomberFighterTempGroup = UnitGroupEmpty();
-    libTIBW_gv_nodTopPanelRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = c_invalidDialogControlId;
-    libTIBW_gv_nodPanelRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = c_invalidDialogId;
+    libTIBW_gv_nODCommandPanl = c_invalidDialogControlId;
+    libTIBW_gv_nODCommandPanelDialog = c_invalidDialogId;
     libTIBW_gv_mCVDeploymentPanelRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = c_invalidDialogControlId;
     libTIBW_gv_mCVDeploymentTip = c_invalidDialogControlId;
     libTIBW_gv_decoration = c_invalidDialogControlId;
@@ -55,6 +58,38 @@ void libTIBW_InitVariables () {
 
 // Presets
 // Functions
+void libTIBW_gf_ApplyPlayerVoicePack (int lp_player, string lp_voiceID) {
+    // Variable Declarations
+    string lv_voicePackReward;
+
+    // Automatic Variable Declarations
+    int auto7577C56C_catalog;
+    string auto7577C56C_entry;
+    string auto7577C56C_fieldPath;
+    int auto7577C56C_player;
+    int auto7577C56C_i;
+    int auto1B59D74B_ae;
+    int auto1B59D74B_var;
+
+    // Variable Initialization
+    lv_voicePackReward = "";
+
+    // Implementation
+    auto7577C56C_catalog = c_gameCatalogVoicePack;
+    auto7577C56C_entry = lp_voiceID;
+    auto7577C56C_fieldPath = "UnlockedRewardArray";
+    auto7577C56C_player = lp_player;
+    auto7577C56C_i = 0;
+    for ( ; auto7577C56C_i <= CatalogFieldValueCount(c_gameCatalogVoicePack,auto7577C56C_entry,auto7577C56C_fieldPath,auto7577C56C_player)-1 ; auto7577C56C_i += 1 ) {
+        lv_voicePackReward = CatalogFieldValueGet(c_gameCatalogVoicePack,auto7577C56C_entry,auto7577C56C_fieldPath+"["+IntToString(auto7577C56C_i)+"]",auto7577C56C_player);
+        auto1B59D74B_ae = (CatalogFieldValueCount(c_gameCatalogReward, lv_voicePackReward, "ReplacementArray", lp_player) - 1);
+        auto1B59D74B_var = 0;
+        for ( ; auto1B59D74B_var <= auto1B59D74B_ae; auto1B59D74B_var += 1 ) {
+            CatalogLinkReplace(lp_player, c_gameCatalogSound, CatalogFieldValueGet(c_gameCatalogReward, lv_voicePackReward, "ReplacementArray[" + IntToString(auto1B59D74B_var) + "].From", lp_player), CatalogFieldValueGet(c_gameCatalogReward, lv_voicePackReward, "ReplacementArray[" + IntToString(auto1B59D74B_var) + "].To", lp_player));
+        }
+    }
+}
+
 void libTIBW_gf_RegisterUnit (unit lp_unit, int lp_player) {
     // Automatic Variable Declarations
     // Implementation
@@ -139,38 +174,6 @@ void libTIBW_gf_DeleteProductionUnit (unit lp_unit, int lp_player, int lp_produc
 
 }
 
-void libTIBW_gf_ApplyPlayerVoicePack (int lp_player, string lp_voiceID) {
-    // Variable Declarations
-    string lv_voicePackReward;
-
-    // Automatic Variable Declarations
-    int auto7577C56C_catalog;
-    string auto7577C56C_entry;
-    string auto7577C56C_fieldPath;
-    int auto7577C56C_player;
-    int auto7577C56C_i;
-    int auto1B59D74B_ae;
-    int auto1B59D74B_var;
-
-    // Variable Initialization
-    lv_voicePackReward = "";
-
-    // Implementation
-    auto7577C56C_catalog = c_gameCatalogVoicePack;
-    auto7577C56C_entry = lp_voiceID;
-    auto7577C56C_fieldPath = "UnlockedRewardArray";
-    auto7577C56C_player = lp_player;
-    auto7577C56C_i = 0;
-    for ( ; auto7577C56C_i <= CatalogFieldValueCount(c_gameCatalogVoicePack,auto7577C56C_entry,auto7577C56C_fieldPath,auto7577C56C_player)-1 ; auto7577C56C_i += 1 ) {
-        lv_voicePackReward = CatalogFieldValueGet(c_gameCatalogVoicePack,auto7577C56C_entry,auto7577C56C_fieldPath+"["+IntToString(auto7577C56C_i)+"]",auto7577C56C_player);
-        auto1B59D74B_ae = (CatalogFieldValueCount(c_gameCatalogReward, lv_voicePackReward, "ReplacementArray", lp_player) - 1);
-        auto1B59D74B_var = 0;
-        for ( ; auto1B59D74B_var <= auto1B59D74B_ae; auto1B59D74B_var += 1 ) {
-            CatalogLinkReplace(lp_player, c_gameCatalogSound, CatalogFieldValueGet(c_gameCatalogReward, lv_voicePackReward, "ReplacementArray[" + IntToString(auto1B59D74B_var) + "].From", lp_player), CatalogFieldValueGet(c_gameCatalogReward, lv_voicePackReward, "ReplacementArray[" + IntToString(auto1B59D74B_var) + "].To", lp_player));
-        }
-    }
-}
-
 trigger auto_libTIBW_gf_NodAirRaid_Trigger = null;
 unit auto_libTIBW_gf_NodAirRaid_lp_unit;
 region auto_libTIBW_gf_NodAirRaid_lp_area;
@@ -209,10 +212,10 @@ void libTIBW_gf_ShowhideNodtoppanel (bool lp_showHide, int lp_player) {
     // Implementation
     auto18566EEF_val = lp_showHide;
     if (auto18566EEF_val == true) {
-        DialogSetVisible(libTIBW_gv_nodPanelRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel, PlayerGroupSingle(lp_player), true);
+        DialogSetVisible(libTIBW_gv_nODCommandPanelDialog, PlayerGroupSingle(lp_player), true);
     }
     else if (auto18566EEF_val == false) {
-        DialogSetVisible(libTIBW_gv_nodPanelRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel, PlayerGroupSingle(lp_player), false);
+        DialogSetVisible(libTIBW_gv_nODCommandPanelDialog, PlayerGroupSingle(lp_player), false);
     }
     else {
     }
@@ -393,6 +396,85 @@ void libTIBW_gf_CreateDropPod (int lp_race, point lp_location, unitgroup lp_unit
 
 // Triggers
 //--------------------------------------------------------------------------------------------------
+// Trigger: Test
+//--------------------------------------------------------------------------------------------------
+bool libTIBW_gt_Test_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    PlayerOptionOverride(1, "simplecommandcard", "0");
+    PlayerSetRace(1, "Nod");
+    PlayerSetAlliance(2, c_allianceIdVision, 1, true);
+    PlayerSetAlliance(2, c_allianceIdControl, 1, true);
+    PlayerSetRace(2, "Terr");
+    GameSetSpeedValue(c_gameSpeedFaster);
+    TriggerExecute(libTIBW_gt_PlayNod, true, false);
+    libSPPN_gf_RunTester();
+    TriggerExecute(libTIBW_gt_NodTopPanelStarchainTest, true, false);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libTIBW_gt_Test_Init () {
+    libTIBW_gt_Test = TriggerCreate("libTIBW_gt_Test_Func");
+    TriggerAddEventMapInit(libTIBW_gt_Test);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Play Nod
+//--------------------------------------------------------------------------------------------------
+bool libTIBW_gt_PlayNod_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    playergroup autoC0198CC5_g;
+    int autoC0198CC5_var;
+    playergroup autoB12AAF8F_g;
+    int autoB12AAF8F_var;
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TriggerExecute(libTIBW_gt_InitBeaconsButton, true, false);
+    autoC0198CC5_g = PlayerGroupAll();
+    autoC0198CC5_var = -1;
+    while (true) {
+        autoC0198CC5_var = PlayerGroupNextPlayer(autoC0198CC5_g, autoC0198CC5_var);
+        if (autoC0198CC5_var < 0) { break; }
+        if ((PlayerRace(autoC0198CC5_var) == "Nod")) {
+            UISetFrameVisible(PlayerGroupSingle(autoC0198CC5_var), c_syncFrameTypeConsolePanel, false);
+            DialogControlHookupStandard(c_triggerControlTypePanel, "UIContainer/ConsoleUIContainer");
+            DialogControlSendAnimationEvent(DialogControlLastCreated(), PlayerGroupSingle(autoC0198CC5_var), "SlimUI_On");
+        }
+
+    }
+    TriggerEnable(libTIBW_gt_Borrowedbombercustomreturntrajectory, true);
+    TriggerEnable(libTIBW_gt_BorrowedbombercreationbindingStarchainTest, true);
+    TriggerEnable(libTIBW_gt_LaunchairstrikeStarchainTest, true);
+    Wait(1.0, c_timeGame);
+    DialogControlHookupStandard(c_triggerControlTypePanel, "UIContainer/ConsoleUIContainer");
+    autoB12AAF8F_g = PlayerGroupAll();
+    autoB12AAF8F_var = -1;
+    while (true) {
+        autoB12AAF8F_var = PlayerGroupNextPlayer(autoB12AAF8F_g, autoB12AAF8F_var);
+        if (autoB12AAF8F_var < 0) { break; }
+        if ((PlayerRace(autoB12AAF8F_var) == "Nod")) {
+            DialogControlSendAnimationEvent(DialogControlLastCreated(), PlayerGroupSingle(autoB12AAF8F_var), "SlimUI_On");
+        }
+
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libTIBW_gt_PlayNod_Init () {
+    libTIBW_gt_PlayNod = TriggerCreate("libTIBW_gt_PlayNod_Func");
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: MoveCommandOverrideExecute
 //--------------------------------------------------------------------------------------------------
 bool libTIBW_gt_MoveCommandOverrideExecute_Func (bool testConds, bool runActions) {
@@ -401,27 +483,32 @@ bool libTIBW_gt_MoveCommandOverrideExecute_Func (bool testConds, bool runActions
     unit lv_target;
 
     // Automatic Variable Declarations
+    string autoAD11D6DA_val;
+
     // Variable Initialization
     lv_unit = EventUnit();
     lv_target = EventUnitTargetUnit();
-
-    // Conditions
-    if (testConds) {
-        if (!((ValidatorExecute("IsPilot", lv_unit, lv_unit) == 0))) {
-            return false;
-        }
-
-        if (!((UnitGetType(lv_target) == "NodAvatarWreckage"))) {
-            return false;
-        }
-    }
 
     // Actions
     if (!runActions) {
         return true;
     }
 
-    UnitBehaviorAdd(lv_unit, "NodAvatarPilot", lv_unit, 1);
+    autoAD11D6DA_val = UnitGetType(lv_target);
+    if (autoAD11D6DA_val == "NodAvatarWreckage") {
+        if ((ValidatorExecute("IsPilot", lv_unit, lv_unit) == 0)) {
+            UnitBehaviorAdd(lv_unit, "NodAvatarPilot", lv_unit, 1);
+        }
+
+    }
+    else if (autoAD11D6DA_val == "NodRedeemer") {
+        if ((ValidatorExecute("SourceIsValidRedeemerPilot", lv_unit, lv_unit) == 0)) {
+            UnitBehaviorAdd(lv_unit, "NodRedeemerPilot", lv_unit, 1);
+        }
+
+    }
+    else {
+    }
     return true;
 }
 
@@ -444,19 +531,19 @@ bool libTIBW_gt_MoveCommandOverrideCancel_Func (bool testConds, bool runActions)
     lv_unit = EventUnit();
     lv_target = EventUnitTargetUnit();
 
-    // Conditions
-    if (testConds) {
-        if (!((UnitHasBehavior2(lv_unit, "NodAvatarPilot") == true))) {
-            return false;
-        }
-    }
-
     // Actions
     if (!runActions) {
         return true;
     }
 
-    UnitBehaviorRemove(lv_unit, "NodAvatarPilot", 1);
+    if ((UnitHasBehavior2(lv_unit, "NodAvatarPilot") == true)) {
+        UnitBehaviorRemove(lv_unit, "NodAvatarPilot", 1);
+    }
+
+    if ((UnitHasBehavior2(lv_unit, "NodRedeemerPilot") == true)) {
+        UnitBehaviorRemove(lv_unit, "NodRedeemerPilot", 1);
+    }
+
     return true;
 }
 
@@ -479,19 +566,19 @@ bool libTIBW_gt_MoveCommandOverrideComplete_Func (bool testConds, bool runAction
     lv_unit = EventUnit();
     lv_target = EventUnitTargetUnit();
 
-    // Conditions
-    if (testConds) {
-        if (!((UnitHasBehavior2(lv_unit, "NodAvatarPilot") == true))) {
-            return false;
-        }
-    }
-
     // Actions
     if (!runActions) {
         return true;
     }
 
-    UnitBehaviorRemove(lv_unit, "NodAvatarPilot", 1);
+    if ((UnitHasBehavior2(lv_unit, "NodAvatarPilot") == true)) {
+        UnitBehaviorRemove(lv_unit, "NodAvatarPilot", 1);
+    }
+
+    if ((UnitHasBehavior2(lv_unit, "NodRedeemerPilot") == true)) {
+        UnitBehaviorRemove(lv_unit, "NodRedeemerPilot", 1);
+    }
+
     return true;
 }
 
@@ -773,9 +860,9 @@ void libTIBW_gt_BeaconsButtonUsed_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: AF_SlimUI
+// Trigger: Production UI
 //--------------------------------------------------------------------------------------------------
-bool libTIBW_gt_AF_SlimUI_Func (bool testConds, bool runActions) {
+bool libTIBW_gt_ProductionUI_Func (bool testConds, bool runActions) {
     // Variable Declarations
     int lv_player;
 
@@ -815,68 +902,9 @@ bool libTIBW_gt_AF_SlimUI_Func (bool testConds, bool runActions) {
 }
 
 //--------------------------------------------------------------------------------------------------
-void libTIBW_gt_AF_SlimUI_Init () {
-    libTIBW_gt_AF_SlimUI = TriggerCreate("libTIBW_gt_AF_SlimUI_Func");
-    TriggerAddEventChatMessage(libTIBW_gt_AF_SlimUI, c_playerAny, "-slim", false);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Test
-//--------------------------------------------------------------------------------------------------
-bool libTIBW_gt_Test_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    PlayerOptionOverride(1, "simplecommandcard", "0");
-    PlayerSetRace(1, "Nod");
-    TriggerExecute(libTIBW_gt_AF_SlimUI, true, false);
-    PlayerSetAlliance(2, c_allianceIdVision, 1, true);
-    PlayerSetAlliance(2, c_allianceIdControl, 1, true);
-    PlayerSetRace(2, "Terr");
-    GameSetSpeedValue(c_gameSpeedFaster);
-    TriggerExecute(libTIBW_gt_PlayNod, true, false);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libTIBW_gt_Test_Init () {
-    libTIBW_gt_Test = TriggerCreate("libTIBW_gt_Test_Func");
-    TriggerAddEventMapInit(libTIBW_gt_Test);
-}
-
-//--------------------------------------------------------------------------------------------------
-// Trigger: Play Nod
-//--------------------------------------------------------------------------------------------------
-bool libTIBW_gt_PlayNod_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    playergroup autoC0198CC5_g;
-    int autoC0198CC5_var;
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    autoC0198CC5_g = PlayerGroupAll();
-    autoC0198CC5_var = -1;
-    while (true) {
-        autoC0198CC5_var = PlayerGroupNextPlayer(autoC0198CC5_g, autoC0198CC5_var);
-        if (autoC0198CC5_var < 0) { break; }
-        DialogControlHookupStandard(c_triggerControlTypePanel, "UIContainer/ConsoleUIContainer");
-    }
-    TriggerEnable(libTIBW_gt_Borrowedbombercustomreturntrajectory, true);
-    TriggerEnable(libTIBW_gt_BorrowedbombercreationbindingStarchainTest, true);
-    TriggerEnable(libTIBW_gt_LaunchairstrikeStarchainTest, true);
-    TriggerExecute(libTIBW_gt_InitBeaconsButton, true, false);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libTIBW_gt_PlayNod_Init () {
-    libTIBW_gt_PlayNod = TriggerCreate("libTIBW_gt_PlayNod_Func");
+void libTIBW_gt_ProductionUI_Init () {
+    libTIBW_gt_ProductionUI = TriggerCreate("libTIBW_gt_ProductionUI_Func");
+    TriggerAddEventChatMessage(libTIBW_gt_ProductionUI, c_playerAny, "-slim", false);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -1050,88 +1078,6 @@ void libTIBW_gt_LaunchairstrikeStarchainTest_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: Unlock all unitsStarchain Test
-//--------------------------------------------------------------------------------------------------
-bool libTIBW_gt_UnlockallunitsStarchainTest_Func (bool testConds, bool runActions) {
-    // Automatic Variable Declarations
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    TechTreeUnitAllow(1, "ZoneEnforcer", true);
-    TechTreeUnitAllow(1, "GDIEngineer", true);
-    TechTreeUnitAllow(1, "GDIZoneTrooper", true);
-    TechTreeUnitAllow(1, "GDIZoneDefender", true);
-    TechTreeUnitAllow(1, "GDIShepherdTank", true);
-    TechTreeUnitAllow(1, "GDIBunker", true);
-    TechTreeUnitAllow(1, "GDIBarracks", true);
-    TechTreeUnitAllow(1, "GDIWarFactory", true);
-    TechTreeUnitAllow(1, "ComandPost", true);
-    TechTreeUnitAllow(1, "GDIRefinery", true);
-    TechTreeUnitAllow(1, "ComandPost", true);
-    TechTreeUnitAllow(1, "Dozer", true);
-    TechTreeUnitAllow(1, "NodBike", true);
-    TechTreeUnitAllow(1, "NodRaider", true);
-    TechTreeUnitAllow(1, "CabalMarauder", true);
-    TechTreeUnitAllow(1, "Ascended", true);
-    TechTreeUnitAllow(1, "Enlightened", true);
-    TechTreeUnitAllow(1, "Devout", true);
-    TechTreeUnitAllow(1, "CabalAvengerTank", true);
-    TechTreeUnitAllow(1, "FlameTank", true);
-    TechTreeUnitAllow(1, "CabalCenturion", true);
-    TechTreeUnitAllow(1, "StealthTank", true);
-    TechTreeUnitAllow(1, "NodScorpion", true);
-    TechTreeUnitAllow(1, "CabalTyrant", true);
-    TechTreeUnitAllow(1, "CabalUnderminer", true);
-    TechTreeUnitAllow(1, "NodSpecter", true);
-    TechTreeUnitAllow(1, "CabalAfterShock", true);
-    TechTreeUnitAllow(1, "BlackHand", true);
-    TechTreeUnitAllow(1, "HighConfessor", true);
-    TechTreeUnitAllow(1, "CabalHijacker", true);
-    TechTreeUnitAllow(1, "CabalReaper", true);
-    TechTreeUnitAllow(1, "Bane", true);
-    TechTreeUnitAllow(1, "CabalSalamander", true);
-    TechTreeUnitAllow(1, "Scalpel", true);
-    TechTreeUnitAllow(1, "CabalBasilisk", true);
-    TechTreeUnitAllow(1, "Medusa", true);
-    TechTreeUnitAllow(1, "CabalLeviathan", true);
-    TechTreeUnitAllow(1, "CabalHolySpirit", true);
-    TechTreeUnitAllow(1, "CabalWidow", true);
-    TechTreeUnitAllow(1, "NodRedeemer", true);
-    TechTreeUnitAllow(1, "CabalDominator", true);
-    TechTreeUnitAllow(1, "NodMantis", true);
-    TechTreeUnitAllow(1, "NodTurretO", true);
-    TechTreeUnitAllow(1, "CabalMissilePodO", true);
-    TechTreeUnitAllow(1, "NodObeliskOfLight", true);
-    TechTreeUnitAllow(1, "CabalIncinerator", true);
-    TechTreeUnitAllow(1, "CabalFlameColumn", true);
-    TechTreeUnitAllow(1, "NodKaneCommando", true);
-    TechTreeUnitAllow(1, "NodEngineer", true);
-    TechTreeUnitAllow(1, "Cobra", true);
-    TechTreeUnitAllow(1, "NodWarFactorySP", true);
-    TechTreeUnitAllow(1, "NodHangarSPDefense", true);
-    TechTreeUnitAllow(1, "NodPowerPlantSP", true);
-    TechTreeUnitAllow(1, "NodOPCenterSP", true);
-    TechTreeUnitAllow(1, "NodCraneSP", true);
-    TechTreeUnitAllow(1, "NodTurret", true);
-    TechTreeUnitAllow(1, "NodTurretO", true);
-    TechTreeUnitAllow(1, "CabalMissilePod", true);
-    TechTreeUnitAllow(1, "CabalMissilePodO", true);
-    TechTreeUnitAllow(1, "NodChemicalPlantSP", true);
-    TechTreeUnitAllow(1, "NodShrineSP", true);
-    TechTreeUnitAllow(1, "NodTechLabSP", true);
-    TechTreeUnitAllow(1, "CabalSpider", true);
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libTIBW_gt_UnlockallunitsStarchainTest_Init () {
-    libTIBW_gt_UnlockallunitsStarchainTest = TriggerCreate("libTIBW_gt_UnlockallunitsStarchainTest_Func");
-    TriggerAddEventChatMessage(libTIBW_gt_UnlockallunitsStarchainTest, c_playerAny, "wdnmd", true);
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: Nod Top PanelStarchain Test
 //--------------------------------------------------------------------------------------------------
 bool libTIBW_gt_NodTopPanelStarchainTest_Func (bool testConds, bool runActions) {
@@ -1143,15 +1089,14 @@ bool libTIBW_gt_NodTopPanelStarchainTest_Func (bool testConds, bool runActions) 
 
     TriggerEnable(TriggerGetCurrent(), false);
     libNtve_gf_CreateUnitsWithDefaultFacing(1, "NodCaster", c_unitCreateIgnorePlacement, 1, Point(3.0, 3.0));
-    libTIBW_gv_nodCasterRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = UnitLastCreated();
-    DialogCreate(150, 550, c_anchorRight, 0, -80, true);
+    libTIBW_gv_nODCaster = UnitLastCreated();
+    DialogCreate((76 * 2), (76 * 9), c_anchorRight, 0, -100, true);
     DialogSetImageVisible(DialogLastCreated(), false);
-    libTIBW_gv_nodPanelRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = DialogLastCreated();
-    DialogControlCreateFromTemplate(libTIBW_gv_nodPanelRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel, c_triggerControlTypeCommandPanel, "NodTopPanel/SoACommandPanelTemplate");
-    libTIBW_gv_nodTopPanelRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = DialogControlLastCreated();
-    DialogControlSetPosition(libTIBW_gv_nodTopPanelRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel, PlayerGroupAll(), c_anchorCenter, 160, 76);
-    libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(libTIBW_gv_nodCasterRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel), PlayerGroupAll());
-    DialogSetVisible(libTIBW_gv_nodPanelRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel, PlayerGroupAll(), true);
+    libTIBW_gv_nODCommandPanelDialog = DialogLastCreated();
+    DialogControlCreateFromTemplate(libTIBW_gv_nODCommandPanelDialog, c_triggerControlTypeCommandPanel, "NodTopPanel/SoACommandPanelTemplateNOD");
+    libTIBW_gv_nODCommandPanl = DialogControlLastCreated();
+    libNtve_gf_SetDialogItemUnitGroup(DialogControlLastCreated(), libNtve_gf_ConvertUnitToUnitGroup(libTIBW_gv_nODCaster), PlayerGroupAll());
+    DialogSetVisible(libTIBW_gv_nODCommandPanelDialog, PlayerGroupAll(), true);
     return true;
 }
 
@@ -1357,6 +1302,8 @@ void libTIBW_gt__GDIDropPod_Init () {
 }
 
 void libTIBW_InitTriggers () {
+    libTIBW_gt_Test_Init();
+    libTIBW_gt_PlayNod_Init();
     libTIBW_gt_MoveCommandOverrideExecute_Init();
     libTIBW_gt_MoveCommandOverrideCancel_Init();
     libTIBW_gt_MoveCommandOverrideComplete_Init();
@@ -1367,13 +1314,10 @@ void libTIBW_InitTriggers () {
     libTIBW_gt_RecalculateBeacons_Init();
     libTIBW_gt_InitBeaconsButton_Init();
     libTIBW_gt_BeaconsButtonUsed_Init();
-    libTIBW_gt_AF_SlimUI_Init();
-    libTIBW_gt_Test_Init();
-    libTIBW_gt_PlayNod_Init();
+    libTIBW_gt_ProductionUI_Init();
     libTIBW_gt_Borrowedbombercustomreturntrajectory_Init();
     libTIBW_gt_BorrowedbombercreationbindingStarchainTest_Init();
     libTIBW_gt_LaunchairstrikeStarchainTest_Init();
-    libTIBW_gt_UnlockallunitsStarchainTest_Init();
     libTIBW_gt_NodTopPanelStarchainTest_Init();
     libTIBW_gt_MCVDeployPanelStarchainTest_Init();
     libTIBW_gt_DeploymentdetectionStarchainTest_Init();
@@ -1399,4 +1343,6 @@ void libTIBW_InitLib () {
     libTIBW_InitVariables();
     libTIBW_InitTriggers();
 }
+
+include "LibSPPN"
 

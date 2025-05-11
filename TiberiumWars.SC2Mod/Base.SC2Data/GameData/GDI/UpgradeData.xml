@@ -5,9 +5,6 @@
         <Icon value="Assets\Icons\GDI\##icon##.dds"/>
         <Race value="GDI"/>
     </CUpgrade>
-    <CUpgrade id="OutpostBuild" parent="GDIUpgrade">
-        <EffectArray Operation="Set" Reference="Abil,GDIBuild,InfoArray[Build20].Time" Value="5.000000"/>
-    </CUpgrade>
     <CUpgrade id="GDIJetPack" parent="GDIUpgrade" icon="FXGDI_AssaultJetpacks">
         <EffectArray Operation="Set" Reference="Unit,GDIZoneDefender,Mover" Value="CliffJumper"/>
         <EffectArray Operation="Set" Reference="Unit,GDIZoneTrooper,Mover" Value="CliffJumper"/>

@@ -1,0 +1,16 @@
+UI/ResourceIcon0=Assets\Textures\money.dds
+UI/ResourceIcon0_Terr=Assets\Textures\money.dds
+UI/ResourceIconNoBackground0=Assets\Textures\money.dds
+UI/ResourceIconNoBackground0_Terr=Assets\Textures\money.dds
+UI/ResourceIcon1=Assets\Textures\manpower.dds
+UI/ResourceIcon1_Terr=Assets\Textures\manpower.dds
+UI/ResourceIconNoBackground1=Assets\Textures\manpower.dds
+UI/ResourceIconNoBackground1_Terr=Assets\Textures\manpower.dds
+UI/ResourceIcon2=Assets\Textures\science.dds
+UI/ResourceIcon2_Terr=Assets\Textures\science.dds
+UI/ResourceIconNoBackground2=Assets\Textures\science.dds
+UI/ResourceIconNoBackground2_Terr=Assets\Textures\science.dds
+UI/ResourceIcon3=Assets\Textures\science.dds
+UI/ResourceIcon3_Terr=Assets\Textures\science.dds
+UI/ResourceIconNoBackground3=Assets\Textures\science.dds
+UI/ResourceIconNoBackground3_Terr=Assets\Textu

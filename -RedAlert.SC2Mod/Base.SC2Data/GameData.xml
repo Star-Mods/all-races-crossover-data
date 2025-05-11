@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Includes>
+    <Catalog path="GameData/SovietUnitData.xml"/>
+    <Catalog path="RedAlertWIP.xml"/>
+    <Catalog path="GameData/ChangelingData.xml"/>
+</Includes>

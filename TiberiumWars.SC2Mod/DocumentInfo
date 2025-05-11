@@ -5,18 +5,37 @@
     </Icon>
     <Dependencies>
         <Value>bnet:Void Multi (Mod)/0.0/999,file:Mods/VoidMulti.SC2Mod</Value>
-        <Value>bnet:[ARX] Nod Assets/0.0/330516,file:Assets\all-races-crossover-assets\CNC.SC2Mod</Value>
+        <Value>bnet:[AR2] RA3 Assets/0.0/332076,file:Mods\all-races-crossover-data\Assets-RA3.SC2Mod</Value>
+        <Value>bnet:[ARX] Nod Assets/0.0/330516,file:Mods\all-races-crossover-data\Assets-CNC.SC2Mod</Value>
     </Dependencies>
     <ScreenshotHowToPlay>
         <File>
+            <Value>Images/screenshot.png</Value>
+            <Value>Images/screenshot.png</Value>
+            <Value>Images/screenshot.png</Value>
+            <Value>Images/screenshot.png</Value>
+            <Value>Images/screenshot.png</Value>
+            <Value>Images/screenshot.png</Value>
             <Value>Images/screenshot.png</Value>
             <Value>Images/screenshot.png</Value>
         </File>
         <CaptionId>
             <Value>1</Value>
             <Value>1</Value>
+            <Value>1</Value>
+            <Value>1</Value>
+            <Value>1</Value>
+            <Value>1</Value>
+            <Value>1</Value>
+            <Value>1</Value>
         </CaptionId>
         <Flags>
+            <Value> </Value>
+            <Value> </Value>
+            <Value> </Value>
+            <Value> </Value>
+            <Value> </Value>
+            <Value> </Value>
             <Value> </Value>
             <Value> </Value>
         </Flags>

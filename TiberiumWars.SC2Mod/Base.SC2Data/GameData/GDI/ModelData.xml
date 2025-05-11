@@ -93,6 +93,11 @@
         <Model value="Assets\Models\GDI\GDI Striker\GDI Striker.m3"/>
         <EditorCategories value="Race:GDI"/>
     </CModel>
+<!--    <CModel id="GDIMammoth" parent="Unit" Race="Terran">-->
+<!--        <Model value="Assets\Models\GDIMamoth.m3"/>-->
+<!--        <Flags index="AutoUnload" value="1"/>-->
+<!--        <SelectionRadius value="1.300000"/>-->
+<!--    </CModel>-->
     <CModel id="GDIMammoth" parent="Unit">
         <Model value="Assets\Models\GDI\Mammoth Tank\Mammoth.m3"/>
         <EditorCategories value="Race:GDI"/>

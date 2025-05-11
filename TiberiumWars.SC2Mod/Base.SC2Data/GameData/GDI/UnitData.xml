@@ -1,113 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
-    <CUnit default="1" id="GDIGround" parent="CNCUnitBase">
-        <Race value="GDI"/>
-        <FlagArray index="ArmySelect" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranVehiclePlating"/>
-        <Speed value="2.8125"/>
-        <Acceleration value="1000"/>
-        <CostCategory value="Army"/>
-        <AttackTargetPriority value="20"/>
-        <Collide index="Ground" value="1"/>
-        <Collide index="ForceField" value="1"/>
-        <Collide index="Locust" value="1"/>
-        <PlaneArray index="Ground" value="1"/>
-        <AbilArray Link="move"/>
-        <AbilArray Link="stop"/>
-        <AbilArray Link="attack"/>
-        <CardLayouts>
-            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
-            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
-            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
-            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
-            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
-        </CardLayouts>
-        <CargoSize value="2"/>
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:CNC"/>
-        <StationaryTurningRate value="990"/>
-        <TurningRate value="990"/>
-        <GlossaryCategory value="Unit/Category/GDIUnits"/>
-        <HotkeyCategory value="Unit/Category/GDIUnits"/>
-    </CUnit>
-    <CUnit default="1" id="GDIAir" parent="CNCUnitBase">
-        <Race value="GDI"/>
-        <FlagArray index="ArmySelect" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/MechAirPlating"/>
-        <Speed value="2.75"/>
-        <CostCategory value="Army"/>
-        <AttackTargetPriority value="20"/>
-        <AbilArray Link="move"/>
-        <AbilArray Link="stop"/>
-        <AbilArray Link="attack"/>
-        <CardLayouts>
-            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
-            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
-            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
-            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
-            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
-        </CardLayouts>
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:CNC"/>
-        <StationaryTurningRate value="990"/>
-        <TurningRate value="990"/>
-        <PlaneArray index="Air" value="1"/>
-        <Collide index="Flying" value="1"/>
-        <Mover value="Fly"/>
-        <Height value="3.75"/>
-        <VisionHeight value="4"/>
-        <GlossaryCategory value="Unit/Category/GDIUnits"/>
-        <HotkeyCategory value="Unit/Category/GDIUnits"/>
-    </CUnit>
-    <CUnit default="1" id="GDIStructure" parent="CNCUnitBase">
-        <Race value="GDI"/>
-        <Facing value="45"/>
-        <FlagArray index="Turnable" value="0"/>
-        <FlagArray index="PreventDefeat" value="1"/>
-        <FlagArray index="PenaltyRevealed" value="1"/>
-        <FlagArray index="TownAlert" value="1"/>
-        <FlagArray index="NoPortraitTalk" value="1"/>
-        <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
-        <FogVisibility value="Snapshot"/>
-        <PlaneArray index="Ground" value="1"/>
-        <Collide index="Burrow" value="1"/>
-        <Collide index="Ground" value="1"/>
-        <Collide index="Structure" value="1"/>
-        <Collide index="RoachBurrow" value="1"/>
-        <Collide index="ForceField" value="1"/>
-        <Collide index="Locust" value="1"/>
-        <Collide index="Small" value="1"/>
-        <Attributes index="Armored" value="1"/>
-        <Attributes index="Mechanical" value="1"/>
-        <Attributes index="Structure" value="1"/>
-        <LifeArmorName value="Unit/LifeArmorName/TerranBuildingPlating"/>
-        <LifeArmor value="1"/>
-        <CostCategory value="Technology"/>
-        <AbilArray Link="BuildInProgress"/>
-        <AbilArray Link="que5PassiveCancelToSelection"/>
-        <BehaviorArray Link="FireSuppressionSystem"/>
-        <BehaviorArray Link="GDIBuildingsunits"/>
-        <BehaviorArray Link="TerranBuildingBurnDown"/>
-        <!--        <BehaviorArray Link="Deployable"/>-->
-        <CardLayouts>
-            <LayoutButtons Face="GDISellStructureButton" Type="AbilCmd" AbilCmd="GDISellMCV,Execute" Row="2" Column="2"/>
-            <LayoutButtons Face="Halt" Type="AbilCmd" AbilCmd="BuildInProgress,Halt" Row="2" Column="3"/>
-            <LayoutButtons Face="SelectBuilder" Type="SelectBuilder" Row="2" Column="2"/>
-            <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
-            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="que5PassiveCancelToSelection,CancelLast" Row="2" Column="4"/>
-        </CardLayouts>
-        <Footprint value="Footprint3x3Contour"/>
-        <PlacementFootprint value="Footprint3x3"/>
-        <MinimapRadius value="1.5"/>
-        <EditorCategories value="ObjectType:Structure,ObjectFamily:CNC"/>
-        <GlossaryAlias value=""/>
-        <EffectArray index="Birth" value="GDIStructureSpawnSet"/>
-        <GlossaryCategory value="Unit/Category/GDIUnits"/>
-        <HotkeyCategory value="Unit/Category/GDIUnits"/>
-        <!--        <AbilArray Link="Deployable"/>-->
-    </CUnit>
-    <CUnit default="1" id="GDIMissile" parent="MISSILE">
-        <Race value="GDI"/>
-        <EditorCategories value="ObjectType:Projectile,ObjectFamily:CNC"/>
-    </CUnit>
+
     <CUnit default="1" id="GDIConstructionBase" parent="GDIStructure">
         <AbilArray Link="GDIBuild"/>
         <CardLayouts index="0">
@@ -829,6 +722,39 @@
         </Fidget>
     </CUnit>
     <!--vehicles-->
+<!--    <CUnit id="GDIMammothMecha" parent="SovietGround">-->
+<!--        <Subtitle value="UnitSubtitle/Sujijia"/>-->
+<!--        <Race value="GDI"/>-->
+<!--        <FlagArray index="AIPressForwardDisabled" value="1"/>-->
+<!--        <PushPriority value="21"/>-->
+<!--        <Response value="AcquireNoFlee"/>-->
+<!--        <Attributes index="Mechanical" value="1"/>-->
+<!--        <LifeStart value="4000"/>-->
+<!--        <LifeMax value="4000"/>-->
+<!--        <LifeArmor value="1"/>-->
+<!--        <LifeRegenRate value="5"/>-->
+<!--        <Speed value="1.1015"/>-->
+<!--        <Deceleration value="500"/>-->
+<!--        <Sight value="17"/>-->
+<!--        <Food value="-5"/>-->
+<!--        <CostResource index="Minerals" value="4500"/>-->
+<!--        <RepairTime value="41.667"/>-->
+<!--        <KillXP value="25"/>-->
+<!--        <AbilArray Link="GDIMammothSacrificiallaunch"/>-->
+<!--        <BehaviorArray Link="SovietT4unitveteranbehavior"/>-->
+<!--        <BehaviorArray Link="GDIMammothCrushLevel4"/>-->
+<!--        <WeaponArray Link="GDIMammothMechDualArmorPiercingCannon" Turret="RAApocalypseMainCannon"/>-->
+<!--        <WeaponArray Link="GDIMammothMultitubemissilelauncher1" Turret="GDIMammothMechMissileTurret1"/>-->
+<!--        <WeaponArray Link="GDIMammothMultitubemissilelauncher2" Turret="GDIMammothMechMissileTurret2"/>-->
+<!--        <WeaponArray Link="RARoller4"/>-->
+<!--        <CardLayouts index="0">-->
+<!--            <LayoutButtons Face="Stim3222" Type="AbilCmd" AbilCmd="GDIMammothSacrificiallaunch,255" Row="1" Column="0"/>-->
+<!--            <LayoutButtons Face="Stim322" Type="AbilCmd" AbilCmd="GDIMammothSacrificiallaunch,255" Row="1" Column="1"/>-->
+<!--        </CardLayouts>-->
+<!--        <Radius value="1"/>-->
+<!--        <InnerRadius value="0.5"/>-->
+<!--        <SubgroupPriority value="15"/>-->
+<!--    </CUnit>-->
     <CUnit id="GDIMammothTank" parent="GDIGround">
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <PushPriority value="15"/>

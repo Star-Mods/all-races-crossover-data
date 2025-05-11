@@ -75,6 +75,12 @@
         <value>Prot</value>
         <value>Nod</value>
         <value>GDI</value>
+        <value>CABAL</value>
+        <value>Skrin</value>
+        <value>Allied</value>
+        <value>Japan</value>
+        <value>Soviet</value>
+        <value>China</value>
         <value>Neut</value>
     </category>
     <category name="UpgradeType">

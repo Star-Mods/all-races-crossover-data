@@ -99,9 +99,7 @@
     </CRequirement>
     <CRequirement id="RedeemerRequirements" parent="NodRequirementUnit" requirement="REQ_NodRedeemer"/>
     <CRequirement id="NodArmInterceptor" parent="NodRequirementUnit" requirement="REQ_NodInterceptor"/>
-    <CRequirement id="HaveChemiclaPlant" parent="NodRequirementUnit" requirement="UC_ChemicalPlant">
-        <NodeArray index="Use" Link="CountUnitNodChemicalPlantCompleteOnlyTechTreeCheat"/>
-    </CRequirement>
+    <CRequirement id="HaveChemiclaPlant" parent="NodRequirementUnit" requirement="UC_ChemicalPlant"/>
     <CRequirement id="HaveNodShrine" parent="NodRequirementUnit" requirement="UC_NodShrine"/>
     <CRequirement id="HaveNodRefinery" parent="NodRequirementUnit" requirement="UC_NodTiberiumRefinery"/>
     <CRequirement id="HaveNodTechPlant" parent="NodRequirementUnit" requirement="UC_NodTechLab"/>
@@ -113,34 +111,34 @@
         <NodeArray index="Show" Link="RC_NodFactionNod"/>
     </CRequirement>
     <!--    Terrarn-->
-    <CRequirement id="NodTwlightGuerillaChargeUseRequirement" upgrade="FlameZone">
+    <CRequirement id="CabalGuerillaChargeUseRequirement" upgrade="FlameZone">
         <NodeArray index="Use" Link="CountUpgradeTacticalChargeDeviceCompleteOnlyTechTreeCheat"/>
     </CRequirement>
-    <CRequirement id="NodGideonTauntUseRequirement" upgrade="FlameZone">
+    <CRequirement id="CabalTauntUseRequirement" upgrade="FlameZone">
         <NodeArray index="Use" Link="CountUpgradeIntelligenceHighgroundCompleteOnlyTechTreeCheat"/>
     </CRequirement>
-    <CRequirement id="NodTwlightTacticalChargedWeaponGuerillaChargedBeam">
+    <CRequirement id="CabalTacticalChargedWeaponGuerillaChargedBeam">
         <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeTacticalChargeDeviceQueuedOrBetter0"/>
         <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeTacticalChargeDeviceQueuedOrBetter0"/>
     </CRequirement>
-    <CRequirement id="NodTwlightGuardianGroupRequirement">
-        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeNodTwlightDevoutUpgradeGuardianGroupQueuedOrBetter0"/>
-        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeNodTwlightDevoutUpgradeGuardianGroupQueuedOrBetter0"/>
+    <CRequirement id="CabalGuardianGroupRequirement">
+        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeCabalDevoutUpgradeGuardianGroupQueuedOrBetter0"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeCabalDevoutUpgradeGuardianGroupQueuedOrBetter0"/>
     </CRequirement>
-    <CRequirement id="NodGideonBugSurvivor">
-        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeNodGideonSurvivorBugQueuedOrBetter0"/>
-        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeNodGideonSurvivorBugQueuedOrBetter0"/>
+    <CRequirement id="CabalBugSurvivor">
+        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeCabalSurvivorBugQueuedOrBetter0"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeCabalSurvivorBugQueuedOrBetter0"/>
     </CRequirement>
-    <CRequirement id="NodGideonHolyOneTauntAbilityUpgrade">
+    <CRequirement id="CabalHolyOneTauntAbilityUpgrade">
         <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeIntelligenceHighgroundQueuedOrBetter0"/>
         <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeIntelligenceHighgroundQueuedOrBetter0"/>
     </CRequirement>
     <CRequirement id="WidowLongeronsUpgradeRequirement">
-        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeNodGideonWidowLongeronsQueuedOrBetter0"/>
-        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeNodGideonWidowLongeronsQueuedOrBetter0"/>
+        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeCabalWidowLongeronsQueuedOrBetter0"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeCabalWidowLongeronsQueuedOrBetter0"/>
     </CRequirement>
-    <CRequirement id="NodTwlightFlameMine" upgrade="FlameZone">
-        <NodeArray index="Use" Link="CountUpgradeNodTwlightFlameMineCompleteOnlyTechTreeCheat"/>
+    <CRequirement id="CabalFlameMine" upgrade="FlameZone">
+        <NodeArray index="Use" Link="CountUpgradeCabalFlameMineCompleteOnlyTechTreeCheat"/>
     </CRequirement>
     <CRequirement id="NodGenericBlackDisciple">
         <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeNodGenericBlackDiscipleQueuedOrBetter0"/>
@@ -219,12 +217,12 @@
         <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeNodGenericPurifyingFlamesQueuedOrBetter0"/>
     </CRequirement>
     <CRequirement id="WidowReconsititutionRequirement">
-        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeNodGideonWidowReconstitutionStructureQueuedOrBetter0"/>
-        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeNodGideonWidowReconstitutionStructureQueuedOrBetter0"/>
+        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeCabalWidowReconstitutionStructureQueuedOrBetter0"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeCabalWidowReconstitutionStructureQueuedOrBetter0"/>
     </CRequirement>
     <CRequirement id="LeviathanWeaponSystemRequirement">
-        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeNodTwlightLeviathanWeaponSystemQueuedOrBetter0"/>
-        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeNodTwlightLeviathanWeaponSystemQueuedOrBetter0"/>
+        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeCabalLeviathanWeaponSystemQueuedOrBetter0"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeCabalLeviathanWeaponSystemQueuedOrBetter0"/>
     </CRequirement>
     <CRequirement id="NodUseVenomCloaking" parent="NodRequireUpgrade" upgrade="VenomStealth">
         <NodeArray index="Use" Link="CountUpgradeVenomcloakingCompleteOnlyTechTreeCheat"/>
@@ -236,9 +234,9 @@
         <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeObeliskChargeQueuedOrBetter0"/>
         <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeObeliskChargeQueuedOrBetter0"/>
     </CRequirement>
-    <CRequirement id="NodTwlightLearnFlameMine" parent="NodLearnUpgrade" upgrade="FlameZone">
-        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeNodTwlightFlameMineQueuedOrBetter0"/>
-        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeNodTwlightFlameMineQueuedOrBetter0"/>
+    <CRequirement id="CabalLearnFlameMine" parent="NodLearnUpgrade" upgrade="FlameZone">
+        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeCabalFlameMineQueuedOrBetter0"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionNBHQueuedOrBetter1EqCountUpgradeCabalFlameMineQueuedOrBetter0"/>
     </CRequirement>
     <CRequirement id="NodLearnMedusaHeal" parent="NodLearnUpgrade" upgrade="MedusaHeal">
         <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionMOKQueuedOrBetter1EqCountUpgradeMedusaHealQueuedOrBetter0"/>

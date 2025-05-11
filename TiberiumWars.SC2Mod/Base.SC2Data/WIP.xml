@@ -1,277 +1,1778 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
-    <!--    <CValidatorUnitType id="TargetIsNotNodConfessor">-->
-    <!--        <Find value="0"/>-->
-    <!--        <Value value="NodConfessor"/>-->
-    <!--    </CValidatorUnitType>-->
-    <!--    <CUpgrade default="1" id="ZergMeleeWeapons">-->
-    <!--        <EffectArray Reference="Effect,NodVolatileBurstU,Amount" Value="2"/>-->
-    <!--        <EffectArray Reference="Effect,NodVolatileBurstU2,Amount" Value="5"/>-->
-    <!--        <EffectArray Reference="Effect,NodVolatileBurstFriendlyUnitDamage,Amount" Value="2"/>-->
-    <!--        <EffectArray Reference="Effect,NodVolatileBurstFriendlyBuildingDamage,Amount" Value="5"/>-->
-    <!--        <EffectArray Reference="Weapon,NodVolatileBurstDummy,Level" Value="1"/>-->
-    <!--        <EffectArray Reference="Effect,NodVolatileBurstU,AttributeBonus[Light]" Value="2.000000"/>-->
-    <!--        <EffectArray Reference="Effect,NodVolatileBurstFriendlyUnitDamage,AttributeBonus[Light]" Value="2.000000"/>-->
-    <!--    </CUpgrade>-->
-    <CEffectSet id="NodTurretsHubBuildSet">
-        <EffectArray value="NodTurretsHubSuicideWithCaster"/>
-        <EffectArray value="MakePrecursor"/>
-        <!--        <EffectArray value="NodTurretsHubBuildLaunchMissile"/>-->
+    <CActorSiteOpLocalOffset id="SOpHigher005">
+        <LocalOffset value="0.0,0.000000,0.05"/>
+    </CActorSiteOpLocalOffset>
+
+    <CActorForceCylinder id="CNCRailgunAttackDeathForce">
+        <Receiver Subject="::Main"/>
+        <Host Subject="_ImpactGuide"/>
+        <HostSiteOps Ops="SOpForwardCasterPoint SOpMoveBy1" HoldPosition="1" HoldRotation="1"/>
+        <HostEnd Subject="_ImpactGuide"/>
+        <HostEndSiteOps Ops="SOpForwardCasterPointInverted SOpMoveBy1" HoldPosition="1" HoldRotation="1"/>
+        <Radius value="1.000000"/>
+        <Magnitude value="33.000000,7.000000"/>
+        <Duration value="0.150000"/>
+    </CActorForceCylinder>
+
+
+    <CEffectEnumArea id="NodRedeemerPilotSearchArea">
+        <!--        <MaxCount value="1"/>-->
         <EditorCategories value="Race:Nod"/>
+        <!--        <LaunchLocation Value="TargetPoint"/>-->
+        <!--        <ImpactLocation Value="CasterUnit"/>-->
+        <SearchFilters value="-;Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Arc="360" Radius="0.5" Effect="NodRedeemerPilotSet"/>
+        <SearchFlags index="ExtendByUnitRadius" value="1"/>
+        <SearchFilters value="Player;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CEffectEnumArea>
+    <CValidatorLocationCompareRange id="NodRedeemerPilotTargetCheck">
+        <Compare value="LE"/>
+        <Range value="3"/>
+        <WhichLocation Value="CasterUnit"/>
+    </CValidatorLocationCompareRange>
+    <CEffectSet id="NodRedeemerPilotSet">
+        <ValidatorArray value="IsNodRedeemer"/>
+        <ValidatorArray value="TargetHasEmptyPilotSlot"/>
+        <!--        <ValidatorArray value="NodRedeemerPilotTargetCheck"/>-->
+        <EditorCategories value="Race:Nod"/>
+        <EffectArray value="NodRedeemerPilotSwitch"/>
+        <EffectArray value="NodRedeemerPilotSuicide"/>
     </CEffectSet>
-    <CEffectApplyBehavior id="NodTurretsHubSuicideWithCaster">
-        <ValidatorArray index="0" value=""/>
+    <CEffectSwitch id="NodRedeemerPilotSwitch">
         <EditorCategories value="Race:Nod"/>
-    </CEffectApplyBehavior>
-    <CEffectLaunchMissile id="NodTurretsHubBuildLaunchMissile">
-        <ImpactEffect value="RemovePrecursor"/>
-        <Flags index="TravelValidation" value="1"/>
-        <AmmoUnit value="NodTurretsHubBuildMissile"/>
-        <LaunchEffect value="NodTurretsHubBuildCreatePersistant"/>
-        <EditorCategories value="Race:Nod"/>
-    </CEffectLaunchMissile>
-    <CEffectCreatePersistent id="NodTurretsHubBuildCreatePersistant">
-        <WhichLocation Value="SourceUnit"/>
-        <Flags index="PersistUntilDestroyed" value="1"/>
-        <InitialDelay value="0.1875"/>
-        <PeriodicValidator value="SourceNotDead"/>
-        <PeriodicEffectArray value="NodTurretsHubBuildCreateUnit"/>
-        <PeriodicPeriodArray value="0.0625"/>
-        <EditorCategories value="Race:Nod"/>
-    </CEffectCreatePersistent>
-    <CEffectCreateUnit id="NodTurretsHubBuildCreateUnit">
-        <WhichLocation Value="SourceUnit"/>
-        <Origin Value="SourceUnit"/>
-        <CreateFlags index="SetFacing" value="1"/>
-        <SpawnEffect value="NodTurretsHubBuildIssueOrder"/>
-        <SpawnUnit value="NodTurretsHubBuildUnit"/>
-        <SpawnRange value="0"/>
-        <EditorCategories value="Race:Nod"/>
-    </CEffectCreateUnit>
-    <CEffectIssueOrder id="NodTurretsHubBuildIssueOrder">
-        <Abil value="NodTurretsHubBuildApplyBehavior"/>
-        <CmdFlags index="Preempt" value="1"/>
-        <Target Effect="NodTurretsHubBuildLaunchMissile" Value="TargetUnit"/>
-        <EditorCategories value="Race:Nod"/>
-    </CEffectIssueOrder>
-    <CEffectApplyBehavior id="NodTurretsHubBuildApplyBehavior">
-        <EditorCategories value="Race:Nod"/>
-    </CEffectApplyBehavior>
-    <CEffectRemoveBehavior id="NodTurretsHubBuildRemoveBehavior">
-        <WhichUnit Value="Caster"/>
+        <CaseArray Validator="HasEmptyPilotSlot1" Effect="NodRedeemerPilot1Set"/>
+        <CaseArray Validator="HasEmptyPilotSlot2" Effect="NodRedeemerPilot2Set"/>
+    </CEffectSwitch>
+    <CEffectSet id="NodRedeemerPilot1Set">
+        <EffectArray value="HasEmptyPilotSlot1RB"/>
+        <EffectArray value="NodRedeemerPilot1BehaviorSwitch"/>
+        <EffectArray value="NodRedeemerPilotSuicide"/>
+    </CEffectSet>
+    <CEffectSwitch id="NodRedeemerPilot1BehaviorSwitch">
+        <CaseArray Validator="SourceIsNodMilitant" Effect="NodRedeemerHeavyMachinegunRightAB"/>
+        <CaseArray Validator="SourceIsNodMilitantRocket" Effect="NodRedeemerRocketLauncherRightAB"/>
+        <CaseArray Validator="SourceIsNodBlackHandCC3" Effect="NodRFT_RightAB"/>
+        <CaseArray Validator="SourceIsNodSaboteur" Effect="NodRedeemerRegeneratorRightAB"/>
+        <CaseArray Validator="SourceIsNodConfessor" Effect="NodRedeemerConfessionRightAB"/>
+        <CaseArray Validator="SourceIsNodFanatic" Effect="NodRedeemerExplosivesRightAB"/>
+        <CaseArray Validator="SourceIsNodTiberiumTrooper" Effect="NodRTT_RightAB"/>
+        <CaseArray Validator="SourceIsNodShadow" Effect="NodRedeemerArtilleryBeaconRightAB"/>
+        <CaseArray Validator="SourceIsNodSilent" Effect="NodRedeemerEMICannonRightAB"/>
+        <CaseArray Validator="SourceIsNodCommando" Effect="NodRedeemerRedemptionRightAB"/>
+    </CEffectSwitch>
+    <CEffectSet id="NodRedeemerPilot2Set">
+        <EffectArray value="HasEmptyPilotSlot2RB"/>
+        <EffectArray value="NodRedeemerPilot2BehaviorSwitch"/>
+        <EffectArray value="NodRedeemerPilotSuicide"/>
+    </CEffectSet>
+    <CEffectSwitch id="NodRedeemerPilot2BehaviorSwitch">
+        <CaseArray Validator="SourceIsNodMilitant" Effect="NodRedeemerHeavyMachinegunLeftAB"/>
+        <CaseArray Validator="SourceIsNodMilitantRocket" Effect="NodRedeemerRocketLauncherLeftAB"/>
+        <CaseArray Validator="SourceIsNodBlackHandCC3" Effect="NodRFT_LeftAB"/>
+        <CaseArray Validator="SourceIsNodSaboteur" Effect="NodRedeemerRegeneratorLeftAB"/>
+        <CaseArray Validator="SourceIsNodConfessor" Effect="NodRedeemerConfessionLeftAB"/>
+        <CaseArray Validator="SourceIsNodFanatic" Effect="NodRedeemerExplosivesLeftAB"/>
+        <CaseArray Validator="SourceIsNodTiberiumTrooper" Effect="NodRTT_LeftAB"/>
+        <CaseArray Validator="SourceIsNodShadow" Effect="NodRedeemerArtilleryBeaconLeftAB"/>
+        <CaseArray Validator="SourceIsNodSilent" Effect="NodRedeemerEMICannonLeftAB"/>
+        <CaseArray Validator="SourceIsNodCommando" Effect="NodRedeemerRedemptionLeftAB"/>
+    </CEffectSwitch>
+    <CEffectRemoveBehavior id="HasEmptyPilotSlot1RB">
+        <BehaviorLink value="HasEmptyPilotSlot1"/>
         <EditorCategories value="Race:Nod"/>
     </CEffectRemoveBehavior>
-    <CAbilBuild id="NodTurretsHubBuild">
-        <InfoArray index="Build1" Unit="NodShredderTurret">
-            <Charge>
-                <CountMax value="3"/>
-                <CountStart value="3"/>
-                <CountUse value="1"/>
-                <Link value="NodTurretsHubBuild"/>
-                <Flags index="EnableChargeTimeQueuing" value="1"/>
-            </Charge>
-            <Button DefaultButtonFace="NodShredderTurret"/>
-            <ValidatorArray value="HasVision"/>
-        </InfoArray>
-        <InfoArray index="Build2" Unit="NodLaserTurret">
-            <Charge>
-                <CountMax value="3"/>
-                <CountStart value="3"/>
-                <CountUse value="1"/>
-                <Link value="NodTurretsHubBuild"/>
-                <Flags index="EnableChargeTimeQueuing" value="1"/>
-            </Charge>
-            <Button DefaultButtonFace="NodLaserTurret"/>
-            <ValidatorArray value="HasVision"/>
-        </InfoArray>
-        <InfoArray index="Build3" Unit="NodMissileTurret">
-            <Charge>
-                <CountMax value="3"/>
-                <CountStart value="3"/>
-                <CountUse value="1"/>
-                <Link value="NodTurretsHubBuild"/>
-                <Flags index="EnableChargeTimeQueuing" value="1"/>
-            </Charge>
-            <Button DefaultButtonFace="NodMissileTurret"/>
-            <ValidatorArray value="HasVision"/>
-        </InfoArray>
-        <Range value="5"/>
-        <EffectArray index="Start" value="NodTurretsHubBuildSet"/>
-    </CAbilBuild>
-    <CAbilEffectInstant id="NodTurretsHubBuildApplyBehavior">
-        <Flags index="AbortOnAllianceChange" value="0"/>
-        <Flags index="RequireTargetVision" value="0"/>
-        <Range value="500"/>
-        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
-    </CAbilEffectInstant>
-    <CActorAction id="NodTurretsHubBuild" parent="GenericAttack" effectImpact="RemovePrecursor" effectLaunch="NodTurretsHubBuildLaunchMissile">
-        <LaunchAttachQuery Methods="Origin 0"/>
-        <ImpactSiteOps Ops="SOpAttachOrigin"/>
-        <ShieldFlashType value="None"/>
-    </CActorAction>
-    <CActorMissile id="NodTurretsHubBuildMissile" parent="GenericAttackMissile" unitName="NodTurretsHubBuildMissile">
-        <Model value="Invisible"/>
-    </CActorMissile>
-    <CActorRange id="NodTurretsHubBuildRange" parent="RangeAbil" abil="NodTurretsHubBuild">
-        <Icon value="Assets\Textures\RadarIcon2.dds"/>
-    </CActorRange>
-    <CActorUnit id="NodTurretsHubBuildUnit" parent="GenericUnitMinimal" unitName="NodTurretsHubBuildUnit">
-        <On Terms="ActorCreation" Send="SetScale 0.500000,1.000000,0.062500 0.000000 Birth"/>
-        <On Terms="ActorCreation" Send="ClearScale 1.000000 Birth"/>
-        <On Terms="ActorCreation" Send="Create NodTurretsHubBuildCracks"/>
-        <On Terms="UnitDeathCustomize; ModelVariation 0" Send="DeathCustomize Variation0"/>
-        <On Terms="UnitDeathCustomize; ModelVariation 1" Send="DeathCustomize Variation1"/>
-        <On Terms="UnitDeathCustomize; ModelVariation 2" Send="DeathCustomize Variation2"/>
-        <DeathActorModel value="NodTurretsHubBuildDeathModel"/>
-        <DeathActorModelLow value="NodTurretsHubBuildDeathModel"/>
-        <HighlightTooltip value="Unit/Name/Bogus"/>
-        <UnitFlags index="ShowBlobShadow" value="0"/>
-        <DeathCustoms AnimProps="Stand" ModelLink="NodTurretsHubBuildDeath0" Name="Variation0"/>
-        <DeathCustoms AnimProps="Stand" ModelLink="NodTurretsHubBuildDeath1" Name="Variation1"/>
-        <DeathCustoms AnimProps="Stand" ModelLink="NodTurretsHubBuildDeath2" Name="Variation2"/>
-    </CActorUnit>
-    <CModel id="NodTurretsHubBuildUnit" parent="PersistentSpellFX">
-        <Model value="Assets\Doodads\CharIntestines\CharIntestines.m3"/>
+    <CEffectRemoveBehavior id="HasEmptyPilotSlot2RB">
+        <BehaviorLink value="HasEmptyPilotSlot2"/>
         <EditorCategories value="Race:Nod"/>
-        <ScaleMax value="0.062500,0.125000,0.062500"/>
-        <ScaleMin value="0.125000,0.250000,0.125000"/>
-        <VariationCount value="3"/>
-    </CModel>
-    <CMoverMissile id="NodTurretsHubBuildMissile">
-        <MotionPhases Driver="Guidance" Speed="8" YawPitchRoll="MAX"/>
-    </CMoverMissile>
-    <CUnit id="NodTurretsHubBuildMissile" parent="MISSILE_INVULNERABLE">
-        <Race value="Nod"/>
-        <EditorCategories value="ObjectType:Projectile,ObjectFamily:CNC"/>
-    </CUnit>
-    <CUnit id="NodTurretsHubBuildUnit" parent="MISSILE_INVULNERABLE">
-        <Race value="Nod"/>
-        <FlagArray index="Turnable" value="1"/>
-        <FlagArray index="Movable" value="0"/>
-        <FlagArray index="Missile" value="0"/>
-        <FogVisibility value="Snapshot"/>
-        <StationaryTurningRate value="2879.8242"/>
-        <TurningRate value="2879.8242"/>
-        <AbilArray Link="NodTurretsHubBuildApplyBehavior"/>
-        <BehaviorArray Link="NodTurretsHubBuildRemoveBehavior"/>
-        <EditorCategories value="ObjectType:Projectile,ObjectFamily:CNC"/>
-    </CUnit>
-    <CBehaviorBuff id="NodTurretsHubSuicideWithCaster">
-        <RemoveValidatorArray value="CasterNotDead"/>
-        <FinalEffect value="Kill"/>
-        <InfoFlags index="Hidden" value="1"/>
-        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="NodTurretsHubBuildApplyBehavior">
-        <InfoFlags index="Hidden" value="1"/>
-        <!--        <RemoveValidatorArray value="NotRazorback2"/>-->
-        <MaxStackCount value="65535"/>
-        <InitialEffect value="NodTurretsHubBuildRemoveBehavior"/>
-        <RefreshEffect value="NodTurretsHubBuildRemoveBehavior"/>
-        <FinalEffect value="KillCaster"/>
-        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="NodTurretsHubBuildRemoveBehavior">
-        <Duration value="0.125"/>
-        <ExpireEffect value="KillCaster"/>
-        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
-    </CBehaviorBuff>
-
-
-
-
-
-<!--    <CAbilTransport id="NodAvatarWreckageTransport">-->
-<!--        <MaxCargoCount value="1"/>-->
-<!--        <MaxCargoSize value="8"/>-->
-<!--        <TotalCargoSpace value="1020"/>-->
-<!--        <Range value="0"/>-->
-<!--        <LoadValidatorArray value="IsPilot"/>-->
-<!--        <LoadCargoEffect value="SuicideRemoveTarget"/>-->
-<!--        <LoadTransportEffect value="NodAvatarRebornIO"/>-->
-<!--    </CAbilTransport>-->
-    <!--    <CBehaviorBuff id="NodAvatarLifeCheck">-->
-    <!--        <Modification>-->
-    <!--            <AbilClassDisableArray index="CAbilTransport" value="1"/>-->
-    <!--        </Modification>-->
-    <!--        &lt;!&ndash;        <InfoFlags index="Hidden" value="1"/>&ndash;&gt;-->
-    <!--        <EditorCategories value="AbilityorEffectType:Units"/>-->
-    <!--        <Period value="0.25"/>-->
-    <!--        <RemoveValidatorArray value="TargetHasNoOrders"/>-->
-    <!--        <RemoveValidatorArray value="CasterLifeNotFull"/>-->
-    <!--    </CBehaviorBuff>-->
-    <!--    -->
-    <!--    <CAbilEffectTarget id="NodAvatarPilot">-->
-    <!--        <EditorCategories value="AbilityorEffectType:Units"/>-->
-    <!--        <Effect index="0" value="NodAvatarPilotSet"/>-->
-    <!--        <Flags index="AutoCast" value="1"/>-->
-    <!--        <Flags index="AutoCastOn" value="1"/>-->
-    <!--        <TargetFilters value="Ground;Self,Missile,UnderConstruction,Dead,Hidden,Invulnerable"/>-->
-    <!--        <Range value="2.5"/>-->
-    <!--        <AutoCastFilters value="Ground;Self"/>-->
-    <!--        <AutoCastRange value="2.5"/>-->
-    <!--        <ValidatorArray value="NodAvatarPilot"/>-->
-    <!--        <AutoCastValidatorArray value="NodAvatarPilot"/>-->
-    <!--        <CmdButtonArray index="Execute" DefaultButtonFace="MedicHeal">-->
-    <!--            <Flags index="ToSelection" value="1"/>-->
-    <!--        </CmdButtonArray>-->
-    <!--    </CAbilEffectTarget>-->
-
-    <CBehaviorBuff id="NodAvatarPilot">
-<!--        <BuffFlags index="Channeled" value="1"/>-->
-        <DisplayDuration index="Self" value="1"/>
-        <DisplayDuration index="Ally" value="1"/>
-        <DisplayDuration index="Enemy" value="1"/>
-        <Duration value="15"/>
-        <Period value="0.0625"/>
-        <PeriodicEffect value="NodAvatarPilotSearchArea"/>
-    </CBehaviorBuff>
-    <CEffectEnumArea id="NodAvatarPilotSearchArea">
-<!--        <MaxCount value="1"/>-->
-        <EditorCategories value="Race:Nod"/>
-<!--        <LaunchLocation Value="TargetPoint"/>-->
-<!--        <ImpactLocation Value="CasterUnit"/>-->
-        <SearchFilters value="-;Stasis,Dead,Hidden,Invulnerable"/>
-        <AreaArray Arc="360" Radius="0.5" Effect="NodAvatarPilotSet"/>
-        <SearchFlags index="ExtendByUnitRadius" value="1"/>
-    </CEffectEnumArea>
-<!--    <CValidatorLocationCompareRange id="NodAvatarPilotTargetCheck">-->
-<!--        <Compare value="LE"/>-->
-<!--        <Range value="3"/>-->
-<!--        <WhichLocation Value="CasterUnit"/>-->
-<!--    </CValidatorLocationCompareRange>-->
-    <CEffectSet id="NodAvatarPilotSet">
-        <ValidatorArray value="IsNodAvatarWreckage"/>
-        <ValidatorArray value="TargetLifeFull"/>
-        <ValidatorArray value="NodAvatarNotReborning"/>
-<!--        <ValidatorArray value="NodAvatarPilotTargetCheck"/>-->
-        <EditorCategories value="Race:Nod"/>
-<!--        <EffectArray value="NodAvatarPilotRB"/>-->
-        <EffectArray value="NodAvatarPilotedChangeOwner"/>
-        <EffectArray value="NodAvatarRebornIOTarget"/>
-        <EffectArray value="NodAvatarPilotSuicide"/>
-    </CEffectSet>
-    <CEffectModifyUnit id="NodAvatarPilotedChangeOwner">
-        <ModifyFlags index="Owner" value="1"/>
-        <ModifyOwnerPlayer Value="Caster"/>
-        <ImpactUnit Value="Target"/>
-    </CEffectModifyUnit>
-    <CEffectIssueOrder id="NodAvatarRebornIOTarget">
-        <WhichUnit Value="Target"/>
-        <EditorCategories value="Race:Nod"/>
-        <Abil value="NodAvatarReborn"/>
-        <CmdFlags index="Preempt" value="1"/>
-    </CEffectIssueOrder>
-<!--    <CEffectApplyBehavior id="NodAvatarPilotRB">-->
-<!--        <EditorCategories value="Race:Nod"/>-->
-<!--        <Behavior value="NodAvatarPilot"/>-->
-<!--    </CEffectApplyBehavior>-->
-    <CEffectDamage id="NodAvatarPilotSuicide">
-<!--        <WhichUnit Value="Source"/>-->
+    </CEffectRemoveBehavior>
+    <CEffectDamage id="NodRedeemerPilotSuicide">
+        <!--        <WhichUnit Value="Source"/>-->
         <ImpactLocation Value="SourceUnit"/>
         <Flags index="Kill" value="1"/>
         <Death value="Remove"/>
     </CEffectDamage>
 
+
+    <CEffectApplyBehavior id="NodRedeemerHeavyMachinegunRightAB"><Behavior value="NodRedeemerHeavyMachinegunRight"/></CEffectApplyBehavior>
+    <CEffectApplyBehavior id="NodRedeemerRocketLauncherRightAB"><Behavior value="NodRedeemerRocketLauncherRight"/></CEffectApplyBehavior>
+    <CEffectApplyBehavior id="NodRFT_RightAB"><Behavior value="NodRFT_Right"/></CEffectApplyBehavior>
+    <CEffectApplyBehavior id="NodRedeemerRegeneratorRightAB"><Behavior value="NodRedeemerRegeneratorRight"/></CEffectApplyBehavior>
+    <CEffectApplyBehavior id="NodRTT_RightAB"><Behavior value="NodRTT_Right"/></CEffectApplyBehavior>
+    <CEffectApplyBehavior id="NodRedeemerConfessionRightAB"><Behavior value="NodRedeemerConfessionRight"/></CEffectApplyBehavior>
+    <CEffectApplyBehavior id="NodRedeemerExplosivesRightAB"><Behavior value="NodRedeemerExplosivesRight"/></CEffectApplyBehavior>
+    <CEffectApplyBehavior id="NodRedeemerArtilleryBeaconRightAB"><Behavior value="NodRedeemerArtilleryBeaconRight"/></CEffectApplyBehavior>
+    <CEffectApplyBehavior id="NodRedeemerEMICannonRightAB"><Behavior value="NodRedeemerEMICannonRight"/></CEffectApplyBehavior>
+    <CEffectApplyBehavior id="NodRedeemerRedemptionRightAB"><Behavior value="NodRedeemerRedemptionRight"/></CEffectApplyBehavior>
+    <CEffectApplyBehavior id="NodRedeemerHeavyMachinegunLeftAB"><Behavior value="NodRedeemerHeavyMachinegunLeft"/></CEffectApplyBehavior>
+    <CEffectApplyBehavior id="NodRedeemerRocketLauncherLeftAB"><Behavior value="NodRedeemerRocketLauncherLeft"/></CEffectApplyBehavior>
+    <CEffectApplyBehavior id="NodRFT_LeftAB"><Behavior value="NodRFT_Left"/></CEffectApplyBehavior>
+    <CEffectApplyBehavior id="NodRedeemerRegeneratorLeftAB"><Behavior value="NodRedeemerRegeneratorLeft"/></CEffectApplyBehavior>
+    <CEffectApplyBehavior id="NodRTT_LeftAB"><Behavior value="NodRTT_Left"/></CEffectApplyBehavior>
+    <CEffectApplyBehavior id="NodRedeemerConfessionLeftAB"><Behavior value="NodRedeemerConfessionLeft"/></CEffectApplyBehavior>
+    <CEffectApplyBehavior id="NodRedeemerExplosivesLeftAB"><Behavior value="NodRedeemerExplosivesLeft"/></CEffectApplyBehavior>
+    <CEffectApplyBehavior id="NodRedeemerArtilleryBeaconLeftAB"><Behavior value="NodRedeemerArtilleryBeaconLeft"/></CEffectApplyBehavior>
+    <CEffectApplyBehavior id="NodRedeemerEMICannonLeftAB"><Behavior value="NodRedeemerEMICannonLeft"/></CEffectApplyBehavior>
+    <CEffectApplyBehavior id="NodRedeemerRedemptionLeftAB"><Behavior value="NodRedeemerRedemptionLeft"/></CEffectApplyBehavior>
+
+
+    <CActorUnit id="NodRedeemer" parent="NodVehicleBase" wireframe="RedeemerWireframe" unitName="NodRedeemer" icon="RedeemerIcon">
+        <On index="65" Terms="WeaponStart.NodRedeemerThermalLances.AttackStart" Send="AnimBracketStart Attack Attack {} {} ContentNonLooping"/>
+        <On index="67" Terms="WeaponStop.NodRedeemerThermalLances.AttackStop" Send="AnimBracketStop Attack"/>
+
+<!--        <On Terms="ActorCreation" Send="Create RedeemerTurret01Lookat"/>-->
+<!--        <On Terms="ActorCreation" Send="Create RedeemerTurret02Lookat"/>-->
+<!--        <On Terms="WeaponStart.NodRFT.AttackStart" Target="RedeemerTurret02" Send="LookAtEngage Continue"/>-->
+<!--        <On Terms="WeaponStart.NodRedeemerRocket.AttackStart" Target="RedeemerTurret01" Send="LookAtEngage Continue"/>-->
+
+        <!--        <On Terms="ActorCreation; ValidateUnit HasNoNodRedeemerMachinegunRight"       Send="AnimPlay CoverA Cover,A PlayForever 0.000000"/>-->
+        <!--        <On Terms="ActorCreation; ValidateUnit HasNoNodRedeemerMachinegunLeft"        Send="AnimPlay CoverB Cover,B PlayForever 0.000000"/>-->
+        <!--        <On Terms="ActorCreation; ValidateUnit HasNoNodRedeemerRocketLauncherRight"   Send="AnimPlay CoverC Cover,C PlayForever 0.000000"/>-->
+        <!--        <On Terms="ActorCreation; ValidateUnit HasNoNodRedeemerRocketLauncherLeft"    Send="AnimPlay CoverD Cover,D PlayForever 0.000000"/>-->
+        <!--        <On Terms="ActorCreation; ValidateUnit HasNoNodRFT_Right"     Send="AnimPlay CoverE Cover,E PlayForever 0.000000"/>-->
+        <!--        <On Terms="ActorCreation; ValidateUnit HasNoNodRFT_Left"      Send="AnimPlay CoverF Cover,F PlayForever 0.000000"/>-->
+        <!--        <On Terms="ActorCreation; ValidateUnit HasNoNodRedeemerRegeneratorRight"      Send="AnimPlay CoverG Cover,G PlayForever 0.000000"/>-->
+        <!--        <On Terms="ActorCreation; ValidateUnit HasNoNodRedeemerRegeneratorLeft"       Send="AnimPlay CoverH Cover,H PlayForever 0.000000"/>-->
+        <!--        <On Terms="ActorCreation; ValidateUnit HasNoNodRTT_Right"  Send="AnimPlay CoverI Cover,I PlayForever 0.000000"/>-->
+        <!--        <On Terms="ActorCreation; ValidateUnit HasNoNodRTT_Left"   Send="AnimPlay CoverJ Cover,J PlayForever 0.000000"/>-->
+        <!--        <On Terms="ActorCreation; ValidateUnit HasNoNodRedeemerConfessionRight"       Send="AnimPlay CoverK Cover,K PlayForever 0.000000"/>-->
+        <!--        <On Terms="ActorCreation; ValidateUnit HasNoNodRedeemerConfessionLeft"        Send="AnimPlay CoverL Cover,L PlayForever 0.000000"/>-->
+        <!--        <On Terms="ActorCreation; ValidateUnit HasNoNodRedeemerExplosivesRight"       Send="AnimPlay CoverM Cover,M PlayForever 0.000000"/>-->
+        <!--        <On Terms="ActorCreation; ValidateUnit HasNoNodRedeemerExplosivesLeft"        Send="AnimPlay CoverN Cover,N PlayForever 0.000000"/>-->
+        <!--        <On Terms="ActorCreation; ValidateUnit HasNoNodRedeemerArtilleryBeaconRight"  Send="AnimPlay CoverO Cover,O PlayForever 0.000000"/>-->
+        <!--        <On Terms="ActorCreation; ValidateUnit HasNoNodRedeemerArtilleryBeaconLeft"   Send="AnimPlay CoverP Cover,P PlayForever 0.000000"/>-->
+        <!--        <On Terms="ActorCreation; ValidateUnit HasNoNodRedeemerEMICannonRight"              Send="AnimPlay CoverQ Cover,Q PlayForever 0.000000"/>-->
+        <!--        <On Terms="ActorCreation; ValidateUnit HasNoNodRedeemerEMICannonLeft"               Send="AnimPlay CoverR Cover,R PlayForever 0.000000"/>-->
+
+        <!--        <On Terms="ActorCreation; ValidateUnit HasNodRedeemerConfessionRight"       Send="AnimPlay StandK Stand,K PlayForever 0.000000"/>-->
+        <!--        <On Terms="ActorCreation; ValidateUnit HasNodRedeemerConfessionLeft"        Send="AnimPlay StandL Stand,L PlayForever 0.000000"/>-->
+
+        <!--        <On Terms="Behavior.NodRedeemerConfessionRight.Add"       Send="AnimPlay StandK Stand,K PlayForever 0.000000"/>-->
+        <!--        <On Terms="Behavior.NodRedeemerConfessionLeft.Add"        Send="AnimPlay StandL Stand,L PlayForever 0.000000"/>-->
+
+        <!--        <On Terms="Behavior.NodRedeemerMachinegunRight.Add"      Send="AnimClear CoverA"/>-->
+        <!--        <On Terms="Behavior.NodRedeemerMachinegunLeft.Add"       Send="AnimClear CoverB"/>-->
+        <!--        <On Terms="Behavior.NodRedeemerRocketLauncherRight.Add"  Send="AnimClear CoverC"/>-->
+        <!--        <On Terms="Behavior.NodRedeemerRocketLauncherLeft.Add"   Send="AnimClear CoverD"/>-->
+        <!--        <On Terms="Behavior.NodRFT_Right.Add"    Send="AnimClear CoverE"/>-->
+        <!--        <On Terms="Behavior.NodRFT_Left.Add"     Send="AnimClear CoverF"/>-->
+        <!--        <On Terms="Behavior.NodRedeemerRegeneratorRight.Add"     Send="AnimClear CoverG"/>-->
+        <!--        <On Terms="Behavior.NodRedeemerRegeneratorLeft.Add"      Send="AnimClear CoverH"/>-->
+        <!--        <On Terms="Behavior.NodRTT_Right.Add" Send="AnimClear CoverI"/>-->
+        <!--        <On Terms="Behavior.NodRTT_Left.Add"  Send="AnimClear CoverJ"/>-->
+        <!--        <On Terms="Behavior.NodRedeemerConfessionRight.Add"      Send="AnimClear CoverK"/>-->
+        <!--        <On Terms="Behavior.NodRedeemerConfessionLeft.Add"       Send="AnimClear CoverL"/>-->
+        <!--        <On Terms="Behavior.NodRedeemerExplosivesRight.Add"      Send="AnimClear CoverM"/>-->
+        <!--        <On Terms="Behavior.NodRedeemerExplosivesLeft.Add"       Send="AnimClear CoverN"/>-->
+        <!--        <On Terms="Behavior.NodRedeemerArtilleryBeaconRight.Add" Send="AnimClear CoverO"/>-->
+        <!--        <On Terms="Behavior.NodRedeemerArtilleryBeaconLeft.Add"  Send="AnimClear CoverP"/>-->
+        <!--        <On Terms="Behavior.NodRedeemerEMICannonRight.Add"             Send="AnimClear CoverQ"/>-->
+        <!--        <On Terms="Behavior.NodRedeemerEMICannonLeft.Add"              Send="AnimClear CoverR"/>-->
+
+        <!--        <On Terms="UnitDeath.##unitName##; AnimPlaying CoverA" Target="_DeathModel" Send="AnimPlay CoverA Cover,A PlayForever"/>-->
+        <!--        <On Terms="UnitDeath.##unitName##; AnimPlaying CoverB" Target="_DeathModel" Send="AnimPlay CoverB Cover,B PlayForever"/>-->
+        <!--        <On Terms="UnitDeath.##unitName##; AnimPlaying CoverC" Target="_DeathModel" Send="AnimPlay CoverC Cover,C PlayForever"/>-->
+        <!--        <On Terms="UnitDeath.##unitName##; AnimPlaying CoverD" Target="_DeathModel" Send="AnimPlay CoverD Cover,D PlayForever"/>-->
+        <!--        <On Terms="UnitDeath.##unitName##; AnimPlaying CoverE" Target="_DeathModel" Send="AnimPlay CoverE Cover,E PlayForever"/>-->
+        <!--        <On Terms="UnitDeath.##unitName##; AnimPlaying CoverF" Target="_DeathModel" Send="AnimPlay CoverF Cover,F PlayForever"/>-->
+        <!--        <On Terms="UnitDeath.##unitName##; AnimPlaying CoverG" Target="_DeathModel" Send="AnimPlay CoverG Cover,G PlayForever"/>-->
+        <!--        <On Terms="UnitDeath.##unitName##; AnimPlaying CoverH" Target="_DeathModel" Send="AnimPlay CoverH Cover,H PlayForever"/>-->
+        <!--        <On Terms="UnitDeath.##unitName##; AnimPlaying CoverI" Target="_DeathModel" Send="AnimPlay CoverI Cover,I PlayForever"/>-->
+        <!--        <On Terms="UnitDeath.##unitName##; AnimPlaying CoverJ" Target="_DeathModel" Send="AnimPlay CoverJ Cover,J PlayForever"/>-->
+        <!--        <On Terms="UnitDeath.##unitName##; AnimPlaying CoverK" Target="_DeathModel" Send="AnimPlay CoverK Cover,K PlayForever"/>-->
+        <!--        <On Terms="UnitDeath.##unitName##; AnimPlaying CoverL" Target="_DeathModel" Send="AnimPlay CoverL Cover,L PlayForever"/>-->
+        <!--        <On Terms="UnitDeath.##unitName##; AnimPlaying CoverM" Target="_DeathModel" Send="AnimPlay CoverM Cover,M PlayForever"/>-->
+        <!--        <On Terms="UnitDeath.##unitName##; AnimPlaying CoverN" Target="_DeathModel" Send="AnimPlay CoverN Cover,N PlayForever"/>-->
+        <!--        <On Terms="UnitDeath.##unitName##; AnimPlaying CoverO" Target="_DeathModel" Send="AnimPlay CoverO Cover,O PlayForever"/>-->
+        <!--        <On Terms="UnitDeath.##unitName##; AnimPlaying CoverP" Target="_DeathModel" Send="AnimPlay CoverP Cover,P PlayForever"/>-->
+
+        <CreepHeightClass value="Tiny"/>
+        <DeathArray index="Normal" ModelLink="NodRedeemerDeathRagdoll" SoundLink="SiegeTank_Explode"/>
+        <DeathCustomData Name="RagdollBasic"/>
+        <DeathActorModel value="UnitDeathModelWithDeathMotionGround"/>
+        <StandAnimTurnTime value="4.5"/>
+        <AbilSoundArray AbilCmd="RedeemerConfusion,Execute" Sound="NodRedeemerSpell"/>
+        <BarOffset value="120"/>
+        <BarWidth value="102"/>
+        <SoundArray index="Ready" value="NodRedeemerReady"/>
+        <SoundArray index="Attack" value="NodRedeemerAttack"/>
+        <SoundArray index="Movement" value="NodRedeemerMovement"/>
+        <AnimBlendTime value="0.500000"/>
+    </CActorUnit>
+    <CUnit id="NodRedeemer" parent="NodGround">
+        <SubgroupPriority value="13"/>
+        <FlagArray index="TurnBeforeMove" value="1"/>
+        <FlagArray index="AIPressForwardDisabled" value="1"/>
+        <PlaneArray index="Air" value="1"/>
+        <PushPriority value="20"/>
+        <Collide index="Colossus" value="1"/>
+        <Collide index="Structure" value="1"/>
+        <Collide index="Flying" value="1"/>
+        <Attributes index="Armored" value="1"/>
+        <Attributes index="Mechanical" value="1"/>
+        <Attributes index="Massive" value="1"/>
+        <Attributes index="Heroic" value="1"/>
+        <LifeStart value="1000"/>
+        <LifeMax value="1000"/>
+        <LifeArmor value="3"/>
+        <Mover value="Colossus"/>
+        <Speed value="1.75"/>
+        <Acceleration value="1.75"/>
+        <LateralAcceleration value="64"/>
+        <StationaryTurningRate value="119.8828"/>
+        <TurningRate value="119.8828"/>
+        <Sight value="11"/>
+        <Food value="-10"/>
+        <CostResource index="Minerals" value="1000"/>
+        <CostResource index="Vespene" value="1000"/>
+        <RepairTime value="45"/>
+        <KillXP value="1000"/>
+        <AbilArray Link="RedeemerConfusion"/>
+        <BehaviorArray Link="Tech3"/>
+        <BehaviorArray Link="NodRedeemerVeterancyUpgrade"/>
+<!--        <WeaponArray Link="RedeemerLaser"/>-->
+        <WeaponArray Link="NodRedeemerThermalLances"/>
+        <WeaponArray Link="NodRedeemerThermalLancesR"/>
+        <WeaponArray Link="FakeWeaponDummy" Turret="RedeemerTurretRight"/>
+        <WeaponArray Link="FakeWeaponDummy" Turret="RedeemerTurretLeft"/>
+<!--        <WeaponArray Link="NodRedeemerRocket"/>-->
+<!--        <WeaponArray Link="NodRFT"/>-->
+        <BehaviorArray Link="HasEmptyPilotSlot1"/>
+        <BehaviorArray Link="HasEmptyPilotSlot2"/>
+<!--        <BehaviorArray Link="NodRedeemerRedemptionRight"/>-->
+<!--        <BehaviorArray Link="NodRedeemerRedemptionLeft"/>-->
+        <CardLayouts index="0">
+            <LayoutButtons Face="RedeemerConfusion" Type="AbilCmd" AbilCmd="RedeemerConfusion,Execute" Row="2" Column="0"/>
+        </CardLayouts>
+        <Radius value="0.875"/>
+        <SeparationRadius value="1"/>
+        <InnerRadius value="0.5"/>
+        <ScoreMake value="275"/>
+        <ScoreKill value="275"/>
+        <MinimapRadius value="1"/>
+        <TacticalAI value="SiegeTank"/>
+        <AIEvalFactor value="1.5"/>
+        <GlossaryPriority value="200"/>
+        <Fidget>
+            <ChanceArray index="Anim" value="33"/>
+            <ChanceArray index="Idle" value="33"/>
+            <ChanceArray index="Turn" value="33"/>
+        </Fidget>
+    </CUnit>
+    <CModel id="NodRedeemer" parent="Unit">
+        <!--        <Model value="Assets\Models\Nod Redeemer\Nod Redeemer.m3"/>-->
+        <Model value="Assets\Units\Nod\NodRedeemerAttach.m3"/>
+        <SelectionRadius value="1.000000"/>
+        <ShadowRadius value="1.000000"/>
+        <Tipability value="0.000000"/>
+        <TipabilityLength value="0.000000"/>
+        <TipabilityWidth value="0.000000"/>
+        <RequiredAnims index="0" removed="1"/>
+        <AttachProps index="0" removed="1"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+
+    <CModel id="NodEquipment" default="1" parent="Unit">
+        <?token id="model" value="##id##?>
+        <Occlusion value="Show"/>
+        <SelectionRadius value="0.468700"/>
+        <SquibTypeDefault value="Flesh"/>
+        <Tipability value="0.750000"/>
+        <TipabilityWidth value="0.400000"/>
+        <TipabilityLength value="0.400000"/>
+        <Radius value="0.450000"/>
+        <ShadowRadius value="0.468700"/>
+        <Model value="Assets\Weapons\##model##.m3"/>
+        <EditorCategories value="Race:WZ"/>
+    </CModel>
+    <CModel parent="NodEquipment" id="NodEquipmentHeavyMachinegun" model="NodHeavyMachinegun"/>
+    <CModel parent="NodEquipment" id="NodEquipmentRocketLauncher" model="NodRocketLauncher"/>
+    <CModel parent="NodEquipment" id="NodEquipmentFlamethrower" model="NodFlamethrower"/>
+    <CModel parent="NodEquipment" id="NodEquipmentRepairDrone" model="NodRepairDrone"/>
+    <CModel parent="NodEquipment" id="NodEquipmentTiberiumThrower" model="NodTiberiumThrower"/>
+    <CModel parent="NodEquipment" id="NodEquipmentPropogandaBeacon" model="NodPropogandaBeacon"/>
+    <CModel parent="NodEquipment" id="NodEquipmentExplosives" model="NodExplosives"/>
+    <CModel parent="NodEquipment" id="NodEquipmentArtilleryBeacon" model="NodArtilleryBeacon"/>
+    <CModel parent="NodEquipment" id="NodEquipmentEMICannon" model="NodEMICannon"/>
+    <CModel parent="NodEquipment" id="NodEquipmentRedemption" model="NodRedemption"/>
+
+
+    <CBehaviorBuff default="1" id="RedeemerWeaponLeft">
+        <?token id="icon" value="##id##?>
+        <InfoFlags index="Hidden" value="1"/>
+        <TechAliasArray value="WZTurretPrimary"/>
+        <InfoIcon value="Assets\Icons\Weapons\##icon##.dds"/>
+        <EditorCategories value="Race:WZ,AbilityorEffectType:Units"/>
+        <Modification>
+            <WeaponArray Link="##id##" Turret="RedeemerTurretLeft"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff default="1" id="RedeemerWeaponRight">
+        <?token id="icon" value="##id##?>
+        <InfoFlags index="Hidden" value="1"/>
+        <TechAliasArray value="WZTurretPrimary"/>
+        <InfoIcon value="Assets\Icons\Weapons\##icon##.dds"/>
+        <EditorCategories value="Race:WZ,AbilityorEffectType:Units"/>
+        <Modification>
+            <WeaponArray Link="##id##" Turret="RedeemerTurretRight"/>
+        </Modification>
+    </CBehaviorBuff>
+
+    <CBehaviorBuff parent="RedeemerWeaponLeft" id="NodRedeemerHeavyMachinegunLeft"/>
+    <CBehaviorBuff parent="RedeemerWeaponLeft" id="NodRedeemerRocketLauncherLeft"/>
+    <CBehaviorBuff parent="RedeemerWeaponLeft" id="NodRFT_Left"/>
+    <CBehaviorBuff parent="RedeemerWeaponLeft" id="NodRTT_Left"/>
+    <CBehaviorBuff parent="RedeemerWeaponLeft" id="NodRedeemerEMICannonLeft"/>
+    <CBehaviorBuff parent="RedeemerWeaponLeft" id="NodRedeemerRedemptionLeft"/>
+    <CBehaviorBuff id="NodRedeemerArtilleryBeaconLeft"/>
+    <CBehaviorBuff id="NodRedeemerExplosivesLeft"/>
+    <CBehaviorBuff id="NodRedeemerPropogandaBeaconLeft"/>
+
+
+    <CBehaviorBuff id="NodRedeemerRepairDrone">
+        <InfoFlags index="Hidden" value="1"/>
+        <MaxStackCount value="4"/>
+        <Modification>
+            <VitalRegenArray index="Life" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodRedeemerRegeneratorRight" parent="NodRedeemerRepairDrone"/>
+    <CBehaviorBuff id="NodRedeemerRegeneratorLeft" parent="NodRedeemerRepairDrone"/>
+
+
+    <CBehaviorBuff id="NodRedeemerConfession" default="1">
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\icons\Nod\NBConfessorAura.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+        <DisableValidatorArray value="NotHidden"/>
+        <Period value="1"/>
+        <PeriodicEffect value="NodRedeemerConfessionSwitch"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodRedeemerConfessionRight" parent="NodRedeemerConfession" />
+    <CBehaviorBuff id="NodRedeemerConfessionLeft" parent="NodRedeemerConfession"/>
+
+    <CEffectSwitch id="NodRedeemerConfessionSwitch">
+        <EditorCategories value="Race:Nod"/>
+        <CaseArray Validator="Has2LevelConfession" Effect="NodRedeemerConfessionAuraSearch"/>
+        <CaseDefault value="NodRedeemerConfessionAuraSearch2"/>
+    </CEffectSwitch>
+    <CValidatorCombine id="Has2LevelConfession">
+        <Type value="And"/>
+        <CombineArray value="HasNodRedeemerConfessionRight"/>
+        <CombineArray value="HasNodRedeemerConfessionLeft"/>
+    </CValidatorCombine>
+    <CEffectEnumArea id="NodRedeemerConfessionAuraSearch">
+        <ImpactLocation Value="CasterPoint"/>
+        <AreaArray Radius="4" Effect="NodConfessorInspired"/>
+        <SearchFilters value="Ground,Biological,Visible;Neutral,Enemy,Mechanical,Structure,User1,RawResource,HarvestableResource,Missile,Item,Stasis,Dead,Hidden"/>
+        <ExcludeArray Value="Source"/>
+        <EditorCategories value="Race:UPL"/>
+        <!--        <ValidatorArray value="TargetIsNotNodConfessor"/>-->
+    </CEffectEnumArea>
+    <CEffectEnumArea id="NodRedeemerConfessionAuraSearch2">
+        <ImpactLocation Value="CasterPoint"/>
+        <AreaArray Radius="6" Effect="NodConfessorInspired"/>
+        <SearchFilters value="Ground,Biological,Visible;Neutral,Enemy,Mechanical,Structure,User1,RawResource,HarvestableResource,Missile,Item,Stasis,Dead,Hidden"/>
+        <ExcludeArray Value="Source"/>
+        <EditorCategories value="Race:UPL"/>
+        <!--        <ValidatorArray value="TargetIsNotNodConfessor"/>-->
+    </CEffectEnumArea>
+
+    <CBehaviorBuff parent="RedeemerWeaponRight" id="NodRedeemerHeavyMachinegunRight"/>
+    <CBehaviorBuff parent="RedeemerWeaponRight" id="NodRedeemerRocketLauncherRight"/>
+    <CBehaviorBuff parent="RedeemerWeaponRight" id="NodRFT_Right"/>
+    <CBehaviorBuff parent="RedeemerWeaponRight" id="NodRTT_Right"/>
+    <CBehaviorBuff parent="RedeemerWeaponRight" id="NodRedeemerEMICannonRight"/>
+    <CBehaviorBuff parent="RedeemerWeaponRight" id="NodRedeemerRedemptionRight"/>
+    <CBehaviorBuff id="NodRedeemerArtilleryBeaconRight"/>
+    <CBehaviorBuff id="NodRedeemerExplosivesRight"/>
+
+    <CActorModel id="RedeemerConfusionCastImpactModel" parent="ModelAnimationStyleOneShot">
+        <On Terms="Effect.RedeemerConfusionSearch" Send="Create"/>
+        <Scale value="0.600000"/>
+    </CActorModel>
+    <CActorModel id="RedeemerConfusionModel" parent="ModelAnimationStyleContinuous">
+        <On Terms="Behavior.RedeemerConfusion.On" Send="Create"/>
+        <On Terms="Behavior.RedeemerConfusion.Off" Send="Destroy"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachOverhead"/>
+    </CActorModel>
+
+<!--    <CActorLookAt id="RedeemerTurret02Lookat" parent="UnitTurret">-->
+<!--        <On Terms="SupporterDestruction.*.UnitDeathModel" Send="Destroy"/>-->
+<!--        <Type value="BattlecruiserTurret"/>-->
+<!--        <Aliases value="RedeemerTurret02"/>-->
+<!--        <Types Id="RedeemerTurret02">-->
+<!--            <Start Group="RedeemerTurret02" Weight="1" Time="300"/>-->
+<!--            <Stop Group="RedeemerTurret02" Weight="1" Time="500"/>-->
+<!--        </Types>-->
+<!--    </CActorLookAt>-->
+<!--    <CActorLookAt id="RedeemerTurret01Lookat" parent="UnitTurret">-->
+<!--        <On Terms="SupporterDestruction.*.UnitDeathModel" Send="Destroy"/>-->
+<!--        <Type value="BattlecruiserTurret"/>-->
+<!--        <Aliases value="RedeemerTurret01"/>-->
+<!--        <Types Id="RedeemerTurret01">-->
+<!--            <Start Group="RedeemerTurret01" Weight="1" Time="300"/>-->
+<!--            <Stop Group="RedeemerTurret01" Weight="1" Time="500"/>-->
+<!--        </Types>-->
+<!--    </CActorLookAt>-->
+
+
+
+
+
+    <CWeaponLegacy id="NodRedeemerThermalLances" parent="NodWeapon" icon="FXNod_LasersAddonUpgrade">
+        <DisplayEffect value="NodRedeemerThermalLancesMU"/>
+        <DisplayAttackCount value="2"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AcquirePrioritization value="ByDistanceFromTarget"/>
+        <Range value="9"/>
+        <RangeSlop value="0"/>
+        <Arc value="29.9926"/>
+        <Period value="3.396"/>
+        <DamagePoint value="0.0832"/>
+        <Effect value="NodRedeemerThermalLances"/>
+        <LegacyOptions index="KeepChanneling" value="1"/>
+    </CWeaponLegacy>
+    <CEffectSet id="NodRedeemerThermalLances">
+        <EditorCategories value="Race:Nod"/>
+        <EffectArray value="NodRedeemerThermalLancesForward"/>
+        <EffectArray value="NodRedeemerThermalLancesReverse"/>
+        <EffectArray value="NodRedeemerThermalLancesFriendlyCP"/>
+    </CEffectSet>
+    <CEffectCreatePersistent id="NodRedeemerThermalLancesDamageDelay">
+        <EditorCategories value="Race:Nod"/>
+        <WhichLocation Value="TargetUnit"/>
+        <ExpireDelay value="0.25"/>
+        <FinalEffect value="NodRedeemerThermalLancesMU"/>
+    </CEffectCreatePersistent>
+    <CEffectEnumArea id="NodRedeemerThermalLancesEA">
+        <EditorCategories value="Race:Nod"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="0.15" Effect="NodRedeemerThermalLancesDamageDelay"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectEnumArea>
+    <CEffectEnumArea id="NodRedeemerThermalLancesEAReverse">
+        <EditorCategories value="Race:Nod"/>
+        <ExcludeArray Value="Target"/>
+        <SearchFilters value="Ground;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="0.15" Effect="NodRedeemerThermalLancesDamageDelay"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+    </CEffectEnumArea>
+    <CEffectCreatePersistent id="NodRedeemerThermalLancesForward">
+        <EditorCategories value="Race:Nod"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <ExpireDelay value="0.73"/>
+        <ExpireEffect value="NodRedeemerThermalLancesMU"/>
+        <PeriodCount value="11"/>
+        <PeriodicEffectArray value="NodRedeemerThermalLancesEA"/>
+        <PeriodicOffsetArray value="-1.25,0,0"/>
+        <PeriodicOffsetArray value="-1,0,0"/>
+        <PeriodicOffsetArray value="-0.75,0,0"/>
+        <PeriodicOffsetArray value="-0.5,0,0"/>
+        <PeriodicOffsetArray value="-0.25,0,0"/>
+        <PeriodicOffsetArray value="0,0,0"/>
+        <PeriodicOffsetArray value="0.25,0,0"/>
+        <PeriodicOffsetArray value="0.5,0,0"/>
+        <PeriodicOffsetArray value="0.75,0,0"/>
+        <PeriodicOffsetArray value="1,0,0"/>
+        <PeriodicOffsetArray value="1.25,0,0"/>
+        <PeriodicPeriodArray value="0.025"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="NodRedeemerThermalLancesFriendlyCP">
+        <EditorCategories value="Race:Nod"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <ExpireDelay value="0.2"/>
+        <PeriodCount value="2"/>
+        <PeriodicEffectArray value="NodRedeemerThermalLancesFriendlyDamage"/>
+        <PeriodicEffectArray value="NodRedeemerThermalLancesFriendlyDamage"/>
+        <PeriodicPeriodArray value="0.09"/>
+        <PeriodicPeriodArray value="0.09"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="NodRedeemerThermalLancesFriendlyDamage" parent="DU_WEAP">
+        <Name value="Effect/Name/NodRedeemerThermalLancesMU"/>
+        <ValidatorArray value="NodRedeemerThermalLancesCliffLevel"/>
+        <ValidatorArray value="NotHidden"/>
+        <ValidatorArray value="noMarkers"/>
+        <ValidatorArray value="FriendlyTarget"/>
+        <EditorCategories value="Race:Nod"/>
+        <Marker Link="Effect/NodRedeemerThermalLancesMU"/>
+        <Visibility value="Visible"/>
+        <Kind value="Ranged"/>
+        <KindSplash value="Splash"/>
+        <Amount value="50"/>
+        <Death value="Fire"/>
+    </CEffectDamage>
+    <CEffectDamage id="NodRedeemerThermalLancesMU" parent="DU_WEAP">
+        <ValidatorArray value="NodRedeemerThermalLancesCliffLevel"/>
+        <ValidatorArray value="NotHidden"/>
+        <ValidatorArray value="noMarkers"/>
+        <EditorCategories value="Race:Nod"/>
+        <Visibility value="Visible"/>
+        <Kind value="Ranged"/>
+        <KindSplash value="Splash"/>
+        <Amount value="50"/>
+        <Death value="Fire"/>
+    </CEffectDamage>
+    <CEffectCreatePersistent id="NodRedeemerThermalLancesReverse">
+        <EditorCategories value="Race:Nod"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <ExpireDelay value="0.73"/>
+        <ExpireEffect value="NodRedeemerThermalLancesMU"/>
+        <PeriodCount value="11"/>
+        <PeriodicEffectArray value="NodRedeemerThermalLancesEAReverse"/>
+        <PeriodicOffsetArray value="1.25,0,0"/>
+        <PeriodicOffsetArray value="1,0,0"/>
+        <PeriodicOffsetArray value="0.75,0,0"/>
+        <PeriodicOffsetArray value="0.5,0,0"/>
+        <PeriodicOffsetArray value="0.25,0,0"/>
+        <PeriodicOffsetArray value="0,0,0"/>
+        <PeriodicOffsetArray value="-0.25,0,0"/>
+        <PeriodicOffsetArray value="-0.5,0,0"/>
+        <PeriodicOffsetArray value="-0.75,0,0"/>
+        <PeriodicOffsetArray value="-1,0,0"/>
+        <PeriodicOffsetArray value="-1.25,0,0"/>
+        <PeriodicPeriodArray value="0.025"/>
+    </CEffectCreatePersistent>
+    <CActorModel id="RedeemerAttackBeamImpactReverse">
+        <Supporter Subject="::Creator"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death"/>
+        <On Terms="SupporterDestruction" Send="AnimBracketStop BSD"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <Host Subject="RedeemerAttackImpactSiteReverse"/>
+        <Model value="ColossusAttackBeamImpact"/>
+    </CActorModel>
+    <CActorBeamSimple id="NodRedeemerAttackBeam">
+        <Terms value="Cap 1"/>
+        <On Terms="Effect.NodRedeemerThermalLancesEA.Impact" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create RedeemerAttackBeamImpact"/>
+        <On Terms="ActorCreation" Send="Create RedeemerAttackLaunchSound"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death"/>
+        <On Terms="Signal.*.Arrival" Send="AnimBracketStop BSD"/>
+        <On Terms="AnimBracketState.*.AfterOpening; AnimName BSD" Target="RedeemerAttackImpactSite" Send="MoverMove"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <Model value="RedeemerAttackBeam2"/>
+        <HostLaunch Subject="RedeemerAttackLaunchSite" Scope="Caster" Actor="Create"/>
+        <HostImpact Subject="RedeemerAttackImpactSite"/>
+    </CActorBeamSimple>
+    <CActorBeamSimple id="RedeemerAttackBeamReverse">
+        <Terms value="Cap 1"/>
+        <On Terms="Effect.NodRedeemerThermalLancesEAReverse.Impact" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create RedeemerAttackBeamImpactReverse"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death"/>
+        <On Terms="Signal.*.Arrival" Send="AnimBracketStop BSD"/>
+        <On Terms="AnimBracketState.*.AfterOpening; AnimName BSD" Target="RedeemerAttackImpactSiteReverse" Send="MoverMove"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <Model value="RedeemerAttackBeam2"/>
+        <HostLaunch Subject="RedeemerAttackLaunchSite2" Scope="Caster" Actor="Create"/>
+        <HostImpact Subject="RedeemerAttackImpactSiteReverse"/>
+    </CActorBeamSimple>
+    <CActorModel id="RedeemerAttackBeamImpact">
+        <Supporter Subject="::Creator"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death"/>
+        <On Terms="ActorCreation" Send="Create ColossusAttackImpactSound"/>
+        <On Terms="SupporterDestruction" Send="AnimBracketStop BSD"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <Host Subject="RedeemerAttackImpactSite"/>
+        <Model value="ColossusAttackBeamImpact"/>
+    </CActorModel>
+    <CActorBeamSimple id="RedeemerAttackBeamReverseExtra">
+        <Terms value="Cap 1"/>
+        <On Terms="Effect.NodRedeemerThermalLancesEAReverse.Impact" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create RedeemerAttackBeamImpactReverse"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart BSD Birth Stand Death"/>
+        <On Terms="Signal.*.Arrival" Send="AnimBracketStop BSD"/>
+        <On Terms="AnimBracketState.*.AfterOpening; AnimName BSD" Target="RedeemerAttackImpactSiteReverse" Send="MoverMove"/>
+        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSD" Send="Destroy"/>
+        <Model value="RedeemerAttackBeam2"/>
+        <HostLaunch Subject="RedeemerAttackLaunchSite3" Scope="Caster" Actor="Create"/>
+        <HostImpact Subject="RedeemerAttackImpactSiteReverse"/>
+    </CActorBeamSimple>
+    <CActorSiteMover id="RedeemerAttackImpactSite">
+        <Terms value="Cap 1"/>
+        <Sharing value="PerEffectTree"/>
+        <On Terms="Effect.NodRedeemerThermalLancesEA.Impact" Send="Create"/>
+        <On Terms="Effect.NodRedeemerThermalLancesEA.Impact; At Effect" Send="MoverSetDestination2D"/>
+        <On Terms="MoverArrived" Target="NodRedeemerAttackBeam" Send="Signal Arrival"/>
+
+        <!--Extra Weapons-->
+        <On Terms="Effect.NodRedeemerThermalLancesEA2.Impact" Send="Create"/>
+        <On Terms="Effect.NodRedeemerThermalLancesEA2.Impact; At Effect" Send="MoverSetDestination2D"/>
+        <On Terms="MoverArrived" Target="NodRedeemerAttackBeam2" Send="Signal Arrival"/>
+
+        <HostSiteOps Ops="SOpShadow"/>
+        <Acceleration value="40.000000"/>
+        <Deceleration value="40.000000"/>
+        <Speed value="2.000000"/>
+        <SpeedMax value="4.100000"/>
+    </CActorSiteMover>
+    <CActorSiteMover id="RedeemerAttackImpactSiteReverse">
+        <Terms value="Cap 1"/>
+        <Sharing value="PerEffectTree"/>
+        <On Terms="Effect.NodRedeemerThermalLancesEAReverse.Impact" Send="Create"/>
+        <On Terms="Effect.NodRedeemerThermalLancesEAReverse.Impact; At Effect" Send="MoverSetDestination2D"/>
+        <On Terms="MoverArrived" Target="RedeemerAttackBeamReverseExtra" Send="Signal Arrival"/>
+        <On Terms="MoverArrived" Target="RedeemerAttackBeamReverse" Send="Signal Arrival"/>
+
+        <!--Extra Weapons-->
+        <On Terms="Effect.NodRedeemerThermalLancesEAReverse2.Impact" Send="Create"/>
+        <On Terms="Effect.NodRedeemerThermalLancesEAReverse2.Impact; At Effect" Send="MoverSetDestination2D"/>
+        <On Terms="MoverArrived" Target="RedeemerAttackBeamReverseExtra2" Send="Signal Arrival"/>
+        <On Terms="MoverArrived" Target="RedeemerAttackBeamReverse2" Send="Signal Arrival"/>
+
+        <On Terms="Effect.NodRedeemerThermalLancesEAReverse3.Impact" Send="Create"/>
+        <On Terms="Effect.NodRedeemerThermalLancesEAReverse3.Impact; At Effect" Send="MoverSetDestination2D"/>
+        <On Terms="MoverArrived" Target="RedeemerAttackBeamReverseExtra3" Send="Signal Arrival"/>
+        <On Terms="MoverArrived" Target="RedeemerAttackBeamReverse3" Send="Signal Arrival"/>
+
+        <HostSiteOps Ops="SOpShadow"/>
+        <Acceleration value="40.000000"/>
+        <Deceleration value="40.000000"/>
+        <Speed value="2.000000"/>
+        <SpeedMax value="4.100000"/>
+    </CActorSiteMover>
+    <CActorSound id="RedeemerAttackLaunchSound" parent="SoundOneShot">
+        <Host Subject="Colossus"/>
+        <Sound value="Redeemer_AttackLaunch"/>
+    </CActorSound>
+    <CActorAction id="RedeemerAttackShieldHitter" parent="AoEAttackShieldHitter" effectHit="NodRedeemerThermalLancesMU">
+        <LaunchRequest Subject="RedeemerAttackLaunchSite" Scope="Caster"/>
+        <ActionFlags index="VictimRevealsAttacker" value="1"/>
+    </CActorAction>
+    <CActorRegionCircle id="RedeemerTreeKiller">
+        <On Terms="ActorCreation" Send="QueryRegion ::Self TreeBurnQuery AgainstCenter"/>
+        <Radius value="0.150000"/>
+        <On Terms="Effect.NodRedeemerThermalLancesEA.Start; At Effect" Send="Create"/>
+        <On Terms="Effect.NodRedeemerThermalLancesEA.Start; At Effect" Send="Destroy"/>
+        <On Terms="Effect.NodRedeemerThermalLancesEAReverse.Start; At Effect" Send="Create"/>
+        <On Terms="Effect.NodRedeemerThermalLancesEAReverse.Start; At Effect" Send="Destroy"/>
+
+<!--        <On Terms="Effect.NodRedeemerThermalLancesEA2.Start; At Effect" Send="Create"/>-->
+<!--        <On Terms="Effect.NodRedeemerThermalLancesEA2.Start; At Effect" Send="Destroy"/>-->
+<!--        <On Terms="Effect.NodRedeemerThermalLancesEAReverse2.Start; At Effect" Send="Create"/>-->
+<!--        <On Terms="Effect.NodRedeemerThermalLancesEAReverse2.Start; At Effect" Send="Destroy"/>-->
+<!--        -->
+<!--        <On Terms="Effect.NodRedeemerThermalLancesEA3.Start; At Effect" Send="Create"/>-->
+<!--        <On Terms="Effect.NodRedeemerThermalLancesEA3.Start; At Effect" Send="Destroy"/>-->
+<!--        <On Terms="Effect.NodRedeemerThermalLancesEAReverse3.Start; At Effect" Send="Create"/>-->
+<!--        <On Terms="Effect.NodRedeemerThermalLancesEAReverse3.Start; At Effect" Send="Destroy"/>-->
+    </CActorRegionCircle>
+    <CModel id="RedeemerAttackBeam2" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Protoss\ColossusBeam_Upgrade\ColossusBeam_Upgrade.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <RadiusLoose value="1.000000"/>
+    </CModel>
+
+
+
+
+    <CWeaponLegacy id="RedeemerLaser" parent="NodWeapon" icon="FXNod_LasersAddonUpgrade">
+        <Options index="LinkedCooldown" value="0"/>
+        <DisplayEffect value="RedeemerBeamDamage"/>
+        <DisplayAttackCount value="1"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="9"/>
+        <Arc value="19.995"/>
+        <Period value="5"/>
+        <DamagePoint value="0.7"/>
+        <Effect value="RedeemerWeaponSet"/>
+        <LegacyOptions index="FaceTargetWhileInCooldown" value="0"/>
+    </CWeaponLegacy>
+    <CEffectSet id="RedeemerWeaponSet">
+        <EditorCategories value="Race:Nod"/>
+        <EffectArray value="RedeemerBeamDamage"/>
+        <EffectArray value="RedeemerBeamDamage2"/>
+        <EffectArray value="RedeemerBeamDamage3"/>
+    </CEffectSet>
+    <CEffectDamage id="RedeemerBeamDamage" parent="DU_WEAP">
+        <EditorCategories value="Race:Nod"/>
+        <AttributeBonus index="Armored" value="20"/>
+        <AttributeBonus index="Massive" value="30"/>
+        <Kind value="Ranged"/>
+        <Amount value="100"/>
+        <Death value="Blast"/>
+    </CEffectDamage>
+    <CEffectDamage id="RedeemerBeamDamage2" parent="DU_WEAP">
+        <EditorCategories value="Race:Nod"/>
+        <AttributeBonus index="Armored" value="20"/>
+        <AttributeBonus index="Massive" value="30"/>
+        <Kind value="Ranged"/>
+        <Amount value="100"/>
+        <Death value="Blast"/>
+    </CEffectDamage>
+    <CEffectDamage id="RedeemerBeamDamage3" parent="DU_WEAP">
+        <EditorCategories value="Race:Nod"/>
+        <AttributeBonus index="Armored" value="20"/>
+        <AttributeBonus index="Massive" value="30"/>
+        <Kind value="Ranged"/>
+        <Amount value="100"/>
+        <Death value="Blast"/>
+    </CEffectDamage>
+
+    <CActorBeamSimple id="RedeemerAttackBeam" parent="GenericAttackBeam">
+        <On Terms="ActorOrphan" Send="Destroy"/>
+    </CActorBeamSimple>
+    <CActorAction id="RedeemerAttack" parent="GenericAttack" effectAttack="RedeemerBeamDamage">
+        <LaunchAttachQuery Methods="Weapon 0"/>
+        <LaunchAssets Sound="Redeemer_AttackLaunch"/>
+        <ImpactPhysics Name="RailgunImpact" MatchKeys="Basic" Physics="CNCRailgunAttackDeathForce"/>
+        <ImpactMap index="None" Model="RedeemerAttackBeamImpact"/>
+    </CActorAction>
+    <CActorAction id="RedeemerAttack2" parent="GenericAttack" effectAttack="RedeemerBeamDamage2">
+        <LaunchAttachQuery Methods="Weapon 1"/>
+        <LaunchAssets Sound="Redeemer_AttackLaunch"/>
+        <Beam value="RedeemerAttackBeam2"/>
+        <ImpactPhysics Name="RailgunImpact" MatchKeys="Basic" Physics="CNCRailgunAttackDeathForce"/>
+        <ImpactMap index="None" Model="RedeemerAttackBeamImpact" Sound="RedeemerAttackImpact" ModelReaction="RedeemerAttackImpactReaction"/>
+        <ImpactMap index="Shield" Sound="RedeemerAttackImpactShield" ModelReaction="RedeemerAttackImpactReactionShield"/>
+    </CActorAction>
+    <CActorBeamSimple id="RedeemerAttackBeam2" parent="GenericAttackBeam">
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <Model value="RedeemerAttackBeam"/>
+    </CActorBeamSimple>
+    <CActorAction id="RedeemerAttack3" parent="GenericAttack" effectAttack="RedeemerBeamDamage3">
+        <LaunchAttachQuery Methods="Weapon 2"/>
+        <LaunchAssets Sound="Redeemer_AttackLaunch"/>
+        <Beam value="RedeemerAttackBeam3"/>
+        <ImpactPhysics Name="RailgunImpact" MatchKeys="Basic" Physics="CNCRailgunAttackDeathForce"/>
+        <ImpactMap index="None" Model="RedeemerAttackBeamImpact" Sound="RedeemerAttackImpact" ModelReaction="RedeemerAttackImpactReaction"/>
+        <ImpactMap index="Shield" Sound="RedeemerAttackImpactShield" ModelReaction="RedeemerAttackImpactReactionShield"/>
+    </CActorAction>
+    <CActorBeamSimple id="RedeemerAttackBeam3" parent="GenericAttackBeam">
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <Model value="RedeemerAttackBeam"/>
+    </CActorBeamSimple>
+
+    <CActorSite id="RedeemerAttackLaunchSite" parent="SiteUNIT">
+        <Aliases value="_LaunchGuide"/>
+        <HostSiteOps Ops="SOpAttachWeapon00"/>
+    </CActorSite>
+    <CActorSite id="RedeemerAttackLaunchSite2" parent="SiteUNIT">
+        <Aliases value="_LaunchGuide"/>
+        <HostSiteOps Ops="SOpAttachWeapon01"/>
+    </CActorSite>
+    <CActorSite id="RedeemerAttackLaunchSite3" parent="SiteUNIT">
+        <Aliases value="_LaunchGuide"/>
+        <HostSiteOps Ops="SOpAttachWeapon02"/>
+    </CActorSite>
+
+
+
+    <CActorModel id="RedeemerTurretRightActorModel" parent="ModelAddition">
+        <On Terms="Behavior.NodRedeemerHeavyMachinegunRight.On" Send="Create"/>
+        <On Terms="Behavior.NodRedeemerRocketLauncherRight.On" Send="Create"/>
+        <On Terms="Behavior.NodRFT_Right.On" Send="Create"/>
+        <On Terms="Behavior.NodRedeemerRegeneratorRight.On" Send="Create"/>
+        <On Terms="Behavior.NodRTT_Right.On" Send="Create"/>
+        <On Terms="Behavior.NodRedeemerConfessionRight.On" Send="Create"/>
+        <On Terms="Behavior.NodRedeemerExplosivesRight.On" Send="Create"/>
+        <On Terms="Behavior.NodRedeemerArtilleryBeaconRight.On" Send="Create"/>
+        <On Terms="Behavior.NodRedeemerEMICannonRight.On" Send="Create"/>
+        <On Terms="Behavior.NodRedeemerRedemptionRight.On" Send="Create"/>
+
+        <On Terms="WeaponStart.*.AttackStart" Send="AnimBracketStart Attack Attack"/>
+        <On Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop Attack"/>
+        <On Terms="WeaponStart.*.AttackStart; WeaponTargetElevation GE 20.000000" Send="AnimBracketStart Attack Attack,Superior"/>
+        <On Terms="WeaponStart.*.AttackStart; WeaponTargetElevation LE -20.000000" Send="AnimBracketStart Attack Attack,Inferior"/>
+
+        <On Terms="Behavior.NodRedeemerHeavyMachinegunRight.On" Send="ModelSwap NodEquipmentHeavyMachinegun"/>
+        <On Terms="Behavior.NodRedeemerRocketLauncherRight.On" Send="ModelSwap NodEquipmentRocketLauncher"/>
+        <On Terms="Behavior.NodRFT_Right.On" Send="ModelSwap NodEquipmentFlamethrower"/>
+        <On Terms="Behavior.NodRedeemerRegeneratorRight.On" Send="ModelSwap NodEquipmentRepairDrone"/>
+        <On Terms="Behavior.NodRTT_Right.On" Send="ModelSwap NodEquipmentTiberiumThrower"/>
+        <On Terms="Behavior.NodRedeemerConfessionRight.On" Send="ModelSwap NodEquipmentPropogandaBeacon"/>
+        <On Terms="Behavior.NodRedeemerExplosivesRight.On" Send="ModelSwap NodEquipmentExplosives"/>
+        <On Terms="Behavior.NodRedeemerArtilleryBeaconRight.On" Send="ModelSwap NodEquipmentArtilleryBeacon"/>
+        <On Terms="Behavior.NodRedeemerEMICannonRight.On" Send="ModelSwap NodEquipmentEMICannon"/>
+        <On Terms="Behavior.NodRedeemerRedemptionRight.On" Send="ModelSwap NodEquipmentRedemption"/>
+
+        <!--todo-->
+        <Model value="NodEquipmentHeavyMachinegun"/>
+        <Host Subject="NodRedeemer"/>
+        <HostSiteOps Ops="SOpAttachHardPoint01"/>
+    </CActorModel>
+    <CActorModel id="RedeemerTurretLeftActorModel" parent="ModelAddition">
+        <On Terms="Behavior.NodRedeemerHeavyMachinegunLeft.On" Send="Create"/>
+        <On Terms="Behavior.NodRedeemerRocketLauncherLeft.On" Send="Create"/>
+        <On Terms="Behavior.NodRFT_Left.On" Send="Create"/>
+        <On Terms="Behavior.NodRedeemerRegeneratorLeft.On" Send="Create"/>
+        <On Terms="Behavior.NodRTT_Left.On" Send="Create"/>
+        <On Terms="Behavior.NodRedeemerConfessionLeft.On" Send="Create"/>
+        <On Terms="Behavior.NodRedeemerExplosivesLeft.On" Send="Create"/>
+        <On Terms="Behavior.NodRedeemerArtilleryBeaconLeft.On" Send="Create"/>
+        <On Terms="Behavior.NodRedeemerEMICannonLeft.On" Send="Create"/>
+        <On Terms="Behavior.NodRedeemerRedemptionLeft.On" Send="Create"/>
+        <On Terms="WeaponStart.*.AttackStart" Send="AnimBracketStart Attack Attack"/>
+        <On Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop Attack"/>
+        <On Terms="WeaponStart.*.AttackStart; WeaponTargetElevation GE 20.000000" Send="AnimBracketStart Attack Attack,Superior"/>
+        <On Terms="WeaponStart.*.AttackStart; WeaponTargetElevation LE -20.000000" Send="AnimBracketStart Attack Attack,Inferior"/>
+
+        <On Terms="Behavior.NodRedeemerHeavyMachinegunLeft.On" Send="ModelSwap NodEquipmentHeavyMachinegun"/>
+        <On Terms="Behavior.NodRedeemerRocketLauncherLeft.On" Send="ModelSwap NodEquipmentRocketLauncher"/>
+        <On Terms="Behavior.NodRFT_Left.On" Send="ModelSwap NodEquipmentFlamethrower"/>
+        <On Terms="Behavior.NodRedeemerRegeneratorLeft.On" Send="ModelSwap NodEquipmentRepairDrone"/>
+        <On Terms="Behavior.NodRTT_Left.On" Send="ModelSwap NodEquipmentTiberiumThrower"/>
+        <On Terms="Behavior.NodRedeemerConfessionLeft.On" Send="ModelSwap NodEquipmentPropogandaBeacon"/>
+        <On Terms="Behavior.NodRedeemerExplosivesLeft.On" Send="ModelSwap NodEquipmentExplosives"/>
+        <On Terms="Behavior.NodRedeemerArtilleryBeaconLeft.On" Send="ModelSwap NodEquipmentArtilleryBeacon"/>
+        <On Terms="Behavior.NodRedeemerEMICannonLeft.On" Send="ModelSwap NodEquipmentEMICannon"/>
+        <On Terms="Behavior.NodRedeemerRedemptionLeft.On" Send="ModelSwap NodEquipmentRedemption"/>
+
+        <On Terms="ActorCreation" Send="AnimPlay Alternate Alternate PlayForever 0.000000"/>
+        <!--        <On Terms="ActorCreation; ValidateUnit HasNoNodRedeemerMachinegunRight"       Send="AnimPlay CoverA Cover,A PlayForever 0.000000"/>-->
+
+        <!--todo-->
+        <Model value="NodEquipmentHeavyMachinegun"/>
+        <Host Subject="NodRedeemer"/>
+        <HostSiteOps Ops="SOpAttachHardPoint02"/>
+
+        <Inherits index="BaseModelScale" value="1"/>
+        <Inherits index="Scale" value="1"/>
+    </CActorModel>
+
+    <CActorTurret id="RedeemerTurretLeftAT">
+        <On Terms="TurretEnable.RedeemerTurretLeft" Send="Create"/>
+        <TurretBody Subject="RedeemerTurretLeftActorModel"/>
+    </CActorTurret>
+    <CActorTurret id="RedeemerTurretRightAT">
+        <On Terms="TurretEnable.RedeemerTurretRight" Send="Create"/>
+        <TurretBody Subject="RedeemerTurretRightActorModel"/>
+    </CActorTurret>
+    <CActorSite id="RedeemerTurretLeftAS">
+        <On Terms="UnitBirth.NodRedeemer" Send="Create"/>
+        <On Terms="UnitDeath.NodRedeemer" Send="Destroy"/>
+        <Host Subject="RedeemerTurretLeftActorModel"/>
+        <HostSiteOps Ops="SOpAttachHardPoint02"/>
+    </CActorSite>
+    <CActorSite id="RedeemerTurretRightAS">
+        <On Terms="UnitBirth.NodRedeemer" Send="Create"/>
+        <On Terms="UnitDeath.NodRedeemer" Send="Destroy"/>
+        <Host Subject="RedeemerTurretRightActorModel"/>
+        <HostSiteOps Ops="SOpAttachHardPoint01"/>
+    </CActorSite>
+    <CTurret id="RedeemerTurretLeft">
+        <Idle value="Spin"/>
+        <YawArc value="360"/>
+        <YawRate value="720"/>
+        <YawIdleRate value="45"/>
+        <Fidget DelayMax="30" DelayMin="10"/>
+    </CTurret>
+    <CTurret id="RedeemerTurretRight">
+        <Idle value="Spin"/>
+        <YawArc value="360"/>
+        <YawRate value="720"/>
+        <YawIdleRate value="45"/>
+        <Fidget DelayMax="30" DelayMin="10"/>
+    </CTurret>
+
+
+
+
+
+
+
+    <CWeaponLegacy default="1" id="RedeemerEquipmentWeapon" parent="NodWeapon" icon="FXNod_LasersAddonUpgrade">
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <DamagePoint value="0"/>
+        <Backswing value="0"/>
+        <RangeSlop value="0"/>
+        <RandomDelayMin value="0"/>
+        <RandomDelayMax value="0"/>
+        <LegacyOptions index="NoDeceleration" value="1"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+
+
+
+    <CWeaponLegacy id="NodRedeemerRedemptionRight" parent="NodRedeemerThermalLances">
+        <Effect value="NodRedeemerThermalLances2"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <DamagePoint value="0"/>
+        <Backswing value="0"/>
+        <RangeSlop value="0"/>
+        <RandomDelayMin value="0"/>
+        <RandomDelayMax value="0"/>
+        <LegacyOptions index="NoDeceleration" value="1"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CEffectSet id="NodRedeemerThermalLances2">
+        <EditorCategories value="Race:Nod"/>
+        <EffectArray value="NodRedeemerThermalLancesForward2"/>
+        <EffectArray value="NodRedeemerThermalLancesReverse2"/>
+        <EffectArray value="NodRedeemerThermalLancesFriendlyCP"/>
+    </CEffectSet>
+    <CEffectEnumArea id="NodRedeemerThermalLancesEA2" parent="NodRedeemerThermalLancesEA"/>
+    <CEffectEnumArea id="NodRedeemerThermalLancesEAReverse2" parent="NodRedeemerThermalLancesEAReverse"/>
+    <CEffectCreatePersistent id="NodRedeemerThermalLancesForward2" parent="NodRedeemerThermalLancesForward">
+        <PeriodicEffectArray index="0" value="NodRedeemerThermalLancesEA2"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="NodRedeemerThermalLancesReverse2" parent="NodRedeemerThermalLancesReverse">
+        <PeriodicEffectArray index="0" value="NodRedeemerThermalLancesEAReverse2"/>
+    </CEffectCreatePersistent>
+    <CActorBeamSimple id="NodRedeemerAttackBeam2" parent="RedeemerAttackBeam">
+        <On index="0" Terms="Effect.NodRedeemerThermalLancesEA2.Impact" Send="Create"/>
+        <HostLaunch Subject="RedeemerAttackLaunchSiteR1" Scope="Caster" Actor="Create"/>
+    </CActorBeamSimple>
+    <CActorBeamSimple id="RedeemerAttackBeamReverse2" parent="RedeemerAttackBeamReverse">
+        <On index="0" Terms="Effect.NodRedeemerThermalLancesEAReverse2.Impact" Send="Create"/>
+        <HostLaunch Subject="RedeemerAttackLaunchSiteR2" Scope="Caster" Actor="Create"/>
+    </CActorBeamSimple>
+    <CActorBeamSimple id="RedeemerAttackBeamReverseExtra2" parent="RedeemerAttackBeamReverseExtra">
+        <On index="0" Terms="Effect.NodRedeemerThermalLancesEAReverse2.Impact" Send="Create"/>
+        <HostLaunch Subject="RedeemerTurretRightAS" Scope="Caster" Actor="Create"/>
+        <HostLaunch Subject="RedeemerAttackLaunchSiteR3" Scope="Caster" Actor="Create"/>
+    </CActorBeamSimple>
+
+    <CActorSite id="RedeemerAttackLaunchSiteR1" parent="SiteUNIT">
+        <Aliases value="_LaunchGuide"/>
+        <HostSiteOps Ops="SOpAttachHardPoint01 SOpHigher005"/>
+    </CActorSite>
+    <CActorSite id="RedeemerAttackLaunchSiteR2" parent="SiteUNIT">
+        <Aliases value="_LaunchGuide"/>
+        <HostSiteOps Ops="SOpAttachHardPoint01 SOpHigher005"/>
+    </CActorSite>
+    <CActorSite id="RedeemerAttackLaunchSiteR3" parent="SiteUNIT">
+        <Aliases value="_LaunchGuide"/>
+        <HostSiteOps Ops="SOpAttachHardPoint01 SOpHigher005"/>
+    </CActorSite>
+
+
+
+    <CWeaponLegacy id="NodRedeemerRedemptionLeft" parent="NodRedeemerThermalLances">
+        <Effect value="NodRedeemerThermalLances3"/>
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <Options index="LinkedCooldown" value="0"/>
+        <DamagePoint value="0"/>
+        <Backswing value="0"/>
+        <RangeSlop value="0"/>
+        <RandomDelayMin value="0"/>
+        <RandomDelayMax value="0"/>
+        <LegacyOptions index="NoDeceleration" value="1"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CEffectSet id="NodRedeemerThermalLances3">
+        <EditorCategories value="Race:Nod"/>
+        <EffectArray value="NodRedeemerThermalLancesForward3"/>
+        <EffectArray value="NodRedeemerThermalLancesReverse3"/>
+        <EffectArray value="NodRedeemerThermalLancesFriendlyCP"/>
+    </CEffectSet>
+    <CEffectEnumArea id="NodRedeemerThermalLancesEA3" parent="NodRedeemerThermalLancesEA"/>
+    <CEffectEnumArea id="NodRedeemerThermalLancesEAReverse3" parent="NodRedeemerThermalLancesEAReverse"/>
+    <CEffectCreatePersistent id="NodRedeemerThermalLancesForward3" parent="NodRedeemerThermalLancesForward">
+        <PeriodicEffectArray index="0" value="NodRedeemerThermalLancesEA3"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="NodRedeemerThermalLancesReverse3" parent="NodRedeemerThermalLancesReverse">
+        <PeriodicEffectArray index="0" value="NodRedeemerThermalLancesEAReverse3"/>
+    </CEffectCreatePersistent>
+    <CActorBeamSimple id="NodRedeemerAttackBeam3" parent="RedeemerAttackBeam">
+        <On index="0" Terms="Effect.NodRedeemerThermalLancesEA3.Impact" Send="Create"/>
+        <HostLaunch Subject="RedeemerAttackLaunchSiteL1" Scope="Caster" Actor="Create"/>
+    </CActorBeamSimple>
+    <CActorBeamSimple id="RedeemerAttackBeamReverse3" parent="RedeemerAttackBeamReverse">
+        <On index="0" Terms="Effect.NodRedeemerThermalLancesEAReverse3.Impact" Send="Create"/>
+        <HostLaunch Subject="RedeemerAttackLaunchSiteL2" Scope="Caster" Actor="Create"/>
+    </CActorBeamSimple>
+    <CActorBeamSimple id="RedeemerAttackBeamReverseExtra3" parent="RedeemerAttackBeamReverseExtra">
+        <On index="0" Terms="Effect.NodRedeemerThermalLancesEAReverse3.Impact" Send="Create"/>
+        <HostLaunch Subject="RedeemerAttackLaunchSiteL3" Scope="Caster" Actor="Create"/>
+    </CActorBeamSimple>
+
+    <CActorSite id="RedeemerAttackLaunchSiteL1" parent="SiteUNIT">
+        <Aliases value="_LaunchGuide"/>
+        <HostSiteOps Ops="SOpAttachHardPoint02 SOpHigher005"/>
+    </CActorSite>
+    <CActorSite id="RedeemerAttackLaunchSiteL2" parent="SiteUNIT">
+        <Aliases value="_LaunchGuide"/>
+        <HostSiteOps Ops="SOpAttachHardPoint02 SOpHigher005"/>
+    </CActorSite>
+    <CActorSite id="RedeemerAttackLaunchSiteL3" parent="SiteUNIT">
+        <Aliases value="_LaunchGuide"/>
+        <HostSiteOps Ops="SOpAttachHardPoint02 SOpHigher005"/>
+    </CActorSite>
+
+
+    <CWeaponLegacy id="NodRedeemerHeavyMachinegunRight" parent="RedeemerEquipmentWeapon" >
+        <DisplayEffect value="NodRedeemerMachinegunDamage"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Period value="1"/>
+        <Backswing value="0.75"/>
+        <Range value="7"/>
+        <Effect value="NodRedeemerMachinegunWCPR"/>
+        <DisplayAttackCount value="3"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodRedeemerHeavyMachinegunLeft" parent="RedeemerEquipmentWeapon" >
+        <DisplayEffect value="NodRedeemerMachinegunDamage"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Period value="1"/>
+        <Range value="7"/>
+        <Backswing value="0.75"/>
+        <Effect value="NodRedeemerMachinegunWCPL"/>
+        <DisplayAttackCount value="3"/>
+    </CWeaponLegacy>
+
+    <CActorAction id="NodRedeemerMachinegunAttackL" parent="GenericAttack" effectAttack="KelmorianMinerDamage">
+        <On index="0" Terms="Effect.NodRedeemerMachinegunDamageL.Stop; FromEffectTreeDescendant" Send="ActionImpactPhysics"/>
+        <On index="5" Terms="Effect.NodRedeemerMachinegunDamageL.Start; At Caster" Send="Create"/>
+<!--        <LaunchAttachQuery Methods="AMFilterWeapon01"/>-->
+<!--        <LaunchSiteOps HoldPosition="1" HoldRotation="1"/>-->
+<!--        <ImpactSiteOps HoldPosition="1" HoldRotation="1"/>-->
+        <LaunchSiteOps Ops="SOpAttachHardPoint02 SOpHigher005"/>
+        <LaunchAssets Model="GhostAttackLaunch" Sound="NodRedeemerMachinegun_AttackLaunch"/>
+<!--        <ContainerAssets Model="MarineAttackLaunch" Sound="NodRedeemerMachinegun_AttackLaunch"/>-->
+        <Beam value="NodLightattackbeam"/>
+        <ImpactMap index="None" Model="MarineAttackImpact" Sound="Marine_AttackImpact"/>
+        <ImpactMap index="Flesh" ModelReaction="BloodTargetImpact"/>
+        <ImpactPhysics Name="BulletImpact" MatchKeys="Basic" Physics="MarineAttackDeathForce"/>
+        <On Terms="ActorCreation" Send="Create NodRedeemerTurretAttackLaunchLeft"/>
+    </CActorAction>
+    <CActorAction id="NodRedeemerMachinegunAttackR" parent="GenericAttack" effectAttack="KelmorianMinerDamage">
+        <On index="0" Terms="Effect.NodRedeemerMachinegunDamageR.Stop; FromEffectTreeDescendant" Send="ActionImpactPhysics"/>
+        <On index="5" Terms="Effect.NodRedeemerMachinegunDamageR.Start; At Caster" Send="Create"/>
+        <!--        <LaunchAttachQuery Methods="AMFilterWeapon01"/>-->
+        <!--        <LaunchSiteOps HoldPosition="1" HoldRotation="1"/>-->
+        <!--        <ImpactSiteOps HoldPosition="1" HoldRotation="1"/>-->
+        <LaunchSiteOps Ops="SOpAttachHardPoint01 SOpHigher005"/>
+        <LaunchAssets Model="GhostAttackLaunch" Sound="NodRedeemerMachinegun_AttackLaunch"/>
+        <!--        <ContainerAssets Model="MarineAttackLaunch" Sound="NodRedeemerMachinegun_AttackLaunch"/>-->
+        <Beam value="NodLightattackbeam"/>
+        <ImpactMap index="None" Model="MarineAttackImpact" Sound="Marine_AttackImpact"/>
+        <ImpactMap index="Flesh" ModelReaction="BloodTargetImpact"/>
+        <ImpactPhysics Name="BulletImpact" MatchKeys="Basic" Physics="MarineAttackDeathForce"/>
+        <On Terms="ActorCreation" Send="Create NodRedeemerTurretAttackLaunchRight"/>
+    </CActorAction>
+    <CEffectCreatePersistent id="NodRedeemerMachinegunWCPL">
+        <EditorCategories value="Race:Nod"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <PeriodCount value="3"/>
+        <PeriodicEffectArray value="NodRedeemerMachinegunDamageL"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0.15"/>
+        <PeriodicPeriodArray value="0.3"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="NodRedeemerMachinegunWCPR">
+        <EditorCategories value="Race:Nod"/>
+        <WhichLocation Value="TargetUnit"/>
+        <TimeScaleSource Value="Caster"/>
+        <Flags index="Channeled" value="1"/>
+        <PeriodCount value="3"/>
+        <PeriodicEffectArray value="NodRedeemerMachinegunDamageR"/>
+        <PeriodicPeriodArray value="0"/>
+        <PeriodicPeriodArray value="0.15"/>
+        <PeriodicPeriodArray value="0.3"/>
+    </CEffectCreatePersistent>
+    <CEffectSet id="NodRedeemerMachinegunDamageL">
+        <EffectArray value="NodRedeemerMachinegunDamage"/>
+    </CEffectSet>
+    <CEffectSet id="NodRedeemerMachinegunDamageR">
+        <EffectArray value="NodRedeemerMachinegunDamage"/>
+    </CEffectSet>
+    <CEffectDamage id="NodRedeemerMachinegunDamage">
+        <EditorCategories value="Race:Nod"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <ArmorReduction value="1"/>
+        <Flags index="Notification" value="1"/>
+        <Kind value="Ranged"/>
+        <Amount value="9"/>
+        <SearchFlags index="CallForHelp" value="1"/>
+        <SearchFlags index="OffsetByUnitRadius" value="1"/>
+    </CEffectDamage>
+
+    <CWeaponLegacy id="NodRFT_Right" parent="RedeemerEquipmentWeapon" >
+        <DisplayEffect value="NODRFT_Damage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="4"/>
+        <Range value="6"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <Period value="2"/>
+        <Effect value="NODRFT_Set_Right"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodRFT_Left" parent="RedeemerEquipmentWeapon" >
+        <DisplayEffect value="NODRFT_Damage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="4"/>
+        <Range value="6"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <Period value="2"/>
+        <Effect value="NODRFT_Set_Left"/>
+    </CWeaponLegacy>
+    <CEffectSet id="NODRFT_Set_Left">
+        <EditorCategories value="Race:Nod"/>
+        <EffectArray value="NODRFT_CP"/>
+        <EffectArray value="NODRFT_Damage"/>
+    </CEffectSet>
+    <CEffectSet id="NODRFT_Set_Right">
+        <EditorCategories value="Race:Nod"/>
+        <EffectArray value="NODRFT_CP"/>
+        <EffectArray value="NODRFT_Damage"/>
+    </CEffectSet>
+    <CActorAction id="NODRFT_Action_Left" parent="GenericAttackBase">
+        <LaunchSiteOps Ops="SOpAttachHardPoint02 SOpHigher005"/>
+        <On Terms="Effect.NODRFT_Set_Left.Start; At Caster" Send="Create"/>
+<!--        <On Terms="Effect.PerditionTurretFlameThrowerDamage.Start; At Target" Send="ActionImpact"/>-->
+<!--        <On Terms="Effect.PerditionTurretFlameThrowerDamage.Start; At Caster; FromEffectTreeDescendant" Send="ActionDamage"/>-->
+        <LaunchAttachQuery Methods="AMFilterWeapon"/>
+        <LaunchAssets Model="" Sound="BlackHandAttackLaunch"/>
+        <ImpactMap index="None" Sound="BlackHand_AttackImpact"/>
+        <Beam value="HellionAttackBeam"/>
+<!--        <Beam value="RedeemerHellionAttackBeam"/>-->
+        <BeamScope value="Caster"/>
+    </CActorAction>
+    <CActorAction id="NODRFT_Action_Right" parent="GenericAttackBase">
+        <LaunchSiteOps Ops="SOpAttachHardPoint01 SOpHigher005"/>
+        <On Terms="Effect.NODRFT_Set_Right.Start; At Caster" Send="Create"/>
+        <!--        <On Terms="Effect.PerditionTurretFlameThrowerDamage.Start; At Target" Send="ActionImpact"/>-->
+        <!--        <On Terms="Effect.PerditionTurretFlameThrowerDamage.Start; At Caster; FromEffectTreeDescendant" Send="ActionDamage"/>-->
+        <LaunchAttachQuery Methods="AMFilterWeapon"/>
+        <LaunchAssets Model="" Sound="BlackHandAttackLaunch"/>
+        <ImpactMap index="None" Sound="BlackHand_AttackImpact"/>
+        <Beam value="HellionAttackBeam"/>
+        <!--        <Beam value="RedeemerHellionAttackBeam"/>-->
+        <BeamScope value="Caster"/>
+    </CActorAction>
+    <CEffectCreatePersistent id="NODRFT_CP">
+        <EditorCategories value="Race:Nod"/>
+        <WhichLocation Value="SourcePoint"/>
+        <OffsetVectorStartLocation Value="SourcePoint"/>
+        <Flags index="Channeled" value="1"/>
+        <PeriodCount value="14"/>
+        <PeriodicEffectArray value="NODRFT_EA"/>
+        <PeriodicOffsetArray value="0.5,-0.5,0"/>
+        <PeriodicOffsetArray value="-0.5,-0.5,0"/>
+        <PeriodicOffsetArray value="0.5,-1,0"/>
+        <PeriodicOffsetArray value="-0.5,-1,0"/>
+        <PeriodicOffsetArray value="0.5,-1.5,0"/>
+        <PeriodicOffsetArray value="-0.5,-1.5,0"/>
+        <PeriodicOffsetArray value="0.5,-2,0"/>
+        <PeriodicOffsetArray value="-0.5,-2,0"/>
+        <PeriodicOffsetArray value="0.5,-2.5,0"/>
+        <PeriodicOffsetArray value="-0.5,-2.5,0"/>
+        <PeriodicOffsetArray value="0.5,-3,0"/>
+        <PeriodicOffsetArray value="-0.5,-3,0"/>
+        <PeriodicOffsetArray value="0.5,-3.5,0"/>
+        <PeriodicOffsetArray value="-0.5,-3.5,0"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="NODRFT_Damage" parent="DU_WEAP_SPLASH">
+        <ValidatorArray value="noMarkers"/>
+        <EditorCategories value="Race:Nod"/>
+        <Amount value="10"/>
+        <AttributeBonus index="Light" value="10"/>
+        <AttributeBonus index="Structure" value="10"/>
+        <Death value="Fire"/>
+    </CEffectDamage>
+    <CEffectEnumArea id="NODRFT_EA" parent="EA_WEAP">
+        <EditorCategories value="Race:Nod"/>
+        <SearchFilters value="Ground;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="0.5" Effect="NODRFT_Damage"/>
+    </CEffectEnumArea>
+    <CActorModel id="NODRFT_Impact" parent="ModelAnimationStyleOneShot">
+        <Terms value="Cap 1"/>
+        <On Terms="Effect.NODRFT_Damage.Start; At Target" Send="Create"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachRandomDamage"/>
+        <Model value="ImpactModelBlackHand"/>
+    </CActorModel>
+
+    <CWeaponLegacy id="NodRTT_Right" parent="RedeemerEquipmentWeapon" >
+        <DisplayEffect value="NODRTT_Damage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="4"/>
+        <Range value="6"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <Period value="2"/>
+        <Effect value="NODRTT_Set_Right"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodRTT_Left" parent="RedeemerEquipmentWeapon" >
+        <DisplayEffect value="NODRTT_Damage"/>
+        <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <MinScanRange value="4"/>
+        <Range value="6"/>
+        <Marker>
+            <MatchFlags index="Id" value="1"/>
+        </Marker>
+        <Period value="2"/>
+        <Effect value="NODRTT_Set_Left"/>
+    </CWeaponLegacy>
+    <CEffectSet id="NODRTT_Set_Left">
+        <EditorCategories value="Race:Nod"/>
+        <EffectArray value="NODRTT_CP"/>
+        <EffectArray value="NODRTT_Damage"/>
+    </CEffectSet>
+    <CEffectSet id="NODRTT_Set_Right">
+        <EditorCategories value="Race:Nod"/>
+        <EffectArray value="NODRTT_CP"/>
+        <EffectArray value="NODRTT_Damage"/>
+    </CEffectSet>
+    <CActorAction id="NODRTT_Action_Left" parent="GenericAttackBase">
+        <LaunchSiteOps Ops="SOpAttachHardPoint02 SOpHigher005"/>
+        <On Terms="Effect.NODRTT_Set_Left.Start; At Caster" Send="Create"/>
+        <!--        <On Terms="Effect.PerditionTurretFlameThrowerDamage.Start; At Target" Send="ActionImpact"/>-->
+        <!--        <On Terms="Effect.PerditionTurretFlameThrowerDamage.Start; At Caster; FromEffectTreeDescendant" Send="ActionDamage"/>-->
+        <LaunchAttachQuery Methods="AMFilterWeapon"/>
+        <LaunchAssets Model="" Sound="BlackHandAttackLaunch"/>
+        <ImpactMap index="None" Sound="BlackHand_AttackImpact"/>
+        <Beam value="HellionAttackBeam"/>
+        <!--        <Beam value="RedeemerHellionAttackBeam"/>-->
+        <BeamScope value="Caster"/>
+    </CActorAction>
+    <CActorAction id="NODRTT_Action_Right" parent="GenericAttackBase">
+        <LaunchSiteOps Ops="SOpAttachHardPoint01 SOpHigher005"/>
+        <On Terms="Effect.NODRTT_Set_Right.Start; At Caster" Send="Create"/>
+        <!--        <On Terms="Effect.PerditionTurretFlameThrowerDamage.Start; At Target" Send="ActionImpact"/>-->
+        <!--        <On Terms="Effect.PerditionTurretFlameThrowerDamage.Start; At Caster; FromEffectTreeDescendant" Send="ActionDamage"/>-->
+        <LaunchAttachQuery Methods="AMFilterWeapon"/>
+        <LaunchAssets Model="" Sound="BlackHandAttackLaunch"/>
+        <ImpactMap index="None" Sound="BlackHand_AttackImpact"/>
+        <Beam value="HellionAttackBeam"/>
+        <!--        <Beam value="RedeemerHellionAttackBeam"/>-->
+        <BeamScope value="Caster"/>
+    </CActorAction>
+    <CEffectCreatePersistent id="NODRTT_CP">
+        <EditorCategories value="Race:Nod"/>
+        <WhichLocation Value="SourcePoint"/>
+        <OffsetVectorStartLocation Value="SourcePoint"/>
+        <Flags index="Channeled" value="1"/>
+        <PeriodCount value="14"/>
+        <PeriodicEffectArray value="NODRTT_EA"/>
+        <PeriodicOffsetArray value="0.5,-0.5,0"/>
+        <PeriodicOffsetArray value="-0.5,-0.5,0"/>
+        <PeriodicOffsetArray value="0.5,-1,0"/>
+        <PeriodicOffsetArray value="-0.5,-1,0"/>
+        <PeriodicOffsetArray value="0.5,-1.5,0"/>
+        <PeriodicOffsetArray value="-0.5,-1.5,0"/>
+        <PeriodicOffsetArray value="0.5,-2,0"/>
+        <PeriodicOffsetArray value="-0.5,-2,0"/>
+        <PeriodicOffsetArray value="0.5,-2.5,0"/>
+        <PeriodicOffsetArray value="-0.5,-2.5,0"/>
+        <PeriodicOffsetArray value="0.5,-3,0"/>
+        <PeriodicOffsetArray value="-0.5,-3,0"/>
+        <PeriodicOffsetArray value="0.5,-3.5,0"/>
+        <PeriodicOffsetArray value="-0.5,-3.5,0"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+        <PeriodicPeriodArray value="0.022"/>
+    </CEffectCreatePersistent>
+    <CEffectDamage id="NODRTT_Damage" parent="DU_WEAP_SPLASH">
+        <ValidatorArray value="noMarkers"/>
+        <EditorCategories value="Race:Nod"/>
+        <Amount value="10"/>
+        <AttributeBonus index="Light" value="10"/>
+        <AttributeBonus index="Structure" value="10"/>
+        <Death value="Fire"/>
+    </CEffectDamage>
+    <CEffectEnumArea id="NODRTT_EA" parent="EA_WEAP">
+        <EditorCategories value="Race:Nod"/>
+        <SearchFilters value="Ground;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <AreaArray Radius="0.5" Effect="NODRTT_Damage"/>
+    </CEffectEnumArea>
+    <CActorModel id="NODRTT_Impact" parent="ModelAnimationStyleOneShot">
+        <Terms value="Cap 1"/>
+        <On Terms="Effect.NODRTT_Damage.Start; At Target" Send="Create"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <Host Subject="_Selectable"/>
+        <HostSiteOps Ops="SOpAttachRandomDamage"/>
+        <Model value="ImpactModelBlackHand"/>
+    </CActorModel>
+
+    <CWeaponLegacy id="NodRedeemerEMICannonRight" parent="RedeemerEquipmentWeapon" >
+        <DisplayEffect value="NodRedeemerEMIDamageDummy"/>
+        <TargetFilters value="Ground,Mechanical,Visible;Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="8"/>
+        <Arc value="180"/>
+        <Period value="5"/>
+        <Effect value="RED_AwakenBuggyEMPSetR"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodRedeemerEMICannonLeft" parent="RedeemerEquipmentWeapon" >
+        <DisplayEffect value="NodRedeemerEMIDamageDummy"/>
+        <TargetFilters value="Ground,Mechanical,Visible;Structure,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="8"/>
+        <Arc value="180"/>
+        <Period value="5"/>
+        <Effect value="RED_AwakenBuggyEMPSetL"/>
+    </CWeaponLegacy>
+    <CEffectDamage id="NodRedeemerEMIDamageDummy">
+        <Amount value="0"/>
+    </CEffectDamage>
+
+    <CEffectSet id="RED_AwakenBuggyEMPSetR">
+        <EffectArray value="RED_AwakenBuggyEMPLaunchMissileR"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+    <CEffectSet id="RED_AwakenBuggyEMPSetL">
+        <EffectArray value="RED_AwakenBuggyEMPLaunchMissileL"/>
+        <TargetLocationType value="Point"/>
+    </CEffectSet>
+<!--    <CEffectApplyBehavior id="AwakenBuggyEMPApplyBehavior">-->
+<!--        <Behavior value="AwakenBuggyEMPStunned"/>-->
+<!--    </CEffectApplyBehavior>-->
+    <CEffectLaunchMissile id="RED_AwakenBuggyEMPLaunchMissileR">
+        <ImpactLocation Value="TargetPoint"/>
+        <ImpactEffect value="AwakenBuggyEMPSearchArea"/>
+        <AmmoUnit value="NodAwakenBuggyEMP"/>
+<!--        <LaunchSiteOps Ops="SOpAttachHardPoint01 SOpHigher005"/>-->
+    </CEffectLaunchMissile>
+    <CEffectLaunchMissile id="RED_AwakenBuggyEMPLaunchMissileL">
+        <ImpactLocation Value="TargetPoint"/>
+        <ImpactEffect value="AwakenBuggyEMPSearchArea"/>
+        <AmmoUnit value="NodAwakenBuggyEMP"/>
+<!--        <LaunchSiteOps Ops="SOpAttachHardPoint01 SOpHigher005"/>-->
+    </CEffectLaunchMissile>
+    <CActorAction id="RED_NodAwakenBuggyEMPR" parent="GenericAttack" effectLaunch="RED_AwakenBuggyEMPLaunchMissileR">
+        <LaunchSiteOps Ops="SOpAttachHardPoint01 SOpHigher005"/>
+<!--        <LaunchAssets Sound="NodBikeRocketAttackLaunch"/>-->
+        <LaunchAssets Sound="Ghost_EMPAttackImpact"/>
+        <Missile value="NodAwakenBuggyEMP"/>
+        <On Terms="ActorCreation" Send="Create NodRedeemerTurretAttackLaunchLeft"/>
+    </CActorAction>
+    <CActorAction id="RED_NodAwakenBuggyEMPL" parent="GenericAttack" effectLaunch="RED_AwakenBuggyEMPLaunchMissileL">
+        <LaunchSiteOps Ops="SOpAttachHardPoint02 SOpHigher005"/>
+<!--        <LaunchAssets Sound="NodBikeRocketAttackLaunch"/>-->
+        <LaunchAssets Sound="Ghost_EMPAttackImpact"/>
+        <Missile value="NodAwakenBuggyEMP"/>
+        <On Terms="ActorCreation" Send="Create NodRedeemerTurretAttackLaunchLeft"/>
+    </CActorAction>
+
+<!--    <CActorMissile id="NodRedeemerRocket_ActorMissile" parent="GenericAttackMissile" unitName="NodRedeemerRocket">-->
+<!--        <On Terms="ActorDestruction" Send="Create NodMissileDeath"/>-->
+<!--    </CActorMissile>-->
+<!--    <CModel id="NodRedeemerRocket" parent="MissileFX">-->
+<!--        <Model value="Assets\Effects\Terran\MissileTurretMissile\MissileTurretMissile.m3"/>-->
+<!--        <EditorCategories value="Race:Nod"/>-->
+<!--        <ScaleMax value="0.800000,0.800000,0.800000"/>-->
+<!--        <ScaleMin value="0.800000,0.800000,0.800000"/>-->
+<!--        <SelectionRadius value="0.666500"/>-->
+<!--        <ShadowRadius value="0.666500"/>-->
+<!--    </CModel>-->
+<!--    <CUnit id="NodRedeemerRocket" parent="NodMissile">-->
+<!--        <Mover value="ThorAA"/>-->
+<!--    </CUnit>-->
+
+    <CWeaponLegacy id="NodRedeemerRocketLauncherRight" parent="RedeemerEquipmentWeapon" >
+        <DisplayEffect value="NodRedeemerRocketDamage"/>
+        <DisplayAttackCount value="3"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="8"/>
+        <RangeSlop value="0"/>
+        <Arc value="180"/>
+        <Period value="1.7"/>
+        <Backswing value="0.25"/>
+        <Effect value="NodRedeemerRocketCreatePersistentNodRight"/>
+        <MinScanRange value="7"/>
+    </CWeaponLegacy>
+    <CWeaponLegacy id="NodRedeemerRocketLauncherLeft" parent="RedeemerEquipmentWeapon" >
+        <DisplayEffect value="NodRedeemerRocketDamage"/>
+        <DisplayAttackCount value="3"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="8"/>
+        <RangeSlop value="0"/>
+        <Arc value="180"/>
+        <Period value="1.7"/>
+        <Backswing value="0.25"/>
+        <Effect value="NodRedeemerRocketCreatePersistentNodLeft"/>
+        <MinScanRange value="7"/>
+    </CWeaponLegacy>
+
+    <CEffectCreatePersistent id="NodRedeemerRocketCreatePersistentNodRight">
+        <EditorCategories value="Race:Nod"/>
+        <WhichLocation Value="TargetUnit"/>
+        <PeriodCount value="3"/>
+        <PeriodicEffectArray value="NodRedeemerRocketLaunchMissileRight"/>
+        <PeriodicPeriodArray value="0.0625"/>
+    </CEffectCreatePersistent>
+    <CEffectCreatePersistent id="NodRedeemerRocketCreatePersistentNodLeft" parent="NodRedeemerRocketCreatePersistentNodRight">
+        <PeriodicEffectArray index="0" value="NodRedeemerRocketLaunchMissileLeft"/>
+    </CEffectCreatePersistent>
+    <CEffectLaunchMissile id="NodRedeemerRocketLaunchMissileRight">
+        <EditorCategories value="Race:Nod"/>
+        <ImpactEffect value="NodRedeemerRocketDamage"/>
+        <AmmoUnit value="NodRedeemerRocket"/>
+    </CEffectLaunchMissile>
+    <CEffectLaunchMissile id="NodRedeemerRocketLaunchMissileLeft" parent="NodRedeemerRocketLaunchMissileRight"/>
+    <CActorAction id="NodRedeemerRocketVolleyRight" parent="GenericAttack" effectLaunch="NodRedeemerRocketLaunchMissileRight">
+        <LaunchSiteOps Ops="SOpAttachHardPoint01 SOpHigher005"/>
+        <LaunchAssets Sound="NodBikeRocketAttackLaunch"/>
+        <Missile value="NodRedeemerRocket_ActorMissile"/>
+        <On Terms="ActorCreation" Send="Create NodRedeemerTurretAttackLaunchLeft"/>
+    </CActorAction>
+    <CActorAction id="NodRedeemerRocketVolleyLeft" parent="GenericAttack" effectLaunch="NodRedeemerRocketLaunchMissileLeft">
+        <LaunchSiteOps Ops="SOpAttachHardPoint02 SOpHigher005"/>
+        <LaunchAssets Sound="NodBikeRocketAttackLaunch"/>
+        <Missile value="NodRedeemerRocket_ActorMissile"/>
+        <On Terms="ActorCreation" Send="Create NodRedeemerTurretAttackLaunchRight"/>
+    </CActorAction>
+    <CActorAction id="NodRedeemerRocketVolley" parent="GenericAttack" effectImpact="NodRedeemerRocketDamage">
+        <ImpactMap index="None" Model="HailstormMissileVolleyImpact" Sound="NodBikeRocketAttackImpact" ModelReaction="HailstormMissileVolleyImpactReaction"/>
+        <ImpactMap index="Shield" Sound="HailstormMissileVolleyImpactShield" ModelReaction="HailstormMissileVolleyImpactReactionShield"/>
+    </CActorAction>
+    <CEffectDamage id="NodRedeemerRocketDamage">
+        <EditorCategories value="Race:Nod"/>
+        <ResponseFlags index="Acquire" value="1"/>
+        <ResponseFlags index="Flee" value="1"/>
+        <Flags index="Notification" value="1"/>
+        <Kind value="Ranged"/>
+        <Amount value="7"/>
+        <SearchFilters value="Visible;Player,Ally,Neutral,Missile,Stasis,Dead,Invulnerable,Benign,Passive"/>
+    </CEffectDamage>
+    <CActorMissile id="NodRedeemerRocket_ActorMissile" parent="GenericAttackMissile" unitName="NodRedeemerRocket">
+        <On Terms="ActorDestruction" Send="Create NodMissileDeath"/>
+    </CActorMissile>
+    <CModel id="NodRedeemerRocket" parent="MissileFX">
+        <Model value="Assets\Effects\Terran\MissileTurretMissile\MissileTurretMissile.m3"/>
+        <EditorCategories value="Race:Nod"/>
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
+        <SelectionRadius value="0.666500"/>
+        <ShadowRadius value="0.666500"/>
+    </CModel>
+    <CUnit id="NodRedeemerRocket" parent="NodMissile">
+        <Mover value="ThorAA"/>
+    </CUnit>
+
+    <CActorModel id="NodRedeemerTurretAttackLaunchLeft" parent="ModelAnimationStyleOneShot">
+        <Host Subject="RedeemerTurretLeftActorModel" ReachAcrossEffectTrees="1"/>
+        <HostSiteOps Ops="SOpAttachRollingWeaponStripe"/>
+        <Model value="NodRedeemerTurretAttackLaunch"/>
+        <Flags index="SuppressCreationErrors" value="1"/>
+    </CActorModel>
+    <CActorModel id="NodRedeemerTurretAttackLaunchRight" parent="ModelAnimationStyleOneShot">
+        <Host Subject="RedeemerTurretRightActorModel" ReachAcrossEffectTrees="1"/>
+        <Model value="NodRedeemerTurretAttackLaunch"/>
+        <HostSiteOps Ops="SOpAttachRollingWeaponStripe"/>
+        <Flags index="SuppressCreationErrors" value="1"/>
+    </CActorModel>
+    <CModel id="NodRedeemerTurretAttackLaunch" parent="LaunchFX">
+        <Model value="Assets\Effects\Terran\AutoTurretWeaponLaunch\AutoTurretWeaponLaunch.m3"/>
+        <EditorCategories value="Race:Terran"/>
+    </CModel>
+
+    <CModel id="RedeemerAttackBeamImpact" parent="ImpactFX">
+        <Model value="Assets\Effects\Protoss\ColossusBeamBurn_Upgrade\ColossusBeamBurn_Upgrade.m3"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
+
+
+
+
+
+
+
+
+
+    <CAbilBuild id="NodCasterBuild">
+        <Range value="999"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+        <InfoArray index="Build1" Unit="CabalObeliskOfLife" Time="1"><Button DefaultButtonFace="CabalObeliskOfLife"/></InfoArray>
+        <InfoArray index="Build2" Unit="CabalMantis" Time="1"><Button DefaultButtonFace="NodReinforcement"/></InfoArray>
+        <InfoArray index="Build3" Unit="NodRedeemer" Time="1"><Button DefaultButtonFace="NodCallRedeemer"/></InfoArray>
+    </CAbilBuild>
+    <CUnit id="NodCaster">
+        <AbilArray Link="BuildInProgress"/>
+        <AbilArray Link="NodEMPAttack"/>
+        <AbilArray Link="NodVision"/>
+        <AbilArray Link="NodDropFlameMines"/>
+        <AbilArray Link="NodCasterBuild"/>
+        <AbilArray Link="MarkofKane"/>
+        <AbilArray Link="NodSpawnTib"/>
+        <AbilArray Link="NodNukeStrike"/>
+        <AbilArray Link="NodNukeStrikeEMP"/>
+        <AbilArray Link="NodInvertWarheadStrike"/>
+        <AbilArray Link="VertigoAttack"/>
+        <CardLayouts>
+            <LayoutButtons Type="AbilCmd" Row="0" Column="0" Face="NodEMPAttack"        AbilCmd="NodEMPAttack,Execute"            />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="1" Face="NodVision"           AbilCmd="NodVision,Execute"               />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="2" Face="FlameMine"           AbilCmd="NodDropFlameMines,Execute"       />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="3" Face="NodSpawnTib"         AbilCmd="NodSpawnTib,Execute"             />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="4" Face="MarkofKane"          AbilCmd="MarkofKane,Execute"              />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="0" Face="NodNukeStrike"       AbilCmd="NodNukeStrike,Execute"           />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="1" Face="NodInvertWarhead"    AbilCmd="NodInvertWarheadStrike,Execute"  />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="2" Face="NodEMPWarhead"       AbilCmd="NodNukeStrikeEMP,Execute"        />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="3" Face="VertigoAttack"       AbilCmd="VertigoAttack,Execute"           />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="0" Face="CabalObeliskOfLife"  AbilCmd="NodCasterBuild,Build1"        />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="1" Face="NodReinforcement"    AbilCmd="NodCasterBuild,Build2"        />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="2" Face="NodCallRedeemer"     AbilCmd="NodCasterBuild,Build3"        />
+        </CardLayouts>
+        <Race value="Nod"/>
+    </CUnit>
+
+
+
+
+
+
+
+
+
+
+    <CUnit id="SpawnCaster" default="1">
+        <FlagArray index="Invulnerable" value="1"/>
+        <AbilArray Link="##id##"/>
+    </CUnit>
+
+    <CUnit id="SpawnCaster1" parent="SpawnCaster">
+        <CardLayouts>
+            <LayoutButtons Type="AbilCmd" Row="0" Column="0" Face="SpawnCaster1"  AbilCmd="SpawnCaster1,Build1"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="1" Face="SpawnCaster2"  AbilCmd="SpawnCaster1,Build2"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="2" Face="SpawnCaster3"  AbilCmd="SpawnCaster1,Build3"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="3" Face="SpawnCaster4"  AbilCmd="SpawnCaster1,Build4"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="4" Face="SpawnCaster5"  AbilCmd="SpawnCaster1,Build5"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="0" Face="SpawnCaster6"  AbilCmd="SpawnCaster1,Build6"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="1" Face="SpawnCaster7"  AbilCmd="SpawnCaster1,Build7"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="2" Face="SpawnCaster8"  AbilCmd="SpawnCaster1,Build8"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="3" Face="SpawnCaster9"  AbilCmd="SpawnCaster1,Build9"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="4" Face="SpawnCaster10"  AbilCmd="SpawnCaster1,Build10"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="0" Face="SpawnCaster11"  AbilCmd="SpawnCaster1,Build11"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="1" Face="SpawnCaster12"  AbilCmd="SpawnCaster1,Build12"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="2" Face="SpawnCaster13"  AbilCmd="SpawnCaster1,Build13"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="3" Face="SpawnCaster14"  AbilCmd="SpawnCaster1,Build14"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="4" Face="SpawnCaster15"  AbilCmd="SpawnCaster1,Build15"         />
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="SpawnCaster2" parent="SpawnCaster">
+        <CardLayouts>
+            <LayoutButtons Type="AbilCmd" Row="0" Column="0" Face="SpawnCaster16"  AbilCmd="SpawnCaster2,Build1"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="1" Face="SpawnCaster17"  AbilCmd="SpawnCaster2,Build2"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="2" Face="SpawnCaster18"  AbilCmd="SpawnCaster2,Build3"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="3" Face="SpawnCaster19"  AbilCmd="SpawnCaster2,Build4"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="4" Face="SpawnCaster20"  AbilCmd="SpawnCaster2,Build5"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="0" Face="SpawnCaster21"  AbilCmd="SpawnCaster2,Build6"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="1" Face="SpawnCaster22"  AbilCmd="SpawnCaster2,Build7"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="2" Face="SpawnCaster23"  AbilCmd="SpawnCaster2,Build8"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="3" Face="SpawnCaster24"  AbilCmd="SpawnCaster2,Build9"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="4" Face="SpawnCaster25"  AbilCmd="SpawnCaster2,Build10"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="0" Face="SpawnCaster26"  AbilCmd="SpawnCaster2,Build11"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="1" Face="SpawnCaster27"  AbilCmd="SpawnCaster2,Build12"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="2" Face="SpawnCaster28"  AbilCmd="SpawnCaster2,Build13"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="3" Face="SpawnCaster29"  AbilCmd="SpawnCaster2,Build14"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="4" Face="SpawnCaster30"  AbilCmd="SpawnCaster2,Build15"         />
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="SpawnCaster3" parent="SpawnCaster">
+        <CardLayouts>
+            <LayoutButtons Type="AbilCmd" Row="0" Column="0" Face="SpawnCaster31"  AbilCmd="SpawnCaster3,Build1"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="1" Face="SpawnCaster32"  AbilCmd="SpawnCaster3,Build2"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="2" Face="SpawnCaster33"  AbilCmd="SpawnCaster3,Build3"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="3" Face="SpawnCaster34"  AbilCmd="SpawnCaster3,Build4"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="4" Face="SpawnCaster35"  AbilCmd="SpawnCaster3,Build5"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="0" Face="SpawnCaster36"  AbilCmd="SpawnCaster3,Build6"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="1" Face="SpawnCaster37"  AbilCmd="SpawnCaster3,Build7"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="2" Face="SpawnCaster38"  AbilCmd="SpawnCaster3,Build8"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="3" Face="SpawnCaster39"  AbilCmd="SpawnCaster3,Build9"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="4" Face="SpawnCaster40"  AbilCmd="SpawnCaster3,Build10"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="0" Face="SpawnCaster41"  AbilCmd="SpawnCaster3,Build11"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="1" Face="SpawnCaster42"  AbilCmd="SpawnCaster3,Build12"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="2" Face="SpawnCaster43"  AbilCmd="SpawnCaster3,Build13"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="3" Face="SpawnCaster44"  AbilCmd="SpawnCaster3,Build14"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="4" Face="SpawnCaster45"  AbilCmd="SpawnCaster3,Build15"         />
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="SpawnCaster4" parent="SpawnCaster">
+        <CardLayouts>
+            <LayoutButtons Type="AbilCmd" Row="0" Column="0" Face="SpawnCaster46"  AbilCmd="SpawnCaster4,Build1"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="1" Face="SpawnCaster47"  AbilCmd="SpawnCaster4,Build2"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="2" Face="SpawnCaster48"  AbilCmd="SpawnCaster4,Build3"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="3" Face="SpawnCaster49"  AbilCmd="SpawnCaster4,Build4"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="4" Face="SpawnCaster50"  AbilCmd="SpawnCaster4,Build5"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="0" Face="SpawnCaster51"  AbilCmd="SpawnCaster4,Build6"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="1" Face="SpawnCaster52"  AbilCmd="SpawnCaster4,Build7"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="2" Face="SpawnCaster53"  AbilCmd="SpawnCaster4,Build8"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="3" Face="SpawnCaster54"  AbilCmd="SpawnCaster4,Build9"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="4" Face="SpawnCaster55"  AbilCmd="SpawnCaster4,Build10"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="0" Face="SpawnCaster56"  AbilCmd="SpawnCaster4,Build11"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="1" Face="SpawnCaster57"  AbilCmd="SpawnCaster4,Build12"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="2" Face="SpawnCaster58"  AbilCmd="SpawnCaster4,Build13"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="3" Face="SpawnCaster59"  AbilCmd="SpawnCaster4,Build14"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="4" Face="SpawnCaster60"  AbilCmd="SpawnCaster4,Build15"         />
+        </CardLayouts>
+    </CUnit>
+
+    <CAbilBuild id="SpawnCaster">
+        <FlagArray index="IgnoreFood" value="1"/>
+        <FlagArray index="IgnoreUnitCost" value="1"/>
+        <Range value="999"/>
+    </CAbilBuild>
+    <CAbilBuild id="SpawnCaster1" parent="SpawnCaster">
+        <InfoArray index="Build1"  Time="1"> <Button DefaultButtonFace="SpawnCaster1"/></InfoArray>
+        <InfoArray index="Build2"  Time="1"> <Button DefaultButtonFace="SpawnCaster2"/></InfoArray>
+        <InfoArray index="Build3"  Time="1"> <Button DefaultButtonFace="SpawnCaster3"/></InfoArray>
+        <InfoArray index="Build4"  Time="1"> <Button DefaultButtonFace="SpawnCaster4"/></InfoArray>
+        <InfoArray index="Build5"  Time="1"> <Button DefaultButtonFace="SpawnCaster5"/></InfoArray>
+        <InfoArray index="Build6"  Time="1"> <Button DefaultButtonFace="SpawnCaster6"/></InfoArray>
+        <InfoArray index="Build7"  Time="1"> <Button DefaultButtonFace="SpawnCaster7"/></InfoArray>
+        <InfoArray index="Build8"  Time="1"> <Button DefaultButtonFace="SpawnCaster8"/></InfoArray>
+        <InfoArray index="Build9"  Time="1"> <Button DefaultButtonFace="SpawnCaster9"/></InfoArray>
+        <InfoArray index="Build10"  Time="1"><Button DefaultButtonFace="SpawnCaster10"/></InfoArray>
+        <InfoArray index="Build11"  Time="1"><Button DefaultButtonFace="SpawnCaster11"/></InfoArray>
+        <InfoArray index="Build12"  Time="1"><Button DefaultButtonFace="SpawnCaster12"/></InfoArray>
+        <InfoArray index="Build13"  Time="1"><Button DefaultButtonFace="SpawnCaster13"/></InfoArray>
+        <InfoArray index="Build14"  Time="1"><Button DefaultButtonFace="SpawnCaster14"/></InfoArray>
+        <InfoArray index="Build15"  Time="1"><Button DefaultButtonFace="SpawnCaster15"/></InfoArray>
+    </CAbilBuild>
+
+    <CAbilBuild id="SpawnCaster2" parent="SpawnCaster">
+        <InfoArray index="Build1"  Time="1"><Button DefaultButtonFace="SpawnCaster16"/></InfoArray>
+        <InfoArray index="Build2"  Time="1"><Button DefaultButtonFace="SpawnCaster17"/></InfoArray>
+        <InfoArray index="Build3"  Time="1"><Button DefaultButtonFace="SpawnCaster18"/></InfoArray>
+        <InfoArray index="Build4"  Time="1"><Button DefaultButtonFace="SpawnCaster19"/></InfoArray>
+        <InfoArray index="Build5"  Time="1"><Button DefaultButtonFace="SpawnCaster20"/></InfoArray>
+        <InfoArray index="Build6"  Time="1"><Button DefaultButtonFace="SpawnCaster21"/></InfoArray>
+        <InfoArray index="Build7"  Time="1"><Button DefaultButtonFace="SpawnCaster22"/></InfoArray>
+        <InfoArray index="Build8"  Time="1"><Button DefaultButtonFace="SpawnCaster23"/></InfoArray>
+        <InfoArray index="Build9"  Time="1"><Button DefaultButtonFace="SpawnCaster24"/></InfoArray>
+        <InfoArray index="Build10"  Time="1"><Button DefaultButtonFace="SpawnCaster25"/></InfoArray>
+        <InfoArray index="Build11"  Time="1"><Button DefaultButtonFace="SpawnCaster26"/></InfoArray>
+        <InfoArray index="Build12"  Time="1"><Button DefaultButtonFace="SpawnCaster27"/></InfoArray>
+        <InfoArray index="Build13"  Time="1"><Button DefaultButtonFace="SpawnCaster28"/></InfoArray>
+        <InfoArray index="Build14"  Time="1"><Button DefaultButtonFace="SpawnCaster29"/></InfoArray>
+        <InfoArray index="Build15"  Time="1"><Button DefaultButtonFace="SpawnCaster30"/></InfoArray>
+    </CAbilBuild>
+    <CAbilBuild id="SpawnCaster3" parent="SpawnCaster">
+        <InfoArray index="Build1"  Time="1"> <Button DefaultButtonFace="SpawnCaster31"/></InfoArray>
+        <InfoArray index="Build2"  Time="1"> <Button DefaultButtonFace="SpawnCaster32"/></InfoArray>
+        <InfoArray index="Build3"  Time="1"> <Button DefaultButtonFace="SpawnCaster33"/></InfoArray>
+        <InfoArray index="Build4"  Time="1"> <Button DefaultButtonFace="SpawnCaster34"/></InfoArray>
+        <InfoArray index="Build5"  Time="1"> <Button DefaultButtonFace="SpawnCaster35"/></InfoArray>
+        <InfoArray index="Build6"  Time="1"> <Button DefaultButtonFace="SpawnCaster36"/></InfoArray>
+        <InfoArray index="Build7"  Time="1"> <Button DefaultButtonFace="SpawnCaster37"/></InfoArray>
+        <InfoArray index="Build8"  Time="1"> <Button DefaultButtonFace="SpawnCaster38"/></InfoArray>
+        <InfoArray index="Build9"  Time="1"> <Button DefaultButtonFace="SpawnCaster39"/></InfoArray>
+        <InfoArray index="Build10"  Time="1"><Button DefaultButtonFace="SpawnCaster40"/></InfoArray>
+        <InfoArray index="Build11"  Time="1"><Button DefaultButtonFace="SpawnCaster41"/></InfoArray>
+        <InfoArray index="Build12"  Time="1"><Button DefaultButtonFace="SpawnCaster42"/></InfoArray>
+        <InfoArray index="Build13"  Time="1"><Button DefaultButtonFace="SpawnCaster43"/></InfoArray>
+        <InfoArray index="Build14"  Time="1"><Button DefaultButtonFace="SpawnCaster44"/></InfoArray>
+        <InfoArray index="Build15"  Time="1"><Button DefaultButtonFace="SpawnCaster45"/></InfoArray>
+    </CAbilBuild>
+    <CAbilBuild id="SpawnCaster4" parent="SpawnCaster">
+        <InfoArray index="Build1"  Time="1"><Button DefaultButtonFace="SpawnCaster46"/></InfoArray>
+        <InfoArray index="Build2"  Time="1"><Button DefaultButtonFace="SpawnCaster47"/></InfoArray>
+        <InfoArray index="Build3"  Time="1"><Button DefaultButtonFace="SpawnCaster48"/></InfoArray>
+        <InfoArray index="Build4"  Time="1"><Button DefaultButtonFace="SpawnCaster49"/></InfoArray>
+        <InfoArray index="Build5"  Time="1"><Button DefaultButtonFace="SpawnCaster50"/></InfoArray>
+        <InfoArray index="Build6"  Time="1"><Button DefaultButtonFace="SpawnCaster51"/></InfoArray>
+        <InfoArray index="Build7"  Time="1"><Button DefaultButtonFace="SpawnCaster52"/></InfoArray>
+        <InfoArray index="Build8"  Time="1"><Button DefaultButtonFace="SpawnCaster53"/></InfoArray>
+        <InfoArray index="Build9"  Time="1"><Button DefaultButtonFace="SpawnCaster54"/></InfoArray>
+        <InfoArray index="Build10"  Time="1"><Button DefaultButtonFace="SpawnCaster55"/></InfoArray>
+        <InfoArray index="Build11"  Time="1"><Button DefaultButtonFace="SpawnCaster56"/></InfoArray>
+        <InfoArray index="Build12"  Time="1"><Button DefaultButtonFace="SpawnCaster57"/></InfoArray>
+        <InfoArray index="Build13"  Time="1"><Button DefaultButtonFace="SpawnCaster58"/></InfoArray>
+        <InfoArray index="Build14"  Time="1"><Button DefaultButtonFace="SpawnCaster59"/></InfoArray>
+        <InfoArray index="Build15"  Time="1"><Button DefaultButtonFace="SpawnCaster60"/></InfoArray>
+    </CAbilBuild>
+
+    <CButton id="SpawnCaster">
+        <Icon value="Assets\Textures\btn-ability-terran-cloak-color.dds"/>
+    </CButton>
+    <CButton id="SpawnCaster1" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster2" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster3" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster4" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster5" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster6" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster7" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster8" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster9" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster10" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster11" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster12" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster13" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster14" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster15" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster16" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster17" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster18" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster19" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster20" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster21" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster22" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster23" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster24" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster25" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster26" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster27" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster28" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster29" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster30" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster31" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster32" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster33" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster34" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster35" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster36" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster37" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster38" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster39" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster40" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster41" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster42" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster43" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster44" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster45" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster46" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster47" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster48" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster49" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster50" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster51" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster52" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster53" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster54" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster55" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster56" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster57" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster58" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster59" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster60" parent="SpawnCaster"/>
 
 </Catalog>

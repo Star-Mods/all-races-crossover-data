@@ -67,10 +67,10 @@
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
     </CAbilEffectInstant>
-    <CAbilEffectTarget id="NodGideonEngineerheal">
+    <CAbilEffectTarget id="CabalEngineerheal">
         <Alignment value="Positive"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
-        <Effect index="0" value="NodGideonCNCheal"/>
+        <Effect index="0" value="CabalCNCheal"/>
         <Flags index="AllowMovement" value="1"/>
         <Flags index="AutoCast" value="1"/>
         <Flags index="AutoCastOn" value="1"/>
@@ -308,27 +308,27 @@
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
     </CAbilEffectInstant>
-    <CAbilEffectInstant id="NodGideonHolyOneTaunt">
+    <CAbilEffectInstant id="CabalHolyOneTaunt">
         <OrderArray index="0" Model="Assets\UI\Cursors\WayPointConfirm_Void\WayPointConfirm_Void.m3"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
-        <Effect index="0" value="NodGideonHolyOneTauntCasterAB"/>
+        <Effect index="0" value="CabalHolyOneTauntCasterAB"/>
         <Flags index="BestUnit" value="1"/>
         <Flags index="Transient" value="1"/>
         <Cost>
             <Cooldown TimeUse="28"/>
         </Cost>
-        <AINotifyEffect value="NodTwlightReaperGuerrillaCharge"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="NodGideonHolyOneTaunt" Requirements="NodGideonTauntUseRequirement"/>
+        <AINotifyEffect value="CabalReaperGuerrillaCharge"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="CabalHolyOneTaunt" Requirements="CabalTauntUseRequirement"/>
     </CAbilEffectInstant>
-    <CAbilEffectInstant id="NodTwlightReaperGuerrillaCharge">
+    <CAbilEffectInstant id="CabalReaperGuerrillaCharge">
         <OrderArray index="0" Model="Assets\UI\Cursors\WayPointConfirm_Void\WayPointConfirm_Void.m3"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
-        <Effect index="0" value="NodTwlightReaperGuerrillaChargeSpeedAB"/>
+        <Effect index="0" value="CabalReaperGuerrillaChargeSpeedAB"/>
         <Flags index="Transient" value="1"/>
         <Cost>
             <Cooldown TimeUse="28"/>
         </Cost>
-        <CmdButtonArray index="Execute" DefaultButtonFace="NodTwlightReaperGuerrillaCharge" Requirements="NodTwlightGuerillaChargeUseRequirement"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="CabalReaperGuerrillaCharge" Requirements="CabalGuerillaChargeUseRequirement"/>
     </CAbilEffectInstant>
     <!--build-->
     <CAbilBuild id="NodDefenseBuild">
@@ -381,7 +381,7 @@
             <Cooldown Link="Nodbuild"/>
             <Button DefaultButtonFace="NodVoiceOfKane"/>
         </InfoArray>
-        <InfoArray index="Build5" Unit="NodTempleOfNod" Time="5">
+        <InfoArray index="Build5" Unit="NodTempleOfNod" Time="5" >
             <Charge>
                 <CountMax value="1"/>
                 <CountStart value="1"/>
@@ -391,7 +391,7 @@
                 <Flags index="EnableChargeTimeQueuing" value="1"/>
             </Charge>
             <Cooldown Link="Nodbuild"/>
-            <Button DefaultButtonFace="NodTemple" Requirements="NodTempleRequirements"/>
+            <Button DefaultButtonFace="NodTemple" Requirements="NodTempleRequirements" State="Restricted"/>
         </InfoArray>
         <Range value="999"/>
     </CAbilBuild>
@@ -506,7 +506,7 @@
             <Cooldown Link="Nodbuild"/>
             <Button DefaultButtonFace="NodTechLab" Requirements="HaveNodOPcenter"/>
         </InfoArray>
-        <InfoArray index="Build10" Unit="NodChemicalPlant" Time="5">
+        <InfoArray index="Build10" Unit="NodChemicalPlant" Time="5" >
             <Charge>
                 <CountMax value="1"/>
                 <CountStart value="1"/>
@@ -516,7 +516,7 @@
                 <Flags index="EnableChargeTimeQueuing" value="1"/>
             </Charge>
             <Cooldown Link="Nodbuild"/>
-            <Button DefaultButtonFace="NodChemicalPLant" Requirements="HaveNodTechPlant"/>
+            <Button DefaultButtonFace="NodChemicalPLant" Requirements="HaveNodTechPlant" State="Restricted"/>
         </InfoArray>
         <InfoArray index="Build11" Unit="NodCrane" Time="5">
             <Charge>
@@ -540,7 +540,7 @@
                 <Flags index="EnableChargeTimeQueuing" value="1"/>
             </Charge>
             <Cooldown Link="Nodbuild"/>
-            <Button DefaultButtonFace="NodAirSupport" Requirements="HaveNodAirTower"/>
+            <Button DefaultButtonFace="NodAirSupport" Requirements="HaveNodAirTower" State="Restricted"/>
         </InfoArray>
         <InfoArray index="Build14" Unit="NodRedeemerFacility" Time="5">
             <Charge>
@@ -552,200 +552,11 @@
                 <Flags index="EnableChargeTimeQueuing" value="1"/>
             </Charge>
             <Cooldown Link="Nodbuild"/>
-            <Button DefaultButtonFace="NodRedeemerFacility" Requirements="HaveNodTechPlant"/>
+            <Button DefaultButtonFace="NodRedeemerFacility" Requirements="HaveNodTechPlant" State="Restricted"/>
         </InfoArray>
         <Range value="999"/>
         <EffectArray index="Start" value="NodStructureSpawnSet"/>
     </CAbilBuild>
-    <CAbilBuild id="CabalSlaveBuild">
-        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
-        <FlagArray index="Interruptible" value="1"/>
-        <FlagArray index="PeonDisableCollision" value="1"/>
-        <InfoArray index="Build1" Unit="CabalOutpost" Time="30">
-            <Button DefaultButtonFace="Outpost"/>
-        </InfoArray>
-        <InfoArray index="Build2" Unit="CabalControlNode" Time="65">
-            <Button DefaultButtonFace="CabalControlNode"/>
-        </InfoArray>
-        <InfoArray index="Build3" Unit="NodTiberiumSilo" Time="30">
-            <Button DefaultButtonFace="NodTiberiumSilo"/>
-            <ValidatorArray value="HasVespene"/>
-        </InfoArray>
-        <InfoArray index="Build4" Unit="CabalMonitoringStation" Time="35">
-            <Button DefaultButtonFace="CabalMonitoringStation"/>
-        </InfoArray>
-        <InfoArray index="Build5" Unit="CabalShrine" Time="50">
-            <Button DefaultButtonFace="CabalShrine" Requirements="HaveFactory"/>
-        </InfoArray>
-        <InfoArray index="Build6" Unit="CabalWeaponsLaboratory" Time="65">
-            <Button DefaultButtonFace="CabalWeaponsLaboratory" Requirements="HaveFactory"/>
-        </InfoArray>
-        <InfoArray index="Build7" Unit="CabalGrandTemple" Time="50">
-            <Button DefaultButtonFace="CabalGrandTemple" Requirements="HaveFactory"/>
-        </InfoArray>
-        <InfoArray index="Build8" Unit="CabalPyramid" Time="50">
-            <Button DefaultButtonFace="CabalPyramid" Requirements="HaveFactory"/>
-        </InfoArray>
-        <InfoArray index="Build10" Unit="NodTurretO" Time="30">
-            <Button DefaultButtonFace="NodTurret" Requirements="CabalMonitoringStation"/>
-        </InfoArray>
-        <InfoArray index="Build11" Unit="CabalMissilePodO" Time="25">
-            <Button DefaultButtonFace="CabalMissilePod" Requirements="CabalMonitoringStation"/>
-        </InfoArray>
-        <InfoArray index="Build12" Unit="CabalFlameColumn" Time="45">
-            <Button DefaultButtonFace="CabalFlameColumn" Requirements="CabalWeaponsLaboratory"/>
-        </InfoArray>
-        <InfoArray index="Build13" Unit="CabalIncinerator" Time="55">
-            <Button DefaultButtonFace="CabalIncinerator" Requirements="CabalGrandTemple"/>
-        </InfoArray>
-        <InfoArray index="Build14" Unit="CabalObeliskOfLife" Time="45">
-            <Button DefaultButtonFace="CabalObeliskOfLife" Requirements="CabalShrine"/>
-        </InfoArray>
-        <InfoArray index="Build15" Unit="CabalShieldGenerator" Time="45">
-            <Button DefaultButtonFace="CabalShieldGenerator" Requirements="CabalShrine"/>
-        </InfoArray>
-        <InfoArray index="Build16" Unit="CabalBomberPlatform" Time="25">
-            <Button DefaultButtonFace="CabalBomberPlatform" Requirements="HaveEngineeringBay"/>
-        </InfoArray>
-        <FidgetDelayMin value="5"/>
-        <FidgetDelayMax value="10"/>
-        <ConstructionMover value="Construction"/>
-    </CAbilBuild>
-    <CAbilTrain id="NodGideonWarFactoryTrain">
-        <EditorCategories value="Race:Nod,AbilityorEffectType:Structures"/>
-        <Range value="5"/>
-        <Activity value="UI/Building"/>
-        <InfoArray index="Train1" Time="20">
-            <Button DefaultButtonFace="NodBike" Requirements="CabalControlNode"/>
-            <Unit value="NodBike"/>
-        </InfoArray>
-        <InfoArray index="Train2" Time="30">
-            <Button DefaultButtonFace="CabalMarauder" Requirements="CabalControlNode"/>
-            <Unit value="CabalMarauder"/>
-        </InfoArray>
-        <InfoArray index="Train3" Time="35">
-            <Button DefaultButtonFace="NodAvenger" Requirements="CabalMonitoringStation"/>
-            <Unit value="CabalAvengerTank"/>
-        </InfoArray>
-        <InfoArray index="Train4" Time="20">
-            <Button DefaultButtonFace="CabalTyrant" Requirements="CabalMonitoringStation"/>
-            <Unit value="CabalTyrant"/>
-        </InfoArray>
-        <InfoArray index="Train5" Time="30">
-            <Button DefaultButtonFace="CabalStealthTank" Requirements="CabalShrine"/>
-            <Unit value="StealthTank"/>
-        </InfoArray>
-        <InfoArray index="Train6" Time="30">
-            <Button DefaultButtonFace="NodScorpion"/>
-            <Unit value="CabalShrine"/>
-        </InfoArray>
-        <InfoArray index="Train7" Time="50">
-            <Button DefaultButtonFace="CabalWidow" Requirements="CabalWeaponsLaboratory"/>
-            <Unit value="CabalWidow"/>
-        </InfoArray>
-        <InfoArray index="Train8" Time="40">
-            <Button DefaultButtonFace="CabalUnderminer" Requirements="CabalWeaponsLaboratory"/>
-            <Unit value="CabalUnderminer"/>
-        </InfoArray>
-        <InfoArray index="Train9" Time="50">
-            <Button DefaultButtonFace="Aftershock" Requirements="CabalWeaponsLaboratory"/>
-            <Unit value="CabalAfterShock"/>
-        </InfoArray>
-        <InfoArray index="Train10" Time="50">
-            <Button DefaultButtonFace="CabalHolySpirit" Requirements="CabalGrandTemple"/>
-            <Unit value="CabalHolySpirit"/>
-        </InfoArray>
-        <InfoArray index="Train11" Time="30">
-            <Button DefaultButtonFace="CabalSpider"/>
-            <Unit value="CabalSpider"/>
-        </InfoArray>
-        <InfoArray index="Train12" Time="60">
-            <Button DefaultButtonFace="NodCallRedeemer" Requirements="RedeemerRequirements"/>
-            <Unit value="NodRedeemerSP"/>
-        </InfoArray>
-    </CAbilTrain>
-    <CAbilTrain id="NodGideonAirTowerTrain">
-        <EditorCategories value="Race:Nod,AbilityorEffectType:Structures"/>
-        <Range value="5"/>
-        <Activity value="UI/Building"/>
-        <InfoArray index="Train1" Time="30">
-            <Button DefaultButtonFace="NodBane" Requirements="CabalControlNode"/>
-            <Unit value="Bane"/>
-        </InfoArray>
-        <InfoArray index="Train2" Time="30">
-            <Button DefaultButtonFace="NodCobra" Requirements="CabalControlNode"/>
-            <Unit value="Cobra"/>
-        </InfoArray>
-        <InfoArray index="Train3" Time="40">
-            <Button DefaultButtonFace="NodScalpel" Requirements="CabalShrine"/>
-            <Unit value="Scalpel"/>
-        </InfoArray>
-        <InfoArray index="Train4" Time="30">
-            <Button DefaultButtonFace="CabalNodDropShip" Requirements="CabalControlNode"/>
-            <Unit value="CabalNodDropShip"/>
-        </InfoArray>
-        <InfoArray index="Train5" Time="60">
-            <Button DefaultButtonFace="NodMedusa" Requirements="CabalShrine"/>
-            <Unit value="Medusa"/>
-        </InfoArray>
-        <InfoArray index="Train6" Time="60">
-            <Button DefaultButtonFace="CabalSalamander" Requirements="CabalWeaponsLaboratory"/>
-            <Unit value="CabalSalamander"/>
-        </InfoArray>
-        <InfoArray index="Train7" Time="60">
-            <Button DefaultButtonFace="CabalBasilisk" Requirements="CabalWeaponsLaboratory"/>
-            <Unit value="CabalBasilisk"/>
-        </InfoArray>
-        <InfoArray index="Train8" Time="100">
-            <Button DefaultButtonFace="CabalLeviathan" Requirements="CabalGrandTemple"/>
-            <Unit value="CabalLeviathan"/>
-        </InfoArray>
-        <!--LeviathanRequirements-->
-        <!--     VERTIGO-->
-        <!--        <InfoArray index="Train30" Time="30"><Button DefaultButtonFace="DeploySupportMCV" Requirements="NoMCVSupport"/><Unit value="CabalSupportCrawler"/></InfoArray>-->
-    </CAbilTrain>
-    <CAbilTrain id="NodGideonBarracksTrain">
-        <EditorCategories value="Race:MNK,AbilityorEffectType:Structures"/>
-        <Range value="5"/>
-        <InfoArray index="Train1" Time="30">
-            <Button DefaultButtonFace="Devout" Requirements="CabalControlNode"/>
-            <Unit value="Devout"/>
-        </InfoArray>
-        <InfoArray index="Train2" Time="30">
-            <Button DefaultButtonFace="Enlightened" Requirements="CabalControlNode"/>
-            <Unit value="Enlightened"/>
-        </InfoArray>
-        <InfoArray index="Train3" Time="30">
-            <Button DefaultButtonFace="Ascended" Requirements="CabalControlNode"/>
-            <Unit value="Ascended"/>
-        </InfoArray>
-        <InfoArray index="Train4" Time="30">
-            <Button DefaultButtonFace="BlackHand" Requirements="CabalMonitoringStation"/>
-            <Unit value="BlackHand"/>
-        </InfoArray>
-        <InfoArray index="Train5" Time="30">
-            <Button DefaultButtonFace="CabalHijacker" Requirements="CabalMonitoringStation"/>
-            <Unit value="CabalHijacker"/>
-        </InfoArray>
-        <InfoArray index="Train6" Time="40">
-            <Button DefaultButtonFace="NodHighConfessor" Requirements="CabalShrine"/>
-            <Unit value="CabalReaper"/>
-            <Unit value="HighConfessor"/>
-        </InfoArray>
-        <InfoArray index="Train7" Time="50">
-            <Button DefaultButtonFace="CabalDominator" Requirements="CabalShrine"/>
-            <Unit value="CabalDominator"/>
-        </InfoArray>
-        <InfoArray index="Train8" Time="30">
-            <Button DefaultButtonFace="NodEngineer" Requirements="CabalMonitoringStation"/>
-            <Unit value="NodEngineer"/>
-        </InfoArray>
-        <InfoArray index="Train9" Time="35">
-            <Button DefaultButtonFace="CabalCenturion" Requirements="CabalGrandTemple"/>
-            <Unit value="CabalCenturion"/>
-        </InfoArray>
-        <!--        <InfoArray index="Train22" Time="7"><Button DefaultButtonFace="NodGideonTrainVisceroid" Requirements="HaveNodShrine"/><Unit value="NodGideonVisceroid"/></InfoArray>-->
-    </CAbilTrain>
     <!--train-->
     <CAbilTrain id="NodConstructionYardTrain">
         <EditorCategories value="Race:Nod,AbilityorEffectType:Structures"/>
@@ -762,15 +573,6 @@
         <InfoArray index="Train1" Time="34">
             <Button DefaultButtonFace="NodHarvester"/>
             <Unit value="NodHarvester"/>
-        </InfoArray>
-    </CAbilTrain>
-    <CAbilTrain id="NodGideonCrawlerTrain">
-        <EditorCategories value="Race:MNK,AbilityorEffectType:Structures"/>
-        <Alert value="TrainWorkerComplete"/>
-        <Range value="5"/>
-        <InfoArray index="Train1" Time="17">
-            <Button DefaultButtonFace="Slave"/>
-            <Unit value="CabalSlave"/>
         </InfoArray>
     </CAbilTrain>
     <CAbilTrain id="NodKaneBarracksTrain">
@@ -790,8 +592,8 @@
         </InfoArray>
         <InfoArray index="Train3" Time="30">
             <Button DefaultButtonFace="NodBlackHand" Requirements="HaveNodOPcenter"/>
-            <Unit value="NodBlackHandCC3"/>
-            <Unit value="NodBlackHandCC3"/>
+            <Unit value="NodBlackHand"/>
+            <Unit value="NodBlackHand"/>
         </InfoArray>
         <InfoArray index="Train4" Time="30">
             <Button DefaultButtonFace="NodFanatic" Requirements="HaveNodOPcenter"/>
@@ -807,19 +609,26 @@
             <Button DefaultButtonFace="NodConfessor" Requirements="HaveNodShrine"/>
             <Unit value="NodConfessor"/>
         </InfoArray>
-        <InfoArray index="Train7" Time="60">
-            <Button DefaultButtonFace="NodKaneCommando" Requirements="NodKaneCommandoRequirements"/>
-            <Unit value="NodKaneCommando"/>
-        </InfoArray>
-        <InfoArray index="Train8" Time="30">
+        <InfoArray index="Train7" Time="30">
             <Button DefaultButtonFace="NodSaboteur"/>
             <Unit value="NodSaboteur"/>
         </InfoArray>
-        <!--        <InfoArray index="Train8" Time="60">-->
-        <!--            <Button DefaultButtonFace="NodAwakened"/>-->
-        <!--            &lt;!&ndash;techlab&ndash;&gt;-->
-        <!--            <Unit value="NodAwakened"/>-->
-        <!--        </InfoArray>-->
+        <InfoArray index="Train8" Time="30">
+            <Button DefaultButtonFace="NodSilent" Requirements="HaveChemiclaPlant" State="Restricted"/>
+            <Unit value="NodSilent"/>
+        </InfoArray>
+        <InfoArray index="Train9" Time="30">
+            <Button DefaultButtonFace="NodTiberiumTrooper" Requirements="HaveChemiclaPlant" State="Restricted"/>
+            <Unit value="NodTiberiumTrooper"/>
+        </InfoArray>
+        <InfoArray index="Train10" Time="60">
+            <Button DefaultButtonFace="NodKaneCommando" Requirements="NodKaneCommandoRequirements" State="Restricted"/>
+            <Unit value="NodKaneCommando"/>
+        </InfoArray>
+        <InfoArray index="Train11" Time="30">
+            <Button DefaultButtonFace="NodEnlightened" Requirements="HaveChemiclaPlant" State="Restricted"/>
+            <Unit value="NodEnlightened"/>
+        </InfoArray>
     </CAbilTrain>
     <CAbilTrain id="NodKaneWarFactoryTrain">
         <EditorCategories value="Race:Nod,AbilityorEffectType:Structures"/>
@@ -862,15 +671,23 @@
             <Unit value="NodReckonerPack"/>
         </InfoArray>
         <InfoArray index="Train10" Time="50">
-            <Button DefaultButtonFace="NodPurifierCNC3" Requirements="HaveNodTechPlant"/>
+            <Button DefaultButtonFace="NodAvatar" Requirements="HaveNodTechPlant"/>
             <Unit value="NodAvatar"/>
         </InfoArray>
         <InfoArray index="Train11" Time="60">
             <Button DefaultButtonFace="NodMCV"/>
             <Unit value="NodMCV"/>
         </InfoArray>
+        <InfoArray index="Train12" Time="90">
+            <Button DefaultButtonFace="NodRedeemer" Requirements="RedeemerRequirements"/>
+            <Unit value="NodRedeemer"/>
+        </InfoArray>
+        <InfoArray index="Train13" Time="50">
+            <Button DefaultButtonFace="NodPurifier" Requirements="HaveNodTechPlant" State="Restricted"/>
+            <Unit value="NodPurifier"/>
+        </InfoArray>
     </CAbilTrain>
-    <CAbilTrain id="NodkaneAirTowerTrain">
+    <CAbilTrain id="NodKaneAirTowerTrain">
         <EditorCategories value="Race:Nod,AbilityorEffectType:Structures"/>
         <Range value="5"/>
         <Activity value="UI/Building"/>
@@ -879,15 +696,15 @@
             <Unit value="VenomCC3"/>
         </InfoArray>
         <InfoArray index="Train2" Time="30">
-            <Button DefaultButtonFace="NodBlade"/>
+            <Button DefaultButtonFace="NodBlade" State="Restricted"/>
             <Unit value="NodBlade"/>
         </InfoArray>
         <InfoArray index="Train3" Time="30">
-            <Button DefaultButtonFace="NodHarpy"/>
+            <Button DefaultButtonFace="NodHarpy" State="Restricted"/>
             <Unit value="NodHarpy"/>
         </InfoArray>
         <InfoArray index="Train4" Time="30">
-            <Button DefaultButtonFace="NodBanshee"/>
+            <Button DefaultButtonFace="NodBanshee" State="Restricted"/>
             <Unit value="NodBanshee"/>
         </InfoArray>
         <InfoArray index="Train5" Time="40">
@@ -895,22 +712,12 @@
             <Unit value="NodCarryall"/>
         </InfoArray>
         <InfoArray index="Train6" Time="30">
-            <Button DefaultButtonFace="NodKaneVertigo"/>
+            <Button DefaultButtonFace="NodVertigo"/>
             <Unit value="NodKaneVertigo"/>
         </InfoArray>
         <InfoArray index="Train7" Time="30">
-            <Button DefaultButtonFace="NodArmageddon"/>
+            <Button DefaultButtonFace="NodArmageddon" State="Restricted"/>
             <Unit value="NodArmageddon"/>
-        </InfoArray>
-        <InfoArray index="Train8" Time="30">
-            <Button DefaultButtonFace="CabalAscender"/>
-            <Unit value="CabalAscender"/>
-        </InfoArray>
-    </CAbilTrain>
-    <CAbilTrain id="CabalWidowTrain">
-        <InfoArray index="Train1" Time="25" Effect="NodUnitOrderQueueSwitch">
-            <Button DefaultButtonFace="CabalSpider"/>
-            <Unit value="CabalSpider"/>
         </InfoArray>
     </CAbilTrain>
     <CAbilResearch id="Nodupgrade">
@@ -954,7 +761,7 @@
         <InfoArray index="Research8" Time="98" Upgrade="IntelligenceHighground">
             <Resource index="Minerals" value="100"/>
             <Resource index="Vespene" value="100"/>
-            <Button DefaultButtonFace="NodGideonIntelligenceHighGround" Requirements="NodGideonHolyOneTauntAbilityUpgrade"/>
+            <Button DefaultButtonFace="CabalIntelligenceHighGround" Requirements="CabalHolyOneTauntAbilityUpgrade"/>
         </InfoArray>
         <!--        <InfoArray index="Research8" Time="240" Upgrade="TechII">-->
         <!--            <Resource index="Minerals" value="275"/>-->
@@ -1041,10 +848,10 @@
             <Resource index="Vespene" value="100"/>
             <Button DefaultButtonFace="NodResearchTibBomb"/>
         </InfoArray>
-        <InfoArray index="Research25" Time="70" Upgrade="NodTwlightFlameMine">
+        <InfoArray index="Research25" Time="70" Upgrade="CabalFlameMine">
             <Resource index="Minerals" value="100"/>
             <Resource index="Vespene" value="100"/>
-            <Button DefaultButtonFace="NodTwlightAvengerTankFlameMine" Requirements="NodTwlightLearnFlameMine"/>
+            <Button DefaultButtonFace="CabalAvengerTankFlameMine" Requirements="CabalLearnFlameMine"/>
         </InfoArray>
         <InfoArray index="Research26" Time="70" Upgrade="ObeliskCharge">
             <Resource index="Minerals" value="100"/>
@@ -1056,20 +863,20 @@
             <Resource index="Vespene" value="100"/>
             <Button DefaultButtonFace="NodGenericVenomCloakingUpgrade" Requirements="NodGenericVenomCloakingRequirement"/>
         </InfoArray>
-        <InfoArray index="Research28" Time="140" Upgrade="NodGideonWidowLongerons">
+        <InfoArray index="Research28" Time="140" Upgrade="CabalWidowLongerons">
             <Resource index="Minerals" value="100"/>
             <Resource index="Vespene" value="100"/>
-            <Button DefaultButtonFace="NodGideonWidowLongeron" Requirements="WidowLongeronsUpgradeRequirement"/>
+            <Button DefaultButtonFace="CabalWidowLongeron" Requirements="WidowLongeronsUpgradeRequirement"/>
         </InfoArray>
-        <InfoArray index="Research29" Upgrade="NodGideonWidowReconstitutionStructure">
+        <InfoArray index="Research29" Upgrade="CabalWidowReconstitutionStructure">
             <Resource index="Minerals" value="100"/>
             <Resource index="Vespene" value="100"/>
-            <Button DefaultButtonFace="NodGideonWidowReconstitutionStructure" Requirements="WidowReconsititutionRequirement"/>
+            <Button DefaultButtonFace="CabalWidowReconstitutionStructure" Requirements="WidowReconsititutionRequirement"/>
         </InfoArray>
-        <InfoArray index="Research30" Time="140" Upgrade="NodTwlightLeviathanWeaponSystem">
+        <InfoArray index="Research30" Time="140" Upgrade="CabalLeviathanWeaponSystem">
             <Resource index="Minerals" value="200"/>
             <Resource index="Vespene" value="200"/>
-            <Button DefaultButtonFace="NodTwlightLeviathanWeaponSystem" Requirements="LeviathanWeaponSystemRequirement"/>
+            <Button DefaultButtonFace="CabalLeviathanWeaponSystem" Requirements="LeviathanWeaponSystemRequirement"/>
         </InfoArray>
     </CAbilResearch>
     <CAbilResearch id="NodUpgradeExtra">
@@ -1094,25 +901,25 @@
             <Resource index="Vespene" value="100"/>
             <Button DefaultButtonFace="NodResearchMedusaHeal" Requirements="NodLearnMedusaHeal"/>
         </InfoArray>
-        <InfoArray index="Research5" Time="70" Upgrade="NodTwlightDevoutUpgradeGuardianGroup">
+        <InfoArray index="Research5" Time="70" Upgrade="CabalDevoutUpgradeGuardianGroup">
             <Resource index="Minerals" value="100"/>
             <Resource index="Vespene" value="100"/>
-            <Button DefaultButtonFace="NodTwlightDevoutGuardianGroupUpgrade" Requirements="NodTwlightGuardianGroupRequirement"/>
+            <Button DefaultButtonFace="CabalDevoutGuardianGroupUpgrade" Requirements="CabalGuardianGroupRequirement"/>
         </InfoArray>
-        <InfoArray index="Research6" Time="42" Upgrade="NodGideonSurvivorBug">
+        <InfoArray index="Research6" Time="42" Upgrade="CabalSurvivorBug">
             <Resource index="Minerals" value="50"/>
             <Resource index="Vespene" value="50"/>
-            <Button DefaultButtonFace="NodGideonSurvivorBug" Requirements="NodGideonBugSurvivor"/>
+            <Button DefaultButtonFace="CabalSurvivorBug" Requirements="CabalBugSurvivor"/>
         </InfoArray>
         <InfoArray index="Research7" Time="100" Upgrade="TacticalChargeDevice">
             <Resource index="Minerals" value="100"/>
             <Resource index="Vespene" value="100"/>
-            <Button DefaultButtonFace="NodTwlightReaperGuerrillaCharge" Requirements="NodTwlightTacticalChargedWeaponGuerillaChargedBeam"/>
+            <Button DefaultButtonFace="CabalReaperGuerrillaCharge" Requirements="CabalTacticalChargedWeaponGuerillaChargedBeam"/>
         </InfoArray>
         <InfoArray index="Research8" Time="98" Upgrade="IntelligenceHighground">
             <Resource index="Minerals" value="100"/>
             <Resource index="Vespene" value="100"/>
-            <Button DefaultButtonFace="NodGideonIntelligenceHighGround" Requirements="NodGideonHolyOneTauntAbilityUpgrade"/>
+            <Button DefaultButtonFace="CabalIntelligenceHighGround" Requirements="CabalHolyOneTauntAbilityUpgrade"/>
         </InfoArray>
         <InfoArray index="Research9" Time="45" Upgrade="MantisRocketrag">
             <Resource index="Minerals" value="100"/>
@@ -1127,61 +934,6 @@
         </CmdButtonArray>
         <Flags index="IgnoreFacing" value="1"/>
         <InfoArray Unit="NodMCV" RandomDelayMax="0.5">
-            <SectionArray index="Actor">
-                <DurationArray index="Duration" value="3.5417"/>
-            </SectionArray>
-            <SectionArray index="Stats">
-                <DurationArray index="Duration" value="3.5417"/>
-            </SectionArray>
-        </InfoArray>
-    </CAbilMorph>
-    <CAbilMorph id="CabalSupportCrawlerPack" parent="TerranBuildingLiftOff">
-        <Name value="Abil/Name/CabalSupportCrawlerPack"/>
-        <AbilSetId value="Unsieged"/>
-        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="packD">
-            <Flags index="ToSelection" value="1"/>
-        </CmdButtonArray>
-        <ActorKey value="CabalSupportCrawlerPack"/>
-        <Flags index="RallyReset" value="0"/>
-        <InfoArray index="0" Unit="CabalSupportCrawler" RandomDelayMax="0.5">
-            <SectionArray index="Actor">
-                <DurationArray index="Duration" value="3.5417"/>
-            </SectionArray>
-            <SectionArray index="Mover">
-                <DurationArray index="Delay" value="1.7"/>
-                <DurationArray index="Duration" value="1.5"/>
-            </SectionArray>
-            <SectionArray index="Stats">
-                <DurationArray index="Delay" value="0"/>
-                <DurationArray index="Duration" value="3.5417"/>
-            </SectionArray>
-        </InfoArray>
-    </CAbilMorph>
-    <CAbilMorph id="CabalOffenseCrawlerPack">
-        <AbilSetId value="Unsieged"/>
-        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="packD">
-            <Flags index="ToSelection" value="1"/>
-        </CmdButtonArray>
-        <Flags index="IgnoreFacing" value="1"/>
-        <InfoArray Unit="CabalOffenseCrawler" RandomDelayMax="0.5">
-            <SectionArray index="Actor">
-                <DurationArray index="Duration" value="3.5417"/>
-            </SectionArray>
-            <SectionArray index="Stats">
-                <DurationArray index="Duration" value="3.5417"/>
-            </SectionArray>
-        </InfoArray>
-    </CAbilMorph>
-    <CAbilMorph id="CabalDefenseCrawlerPack">
-        <AbilSetId value="Unsieged"/>
-        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="packD">
-            <Flags index="ToSelection" value="1"/>
-        </CmdButtonArray>
-        <Flags index="IgnoreFacing" value="1"/>
-        <InfoArray Unit="CabalDefenseCrawler" RandomDelayMax="0.5">
             <SectionArray index="Actor">
                 <DurationArray index="Duration" value="3.5417"/>
             </SectionArray>
@@ -1269,58 +1021,6 @@
                 <DurationArray index="Duration" value="3.5417"/>
             </SectionArray>
         </InfoArray>
-    </CAbilMorphPlacement>
-    <CAbilMorphPlacement id="CabalOffenseCrawlerDeploy" parent="TerranBuildingLand" unit="CommandCenter">
-        <Name value="Abil/Name/CabalOffenseCrawlerDeploy"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="DeployD"/>
-        <InfoArray index="0" Unit="CabalOffenseCrawlerDeployed" CollideRange="0">
-            <SectionArray index="Actor">
-                <DurationArray index="Duration" value="3.5417"/>
-            </SectionArray>
-            <SectionArray index="Mover">
-                <DurationArray index="Duration" value="0"/>
-            </SectionArray>
-            <SectionArray index="Stats">
-                <DurationArray index="Delay" value="0.5"/>
-                <DurationArray index="Duration" value="3.5417"/>
-            </SectionArray>
-        </InfoArray>
-        <EditorCategories value="Race:Nod,AbilityorEffectType:MorphsandBurrows"/>
-    </CAbilMorphPlacement>
-    <CAbilMorphPlacement id="CabalSupportCrawlerDeploy" parent="TerranBuildingLand" unit="CommandCenter">
-        <Name value="Abil/Name/CabalSupportCrawlerDeploy"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="DeployD"/>
-        <InfoArray index="0" Unit="CabalSupportCrawlerDeployed" CollideRange="0">
-            <SectionArray index="Actor">
-                <DurationArray index="Delay" value="1.7"/>
-                <DurationArray index="Duration" value="3.5417"/>
-            </SectionArray>
-            <SectionArray index="Mover">
-                <DurationArray index="Duration" value="1.5"/>
-            </SectionArray>
-            <SectionArray index="Stats">
-                <DurationArray index="Delay" value="0.5"/>
-                <DurationArray index="Duration" value="3.5417"/>
-            </SectionArray>
-        </InfoArray>
-        <EditorCategories value="Race:Nod,AbilityorEffectType:MorphsandBurrows"/>
-    </CAbilMorphPlacement>
-    <CAbilMorphPlacement id="CabalDefenseCrawlerDeploy" parent="TerranBuildingLand" unit="CommandCenter">
-        <Name value="Abil/Name/CabalDefenseCrawlerDeploy"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="DeployD"/>
-        <InfoArray index="0" Unit="CabalDefenseCrawlerDeployed" CollideRange="0">
-            <SectionArray index="Actor">
-                <DurationArray index="Duration" value="3.5417"/>
-            </SectionArray>
-            <SectionArray index="Mover">
-                <DurationArray index="Duration" value="0"/>
-            </SectionArray>
-            <SectionArray index="Stats">
-                <DurationArray index="Delay" value="0.5"/>
-                <DurationArray index="Duration" value="3.5417"/>
-            </SectionArray>
-        </InfoArray>
-        <EditorCategories value="Race:Nod,AbilityorEffectType:MorphsandBurrows"/>
     </CAbilMorphPlacement>
     <CAbilEffectTarget id="VertigoAttack">
         <Effect index="0" value="VertigoAttackSet"/>
@@ -1489,7 +1189,7 @@
         <Cost>
             <Cooldown Location="Global" TimeUse="180"/>
         </Cost>
-        <Range value="1"/>
+        <Range value="999"/>
         <Arc value="360"/>
         <CursorEffect value="SpawnTib"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="NodSpawnTib"/>
@@ -1680,7 +1380,7 @@
         </Cost>
         <Placeholder value="SpiderMine"/>
         <Range value="0.1"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="FlameMine" Requirements="NodTwlightFlameMine"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="FlameMine" Requirements="CabalFlameMine"/>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="TibBomb">
         <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>

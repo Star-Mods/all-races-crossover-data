@@ -1,18 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
-    <CActorUnit default="1" id="GDITank" parent="GenericUnitMorph">
+    <CActorUnit default="1" id="GDIBuilding" parent="GenericUnitStandard">
         <?token id="icon"?>
         <?token id="wireframe"?>
+        <ModelFlags index="OutlineOccluder" value="1"/>
+        <Aliases value="_CreepEngulfable"/>
+        <CreepHeightClass value="Default"/>
+        <CreepRateGrow value="Grow"/>
+        <CreepRateShrink value="Shrink"/>
+        <!--        <On Terms="UnitConstruction.##unitName##.Start" Send="Create ##unitName##Build"/>-->
+        <On Terms="UnitConstruction.##unitName##.Start" Send="Create BuildingTerrainFlatten"/>
+        <On Terms="UnitConstruction.##unitName##.Cancel" Target="_BuildingTerrainFlatten" Send="Destroy"/>
+        <On Terms="UnitConstruction.##unitName##.Finish" Target="_BuildingTerrainFlatten" Send="Destroy"/>
+        <On Terms="UnitConstruction.##unitName##.Start" Send="QueryRadius 1.750000 BuildingCrushQueryResponse"/>
+        <On Terms="UnitBirth.##unitName##.Normal" Send="Create BuildingTerrainFlatten"/>
+        <On Terms="UnitBirth.##unitName##.Suppressed" Send="Create BuildingTerrainFlattenInstant"/>
+        <On Terms="UnitBirth.##unitName##.EditorPlaced" Send="Create BuildingTerrainFlattenEditor"/>
+        <On Terms="UnitDeath.##unitName##" Target="_BuildingTerrainFlatten" Send="Destroy"/>
+        <On Terms="UnitDeathCustomize; CreepEngulfs" Send="CreepEngulfmentStopTransition"/>
+        <On Terms="ActorCreation; CreepIntersects" Send="CreepEngulfmentStartTransition"/>
+        <DeathArray index="Normal" ModelLink="##unitName##Death" SoundLink=""/>
+        <PlacementModel value="##unitName##Placement"/>
+        <PlacementSound value="Terran_BuildingPlacement"/>
+        <Macros value="SnowVisualUnitMacroMP"/>
+        <LifeArmorIcon value="Assets\icons\Nod\FXNod_EnhancedShieldsUpgrade.dds"/>
+        <PortraitModel value="NodPortrait"/>
+        <SoundArray index="Construction" value="Terran_ConstructionWhat"/>
+        <NameOffset value="110"/>
+        <BarOffset value="110"/>
+        <BarWidth value="135"/>
+        <Model value="##id##"/>
         <HeroIcon value="Assets\icons\GDI\##icon##.dds"/>
         <UnitIcon value="Assets\icons\GDI\##icon##.dds"/>
-        <Wireframe>
-            <Image value="Assets\icons\GDI\##wireframe##.dds"/>
-        </Wireframe>
         <GroupIcon>
             <Image value="Assets\icons\GDI\##wireframe##.dds"/>
         </GroupIcon>
-        <Aliases value="_UnitLarge"/>
+        <Wireframe>
+            <Image value="Assets\icons\GDI\##wireframe##.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorUnit default="1" id="GDIUnitBase" parent="GenericUnitBase">
+        <?token id="icon"?>
+        <?token id="wireframe"?>
+        <LifeArmorIcon value="Assets\Textures\btn-upgrade-terran-infantryarmorlevel0.dds"/>
+        <PortraitModel value="GDIPortrait"/>
         <Macros value="UnloadDropAnim"/>
+        <On index="0" Send="Create SoundEmitter GDIZoneTrooper_Ambience"/>
+        <On index="35" Terms="UnitBirth.*.Normal" Send="AnimPlay Birth Stand 0 0.000000"/>
+        <On Terms="Abil.attack.ReadyStart" Send="AnimGroupApply Ready"/>
+        <On Terms="WeaponStart.*.AttackStart; WeaponTargetElevation GE 20.000000" Send="AnimBracketStart Attack Attack,Superior"/>
+        <On Terms="WeaponStart.*.AttackStart" Send="AnimBracketStart Attack Attack"/>
+        <On Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop Attack"/>
+        <On Terms="Abil.attack.ReadyStop" Send="AnimGroupRemove Ready"/>
+        <ModelFlags index="OutlineEmitter" value="1"/>
+        <StandAnimTurnTime value="5"/>
+        <WalkAnimMoveSpeed value="2"/>
+        <UnitFlags index="StandAnimBirthVariation" value="0"/>
+        <HeroIcon value="Assets\icons\GDI\##icon##.dds"/>
+        <UnitIcon value="Assets\icons\GDI\##icon##.dds"/>
+        <GroupIcon>
+            <Image value="Assets\icons\GDI\##wireframe##.dds"/>
+        </GroupIcon>
+        <Wireframe>
+            <Image value="Assets\icons\GDI\##wireframe##.dds"/>
+        </Wireframe>
+    </CActorUnit>
+    <CActorUnit default="1" id="GDIInfantry" parent="GDIUnitBase">
+        <On Terms="Abil.JumpPack.SourcePrepStart" Send="AnimBracketStart Jump Jump,Start Jump Jump,End ClosingFull,ContentPlayOnce 1.500000 AsTimeScale"/>
+        <On Terms="Abil.JumpPack.SourcePrepStart" Send="AnimBlendTimeApply"/>
+        <On Terms="Effect.JumpPackPointSearch.Stop; At Caster" Send="AnimBlendTimeApply"/>
+        <On Terms="Behavior.GDIZoneTrooperjump.Launch" Send="AnimBracketStart Jump Jump,Start Jump Jump,End"/>
+        <On Terms="UnitMovementUpdate.*.Walk" Send="AnimBracketClear Jump"/>
+        <LifeArmorIcon value="Assets\textures\btn-upgrade-terran-infantryarmorlevel0.dds"/>
+    </CActorUnit>
+    <CActorUnit default="1" id="GDIVehicle" parent="GDIUnitBase">
+        <Aliases value="_UnitLarge"/>
         <Macros value="TerrainSquibAnimations"/>
         <Macros value="PhysicsDeathsSwarmGround"/>
         <Macros value="PhysicsDeathsVoidGround"/>
@@ -20,7 +82,6 @@
         <AcceptedTransfers index="ModelMaterials" value="1"/>
         <On Terms="UnitHeightUpdate.*.Land" Send="Create SiegeTank_Land"/>
         <Model value="##id##"/>
-        <ModelFlags index="OutlineEmitter" value="1"/>
         <CreepHeightClass value="Tiny"/>
         <BuildModel value="##id##"/>
         <DeathArray index="Normal" ModelLink="##id##DeathRagdoll" SoundLink="SiegeTank_Explode"/>
@@ -55,14 +116,8 @@
         <SoundArray index="Pissed" value="Shepherd_What"/>
         <SoundArray index="Movement" value="Shepherd_Movement"/>
     </CActorUnit>
-    <CActorUnit default="1" id="GDIStructure" parent="GenericUnitStandard">
-        <LifeArmorIcon value="Assets\textures\FXNod_EnhancedShields.dds"/>
-    </CActorUnit>
-    <CActorUnit default="1" id="GDIInfantry" parent="GenericUnitStandard">
-        <LifeArmorIcon value="Assets\textures\btn-upgrade-terran-infantryarmorlevel0.dds"/>
-    </CActorUnit>
 
-    <CActorUnit id="MCVDeployCaster2" parent="GDIStructure" unitName="GDICaster" icon="Assets\textures\btn-building-protoss-obelisk.dds">
+    <CActorUnit id="MCVDeployCaster2" parent="GDIBuilding" unitName="GDICaster" icon="Assets\textures\btn-building-protoss-obelisk.dds">
         <Macros value="GlobalLoopMacro"/>
         <Macros value="QueueAnim"/>
         <Macros value="UnpoweredAnim"/>
@@ -82,9 +137,12 @@
         <NameOffset value="130"/>
         <SoundArray index="Ready" value="SoACaster_Ready"/>
         <SoundArray index="What" value="SoACaster_What"/>
-        
+        <HeroIcon value="Assets\icons\factions\faction-tw-gdi.dds"/>
+        <UnitIcon value="Assets\icons\factions\faction-tw-gdi.dds"/>
+        <GroupIcon><Image value="Assets\icons\factions\faction-tw-gdi.dds"/></GroupIcon>
+        <Wireframe><Image value="Assets\icons\factions\faction-tw-gdi.dds"/></Wireframe>
     </CActorUnit>
-    <CActorUnit id="GDIBarracks" parent="TerranBuildingFlyerEx" unitName="GDIBarracks" wireframe="gdi-barracks-wireframe" icon="gdi-barracks-icon">
+    <CActorUnit id="GDIBarracks" parent="GDIBuilding" unitName="GDIBarracks" wireframe="gdi-barracks-wireframe" icon="gdi-barracks-icon">
         <On index="69" Send="Create GDIbuild"/>
         <On Terms="Behavior.ColonyInfestation.On" Send="Create InfestationBarracks"/>
         <On Terms="UnitDeathCustomize.BarracksFlying" Send="DeathCustomize Flying"/>
@@ -99,7 +157,7 @@
         <SoundArray index="What" value="Barracks_What"/>
         <SoundArray index="Movement" value="Barracks_Movement"/>
     </CActorUnit>
-    <CActorUnit id="GDIFactory" parent="TerranBuildingFlyerEx" unitName="GDIWarFactory"  icon="gdi-factory-icon" wireframe="gdi-factory-wireframe">
+    <CActorUnit id="GDIFactory" parent="GDIBuilding" unitName="GDIWarFactory"  icon="gdi-factory-icon" wireframe="gdi-factory-wireframe">
         <On index="69" Send="Create GDIbuild"/>
         <On Terms="UnitDeathCustomize.FactoryFlying" Send="DeathCustomize Flying"/>
         <On Terms="Behavior.ColonyInfestation.On" Send="Create InfestedVisual"/>
@@ -119,7 +177,7 @@
         <SoundArray index="Movement" value="Factory_Movement"/>
        
     </CActorUnit>
-    <CActorUnit id="GDIAirfield" parent="TerranBuildingFlyerEx" unitName="GDIAirfield"  icon="gdi-airfield-icon" wireframe="gdi-airfield-wireframe">
+    <CActorUnit id="GDIAirfield" parent="GDIBuilding" unitName="GDIAirfield"  icon="gdi-airfield-icon" wireframe="gdi-airfield-wireframe">
         <On index="69" Send="Create GDIbuild"/>
         <DeathArray index="Normal" ModelLink="FactoryDeath"/>
         <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="Factory_Explode"/>
@@ -134,9 +192,8 @@
         <SoundArray index="Ready" value="Factory_Ready"/>
         <SoundArray index="What" value="Factory_What"/>
         <SoundArray index="Movement" value="Factory_Movement"/>
-       
     </CActorUnit>
-    <CActorUnit id="GDIRefinery" parent="TerranBuildingEx" unitName="GDIRefinery"  icon="gdi-refinery-icon" wireframe="gdi-refinery-wireframe">
+    <CActorUnit id="GDIRefinery" parent="GDIBuilding" unitName="GDIRefinery"  icon="gdi-refinery-icon" wireframe="gdi-refinery-wireframe">
         <Aliases value="_UnitHuge"/>
         <Macros value="ExtractAnim"/>
         <On index="69" Terms="UnitConstruction.GDIRefinery.Start" Send="Create GDIbuild"/>
@@ -156,9 +213,8 @@
         <SoundArray index="What" value="Refinery_What"/>
         <StatusHarvesterData Text="UI/HarvesterCountMinerals" SearchFilters="HarvestableResource;Player,Ally,Enemy" SearchRadius="8"/>
         <UnitFlags index="ShowBlobShadow" value="0"/>
-       
     </CActorUnit>
-    <CActorUnit id="GDIBunker" parent="TerranBuildingEx" unitName="GDIBunker"  icon="gdi-bunker-icon" wireframe="gdi-bunker-wireframe">
+    <CActorUnit id="GDIBunker" parent="GDIBuilding" unitName="GDIBunker"  icon="gdi-bunker-icon" wireframe="gdi-bunker-wireframe">
         <Aliases value="_UnitHuge"/>
         <Macros value="BunkerTransportAnim"/>
         <On index="69" Terms="UnitConstruction.GDIBunker.Start" Send="Create GDIbuild"/>
@@ -208,7 +264,7 @@
         <UnitFlags index="ShowBlobShadow" value="0"/>
        
     </CActorUnit>
-    <CActorUnit id="GDIPowerPlantU" parent="TerranBuildingEx" unitName="GDIPowerPlantU"  icon="gdi-powerplant-icon" wireframe="gdi-powerplant-wireframe">
+    <CActorUnit id="GDIPowerPlantU" parent="GDIBuilding" unitName="GDIPowerPlantU"  icon="gdi-powerplant-icon" wireframe="gdi-powerplant-wireframe">
         <On index="69" Terms="UnitConstruction.GDIPowerPlantU.Start" Send="Create GDIbuild"/>
         <Aliases value="_UnitLarge"/>
         <CreepHeightClass value="Small"/>
@@ -223,7 +279,6 @@
         <SoundArray index="Ready" value="SupplyDepot_Ready"/>
         <SoundArray index="What" value="SupplyDepot_What"/>
         <UnitFlags index="ShowBlobShadow" value="0"/>
-       
     </CActorUnit>
     <CActorUnit id="GDIPowerPlant" parent="GDIPowerPlantU" unitName="GDIPowerPlant">
         <On index="69" Terms="UnitConstruction.GDIPowerPlant.Start" Send="Create GDIbuild"/>
@@ -235,7 +290,7 @@
         <Model value="GDIPowerPlant"/>
         <PlacementModel value="GDIPowerPlantPM"/>
     </CActorUnit>
-    <CActorUnit id="GDIDefenseCY" parent="TerranBuildingEx" unitName="GDIdefenseMCVCY"  icon="DefenseConstructionPlant" wireframe="DefenseConstructionPlant">
+    <CActorUnit id="GDIDefenseCY" parent="GDIBuilding" unitName="GDIdefenseMCVCY"  icon="DefenseConstructionPlant" wireframe="DefenseConstructionPlant">
         <Aliases value="_UnitHuge"/>
         <Macros value="QueueAnim"/>
         <Macros value="BuildingFlattenTerrainMacro"/>
@@ -266,10 +321,18 @@
         <MinimapUseSelectionColor value="0"/>
         <PlacementModel value="GDIDefenseMCVPlacement"/>
     </CActorUnit>
-    <CActorUnit id="GDIDefenseMCVUnpack" parent="GenericUnitBaseMorphTransition" unitName="SiegeModeMorphModel"  icon="DefenseConstructionPlant" wireframe="DefenseConstructionPlant">
+    <CActorUnit id="GDIDefenseMCVUnpack" parent="GDIVehicle" unitName="SiegeModeMorphModel"  icon="DefenseConstructionPlant" wireframe="DefenseConstructionPlant">
         <Aliases value="_UnitLarge"/>
         <Inherits index="ModelMaterials" value="1"/>
         <AcceptedTransfers index="ModelMaterials" value="1"/>
+
+<!--        <Baselines index="Stand" AnimProps=""/>-->
+<!--        <Baselines index="Walk" AnimProps=""/>-->
+        <On Terms="AbilMorph.*.Pause" Send="AnimSetPausedAll"/>
+        <On Terms="AbilMorph.*.Resume" Send="AnimSetPausedAll 0"/>
+
+
+
         <On Terms="AbilMorph.*.Start; MorphTo GDIdefenseMCVCY" Send="Create"/>
         <On Terms="AbilMorph.*.Start; MorphTo GDIdefenseMCVCY" Send="AnimPlay Start Morph,Start"/>
         <On Terms="AbilMorph.*.Finish; MorphFrom GDIdefenseMCVCY" Send="Destroy"/>
@@ -304,7 +367,12 @@
         <SoundArray index="Highlight" value="GDIdefenseMCV_Highlight"/>
        
     </CActorUnit>
-    <CActorUnit id="GDIDefenseMCV" parent="GenericUnitMorph" unitName="GDIdefenseMCV"  icon="DefenseMCV" wireframe="DefenseMCV">
+    <CActorUnit id="GDIDefenseMCV" parent="GDIVehicle" unitName="GDIdefenseMCV"  icon="DefenseMCV" wireframe="DefenseMCV">
+        <UnitFlags index="StandAnimBirthVariation" value="0"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo ##unitName##" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom ##unitName##" Send="Destroy"/>
+
+
         <Aliases value="_UnitLarge"/>
         <Macros value="UnloadDropAnim"/>
         <Macros value="TerrainSquibAnimations"/>
@@ -408,7 +476,7 @@
         <HighlightTooltip value="Unit/Name/CabalDefenseCrawler"/>
        
     </CActorUnit>
-    <CActorUnit id="GDIConyardCC3" parent="TerranBuildingEx" unitName="GDIConyardCC3"  icon="gdi-cy-icon" wireframe="gdi-cy-wireframe">
+    <CActorUnit id="GDIConyardCC3" parent="GDIBuilding" unitName="GDIConyardCC3"  icon="gdi-cy-icon" wireframe="gdi-cy-wireframe">
         <Aliases value="_UnitHuge"/>
         <Macros value="QueueAnim"/>
         <Macros value="BuildingFlattenTerrainMacro"/>
@@ -436,7 +504,13 @@
 
         <Scale value="0.900000"/>
     </CActorUnit>
-    <CActorUnit id="GDIMCVCC3" parent="GenericUnitMorph" unitName="GDIMCVCC3"  icon="gdi-mcv-icon" wireframe="gdi-mcv-wireframe">
+    <CActorUnit id="GDIMCVCC3" parent="GDIVehicle" unitName="GDIMCVCC3"  icon="gdi-mcv-icon" wireframe="gdi-mcv-wireframe">
+
+        <UnitFlags index="StandAnimBirthVariation" value="0"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo ##unitName##" Send="Create"/>
+        <On Terms="AbilMorph.*.Start; MorphFrom ##unitName##" Send="Destroy"/>
+
+
         <Aliases value="_UnitLarge"/>
         <Macros value="UnloadDropAnim"/>
         <Macros value="TerrainSquibAnimations"/>
@@ -481,7 +555,7 @@
        
         <Scale value="0.900000"/>
     </CActorUnit>
-    <CActorUnit id="Mastodon" parent="GenericUnitMorph" unitName="GDIMastodon"  icon="Mastodon" wireframe="Mastodon">
+    <CActorUnit id="Mastodon" parent="GDIVehicle" unitName="GDIMastodon"  icon="Mastodon" wireframe="Mastodon">
         <Aliases value="_UnitLarge"/>
         <Macros value="UnloadDropAnim"/>
         <Macros value="TerrainSquibAnimations"/>
@@ -529,7 +603,7 @@
         <SoundArray index="Movement" value="NodVehicleMoveLoopAvatar"/>
        
     </CActorUnit>
-    <CActorUnit id="GDIZoneEnforcer" parent="GenericUnitBase" unitName="GDIZoneEnforcer"  icon="RegionalEnforcer" wireframe="RegionalEnforcer">
+    <CActorUnit id="GDIZoneEnforcer" parent="GDIInfantry" unitName="GDIZoneEnforcer"  icon="RegionalEnforcer" wireframe="RegionalEnforcer">
         <Aliases value="_UnitSmall"/>
         <Macros value="UnloadDropAnim"/>
         <On index="0" Send="Create"/>
@@ -648,7 +722,7 @@
         <SoundArray index="Highlight" value="MarineHighlight"/>
        
     </CActorUnit>
-    <CActorUnit id="GDIZoneTrooper" parent="GenericUnitBase" unitName="GDIZoneTrooper"  icon="RegionalArmorer" wireframe="RegionalArmorer">
+    <CActorUnit id="GDIZoneTrooper" parent="GDIInfantry" unitName="GDIZoneTrooper"  icon="RegionalArmorer" wireframe="RegionalArmorer">
         <Aliases value="_UnitSmall"/>
         <Macros value="UnloadDropAnim"/>
         <On Terms="Abil.attack.ReadyStart" Send="AnimGroupApply Ready"/>
@@ -724,7 +798,7 @@
         <SoundArray index="Highlight" value="MarineHighlight"/>
        
     </CActorUnit>
-    <CActorUnit id="GDIZoneDefender" parent="GenericUnitBase" unitName="GDIZoneDefender"  icon="RegionalDefender" wireframe="RegionalDefender">
+    <CActorUnit id="GDIZoneDefender" parent="GDIInfantry" unitName="GDIZoneDefender"  icon="RegionalDefender" wireframe="RegionalDefender">
         <Aliases value="_UnitSmall"/>
         <Macros value="UnloadDropAnim"/>
         <On index="0" Send="Create SoundEmitter GDIZoneTrooper_Ambience"/>
@@ -780,7 +854,7 @@
         <SoundArray index="Highlight" value="MarineHighlight"/>
        
     </CActorUnit>
-    <CActorUnit id="GDIRaider" parent="GenericUnitBase" unitName="GDIZoneRaider"  icon="RegionalAssaulter" wireframe="RegionalAssaulter">
+    <CActorUnit id="GDIRaider" parent="GDIInfantry" unitName="GDIZoneRaider"  icon="RegionalAssaulter" wireframe="RegionalAssaulter">
         <Aliases value="_UnitSmall"/>
         <Macros value="UnloadDropAnim"/>
         <On index="0" Send="Create SoundEmitter GDIZoneTrooper_Ambience"/>
@@ -837,7 +911,7 @@
         <SoundArray index="Highlight" value="MarineHighlight"/>
        
     </CActorUnit>
-    <CActorUnit id="GDIZoneCommando" parent="GenericUnitBase" unitName="GDIZoneCommando"  icon="CommandoCC4" wireframe="CommandoCC4">
+    <CActorUnit id="GDIZoneCommando" parent="GDIInfantry" unitName="GDIZoneCommando"  icon="CommandoCC4" wireframe="CommandoCC4">
         <Aliases value="_UnitSmall"/>
         <Macros value="UnloadDropAnim"/>
         <On index="0" Send="Create SoundEmitter GDIZoneTrooper_Ambience"/>
@@ -903,7 +977,9 @@
         <StatusBarFlags index="Magazine" value="0"/>
         <StatusBarFlags index="Workers" value="0"/>
     </CActorUnit>
-    <CActorUnit id="Dozer" parent="GenericUnitStandard" unitName="Dozer"  icon="gdi-dozer-icon" wireframe="gdi-dozer-wireframe">
+
+
+    <CActorUnit id="Dozer" parent="GDIInfantry" unitName="Dozer"  icon="gdi-dozer-icon" wireframe="gdi-dozer-wireframe">
         <Aliases value="_UnitSmall"/>
         <Macros value="CarryAnim"/>
         <Macros value="UnloadDropAnim"/>
@@ -1001,7 +1077,7 @@
         <SoundArray index="Pissed" value="Dozer_What"/>
        
     </CActorUnit>
-    <CActorUnit id="James" parent="GenericUnitBase" unitName="James"  icon="CommandoCC4" wireframe="CommandoCC4">
+    <CActorUnit id="James" parent="GDIInfantry" unitName="James"  icon="CommandoCC4" wireframe="CommandoCC4">
         <Aliases value="_UnitSmall"/>
         <Macros value="UnloadDropAnim"/>
         <On index="0" Send="Create SoundEmitter GDIZoneTrooper_Ambience"/>
@@ -1067,7 +1143,7 @@
         <StatusBarFlags index="Workers" value="0"/>
        
     </CActorUnit>
-    <CActorUnit id="HammerHead" parent="GenericUnitStandard" unitName="Hammerhead"  icon="gdi-hammerhead-icon" wireframe="gdi-hammerhead-wireframe">
+    <CActorUnit id="HammerHead" parent="GDIUnitBase" unitName="Hammerhead"  icon="gdi-hammerhead-icon" wireframe="gdi-hammerhead-wireframe">
         <Aliases value="_UnitHuge"/>
         <Macros value="TerrainSquibAnimations"/>
         <Macros value="PhysicsDeathsSwarmAir"/>
@@ -1119,7 +1195,7 @@
         <SoundArray index="Movement" value="CabalSalamander_Movement"/>
        
     </CActorUnit>
-    <CActorUnit id="Argus" parent="GenericUnitStandard" unitName="Argus"  icon="gdi-arcus-icon" wireframe="gdi-arcus-wireframe">
+    <CActorUnit id="Argus" parent="GDIUnitBase" unitName="Argus"  icon="gdi-arcus-icon" wireframe="gdi-arcus-wireframe">
         <Aliases value="_UnitHuge"/>
         <Macros value="TerrainSquibAnimations"/>
         <Macros value="PhysicsDeathsSwarmAir"/>
@@ -1210,7 +1286,7 @@
         <StatusBarFlags index="Duration" value="0"/>
         <UnitFlags index="ShowBlobShadow" value="0"/>
     </CActorUnit>
-    <CActorUnit id="GDITiberiumSilo" parent="NodBuilding" unitName="GDITiberiumSilo" wireframe="gdi-silo-wireframe"  icon="tw_gdisilo">
+    <CActorUnit id="GDITiberiumSilo" parent="GDIBuilding" unitName="GDITiberiumSilo" wireframe="gdi-silo-wireframe"  icon="GBSilo">
         <Aliases value="_UnitHuge"/>
         <Macros value="ExtractAnim"/>
         <On index="35" Send="AnimPlay Birth Stand 0 0.000000"/>
@@ -1242,7 +1318,7 @@
         <UnitFlags index="ShowBlobShadow" value="0"/>
        
     </CActorUnit>
-    <CActorUnit id="GDICommandPost" parent="NodBuilding" unitName="GDICommandPost" icon="tw_commandpost" wireframe="gdi-outpost-wireframe">
+    <CActorUnit id="GDICommandPost" parent="GDIBuilding" unitName="GDICommandPost" icon="GBCommandPost" wireframe="gdi-outpost-wireframe">
         <Aliases value="_UnitHuge"/>
         <Macros value="QueueAnim"/>
         <On index="69" Terms="UnitConstruction.GDICommandPost.Start" Send="Create GDIbuild"/>
@@ -1258,7 +1334,7 @@
         <SoundArray index="What" value="EngineeringBay_What"/>
         
     </CActorUnit>
-    <CActorUnit id="GDIEngineer" parent="GenericUnitBase" unitName="GDIEngineer"  icon="GDIEngineer" wireframe="GDIEngineer">
+    <CActorUnit id="GDIEngineer" parent="GDIInfantry" unitName="GDIEngineer"  icon="GDIEngineer" wireframe="GDIEngineer">
         <Aliases value="_MissileHybrids"/>
         <Macros value="D8ChargeAnim"/>
         <Macros value="UnloadDropAnim"/>
@@ -1305,7 +1381,7 @@
         <SoundArray index="Pissed" value="Reaper_Pissed"/>
        
     </CActorUnit>
-    <CActorUnit id="GDITitan" parent="NodUnitBase" unitName="GDITitan" icon="Titan" wireframe="Titan">
+    <CActorUnit id="GDITitan" parent="GDIUnitBase" unitName="GDITitan" icon="Titan" wireframe="Titan">
         <Aliases value="_UnitLarge"/>
         <Macros value="UnloadDropAnim"/>
         <Macros value="TerrainSquibAnimations"/>
@@ -1346,20 +1422,20 @@
         <SoundArray index="Pissed" value="Goliath_Pissed"/>
         
     </CActorUnit>
-    <CActorUnit id="GDIJuggernaut" parent="NodUnitBase" unitName="GDIJuggernaut" icon="tt-jaggernaut-icon" wireframe="tt-jaggernaut-icon">
+    <CActorUnit id="GDIJuggernaut" parent="GDIUnitBase" unitName="GDIJuggernaut" icon="tt-jaggernaut-icon" wireframe="tt-jaggernaut-icon">
         
     </CActorUnit>
-    <CActorUnit id="GDIStriker" parent="NodUnitBase" unitName="GDIStriker" icon="GDIStriker"  wireframe="GDIStriker">
+    <CActorUnit id="GDIStriker" parent="GDIUnitBase" unitName="GDIStriker" icon="GDIStriker"  wireframe="GDIStriker">
        
     </CActorUnit>
-    <CActorUnit id="GDIFocusBeam" parent="NodBuilding" unitName="GDIFocusBeam"  icon="gdi-focusbeam-icon" wireframe="gdi-focusbeam-wireframe">
+    <CActorUnit id="GDIFocusBeam" parent="GDIBuilding" unitName="GDIFocusBeam"  icon="gdi-focusbeam-icon" wireframe="gdi-focusbeam-wireframe">
        
     </CActorUnit>
-    <CActorUnit id="GDIShepherdTank" parent="GDITank" wireframe="Shepherd" unitName="GDIShepherdTank" icon="Shepherd"/>
-    <CActorUnit id="GDISpartan" parent="GDITank" wireframe="Spartan" unitName="GDISpartan" icon="Spartan"/>
-    <CActorUnit id="GDIRefractor" parent="GDITank" wireframe="ReflectorShield" unitName="GDIRefractor" icon="ReflectorShield"/>
-    <CActorUnit id="GDIPredator" parent="GDITank" wireframe="tw_predator" unitName="GDIPredator" icon="tw_predator"/>
-    <CActorUnit id="GDIMammothTank" parent="GDITank" wireframe="MammothII" unitName="GDIMammothTank" icon="MammothII">
+    <CActorUnit id="GDIShepherdTank" parent="GDIVehicle" wireframe="Shepherd" unitName="GDIShepherdTank" icon="Shepherd"/>
+    <CActorUnit id="GDISpartan" parent="GDIVehicle" wireframe="Spartan" unitName="GDISpartan" icon="Spartan"/>
+    <CActorUnit id="GDIRefractor" parent="GDIVehicle" wireframe="ReflectorShield" unitName="GDIRefractor" icon="ReflectorShield"/>
+    <CActorUnit id="GDIPredator" parent="GDIVehicle" wireframe="GUPredator" unitName="GDIPredator" icon="GUPredator"/>
+    <CActorUnit id="GDIMammothTank" parent="GDIVehicle" wireframe="MammothII" unitName="GDIMammothTank" icon="MammothII">
         <On index="65" Terms="WeaponStart.GDIMammoth120mmCannons.AttackStart"/>
         <DeathArray index="Normal" ModelLink="MammothDeathRagdoll"/>
         <SoundArray index="Ready" value="MammothReady"/>
@@ -1369,13 +1445,13 @@
         <SoundArray index="Attack" value="MammothAttack"/>
         <SoundArray index="Pissed" value="Mammoth_What"/>
     </CActorUnit>
-    <CActorUnit id="GDIGuardianCannon" parent="GDITank" unitName="GDIGuardianCannon"  icon="gdi-guardiancannon-icon" wireframe="gdi-guardiancannon-wireframe">
+    <CActorUnit id="GDIGuardianCannon" parent="GDIVehicle" unitName="GDIGuardianCannon"  icon="gdi-guardiancannon-icon" wireframe="gdi-guardiancannon-wireframe">
        
     </CActorUnit>
 
 
 
-    <CActorUnit id="GDIOxTransport" parent="GenericUnitStandard" unitName="GDIOxTransport"  icon="gdi-hammerhead-icon" wireframe="gdi-hammerhead-wireframe">
+    <CActorUnit id="GDIOxTransport" parent="GDIUnitBase" unitName="GDIOxTransport"  icon="GUTransport" wireframe="GUTransport">
         <Aliases value="_UnitSmall"/>
         <Macros value="TerrainSquibAnimations"/>
         <Macros value="PhysicsDeathsSwarmAir"/>
@@ -1411,7 +1487,7 @@
         <SoundArray index="Movement" value="CabalSalamander_Movement"/>
        
     </CActorUnit>
-    <CActorUnit id="GDIFireHawk" parent="GenericUnitStandard" unitName="GDIFireHawk"  icon="gdi-hammerhead-icon" wireframe="gdi-hammerhead-wireframe">
+    <CActorUnit id="GDIFireHawk" parent="GDIUnitBase" unitName="GDIFireHawk"  icon="GUFirehawk" wireframe="GUFirehawk">
         <Aliases value="_UnitSmall"/>
         <Macros value="TerrainSquibAnimations"/>
         <Macros value="PhysicsDeathsSwarmAir"/>
@@ -1615,31 +1691,31 @@
         <LaunchAttachQuery Methods="Weapon 1"/>
         <LaunchAssets Sound="Argus_AttackImpact"/>
         <Beam value="ArgusAttackBeam1"/>
-        <ImpactPhysics Name="RailgunImpact" MatchKeys="Basic" Physics="MengskDiamondbackAttackDeathForce"/>
+        <ImpactPhysics Name="RailgunImpact" MatchKeys="Basic" Physics="CNCRailgunAttackDeathForce"/>
     </CActorAction>
     <CActorAction id="TitanAttack1" parent="GenericAttack" effectAttack="TitanBeam1">
         <LaunchAttachQuery Methods="AMFilterWeapon"/>
         <LaunchAssets Sound="Argus_AttackImpact"/>
         <Beam value="ArgusAttackBeam1"/>
-        <ImpactPhysics Name="RailgunImpact" MatchKeys="Basic" Physics="MengskDiamondbackAttackDeathForce"/>
+        <ImpactPhysics Name="RailgunImpact" MatchKeys="Basic" Physics="CNCRailgunAttackDeathForce"/>
     </CActorAction>
     <CActorAction id="ArgusAttack2" parent="GenericAttack" effectAttack="ArgusBeam2">
         <LaunchAttachQuery Methods="Weapon 2"/>
         <LaunchAssets Sound="Argus_AttackImpact"/>
         <Beam value="ArgusAttackBeam1"/>
-        <ImpactPhysics Name="RailgunImpact" MatchKeys="Basic" Physics="MengskDiamondbackAttackDeathForce"/>
+        <ImpactPhysics Name="RailgunImpact" MatchKeys="Basic" Physics="CNCRailgunAttackDeathForce"/>
     </CActorAction>
     <CActorAction id="ArgusAttack3" parent="GenericAttack" effectAttack="ArgusBeam3">
         <LaunchAttachQuery Methods="Weapon 3"/>
         <LaunchAssets Sound="Argus_AttackImpact"/>
         <Beam value="ArgusAttackBeam1"/>
-        <ImpactPhysics Name="RailgunImpact" MatchKeys="Basic" Physics="MengskDiamondbackAttackDeathForce"/>
+        <ImpactPhysics Name="RailgunImpact" MatchKeys="Basic" Physics="CNCRailgunAttackDeathForce"/>
     </CActorAction>
     <CActorAction id="ArgusAttack4" parent="GenericAttack" effectAttack="ArgusBeam4">
         <LaunchAttachQuery Methods="Weapon 4"/>
         <LaunchAssets Sound="Argus_AttackImpact"/>
         <Beam value="ArgusAttackBeam1"/>
-        <ImpactPhysics Name="RailgunImpact" MatchKeys="Basic" Physics="MengskDiamondbackAttackDeathForce"/>
+        <ImpactPhysics Name="RailgunImpact" MatchKeys="Basic" Physics="CNCRailgunAttackDeathForce"/>
     </CActorAction>
     <CActorBeamSimple id="ArgusAttackBeam1" parent="GenericAttackBeam">
         <On Terms="ActorCreation; ValidateEffect DiamondbackCharged" Send="ModelSwap DiamondbackAttackBeamCharged"/>
@@ -1800,7 +1876,7 @@
     </CActorForceSphere>
     <CActorAction id="GDIGDIShepherdTankAttack" parent="GenericAttack" effectAttack="90mmCannonsShepherd">
         <LaunchAttachQuery Methods="Weapon 1"/>
-        <LaunchAssets Model="SiegeTankAttackLaunch" Sound="SiegeTank_AttackLaunch2"/>
+        <LaunchAssets Model="SiegeTankAttackLaunch" Sound="GDIShepherdTankAttackLaunch"/>
         <ImpactMap index="None" Model="SiegeTankAttackImpact" Sound="SiegeTank_AttackImpact"/>
         <ImpactPhysics Name="90mmCannonImpact" MatchKeys="Basic" Physics="SiegeTankAttackForce"/>
     </CActorAction>
@@ -2023,4 +2099,18 @@
         <ImpactMap index="None" Model="HailstormMissileVolleyImpact" Sound="NodBikeRocketAttackImpact" ModelReaction="HailstormMissileVolleyImpactReaction"/>
         <ImpactMap index="Shield" Sound="HailstormMissileVolleyImpactShield" ModelReaction="HailstormMissileVolleyImpactReactionShield"/>
     </CActorAction>
+    <CActorForceSphere id="PrimalSlashAttackForce2">
+        <On Terms="Effect.JumpPackSearchArea.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.JumpPack.Start; At Target" Send="Create"/>
+        <On Terms="ActorCreation" Send="Create PrimalSlashAttackUpForce"/>
+        <Host Subject="_ImpactGuide"/>
+        <HostSiteOps Ops="SOpRandomPointInSphereDot15"/>
+        <Duration value="0.250000"/>
+        <Magnitude value="37.500000,8.000000"/>
+        <Radius value="1.050000,0.150000"/>
+    </CActorForceSphere>
+    <CActorSound id="PrimalSlashSound2" parent="SoundOneShot">
+        <On Terms="Effect.JumpPack.Start" Send="Create"/>
+        <Sound value="Ultralisk_AttackLaunch2"/>
+    </CActorSound>
 </Catalog>

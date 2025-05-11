@@ -55,7 +55,7 @@
         <HotkeySet value="TankModes"/>
     </CButton>
     <CButton id="IonCannonAttack" parent="GDIButton">
-        <Icon value="Assets\icons\FXNod_EMPCountermeasures.Upgradedds.dds"/>
+        <Icon value="Assets\icons\FXNOD_EMPCountermeasuresUpgrade.dds"/>
     </CButton>
     <CButton id="GDIAramUpgrade" parent="GDIButton" icon="FXGDI_BattleHardening">
         <HotkeyAlias value="NodAramUpgrade"/>

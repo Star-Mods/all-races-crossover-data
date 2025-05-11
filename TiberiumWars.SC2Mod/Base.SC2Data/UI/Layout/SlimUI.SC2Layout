@@ -1,89 +1,227 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <Desc>
-<Constant name="ArmyWarpgateIdleCountLabel" val="255,255,255"/>
+    <Constant name="ArmyWarpgateIdleCountLabel" val="255,255,255"/>
 
-<Constant name="Slim_ControlGroupNormal" val="Assets/Images/Slim_ControlGroupNormal.dds"/>
-<Constant name="Slim_ControlGroupHover" val="Assets/Images/Slim_ControlGroupHover.dds"/>
-<Constant name="Slim_ControlGroupPressed" val="Assets/Images/Slim_ControlGroupPressed.dds"/>
+    <Constant name="Slim_ControlGroupNormal" val="Assets/Images/Slim_ControlGroupNormal.dds"/>
+    <Constant name="Slim_ControlGroupHover" val="Assets/Images/Slim_ControlGroupHover.dds"/>
+    <Constant name="Slim_ControlGroupPressed" val="Assets/Images/Slim_ControlGroupPressed.dds"/>
 
-<Constant name="ControlGroupIndexXLabelOffset" val="76"/>
-<Constant name="ControlGroupIndexXLabelOffset2" val="-76"/>
-<Constant name="ControlGroupIndexLabelOffset" val="-9"/>
-<Constant name="ControlGroupIndexLabelColor" val="200,200,200"/>
+    <Constant name="ControlGroupIndexXLabelOffset" val="76"/>
+    <Constant name="ControlGroupIndexXLabelOffset2" val="-76"/>
+    <Constant name="ControlGroupIndexLabelOffset" val="-9"/>
+    <Constant name="ControlGroupIndexLabelColor" val="200,200,200"/>
 
-<Constant name="ControlGroupUnitImageOffset" val="5"/>
-<Constant name="ControlGroupUnitImageXOffset" val="30"/>
-<Constant name="ControlGroupCountLabelOffset" val="12"/>
-<Constant name="ControlGroupCountLabelXOffset" val="-20"/>
-<Constant name="ControlGroupCountLabelX2Offset" val="-4"/>
+    <Constant name="ControlGroupUnitImageOffset" val="5"/>
+    <Constant name="ControlGroupUnitImageXOffset" val="30"/>
+    <Constant name="ControlGroupCountLabelOffset" val="12"/>
+    <Constant name="ControlGroupCountLabelXOffset" val="-20"/>
+    <Constant name="ControlGroupCountLabelX2Offset" val="-4"/>
 
-<Constant name="ControlGroupCountLabelXOffset2" val="-10"/>
-<Constant name="ControlGroupCountLabelX2Offset2" val="5"/>
+    <Constant name="ControlGroupCountLabelXOffset2" val="-10"/>
+    <Constant name="ControlGroupCountLabelX2Offset2" val="5"/>
 
-<Constant name="Slim_ControlGroupWidth" val="100"/>
-<Constant name="Slim_ControlGroupWidthMinus" val="-100"/>
-<Constant name="Slim_ControlGroupHeight" val="40"/>
-<Constant name="Slim_ControlGroupYoffset" val="39"/>
+    <Constant name="Slim_ControlGroupWidth" val="100"/>
+    <Constant name="Slim_ControlGroupWidthMinus" val="-100"/>
+    <Constant name="Slim_ControlGroupHeight" val="40"/>
+    <Constant name="Slim_ControlGroupYoffset" val="39"/>
 
-<Constant name="SlimArmyButtonWidth" val="54"/>
-<Constant name="Slim_IconSize" val="35"/>
-<Constant name="Slim_IconYspacing" val="1"/>
-<Constant name="SlimTopButtonOffset" val="2"/>
-<Constant name="Slim_InfoPaneGroupLabelColor" val="222,222,222"/>
-<Constant name="Slim_GroupUnitButtonBGImage" val="Assets/Images/Slim_GroupUnitButtonBGImage.dds"/>
+    <Constant name="SlimArmyButtonWidth" val="54"/>
+    <Constant name="Slim_IconSize" val="35"/>
+    <Constant name="Slim_IconYspacing" val="1"/>
+    <Constant name="SlimTopButtonOffset" val="2"/>
+    <Constant name="Slim_InfoPaneGroupLabelColor" val="222,222,222"/>
+    <Constant name="Slim_GroupUnitButtonBGImage" val="Assets/Images/Slim_GroupUnitButtonBGImage.dds"/>
 
-<!-- Temlates-->
-<Frame type="Image" name="PageButtonTemplate">
-    <Texture val="Assets/Images/Slim_InfoPaneGroup.dds"/>
-    <LayerColor val="###ColorMenuButtonIcon"/>
-    <StateCount val="1"/>
-    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
-    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
-    <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
-    <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
-    <Alpha val="255"/>
-    <DescFlags val="Internal"/>
-</Frame>
-
-<Frame type="Image" name="SlimBackgroundImageTemplate">                    
-    <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>	
-    <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>	
-    <Anchor side="Left" relative="$parent" pos="min" offset="0"/>	
-    <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>	
-    <Texture val="Assets/Images/Slim_InfoBorder.dds"/>
-    <TextureType val="NineSlice"/>
-    <Alpha val="220"/>  
-    <RenderPriority val="400"/>
-    <Visible val="False"/>
-    <RenderType val="HDR"/>      
-</Frame>
-
-<!-- GameUI/UIContainer/FullscreenUpperContainer; create an icon for options-->
-<Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
-    <!-- MenuBar-->
-    <Frame type="MenuBar" name="MenuBar">
-            <Frame type="Button" name="MenuButton">
-                    <Frame type="Image" name="Icon">                    
-                        <Anchor side="Top" relative="$parent" pos="Min" offset="8"/>	
-                        <Anchor side="Bottom" relative="$parent" pos="Max" offset="-8"/>	
-                        <Anchor side="Left" relative="$parent" pos="min" offset="8"/>	
-                        <Anchor side="Right" relative="$parent" pos="Max" offset="-8"/>	
-                        <Texture val="Assets/Images/Slim_OptionsIcon.dds"/>
-                        <TextureType val="Normal"/>
-                        <Alpha val="200"/>  
-                        <Visible val="False"/>
-                        <DesaturateOnDisable val="True"/>
-                        <Color val="###ColorMenuButtonIcon"/>
-                    </Frame>
-            </Frame>
+    <!-- Temlates-->
+    <Frame type="Image" name="PageButtonTemplate">
+        <Texture val="Assets/Images/Slim_InfoPaneGroup.dds"/>
+        <LayerColor val="###ColorMenuButtonIcon"/>
+        <StateCount val="1"/>
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+        <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+        <Anchor side="Left" relative="$parent" pos="Mid" offset="0"/>
+        <Anchor side="Right" relative="$parent" pos="Mid" offset="0"/>
+        <Alpha val="255"/>
+        <DescFlags val="Internal"/>
     </Frame>
-</Frame>
+
+    <Frame type="Image" name="SlimBackgroundImageTemplate">
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+        <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+        <Anchor side="Left" relative="$parent" pos="min" offset="0"/>
+        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+        <Texture val="Assets/Images/Slim_InfoBorder.dds"/>
+        <TextureType val="NineSlice"/>
+        <Alpha val="220"/>
+        <RenderPriority val="400"/>
+        <Visible val="False"/>
+        <RenderType val="HDR"/>
+    </Frame>
+
+    <!-- GameUI/UIContainer/FullscreenUpperContainer; create an icon for options-->
+    <Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">
+        <!-- MenuBar-->
+        <Frame type="MenuBar" name="MenuBar">
+                <Frame type="Button" name="MenuButton">
+                        <Frame type="Image" name="Icon">
+                            <Anchor side="Top" relative="$parent" pos="Min" offset="8"/>
+                            <Anchor side="Bottom" relative="$parent" pos="Max" offset="-8"/>
+                            <Anchor side="Left" relative="$parent" pos="min" offset="8"/>
+                            <Anchor side="Right" relative="$parent" pos="Max" offset="-8"/>
+                            <Texture val="Assets/Images/Slim_OptionsIcon.dds"/>
+                            <TextureType val="Normal"/>
+                            <Alpha val="200"/>
+                            <Visible val="False"/>
+                            <DesaturateOnDisable val="True"/>
+                            <Color val="###ColorMenuButtonIcon"/>
+                        </Frame>
+                </Frame>
+        </Frame>
+    </Frame>
 
 
 
-<!-- GameUI/UIContainer/ConsoleUIContainer; sending events here from triggers-->
-<Frame type="Frame" name="GameUI/UIContainer/ConsoleUIContainer" file="GameUI">
 
+    <Frame type="Button" name="TesterRaceButton">
+        <Width val="50"/>
+        <Height val="50"/>
+        <DisplayType val="ImageLayer"/>
+        <ClickSound val="@UI_ActionButtonSelect"/>
+        <Label val="Label"/>
+        <NormalImage val="NormalImage"/>
+        <HoverImage val="HoverImage"/>
+        <Frame type="Image" name="NormalImage">
+            <Anchor relative="$parent"/>
+            <LayerCount val="4"/>
+            <Texture val="Assets\Textures\ui_console_menubutton_normal_forged.dds" layer="0"/>
+            <Texture val="Assets\Textures\ui_console_menubutton_pressed_forged.dds" layer="1"/>
+            <Texture val="Assets\Textures\ui_console_menubutton_selected_forged.dds" layer="2"/>
+            <Texture val="Assets\Textures\ui_console_menubutton_disabled_forged.dds" layer="3"/>
+            <!--            <Texture val="Assets\Textures\ui_console_menubutton_normal_defaultprotoss.dds" layer="0"/>-->
+            <!--            <Texture val="Assets\Textures\ui_console_menubutton_pressed_defaultprotoss.dds" layer="1"/>-->
+            <!--            <Texture val="Assets\Textures\ui_console_menubutton_selected_defaultprotoss.dds" layer="2"/>-->
+            <!--            <Texture val="Assets\Textures\ui_console_menubutton_disabled_defaultprotoss.dds" layer="3"/>-->
+            <TextureType val="NineSlice"/>
+        </Frame>
+        <Frame type="Image" name="HoverImage">
+            <Anchor relative="$parent"/>
+            <LayerCount val="4"/>
+            <Texture val="Assets\Textures\ui_console_menubutton_hover_forged.dds" layer="0"/>
+            <Texture val="Assets\Textures\ui_console_menubutton_pressed_forged.dds" layer="1"/>
+            <Texture val="Assets\Textures\ui_console_menubutton_selected_forged.dds" layer="2"/>
+            <Texture val="Assets\Textures\ui_console_menubutton_disabled_forged.dds" layer="3"/>
+            <TextureType val="NineSlice"/>
+        </Frame>
+        <Frame type="Label" name="Label">
+            <Anchor relative="$parent"/>
+            <Style val="TesterButtonLabel"/>
+        </Frame>
+        <Frame type="Image" name="FaceImage">
+            <Anchor relative="$parent"/>
+            <Visible val="False"/>
+        </Frame>
+    </Frame>
+
+    <Frame type="Button" name="TesterItemButton">
+        <Width val="76"/>
+        <Height val="76"/>
+        <DisplayType val="ImageLayer"/>
+        <ClickSound val="@UI_GenericButton"/>
+        <NormalImage val="NormalImage"/>
+        <Frame type="Image" name="NormalImage">
+            <Anchor relative="$parent"/>
+            <LayerCount val="4"/>
+            <Texture val="Assets\Textures\ui_console_commandbutton_normal_forged.dds" layer="0"/>
+            <Texture val="Assets\Textures\ui_console_commandbutton_highlighted_forged.dds" layer="1"/>
+            <Texture val="Assets\Textures\ui_console_commandbutton_superhighlighted_forged.dds" layer="2"/>
+            <Texture val="Assets\Textures\ui_techtree_buttonframe_disabled.dds" layer="3"/>
+            <!--            <Texture val="Assets\Textures\ui_console_commandbutton_normal_defaultprotoss.dds" layer="0"/>-->
+            <!--            <Texture val="Assets\Textures\ui_console_commandbutton_highlighted_defaultprotoss.dds" layer="1"/>-->
+            <!--            <Texture val="Assets\Textures\ui_console_commandbutton_superhighlighted_defaultprotoss.dds" layer="2"/>-->
+            <TextureType val="NineSlice"/>
+        </Frame>
+        <Frame type="Image" name="HoverImage">
+            <Anchor relative="$parent"/>
+            <LayerCount val="4"/>
+            <Texture val="Assets\Textures\ui_console_commandbutton_normal_forged.dds" layer="0"/>
+            <Texture val="Assets\Textures\ui_console_commandbutton_highlighted_forged.dds" layer="1"/>
+            <Texture val="Assets\Textures\ui_console_commandbutton_superhighlighted_forged.dds" layer="2"/>
+            <Texture val="Assets\Textures\ui_techtree_buttonframe_disabled.dds" layer="3"/>
+            <TextureType val="NineSlice"/>
+        </Frame>
+        <Frame type="Image" name="FaceImage">
+            <Anchor relative="$parent"/>
+            <Visible val="False"/>
+        </Frame>
+    </Frame>
+
+    <Frame type="Frame" name="ItemCard">
+        <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+        <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+        <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+        <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+        <Frame type="Button" name="Top" template="Tester/SmallPanelLeftButtonTemplate">
+            <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+            <Width val="120"/>
+            <Height val="50"/>
+            <Visible val="False"/>
+            <Frame type="Label" name="ButtonLabel">
+                <Text val="^"/>
+            </Frame>
+        </Frame>
+        <Frame type="Button" name="Bottom" template="Tester/SmallPanelLeftButtonTemplate">
+            <Anchor side="Right" relative="$parent/Top" pos="Min" offset="0"/>
+            <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+            <Width val="120"/>
+            <Height val="50"/>
+            <Visible val="False"/>
+            <Frame type="Label" name="ButtonLabel">
+                <Text val="v"/>
+            </Frame>
+        </Frame>
+    </Frame>
+
+    <!--<Frame type="Frame" name="GameUI/UIContainer/FullscreenUpperContainer" file="GameUI">-->
+    <!--</Frame>-->
+
+<!--    <Frame type="Frame" name="HelpMenuDialogGame/NavPanel/GeneralButtonListBox" file="GameUI">-->
+<!--        <Height val="200"/>-->
+<!--    </Frame>-->
+    <!-- GameUI/UIContainer/ConsoleUIContainer; sending events here from triggers-->
+    <Frame type="Frame" name="GameUI/UIContainer/ConsoleUIContainer" file="GameUI">
+
+        <Frame type="Frame" name="TesterPanel1">
+            <Anchor side="Left" relative="$parent" pos="Min" offset="0"/>
+            <Anchor side="Top" relative="$parent" pos="Min" offset="200"/>
+            <Width val="434"/>
+            <Height val="819"/>
+            <Visible val="True"/>
+            <Frame type="Frame" name="ItemCard0" template="Tester/\f">
+                <Anchor side="Left" relative="$parent" pos="Min" offset="50"/>
+                <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            </Frame>
+            <Frame type="Frame" name="ItemCard1" template="Tester/ItemCard">
+                <Anchor side="Left" relative="$parent" pos="Min" offset="50"/>
+                <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            </Frame>
+            <Frame type="Frame" name="ItemCard2" template="Tester/ItemCard">
+                <Anchor side="Left" relative="$parent" pos="Min" offset="50"/>
+                <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            </Frame>
+            <Frame type="Frame" name="ItemCard3" template="Tester/ItemCard">
+                <Anchor side="Left" relative="$parent" pos="Min" offset="50"/>
+                <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>
+                <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>
+                <Anchor side="Right" relative="$parent" pos="Max" offset="0"/>
+            </Frame>
+        </Frame>
 
         <Frame type="Button" name="ArmyButton2" template="ArmyButton/ArmyButtonTemplate">
             <Visible val="False"/>
@@ -604,7 +742,6 @@
                 <Action type="SetAnchor" frame="MinimapPanel/BlackBG" side="Right"  relative="$parent/Minimap" pos="Min" offset="120"/>
                 <Action type="SetAnchor" frame="MinimapPanel/BlackBG" side="Left"   relative="$parent/Minimap" pos="Min" offset="0"/>
                 <Action type="SetAnchor" frame="MinimapPanel/BlackBG" side="Bottom" relative="$parent/Minimap" pos="Min" offset="-3"/>
-                
 
                 <Action type="SetProperty" frame="MissionTimePanel/TimeLabel" color="255,255,255"/>
                 <Action type="SetProperty" frame="MissionTimePanel/TimeLabel" alpha="240"/>
@@ -617,10 +754,16 @@
                 <Action type="SetAnchor" frame="MissionTimePanel/BackgroundImage" side="Right" relative="$parent/TimeLabel" pos="1" offset="0"/>
 
                 <!-- MinimapPanel-->
-                <Action type="SetAnchor" frame="MinimapPanel" side="Left" relative="$parent" pos="Min" offset="10"/>
+                <Action type="SetAnchor" frame="MinimapPanel" side="Top" relative="$parent" pos="Max" offset="-350"/>
                 <Action type="SetAnchor" frame="MinimapPanel" side="Bottom" relative="$parent" pos="Max" offset="-10"/>
+                <Action type="SetAnchor" frame="MinimapPanel" side="Right" relative="$parent" pos="Min" offset="350"/>
+                <Action type="SetAnchor" frame="MinimapPanel" side="Left" relative="$parent" pos="Min" offset="10"/>
 
-                <Action type="SetProperty" frame="MinimapPanel" height="350"/>
+<!--                <Action type="SetAnchor" frame="MinimapPanel" side="Top" relative="$parent" pos="Min" offset="50"/>-->
+<!--                <Action type="SetAnchor" frame="MinimapPanel" side="Right" relative="$parent" pos="Max" offset="-10"/>-->
+<!--                <Action type="SetAnchor" frame="MinimapPanel" side="Left" relative="$parent" pos="Max" offset="-350"/>-->
+<!--                <Action type="SetAnchor" frame="MinimapPanel" side="Bottom" relative="$parent" pos="Min" offset="390"/>-->
+
                 <Action type="SetProperty" frame="MinimapPanel/BackgroundImage" visible="False"/>
                 <Action type="SetProperty" frame="MinimapPanel/Angled" visible="False"/>
                 <Action type="SetProperty" frame="MinimapPanel/BlackBG" visible="True"/>
@@ -649,8 +792,13 @@
                 <Action type="SetAnchor" frame="MinimapPanel/ColorButton" side="Bottom" relative="$parent/ColorButton" pos="Min" offset="#Slim_IconSize"/>
                 <Action type="SetAnchor" frame="MinimapPanel/ColorButton" side="Left"   relative="$parent/PingButton" pos="Min" offset="0"/>
                 <Action type="SetAnchor" frame="MinimapPanel/ColorButton" side="Right"  relative="$parent/PingButton" pos="Max" offset="0"/>
-                
 
+
+
+                <Action type="SetAnchor" frame="$parent/FullscreenUpperContainer/MenuBar" side="Top"    relative="$parent/$parent/ConsoleUIContainer/MinimapPanel/ColorButton" pos="Max" offset="#Slim_IconYspacing"/>
+                <Action type="SetAnchor" frame="$parent/FullscreenUpperContainer/MenuBar" side="Bottom" relative="$parent/$parent/ConsoleUIContainer/MinimapPanel/ColorButton" pos="Max" offset="300"/>
+                <Action type="SetAnchor" frame="$parent/FullscreenUpperContainer/MenuBar" side="Left"   relative="$parent/$parent/ConsoleUIContainer/MinimapPanel/PingButton" pos="Min" offset="0"/>
+                <Action type="SetAnchor" frame="$parent/FullscreenUpperContainer/MenuBar" side="Right"  relative="$parent/$parent/ConsoleUIContainer/MinimapPanel/PingButton" pos="Max" offset="0"/>
 
 
                 <Action type="SetAnchor" frame="$parent/FullscreenUpperContainer/MenuBar/HelpButton" side="Top"    relative="$parent/$parent/$parent/ConsoleUIContainer/MinimapPanel/ColorButton" pos="Max" offset="#Slim_IconYspacing"/>
@@ -684,6 +832,12 @@
                 <Action type="SetProperty" frame="$parent/FullscreenUpperContainer/MenuBar/URL/WebsiteButton" height="#Slim_IconSize"/>
                 <Action type="SetProperty" frame="$parent/FullscreenUpperContainer/MenuBar/URL/WebsiteButton/NormalImage" texture="@@@UI/Game_Console_Buttons_Minimap_Normal"/>
                 <Action type="SetProperty" frame="$parent/FullscreenUpperContainer/MenuBar/URL/WebsiteButton/HoverImage" texture="@@@UI/Game_Console_Buttons_Minimap_Hover"/>
+
+<!--                <Action type="SetAnchor" frame="$parent/FullscreenUpperContainer/AllianceButton" side="Top"    relative="$parent/MenuBar/URL" pos="Max" offset="#Slim_IconYspacing"/>-->
+<!--                <Action type="SetAnchor" frame="$parent/FullscreenUpperContainer/AllianceButton" side="Bottom" relative="$parent/AllianceButton" pos="Min" offset="#Slim_IconSize"/>-->
+<!--                <Action type="SetAnchor" frame="$parent/FullscreenUpperContainer/AllianceButton" side="Left"   relative="$parent/$parent/ConsoleUIContainer/MinimapPanel/PingButton" pos="Min" offset="0"/>-->
+<!--                <Action type="SetAnchor" frame="$parent/FullscreenUpperContainer/AllianceButton" side="Right"  relative="$parent/$parent/ConsoleUIContainer/MinimapPanel/PingButton" pos="Max" offset="0"/>-->
+
 
                 <Action type="SetProperty" frame="$parent/FullscreenUpperContainer/MenuBar/MenuBarExtendedBackgroundImage2" visible="False"/>
                 
@@ -1110,6 +1264,16 @@
                 <Action type="SetProperty" frame="$parent/FullscreenUpperContainer/MenuBar/MenuButton/NormalImage" texture="@@@UI/Game_Console_Buttons_Minimap_Normal"/>
                 <Action type="SetProperty" frame="$parent/FullscreenUpperContainer/MenuBar/MenuButton/HoverImage" texture="@@@UI/Game_Console_Buttons_Minimap_Hover"/>
 
+<!--                <Action type="SetProperty" frame="$parent/FullscreenUpperContainer/AllianceButton" width="#Slim_IconSize"/>-->
+<!--                <Action type="SetProperty" frame="$parent/FullscreenUpperContainer/AllianceButton" height="#Slim_IconSize"/>-->
+<!--                <Action type="SetProperty" frame="$parent/FullscreenUpperContainer/AllianceButton/Unnamed" width="#Slim_IconSize"/>-->
+<!--                <Action type="SetProperty" frame="$parent/FullscreenUpperContainer/AllianceButton/Unnamed" width="#Slim_IconSize"/>-->
+<!--                <Action type="SetProperty" frame="$parent/FullscreenUpperContainer/AllianceButton/Unnamed" texture="@@@UI/Game_Console_Buttons_Minimap_Normal"/>-->
+
+
+
+
+
                 <!--this prevents portraits blocking mouse clicks even if it's not visible-->
                 <Action type="SetAnchor" frame="$parent/ConsolePanel/PortraitPanel" side="Bottom" relative="$parent" pos="1" offset="600"/>
 
@@ -1450,7 +1614,9 @@
                 <Action type="SetProperty" frame="$parent/FullscreenUpperContainer/MenuBar/MenuButton/Icon" color="###ColorMenuButtonIcon"/>  
                 <Action type="SetProperty" frame="$parent/FullscreenUpperContainer/MenuBar/ChatButton/Icon" color="###ColorMenuButtonIcon"/>  
                 <Action type="SetProperty" frame="$parent/FullscreenUpperContainer/MenuBar/HelpButton/Icon" color="###ColorMenuButtonIcon"/>  
-                <Action type="SetProperty" frame="$parent/FullscreenUpperContainer/MenuBar/SocialButton/Icon" color="###ColorMenuButtonIcon"/>  
+                <Action type="SetProperty" frame="$parent/FullscreenUpperContainer/MenuBar/SocialButton/Icon" color="###ColorMenuButtonIcon"/>
+
+<!--                <Action type="SetProperty" frame="$parent/FullscreenUpperContainer/AllianceButton/Unnamed" color="###ColorMenuButtonIcon"/>-->
 
                 <!-- Chat position -->
                 <Action type="SetAnchor" frame="$parent/FullscreenUpperContainer/ChatBar" side="Bottom" relative="$parent" pos="1" offset="-200"/>
@@ -1460,5 +1626,19 @@
             </State>
         </StateGroup>
 </Frame>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </Desc>
 

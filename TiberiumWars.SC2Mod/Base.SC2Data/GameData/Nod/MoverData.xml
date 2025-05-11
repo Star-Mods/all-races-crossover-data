@@ -1,5 +1,5 @@
 <Catalog>
-    <CMoverMissile id="NodAwakenBuggyEMP2Weapon">
+    <CMoverMissile id="NodAwakenBuggyEMP">
         <MotionPhases>
             <Driver value="Guidance"/>
             <Acceleration value="8"/>

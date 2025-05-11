@@ -225,4 +225,8 @@ EDSTR_CATEGORY_UpgradeType_ArmorBonus=Armor Bonus
 EDSTR_CATEGORY_UpgradeType_AttackBonus=Attack Bonus
 EDSTR_CATEGORY_UpgradeType_SpellResearch=Spell Research
 EDSTR_CATEGORY_UpgradeType_Talents=Talents
+EDSTR_CATEGORY_Race_Allied=Allied
+EDSTR_CATEGORY_Race_Japan=Japan
+EDSTR_CATEGORY_Race_Soviet=Soviet
+EDSTR_CATEGORY_Race_China=China
 
