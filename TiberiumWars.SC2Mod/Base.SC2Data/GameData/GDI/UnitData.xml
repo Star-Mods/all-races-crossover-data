@@ -506,6 +506,25 @@
         <TacticalAI value="Factory"/>
         <GlossaryPriority value="322"/>
     </CUnit>
+    <CUnit id="GDICombatSupportAirfield" parent="GDIStructure">
+        <LifeStart value="1250"/>
+        <LifeMax value="1250"/>
+        <StationaryTurningRate value="719.4726"/>
+        <TurningRate value="719.4726"/>
+        <CostResource index="Minerals" value="100"/>
+        <CostResource index="Vespene" value="0"/>
+        <RepairTime value="60"/>
+        <AbilArray Link="Rally"/>
+        <BehaviorArray Link="Deployable"/>
+        <Radius value="1.625"/>
+        <SeparationRadius value="1.625"/>
+        <ScoreMake value="250"/>
+        <ScoreKill value="250"/>
+        <SubgroupPriority value="3"/>
+        <MinimapRadius value="1.625"/>
+        <TacticalAI value="Factory"/>
+        <GlossaryPriority value="322"/>
+    </CUnit>
     <CUnit id="GDICommandPost" parent="GDIStructure">
         <Facing value="315"/>
         <LifeStart value="850"/>

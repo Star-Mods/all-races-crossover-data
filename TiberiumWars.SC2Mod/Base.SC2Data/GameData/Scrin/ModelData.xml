@@ -37,4 +37,5 @@
     <CModel id="AlienStormRiderDeath" parent="PhoenixDeathBase">
         <Model value="Assets\Units\Scrin\AUStormRider.m3"/>
     </CModel>
+    <CModel id="ScrinGravityStabilizer"/>
 </Catalog>

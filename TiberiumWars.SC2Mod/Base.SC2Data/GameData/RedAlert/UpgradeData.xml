@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
     <CUpgrade default="1" id="AlliedUpgrade">
-        <?token id="icon" value=""?>
+        <?token id="icon"?>
         <EditorCategories value="Race:Nod,UpgradeType:SpellResearch"/>
         <Icon value="Assets\Textures\##icon##.dds"/>
         <Race value="Allied"/>
     </CUpgrade>
-
-
     <CUpgrade id="AuJunTechlvP110">
         <Icon value="Assets\Textures\btn-techupgrade-terran-ripwavemissiles.dds"/>
         <EffectArray Reference="Weapon,LongboltMissile242223,Level" Value="1"/>
@@ -163,8 +161,8 @@
     <CUpgrade id="AuJunTechlvP127">
         <Icon value="Assets\Textures\btn-upgrade-tychus-attackspeed.dds"/>
         <EffectArray Operation="Set" Reference="Weapon,RA25mmAnnihilatorChainGun,Options[Disabled]" Value="0"/>
-        <EffectArray Operation="Set" Reference="Effect,RAVanguardGunshipBombsCreatePersistentEffects,InitialEffect" Value="xfwrmjxg32"/>
-        <EffectArray Operation="Set" Reference="Effect,RAStarVanguardGunshipBombCreatesALastingEffect,InitialEffect" Value="xfwrmjxg32"/>
+        <EffectArray Operation="Set" Reference="Effect,RAVanguardGunshipBombsCreatePersistentEffects,InitialEffect" Value="Theeffectofthevanguardsurroundingthevestisempty"/>
+        <EffectArray Operation="Set" Reference="Effect,RAStarVanguardGunshipBombCreatesALastingEffect,InitialEffect" Value="Theeffectofthevanguardsurroundingthevestisempty"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <AffectedUnitArray value="AuHarberGunship"/>
         <Flags index="UpgradeCheat" value="0"/>
@@ -631,7 +629,7 @@
         <EffectArray Reference="Unit,AlliedVindicator,EnergyMax" Value="20"/>
         <EffectArray Reference="Unit,AlliedCenturyBomber,EnergyStart" Value="40"/>
         <EffectArray Reference="Unit,AlliedCenturyBomber,EnergyMax" Value="40"/>
-        <EffectArray Operation="Multiply" Reference="Behavior,fjzdbcdy2,Period" Value="1.000000"/>
+        <EffectArray Operation="Multiply" Reference="Behavior,Aircraftautomaticallyreplenishesammunitionpeacekeepingbomber,Period" Value="1.000000"/>
         <EditorCategories value="Race:Terran,UpgradeType:Talents"/>
         <AffectedUnitArray value="AuApollofighter"/>
         <AffectedUnitArray value="AuAruis"/>

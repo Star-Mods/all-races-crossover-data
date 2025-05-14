@@ -193,6 +193,7 @@
         <SoundArray index="What" value="Factory_What"/>
         <SoundArray index="Movement" value="Factory_Movement"/>
     </CActorUnit>
+    <CActorUnit id="GDICombatSupportAirfield" parent="GDIBuilding" unitName="GDICombatSupportAirfield"  icon="gdi-airfield-icon" wireframe="gdi-airfield-wireframe"/>
     <CActorUnit id="GDIRefinery" parent="GDIBuilding" unitName="GDIRefinery"  icon="gdi-refinery-icon" wireframe="gdi-refinery-wireframe">
         <Aliases value="_UnitHuge"/>
         <Macros value="ExtractAnim"/>

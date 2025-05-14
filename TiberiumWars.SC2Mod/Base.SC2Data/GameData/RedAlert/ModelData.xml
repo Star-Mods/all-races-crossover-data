@@ -7532,12 +7532,12 @@
         <ScaleMax value="1.850000,1.850000,1.850000"/>
         <ScaleMin value="1.850000,1.850000,1.850000"/>
     </CModel>
-    <CModel id="xianfeng">
+    <CModel id="PioneerArmedCombatCraftInvincible">
         <Model value="Assets\Effects\Terran\ArcadeVikingShield\ArcadeVikingShield.m3"/>
         <ScaleMax value="1.600000,1.600000,1.600000"/>
         <ScaleMin value="1.600000,1.600000,1.600000"/>
     </CModel>
-    <CModel id="xianfeng2">
+    <CModel id="TanyaBecomesInvincibleWithin3seconds">
         <Model value="Assets\Effects\Protoss\SentryShieldBubble\SentryShieldBubble.m3"/>
         <ScaleMax value="0.160000,0.160000,0.160000"/>
         <ScaleMin value="0.160000,0.160000,0.160000"/>

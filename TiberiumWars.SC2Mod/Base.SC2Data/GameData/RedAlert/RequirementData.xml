@@ -847,12 +847,12 @@
     </CRequirement>
     <CRequirement id="LandOnly">
         <EditorCategories value="Race:Terran,TechType:Unit"/>
-        <NodeArray index="Use" Link="CountBehaviorjcfjjlCompleteOnlyAtUnit"/>
-        <NodeArray index="Show" Link="CountBehaviorjcfjjlCompleteOnlyAtUnit"/>
+        <NodeArray index="Use" Link="CountBehaviorAirportlandedCompleteOnlyAtUnit"/>
+        <NodeArray index="Show" Link="CountBehaviorAirportlandedCompleteOnlyAtUnit"/>
     </CRequirement>
     <CRequirement id="LandOnly2">
         <EditorCategories value="Race:Terran,TechType:Unit"/>
-        <NodeArray index="Show" Link="EqCountBehaviorjcfjjlCompleteOnlyAtUnit0"/>
+        <NodeArray index="Show" Link="EqCountBehaviorAirportlandedCompleteOnlyAtUnit0"/>
     </CRequirement>
     <CRequirement id="LearnAdvancedAntitankGuns">
         <EditorCategories value="Race:Protoss,TechType:Ability"/>
@@ -2175,7 +2175,7 @@
     </CRequirement>
     <CRequirement id="ra3rqzbndysj">
         <EditorCategories value="Race:Terran,TechType:Unit"/>
-        <NodeArray index="Use" Link="And3668464799LTSumCountUnitAlliedVindicatorQueuedOrBetterCountUnitAlliedCenturyBomberQueuedOrBetterMulSumMulCountUnitAuAirportCompleteOnly4EqCountBehavioryfpcw3QueuedOrBetterAtUnit0"/>
+        <NodeArray index="Use" Link="And3668464799LTSumCountUnitAlliedVindicatorQueuedOrBetterCountUnitAlliedCenturyBomberQueuedOrBetterMulSumMulCountUnitAuAirportCompleteOnly4EqCountBehaviorAirportisfullQueuedOrBetterAtUnit0"/>
     </CRequirement>
     <CRequirement id="ra3rqzbndysj2">
         <EditorCategories value="Race:Terran,TechType:Unit"/>
@@ -2187,4 +2187,8 @@
     <CRequirement id="towercommander2">
         <NodeArray index="Use" Link="CountUpgradeUnknownUpgrade16CompleteOnly"/>
     </CRequirement>
+    <CRequirementAnd id="And3668464799LTSumCountUnitAlliedVindicatorQueuedOrBetterCountUnitAlliedCenturyBomberQueuedOrBetterMulSumMulCountUnitAuAirportCompleteOnly4EqCountBehaviorAirportisfullQueuedOrBetterAtUnit0">
+        <OperandArray value="LTSumCountUnitAlliedVindicatorQueuedOrBetterCountUnitAlliedCenturyBomberQueuedOrBetterMulSumMulCountUnitAuAirportCompleteOnly4"/>
+        <OperandArray value="EqCountBehaviorAirportisfullQueuedOrBetterAtUnit0"/>
+    </CRequirementAnd>
 </Catalog>

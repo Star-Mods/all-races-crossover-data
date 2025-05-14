@@ -296,4 +296,5 @@
         <Remove Terms="Effect.GravitonBeam.Start; At Source" Send="$Spell PlayForever"/>
         <Remove Terms="Effect.GravitonBeam.Stop; At Source" Send="AnimClear Spell"/>
     </CActorUnit>
+    <CActorUnit id="ScrinGravityStabilizer" parent="GenericUnitBase" unitName="ScrinGravityStabilizer"/>
 </Catalog>

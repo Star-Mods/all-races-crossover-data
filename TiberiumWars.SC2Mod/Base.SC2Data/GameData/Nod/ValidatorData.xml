@@ -1,5 +1,9 @@
 <Catalog>
 
+    <CValidatorUnitType id="NodAirTowerDock"><Value value="NodAirTowerDock"/></CValidatorUnitType>
+    <CValidatorUnitType id="NodAirTower"><Value value="NodAirTower"/></CValidatorUnitType>
+    <CValidatorUnitType id="NodAirSupport"><Value value="NodAirSupport"/></CValidatorUnitType>
+
     <CValidatorUnitType id="IsSlave">
         <Value value="CabalSlave"/>
     </CValidatorUnitType>
@@ -407,7 +411,7 @@
 <!--    <CValidatorUnitType id="IsStarport"><Value value="Starport"/></CValidatorUnitType>-->
 <!--    <CValidatorUnitType id="IsStargate"><Value value="Stargate"/></CValidatorUnitType>-->
     <CValidatorUnitType id="IsGDIAirfield"><Value value="GDIAirfield"/></CValidatorUnitType>
-    <CValidatorUnitType id="IsNodKaneAirTower"><Value value="NodKaneAirTower"/></CValidatorUnitType>
+    <CValidatorUnitType id="IsNodAirTower"><Value value="NodAirTower"/></CValidatorUnitType>
 <!--    <CValidatorUnitType id="IsCommandCenter"><Value value="CommandCenter"/></CValidatorUnitType>-->
 <!--    <CValidatorUnitType id="IsNexus"><Value value="Nexus"/></CValidatorUnitType>-->
 <!--    <CValidatorUnitType id="IsHatchery"><Value value="Hatchery"/></CValidatorUnitType>-->
@@ -442,7 +446,7 @@
         <CombineArray value="IsStarport"/>
         <CombineArray value="IsStarGate"/>
         <CombineArray value="IsGDIAirfield"/>
-        <CombineArray value="IsNodKaneAirTower"/>
+        <CombineArray value="IsNodAirTower"/>
     </CValidatorCombine>
     <CValidatorCombine id="IsCNCTabEconomy">
         <CombineArray value="IsCabalDefenseCrawlerDeployed"/>

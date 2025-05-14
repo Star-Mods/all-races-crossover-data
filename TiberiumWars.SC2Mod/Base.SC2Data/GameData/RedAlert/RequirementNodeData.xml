@@ -117,10 +117,6 @@
         <OperandArray value="CountUpgradeTechnologyCombatAircraft3CompleteOnly"/>
         <OperandArray value="LTECountUnitTacticalBomberQueuedOrBetter12"/>
     </CRequirementAnd>
-    <CRequirementAnd id="And3668464799LTSumCountUnitAlliedVindicatorQueuedOrBetterCountUnitAlliedCenturyBomberQueuedOrBetterMulSumMulCountUnitAuAirportCompleteOnly4EqCountBehavioryfpcw3QueuedOrBetterAtUnit0">
-        <OperandArray value="LTSumCountUnitAlliedVindicatorQueuedOrBetterCountUnitAlliedCenturyBomberQueuedOrBetterMulSumMulCountUnitAuAirportCompleteOnly4"/>
-        <OperandArray value="EqCountBehavioryfpcw3QueuedOrBetterAtUnit0"/>
-    </CRequirementAnd>
     <CRequirementAnd id="And3766301403LTECountUnitAuAirportQueuedOrBetter9">
         <OperandArray value="LTECountUnitAuAirportQueuedOrBetter9"/>
     </CRequirementAnd>
@@ -768,17 +764,14 @@
         <OperandArray value="CountUnitAuDefenseBureauCompleteOnly"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndLT3532700161SumCountUnitAlliedCenturyBomberQueuedOrBetterAtUnitCountUnitSuBeaverQueuedOrBetterAtUnitCountUnitSovietTheIlAttackAircraftQueuedOrBetterAtUnitCountUnitAlliedVindicatorQueuedOrBetterAtUn2694550159">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="LT3532700161SumCountUnitAlliedCenturyBomberQueuedOrBetterAtUnitCountUnitSuBeaverQueuedOrBetterAtUnitCountUnitSovietTheIlAttackAircraftQueuedOrBetterAtUnitCountUnitAlliedVindicatorQueuedOrBetterAtUnitC670292126"/>
         <OperandArray value="OrCountUpgradeAuTechLevelUnlock3CompleteOnlyCountUpgradeZombieUpgrade22223CompleteOnlyCountUpgradeCnTechUnlockT13CompleteOnly"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndLT3532700161SumCountUnitAlliedCenturyBomberQueuedOrBetterAtUnitCountUnitSuBeaverQueuedOrBetterAtUnitCountUnitSovietTheIlAttackAircraftQueuedOrBetterAtUnitCountUnitAlliedVindicatorQueuedOrBetterAtUn3096380095">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="LT3532700161SumCountUnitAlliedCenturyBomberQueuedOrBetterAtUnitCountUnitSuBeaverQueuedOrBetterAtUnitCountUnitSovietTheIlAttackAircraftQueuedOrBetterAtUnitCountUnitAlliedVindicatorQueuedOrBetterAtUnitC670292126"/>
         <OperandArray value="OrCountUpgradeCnTechUnlockT12CompleteOnly"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndLT3532700161SumCountUnitAlliedCenturyBomberQueuedOrBetterAtUnitCountUnitSuBeaverQueuedOrBetterAtUnitCountUnitSovietTheIlAttackAircraftQueuedOrBetterAtUnitCountUnitAlliedVindicatorQueuedOrBetterAtUn3174662664">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="LT3532700161SumCountUnitAlliedCenturyBomberQueuedOrBetterAtUnitCountUnitSuBeaverQueuedOrBetterAtUnitCountUnitSovietTheIlAttackAircraftQueuedOrBetterAtUnitCountUnitAlliedVindicatorQueuedOrBetterAtUnitC670292126"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndLT3548155773CountUnitAuProtonColliderQueuedOrBetter1CountUpgradeTechnologyImprovedArtillery2CompleteOnly">
@@ -786,7 +779,6 @@
         <OperandArray value="CountUpgradeTechnologyImprovedArtillery2CompleteOnly"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndLT3668464799SumCountUnitAlliedVindicatorQueuedOrBetterCountUnitAlliedCenturyBomberQueuedOrBetterMulSumMulCountUnitAuAirportCompleteOnly4CountUpgradeAuTechLevelUnlock2CompleteOnly">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="LT3668464799SumCountUnitAlliedVindicatorQueuedOrBetterCountUnitAlliedCenturyBomberQueuedOrBetterMulSumMulCountUnitAuAirportCompleteOnly4"/>
         <OperandArray value="CountUpgradeAuTechLevelUnlock2CompleteOnly"/>
     </CRequirementAnd>
@@ -803,7 +795,6 @@
         <OperandArray value="OrCountUpgradeWarpGateResearchCompleteOnlyCountUpgradeTechnologyRadarCompleteOnly"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndLTE1178522114SumCountUnitJpImperialOreMinerQueuedOrBetterCountUnitSuHarvesterQueuedOrBetterCountUnitAuProspectorQueuedOrBetterCountUnitCnOreMinerQueuedOrBetter29">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="LTE1178522114SumCountUnitJpImperialOreMinerQueuedOrBetterCountUnitSuHarvesterQueuedOrBetterCountUnitAuProspectorQueuedOrBetterCountUnitCnOreMinerQueuedOrBetter29"/>
     </CRequirementAnd>
     <CRequirementAnd id="AndLTE1470207237CountUnitInfestedDominionHousing3QueuedOrBetter15">
@@ -1472,14 +1463,6 @@
     <CRequirementCountBehavior id="CountBehaviorLevelnumCompleteOnlyAtUnitTechTreeCheat">
         <Count Link="Levelnum" State="CompleteOnlyAtUnit"/>
     </CRequirementCountBehavior>
-    <CRequirementCountBehavior id="CountBehaviorjcfjjlCompleteOnlyAtUnit">
-        <Flags index="TechTreeCheat" value="0"/>
-        <Count Link="jcfjjl" State="CompleteOnlyAtUnit"/>
-    </CRequirementCountBehavior>
-    <CRequirementCountBehavior id="CountBehavioryfpcw3QueuedOrBetterAtUnit">
-        <Flags index="TechTreeCheat" value="0"/>
-        <Count Link="yfpcw3" State="QueuedOrBetterAtUnit"/>
-    </CRequirementCountBehavior>
     <CRequirementCountUnit id="CountUnitAlliedCenturyBomberQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="AlliedCenturyBomber" State="QueuedOrBetter"/>
@@ -1490,12 +1473,10 @@
     </CRequirementCountUnit>
     <CRequirementCountUnit id="CountUnitAlliedVindicatorQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="AlliedVindicator" State="QueuedOrBetter"/>
     </CRequirementCountUnit>
     <CRequirementCountUnit id="CountUnitAlliedVindicatorQueuedOrBetterAtUnit">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="AlliedVindicator" State="QueuedOrBetterAtUnit"/>
     </CRequirementCountUnit>
     <CRequirementCountUnit id="CountUnitAuAdvancedPowerPlantCompleteOnly">
@@ -1560,7 +1541,6 @@
     </CRequirementCountUnit>
     <CRequirementCountUnit id="CountUnitAuProspectorQueuedOrBetter">
         <Flags index="TechTreeCheat" value="0"/>
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <Count Link="AuProspector" State="QueuedOrBetter"/>
     </CRequirementCountUnit>
     <CRequirementCountUnit id="CountUnitAuProtonColliderCompleteOnly">
@@ -3879,14 +3859,6 @@
         <Flags index="TechTreeCheat" value="0"/>
         <Count Link="unlockupgrade" State="QueuedOrBetter"/>
     </CRequirementCountUpgrade>
-    <CRequirementEq id="EqCountBehaviorjcfjjlCompleteOnlyAtUnit0">
-        <OperandArray index="0" value="CountBehaviorjcfjjlCompleteOnlyAtUnit"/>
-        <OperandArray index="1" value="0"/>
-    </CRequirementEq>
-    <CRequirementEq id="EqCountBehavioryfpcw3QueuedOrBetterAtUnit0">
-        <OperandArray index="0" value="CountBehavioryfpcw3QueuedOrBetterAtUnit"/>
-        <OperandArray index="1" value="0"/>
-    </CRequirementEq>
     <CRequirementEq id="EqSumCountUpgradeAuTechLevelUnlock1CompleteOnlyTechTreeCheatCountUpgradeAuTechLevelUnlock2CompleteOnlyTechTreeCheatCountUpgradeAuTechLevelUnlock3CompleteOnlyTechTreeCheat0">
         <OperandArray index="0" value="SumCountUpgradeAuTechLevelUnlock1CompleteOnlyTechTreeCheatCountUpgradeAuTechLevelUnlock2CompleteOnlyTechTreeCheatCountUpgradeAuTechLevelUnlock3CompleteOnlyTechTreeCheat"/>
         <OperandArray index="1" value="0"/>
@@ -4900,7 +4872,6 @@
         <OperandArray index="1" value="0"/>
     </CRequirementLTE>
     <CRequirementLT id="LTSumCountUnitAlliedVindicatorQueuedOrBetterCountUnitAlliedCenturyBomberQueuedOrBetterMulSumMulCountUnitAuAirportCompleteOnly4">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray index="0" value="SumCountUnitAlliedVindicatorQueuedOrBetterCountUnitAlliedCenturyBomberQueuedOrBetter"/>
         <OperandArray index="1" value="MulSumMulCountUnitAuAirportCompleteOnly4"/>
     </CRequirementLT>
@@ -6224,7 +6195,6 @@
         <OperandArray value="LTESumCountUnitRAAlliesBuildVestUnitPowerPlantCompleteOnlyAtUnitCountUnitRAAlliesBuildVestUnitsAlliedMinesCompleteOnlyAtUnitCountUnitAuBarracksVestCompleteOnlyAtUnitCountUnitAuBarracksVestCompleteOnlyAtUnitCountUnitRATheAlliesBuildVestUnitsAndTheAlliedPowerPlantCom2467818508"/>
     </CRequirementOr>
     <CRequirementSum id="SumCountUnitAlliedCenturyBomberQueuedOrBetterAtUnitCountUnitSuBeaverQueuedOrBetterAtUnitCountUnitSovietTheIlAttackAircraftQueuedOrBetterAtUnitCountUnitAlliedVindicatorQueuedOrBetterAtUnitCountUnitChin2539896043">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="CountUnitAlliedCenturyBomberQueuedOrBetterAtUnit"/>
         <OperandArray value="CountUnitSuBeaverQueuedOrBetterAtUnit"/>
         <OperandArray value="CountUnitSovietTheIlAttackAircraftQueuedOrBetterAtUnit"/>
@@ -6233,7 +6203,6 @@
         <OperandArray value="CountUnitCnH20StealthBomberQueuedOrBetterAtUnit"/>
     </CRequirementSum>
     <CRequirementSum id="SumCountUnitAlliedVindicatorQueuedOrBetterCountUnitAlliedCenturyBomberQueuedOrBetter">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="CountUnitAlliedVindicatorQueuedOrBetter"/>
         <OperandArray value="CountUnitAlliedCenturyBomberQueuedOrBetter"/>
     </CRequirementSum>
@@ -6379,7 +6348,6 @@
         <OperandArray value="CountUnitJpRefineryCoreQueuedOrBetter"/>
     </CRequirementSum>
     <CRequirementSum id="SumCountUnitJpImperialOreMinerQueuedOrBetterCountUnitSuHarvesterQueuedOrBetterCountUnitAuProspectorQueuedOrBetterCountUnitCnOreMinerQueuedOrBetter">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
         <OperandArray value="CountUnitJpImperialOreMinerQueuedOrBetter"/>
         <OperandArray value="CountUnitSuHarvesterQueuedOrBetter"/>
         <OperandArray value="CountUnitAuProspectorQueuedOrBetter"/>

@@ -51,7 +51,7 @@
         <OperandArray value="CountUnitNodPowerPlantUpgradeCompleteOnlyTechTreeCheat"/>
     </CRequirementOr>
     <CRequirementCountUnit id="UC_NodWarFactory" parent="UC" unit="NodKaneWarFactory"/>
-    <CRequirementCountUnit id="UC_NodHangar" parent="UC" unit="NodKaneAirTower"/>
+    <CRequirementCountUnit id="UC_NodHangar" parent="UC" unit="NodAirTower"/>
     <CRequirementCountUnit id="UC_NodVertigoPlatform" parent="UC" unit="CabalBomberPlatform"/>
     <CRequirementCountUnit id="UC_NodOPCenter" parent="UC" unit="NodOPCenter"/>
     <CRequirementCountUnit id="UC_NodPowerPlant2" parent="UC" unit="NodPowerPlant2"/>

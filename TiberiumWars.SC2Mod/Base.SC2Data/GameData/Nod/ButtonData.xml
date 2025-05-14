@@ -1,15 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
-    <CButton default="1" id="NodButton">
-        <?token id="icon" value="##id##"?>
-        <EditorCategories value="Race:Nod"/>
-        <Icon value="Assets\icons\Nod\##icon##.dds"/>
-    </CButton>
-    <CButton default="1" id="CabalButton">
-        <?token id="icon" value="##id##"?>
-        <EditorCategories value="Race:Nod"/>
-        <Icon value="Assets\icons\Cabal\##icon##.dds"/>
-    </CButton>
     <CButton id="CabalRaider" parent="CabalButton"/>
     <CButton id="NodRedeemerFacility" parent="NodButton" icon="NBRedeemer"/>
     <CButton id="CabalGrandTemple" parent="NodButton" icon="NodTempleIcon">
@@ -166,7 +156,7 @@
     <CButton id="NodpackCNC3" parent="NodButton" icon="CNC3MCVIcon">
         <HotkeySet value="TankModes"/>
     </CButton>
-    <CButton id="OutpostPassive" parent="NodButton" icon="CabalOutpostIcon"/>
+    <CButton id="OutpostPassive" parent="CabalButton" icon="CabalOutpostIcon"/>
     <CButton id="RedeemerConfusion" parent="NodButton">
         <Icon value="Assets\textures\btn-ability-protoss-confusion.dds"/>
         <HotkeySet value="C"/>
@@ -296,7 +286,7 @@
         <TintRacially value="1"/>
     </CButton>
     <CButton id="AccuracyUpgrade" parent="NodButton" icon="AccuracyUpgrade"/>
-    <CButton id="Outpost" parent="NodButton" icon="CabalOutpostIcon"/>
+    <CButton id="Outpost" parent="CabalButton" icon="CabalOutpostIcon"/>
     <CButton id="NodCloak" parent="NodButton" icon="CloakModuleUpgrade"/>
     <CButton id="SpeedUpgrade" parent="NodButton" icon="SpeedupgradeBTN"/>
     <CButton id="NodReckoner" parent="NodButton" icon="NUReckoner"/>

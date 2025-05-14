@@ -7,6 +7,14 @@
         <ShadowRadius value="2.000000"/>
         <EditorCategories value="Race:GDI"/>
     </CModel>
+    <CModel id="GDICombatSupportAirfield" parent="CommandCenterBase">
+        <Model value="Assets\Models\GDI\GDI_Building_Airfield.m3"/>
+        <ScaleMax value="1.000000,1.000000,1.000000"/>
+        <ScaleMin value="1.000000,1.000000,1.000000"/>
+        <SelectionRadius value="2.000000"/>
+        <ShadowRadius value="2.000000"/>
+        <EditorCategories value="Race:GDI"/>
+    </CModel>
     <CModel id="GDIAirfieldDeath" parent="SiegeTankDeathBase">
         <Model value="Assets\Models\GDI\GDI_Building_Airfield_Death.m3"/>
         <EditorCategories value="Race:GDI"/>

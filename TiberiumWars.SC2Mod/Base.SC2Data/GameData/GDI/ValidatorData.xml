@@ -35,4 +35,7 @@
         <Value value="1"/>
         <Behavior value="ARGUSAATarget3"/>
     </CValidatorUnitCompareBehaviorCount>
+
+    <CValidatorUnitType id="GDIAirfield"><Value value="GDIAirfield"/></CValidatorUnitType>
+    <CValidatorUnitType id="GDICombatSupportAirfield"><Value value="GDICombatSupportAirfield"/></CValidatorUnitType>
 </Catalog>

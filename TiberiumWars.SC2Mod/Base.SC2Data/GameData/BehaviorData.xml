@@ -18,4 +18,9 @@
             <AbilLinkEnableArray value="NodHarvesterCloak"/>
         </Modification>
     </CBehaviorBuff>
+    <CBehaviorBuff id="SuicideWithCaster">
+        <RemoveValidatorArray value="CasterNotDead"/>
+        <FinalEffect value="Kill"/>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorBuff>
 </Catalog>

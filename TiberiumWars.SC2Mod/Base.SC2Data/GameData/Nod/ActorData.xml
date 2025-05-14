@@ -144,6 +144,16 @@
         <Wireframe><Image index="0"  value="Assets\icons\Cabal\##wireframe##.dds"/></Wireframe>
     </CActorUnit>
 
+    <CActorForceCylinder id="CNCRailgunAttackDeathForce">
+        <Receiver Subject="::Main"/>
+        <Host Subject="_ImpactGuide"/>
+        <HostSiteOps Ops="SOpForwardCasterPoint SOpMoveBy1" HoldPosition="1" HoldRotation="1"/>
+        <HostEnd Subject="_ImpactGuide"/>
+        <HostEndSiteOps Ops="SOpForwardCasterPointInverted SOpMoveBy1" HoldPosition="1" HoldRotation="1"/>
+        <Radius value="1.000000"/>
+        <Magnitude value="33.000000,7.000000"/>
+        <Duration value="0.150000"/>
+    </CActorForceCylinder>
     <CActorUnit id="NodTurret" parent="NodBuilding" wireframe="ViperTurretWireframe" unitName="NodTurret" icon="ViperTurretIcon">
         <Aliases value="_UnitLarge"/>
         <On Terms="UnitBirth.NodTurretUG" Send="Create"/>
@@ -314,25 +324,73 @@
         <SoundArray index="Ready" value="EngineeringBay_Ready"/>
         <SoundArray index="What" value="EngineeringBay_What"/>
     </CActorUnit>
-    <CActorUnit id="NodKaneAirTower" parent="NodBuilding" wireframe="NodAirportWireframe" unitName="NodKaneAirTower" icon="NodAirportIcon">
+    <CActorUnit id="NodAirTower" parent="NodBuilding" wireframe="NodAirTowerWireframe" unitName="NodAirTower" icon="NodAirTower">
         <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="Starport_Explode"/>
-        <BarOffset value="155"/>
-        <BarWidth value="160"/>
-        <Model value="NodHangar"/>
-        <SoundArray index="Ready" value="Starport_Ready"/>
-        <SoundArray index="What" value="Starport_What"/>
-        <SoundArray index="Movement" value="Starport_Movement"/>
-        <PlacementModel value="NodHangarPlacement"/>
-    </CActorUnit>
-    <CActorUnit id="NodHangarGideon" parent="NodBuilding" wireframe="NodAirportWireframe" unitName="NodHangarGideon" icon="NodAirportIcon">
-        <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="Starport_Explode"/>
-        <Model value="NodHangar"/>
         <BarOffset value="155"/>
         <BarWidth value="160"/>
         <SoundArray index="Ready" value="Starport_Ready"/>
         <SoundArray index="What" value="Starport_What"/>
         <SoundArray index="Movement" value="Starport_Movement"/>
+        <PlacementModel value="NodHangarPlacement"/>
+<!--        <On Terms="ActorCreation" Send="AnimPlay CoverA Cover,A PlayForever 0.000000"/>-->
+<!--        <On Terms="ActorCreation" Send="AnimPlay CoverB Cover,B PlayForever 0.000000"/>-->
+<!--        <On Terms="ActorCreation" Send="Create NodAirTowerDock1"/>-->
+<!--        <On Terms="ActorCreation" Send="Create NodAirTowerDock2"/>-->
+<!--        <On Terms="ActorCreation" Send="Create NodAirTowerDock3"/>-->
+<!--        <On Terms="ActorCreation" Send="Create NodAirTowerDock4"/>-->
+
+<!--        <On Terms="ActorCreation" Send="Create NodAirTowerDock5"/>-->
+<!--        <On Terms="ActorCreation" Send="Create NodAirTowerDock6"/>-->
+<!--        <On Terms="ActorCreation" Send="Create NodAirTowerDock7"/>-->
+<!--        <On Terms="ActorCreation" Send="Create NodAirTowerDock8"/>-->
     </CActorUnit>
+    <CActorUnit id="DockDummy" parent="NodBuilding" wireframe="NodAirTowerWireframe" unitName="DockDummy" icon="NodAirTower">
+        <Model value="Invisible"/>
+    </CActorUnit>
+    <CActorUnit id="NodAirTowerDockUpper" parent="NodBuilding" wireframe="NodAirTowerWireframe" unitName="NodAirTowerDockUpper" icon="NodAirTower">
+        <On Terms="Behavior.Docked.On" Send="AnimBracketStart Open Morph,B Stand,B Morph,A"/>
+        <On Terms="Behavior.Docked.Off" Send="AnimBracketStop Open"/>
+        <Model value="NodAirTowerDock"/>
+    </CActorUnit>
+<!--    <CActorUnit id="NodAirSupportWall" parent="NodBuilding" wireframe="NodAirTowerWireframe" unitName="NodAirSupportWall" icon="NodAirTower">-->
+<!--        <Model value="Assets\Units\Test\HitTestSphere\HitTestSphere.m3"/>-->
+<!--        <EditorCategories value="Race:UPL"/>-->
+<!--        <PlanetPanelCamera value="Star2CamerMid05"/>-->
+<!--        <Radius value="0.600000"/>-->
+<!--        <ScaleMax value="0.400000,0.400000,0.400000"/>-->
+<!--        <ScaleMin value="0.400000,0.400000,0.400000"/>-->
+<!--        <SelectionLayer value="1"/>-->
+<!--        <SelectionRadius value="0.857100"/>-->
+<!--        <ShadowRadius value="0.857100"/>-->
+<!--        <SquibTypeDefault value="Metal"/>-->
+<!--        <TechPurchaseCamera value="Star2CameraMid05"/>-->
+<!--        <UnitGlossaryCamera value="Star2CameraMid05"/>-->
+<!--    </CActorUnit>-->
+<!--    <CActorUnit id="NodAirTowerDockLower" parent="NodBuilding" wireframe="NodAirTowerWireframe" unitName="NodAirTowerDockLower" icon="NodAirTower">-->
+<!--        <On Terms="Behavior.Docked.On" Send="AnimBracketStart Open Morph,B Stand,B Morph,A"/>-->
+<!--        <On Terms="Behavior.Docked.Off" Send="AnimBracketStop Open"/>-->
+<!--        <Model value="NodAirTowerDock"/>-->
+<!--    </CActorUnit>-->
+
+<!--    <CActorModel id="NodAirTowerDock1" parent="ModelAddition"><On Terms="Behavior.Docked1.On" Send="AnimBracketStart Open Morph,B Stand,B Morph,A"/><On Terms="Behavior.Docked1.Off" Send="AnimBracketStop Open"/><Model value="NodAirTowerDock"/><Host Subject="NodAirTower"/><HostSiteOps Ops="SOpAttachHardPoint01"/></CActorModel>-->
+<!--    <CActorModel id="NodAirTowerDock2" parent="ModelAddition"><On Terms="Behavior.Docked2.On" Send="AnimBracketStart Open Morph,B Stand,B Morph,A"/><On Terms="Behavior.Docked2.Off" Send="AnimBracketStop Open"/><Model value="NodAirTowerDock"/><Host Subject="NodAirTower"/><HostSiteOps Ops="SOpAttachHardPoint02"/></CActorModel>-->
+<!--    <CActorModel id="NodAirTowerDock3" parent="ModelAddition"><On Terms="Behavior.Docked3.On" Send="AnimBracketStart Open Morph,B Stand,B Morph,A"/><On Terms="Behavior.Docked3.Off" Send="AnimBracketStop Open"/><Model value="NodAirTowerDock"/><Host Subject="NodAirTower"/><HostSiteOps Ops="SOpAttachHardPoint03"/></CActorModel>-->
+<!--    <CActorModel id="NodAirTowerDock4" parent="ModelAddition"><On Terms="Behavior.Docked4.On" Send="AnimBracketStart Open Morph,B Stand,B Morph,A"/><On Terms="Behavior.Docked4.Off" Send="AnimBracketStop Open"/><Model value="NodAirTowerDock"/><Host Subject="NodAirTower"/><HostSiteOps Ops="SOpAttachHardPoint04"/></CActorModel>-->
+<!--    <CActorModel id="NodAirTowerDock5" parent="ModelAddition"><On Terms="Behavior.Docked5.On" Send="AnimBracketStart Open Morph,B Stand,B Morph,A"/><On Terms="Behavior.Docked5.Off" Send="AnimBracketStop Open"/><Model value="NodAirTowerDock"/><Host Subject="NodAirTower"/><HostSiteOps Ops="SOpAttachHardPoint05"/></CActorModel>-->
+<!--    <CActorModel id="NodAirTowerDock6" parent="ModelAddition"><On Terms="Behavior.Docked6.On" Send="AnimBracketStart Open Morph,B Stand,B Morph,A"/><On Terms="Behavior.Docked6.Off" Send="AnimBracketStop Open"/><Model value="NodAirTowerDock"/><Host Subject="NodAirTower"/><HostSiteOps Ops="SOpAttachHardPoint06"/></CActorModel>-->
+<!--    <CActorModel id="NodAirTowerDock7" parent="ModelAddition"><On Terms="Behavior.Docked7.On" Send="AnimBracketStart Open Morph,B Stand,B Morph,A"/><On Terms="Behavior.Docked7.Off" Send="AnimBracketStop Open"/><Model value="NodAirTowerDock"/><Host Subject="NodAirTower"/><HostSiteOps Ops="SOpAttachHardPoint07"/></CActorModel>-->
+<!--    <CActorModel id="NodAirTowerDock8" parent="ModelAddition"><On Terms="Behavior.Docked8.On" Send="AnimBracketStart Open Morph,B Stand,B Morph,A"/><On Terms="Behavior.Docked8.Off" Send="AnimBracketStop Open"/><Model value="NodAirTowerDock"/><Host Subject="NodAirTower"/><HostSiteOps Ops="SOpAttachHardPoint08"/></CActorModel>-->
+
+
+<!--    <CActorUnit id="NodHangarGideon" parent="NodBuilding" wireframe="NodAirportWireframe" unitName="NodHangarGideon" icon="NodAirportIcon">-->
+<!--        <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="Starport_Explode"/>-->
+<!--        <Model value="NodHangar"/>-->
+<!--        <BarOffset value="155"/>-->
+<!--        <BarWidth value="160"/>-->
+<!--        <SoundArray index="Ready" value="Starport_Ready"/>-->
+<!--        <SoundArray index="What" value="Starport_What"/>-->
+<!--        <SoundArray index="Movement" value="Starport_Movement"/>-->
+<!--    </CActorUnit>-->
     <CActorUnit id="NodKaneWarFactory" parent="NodBuilding" wireframe="NodHeavyPlantWireframe" unitName="NodKaneWarFactory" icon="NodHeavyPlantIcon">
         <DeathArray index="Normal" ModelLink="NodFactoryDeath"/>
         <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="Factory_Explode"/>
@@ -344,17 +402,17 @@
         <SoundArray index="What" value="Factory_What"/>
         <SoundArray index="Movement" value="Factory_Movement"/>
     </CActorUnit>
-    <CActorUnit id="CabalWarFactory" parent="NodBuilding" wireframe="NodHeavyPlantWireframe" unitName="CabalWarFactory" icon="NodHeavyPlantIcon">
-        <Model value="NodWarFactory"/>
-        <DeathArray index="Normal" ModelLink="NodFactoryDeath"/>
-        <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="Factory_Explode"/>
-        <PlacementModel value="NodFactoryPlacement"/>
-        <BarOffset value="150"/>
-        <BarWidth value="160"/>
-        <SoundArray index="Ready" value="Factory_Ready"/>
-        <SoundArray index="What" value="Factory_What"/>
-        <SoundArray index="Movement" value="Factory_Movement"/>
-    </CActorUnit>
+<!--    <CActorUnit id="CabalWarFactory" parent="NodBuilding" wireframe="NodHeavyPlantWireframe" unitName="CabalWarFactory" icon="NodHeavyPlantIcon">-->
+<!--        <Model value="NodWarFactory"/>-->
+<!--        <DeathArray index="Normal" ModelLink="NodFactoryDeath"/>-->
+<!--        <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="Factory_Explode"/>-->
+<!--        <PlacementModel value="NodFactoryPlacement"/>-->
+<!--        <BarOffset value="150"/>-->
+<!--        <BarWidth value="160"/>-->
+<!--        <SoundArray index="Ready" value="Factory_Ready"/>-->
+<!--        <SoundArray index="What" value="Factory_What"/>-->
+<!--        <SoundArray index="Movement" value="Factory_Movement"/>-->
+<!--    </CActorUnit>-->
     <CActorUnit id="NodRedeemerFacility" parent="NodBuilding" wireframe="wireframe-redeemer-factory" unitName="NodRedeemerFacility" icon="btn-redeemer-factory">
         <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="Factory_Explode"/>
         <PlacementModel value="NodFactoryPlacement"/>
@@ -4945,7 +5003,7 @@
         <SoundArray index="Pissed" value="Venom_WhatCC3"/>
         <SoundArray index="Movement" value="Venom_Movement"/>
     </CActorUnit>
-    <CActorUnit id="CabalDropShip" parent="NodUnitBase" wireframe="NUDropship" unitName="CabalDropShip" icon="NUDropship">
+    <CActorUnit id="CabalDropShip" parent="NodUnitBase" wireframe="CabalDropShip" unitName="CabalDropShip" icon="CabalDropShip">
         <Aliases value="_UnitLarge"/>
         <On Terms="Abil.SpecOpsDropshipTransport.TransportUnloadStart" Send="AnimBracketStart Unload Work,Start Work Work,End"/>
         <On Terms="Abil.SpecOpsDropshipTransport.TransportUnloadStop" Send="AnimBracketStop Unload"/>
@@ -4959,7 +5017,7 @@
         <BarOffset value="50"/>
         <BarWidth value="102"/>
     </CActorUnit>
-    <CActorUnit id="CabalAscender" parent="NodUnitBase" wireframe="NUAscender" unitName="CabalAscender" icon="NUAscender">
+    <CActorUnit id="CabalAscender" parent="NodUnitBase" wireframe="CabalAscender" unitName="CabalAscender" icon="CabalAscender">
         <Aliases value="_UnitLarge"/>
         <DeathArray index="Normal" ModelLink="ExplodingBarrelLarge" SoundLink="SpecialOpsDropship_Explode"/>
         <BarOffset value="50"/>

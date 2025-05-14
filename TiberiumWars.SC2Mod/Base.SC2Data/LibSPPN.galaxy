@@ -381,6 +381,8 @@ void libSPPN_gf_MakeUnitTesterPlacementCard () {
     // Automatic Variable Declarations
     const int auto1BDC5D21_ae = 4;
     const int auto1BDC5D21_ai = 1;
+    const int auto3BBF7C89_ae = 14;
+    const int auto3BBF7C89_ai = 1;
     const int auto2BFDC4F9_ae = libSPPN_gv_panels;
     const int auto2BFDC4F9_ai = 1;
     int autoD9D9517B_ae;
@@ -406,6 +408,16 @@ void libSPPN_gf_MakeUnitTesterPlacementCard () {
         libSPPN_gv_spawnDialogCommandsSet[lv_buttonsSet] = DialogControlLastCreated();
         DialogControlSetPosition(DialogControlLastCreated(), PlayerGroupAll(), c_anchorTopLeft, 0, (232 * (lv_buttonsSet - 1)));
         libNtve_gf_SetDialogItemUnitGroup(libSPPN_gv_spawnDialogCommandsSet[lv_buttonsSet], libNtve_gf_ConvertUnitToUnitGroup(libSPPN_gv_spawnCasters[lv_buttonsSet]), PlayerGroupAll());
+        lv_i = 0;
+        for ( ; ( (auto3BBF7C89_ai >= 0 && lv_i <= auto3BBF7C89_ae) || (auto3BBF7C89_ai < 0 && lv_i >= auto3BBF7C89_ae) ) ; lv_i += auto3BBF7C89_ai ) {
+            if ((lv_i < 10)) {
+                DialogControlHookup(libSPPN_gv_spawnDialogCommandsSet[lv_buttonsSet], c_triggerControlTypeButton, "CommandButton0" + IntToString(lv_i));
+            }
+            else {
+                DialogControlHookup(libSPPN_gv_spawnDialogCommandsSet[lv_buttonsSet], c_triggerControlTypeButton, "CommandButton" + IntToString(lv_i));
+            }
+            libSPPN_gv_spawnDialogCommandsSetButtons[lv_buttonsSet][lv_i] = DialogControlLastCreated();
+        }
     }
     DialogControlHookupStandard(c_triggerControlTypePanel, "UIContainer/ConsoleUIContainer/TesterPanel1");
     lv_panel = DialogControlLastCreated();
@@ -513,6 +525,10 @@ void libSPPN_gf_RenderUnitTesterPlacementCard (int lp_player) {
     int autoA4151B32_ae;
     const int autoA4151B32_ai = 1;
     int autoF5995DA1_val;
+    const int auto6E9C3ED1_ae = libSPPN_gv_spawnSets;
+    const int auto6E9C3ED1_ai = 1;
+    const int auto9E5EEF23_ae = 14;
+    const int auto9E5EEF23_ai = 1;
     int autoCC082C96_ae;
     const int autoCC082C96_ai = 1;
     int auto8EC66AEB_ae;
@@ -632,6 +648,14 @@ void libSPPN_gf_RenderUnitTesterPlacementCard (int lp_player) {
         }
     }
     else {
+        lv_buttonSetIndex = 1;
+        for ( ; ( (auto6E9C3ED1_ai >= 0 && lv_buttonSetIndex <= auto6E9C3ED1_ae) || (auto6E9C3ED1_ai < 0 && lv_buttonSetIndex >= auto6E9C3ED1_ae) ) ; lv_buttonSetIndex += auto6E9C3ED1_ai ) {
+            lv_abilityCommandIndex = 0;
+            for ( ; ( (auto9E5EEF23_ai >= 0 && lv_abilityCommandIndex <= auto9E5EEF23_ae) || (auto9E5EEF23_ai < 0 && lv_abilityCommandIndex >= auto9E5EEF23_ae) ) ; lv_abilityCommandIndex += auto9E5EEF23_ai ) {
+                lv_casterAbility = (("SpawnCaster" + IntToString(lv_buttonSetIndex)));
+                CatalogFieldValueSet(c_gameCatalogAbil, lv_casterAbility, "InfoArray[" + IntToString(lv_abilityCommandIndex) + "].Unit", lp_player, "");
+            }
+        }
         if ((lv_selectedTab == 2)) {
             lv_unitsDataString = libSPPN_gv_currentUnits;
         }

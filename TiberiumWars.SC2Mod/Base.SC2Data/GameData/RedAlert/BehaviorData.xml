@@ -78,7 +78,7 @@
             </Cost>
         </DamageResponse>
     </CBehaviorBuff>
-    <CBehaviorBuff id="AirfieldAuraA4">
+    <CBehaviorBuff id="Airportsbehaviorinfixingaircraftbugs">
         <Cost>
             <Charge Link="Behavior/DehakaRegenAura"/>
             <Cooldown Link="Behavior/DehakaRegenAura"/>
@@ -94,9 +94,9 @@
             </Cost>
         </DamageResponse>
     </CBehaviorBuff>
-    <CBehaviorBuff id="AirfieldAuraB">
-        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+    <CBehaviorBuff id="Continuoussupplyofairports">
         <InfoIcon value="Assets\Textures\icon-gas-terran.dds"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="AirfieldAuraB2">
         <Alignment value="Positive"/>
@@ -3035,7 +3035,7 @@
         <Radius value="6"/>
         <PowerLink value="PowerSource"/>
     </CBehaviorPowerSource>
-    <CBehaviorPowerSource id="PowerSource22">
+    <CBehaviorPowerSource id="Alliedforcesbuildsmallenergycircle">
         <InfoFlags index="Hidden" value="1"/>
         <InfoIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Structures"/>
@@ -5439,10 +5439,11 @@
         <Levels value="4"/>
         <XPFraction index="Kills" value="0"/>
     </CBehaviorVeterancy>
-    <CBehaviorVeterancy id="UpgradeLevel123232">
+    <CBehaviorVeterancy id="T4unitveteranbehaviorVanguardarmedcombataircraft">
         <InfoFlags index="Hidden" value="1"/>
         <InfoIcon value="Assets\Textures\ui_glues_icons_ladder_tier0_star.dds"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
+        <XPFraction index="Kills" value="0"/>
         <SharedXPMaxCount index="DamageDealt" value="0"/>
         <SharedXPMaxCount index="DamageTaken" value="0"/>
         <SharedXPMaxCount index="Kills" value="0"/>
@@ -5484,7 +5485,6 @@
             </Modification>
         </VeterancyLevelArray>
         <Levels value="4"/>
-        <XPFraction index="Kills" value="0"/>
     </CBehaviorVeterancy>
     <CBehaviorVeterancy id="UpgradeLevel12324">
         <InfoFlags index="Hidden" value="1"/>
@@ -6085,24 +6085,18 @@
     <CBehaviorBuff id="VultureSpiderMineBurrowFirst">
         <Duration value="1"/>
     </CBehaviorBuff>
-    <CBehaviorUnitTracker id="fjfxjkjc">
+    <CBehaviorUnitTracker id="Aircraftreversesurveillanceoftheairport">
+        <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <MaxTrackedUnits value="1"/>
-        <InfoFlags index="Hidden" value="1"/>
     </CBehaviorUnitTracker>
-    <CBehaviorBuff id="fjzdbcdy2">
+    <CBehaviorBuff id="Aircraftautomaticallyreplenishesammunitionpeacekeepingbomber">
         <BehaviorFlags index="Disabled" value="1"/>
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
+        <TimeScaleSource Value="Global"/>
         <Period value="2"/>
         <PeriodicEffect value="hf10bfzdy"/>
-        <TimeScaleSource Value="Global"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="fjzzpxyst">
-        <InfoFlags index="Hidden" value="1"/>
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <DisableValidatorArray value="sfzkxz"/>
-        <DisableValidatorArray value="CasterIsNotStationary23"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="gwgjztz2">
         <InfoFlags index="Hidden" value="1"/>
@@ -6828,10 +6822,11 @@
         <Levels value="4"/>
         <XPFraction index="Kills" value="0"/>
     </CBehaviorVeterancy>
-    <CBehaviorVeterancy id="UpgradeLevel125">
+    <CBehaviorVeterancy id="T2unitveteranbehaviorantiaircraftcrawler">
         <InfoFlags index="Hidden" value="1"/>
         <InfoIcon value="Assets\Textures\ui_glues_icons_ladder_tier0_star.dds"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
+        <XPFraction index="Kills" value="0"/>
         <SharedXPMaxCount index="DamageDealt" value="0"/>
         <SharedXPMaxCount index="DamageTaken" value="0"/>
         <SharedXPMaxCount index="Kills" value="0"/>
@@ -6873,7 +6868,6 @@
             </Modification>
         </VeterancyLevelArray>
         <Levels value="4"/>
-        <XPFraction index="Kills" value="0"/>
     </CBehaviorVeterancy>
     <CBehaviorVeterancy id="UpgradeLevel126">
         <InfoFlags index="Hidden" value="1"/>
@@ -7268,27 +7262,6 @@
         <PeriodicEffect value="RAFreezingApplicationBehavior"/>
         <InitialEffect value="RAFreezingApplicationBehavior"/>
     </CBehaviorBuff>
-    <CBehaviorBuff id="jcfjjl">
-        <InfoIcon value="Assets\Textures\btn-ability-terran-land.dds"/>
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <Modification>
-            <ModifyFlags index="SuppressMoving" value="1"/>
-            <ModifyFlags index="SuppressTurning" value="1"/>
-            <StateFlags index="SuppressCollision" value="1"/>
-            <StateFlags index="SuppressCombat" value="1"/>
-            <AbilLinkDisableArray value="sljcjl"/>
-            <BehaviorLinkEnableArray value="fjzdbcdy2"/>
-            <BehaviorLinkDisableArray value="xfwzztjstzsbdpx"/>
-            <PlaneDelta index="Ground" value="1"/>
-            <PlaneDelta index="Air" value="-1"/>
-        </Modification>
-        <InfoFlags index="Hidden" value="1"/>
-    </CBehaviorBuff>
-    <CBehaviorUnitTracker id="jcfjzz">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <MaxTrackedUnits value="4"/>
-        <InfoFlags index="Hidden" value="1"/>
-    </CBehaviorUnitTracker>
     <CBehaviorBuff id="jiangshichaobaoshi2">
         <InfoFlags index="Hidden" value="1"/>
         <DamageResponse Fatal="1" Handled="NukeDetonate2">
@@ -7368,10 +7341,10 @@
             <WeaponDisableArray value="HotSBanelingExplodeBuilding"/>
         </Modification>
     </CBehaviorBuff>
-    <CBehaviorBuff id="jzsyqf">
+    <CBehaviorBuff id="AirportNousefortakeoff">
         <EditorCategories value="AbilityorEffectType:Units"/>
         <Modification>
-            <AbilLinkDisableArray value="jcfjqf"/>
+            <AbilLinkDisableArray value="CNCAirportPlanetakingoff"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="natashalock">
@@ -7479,17 +7452,17 @@
             </Cost>
         </DamageResponse>
     </CBehaviorBuff>
-    <CBehaviorBuff id="TankTrapAuraA3">
+    <CBehaviorBuff id="Maintenancebeedetectshalorange">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
-        <PeriodicEffect value="TankTrapAuraS3"/>
         <Period value="1"/>
+        <PeriodicEffect value="TankTrapAuraS3"/>
     </CBehaviorBuff>
-    <CBehaviorBuff id="TankTrapAuraBe">
+    <CBehaviorBuff id="Waitingformaintenancebee">
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-upgrade-swann-improvednanorepair.dds"/>
         <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
         <Duration value="2"/>
-        <InfoIcon value="Assets\Textures\btn-upgrade-swann-improvednanorepair.dds"/>
-        <InfoFlags index="Hidden" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="Talvisota">
         <Alignment value="Positive"/>
@@ -8674,45 +8647,6 @@
             <WeaponEnableArray value="nianyalv142"/>
         </Modification>
     </CBehaviorBuff>
-    <CBehaviorBuff id="qfydsjnjzwqhzx">
-        <InfoIcon value="Assets\Textures\btn-ability-terran-liftoff.dds"/>
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <Modification>
-            <ModifyFlags index="DisableWeapons" value="1"/>
-            <ModifyFlags index="SuppressMoving" value="1"/>
-            <ModifyFlags index="SuppressTurning" value="1"/>
-            <AbilLinkDisableArray value="sljcjl"/>
-            <BehaviorLinkDisableArray value="xfwzztjstzsbdpx"/>
-            <BehaviorLinkDisableArray value="xfzzpx"/>
-        </Modification>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="ra3qfdy">
-        <InfoIcon value="Assets\Textures\btn-command-cancel.dds"/>
-        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
-        <DisableValidatorArray value="CasterHasEnergy22"/>
-        <Period value="0.5"/>
-        <PeriodicEffect value="zjqfdyxzjc"/>
-        <Modification MoveSpeedBonus="1">
-            <ModifyFlags index="DisableWeapons" value="1"/>
-            <BehaviorLinkDisableArray value="xfwzztjstzsbdpx"/>
-            <BehaviorLinkDisableArray value="xfzzpx"/>
-        </Modification>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="ra3qfdy2">
-        <InfoIcon value="Assets\Textures\btn-command-cancel.dds"/>
-        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
-        <DisableValidatorArray value="jzjdybz23"/>
-        <RemoveValidatorArray value="jzjdybz23"/>
-        <Period value="1"/>
-        <PeriodicEffect value="zjqfdyxzjc"/>
-        <Modification MoveSpeedBonus="1">
-            <ModifyFlags index="DisableWeapons" value="1"/>
-            <StateFlags index="Unstoppable" value="1"/>
-            <BehaviorLinkDisableArray value="xfwzztjstzsbdpx"/>
-            <BehaviorLinkDisableArray value="xfzzpx"/>
-        </Modification>
-        <InfoFlags index="Hidden" value="1"/>
-    </CBehaviorBuff>
     <CBehaviorBuff id="shenxiangimpact">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
@@ -8782,66 +8716,13 @@
         <EditorCategories value="AbilityorEffectType:Units"/>
         <FinalEffect value="fl10fzmdt"/>
     </CBehaviorBuff>
-    <CBehaviorBuff id="xfjytzzdpx">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <Modification MoveSpeedBonus="0.5"/>
-        <InfoFlags index="Hidden" value="1"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="xfjytzzdpx2">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <DisableValidatorArray value="xfyydzl"/>
-        <DisableValidatorArray value="CasterIsNotStationary23"/>
-        <InfoFlags index="Hidden" value="1"/>
-    </CBehaviorBuff>
     <CBehaviorBuff id="xfjytzzdpx22">
         <EditorCategories value="AbilityorEffectType:Units"/>
         <DisableValidatorArray value="CasterIsFiringWeapon"/>
         <DisableValidatorArray value="CasterIsNotStationary23"/>
         <InfoFlags index="Hidden" value="1"/>
     </CBehaviorBuff>
-    <CBehaviorBuff id="xfjytzzdpx222">
-        <InfoFlags index="Hidden" value="1"/>
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <DisableValidatorArray value="zjygjhjlzl"/>
-        <Modification>
-            <BehaviorLinkDisableArray value="xfwzztjstzsbdpx"/>
-            <BehaviorLinkDisableArray value="xfzzpx"/>
-        </Modification>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="xfjytzzdpx223">
-        <InfoFlags index="Hidden" value="1"/>
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <DisableValidatorArray value="xfyydzl3"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="xfwzztjstzsbdpx">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <DisableValidatorArray value="xfbnwzzpxzddw"/>
-        <DisableValidatorArray value="sfzkxz"/>
-        <DisableValidatorArray value="xfbnwzzpxzddw2"/>
-        <Period value="0.1"/>
-        <PeriodicEffect value="xfwrmjxg2"/>
-        <InfoFlags index="Hidden" value="1"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="xfwzztjyzzmbsbdbl">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <DisableValidatorArray value="xfbnwzzpxzddw22"/>
-        <DisableValidatorArray value="xfbnwzzpxzddw2"/>
-        <DisableValidatorArray value="xfzzdwjs"/>
-        <Period value="1"/>
-        <PeriodicEffect value="xfwzztjblzzdw"/>
-        <InfoFlags index="Hidden" value="1"/>
-    </CBehaviorBuff>
-    <CBehaviorUnitTracker id="xfzzgjmb">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <MaxTrackedUnits value="1"/>
-        <InfoFlags index="Hidden" value="1"/>
-    </CBehaviorUnitTracker>
-    <CBehaviorBuff id="xfzzpx">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <Duration value="0.0124"/>
-        <InfoFlags index="Hidden" value="1"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="xianfeng">
+    <CBehaviorBuff id="PioneerArmedCombatCraftInvincible">
         <InfoIcon value="Assets\Textures\btn-ability-mengsk-marauder-selfabsorbshield.dds"/>
         <DisplayDuration index="Self" value="1"/>
         <Duration value="7"/>
@@ -8856,7 +8737,7 @@
             <Chance value="1"/>
         </DamageResponse>
     </CBehaviorBuff>
-    <CBehaviorBuff id="xianfeng2">
+    <CBehaviorBuff id="TanyaBecomesInvincibleWithin3seconds">
         <InfoIcon value="assets\textures\帝国武士发动万岁冲锋.dds"/>
         <DisplayDuration index="Self" value="1"/>
         <Duration value="20"/>
@@ -8938,7 +8819,7 @@
             <Chance value="1"/>
         </DamageResponse>
     </CBehaviorBuff>
-    <CBehaviorBuff id="xianfeng6">
+    <CBehaviorBuff id="RA3SpeedIncrease">
         <InfoIcon value="Assets\icons\粉碎者技能图标.dds"/>
         <DisplayDuration index="Self" value="1"/>
         <Duration value="10"/>
@@ -8952,40 +8833,6 @@
         <DamageResponse ModifyFraction="0.2">
             <Chance value="1"/>
         </DamageResponse>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="ydsjnbnsyydjn">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <InfoFlags index="Hidden" value="1"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="ydsjnjzpx">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <Modification>
-            <BehaviorLinkDisableArray value="xfjytzzdpx2"/>
-            <BehaviorLinkDisableArray value="xfwzztjstzsbdpx"/>
-        </Modification>
-        <InfoFlags index="Hidden" value="1"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="yfpcw">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <Duration value="10"/>
-        <Modification>
-            <ModifyFlags index="DisableWeapons" value="1"/>
-            <StateFlags index="Uncommandable" value="1"/>
-            <BehaviorLinkDisableArray value="xfwzztjstzsbdpx"/>
-            <BehaviorLinkDisableArray value="xfzzpx"/>
-        </Modification>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="yfpcw2">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <Modification>
-            <DeathResponse Chance="1" Effect="xfwzztjblzzdw22"/>
-        </Modification>
-        <InfoFlags index="Hidden" value="1"/>
-    </CBehaviorBuff>
-    <CBehaviorBuff id="yfpcw3">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <DisableValidatorArray value="jczzsy44"/>
-        <InfoFlags index="Hidden" value="1"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="zhukefuxingfenji">
         <Alignment value="Positive"/>

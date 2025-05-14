@@ -46,27 +46,25 @@
         <HotkeyCategory value="Unit/Category/NodUnits"/>
         <SubgroupPriority value="15"/>
     </CUnit>
-    <CUnit default="1" id="NodGround" parent="CNCGround" >
+    <CUnit default="1" id="NodGround" parent="CNCGround">
         <Race value="Nod"/>
-        <GlossaryCategory value="Unit/Category/NodUnits"/>
-        <HotkeyCategory value="Unit/Category/NodUnits"/>
     </CUnit>
-    <CUnit default="1" id="CabalGround" parent="CNCGround" >
+    <CUnit default="1" id="CabalGround" parent="CNCGround">
         <Race value="CABAL"/>
         <GlossaryCategory value="Unit/Category/CABALUnits"/>
         <HotkeyCategory value="Unit/Category/CABALUnits"/>
     </CUnit>
-    <CUnit default="1" id="GDIGround" parent="CNCGround" >
+    <CUnit default="1" id="GDIGround" parent="CNCGround">
         <Race value="GDI"/>
         <GlossaryCategory value="Unit/Category/GDIUnits"/>
         <HotkeyCategory value="Unit/Category/GDIUnits"/>
     </CUnit>
-    <CUnit default="1" id="ScrinGround" parent="CNCGround" >
+    <CUnit default="1" id="ScrinGround" parent="CNCGround">
         <Race value="Scrin"/>
         <GlossaryCategory value="Unit/Category/ScrinUnits"/>
         <HotkeyCategory value="Unit/Category/ScrinUnits"/>
     </CUnit>
-    <CUnit default="1" id="SovietGround" parent="CNCGround" >
+    <CUnit default="1" id="SovietGround" parent="CNCGround">
         <Race value="Soviet"/>
         <GlossaryCategory value="Unit/Category/SovietUnits"/>
         <HotkeyCategory value="Unit/Category/SovietUnits"/>
@@ -75,22 +73,21 @@
             <LayoutButtons Face="Disband" Type="AbilCmd" AbilCmd="Disband,Execute" Row="2" Column="3"/>
         </CardLayouts>
     </CUnit>
-    <CUnit default="1" id="AlliedGround" parent="CNCGround" >
+    <CUnit default="1" id="AlliedGround" parent="CNCGround">
         <Race value="Allied"/>
         <GlossaryCategory value="Unit/Category/AlliedUnits"/>
         <HotkeyCategory value="Unit/Category/AlliedUnits"/>
     </CUnit>
-    <CUnit default="1" id="JapanGround" parent="CNCGround" >
+    <CUnit default="1" id="JapanGround" parent="CNCGround">
         <Race value="Japan"/>
         <GlossaryCategory value="Unit/Category/JapanUnits"/>
         <HotkeyCategory value="Unit/Category/JapanUnits"/>
     </CUnit>
-    <CUnit default="1" id="ChinaGround" parent="CNCGround" >
+    <CUnit default="1" id="ChinaGround" parent="CNCGround">
         <Race value="China"/>
         <GlossaryCategory value="Unit/Category/ChinaUnits"/>
         <HotkeyCategory value="Unit/Category/ChinaUnits"/>
     </CUnit>
-
     <CUnit default="1" id="CNCAir" parent="CNCUnit">
         <FlagArray index="ArmySelect" value="1"/>
         <LifeArmorName value="Unit/LifeArmorName/MechAirPlating"/>
@@ -119,27 +116,87 @@
         <HotkeyCategory value="Unit/Category/NodUnits"/>
         <SubgroupPriority value="15"/>
     </CUnit>
-    <CUnit default="1" id="NodAir" parent="CNCAir" >
-        <Race value="Nod"/>
+    <CUnit default="1" id="CNCAirPlane" parent="CNCUnit">
+
+        <FlagArray index="ArmySelect" value="1"/>
+        <LifeArmorName value="Unit/LifeArmorName/MechAirPlating"/>
+        <Speed value="2.75"/>
+        <CostCategory value="Army"/>
+        <AttackTargetPriority value="20"/>
+        <AbilArray Link="CNCAirplaneMove"/>
+        <AbilArray Link="stop"/>
+        <AbilArray Link="attack2"/>
+        <CardLayouts>
+            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="CNCAirplaneMove,Patrol" Row="0" Column="3"/>
+            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="CNCAirplaneMove,HoldPos" Row="0" Column="2"/>
+            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack2,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="CNCAirplaneMove,Move" Row="0" Column="0"/>
+
+<!--            <LayoutButtons Face="MothershipCoreAttack" Type="AbilCmd" AbilCmd="CNCAirportPlanetakingoff,255" Row="0" Column="4"/>-->
+<!--            <LayoutButtons Face="MothershipCoreAttack" Type="AbilCmd" AbilCmd="VS_ReturnToAirportDummy,Execute" Row="2" Column="2"/>-->
+<!--            <LayoutButtons Face="MothershipCoreAttack" Type="AbilCmd" AbilCmd="VS_ReturnToAirport,Execute" Row="2" Column="3"/>-->
+<!--            <LayoutButtons Face="MothershipCoreAttack" Type="AbilCmd" AbilCmd="ReloadingDummy,Execute" Row="2" Column="4"/>-->
+            <LayoutButtons Face="ReturnAirport3" Type="AbilCmd" AbilCmd="CNCReturnToTheAirport,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="PlaneTakeOff" Type="AbilCmd" AbilCmd="CNCAirportPlanetakingoff,255" Row="2" Column="1"/>
+        </CardLayouts>
+        <EditorCategories value="ObjectType:Unit,ObjectFamily:CNC"/>
+        <StationaryTurningRate value="990"/>
+        <TurningRate value="990"/>
+        <PlaneArray index="Air" value="1"/>
+        <Collide index="Flying" value="1"/>
+        <Mover value="Fly"/>
+        <Height value="3.75"/>
+        <VisionHeight value="4"/>
         <GlossaryCategory value="Unit/Category/NodUnits"/>
         <HotkeyCategory value="Unit/Category/NodUnits"/>
+        <SubgroupPriority value="15"/>
+
+
+
+        <AbilArray Link="VS_ReturnToAirport"/>
+        <AbilArray Link="VS_ReturnToAirportDummy"/>
+        <AbilArray Link="ReloadingDummy"/>
+        <AbilArray Link="CNCReturnToTheAirport"/>
+        <AbilArray Link="CNCAirportPlanetakingoff"/>
+        <AbilArray Link="CNCAirportPlaneLanding"/>
+        <BehaviorArray Link="ThePioneerarmedcombataircraftkeepscirclingwhenstopped"/>
+        <BehaviorArray Link="DisablestopautoandattackinVanguardmovementcommand"/>
+        <BehaviorArray Link="LackOfAmmo"/>
+        <BehaviorArray Link="StopautocirclingdisabledinPeacekeeperbomberattackcommand"/>
+        <BehaviorArray Link="Theaircraftiscirclingtheactor"/>
+        <BehaviorArray Link="Aircraftautomaticallyreplenishesammunitionpeacekeepingbomber"/>
+        <BehaviorArray Link="UpgradeLevel12242"/>
+        <BehaviorArray Link="AutoHeal42"/>
+        <BehaviorArray Link="Auweiheshanbi"/>
     </CUnit>
-    <CUnit default="1" id="CabalAir" parent="CNCAir" >
+    <CUnit default="1" id="NodAirPlane" parent="CNCAirPlane">
+        <Race value="Nod"/>
+    </CUnit>
+    <CUnit default="1" id="NodAir" parent="CNCAir">
+        <Race value="Nod"/>
+    </CUnit>
+    <CUnit default="1" id="CabalAir" parent="CNCAir">
         <Race value="CABAL"/>
         <GlossaryCategory value="Unit/Category/CABALUnits"/>
         <HotkeyCategory value="Unit/Category/CABALUnits"/>
     </CUnit>
-    <CUnit default="1" id="GDIAir" parent="CNCAir" >
+    <CUnit default="1" id="GDIAir" parent="CNCAir">
         <Race value="GDI"/>
         <GlossaryCategory value="Unit/Category/GDIUnits"/>
         <HotkeyCategory value="Unit/Category/GDIUnits"/>
     </CUnit>
-    <CUnit default="1" id="ScrinAir" parent="CNCAir" >
+    <CUnit default="1" id="ScrinAir" parent="CNCAir">
         <Race value="Scrin"/>
         <GlossaryCategory value="Unit/Category/ScrinUnits"/>
         <HotkeyCategory value="Unit/Category/ScrinUnits"/>
     </CUnit>
-    <CUnit default="1" id="SovietAir" parent="CNCAir" >
+    <CUnit default="1" id="ScrinAirPlane" parent="CNCAirPlane">
+        <Race value="Scrin"/>
+        <GlossaryCategory value="Unit/Category/ScrinUnits"/>
+        <HotkeyCategory value="Unit/Category/ScrinUnits"/>
+    </CUnit>
+    <CUnit default="1" id="SovietAir" parent="CNCAir">
         <Race value="Soviet"/>
         <GlossaryCategory value="Unit/Category/SovietUnits"/>
         <HotkeyCategory value="Unit/Category/SovietUnits"/>
@@ -148,22 +205,21 @@
             <LayoutButtons Face="Disband" Type="AbilCmd" AbilCmd="Disband,Execute" Row="2" Column="3"/>
         </CardLayouts>
     </CUnit>
-    <CUnit default="1" id="AlliedAir" parent="CNCAir" >
+    <CUnit default="1" id="AlliedAir" parent="CNCAir">
         <Race value="Allied"/>
         <GlossaryCategory value="Unit/Category/AlliedUnits"/>
         <HotkeyCategory value="Unit/Category/AlliedUnits"/>
     </CUnit>
-    <CUnit default="1" id="JapanAir" parent="CNCAir" >
+    <CUnit default="1" id="JapanAir" parent="CNCAir">
         <Race value="Japan"/>
         <GlossaryCategory value="Unit/Category/JapanUnits"/>
         <HotkeyCategory value="Unit/Category/JapanUnits"/>
     </CUnit>
-    <CUnit default="1" id="ChinaAir" parent="CNCAir" >
+    <CUnit default="1" id="ChinaAir" parent="CNCAir">
         <Race value="China"/>
         <GlossaryCategory value="Unit/Category/ChinaUnits"/>
         <HotkeyCategory value="Unit/Category/ChinaUnits"/>
     </CUnit>
-
     <CUnit default="1" id="CNCStructure" parent="CNCUnit">
         <Facing value="45"/>
         <FlagArray index="Turnable" value="0"/>
@@ -189,11 +245,11 @@
         <CostCategory value="Technology"/>
         <AbilArray Link="BuildInProgress"/>
         <AbilArray Link="que5PassiveCancelToSelection"/>
-<!--        <AbilArray Link="##id##Sell"/>-->
+        <!--        <AbilArray Link="##id##Sell"/>-->
         <!--        <BehaviorArray Link="Deployable"/>-->
         <CardLayouts>
             <LayoutButtons Face="SelectBuilder" Type="SelectBuilder" Row="2" Column="2"/>
-<!--            <LayoutButtons Face="NodSellStructureButton" Type="AbilCmd" AbilCmd="##id##Sell,Execute" Row="2" Column="3"/>-->
+            <!--            <LayoutButtons Face="NodSellStructureButton" Type="AbilCmd" AbilCmd="##id##Sell,Execute" Row="2" Column="3"/>-->
             <LayoutButtons Face="Halt" Type="AbilCmd" AbilCmd="BuildInProgress,Halt" Row="2" Column="3"/>
             <LayoutButtons Face="CancelBuilding" Type="AbilCmd" AbilCmd="BuildInProgress,Cancel" Row="2" Column="4"/>
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="que5PassiveCancelToSelection,CancelLast" Row="2" Column="4"/>
@@ -208,97 +264,114 @@
         <!--        <AbilArray Link="Deployable"/>-->
         <SubgroupPriority value="15"/>
     </CUnit>
-    <CUnit default="1" id="NodStructure" parent="CNCStructure" >
+    <CUnit default="1" id="NodStructure" parent="CNCStructure">
         <Race value="Nod"/>
-        <GlossaryCategory value="Unit/Category/NodUnits"/>
-        <HotkeyCategory value="Unit/Category/NodUnits"/>
         <BehaviorArray Link="FireSuppressionSystem"/>
         <BehaviorArray Link="NodBuildingsunits"/>
         <EffectArray index="Birth" value="NodStructureSpawnSet"/>
     </CUnit>
-    <CUnit default="1" id="CabalStructure" parent="CNCStructure" >
+    <CUnit default="1" id="CabalStructure" parent="CNCStructure">
         <Race value="CABAL"/>
         <GlossaryCategory value="Unit/Category/CABALUnits"/>
         <HotkeyCategory value="Unit/Category/CABALUnits"/>
     </CUnit>
-    <CUnit default="1" id="GDIStructure" parent="CNCStructure" >
+    <CUnit default="1" id="GDIStructure" parent="CNCStructure">
         <Race value="GDI"/>
         <GlossaryCategory value="Unit/Category/GDIUnits"/>
         <HotkeyCategory value="Unit/Category/GDIUnits"/>
     </CUnit>
-    <CUnit default="1" id="ScrinStructure" parent="CNCStructure" >
+    <CUnit default="1" id="ScrinStructure" parent="CNCStructure">
         <Race value="Scrin"/>
         <GlossaryCategory value="Unit/Category/ScrinUnits"/>
         <HotkeyCategory value="Unit/Category/ScrinUnits"/>
     </CUnit>
-    <CUnit default="1" id="SovietStructure" parent="CNCStructure" >
+    <CUnit default="1" id="SovietStructure" parent="CNCStructure">
         <Race value="Soviet"/>
         <GlossaryCategory value="Unit/Category/SovietUnits"/>
         <HotkeyCategory value="Unit/Category/SovietUnits"/>
         <AbilArray Link="Disband"/>
         <BehaviorArray Link="FireSuppressionSystem"/>
         <CardLayouts>
-<!--            <LayoutButtons Face="CancelBuilding4" Type="AbilCmd" AbilCmd="BuildInProgress,Halt" Row="2" Column="3"/>-->
+            <!--            <LayoutButtons Face="CancelBuilding4" Type="AbilCmd" AbilCmd="BuildInProgress,Halt" Row="2" Column="3"/>-->
             <LayoutButtons Face="Disband" Type="AbilCmd" AbilCmd="Disband,Execute" Row="2" Column="3"/>
         </CardLayouts>
     </CUnit>
-    <CUnit default="1" id="AlliedStructure" parent="CNCStructure" >
+    <CUnit default="1" id="AlliedStructure" parent="CNCStructure">
         <Race value="Allied"/>
         <GlossaryCategory value="Unit/Category/AlliedUnits"/>
         <HotkeyCategory value="Unit/Category/AlliedUnits"/>
     </CUnit>
-    <CUnit default="1" id="JapanStructure" parent="CNCStructure" >
+    <CUnit default="1" id="JapanStructure" parent="CNCStructure">
         <Race value="Japan"/>
         <GlossaryCategory value="Unit/Category/JapanUnits"/>
         <HotkeyCategory value="Unit/Category/JapanUnits"/>
     </CUnit>
-    <CUnit default="1" id="ChinaStructure" parent="CNCStructure" >
+    <CUnit default="1" id="ChinaStructure" parent="CNCStructure">
         <Race value="China"/>
         <GlossaryCategory value="Unit/Category/ChinaUnits"/>
         <HotkeyCategory value="Unit/Category/ChinaUnits"/>
     </CUnit>
-
     <CUnit default="1" id="CNCMissile" parent="MISSILE">
         <EditorCategories value="ObjectType:Projectile,ObjectFamily:CNC"/>
     </CUnit>
-    <CUnit default="1" id="NodMissile" parent="CNCMissile" >
+    <CUnit default="1" id="NodMissile" parent="CNCMissile">
         <Race value="Nod"/>
     </CUnit>
-    <CUnit default="1" id="GDIMissile" parent="CNCMissile" >
+    <CUnit default="1" id="GDIMissile" parent="CNCMissile">
         <Race value="GDI"/>
     </CUnit>
-    <CUnit default="1" id="CabalMissile" parent="CNCMissile" >
+    <CUnit default="1" id="CabalMissile" parent="CNCMissile">
         <Race value="CABAL"/>
     </CUnit>
-    <CUnit default="1" id="ScrinMissile" parent="CNCMissile" >
+    <CUnit default="1" id="ScrinMissile" parent="CNCMissile">
         <Race value="Scrin"/>
     </CUnit>
-    <CUnit default="1" id="SovietMissile" parent="CNCMissile" >
+    <CUnit default="1" id="SovietMissile" parent="CNCMissile">
         <Race value="Soviet"/>
     </CUnit>
-    <CUnit default="1" id="AlliedMissile" parent="CNCMissile" >
+    <CUnit default="1" id="AlliedMissile" parent="CNCMissile">
         <Race value="Allied"/>
     </CUnit>
-    <CUnit default="1" id="JapanMissile" parent="CNCMissile" >
+    <CUnit default="1" id="JapanMissile" parent="CNCMissile">
         <Race value="Japan"/>
     </CUnit>
-    <CUnit default="1" id="ChinaMissile" parent="CNCMissile" >
+    <CUnit default="1" id="ChinaMissile" parent="CNCMissile">
         <Race value="China"/>
     </CUnit>
-
-
-
-
-    <CUnit id="CommandCenter"><BehaviorArray Link="CNCTabEconomy"/></CUnit>
-    <CUnit id="Nexus"><BehaviorArray Link="CNCTabEconomy"/></CUnit>
-    <CUnit id="Hatchery"><BehaviorArray Link="CNCTabEconomy"/></CUnit>
-    <CUnit id="Lair"><BehaviorArray Link="CNCTabEconomy"/></CUnit>
-    <CUnit id="Hive"><BehaviorArray Link="CNCTabEconomy"/></CUnit>
-    <CUnit id="Barracks"><BehaviorArray Link="CNCTabInfantry"/></CUnit>
-    <CUnit id="WarpGate"><BehaviorArray Link="CNCTabInfantry"/></CUnit>
-    <CUnit id="Gateway"><BehaviorArray Link="CNCTabInfantry"/></CUnit>
-    <CUnit id="Factory"><BehaviorArray Link="CNCTabVehicles"/></CUnit>
-    <CUnit id="RoboticsFacility"><BehaviorArray Link="CNCTabVehicles"/></CUnit>
-    <CUnit id="Starport"><BehaviorArray Link="CNCTabAirforce"/></CUnit>
-    <CUnit id="Stargate"><BehaviorArray Link="CNCTabAirforce"/></CUnit>
+    <CUnit id="CommandCenter">
+        <BehaviorArray Link="CNCTabEconomy"/>
+    </CUnit>
+    <CUnit id="Nexus">
+        <BehaviorArray Link="CNCTabEconomy"/>
+    </CUnit>
+    <CUnit id="Hatchery">
+        <BehaviorArray Link="CNCTabEconomy"/>
+    </CUnit>
+    <CUnit id="Lair">
+        <BehaviorArray Link="CNCTabEconomy"/>
+    </CUnit>
+    <CUnit id="Hive">
+        <BehaviorArray Link="CNCTabEconomy"/>
+    </CUnit>
+    <CUnit id="Barracks">
+        <BehaviorArray Link="CNCTabInfantry"/>
+    </CUnit>
+    <CUnit id="WarpGate">
+        <BehaviorArray Link="CNCTabInfantry"/>
+    </CUnit>
+    <CUnit id="Gateway">
+        <BehaviorArray Link="CNCTabInfantry"/>
+    </CUnit>
+    <CUnit id="Factory">
+        <BehaviorArray Link="CNCTabVehicles"/>
+    </CUnit>
+    <CUnit id="RoboticsFacility">
+        <BehaviorArray Link="CNCTabVehicles"/>
+    </CUnit>
+    <CUnit id="Starport">
+        <BehaviorArray Link="CNCTabAirforce"/>
+    </CUnit>
+    <CUnit id="Stargate">
+        <BehaviorArray Link="CNCTabAirforce"/>
+    </CUnit>
 </Catalog>

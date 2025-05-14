@@ -704,7 +704,7 @@
         </CmdButtonArray>
         <PlaceUnit value="AuMachinegunBunker"/>
     </CAbilEffectTarget>
-    <CAbilEffectTarget id="Blink22172">
+    <CAbilEffectTarget id="NCMoveairport">
         <AbilSetId value="Blnk"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <DataCollection value="Blink22"/>
@@ -719,7 +719,7 @@
                 <HideCount value="1"/>
                 <TimeUse value="30"/>
             </Charge>
-            <Cooldown Link="BlinkBlink2BlinkBlink22BlinkBlink2BlinkBlink2217BlinkBlink2BlinkBlink22BlinkBlink2BlinkBlink22172"/>
+            <Cooldown Link="BlinkBlink2BlinkBlink22BlinkBlink2BlinkBlink2217BlinkBlink2BlinkBlink22BlinkBlink2BlinkBlink22172BlinkBlink2BlinkBlink22BlinkBlink2BlinkBlink2217BlinkBlink2BlinkBlink22BlinkBlink2BlinkNCMoveairport"/>
         </Cost>
         <Range value="50"/>
         <Arc value="360"/>
@@ -729,7 +729,7 @@
         </CmdButtonArray>
         <PlaceUnit value="AuAirport"/>
     </CAbilEffectTarget>
-    <CAbilEffectTarget id="Blink221722">
+    <CAbilEffectTarget id="MovetheairporttoShenzhouAirport">
         <AbilSetId value="Blnk"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <DataCollection value="Blink22"/>
@@ -744,7 +744,7 @@
                 <HideCount value="1"/>
                 <TimeUse value="30"/>
             </Charge>
-            <Cooldown Link="BlinkBlink2BlinkBlink22BlinkBlink2BlinkBlink2217BlinkBlink2BlinkBlink22BlinkBlink2BlinkBlink22172BlinkBlink2BlinkBlink22BlinkBlink2BlinkBlink2217BlinkBlink2BlinkBlink22BlinkBlink2BlinkBlink221722"/>
+            <Cooldown Link="BlinkBlink2BlinkBlink22BlinkBlink2BlinkBlink2217BlinkBlink2BlinkBlink22BlinkBlink2BlinkBlink22172BlinkBlink2BlinkBlink22BlinkBlink2BlinkBlink2217BlinkBlink2BlinkBlink22BlinkBlink2BlinkBlink221722BlinkBlink2BlinkBlink22BlinkBlink2BlinkBlink2217BlinkBlink2BlinkBlink22BlinkBlink2BlinkBlink22172BlinkBlink2BlinkBlink22BlinkBlink2BlinkBlink2217BlinkBlink2BlinkBlink22BlinkBlink2BlinkMovetheairporttoShenzhouAirport"/>
         </Cost>
         <Range value="50"/>
         <Arc value="360"/>
@@ -754,7 +754,7 @@
         </CmdButtonArray>
         <PlaceUnit value="CnAirport"/>
     </CAbilEffectTarget>
-    <CAbilEffectTarget id="Blink221723">
+    <CAbilEffectTarget id="CNCMobileAirportSovietAirport">
         <AbilSetId value="Blnk"/>
         <EditorCategories value="Race:Protoss,AbilityorEffectType:Units"/>
         <DataCollection value="Blink22"/>
@@ -769,7 +769,7 @@
                 <HideCount value="1"/>
                 <TimeUse value="30"/>
             </Charge>
-            <Cooldown Link="BlinkBlink2BlinkBlink22BlinkBlink2BlinkBlink2217BlinkBlink2BlinkBlink22BlinkBlink2BlinkBlink22172BlinkBlink2BlinkBlink22BlinkBlink2BlinkBlink2217BlinkBlink2BlinkBlink22BlinkBlink2BlinkBlink221723"/>
+            <Cooldown Link="BlinkBlink2BlinkBlink22BlinkBlink2BlinkBlink2217BlinkBlink2BlinkBlink22BlinkBlink2BlinkBlink22172BlinkBlink2BlinkBlink22BlinkBlink2BlinkBlink2217BlinkBlink2BlinkBlink22BlinkBlink2BlinkBlink221723BlinkBlink2BlinkBlink22BlinkBlink2BlinkBlink2217BlinkBlink2BlinkBlink22BlinkBlink2BlinkBlink22172BlinkBlink2BlinkBlink22BlinkBlink2BlinkBlink2217BlinkBlink2BlinkBlink22BlinkBlink2BlinkCNCMobileAirportSovietAirport"/>
         </Cost>
         <Range value="50"/>
         <Arc value="360"/>
@@ -3473,16 +3473,6 @@
         <CmdButtonArray index="Execute" DefaultButtonFace="BuildHeavyTankAdvanced43222323" Requirements="SuperWeaponRe32"/>
         <CmdButtonArray index="Cancel" DefaultButtonFace="Cancel3"/>
     </CAbilEffectTarget>
-    <CAbilEffectInstant id="ReturnAirport">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <Effect index="0" value="AirReturn"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="ReturnAirport" Requirements="LandOnly2"/>
-    </CAbilEffectInstant>
-    <CAbilEffectInstant id="ReturnAirport2">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <Effect index="0" value="RACarrierAircraftMagazineDestroyed"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="ReturnAirport2"/>
-    </CAbilEffectInstant>
     <CAbilEffectTarget id="SuIronCurtain">
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <Effect index="0" value="RAIronCurtainInitialEffectCollection"/>
@@ -4376,8 +4366,8 @@
         <TotalCargoSpace value="20"/>
         <LoadCargoBehavior value="BunkerWeaponRangeBonus2"/>
         <LoadValidatorArray index="0" value="RequiresTerran2"/>
-        <LoadValidatorArray index="1" value="NotWidowMineTarget2"/>
-        <LoadValidatorArray index="2" value="IsNotHellionTank2"/>
+        <LoadValidatorArray value="NotWidowMineTarget2"/>
+        <LoadValidatorArray value="IsNotHellionTank2"/>
         <TargetSorts>
             <SortArray index="0" value="TSInterruptible2"/>
             <SortArray index="1" value="TSDistance2"/>
@@ -4393,8 +4383,8 @@
         <TotalCargoSpace value="5"/>
         <LoadCargoBehavior value="BunkerWeaponRangeBonus22"/>
         <LoadValidatorArray index="0" value="RequiresTerran22"/>
-        <LoadValidatorArray index="1" value="NotWidowMineTarget22"/>
-        <LoadValidatorArray index="2" value="IsNotHellionTank22"/>
+        <LoadValidatorArray value="NotWidowMineTarget22"/>
+        <LoadValidatorArray value="IsNotHellionTank22"/>
         <TargetSorts>
             <SortArray index="0" value="TSInterruptible22"/>
             <SortArray index="1" value="TSDistance22"/>
@@ -7506,7 +7496,7 @@
         <MinAttackSpeedMultiplier value="0.25"/>
         <MaxAttackSpeedMultiplier value="128"/>
     </CAbilAttack>
-    <CAbilEffectTarget id="fjqfmjjn">
+    <CAbilEffectTarget id="CNCAirportPlaneTakeoffVestSkill">
         <EditorCategories value="AbilityorEffectType:Units"/>
     </CAbilEffectTarget>
     <CAbilRedirectTarget id="healRedirect2">
@@ -7522,46 +7512,6 @@
         <Abil value="AucryoShrinBeam"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="TossGrenadeTychus2222275323"/>
     </CAbilRedirectTarget>
-    <CAbilEffectTarget id="jcfjqf">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <Effect index="0" value="zjswmjxg2"/>
-        <Flags index="AllowMovement" value="1"/>
-        <Flags index="BestUnit" value="0"/>
-        <Flags index="RequireTargetVision" value="0"/>
-        <Flags index="Smart" value="1"/>
-        <Flags index="Transient" value="1"/>
-        <TargetFilters value="-;Missile,Dead,Hidden,Decaying"/>
-        <Range value="500"/>
-        <Arc value="360"/>
-        <SmartPriority value="21"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="MothershipCoreAttack" Requirements="LandOnly">
-            <Flags index="ToSelection" value="1"/>
-        </CmdButtonArray>
-    </CAbilEffectTarget>
-    <CAbilMove id="move2">
-        <FleeRange value="5"/>
-        <FleeTime value="5"/>
-        <FollowRangeSlop value="0.5"/>
-        <FollowAcquireRange value="0.5"/>
-        <MinPatrolDistance value="1"/>
-    </CAbilMove>
-    <CAbilMove id="move22">
-        <FleeRange value="5"/>
-        <FleeTime value="5"/>
-        <FollowRangeSlop value="1"/>
-        <FollowAcquireRange value="6"/>
-        <MinPatrolDistance value="1"/>
-        <MoveSmartPriority value="20"/>
-    </CAbilMove>
-    <CAbilMove id="move3">
-        <FleeRange value="5"/>
-        <FleeTime value="5"/>
-        <FollowRangeSlop value="0.5"/>
-        <FollowAcquireRange value="0.5"/>
-        <MinPatrolDistance value="1"/>
-    </CAbilMove>
-
-
     <CAbilQueue id="que2x2CancelToSelection">
         <AbilSetId value="QueueCancelToSelection"/>
         <EditorCategories value="Race:Neutral,AbilityorEffectType:Structures"/>
@@ -7580,13 +7530,7 @@
         <EditorCategories value="Race:Neutral,AbilityorEffectType:Structures"/>
         <QueueSize value="2"/>
     </CAbilQueue>
-    <CAbilQueue id="que5Passive">
-        <EditorCategories value="Race:Neutral,AbilityorEffectType:Structures"/>
-        <QueueSize value="5"/>
-        <Flags index="Passive" value="1"/>
-    </CAbilQueue>
-
-
+    <CAbilQueue id="que5Passive"/>
     <CAbilEffectInstant id="selloil">
         <EditorCategories value="AbilityorEffectType:Units"/>
         <Effect index="0" value="EngineerCaptureBuildings4"/>
@@ -7594,26 +7538,6 @@
             <Cooldown Location="Player" TimeUse="2"/>
         </Cost>
         <CmdButtonArray index="Execute" DefaultButtonFace="RALiftTheOccupation"/>
-    </CAbilEffectInstant>
-    <CAbilEffectTarget id="sljcjl">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <Effect index="0" value="fjjjjcpd"/>
-        <Flags index="AllowMovement" value="1"/>
-        <Flags index="Smart" value="1"/>
-        <TargetFilters value="Structure;Ally,Neutral,Enemy,Missile,Dead,Hidden,Decaying"/>
-        <Range value="4"/>
-        <SmartPriority value="20"/>
-        <SmartValidatorArray value="jczzsy4"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="ReturnAirport3" Requirements="LandOnly2">
-            <Flags index="ToSelection" value="1"/>
-        </CmdButtonArray>
-    </CAbilEffectTarget>
-    <CAbilEffectInstant id="sljcjl2">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <Effect index="0" value="AirReturn"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="ReturnAirport3" Requirements="LandOnly2">
-            <Flags index="ToSelection" value="1"/>
-        </CmdButtonArray>
     </CAbilEffectInstant>
     <CAbilStop id="stop2">
         <CmdButtonArray index="HoldFire" DefaultButtonFace="HoldFireSpecial"/>
@@ -7623,7 +7547,7 @@
     </CAbilStop>
     <CAbilEffectTarget id="xfyd">
         <EditorCategories value="AbilityorEffectType:Units"/>
-        <Effect index="0" value="xfydmjxg"/>
+        <Effect index="0" value="Vanguardmobilevesteffect"/>
         <Flags index="AllowMovement" value="1"/>
         <Flags index="BestUnit" value="0"/>
         <Flags index="RequireTargetVision" value="0"/>

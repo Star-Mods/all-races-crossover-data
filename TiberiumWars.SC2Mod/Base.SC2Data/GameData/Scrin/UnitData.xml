@@ -284,23 +284,17 @@
         <RepairTime value="120"/>
         <TacticalAIThink value="AIThinkCarrier"/>
     </CUnit>
-    <CUnit id="AlienStormRider">
-        <DeathRevealRadius value="3"/>
-        <Race value="Scrin"/>
-        <Mob value="Multiplayer"/>
+    <CUnit id="AlienStormRider" parent="ScrinAirPlane">
         <LifeStart value="120"/>
         <LifeMax value="120"/>
-        <LifeArmorName value="Unit/LifeArmorName/ProtossPlating"/>
         <ShieldsStart value="60"/>
         <ShieldsMax value="60"/>
         <ShieldRegenRate value="2"/>
         <ShieldArmorName value="Unit/ShieldArmorName/ProtossPlasmaShields"/>
-        <Mover value="Fly"/>
         <Speed value="4.25"/>
         <Acceleration value="3.25"/>
         <StationaryTurningRate value="1499.9414"/>
         <TurningRate value="1499.9414"/>
-        <Height value="3.75"/>
         <Food value="-2"/>
         <AttackTargetPriority value="20"/>
         <DamageDealtXP value="1"/>
@@ -316,34 +310,14 @@
         <PlaneArray index="Air" value="1"/>
         <Collide index="Flying" value="1"/>
         <VisionHeight value="15"/>
-        <FlagArray index="PreventDestroy" value="1"/>
-        <FlagArray index="UseLineOfSight" value="1"/>
-        <FlagArray index="ArmySelect" value="1"/>
         <Sight value="10"/>
-        <AbilArray Link="stop"/>
-        <AbilArray Link="attack"/>
-        <AbilArray Link="move"/>
-        <AbilArray Link="GravitonBeam"/>
-        <CardLayouts>
-            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move,Move" Row="0" Column="0"/>
-            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
-            <LayoutButtons Face="MoveHoldPosition" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="2"/>
-            <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
-            <LayoutButtons Face="MovePatrol" Type="AbilCmd" AbilCmd="move,Patrol" Row="0" Column="3"/>
-            <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="GravitonBeam,Cancel" Row="2" Column="4"/>
-            <LayoutButtons Face="GravitonBeam" Type="AbilCmd" AbilCmd="GravitonBeam,Execute" Row="2" Column="0"/>
-        </CardLayouts>
         <Attributes index="Light" value="1"/>
         <Attributes index="Mechanical" value="1"/>
-        <EditorCategories value="ObjectType:Unit,ObjectFamily:CNC"/>
         <AIEvalFactor value="0.7"/>
         <EnergyStart value="50"/>
         <EnergyMax value="200"/>
         <EnergyRegenRate value="0.5625"/>
-        <GlossaryCategory value="Unit/Category/ProtossUnits"/>
-        <HotkeyCategory value="Unit/Category/ProtossUnits"/>
         <GlossaryPriority value="140"/>
-        <CostCategory value="Army"/>
         <CostResource index="Minerals" value="150"/>
         <CostResource index="Vespene" value="100"/>
         <GlossaryStrongArray value="Banshee"/>
@@ -356,4 +330,5 @@
         <ShieldRegenDelay value="10"/>
         <RepairTime value="45"/>
     </CUnit>
+    <CUnit id="ScrinGravityStabilizer"/>
 </Catalog>

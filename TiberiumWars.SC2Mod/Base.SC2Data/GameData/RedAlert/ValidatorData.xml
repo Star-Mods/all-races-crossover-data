@@ -282,13 +282,13 @@
         <CombineArray value="zombie72"/>
         <CombineArray value="zombie62"/>
     </CValidatorCombine>
-    <CValidatorUnitType id="Sujc">
+    <CValidatorUnitType id="SovietAirport">
         <Value value="SuAirport"/>
     </CValidatorUnitType>
-    <CValidatorUnitType id="Sujc2">
+    <CValidatorUnitType id="AlliedAirfield">
         <Value value="AuAirport"/>
     </CValidatorUnitType>
-    <CValidatorUnitType id="Cnjc">
+    <CValidatorUnitType id="ShenzhouAirport">
         <Value value="CnAirport"/>
     </CValidatorUnitType>
     <CValidatorUnitFilters id="TargetIsEnemy2">
@@ -302,7 +302,7 @@
         <WhichUnit Value="Caster"/>
         <Compare value="GE"/>
         <Value value="5"/>
-        <Behavior value="UpgradeLevel125"/>
+        <Behavior value="T2unitveteranbehaviorantiaircraftcrawler"/>
     </CValidatorUnitCompareVeterancyLevel>
     <CValidatorUnitCompareVeterancyLevel id="RASecondgenerationMultifunctionalInfantryFightingVehicleStarVerification">
         <WhichUnit Value="Caster"/>
@@ -320,7 +320,7 @@
         <WhichUnit Value="Caster"/>
         <Compare value="GE"/>
         <Value value="5"/>
-        <Behavior value="UpgradeLevel123232"/>
+        <Behavior value="T4unitveteranbehaviorVanguardarmedcombataircraft"/>
     </CValidatorUnitCompareVeterancyLevel>
     <CValidatorUnitCompareVeterancyLevel id="RAStarApocalypseTankEffectVerification">
         <WhichUnit Value="Caster"/>
@@ -569,7 +569,7 @@
     </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="RAMaintenanceBeeTargetAwaitingMaintenanceVerification">
         <Value value="1"/>
-        <Behavior value="TankTrapAuraBe"/>
+        <Behavior value="Waitingformaintenancebee"/>
     </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="RARuleOutTheSouthChinaSeaFire">
         <Behavior value="RAMovementSpeedAndArmor20Percent332"/>
@@ -640,44 +640,6 @@
         <Type value="And"/>
         <CombineArray value="bntkcnddzdz23"/>
     </CValidatorCombine>
-    <CValidatorUnitCompareBehaviorCount id="bombberlackof">
-        <WhichUnit Value="Caster"/>
-        <Value value="1"/>
-        <Behavior value="ra3qfdy"/>
-    </CValidatorUnitCompareBehaviorCount>
-    <CValidatorCombine id="jcmb">
-        <CombineArray value="Sujc2"/>
-        <CombineArray value="Sujc"/>
-        <CombineArray value="Cnjc"/>
-    </CValidatorCombine>
-    <CValidatorCompareTrackedUnitsCount id="jczzsy4">
-        <Compare value="LT"/>
-        <Value value="4"/>
-        <BehaviorLink value="jcfjzz"/>
-        <TrackerUnit Value="Target"/>
-    </CValidatorCompareTrackedUnitsCount>
-    <CValidatorCompareTrackedUnitsCount id="jczzsy42">
-        <Compare value="GE"/>
-        <Value value="1"/>
-        <BehaviorLink value="fjfxjkjc"/>
-    </CValidatorCompareTrackedUnitsCount>
-    <CValidatorCompareTrackedUnitsCount id="jczzsy43">
-        <Compare value="GT"/>
-        <BehaviorLink value="jcfjzz"/>
-    </CValidatorCompareTrackedUnitsCount>
-    <CValidatorCompareTrackedUnitsCount id="jczzsy44">
-        <Value value="4"/>
-        <BehaviorLink value="jcfjzz"/>
-        <TrackerUnit Value="Target"/>
-    </CValidatorCompareTrackedUnitsCount>
-    <CValidatorUnitCompareBehaviorCount id="jzjdybz23">
-        <WhichUnit Value="Caster"/>
-        <Behavior value="jcfjjl"/>
-    </CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="jzjdybz232">
-        <WhichUnit Value="Caster"/>
-        <Behavior value="yfpcw"/>
-    </CValidatorUnitCompareBehaviorCount>
     <CValidatorPlayerCompareFoodUsed id="overmindlimit">
         <Compare value="LE"/>
         <Value value="150"/>
@@ -686,53 +648,11 @@
         <Compare value="LE"/>
         <Value value="500"/>
     </CValidatorPlayerCompareFoodUsed>
-    <CValidatorUnitState id="sfzkxz">
+    <CValidatorUnitState id="TheCasterIsIdle">
         <WhichUnit Value="Caster"/>
         <Enabled value="1"/>
         <State value="Idle"/>
     </CValidatorUnitState>
-    <CValidatorUnitCompareBehaviorCount id="xfbnwzzpxzddw">
-        <WhichUnit Value="Caster"/>
-        <Behavior value="xfzzpx"/>
-    </CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="xfbnwzzpxzddw2">
-        <WhichUnit Value="Caster"/>
-        <Behavior value="xfjytzzdpx2"/>
-    </CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="xfbnwzzpxzddw22">
-        <WhichUnit Value="Caster"/>
-        <Behavior value="ydsjnbnsyydjn"/>
-    </CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitOrderQueue id="xfyydzl">
-        <AbilLink value="move22"/>
-    </CValidatorUnitOrderQueue>
-    <CValidatorUnitOrderQueue id="xfyydzl2">
-        <AbilLink value="move22"/>
-        <Find value="0"/>
-    </CValidatorUnitOrderQueue>
-    <CValidatorUnitOrderQueue id="xfyydzl22">
-        <AbilLink value="attack2"/>
-        <Find value="0"/>
-    </CValidatorUnitOrderQueue>
-    <CValidatorUnitOrderQueue id="xfyydzl3">
-        <AbilLink value="attack2"/>
-    </CValidatorUnitOrderQueue>
-    <CValidatorUnitOrderQueue id="xfyydzl32">
-        <AbilLink value="sljcjl"/>
-    </CValidatorUnitOrderQueue>
-    <CValidatorCompareTrackedUnitsCount id="xfzzdwjs">
-        <Compare value="GT"/>
-        <BehaviorLink value="xfzzgjmb"/>
-        <TrackedUnitFilters value="-;Dead"/>
-    </CValidatorCompareTrackedUnitsCount>
-    <CValidatorCompareTrackedUnitsCount id="xfzzdwjs2">
-        <BehaviorLink value="xfzzgjmb"/>
-        <TrackedUnitFilters value="-;Dead"/>
-    </CValidatorCompareTrackedUnitsCount>
-    <CValidatorCombine id="zjygjhjlzl">
-        <CombineArray value="xfyydzl3"/>
-        <CombineArray value="xfyydzl32"/>
-    </CValidatorCombine>
     <CValidatorUnitType id="zombie">
         <ResultFailed value="CantLoadThatUnit"/>
         <WhichUnit Value="Source"/>

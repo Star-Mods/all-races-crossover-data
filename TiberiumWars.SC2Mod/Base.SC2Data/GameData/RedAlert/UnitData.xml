@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
-
     <!--Structures-->
     <CUnit id="SuBarracks" parent="SovietStructure">
         <!--        <Facing value="29.9926"/>-->
@@ -283,7 +282,7 @@
         <AbilArray Link="attack"/>
         <AbilArray Link="Disband2"/>
         <AbilArray Link="Blink222"/>
-        <BehaviorArray Link="UpgradeLevel125"/>
+        <BehaviorArray Link="T2unitveteranbehaviorantiaircraftcrawler"/>
         <BehaviorArray Link="PowerUserQueue"/>
         <BehaviorArray Link="PowerSource2"/>
         <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
@@ -436,7 +435,6 @@
         </ReviveInfoBase>
     </CUnit>
     <CUnit id="SuHeavyArtilleryFactory" parent="ChinaStructure">
-
         <LifeStart value="1250"/>
         <LifeMax value="1250"/>
         <LifeRegenDelay value="30"/>
@@ -481,7 +479,6 @@
         <KillXP value="20"/>
     </CUnit>
     <CUnit id="SuMechaFactory" parent="ChinaStructure">
-
         <LifeStart value="1250"/>
         <LifeMax value="1250"/>
         <LifeRegenDelay value="30"/>
@@ -729,16 +726,16 @@
         <AbilArray Link="Rally"/>
         <AbilArray Link="AirportTrain"/>
         <AbilArray Link="attack"/>
-        <BehaviorArray Link="jcfjzz"/>
+        <BehaviorArray Link="AircraftAirportParkingAircraftTracking"/>
         <BehaviorArray Link="PowerUserQueue"/>
         <BehaviorArray Link="PowerSource2"/>
         <BehaviorArray Link="MassProduction2"/>
         <WeaponArray Link="InterceptorLaunch2"/>
         <WeaponArray Link="InterceptorLaunch22"/>
-        <EffectArray index="Death" value="xfwzztjblzzdw222"/>
+        <EffectArray index="Death" value="CNCAirporttraversaltrackingaircraft"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="1" Column="4"/>
-            <LayoutButtons Face="ReturnAirport2" Type="AbilCmd" AbilCmd="ReturnAirport2,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="ReturnAirport2" Type="AbilCmd" AbilCmd="CNCDestroyTheBomberInside,255" Row="2" Column="4"/>
             <LayoutButtons Face="SuMigFighter" Type="AbilCmd" AbilCmd="AirportTrain,Train16" Row="0" Column="0"/>
             <LayoutButtons Face="SuTwinbladeHelicopter" Type="AbilCmd" AbilCmd="AirportTrain,Train15" Row="0" Column="1"/>
             <LayoutButtons Face="SuBeaverTransport" Type="AbilCmd" AbilCmd="AirportTrain,Train19" Row="0" Column="2"/>
@@ -976,8 +973,8 @@
         <SubgroupPriority value="3"/>
     </CUnit>
     <CUnit id="SovietConstructionYardBase" parent="SovietStructure">
-        <AbilArray Link="SuCYardBuild"/>
         <AbilArray index="1" Link="que2CancelToSelection"/>
+        <AbilArray Link="SuCYardBuild"/>
         <CardLayouts index="0">
             <LayoutButtons>
                 <Face value="SuArchitecturalPage"/>
@@ -1049,7 +1046,6 @@
         <AttackTargetPriority value="5"/>
         <KillXP value="500"/>
         <AbilArray Link="SuCYardBuild"/>
-        <AbilArray index="1" Link="que2CancelToSelection"/>
         <AbilArray Link="Ally"/>
         <AbilArray Link="RAChooseAirForce"/>
         <AbilArray Link="SelectShipyards"/>
@@ -1090,7 +1086,6 @@
         </ReviveInfoBase>
     </CUnit>
     <CUnit id="AuEliteSoldierAcademy" parent="AlliedStructure">
-
         <LifeStart value="1000"/>
         <LifeMax value="1000"/>
         <EnergyRegenRate value="1"/>
@@ -1288,8 +1283,8 @@
         <AbilArray Link="Disband22"/>
         <AbilArray Link="BuildCity"/>
         <AbilArray Link="WarFactoryTrain22"/>
-        <BehaviorArray index="0" Link="PowerUserQueue"/>
-        <BehaviorArray index="1" Link="PowerSource2"/>
+        <BehaviorArray Link="PowerUserQueue"/>
+        <BehaviorArray Link="PowerSource2"/>
         <BehaviorArray Link="MassProduction2"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Disband" Type="AbilCmd" AbilCmd="Disband22,Execute" Row="2" Column="3"/>
@@ -1306,11 +1301,9 @@
         <MinimapRadius value="0.75"/>
         <!--Food value="-5"/-->
         <KillXP value="20"/>
-
     </CUnit>
     <CUnit id="AuLightPrismTower" parent="AlliedStructure">
         <Facing value="135"/>
-
         <Attributes index="Light" value="1"/>
         <LifeStart value="200"/>
         <LifeMax value="200"/>
@@ -1323,7 +1316,7 @@
         <AbilArray Link="Disband2"/>
         <AbilArray Link="Blink224"/>
         <BehaviorArray Link="UpgradeLevel122"/>
-        <BehaviorArray Link="PowerSource22"/>
+        <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <BehaviorArray Link="PowerUserQueue"/>
         <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
         <BehaviorArray Link="AutowerUnderConstruction"/>
@@ -1344,7 +1337,6 @@
     </CUnit>
     <CUnit id="AuSpectrumTower" parent="AlliedStructure">
         <Facing value="135"/>
-
         <Attributes index="Light" value="1"/>
         <LifeStart value="200"/>
         <LifeMax value="200"/>
@@ -1357,7 +1349,7 @@
         <AbilArray Link="AuDefenceAdvancedCharge"/>
         <AbilArray Link="Blink223"/>
         <BehaviorArray Link="UpgradeLevel122"/>
-        <BehaviorArray Link="PowerSource22"/>
+        <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <BehaviorArray Link="PowerUserQueue"/>
         <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
         <BehaviorArray Link="AutowerUnderConstruction"/>
@@ -1378,7 +1370,6 @@
         <AIEvaluateAlias value="PreviewBunkerUpgraded"/>
     </CUnit>
     <CUnit id="AuRefinery" parent="AlliedStructure">
-
         <ResourceDropOff index="Minerals" value="1"/>
         <ResourceDropOff index="Vespene" value="1"/>
         <ResourceDropOff index="Terrazine" value="1"/>
@@ -1397,7 +1388,7 @@
         <AbilArray Link="RATechnologyCenterResearch4"/>
         <AbilArray Link="RA3TechLevel"/>
         <BehaviorArray Link="PowerUserQueue"/>
-        <BehaviorArray Link="PowerSource22"/>
+        <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <BehaviorArray Link="Lowpower"/>
         <BehaviorArray Link="Lowpower3"/>
         <EffectArray index="Birth" value="JurefinerycreateMiner2"/>
@@ -1418,7 +1409,6 @@
     </CUnit>
     <CUnit id="AuGrandCannon" parent="AlliedStructure">
         <Facing value="135"/>
-
         <FlagArray index="AIDefense" value="1"/>
         <FlagArray index="Unstoppable" value="1"/>
         <Attributes index="Massive" value="1"/>
@@ -1435,7 +1425,7 @@
         <BehaviorArray Link="SovietT4unitveteranbehavior"/>
         <BehaviorArray Link="RAMovementSpeedAndArmor20Percent61"/>
         <BehaviorArray Link="PowerUserQueue"/>
-        <BehaviorArray Link="PowerSource22"/>
+        <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
         <BehaviorArray Link="AutowerUnderConstruction"/>
         <BehaviorArray Link="Lowpower2"/>
@@ -1459,7 +1449,6 @@
     </CUnit>
     <CUnit id="AuPowerPlant" parent="AlliedStructure">
         <Facing value="29.9926"/>
-
         <LifeStart value="500"/>
         <LifeMax value="500"/>
         <Food value="10"/>
@@ -1467,7 +1456,7 @@
         <RepairTime value="35"/>
         <AbilArray Link="attack"/>
         <BehaviorArray Link="PowerUserQueue"/>
-        <BehaviorArray Link="PowerSource22"/>
+        <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <Radius value="1.25"/>
         <SeparationRadius value="1.25"/>
         <Footprint value="Footprint3x2"/>
@@ -1478,7 +1467,6 @@
         <MinimapRadius value="1.75"/>
     </CUnit>
     <CUnit id="AuAdvancedPowerPlant" parent="AlliedStructure">
-
         <ResourceState value="Harvestable"/>
         <ResourceType value="Vespene"/>
         <FogVisibility value="Visible"/>
@@ -1508,7 +1496,6 @@
     </CUnit>
     <CUnit id="AuPatriotMissile" parent="AlliedStructure">
         <Facing value="135"/>
-
         <FlagArray index="Untooltipable" value="0"/>
         <FlagArray index="Destructible" value="1"/>
         <FlagArray index="CameraFollow" value="0"/>
@@ -1523,7 +1510,7 @@
         <AbilArray Link="Disband2"/>
         <AbilArray Link="Blink2219"/>
         <BehaviorArray Link="UpgradeLevel12"/>
-        <BehaviorArray Link="PowerSource22"/>
+        <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <BehaviorArray Link="PowerUserQueue"/>
         <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
         <BehaviorArray Link="AutowerUnderConstruction"/>
@@ -1554,7 +1541,6 @@
         </ReviveInfoBase>
     </CUnit>
     <CUnit id="AuConstructionYard" parent="AlliedStructure">
-
         <Attributes index="Robotic" value="1"/>
         <Attributes index="Heroic" value="1"/>
         <FlagArray index="PreventReveal" value="1"/>
@@ -1566,8 +1552,8 @@
         <Food value="20"/>
         <RepairTime value="100"/>
         <AttackTargetPriority value="5"/>
-        <AbilArray Link="SubuildBuildings2"/>
         <AbilArray index="1" Link="que1"/>
+        <AbilArray Link="SubuildBuildings2"/>
         <AbilArray Link="Ally"/>
         <AbilArray Link="RAChooseAirForce"/>
         <AbilArray Link="SelectShipyards"/>
@@ -1662,7 +1648,6 @@
     </CUnit>
     <CUnit id="AuCommandCenter" parent="AlliedStructure">
         <DeathRevealDuration value="0"/>
-
         <FlagArray index="CreateVisible" value="1"/>
         <FlagArray index="KillCredit" value="0"/>
         <Response value="Nothing"/>
@@ -1693,7 +1678,6 @@
     <CUnit id="AuBarrack" parent="AlliedStructure">
         <Description value="Button/Tooltip/aubarrat"/>
         <Facing value="29.9926"/>
-
         <FlagArray index="KillCredit" value="0"/>
         <LifeStart value="500"/>
         <LifeMax value="500"/>
@@ -1707,7 +1691,7 @@
         <AbilArray Link="SovietBarracksTrain"/>
         <BehaviorArray Link="MassProduction22"/>
         <BehaviorArray Link="PowerUserQueue"/>
-        <BehaviorArray Link="PowerSource22"/>
+        <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <BehaviorArray Link="Lowpower"/>
         <BehaviorArray Link="Lowpower3"/>
         <BehaviorArray Link="MassProduction2"/>
@@ -1727,7 +1711,6 @@
         <AIEvaluateAlias value="Barracks"/>
     </CUnit>
     <CUnit id="AuProtonCollider" parent="AlliedStructure">
-
         <Attributes index="Heroic" value="1"/>
         <LifeStart value="2500"/>
         <LifeMax value="2500"/>
@@ -1741,7 +1724,7 @@
         <BehaviorArray Link="RAMovementSpeedAndArmor20Percent48"/>
         <BehaviorArray Link="RAMovementSpeedAndArmor20Percent482"/>
         <BehaviorArray Link="PowerUserQueue"/>
-        <BehaviorArray Link="PowerSource22"/>
+        <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <BehaviorArray Link="Lowpower22"/>
         <BehaviorArray Link="Lowpower3"/>
         <WeaponArray Turret="RAProtonColliderMainCannon"/>
@@ -1761,7 +1744,6 @@
         <MinimapRadius value="3"/>
     </CUnit>
     <CUnit id="AuWeathercontroller" parent="AlliedStructure">
-
         <Attributes index="Heroic" value="1"/>
         <LifeStart value="2500"/>
         <LifeMax value="2500"/>
@@ -1775,7 +1757,7 @@
         <BehaviorArray Link="RAMovementSpeedAndArmor20Percent48"/>
         <BehaviorArray Link="RAMovementSpeedAndArmor20Percent482"/>
         <BehaviorArray Link="PowerUserQueue"/>
-        <BehaviorArray Link="PowerSource22"/>
+        <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <BehaviorArray Link="Lowpower22"/>
         <BehaviorArray Link="Lowpower3"/>
         <CardLayouts index="0">
@@ -1795,7 +1777,6 @@
     </CUnit>
     <CUnit id="AuMachinegunBunker" parent="AlliedStructure">
         <Facing value="315"/>
-
         <FlagArray index="AIDefense" value="1"/>
         <LifeStart value="150"/>
         <LifeMax value="150"/>
@@ -1807,7 +1788,7 @@
         <AbilArray Link="Blink2217"/>
         <BehaviorArray Link="UpgradeLevel14"/>
         <BehaviorArray Link="PowerUserQueue"/>
-        <BehaviorArray Link="PowerSource22"/>
+        <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
         <BehaviorArray Link="AutowerUnderConstruction"/>
         <WeaponArray Link="M603" Turret="GunTower23"/>
@@ -1842,7 +1823,6 @@
         </ReviveInfoBase>
     </CUnit>
     <CUnit id="AuAlliedradar" parent="AlliedStructure">
-
         <LifeStart value="1000"/>
         <LifeMax value="1000"/>
         <EnergyStart value="50"/>
@@ -1859,7 +1839,7 @@
         <BehaviorArray Link="Detector8"/>
         <BehaviorArray Link="Detector12"/>
         <BehaviorArray Link="PowerUserQueue"/>
-        <BehaviorArray Link="PowerSource22"/>
+        <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <BehaviorArray Link="Lowpower"/>
         <BehaviorArray Link="Lowpower3"/>
         <CardLayouts index="0">
@@ -1883,7 +1863,6 @@
     </CUnit>
     <CUnit id="AuChronoSphere" parent="AlliedStructure">
         <Facing value="49.9987"/>
-
         <Attributes index="Heroic" value="1"/>
         <LifeStart value="2000"/>
         <LifeMax value="2000"/>
@@ -1899,7 +1878,7 @@
         <BehaviorArray Link="RAMovementSpeedAndArmor20Percent4822"/>
         <BehaviorArray Link="RAMovementSpeedAndArmor20Percent48222"/>
         <BehaviorArray Link="PowerUserQueue"/>
-        <BehaviorArray Link="PowerSource22"/>
+        <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <BehaviorArray Link="Lowpower22"/>
         <BehaviorArray Link="Lowpower3"/>
         <CardLayouts index="0">
@@ -1920,7 +1899,6 @@
     </CUnit>
     <CUnit id="AuOldChronosphere" parent="AlliedStructure">
         <Facing value="49.9987"/>
-
         <Attributes index="Heroic" value="1"/>
         <LifeStart value="5000"/>
         <LifeMax value="5000"/>
@@ -1937,7 +1915,7 @@
         <BehaviorArray Link="RAMovementSpeedAndArmor20Percent4822"/>
         <BehaviorArray Link="RAMovementSpeedAndArmor20Percent48222"/>
         <BehaviorArray Link="PowerUserQueue"/>
-        <BehaviorArray Link="PowerSource22"/>
+        <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
@@ -1956,7 +1934,6 @@
         <MinimapRadius value="2"/>
     </CUnit>
     <CUnit id="AuWarFactory" parent="AlliedStructure">
-
         <LifeStart value="1250"/>
         <LifeMax value="1250"/>
         <LifeRegenDelay value="30"/>
@@ -1974,9 +1951,9 @@
         <AbilArray Link="WarFactoryTrain22"/>
         <BehaviorArray Link="TerranBuildingBurnDown"/>
         <BehaviorArray Link="PowerUserQueue"/>
-        <BehaviorArray Link="PowerSource22"/>
+        <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <BehaviorArray Link="MassProduction2"/>
-        <BehaviorArray Link="TankTrapAuraA3"/>
+        <BehaviorArray Link="Maintenancebeedetectshalorange"/>
         <BehaviorArray Link="Lowpower"/>
         <BehaviorArray Link="Lowpower3"/>
         <CardLayouts index="0">
@@ -2009,7 +1986,6 @@
         <AIEvaluateAlias value="Factory"/>
     </CUnit>
     <CUnit id="AuOldFactory" parent="AlliedStructure">
-
         <LifeStart value="2500"/>
         <LifeMax value="2500"/>
         <LifeRegenDelay value="30"/>
@@ -2029,7 +2005,7 @@
         <AbilArray Link="NanoRepair"/>
         <BehaviorArray Link="TerranBuildingBurnDown"/>
         <BehaviorArray Link="PowerUserQueue"/>
-        <BehaviorArray Link="PowerSource22"/>
+        <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <BehaviorArray Link="MassProduction2"/>
         <CardLayouts index="0">
             <LayoutButtons Face="TrainWehrmachtInfantry2222342" Type="AbilCmd" AbilCmd="WarFactoryTrain22,Train11" Row="2" Column="0"/>
@@ -2058,7 +2034,6 @@
         <SubgroupPriority value="21"/>
     </CUnit>
     <CUnit id="AuDefenseBureau" parent="AlliedStructure">
-
         <Attributes index="Robotic" value="1"/>
         <LifeStart value="1000"/>
         <LifeMax value="1000"/>
@@ -2072,7 +2047,7 @@
         <AbilArray Link="RATechnologyCenterResearch3"/>
         <AbilArray Link="RATechnologyCenterResearch5"/>
         <BehaviorArray Link="PowerUserQueue"/>
-        <BehaviorArray Link="PowerSource22"/>
+        <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <BehaviorArray Link="Lowpower"/>
         <BehaviorArray Link="Lowpower3"/>
         <CardLayouts index="0">
@@ -2156,7 +2131,6 @@
     </CUnit>
     <CUnit id="AuBankGun" parent="AlliedStructure">
         <Facing value="135"/>
-
         <FlagArray index="AIDefense" value="1"/>
         <FlagArray index="Unstoppable" value="1"/>
         <LifeStart value="550"/>
@@ -2170,7 +2144,7 @@
         <AbilArray Link="Disband2"/>
         <AbilArray Link="Blink225"/>
         <BehaviorArray Link="UpgradeLevel122"/>
-        <BehaviorArray Link="PowerSource22"/>
+        <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <BehaviorArray Link="PowerUserQueue"/>
         <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
         <BehaviorArray Link="AutowerUnderConstruction"/>
@@ -2188,7 +2162,6 @@
         <SubgroupPriority value="3"/>
     </CUnit>
     <CUnit id="AuArtilleryFactory" parent="AlliedStructure">
-
         <LifeStart value="2500"/>
         <LifeMax value="2500"/>
         <LifeRegenDelay value="30"/>
@@ -2208,7 +2181,7 @@
         <AbilArray Link="NanoRepair"/>
         <BehaviorArray Link="TerranBuildingBurnDown"/>
         <BehaviorArray Link="PowerUserQueue"/>
-        <BehaviorArray Link="PowerSource22"/>
+        <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <BehaviorArray Link="MassProduction2"/>
         <CardLayouts index="0">
             <LayoutButtons Face="BuildTankDestroyerEarly" Type="AbilCmd" AbilCmd="WarFactoryTrain,Train20" Row="0" Column="0"/>
@@ -2243,7 +2216,6 @@
     </CUnit>
     <CUnit id="AlliedAntitankgun" parent="AlliedStructure">
         <Facing value="135"/>
-
         <FlagArray index="AIDefense" value="1"/>
         <LifeStart value="200"/>
         <LifeMax value="200"/>
@@ -2257,7 +2229,7 @@
         <AbilArray Link="Blink2218"/>
         <BehaviorArray Link="UpgradeLevel1"/>
         <BehaviorArray Link="PowerUserQueue"/>
-        <BehaviorArray Link="PowerSource22"/>
+        <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
         <WeaponArray Link="BunkerAT" Turret="GunTower23"/>
         <CardLayouts index="0">
@@ -2276,7 +2248,6 @@
         <MinimapRadius value="0.75"/>
     </CUnit>
     <CUnit id="AuAirport" parent="AlliedStructure">
-
         <Attributes index="Robotic" value="1"/>
         <LifeStart value="1000"/>
         <LifeMax value="1000"/>
@@ -2287,15 +2258,15 @@
         <AbilArray Link="AirportTrain"/>
         <AbilArray Link="attack"/>
         <AbilArray Link="CarrierRepairDroneHanger2"/>
-        <BehaviorArray Link="jcfjzz"/>
+        <BehaviorArray Link="AircraftAirportParkingAircraftTracking"/>
         <BehaviorArray Link="PowerUserQueue"/>
-        <BehaviorArray Link="PowerSource22"/>
+        <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <BehaviorArray Link="MassProduction2"/>
-        <BehaviorArray Link="yfpcw3"/>
-        <BehaviorArray Link="TankTrapAuraA3"/>
+        <BehaviorArray Link="Airportisfull"/>
+        <BehaviorArray Link="Maintenancebeedetectshalorange"/>
         <BehaviorArray Link="Lowpower"/>
         <BehaviorArray Link="Lowpower3"/>
-        <EffectArray index="Death" value="xfwzztjblzzdw222"/>
+        <EffectArray index="Death" value="CNCAirporttraversaltrackingaircraft"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="1" Column="4"/>
             <LayoutButtons Face="BuildLightBomber2" Type="AbilCmd" AbilCmd="AirportTrain,Train8" Row="0" Column="1"/>
@@ -2318,7 +2289,6 @@
         <MinimapRadius value="1.8"/>
     </CUnit>
     <CUnit id="JpImperialMine" parent="JapanStructure">
-
         <ResourceDropOff index="Minerals" value="1"/>
         <ResourceDropOff index="Vespene" value="1"/>
         <ResourceDropOff index="Terrazine" value="1"/>
@@ -2353,7 +2323,6 @@
         <MinimapRadius value="2"/>
     </CUnit>
     <CUnit id="JpWaveTower" parent="JapanStructure">
-
         <FlagArray index="AIDefense" value="1"/>
         <FlagArray index="Unstoppable" value="1"/>
         <LifeStart value="1500"/>
@@ -2388,7 +2357,6 @@
     </CUnit>
     <CUnit id="JpPowerPlant" parent="JapanStructure">
         <Facing value="29.9926"/>
-
         <LifeStart value="1250"/>
         <LifeMax value="1250"/>
         <Food value="10"/>
@@ -2404,7 +2372,6 @@
         <MinimapRadius value="1.75"/>
     </CUnit>
     <CUnit id="JpConstructionYard" parent="JapanStructure">
-
         <Attributes index="Robotic" value="1"/>
         <Attributes index="Heroic" value="1"/>
         <FlagArray index="PreventReveal" value="1"/>
@@ -2418,8 +2385,8 @@
         <Food value="20"/>
         <RepairTime value="100"/>
         <AttackTargetPriority value="5"/>
-        <AbilArray Link="CityTrain2"/>
         <AbilArray index="1" Link="que2CancelToSelection"/>
+        <AbilArray Link="CityTrain2"/>
         <AbilArray Link="Ally"/>
         <AbilArray Link="RAChooseAirForce"/>
         <AbilArray Link="RallyCommand"/>
@@ -2493,7 +2460,6 @@
         <CostResource index="Minerals" value="5000"/>
     </CUnit>
     <CUnit id="JpBarracks" parent="JapanStructure">
-
         <FlagArray index="KillCredit" value="0"/>
         <LifeStart value="1000"/>
         <LifeMax value="1000"/>
@@ -2532,7 +2498,6 @@
         <KillXP value="5"/>
     </CUnit>
     <CUnit id="JpDfenderVX" parent="JapanStructure">
-
         <FlagArray index="AIDefense" value="1"/>
         <LifeStart value="1000"/>
         <LifeMax value="1000"/>
@@ -2576,7 +2541,6 @@
     <CUnit id="JpRadar" parent="JapanStructure">
         <ReviveType value="SensorTower"/>
         <Facing value="315"/>
-
         <LifeStart value="1500"/>
         <LifeMax value="1500"/>
         <LifeRegenRate value="5"/>
@@ -2616,7 +2580,6 @@
         </ReviveInfoBase>
     </CUnit>
     <CUnit id="JpNanoSwarm" parent="JapanStructure">
-
         <Attributes index="Heroic" value="1"/>
         <LifeStart value="4000"/>
         <LifeMax value="4000"/>
@@ -2648,7 +2611,6 @@
     </CUnit>
     <CUnit id="JpPsionicDecimator" parent="JapanStructure">
         <Facing value="330.996"/>
-
         <Attributes index="Heroic" value="1"/>
         <LifeStart value="4000"/>
         <LifeMax value="4000"/>
@@ -2680,7 +2642,6 @@
         <MinimapRadius value="3"/>
     </CUnit>
     <CUnit id="JpImperialNanohost" parent="JapanStructure">
-
         <Attributes index="Robotic" value="1"/>
         <LifeStart value="2000"/>
         <LifeMax value="2000"/>
@@ -2783,7 +2744,6 @@
         </ReviveInfoBase>
     </CUnit>
     <CUnit id="JpWarFactory" parent="JapanStructure">
-
         <LifeStart value="2500"/>
         <LifeMax value="2500"/>
         <LifeRegenDelay value="30"/>
@@ -2835,7 +2795,6 @@
         <KillXP value="20"/>
     </CUnit>
     <CUnit id="JpWaveenergythreeguns" parent="JapanStructure">
-
         <FlagArray index="AIDefense" value="1"/>
         <FlagArray index="Unstoppable" value="1"/>
         <LifeStart value="6000"/>
@@ -2868,7 +2827,6 @@
         <SubgroupPriority value="3"/>
     </CUnit>
     <CUnit id="JpMechFactory" parent="JapanStructure">
-
         <LifeStart value="2500"/>
         <LifeMax value="2500"/>
         <LifeRegenDelay value="30"/>
@@ -2925,7 +2883,6 @@
     </CUnit>
     <CUnit id="CnAirport" parent="ChinaStructure">
         <Facing value="339.994"/>
-
         <Attributes index="Robotic" value="1"/>
         <Attributes index="Psionic" value="1"/>
         <LifeStart value="3000"/>
@@ -2943,13 +2900,13 @@
         <AbilArray Link="Rally"/>
         <AbilArray Link="AirportTrain"/>
         <AbilArray Link="attack"/>
-        <BehaviorArray Link="jcfjzz"/>
+        <BehaviorArray Link="AircraftAirportParkingAircraftTracking"/>
         <BehaviorArray Link="MassProduction2"/>
         <WeaponArray Link="InterceptorLaunch2"/>
         <WeaponArray Link="InterceptorLaunch22"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="1" Column="4"/>
-            <LayoutButtons Face="ReturnAirport2" Type="AbilCmd" AbilCmd="ReturnAirport2,Execute" Row="2" Column="4"/>
+            <LayoutButtons Face="ReturnAirport2" Type="AbilCmd" AbilCmd="CNCDestroyTheBomberInside,255" Row="2" Column="4"/>
             <LayoutButtons Face="BuildTacticalBomber22" Type="AbilCmd" AbilCmd="AirportTrain,Train2" Row="1" Column="0"/>
             <LayoutButtons Face="BuildTacticalBomber2" Type="AbilCmd" AbilCmd="AirportTrain,Train17" Row="0" Column="1"/>
             <LayoutButtons Face="BuildStrategicBomber" Type="AbilCmd" AbilCmd="AirportTrain,Train7" Row="0" Column="3"/>
@@ -2977,10 +2934,9 @@
             <Cooldown Link="Starport/Revive"/>
         </ReviveInfoBase>
         <KillXP value="10"/>
-        <EffectArray index="Death" value="xfwzztjblzzdw222"/>
+        <EffectArray index="Death" value="CNCAirporttraversaltrackingaircraft"/>
     </CUnit>
     <CUnit id="CnSmeltingFurnace" parent="ChinaStructure">
-
         <ResourceDropOff index="Minerals" value="1"/>
         <ResourceDropOff index="Vespene" value="1"/>
         <ResourceDropOff index="Terrazine" value="1"/>
@@ -3016,7 +2972,6 @@
     </CUnit>
     <CUnit id="CnNuclearPowerPlant" parent="ChinaStructure">
         <Facing value="29.9926"/>
-
         <LifeStart value="3000"/>
         <LifeMax value="3000"/>
         <Food value="30"/>
@@ -3039,7 +2994,6 @@
     </CUnit>
     <CUnit id="CnLargeFossilfuelpowerstation" parent="ChinaStructure">
         <Facing value="239.9963"/>
-
         <LifeStart value="2000"/>
         <LifeMax value="2000"/>
         <Food value="30"/>
@@ -3058,7 +3012,6 @@
     </CUnit>
     <CUnit id="CnTeslaReactor" parent="ChinaStructure">
         <Facing value="329.9963"/>
-
         <LifeStart value="850"/>
         <LifeMax value="850"/>
         <Food value="10"/>
@@ -3076,7 +3029,6 @@
         <MinimapRadius value="1.75"/>
     </CUnit>
     <CUnit id="CnDongfeng41launchsilo" parent="ChinaStructure">
-
         <Attributes index="Heroic" value="1"/>
         <LifeStart value="5000"/>
         <LifeMax value="5000"/>
@@ -3103,7 +3055,6 @@
     </CUnit>
     <CUnit id="CnBarracks" parent="ChinaStructure">
         <Facing value="29.9926"/>
-
         <FlagArray index="KillCredit" value="0"/>
         <LifeStart value="1500"/>
         <LifeMax value="1500"/>
@@ -3137,7 +3088,6 @@
     </CUnit>
     <CUnit id="CnConstructionofRelayStations" parent="ChinaStructure">
         <DeathRevealDuration value="0"/>
-
         <FlagArray index="CreateVisible" value="1"/>
         <FlagArray index="KillCredit" value="0"/>
         <Response value="Nothing"/>
@@ -3149,8 +3099,8 @@
         <CostResource index="Minerals" value="1000"/>
         <RepairTime value="50"/>
         <KillXP value="8"/>
-        <AbilArray Link="CityTrain"/>
         <AbilArray index="1" Link="que1"/>
+        <AbilArray Link="CityTrain"/>
         <AbilArray Link="Ally"/>
         <AbilArray Link="RAChooseAirForce"/>
         <AbilArray Link="SelectShipyards"/>
@@ -3215,7 +3165,6 @@
         <MinimapRadius value="1"/>
     </CUnit>
     <CUnit id="CnWatchtower" parent="ChinaStructure">
-
         <FlagArray index="AIDefense" value="1"/>
         <LifeStart value="600"/>
         <LifeMax value="600"/>
@@ -3256,7 +3205,6 @@
         </ReviveInfoBase>
     </CUnit>
     <CUnit id="CnTowerofFire" parent="ChinaStructure">
-
         <FlagArray index="AIDefense" value="1"/>
         <LifeStart value="800"/>
         <LifeMax value="800"/>
@@ -3295,7 +3243,6 @@
     </CUnit>
     <CUnit id="CnGatlingCannon" parent="ChinaStructure">
         <Description value="Button/Tooltip/Cnjiatelin"/>
-
         <FlagArray index="AIDefense" value="1"/>
         <LifeStart value="2000"/>
         <LifeMax value="2000"/>
@@ -3338,7 +3285,6 @@
     </CUnit>
     <CUnit id="CnHeavyBallista" parent="ChinaStructure">
         <Description value="Button/Tooltip/Cnzhongnupao"/>
-
         <FlagArray index="AIDefense" value="1"/>
         <LifeStart value="1500"/>
         <LifeMax value="1500"/>
@@ -3377,7 +3323,6 @@
     </CUnit>
     <CUnit id="CnBroadcastTower" parent="ChinaStructure">
         <Description value="Button/Tooltip/Cnguangbo"/>
-
         <FlagArray index="AIDefense" value="1"/>
         <LifeStart value="2000"/>
         <LifeMax value="2000"/>
@@ -3417,7 +3362,6 @@
     <CUnit id="CnEagleStrikeMissileLaunchTower" parent="ChinaStructure">
         <Description value="Button/Tooltip/Cngategun"/>
         <Facing value="315"/>
-
         <FlagArray index="AIDefense" value="1"/>
         <LifeStart value="3500"/>
         <LifeMax value="3500"/>
@@ -3457,7 +3401,6 @@
     <CUnit id="CnHuntianTower" parent="ChinaStructure">
         <Description value="Button/Tooltip/Cnhuntian"/>
         <Facing value="315"/>
-
         <FlagArray index="AIDefense" value="1"/>
         <LifeStart value="5000"/>
         <LifeMax value="5000"/>
@@ -3495,7 +3438,6 @@
         </ReviveInfoBase>
     </CUnit>
     <CUnit id="CnWarFactory" parent="ChinaStructure">
-
         <LifeStart value="2000"/>
         <LifeMax value="2000"/>
         <LifeRegenDelay value="30"/>
@@ -3533,7 +3475,6 @@
         <KillXP value="20"/>
     </CUnit>
     <CUnit id="CnRadar" parent="ChinaStructure">
-
         <LifeStart value="1000"/>
         <LifeMax value="1000"/>
         <Sight value="24"/>
@@ -3567,7 +3508,6 @@
         </ReviveInfoBase>
     </CUnit>
     <CUnit id="CnSundialarray" parent="ChinaStructure">
-
         <Attributes index="Heroic" value="1"/>
         <LifeStart value="6000"/>
         <LifeMax value="6000"/>
@@ -3599,7 +3539,6 @@
         <MinimapRadius value="2"/>
     </CUnit>
     <CUnit id="CnHeavyArmorWorkshop" parent="ChinaStructure">
-
         <LifeStart value="2000"/>
         <LifeMax value="2000"/>
         <LifeRegenDelay value="30"/>
@@ -3650,8 +3589,8 @@
         <Food value="20"/>
         <CostResource index="Minerals" value="5000"/>
         <AttackTargetPriority value="5"/>
-        <AbilArray Link="CityTrain"/>
         <AbilArray index="1" Link="que1"/>
+        <AbilArray Link="CityTrain"/>
         <AbilArray Link="Ally"/>
         <AbilArray Link="RAChooseAirForce"/>
         <AbilArray Link="SelectShipyards"/>
@@ -3719,10 +3658,8 @@
         <GlossaryAlias value="CnConstructionYard"/>
         <KillXP value="500"/>
         <EffectArray index="Death" value="DisbandDeath52"/>
-        
     </CUnit>
     <CUnit id="GDI460mmDevoidgun" parent="GDIStructure">
-        
         <FlagArray index="AIDefense" value="1"/>
         <FlagArray index="Unstoppable" value="1"/>
         <LifeStart value="1200"/>
@@ -3754,7 +3691,6 @@
         <SubgroupPriority value="3"/>
     </CUnit>
     <CUnit id="GDIPlasmacannon" parent="GDIStructure">
-        
         <FlagArray index="AIDefense" value="1"/>
         <FlagArray index="Unstoppable" value="1"/>
         <LifeStart value="3000"/>
@@ -3783,7 +3719,6 @@
         <SubgroupPriority value="3"/>
     </CUnit>
     <CUnit id="GDIAntitankbunker" parent="GDIStructure">
-        
         <LifeStart value="900"/>
         <LifeMax value="900"/>
         <Sight value="10"/>
@@ -3891,14 +3826,14 @@
         <CostResource index="Vespene" value="100"/>
         <RepairTime value="2"/>
         <KillXP value="10"/>
-        <AbilArray Link="ReturnAirport"/>
+        <AbilArray Link="CNCReturnToTheAirport"/>
         <BehaviorArray Link="RAMovementSpeedAndArmor20Percent122"/>
         <BehaviorArray Link="UpgradeLevel1224"/>
         <BehaviorArray Link="RAMovementSpeedAndArmor20Percent1222"/>
         <BehaviorArray Link="RAMovementSpeedAndArmor20Percent362"/>
         <WeaponArray Link="VXWeaponGround33"/>
         <CardLayouts index="0">
-            <LayoutButtons Face="ReturnAirport" Type="AbilCmd" AbilCmd="ReturnAirport,Execute" Row="1" Column="0"/>
+            <LayoutButtons Face="ReturnAirport" Type="AbilCmd" AbilCmd="CNCReturnToTheAirport,255" Row="1" Column="0"/>
         </CardLayouts>
         <ScoreMake value="200"/>
         <ScoreKillCostFactor index="Minerals" value="1.25"/>
@@ -3926,13 +3861,13 @@
         <CostResource index="Minerals" value="1200"/>
         <RepairTime value="2"/>
         <KillXP value="2"/>
-        <AbilArray Link="ReturnAirport"/>
+        <AbilArray Link="CNCReturnToTheAirport"/>
         <BehaviorArray Link="RAMovementSpeedAndArmor20Percent122"/>
         <BehaviorArray Link="UpgradeLevel12242"/>
         <BehaviorArray Link="RAMovementSpeedAndArmor20Percent1222"/>
         <WeaponArray Link="VXWeaponGround32"/>
         <CardLayouts index="0">
-            <LayoutButtons Face="ReturnAirport" Type="AbilCmd" AbilCmd="ReturnAirport,Execute" Row="1" Column="0"/>
+            <LayoutButtons Face="ReturnAirport" Type="AbilCmd" AbilCmd="CNCReturnToTheAirport,255" Row="1" Column="0"/>
         </CardLayouts>
         <ScoreMake value="200"/>
         <ScoreKillCostFactor index="Minerals" value="1.25"/>
@@ -4021,7 +3956,6 @@
         <MinimapRadius value="0.875"/>
     </CUnit>
     <CUnit id="AlliedRepairBee" parent="AlliedAir">
-        
         <FlagArray index="Unselectable" value="1"/>
         <FlagArray index="Untargetable" value="1"/>
         <FlagArray index="Invulnerable" value="1"/>
@@ -4050,7 +3984,6 @@
         <SubgroupPriority value="4"/>
     </CUnit>
     <CUnit id="AuCenturyTransport" parent="AlliedAir">
-        
         <Attributes index="Armored" value="1"/>
         <Attributes index="Mechanical" value="1"/>
         <LifeStart value="150"/>
@@ -4081,7 +4014,6 @@
     <CUnit id="AlliedRocketeer" parent="AlliedAir">
         <Name value="Unit/Name/Auhuojian"/>
         <Subtitle value="UnitSubtitle/fantanke"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <Attributes index="Light" value="1"/>
         <Attributes index="Biological" value="1"/>
@@ -4120,7 +4052,6 @@
     </CUnit>
     <CUnit id="AuAruis" parent="AlliedAir">
         <Subtitle value="UnitSubtitle/hangk"/>
-        
         <Collide index="FlyingEscorts" value="1"/>
         <Response value="Nothing"/>
         <Attributes index="Mechanical" value="1"/>
@@ -4155,7 +4086,6 @@
     </CUnit>
     <CUnit id="AlliedVindicator" parent="AlliedAir">
         <Subtitle value="UnitSubtitle/hangk"/>
-        
         <FlagArray index="AIThreatGround" value="1"/>
         <FlagArray index="AIThreatAir" value="1"/>
         <Attributes index="Light" value="1"/>
@@ -4173,26 +4103,26 @@
         <CostResource index="Minerals" value="1200"/>
         <RepairTime value="2"/>
         <KillXP value="2"/>
-        <AbilArray index="0" Link="move22"/>
-        <AbilArray Link="attack2"/>
-        <AbilArray Link="ReturnAirport"/>
-        <AbilArray Link="jcfjqf"/>
-        <AbilArray Link="sljcjl"/>
-        <BehaviorArray Link="xfwzztjstzsbdpx"/>
-        <BehaviorArray Link="xfjytzzdpx2"/>
-        <BehaviorArray Link="ra3qfdy"/>
-        <BehaviorArray Link="xfjytzzdpx222"/>
-        <BehaviorArray Link="fjzzpxyst"/>
-        <BehaviorArray Link="fjzdbcdy2"/>
+        <AbilArray index="0" Link="CNCAirplaneMove"/>
+        <AbilArray index="2" Link="attack2"/>
+        <AbilArray Link="CNCReturnToTheAirport"/>
+        <AbilArray Link="CNCAirportPlanetakingoff"/>
+        <AbilArray Link="CNCAirportPlaneLanding"/>
+        <BehaviorArray Link="ThePioneerarmedcombataircraftkeepscirclingwhenstopped"/>
+        <BehaviorArray Link="DisablestopautoandattackinVanguardmovementcommand"/>
+        <BehaviorArray Link="LackOfAmmo"/>
+        <BehaviorArray Link="StopautocirclingdisabledinPeacekeeperbomberattackcommand"/>
+        <BehaviorArray Link="Theaircraftiscirclingtheactor"/>
+        <BehaviorArray Link="Aircraftautomaticallyreplenishesammunitionpeacekeepingbomber"/>
         <BehaviorArray Link="UpgradeLevel12242"/>
         <BehaviorArray Link="AutoHeal42"/>
         <BehaviorArray Link="Auweiheshanbi"/>
         <WeaponArray Link="VXWeaponGround3"/>
         <CardLayouts index="0">
-            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move22,Move" Row="0" Column="0"/>
-            <LayoutButtons Face="MothershipCoreAttack" Type="AbilCmd" AbilCmd="jcfjqf,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="MothershipCoreAttack" Type="AbilCmd" AbilCmd="CNCAirportPlanetakingoff,255" Row="0" Column="4"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack2,Execute" Row="0" Column="4"/>
-            <LayoutButtons Face="ReturnAirport3" Type="AbilCmd" AbilCmd="ReturnAirport,Execute" Row="1" Column="0"/>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="CNCAirplaneMove,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="ReturnAirport3" Type="AbilCmd" AbilCmd="CNCReturnToTheAirport,Execute" Row="1" Column="0"/>
             <LayoutButtons Face="AutechBeidongSet30" Type="Passive" Requirements="StortModeRe223" Row="1" Column="3"/>
             <LayoutButtons Face="AutechBeidongSet29" Type="Passive" Requirements="StortModeRe2" Row="1" Column="4"/>
         </CardLayouts>
@@ -4202,7 +4132,6 @@
     </CUnit>
     <CUnit id="AlliedCenturyBomber" parent="AlliedAir">
         <Subtitle value="UnitSubtitle/hangk"/>
-        
         <Collide index="FlyingEscorts" value="1"/>
         <Response value="Nothing"/>
         <Attributes index="Armored" value="1"/>
@@ -4223,26 +4152,26 @@
         <RepairTime value="2"/>
         <KillXP value="10"/>
         <AbilArray Link="attack2"/>
-        <AbilArray Link="ReturnAirport"/>
-        <AbilArray Link="jcfjqf"/>
-        <AbilArray Link="sljcjl"/>
-        <AbilArray Link="move22"/>
+        <AbilArray Link="CNCReturnToTheAirport"/>
+        <AbilArray Link="CNCAirportPlanetakingoff"/>
+        <AbilArray Link="CNCAirportPlaneLanding"/>
+        <AbilArray Link="CNCAirplaneMove"/>
         <AbilArray Link="SpecOpsDropshipTransport2"/>
         <AbilArray Link="SuMotoModeSwhich53"/>
-        <BehaviorArray Link="xfwzztjstzsbdpx"/>
-        <BehaviorArray Link="xfjytzzdpx2"/>
-        <BehaviorArray Link="ra3qfdy"/>
-        <BehaviorArray Link="xfjytzzdpx222"/>
-        <BehaviorArray Link="fjzzpxyst"/>
-        <BehaviorArray Link="fjzdbcdy2"/>
+        <BehaviorArray Link="ThePioneerarmedcombataircraftkeepscirclingwhenstopped"/>
+        <BehaviorArray Link="DisablestopautoandattackinVanguardmovementcommand"/>
+        <BehaviorArray Link="LackOfAmmo"/>
+        <BehaviorArray Link="StopautocirclingdisabledinPeacekeeperbomberattackcommand"/>
+        <BehaviorArray Link="Theaircraftiscirclingtheactor"/>
+        <BehaviorArray Link="Aircraftautomaticallyreplenishesammunitionpeacekeepingbomber"/>
         <BehaviorArray Link="UpgradeLevel1224"/>
         <BehaviorArray Link="AutoHeal42"/>
         <WeaponArray Link="StrategicBomb22"/>
         <CardLayouts index="0">
-            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move22,Move" Row="0" Column="0"/>
-            <LayoutButtons Face="MothershipCoreAttack" Type="AbilCmd" AbilCmd="jcfjqf,Execute" Row="0" Column="4"/>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="CNCAirplaneMove,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="MothershipCoreAttack" Type="AbilCmd" AbilCmd="CNCAirportPlanetakingoff,255" Row="0" Column="4"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack2,Execute" Row="0" Column="4"/>
-            <LayoutButtons Face="ReturnAirport3" Type="AbilCmd" AbilCmd="ReturnAirport,Execute" Row="1" Column="0"/>
+            <LayoutButtons Face="ReturnAirport3" Type="AbilCmd" AbilCmd="CNCReturnToTheAirport,255" Row="1" Column="0"/>
             <LayoutButtons Face="BiodomeLoad3" Type="AbilCmd" AbilCmd="SpecOpsDropshipTransport2,Load" Row="2" Column="0"/>
             <LayoutButtons Face="MedivacUnloadAll" Type="AbilCmd" AbilCmd="SpecOpsDropshipTransport2,UnloadAll" Row="2" Column="1"/>
             <LayoutButtons Face="TossGrenadeTychus22222754" Type="AbilCmd" AbilCmd="SuMotoModeSwhich53,On" Row="1" Column="1"/>
@@ -4254,7 +4183,6 @@
     </CUnit>
     <CUnit id="AuFreezHeli" parent="AlliedAir">
         <Subtitle value="UnitSubtitle/hangk"/>
-        
         <Collide index="FlyingEscorts" value="1"/>
         <Response value="AcquireNoFlee"/>
         <Attributes index="Light" value="1"/>
@@ -4291,7 +4219,6 @@
     </CUnit>
     <CUnit id="AuApollofighter" parent="AlliedAir">
         <Subtitle value="UnitSubtitle/hangk"/>
-        
         <Collide index="FlyingEscorts" value="1"/>
         <Response value="Nothing"/>
         <Attributes index="Light" value="1"/>
@@ -4322,7 +4249,6 @@
     </CUnit>
     <CUnit id="AuHarberGunship" parent="AlliedAir">
         <Subtitle value="UnitSubtitle/hangk"/>
-        
         <DefaultAcquireLevel value="Defensive"/>
         <Response value="Nothing"/>
         <Attributes index="Armored" value="1"/>
@@ -4344,20 +4270,20 @@
         <RepairTime value="2"/>
         <KillXP value="25"/>
         <AbilArray Link="attack2"/>
-        <AbilArray Link="move22"/>
+        <AbilArray Link="CNCAirplaneMove"/>
         <AbilArray Link="RAInvincible"/>
         <AbilArray Link="VolatileBurstBuilding22"/>
         <BehaviorArray Link="AutoHeal42"/>
         <BehaviorArray Link="xfjytzzdpx22"/>
-        <BehaviorArray Link="UpgradeLevel123232"/>
-        <BehaviorArray Link="xfjytzzdpx2"/>
-        <BehaviorArray Link="xfwzztjstzsbdpx"/>
-        <BehaviorArray Link="xfjytzzdpx223"/>
+        <BehaviorArray Link="T4unitveteranbehaviorVanguardarmedcombataircraft"/>
+        <BehaviorArray Link="DisablestopautoandattackinVanguardmovementcommand"/>
+        <BehaviorArray Link="ThePioneerarmedcombataircraftkeepscirclingwhenstopped"/>
+        <BehaviorArray Link="DisableStopAutoCirclingVanguardAttackCommand"/>
         <WeaponArray Link="RA120mmImpactCannon" Turret="RAVanguardGunshipProtonCannon"/>
         <WeaponArray Link="RA25mmAnnihilatorChainGun" Turret="RAVanguardGunshipMachineGun"/>
         <EffectArray index="Create" value="AugunshipBirth"/>
         <CardLayouts index="0">
-            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="move22,Move" Row="0" Column="0"/>
+            <LayoutButtons Face="Move" Type="AbilCmd" AbilCmd="CNCAirplaneMove,Move" Row="0" Column="0"/>
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack2,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="AutechBeidongSet32" Type="Passive" Requirements="StortModeRe233" Row="1" Column="4"/>
             <LayoutButtons Face="TossGrenadeTychus222223" Type="AbilCmd" AbilCmd="VolatileBurstBuilding22,On" Row="1" Column="1"/>
@@ -4385,7 +4311,6 @@
     </CUnit>
     <CUnit id="JapanRocketAngel" parent="JapanAir">
         <Subtitle value="UnitSubtitle/fantanke"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <PushPriority value="15"/>
         <Attributes index="Light" value="1"/>
@@ -4433,7 +4358,6 @@
         </Fidget>
     </CUnit>
     <CUnit id="JpTengoMechaJetMode" parent="JapanAir">
-        
         <FlagArray index="AIThreatGround" value="1"/>
         <FlagArray index="AIThreatAir" value="1"/>
         <PushPriority value="5"/>
@@ -4469,7 +4393,6 @@
         <SelectAlias value="JpTengoMechaMechaMode"/>
     </CUnit>
     <CUnit id="JpVXFighter" parent="JapanAir">
-        
         <FlagArray index="AIThreatGround" value="1"/>
         <FlagArray index="AIThreatAir" value="1"/>
         <Attributes index="Mechanical" value="1"/>
@@ -4511,7 +4434,6 @@
     </CUnit>
     <CUnit id="JpGFFighter" parent="JapanAir">
         <Subtitle value="UnitSubtitle/chaojiyaosai2"/>
-        
         <FlagArray index="AIThreatGround" value="1"/>
         <FlagArray index="AIThreatAir" value="1"/>
         <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
@@ -4566,7 +4488,6 @@
         <GlossaryWeakArray value="Stalker"/>
     </CUnit>
     <CUnit id="JpMiniFortressAirMode" parent="JapanAir">
-        
         <FlagArray index="Invulnerable" value="1"/>
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <Response value="Nothing"/>
@@ -4614,7 +4535,6 @@
     </CUnit>
     <CUnit id="CnJ20WeilongFighter" parent="ChinaAir">
         <Subtitle value="UnitSubtitle/hangk"/>
-        
         <Collide index="FlyingEscorts" value="1"/>
         <Attributes index="Mechanical" value="1"/>
         <LifeStart value="2500"/>
@@ -4642,7 +4562,6 @@
         <MinimapRadius value="0.375"/>
     </CUnit>
     <CUnit id="CnSkyLantern" parent="ChinaAir">
-        
         <FlagArray index="Turnable" value="0"/>
         <FlagArray index="AlwaysThreatens" value="1"/>
         <Attributes index="Light" value="1"/>
@@ -4681,7 +4600,6 @@
     </CUnit>
     <CUnit id="ChinaH6HeavyBomber" parent="ChinaAir">
         <Subtitle value="UnitSubtitle/hangk"/>
-        
         <Collide index="FlyingEscorts" value="1"/>
         <Response value="Nothing"/>
         <Attributes index="Armored" value="1"/>
@@ -4700,14 +4618,14 @@
         <CostResource index="Minerals" value="1500"/>
         <RepairTime value="2"/>
         <KillXP value="4"/>
-        <AbilArray Link="ReturnAirport"/>
+        <AbilArray Link="CNCReturnToTheAirport"/>
         <BehaviorArray Link="RAMovementSpeedAndArmor20Percent122"/>
         <BehaviorArray Link="UpgradeLevel12242"/>
         <BehaviorArray Link="RAMovementSpeedAndArmor20Percent1222"/>
         <BehaviorArray Link="RAMovementSpeedAndArmor20Percent362"/>
         <WeaponArray Link="90mmCannons24"/>
         <CardLayouts index="0">
-            <LayoutButtons Face="ReturnAirport" Type="AbilCmd" AbilCmd="ReturnAirport,Execute" Row="1" Column="0"/>
+            <LayoutButtons Face="ReturnAirport" Type="AbilCmd" AbilCmd="CNCReturnToTheAirport,255" Row="1" Column="0"/>
         </CardLayouts>
         <Radius value="1"/>
         <SeparationRadius value="1"/>
@@ -4718,7 +4636,6 @@
     </CUnit>
     <CUnit id="CnH20StealthBomber" parent="ChinaAir">
         <Subtitle value="UnitSubtitle/hangk"/>
-        
         <Collide index="FlyingEscorts" value="1"/>
         <Response value="Nothing"/>
         <Attributes index="Armored" value="1"/>
@@ -4737,7 +4654,7 @@
         <CostResource index="Minerals" value="3000"/>
         <RepairTime value="2"/>
         <KillXP value="10"/>
-        <AbilArray Link="ReturnAirport"/>
+        <AbilArray Link="CNCReturnToTheAirport"/>
         <BehaviorArray Link="RAMovementSpeedAndArmor20Percent122"/>
         <BehaviorArray Link="UpgradeLevel122"/>
         <BehaviorArray Link="RAMovementSpeedAndArmor20Percent1222"/>
@@ -4745,7 +4662,7 @@
         <BehaviorArray Link="RAMovementSpeedAndArmor20Percent52"/>
         <WeaponArray Link="90mmCannons242"/>
         <CardLayouts index="0">
-            <LayoutButtons Face="ReturnAirport" Type="AbilCmd" AbilCmd="ReturnAirport,Execute" Row="1" Column="0"/>
+            <LayoutButtons Face="ReturnAirport" Type="AbilCmd" AbilCmd="CNCReturnToTheAirport,255" Row="1" Column="0"/>
         </CardLayouts>
         <Radius value="1.5"/>
         <SeparationRadius value="1.5"/>
@@ -4755,7 +4672,6 @@
     </CUnit>
     <CUnit id="CnYaoguangSpaceStrikePlatform" parent="ChinaAir">
         <Subtitle value="UnitSubtitle/hangk"/>
-        
         <PushPriority value="15"/>
         <Collide index="FlyingEscorts" value="1"/>
         <Response value="Nothing"/>
@@ -4796,7 +4712,6 @@
     </CUnit>
     <CUnit id="CnJ10RaptorFigher" parent="ChinaAir">
         <Subtitle value="UnitSubtitle/hangk"/>
-        
         <Collide index="FlyingEscorts" value="1"/>
         <Attributes index="Light" value="1"/>
         <Attributes index="Mechanical" value="1"/>
@@ -4827,7 +4742,6 @@
     </CUnit>
     <CUnit id="ChinaB29HeavyBomber" parent="ChinaAir">
         <Subtitle value="UnitSubtitle/hangk"/>
-        
         <Collide index="FlyingEscorts" value="1"/>
         <DefaultAcquireLevel value="Defensive"/>
         <Response value="Nothing"/>
@@ -4861,7 +4775,6 @@
     </CUnit>
     <CUnit id="CnLightBomber" parent="ChinaAir">
         <Subtitle value="UnitSubtitle/hangk"/>
-        
         <Collide index="FlyingEscorts" value="1"/>
         <DefaultAcquireLevel value="Defensive"/>
         <Response value="Nothing"/>
@@ -4884,7 +4797,6 @@
         <ScoreMake value="50"/>
         <ScoreKillCostFactor index="Minerals" value="1.25"/>
         <ScoreKillCostFactor index="Vespene" value="1.25"/>
-        <SubgroupPriority value="15"/>
         <MinimapRadius value="0.375"/>
         <GlossaryPriority value="160"/>
         <GlossaryStrongArray value="SJViking"/>
@@ -5126,7 +5038,7 @@
         <CostResource index="Vespene" value="25"/>
         <RepairTime value="45"/>
         <KillXP value="2"/>
-        <BehaviorArray Link="UpgradeLevel125"/>
+        <BehaviorArray Link="T2unitveteranbehaviorantiaircraftcrawler"/>
         <BehaviorArray Link="JuAirDamageReduce"/>
         <BehaviorArray Link="nianayaLevel1"/>
         <WeaponArray Link="47mm2" Turret="SiegeTank"/>
@@ -5193,7 +5105,6 @@
         </CardLayouts>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
-        <CargoSize value="1"/>
         <SubgroupPriority value="14"/>
         <MinimapRadius value="0.3"/>
         <ReviveInfoBase>
@@ -5514,7 +5425,6 @@
         <ScoreKillCostFactor index="Minerals" value="1.25"/>
         <ScoreKillCostFactor index="Vespene" value="1.25"/>
         <ScoreResult value="Units"/>
-        <SubgroupPriority value="15"/>
         <MinimapRadius value="0.375"/>
         <TacticalAI value="SiegeTank"/>
         <AIEvalFactor value="1.5"/>
@@ -5641,7 +5551,6 @@
         </CardLayouts>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
-        <CargoSize value="1"/>
         <SubgroupPriority value="14"/>
         <MinimapRadius value="0.3"/>
         <ReviveInfoBase>
@@ -5942,7 +5851,6 @@
         </CardLayouts>
         <Radius value="0.4375"/>
         <SeparationRadius value="0.4375"/>
-        <CargoSize value="1"/>
         <ScoreKillCostFactor index="Minerals" value="1.25"/>
         <ScoreKillCostFactor index="Vespene" value="1.25"/>
         <SubgroupPriority value="16"/>
@@ -6050,7 +5958,6 @@
             <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
         </CardLayouts>
         <InnerRadius value="0.5"/>
-        <CargoSize value="1"/>
         <ScoreMake value="500000"/>
         <ScoreKill value="100"/>
         <SubgroupPriority value="100"/>
@@ -6149,7 +6056,6 @@
         <ScoreKillCostFactor index="Minerals" value="1.25"/>
         <ScoreKillCostFactor index="Vespene" value="1.25"/>
         <ScoreResult value="Units"/>
-        <SubgroupPriority value="15"/>
         <MinimapRadius value="0.375"/>
     </CUnit>
     <CUnit id="SuConscript" parent="SovietGround">
@@ -6192,7 +6098,6 @@
         </CardLayouts>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
-        <CargoSize value="1"/>
         <ScoreKillCostFactor index="Minerals" value="1.25"/>
         <ScoreKillCostFactor index="Vespene" value="1.25"/>
         <SubgroupPriority value="18"/>
@@ -6401,13 +6306,11 @@
         </CardLayouts>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
-        <CargoSize value="1"/>
         <SubgroupPriority value="5"/>
         <MinimapRadius value="0.3"/>
     </CUnit>
     <CUnit id="AuAttackDog" parent="AlliedGround">
         <Subtitle value="UnitSubtitle/gbing"/>
-        
         <PushPriority value="5"/>
         <Response value="AcquireNoFlee"/>
         <Attributes index="Light" value="1"/>
@@ -6432,13 +6335,11 @@
         </CardLayouts>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
-        <CargoSize value="1"/>
         <SubgroupPriority value="5"/>
         <MinimapRadius value="0.3"/>
     </CUnit>
     <CUnit id="CnDragonFlame" parent="ChinaGround">
         <Subtitle value="UnitSubtitle/jiqiang"/>
-        
         <PushPriority value="5"/>
         <Response value="AcquireNoFlee"/>
         <Attributes index="Light" value="1"/>
@@ -6464,7 +6365,6 @@
         </CardLayouts>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
-        <CargoSize value="1"/>
         <ScoreKillCostFactor index="Minerals" value="1.25"/>
         <ScoreKillCostFactor index="Vespene" value="1.25"/>
         <SubgroupPriority value="10"/>
@@ -6476,7 +6376,6 @@
     </CUnit>
     <CUnit id="AuCombatEngineer" parent="AlliedGround">
         <Subtitle value="UnitSubtitle/gbing"/>
-        
         <PushPriority value="5"/>
         <Collide index="Small" value="1"/>
         <DefaultAcquireLevel value="Defensive"/>
@@ -6512,14 +6411,12 @@
         </CardLayouts>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
-        <CargoSize value="1"/>
         <SubgroupPriority value="5"/>
         <MinimapRadius value="0.3"/>
         <TacticalAI value="Medic"/>
         <AIEvaluateAlias value="Medic"/>
     </CUnit>
     <CUnit id="AuProspector" parent="AlliedGround">
-        
         <FlagArray index="Worker" value="1"/>
         <FlagArray index="TurnBeforeMove" value="1"/>
         <FlagArray index="ClearRallyOnTargetLost" value="0"/>
@@ -6564,7 +6461,6 @@
         <FlagArray index="TurnBeforeMove" value="1"/>
         <FlagArray index="ClearRallyOnTargetLost" value="0"/>
         <Facing value="45"/>
-        
         <Collide index="Small" value="1"/>
         <Attributes index="Armored" value="1"/>
         <Attributes index="Mechanical" value="1"/>
@@ -6602,7 +6498,6 @@
     </CUnit>
     <CUnit id="AuFrozenLegion" parent="AlliedGround">
         <Subtitle value="UnitSubtitle/fantanke"/>
-        
         <FlagArray index="AISplash" value="1"/>
         <Collide index="Small" value="1"/>
         <Response value="AcquireNoFlee"/>
@@ -6629,13 +6524,11 @@
             <LayoutButtons Face="AutechBeidongSet14" Type="Passive" Requirements="StortModeRe215" Row="2" Column="0"/>
             <LayoutButtons Face="AutechBeidongSet15" Type="Passive" Requirements="StortModeRe220" Row="2" Column="1"/>
         </CardLayouts>
-        <CargoSize value="1"/>
         <SubgroupPriority value="5"/>
         <AIEvaluateAlias value="Firebat"/>
     </CUnit>
     <CUnit id="AlliedBattleFortress" parent="AlliedGround">
         <Subtitle value="UnitSubtitle/xianjintanke"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <PushPriority value="21"/>
         <Collide index="Small" value="1"/>
@@ -6697,7 +6590,6 @@
     </CUnit>
     <CUnit id="AlliedPrismTank" parent="AlliedGround">
         <Subtitle value="UnitSubtitle/zhuangjia"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <Collide index="Small" value="1"/>
         <Response value="AcquireNoFlee"/>
@@ -6737,7 +6629,6 @@
     </CUnit>
     <CUnit id="AlliedSpectralTank" parent="AlliedGround">
         <Subtitle value="UnitSubtitle/zhuangjia"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <Collide index="Small" value="1"/>
         <Response value="AcquireNoFlee"/>
@@ -6774,7 +6665,6 @@
     </CUnit>
     <CUnit id="AlliedRiptide" parent="AlliedGround">
         <Subtitle value="UnitSubtitle/zhencha"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <Collide index="Small" value="1"/>
         <Response value="AcquireNoFlee"/>
@@ -6815,7 +6705,6 @@
     </CUnit>
     <CUnit id="AlliedAnnihilatorCannon" parent="AlliedGround">
         <Subtitle value="UnitSubtitle/huopaoying"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <Collide index="Small" value="1"/>
         <Response value="AcquireNoFlee"/>
@@ -6855,7 +6744,6 @@
     </CUnit>
     <CUnit id="AuSpy" parent="AlliedGround">
         <Subtitle value="UnitSubtitle/mengjunbubing"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <PushPriority value="5"/>
         <Collide index="Small" value="1"/>
@@ -6881,14 +6769,12 @@
         </CardLayouts>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
-        <CargoSize value="1"/>
         <SubgroupPriority value="18"/>
         <TacticalAI value="GhostCloaked"/>
         <AIEvaluateAlias value="Ghost"/>
     </CUnit>
     <CUnit id="AlliedSniper" parent="AlliedGround">
         <Subtitle value="UnitSubtitle/zhencha"/>
-        
         <Collide index="Small" value="1"/>
         <Response value="AcquireNoFlee"/>
         <Attributes index="Light" value="1"/>
@@ -6921,7 +6807,6 @@
         </CardLayouts>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
-        <CargoSize value="1"/>
         <ScoreKillCostFactor index="Minerals" value="1.25"/>
         <ScoreKillCostFactor index="Vespene" value="1.25"/>
         <SubgroupPriority value="19"/>
@@ -6938,7 +6823,6 @@
     </CUnit>
     <CUnit id="AlliedLightTank" parent="AlliedGround">
         <Subtitle value="UnitSubtitle/zhuangjia"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <PushPriority value="5"/>
         <Collide index="Small" value="1"/>
@@ -6982,7 +6866,6 @@
     </CUnit>
     <CUnit id="AlliedDestroyerTank" parent="AlliedGround">
         <Subtitle value="UnitSubtitle/zhuangjia"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <Collide index="Small" value="1"/>
         <Response value="AcquireNoFlee"/>
@@ -7022,7 +6905,6 @@
     </CUnit>
     <CUnit id="AuPeaceKeeper" parent="AlliedGround">
         <Subtitle value="UnitSubtitle/jiqiang"/>
-        
         <PushPriority value="5"/>
         <Collide index="Small" value="1"/>
         <Response value="AcquireNoFlee"/>
@@ -7050,7 +6932,6 @@
         </CardLayouts>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
-        <CargoSize value="1"/>
         <ScoreKillCostFactor index="Minerals" value="1.25"/>
         <ScoreKillCostFactor index="Vespene" value="1.25"/>
         <SubgroupPriority value="19"/>
@@ -7059,7 +6940,6 @@
         <AIEvaluateAlias value="Marine"/>
     </CUnit>
     <CUnit id="AuTanya" parent="AlliedGround">
-        
         <Attributes index="Light" value="1"/>
         <Attributes index="Biological" value="1"/>
         <Attributes index="Heroic" value="1"/>
@@ -7097,7 +6977,6 @@
             <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
         </CardLayouts>
         <InnerRadius value="0.5"/>
-        <CargoSize value="1"/>
         <ScoreKill value="100"/>
         <SubgroupPriority value="100"/>
         <TacticalAI value="Marine"/>
@@ -7110,7 +6989,6 @@
     </CUnit>
     <CUnit id="AlliedIFV" parent="AlliedGround">
         <Subtitle value="UnitSubtitle/zhuangjia"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <PushPriority value="9"/>
         <Collide index="Small" value="1"/>
@@ -7160,7 +7038,6 @@
     </CUnit>
     <CUnit id="AlliedPatriotTank" parent="AlliedGround">
         <Subtitle value="UnitSubtitle/zhuangjia"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <Collide index="Small" value="1"/>
         <Response value="AcquireNoFlee"/>
@@ -7198,7 +7075,6 @@
     </CUnit>
     <CUnit id="AlliedMirageTankMK0" parent="AlliedGround">
         <Subtitle value="UnitSubtitle/xianjintanke"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <PushPriority value="20"/>
         <Collide index="Small" value="1"/>
@@ -7237,7 +7113,6 @@
     </CUnit>
     <CUnit id="AlliedFrozenTank" parent="AlliedGround">
         <Subtitle value="UnitSubtitle/zhuangjia"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <Collide index="Small" value="1"/>
         <Response value="AcquireNoFlee"/>
@@ -7282,7 +7157,6 @@
     </CUnit>
     <CUnit id="AlliedAthenaTank" parent="AlliedGround">
         <Subtitle value="UnitSubtitle/huopaoying2"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <PushPriority value="15"/>
         <Collide index="Small" value="1"/>
@@ -7329,7 +7203,6 @@
     </CUnit>
     <CUnit id="AuPacifierFAV" parent="AlliedGround">
         <Subtitle value="UnitSubtitle/pingdingzhe"/>
-        
         <FlagArray index="TurnBeforeMove" value="1"/>
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <PushPriority value="22"/>
@@ -7375,7 +7248,6 @@
     </CUnit>
     <CUnit id="AuFutureTank" parent="AlliedGround">
         <Subtitle value="UnitSubtitle/xianjintanke"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <PushPriority value="21"/>
         <Collide index="Small" value="1"/>
@@ -7412,13 +7284,11 @@
         <InnerRadius value="0.25"/>
         <ScoreKillCostFactor index="Minerals" value="1.25"/>
         <ScoreKillCostFactor index="Vespene" value="1.25"/>
-        <SubgroupPriority value="15"/>
         <MinimapRadius value="0.375"/>
         <GlossaryPriority value="470"/>
     </CUnit>
     <CUnit id="AlliedMirageTank" parent="AlliedGround">
         <Subtitle value="UnitSubtitle/xianjintanke"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <PushPriority value="21"/>
         <Collide index="Small" value="1"/>
@@ -7465,7 +7335,6 @@
     </CUnit>
     <CUnit id="AuCryoLegionnaire" parent="AlliedGround">
         <Subtitle value="UnitSubtitle/fantanke"/>
-        
         <FlagArray index="AISplash" value="1"/>
         <PushPriority value="15"/>
         <Response value="AcquireNoFlee"/>
@@ -7488,12 +7357,10 @@
         <CardLayouts index="0">
             <LayoutButtons Face="TossGrenadeTychus2222275323" Type="AbilCmd" AbilCmd="AucryoShrinBeam,Execute" Row="1" Column="1"/>
         </CardLayouts>
-        <CargoSize value="1"/>
         <SubgroupPriority value="5"/>
     </CUnit>
     <CUnit id="AlliedExplorerGunTank" parent="AlliedGround">
         <Subtitle value="UnitSubtitle/huopaoying"/>
-        
         <Response value="AcquireNoFlee"/>
         <LifeStart value="1600"/>
         <LifeMax value="1600"/>
@@ -7524,7 +7391,6 @@
     </CUnit>
     <CUnit id="AlliedGuardianTank" parent="AlliedGround">
         <Subtitle value="UnitSubtitle/zhuangjia"/>
-        
         <Response value="AcquireNoFlee"/>
         <LifeStart value="120"/>
         <LifeMax value="120"/>
@@ -7545,7 +7411,7 @@
         <WeaponArray Link="GDIStrikerMechaRoller"/>
         <CardLayouts index="0">
             <LayoutButtons index="1" Face="Stop" Type="AbilCmd" AbilCmd="move,HoldPos" Row="0" Column="1"/>
-            <LayoutButtons index="5" Face="TossGrenadeTychus2222273" Type="AbilCmd" AbilCmd="SuMotoModeSwhich3,On" Row="1" Column="0"/>
+            <LayoutButtons Face="TossGrenadeTychus2222273" Type="AbilCmd" AbilCmd="SuMotoModeSwhich3,On" Row="1" Column="0"/>
             <LayoutButtons>
                 <Face value="AutechBeidongSet27"/>
                 <Type value="Passive"/>
@@ -7574,7 +7440,6 @@
     </CUnit>
     <CUnit id="AlliedGrizzlyBattleTank" parent="AlliedGround">
         <Subtitle value="UnitSubtitle/zhuangjia"/>
-        
         <Response value="AcquireNoFlee"/>
         <LifeStart value="150"/>
         <LifeMax value="150"/>
@@ -7601,7 +7466,6 @@
     </CUnit>
     <CUnit id="AlliedAntiAircraftTank" parent="AlliedGround">
         <Subtitle value="UnitSubtitle/zhuangjia"/>
-        
         <Response value="AcquireNoFlee"/>
         <LifeStart value="1050"/>
         <LifeMax value="1050"/>
@@ -7628,7 +7492,6 @@
     </CUnit>
     <CUnit id="AuRocketInfantry" parent="AlliedGround">
         <Subtitle value="UnitSubtitle/fantanke"/>
-        
         <PushPriority value="5"/>
         <Collide index="Locust" value="0"/>
         <Response value="AcquireNoFlee"/>
@@ -7652,13 +7515,11 @@
         </CardLayouts>
         <Radius value="0.4375"/>
         <SeparationRadius value="0.4375"/>
-        <CargoSize value="1"/>
         <ScoreResult value=""/>
         <MinimapRadius value="0.3"/>
     </CUnit>
     <CUnit id="JapanTankKiller" parent="JapanGround">
         <Subtitle value="UnitSubtitle/fantanke"/>
-        
         <PushPriority value="5"/>
         <Response value="AcquireNoFlee"/>
         <Attributes index="Light" value="1"/>
@@ -7679,7 +7540,6 @@
         <CardLayouts/>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
-        <CargoSize value="1"/>
         <ScoreKillCostFactor index="Minerals" value="1.25"/>
         <ScoreKillCostFactor index="Vespene" value="1.25"/>
         <SubgroupPriority value="25"/>
@@ -7688,7 +7548,6 @@
     </CUnit>
     <CUnit id="JapanShinobi" parent="JapanGround">
         <Subtitle value="UnitSubtitle/zhencha"/>
-        
         <Response value="AcquireNoFlee"/>
         <Attributes index="Light" value="1"/>
         <Attributes index="Biological" value="1"/>
@@ -7712,7 +7571,6 @@
         </CardLayouts>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
-        <CargoSize value="1"/>
         <ScoreKillCostFactor index="Minerals" value="1.25"/>
         <ScoreKillCostFactor index="Vespene" value="1.25"/>
         <SubgroupPriority value="25"/>
@@ -7721,7 +7579,6 @@
     </CUnit>
     <CUnit id="JapanYurikoOmega" parent="JapanGround">
         <Description value="Button/Tooltip/JuYurico"/>
-        
         <PushPriority value="21"/>
         <Collide index="Small" value="1"/>
         <Attributes index="Light" value="1"/>
@@ -7764,7 +7621,6 @@
             <LayoutButtons Face="Cancel" Type="CancelSubmenu" Row="2" Column="4"/>
         </CardLayouts>
         <InnerRadius value="0.5"/>
-        <CargoSize value="1"/>
         <ScoreMake value="500000"/>
         <ScoreKill value="100"/>
         <SubgroupPriority value="100"/>
@@ -7778,7 +7634,6 @@
     </CUnit>
     <CUnit id="JpImperialEngineer" parent="JapanGround">
         <Subtitle value="UnitSubtitle/gbing"/>
-        
         <PushPriority value="5"/>
         <DefaultAcquireLevel value="Defensive"/>
         <Response value="AcquireNoFlee"/>
@@ -7809,12 +7664,10 @@
         </CardLayouts>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
-        <CargoSize value="1"/>
         <SubgroupPriority value="5"/>
         <MinimapRadius value="0.3"/>
     </CUnit>
     <CUnit id="JpImperialOreMiner" parent="JapanGround">
-        
         <FlagArray index="Worker" value="1"/>
         <FlagArray index="TurnBeforeMove" value="1"/>
         <FlagArray index="ClearRallyOnTargetLost" value="0"/>
@@ -7861,7 +7714,6 @@
     </CUnit>
     <CUnit id="JapanSuddenFav" parent="JapanGround">
         <Subtitle value="UnitSubtitle/zhencha"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <PushPriority value="5"/>
         <Collide index="Small" value="1"/>
@@ -7898,7 +7750,6 @@
     </CUnit>
     <CUnit id="JapanGhostKingK" parent="JapanGround">
         <Subtitle value="UnitSubtitle/xianjinfantankepao"/>
-        
         <FogVisibility value="Dimmed"/>
         <PushPriority value="21"/>
         <Collide index="Small" value="1"/>
@@ -7945,7 +7796,6 @@
     </CUnit>
     <CUnit id="JapanGhostKing" parent="JapanGround">
         <Subtitle value="UnitSubtitle/xianjinfantankepao"/>
-        
         <FogVisibility value="Dimmed"/>
         <PushPriority value="15"/>
         <Collide index="Small" value="1"/>
@@ -7991,7 +7841,6 @@
     </CUnit>
     <CUnit id="JapanTsunamiTank" parent="JapanGround">
         <Subtitle value="UnitSubtitle/zhuangjia"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <Collide index="Small" value="1"/>
         <Response value="AcquireNoFlee"/>
@@ -8031,7 +7880,6 @@
     </CUnit>
     <CUnit id="JapanSteelRonin" parent="JapanGround">
         <Subtitle value="UnitSubtitle/xianjinfantankepao"/>
-        
         <FogVisibility value="Dimmed"/>
         <PushPriority value="15"/>
         <Collide index="Small" value="1"/>
@@ -8075,7 +7923,6 @@
     </CUnit>
     <CUnit id="JpImperialwarrior" parent="JapanGround">
         <Subtitle value="UnitSubtitle/jiqiang"/>
-        
         <PushPriority value="5"/>
         <Response value="AcquireNoFlee"/>
         <Attributes index="Light" value="1"/>
@@ -8103,15 +7950,12 @@
         </CardLayouts>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
-        <CargoSize value="1"/>
         <ScoreKillCostFactor index="Minerals" value="1.25"/>
         <ScoreKillCostFactor index="Vespene" value="1.25"/>
-        <SubgroupPriority value="15"/>
         <MinimapRadius value="0.3"/>
     </CUnit>
     <CUnit id="JapanRazorTank" parent="JapanGround">
         <Subtitle value="UnitSubtitle/zhuangjia"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <Collide index="Small" value="1"/>
         <Response value="AcquireNoFlee"/>
@@ -8155,7 +7999,6 @@
     </CUnit>
     <CUnit id="JapanHoverMecha" parent="JapanGround">
         <Subtitle value="UnitSubtitle/zhuangjia"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <PushPriority value="5"/>
         <Collide index="Small" value="1"/>
@@ -8194,7 +8037,6 @@
     </CUnit>
     <CUnit id="JapanWaveForceArtillery" parent="JapanGround">
         <Subtitle value="UnitSubtitle/xianjintanke"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <PushPriority value="16"/>
         <Collide index="Small" value="1"/>
@@ -8227,7 +8069,6 @@
         <SeparationRadius value="0.6875"/>
         <InnerRadius value="0.1875"/>
         <CargoSize value="4"/>
-        <SubgroupPriority value="15"/>
         <MinimapRadius value="0.375"/>
         <TacticalAI value="SiegeTank"/>
         <AIEvalFactor value="1.5"/>
@@ -8239,7 +8080,6 @@
         </ReviveInfoBase>
     </CUnit>
     <CUnit id="JpTengoMechaMechaMode" parent="JapanGround">
-        
         <FlagArray index="AIThreatGround" value="1"/>
         <FlagArray index="AIThreatAir" value="1"/>
         <Collide index="Small" value="1"/>
@@ -8277,7 +8117,6 @@
         </Fidget>
     </CUnit>
     <CUnit id="JpStrikerVX" parent="JapanGround">
-        
         <FlagArray index="AIThreatGround" value="1"/>
         <FlagArray index="AIThreatAir" value="1"/>
         <Collide index="Small" value="1"/>
@@ -8318,7 +8157,6 @@
     </CUnit>
     <CUnit id="JpGigaFortressGrounded" parent="JapanGround">
         <Subtitle value="UnitSubtitle/chaojiyaosai"/>
-        
         <FlagArray index="NoPortraitTalk" value="1"/>
         <FlagArray index="ArmorDisabledWhileConstructing" value="1"/>
         <PushPriority value="21"/>
@@ -8375,7 +8213,6 @@
         </Fidget>
     </CUnit>
     <CUnit id="JpMiniFortressSeaMode" parent="JapanGround">
-        
         <FlagArray index="Invulnerable" value="1"/>
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <Collide index="Small" value="1"/>
@@ -8430,7 +8267,6 @@
     </CUnit>
     <CUnit id="JapanKingOniX" parent="JapanGround">
         <Subtitle value="UnitSubtitle/xianjinfantankepao"/>
-        
         <FogVisibility value="Dimmed"/>
         <PushPriority value="21"/>
         <Collide index="Small" value="1"/>
@@ -8478,7 +8314,6 @@
     <CUnit id="JapanArcherMaiden" parent="JapanGround">
         <Subtitle value="UnitSubtitle/fantanke"/>
         <Description value="Button/Tooltip/JuArrow"/>
-        
         <Response value="AcquireNoFlee"/>
         <Attributes index="Light" value="1"/>
         <Attributes index="Biological" value="1"/>
@@ -8504,14 +8339,12 @@
         </CardLayouts>
         <Radius value="0.4375"/>
         <SeparationRadius value="0.4375"/>
-        <CargoSize value="1"/>
         <ScoreKillCostFactor index="Minerals" value="1.25"/>
         <ScoreKillCostFactor index="Vespene" value="1.25"/>
         <SubgroupPriority value="25"/>
         <MinimapRadius value="0.3"/>
     </CUnit>
     <CUnit id="JpNanoSwarmCore" parent="JapanGround">
-        
         <FlagArray index="Worker" value="1"/>
         <Collide index="Small" value="1"/>
         <DefaultAcquireLevel value="Defensive"/>
@@ -8543,7 +8376,6 @@
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
         <InnerRadius value="0.375"/>
-        <CargoSize value="1"/>
         <ScoreMake value="60000"/>
         <ScoreKill value="6000"/>
         <SubgroupPriority value="6"/>
@@ -8557,7 +8389,6 @@
         </Fidget>
     </CUnit>
     <CUnit id="JpPowerPlantCore" parent="JapanGround">
-        
         <FlagArray index="Worker" value="1"/>
         <Collide index="Small" value="1"/>
         <DefaultAcquireLevel value="Defensive"/>
@@ -8588,7 +8419,6 @@
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
         <InnerRadius value="0.375"/>
-        <CargoSize value="1"/>
         <ScoreMake value="60000"/>
         <ScoreKill value="6000"/>
         <SubgroupPriority value="6"/>
@@ -8602,7 +8432,6 @@
         </Fidget>
     </CUnit>
     <CUnit id="JpRefineryCore" parent="JapanGround">
-        
         <FlagArray index="Worker" value="1"/>
         <Collide index="Small" value="1"/>
         <DefaultAcquireLevel value="Defensive"/>
@@ -8633,7 +8462,6 @@
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
         <InnerRadius value="0.375"/>
-        <CargoSize value="1"/>
         <ScoreMake value="60000"/>
         <ScoreKill value="6000"/>
         <SubgroupPriority value="6"/>
@@ -8647,7 +8475,6 @@
         </Fidget>
     </CUnit>
     <CUnit id="JpDojoCore" parent="JapanGround">
-        
         <FlagArray index="Worker" value="1"/>
         <Collide index="Small" value="1"/>
         <DefaultAcquireLevel value="Defensive"/>
@@ -8678,7 +8505,6 @@
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
         <InnerRadius value="0.375"/>
-        <CargoSize value="1"/>
         <ScoreMake value="60000"/>
         <ScoreKill value="6000"/>
         <SubgroupPriority value="6"/>
@@ -8692,7 +8518,6 @@
         </Fidget>
     </CUnit>
     <CUnit id="JpWarFactoryCore" parent="JapanGround">
-        
         <FlagArray index="Worker" value="1"/>
         <Collide index="Small" value="1"/>
         <DefaultAcquireLevel value="Defensive"/>
@@ -8723,7 +8548,6 @@
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
         <InnerRadius value="0.375"/>
-        <CargoSize value="1"/>
         <ScoreMake value="60000"/>
         <ScoreKill value="6000"/>
         <SubgroupPriority value="6"/>
@@ -8737,7 +8561,6 @@
         </Fidget>
     </CUnit>
     <CUnit id="JpMechFactoryCore" parent="JapanGround">
-        
         <FlagArray index="Worker" value="1"/>
         <Collide index="Small" value="1"/>
         <DefaultAcquireLevel value="Defensive"/>
@@ -8768,7 +8591,6 @@
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
         <InnerRadius value="0.375"/>
-        <CargoSize value="1"/>
         <ScoreMake value="60000"/>
         <ScoreKill value="6000"/>
         <SubgroupPriority value="6"/>
@@ -8782,7 +8604,6 @@
         </Fidget>
     </CUnit>
     <CUnit id="JpNanoHostCore" parent="JapanGround">
-        
         <FlagArray index="Worker" value="1"/>
         <Collide index="Small" value="1"/>
         <DefaultAcquireLevel value="Defensive"/>
@@ -8814,7 +8635,6 @@
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
         <InnerRadius value="0.375"/>
-        <CargoSize value="1"/>
         <ScoreMake value="60000"/>
         <ScoreKill value="6000"/>
         <SubgroupPriority value="6"/>
@@ -8828,7 +8648,6 @@
         </Fidget>
     </CUnit>
     <CUnit id="JpRadarCore" parent="JapanGround">
-        
         <FlagArray index="Worker" value="1"/>
         <Collide index="Small" value="1"/>
         <DefaultAcquireLevel value="Defensive"/>
@@ -8860,7 +8679,6 @@
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
         <InnerRadius value="0.375"/>
-        <CargoSize value="1"/>
         <ScoreMake value="60000"/>
         <ScoreKill value="6000"/>
         <SubgroupPriority value="6"/>
@@ -8874,7 +8692,6 @@
         </Fidget>
     </CUnit>
     <CUnit id="JpAntitankbunkercore" parent="JapanGround">
-        
         <FlagArray index="Worker" value="1"/>
         <Collide index="Small" value="1"/>
         <DefaultAcquireLevel value="Defensive"/>
@@ -8905,7 +8722,6 @@
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
         <InnerRadius value="0.375"/>
-        <CargoSize value="1"/>
         <ScoreMake value="60000"/>
         <ScoreKill value="6000"/>
         <SubgroupPriority value="6"/>
@@ -8919,7 +8735,6 @@
         </Fidget>
     </CUnit>
     <CUnit id="JpType92InfantrysupportgunCore" parent="JapanGround">
-        
         <FlagArray index="Worker" value="1"/>
         <Collide index="Small" value="1"/>
         <DefaultAcquireLevel value="Defensive"/>
@@ -8951,7 +8766,6 @@
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
         <InnerRadius value="0.375"/>
-        <CargoSize value="1"/>
         <ScoreMake value="60000"/>
         <ScoreKill value="6000"/>
         <SubgroupPriority value="6"/>
@@ -8965,7 +8779,6 @@
         </Fidget>
     </CUnit>
     <CUnit id="JpDefenderCore" parent="JapanGround">
-        
         <FlagArray index="Worker" value="1"/>
         <Collide index="Small" value="1"/>
         <DefaultAcquireLevel value="Defensive"/>
@@ -8996,7 +8809,6 @@
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
         <InnerRadius value="0.375"/>
-        <CargoSize value="1"/>
         <ScoreMake value="60000"/>
         <ScoreKill value="6000"/>
         <SubgroupPriority value="6"/>
@@ -9010,7 +8822,6 @@
         </Fidget>
     </CUnit>
     <CUnit id="JpHeavyGunCore" parent="JapanGround">
-        
         <FlagArray index="Worker" value="1"/>
         <Collide index="Small" value="1"/>
         <DefaultAcquireLevel value="Defensive"/>
@@ -9042,7 +8853,6 @@
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
         <InnerRadius value="0.375"/>
-        <CargoSize value="1"/>
         <ScoreMake value="60000"/>
         <ScoreKill value="6000"/>
         <SubgroupPriority value="6"/>
@@ -9056,7 +8866,6 @@
         </Fidget>
     </CUnit>
     <CUnit id="JpTowerCore" parent="JapanGround">
-        
         <FlagArray index="Worker" value="1"/>
         <Collide index="Small" value="1"/>
         <DefaultAcquireLevel value="Defensive"/>
@@ -9087,7 +8896,6 @@
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
         <InnerRadius value="0.375"/>
-        <CargoSize value="1"/>
         <ScoreMake value="60000"/>
         <ScoreKill value="6000"/>
         <SubgroupPriority value="6"/>
@@ -9101,7 +8909,6 @@
         </Fidget>
     </CUnit>
     <CUnit id="JpWaveEnergyThreeGunCores" parent="JapanGround">
-        
         <FlagArray index="Worker" value="1"/>
         <Collide index="Small" value="1"/>
         <DefaultAcquireLevel value="Defensive"/>
@@ -9132,7 +8939,6 @@
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
         <InnerRadius value="0.375"/>
-        <CargoSize value="1"/>
         <ScoreMake value="60000"/>
         <ScoreKill value="6000"/>
         <SubgroupPriority value="6"/>
@@ -9146,7 +8952,6 @@
         </Fidget>
     </CUnit>
     <CUnit id="JpPlasmaCore" parent="JapanGround">
-        
         <FlagArray index="Worker" value="1"/>
         <Collide index="Small" value="1"/>
         <DefaultAcquireLevel value="Defensive"/>
@@ -9177,7 +8982,6 @@
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
         <InnerRadius value="0.375"/>
-        <CargoSize value="1"/>
         <ScoreMake value="60000"/>
         <ScoreKill value="6000"/>
         <SubgroupPriority value="6"/>
@@ -9191,7 +8995,6 @@
         </Fidget>
     </CUnit>
     <CUnit id="JpNuclearPowerPlantCore" parent="JapanGround">
-        
         <FlagArray index="Worker" value="1"/>
         <Collide index="Small" value="1"/>
         <DefaultAcquireLevel value="Defensive"/>
@@ -9222,7 +9025,6 @@
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
         <InnerRadius value="0.375"/>
-        <CargoSize value="1"/>
         <ScoreMake value="60000"/>
         <ScoreKill value="6000"/>
         <SubgroupPriority value="6"/>
@@ -9236,7 +9038,6 @@
         </Fidget>
     </CUnit>
     <CUnit id="JpDestructiondevicecore" parent="JapanGround">
-        
         <FlagArray index="Worker" value="1"/>
         <Collide index="Small" value="1"/>
         <DefaultAcquireLevel value="Defensive"/>
@@ -9268,7 +9069,6 @@
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
         <InnerRadius value="0.375"/>
-        <CargoSize value="1"/>
         <ScoreMake value="60000"/>
         <ScoreKill value="6000"/>
         <SubgroupPriority value="6"/>
@@ -9282,7 +9082,6 @@
         </Fidget>
     </CUnit>
     <CUnit id="JpGigaFortressCore" parent="JapanGround">
-        
         <FlagArray index="Worker" value="1"/>
         <Collide index="Small" value="1"/>
         <DefaultAcquireLevel value="Defensive"/>
@@ -9312,7 +9111,6 @@
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
         <InnerRadius value="0.375"/>
-        <CargoSize value="1"/>
         <ScoreMake value="60000"/>
         <ScoreKill value="6000"/>
         <SubgroupPriority value="6"/>
@@ -9328,7 +9126,6 @@
     <CUnit id="CnArmorbreakingIronGuard" parent="ChinaGround">
         <Subtitle value="UnitSubtitle/fantanke"/>
         <Description value="Button/Tooltip/Cnpojiatiewei"/>
-        
         <PushPriority value="5"/>
         <Response value="AcquireNoFlee"/>
         <Attributes index="Armored" value="1"/>
@@ -9364,7 +9161,6 @@
         </CardLayouts>
         <Radius value="0.4375"/>
         <SeparationRadius value="0.4375"/>
-        <CargoSize value="1"/>
         <ScoreKillCostFactor index="Minerals" value="1.25"/>
         <ScoreKillCostFactor index="Vespene" value="1.25"/>
         <SubgroupPriority value="12"/>
@@ -9372,7 +9168,6 @@
         <GlossaryPriority value="70"/>
     </CUnit>
     <CUnit id="CnOreMiner" parent="ChinaGround">
-        
         <FlagArray index="Worker" value="1"/>
         <FlagArray index="TurnBeforeMove" value="1"/>
         <FlagArray index="ClearRallyOnTargetLost" value="0"/>
@@ -9416,7 +9211,6 @@
     </CUnit>
     <CUnit id="CnOverlordTank" parent="ChinaGround">
         <Subtitle value="UnitSubtitle/xianjintanke"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <PushPriority value="21"/>
         <Collide index="Small" value="1"/>
@@ -9466,7 +9260,6 @@
     </CUnit>
     <CUnit id="CnOverlordTankBroadcastattachment" parent="ChinaGround">
         <Subtitle value="UnitSubtitle/xianjintanke"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <PushPriority value="21"/>
         <Collide index="Small" value="1"/>
@@ -9500,7 +9293,6 @@
         <InnerRadius value="0.1875"/>
         <CargoSize value="4"/>
         <ScoreResult value="Units"/>
-        <SubgroupPriority value="15"/>
         <MinimapRadius value="0.375"/>
         <TacticalAI value="SiegeTank"/>
         <AIEvalFactor value="1.5"/>
@@ -9513,7 +9305,6 @@
     </CUnit>
     <CUnit id="CnOverlordTankGunattachment" parent="ChinaGround">
         <Subtitle value="UnitSubtitle/xianjintanke"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <PushPriority value="21"/>
         <Collide index="Small" value="1"/>
@@ -9545,7 +9336,6 @@
         <InnerRadius value="0.1875"/>
         <CargoSize value="4"/>
         <ScoreResult value="Units"/>
-        <SubgroupPriority value="15"/>
         <MinimapRadius value="0.375"/>
         <TacticalAI value="SiegeTank"/>
         <AIEvalFactor value="1.5"/>
@@ -9558,7 +9348,6 @@
     </CUnit>
     <CUnit id="CnOverlordTankRocketlauncherattachment" parent="ChinaGround">
         <Subtitle value="UnitSubtitle/xianjintanke"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <PushPriority value="21"/>
         <Collide index="Small" value="1"/>
@@ -9590,7 +9379,6 @@
         <InnerRadius value="0.1875"/>
         <CargoSize value="4"/>
         <ScoreResult value="Units"/>
-        <SubgroupPriority value="15"/>
         <MinimapRadius value="0.375"/>
         <TacticalAI value="SiegeTank"/>
         <AIEvalFactor value="1.5"/>
@@ -9603,7 +9391,6 @@
     </CUnit>
     <CUnit id="ChinaType95AresTank" parent="ChinaGround">
         <Subtitle value="UnitSubtitle/xianjintanke"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <PushPriority value="15"/>
         <Collide index="Small" value="1"/>
@@ -9648,7 +9435,6 @@
     </CUnit>
     <CUnit id="ChinaLongswordTank" parent="ChinaGround">
         <Subtitle value="UnitSubtitle/zhuangjia"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <Collide index="Small" value="1"/>
         <Response value="AcquireNoFlee"/>
@@ -9692,7 +9478,6 @@
     </CUnit>
     <CUnit id="ChinaFlameDragonFireBreathingTank" parent="ChinaGround">
         <Subtitle value="UnitSubtitle/zhuangjia"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <Collide index="Small" value="1"/>
         <Response value="AcquireNoFlee"/>
@@ -9731,7 +9516,6 @@
     </CUnit>
     <CUnit id="ChinaIronGuardCannonTank" parent="ChinaGround">
         <Subtitle value="UnitSubtitle/xianjintanke"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <Collide index="Small" value="1"/>
         <Response value="AcquireNoFlee"/>
@@ -9776,7 +9560,6 @@
     </CUnit>
     <CUnit id="ChinaJeep" parent="ChinaGround">
         <Subtitle value="UnitSubtitle/zhencha"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <PushPriority value="5"/>
         <Collide index="Small" value="1"/>
@@ -9818,7 +9601,6 @@
     </CUnit>
     <CUnit id="CnMagneticcrossbowantiairtank" parent="ChinaGround">
         <Subtitle value="UnitSubtitle/xianjintanke"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <Collide index="Small" value="1"/>
         <Response value="AcquireNoFlee"/>
@@ -9863,7 +9645,6 @@
     </CUnit>
     <CUnit id="CnKirinVehicles" parent="ChinaGround">
         <Subtitle value="UnitSubtitle/zhuangjia"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <Collide index="Small" value="1"/>
         <Response value="AcquireNoFlee"/>
@@ -9899,7 +9680,6 @@
     </CUnit>
     <CUnit id="CnKirinBreakingTank" parent="ChinaGround">
         <Subtitle value="UnitSubtitle/zhuangjia"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <Collide index="Small" value="1"/>
         <Response value="AcquireNoFlee"/>
@@ -9936,7 +9716,6 @@
     </CUnit>
     <CUnit id="ChinaWhiteTigerTank" parent="ChinaGround">
         <Subtitle value="UnitSubtitle/zhuangjia"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <PushPriority value="15"/>
         <Collide index="Small" value="1"/>
@@ -9978,7 +9757,6 @@
     </CUnit>
     <CUnit id="ChinaLingbo" parent="ChinaGround">
         <Subtitle value="UnitSubtitle/zhuangjia"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <PushPriority value="5"/>
         <Collide index="Small" value="1"/>
@@ -10019,7 +9797,6 @@
     </CUnit>
     <CUnit id="ChinaSniper" parent="ChinaGround">
         <Subtitle value="UnitSubtitle/zhencha"/>
-        
         <Collide index="Small" value="1"/>
         <Response value="AcquireNoFlee"/>
         <Attributes index="Light" value="1"/>
@@ -10046,10 +9823,8 @@
         </CardLayouts>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
-        <CargoSize value="1"/>
         <ScoreKillCostFactor index="Minerals" value="1.25"/>
         <ScoreKillCostFactor index="Vespene" value="1.25"/>
-        <SubgroupPriority value="15"/>
         <MinimapRadius value="0.3"/>
         <TacticalAI value="Ghost"/>
         <TacticalAIThink value="AIThinkGhost"/>
@@ -10062,7 +9837,6 @@
     </CUnit>
     <CUnit id="CnQingfengMissileLaunchVehicle" parent="ChinaGround">
         <Subtitle value="UnitSubtitle/zhuangjia"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <Collide index="Small" value="1"/>
         <Response value="AcquireNoFlee"/>
@@ -10101,7 +9875,6 @@
     </CUnit>
     <CUnit id="ChinaZhurongTank" parent="ChinaGround">
         <Subtitle value="UnitSubtitle/zhuangjia"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <PushPriority value="15"/>
         <Collide index="Small" value="1"/>
@@ -10135,7 +9908,6 @@
         <CargoSize value="4"/>
         <ScoreKillCostFactor index="Minerals" value="1.25"/>
         <ScoreKillCostFactor index="Vespene" value="1.25"/>
-        <SubgroupPriority value="15"/>
         <MinimapRadius value="0.375"/>
         <TacticalAI value="SiegeTank"/>
         <AIEvalFactor value="1.5"/>
@@ -10150,7 +9922,6 @@
     </CUnit>
     <CUnit id="ChinaAntiAircrafGunTank" parent="ChinaGround">
         <Subtitle value="UnitSubtitle/huopaoying"/>
-        
         <FlagArray index="AISupport" value="1"/>
         <Response value="AcquireNoFlee"/>
         <LifeStart value="1700"/>
@@ -10181,7 +9952,6 @@
     </CUnit>
     <CUnit id="CnUnionHeavytank" parent="ChinaGround">
         <Subtitle value="UnitSubtitle/xianjintanke"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <PushPriority value="21"/>
         <Collide index="Small" value="1"/>
@@ -10249,7 +10019,6 @@
     <CUnit id="CnMacheteTeam" parent="ChinaGround">
         <Subtitle value="UnitSubtitle/Cnbubingdadaodui"/>
         <Description value="Button/Tooltip/Cndadao"/>
-        
         <PushPriority value="15"/>
         <Collide index="Small" value="1"/>
         <Attributes index="Biological" value="1"/>
@@ -10290,7 +10059,6 @@
     <CUnit id="CnThunderTiangang" parent="ChinaGround">
         <Subtitle value="UnitSubtitle/bubing"/>
         <Description value="Button/Tooltip/Cnxunleitiangang"/>
-        
         <PushPriority value="16"/>
         <Response value="AcquireNoFlee"/>
         <Attributes index="Light" value="1"/>
@@ -10320,14 +10088,12 @@
             <LayoutButtons Face="CnqingfengSpell3" Type="AbilCmd" AbilCmd="RAThunderTiangangSkill,Execute" Row="1" Column="0"/>
             <LayoutButtons Face="TossGrenadeTychus22223" Type="Passive" Row="1" Column="4"/>
         </CardLayouts>
-        <CargoSize value="1"/>
         <ScoreKillCostFactor index="Minerals" value="1.25"/>
         <ScoreKillCostFactor index="Vespene" value="1.25"/>
         <SubgroupPriority value="18"/>
     </CUnit>
     <CUnit id="CnEngineer" parent="ChinaGround">
         <Subtitle value="UnitSubtitle/gbing"/>
-        
         <PushPriority value="5"/>
         <DefaultAcquireLevel value="Defensive"/>
         <Response value="AcquireNoFlee"/>
@@ -10359,7 +10125,6 @@
         </CardLayouts>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
-        <CargoSize value="1"/>
         <SubgroupPriority value="5"/>
         <MinimapRadius value="0.3"/>
         <TacticalAI value="SpecterUnit"/>
@@ -10368,7 +10133,6 @@
     <CUnit id="CnTheLawyerofKnowledge" parent="ChinaGround">
         <Subtitle value="UnitSubtitle/fuhua"/>
         <Description value="Button/Tooltip/fuhua"/>
-        
         <Attributes index="Light" value="1"/>
         <Attributes index="Biological" value="1"/>
         <Attributes index="Heroic" value="1"/>
@@ -10432,7 +10196,6 @@
         </CardLayouts>
         <Radius value="0.375"/>
         <SeparationRadius value="0.375"/>
-        <CargoSize value="1"/>
         <ScoreKill value="20"/>
         <ScoreKillCostFactor index="Minerals" value="1.25"/>
         <ScoreKillCostFactor index="Vespene" value="1.25"/>
@@ -10441,7 +10204,6 @@
     </CUnit>
     <CUnit id="GDIStrikerMecha" parent="GDIGround">
         <Subtitle value="UnitSubtitle/Sujijia"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <Response value="AcquireNoFlee"/>
         <Attributes index="Mechanical" value="1"/>
@@ -10467,7 +10229,6 @@
     </CUnit>
     <CUnit id="GDIJuggernautMecha" parent="GDIGround">
         <Subtitle value="UnitSubtitle/Sujijia"/>
-        
         <FlagArray index="AIPressForwardDisabled" value="1"/>
         <PushPriority value="15"/>
         <Response value="AcquireNoFlee"/>

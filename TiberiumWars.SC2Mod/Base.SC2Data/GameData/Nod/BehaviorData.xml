@@ -2190,7 +2190,6 @@
 
 
 
-
     <CBehaviorBuff id="NodAvatarPilot">
         <InfoFlags index="Hidden" value="1"/>
         <Period value="0.0625"/>

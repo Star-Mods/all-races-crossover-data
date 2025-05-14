@@ -470,7 +470,7 @@
             <Cooldown Link="Nodbuild"/>
             <Button DefaultButtonFace="NodOPCenter" Requirements="HaveNodPowerPlant"/>
         </InfoArray>
-        <InfoArray index="Build7" Unit="NodKaneAirTower" Time="5">
+        <InfoArray index="Build7" Unit="NodAirTower" Time="5">
             <Charge>
                 <CountMax value="1"/>
                 <CountStart value="1"/>
@@ -687,7 +687,7 @@
             <Unit value="NodPurifier"/>
         </InfoArray>
     </CAbilTrain>
-    <CAbilTrain id="NodKaneAirTowerTrain">
+    <CAbilTrain id="NodAirTowerTrain">
         <EditorCategories value="Race:Nod,AbilityorEffectType:Structures"/>
         <Range value="5"/>
         <Activity value="UI/Building"/>
@@ -713,7 +713,7 @@
         </InfoArray>
         <InfoArray index="Train6" Time="30">
             <Button DefaultButtonFace="NodVertigo"/>
-            <Unit value="NodKaneVertigo"/>
+            <Unit value="NodVertigo"/>
         </InfoArray>
         <InfoArray index="Train7" Time="30">
             <Button DefaultButtonFace="NodArmageddon" State="Restricted"/>
@@ -2273,4 +2273,11 @@
         <PrepTime value="1"/>
     </CAbilEffectTarget>
 
+    <CAbilBuild id="NodCasterBuild">
+        <Range value="999"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+        <InfoArray index="Build1" Unit="CabalObeliskOfLife" Time="1"><Button DefaultButtonFace="CabalObeliskOfLife"/></InfoArray>
+        <InfoArray index="Build2" Unit="CabalMantis" Time="1"><Button DefaultButtonFace="NodReinforcement"/></InfoArray>
+        <InfoArray index="Build3" Unit="NodRedeemer" Time="1"><Button DefaultButtonFace="NodCallRedeemer"/></InfoArray>
+    </CAbilBuild>
 </Catalog>

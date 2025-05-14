@@ -114,7 +114,7 @@
         </Frame>
         <Frame type="Label" name="Label">
             <Anchor relative="$parent"/>
-            <Style val="TesterButtonLabel"/>
+            <!--Style val="TesterButtonLabel"/-->
         </Frame>
         <Frame type="Image" name="FaceImage">
             <Anchor relative="$parent"/>

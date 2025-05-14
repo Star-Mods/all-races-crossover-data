@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+
+
+
+    <CModel id="SpawnCaster" parent="Unit">
+        <Model value="Assets\Buildings\Protoss\ShipGeneratorSmall\ShipGeneratorSmall.m3"/>
+    </CModel>
+
+    <CUnit id="SpawnCaster" default="1">
+        <FlagArray index="Invulnerable" value="1"/>
+        <AbilArray Link="##id##"/>
+    </CUnit>
+
+    <CActorUnit id="SpawnCaster1"><Model value="SpawnCaster"/></CActorUnit>
+    <CActorUnit id="SpawnCaster2"><Model value="SpawnCaster"/></CActorUnit>
+    <CActorUnit id="SpawnCaster3"><Model value="SpawnCaster"/></CActorUnit>
+    <CActorUnit id="SpawnCaster4"><Model value="SpawnCaster"/></CActorUnit>
+    <CUnit id="SpawnCaster1" parent="SpawnCaster">
+        <CardLayouts>
+            <LayoutButtons Type="AbilCmd" Row="0" Column="0" Face="SpawnCaster1"  AbilCmd="SpawnCaster1,Build1"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="1" Face="SpawnCaster2"  AbilCmd="SpawnCaster1,Build2"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="2" Face="SpawnCaster3"  AbilCmd="SpawnCaster1,Build3"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="3" Face="SpawnCaster4"  AbilCmd="SpawnCaster1,Build4"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="4" Face="SpawnCaster5"  AbilCmd="SpawnCaster1,Build5"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="0" Face="SpawnCaster6"  AbilCmd="SpawnCaster1,Build6"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="1" Face="SpawnCaster7"  AbilCmd="SpawnCaster1,Build7"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="2" Face="SpawnCaster8"  AbilCmd="SpawnCaster1,Build8"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="3" Face="SpawnCaster9"  AbilCmd="SpawnCaster1,Build9"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="4" Face="SpawnCaster10"  AbilCmd="SpawnCaster1,Build10"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="0" Face="SpawnCaster11"  AbilCmd="SpawnCaster1,Build11"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="1" Face="SpawnCaster12"  AbilCmd="SpawnCaster1,Build12"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="2" Face="SpawnCaster13"  AbilCmd="SpawnCaster1,Build13"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="3" Face="SpawnCaster14"  AbilCmd="SpawnCaster1,Build14"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="4" Face="SpawnCaster15"  AbilCmd="SpawnCaster1,Build15"         />
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="SpawnCaster2" parent="SpawnCaster">
+        <CardLayouts>
+            <LayoutButtons Type="AbilCmd" Row="0" Column="0" Face="SpawnCaster16"  AbilCmd="SpawnCaster2,Build1"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="1" Face="SpawnCaster17"  AbilCmd="SpawnCaster2,Build2"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="2" Face="SpawnCaster18"  AbilCmd="SpawnCaster2,Build3"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="3" Face="SpawnCaster19"  AbilCmd="SpawnCaster2,Build4"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="4" Face="SpawnCaster20"  AbilCmd="SpawnCaster2,Build5"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="0" Face="SpawnCaster21"  AbilCmd="SpawnCaster2,Build6"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="1" Face="SpawnCaster22"  AbilCmd="SpawnCaster2,Build7"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="2" Face="SpawnCaster23"  AbilCmd="SpawnCaster2,Build8"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="3" Face="SpawnCaster24"  AbilCmd="SpawnCaster2,Build9"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="4" Face="SpawnCaster25"  AbilCmd="SpawnCaster2,Build10"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="0" Face="SpawnCaster26"  AbilCmd="SpawnCaster2,Build11"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="1" Face="SpawnCaster27"  AbilCmd="SpawnCaster2,Build12"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="2" Face="SpawnCaster28"  AbilCmd="SpawnCaster2,Build13"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="3" Face="SpawnCaster29"  AbilCmd="SpawnCaster2,Build14"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="4" Face="SpawnCaster30"  AbilCmd="SpawnCaster2,Build15"         />
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="SpawnCaster3" parent="SpawnCaster">
+        <CardLayouts>
+            <LayoutButtons Type="AbilCmd" Row="0" Column="0" Face="SpawnCaster31"  AbilCmd="SpawnCaster3,Build1"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="1" Face="SpawnCaster32"  AbilCmd="SpawnCaster3,Build2"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="2" Face="SpawnCaster33"  AbilCmd="SpawnCaster3,Build3"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="3" Face="SpawnCaster34"  AbilCmd="SpawnCaster3,Build4"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="4" Face="SpawnCaster35"  AbilCmd="SpawnCaster3,Build5"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="0" Face="SpawnCaster36"  AbilCmd="SpawnCaster3,Build6"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="1" Face="SpawnCaster37"  AbilCmd="SpawnCaster3,Build7"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="2" Face="SpawnCaster38"  AbilCmd="SpawnCaster3,Build8"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="3" Face="SpawnCaster39"  AbilCmd="SpawnCaster3,Build9"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="4" Face="SpawnCaster40"  AbilCmd="SpawnCaster3,Build10"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="0" Face="SpawnCaster41"  AbilCmd="SpawnCaster3,Build11"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="1" Face="SpawnCaster42"  AbilCmd="SpawnCaster3,Build12"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="2" Face="SpawnCaster43"  AbilCmd="SpawnCaster3,Build13"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="3" Face="SpawnCaster44"  AbilCmd="SpawnCaster3,Build14"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="4" Face="SpawnCaster45"  AbilCmd="SpawnCaster3,Build15"         />
+        </CardLayouts>
+    </CUnit>
+    <CUnit id="SpawnCaster4" parent="SpawnCaster">
+        <CardLayouts>
+            <LayoutButtons Type="AbilCmd" Row="0" Column="0" Face="SpawnCaster46"  AbilCmd="SpawnCaster4,Build1"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="1" Face="SpawnCaster47"  AbilCmd="SpawnCaster4,Build2"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="2" Face="SpawnCaster48"  AbilCmd="SpawnCaster4,Build3"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="3" Face="SpawnCaster49"  AbilCmd="SpawnCaster4,Build4"         />
+            <LayoutButtons Type="AbilCmd" Row="0" Column="4" Face="SpawnCaster50"  AbilCmd="SpawnCaster4,Build5"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="0" Face="SpawnCaster51"  AbilCmd="SpawnCaster4,Build6"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="1" Face="SpawnCaster52"  AbilCmd="SpawnCaster4,Build7"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="2" Face="SpawnCaster53"  AbilCmd="SpawnCaster4,Build8"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="3" Face="SpawnCaster54"  AbilCmd="SpawnCaster4,Build9"         />
+            <LayoutButtons Type="AbilCmd" Row="1" Column="4" Face="SpawnCaster55"  AbilCmd="SpawnCaster4,Build10"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="0" Face="SpawnCaster56"  AbilCmd="SpawnCaster4,Build11"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="1" Face="SpawnCaster57"  AbilCmd="SpawnCaster4,Build12"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="2" Face="SpawnCaster58"  AbilCmd="SpawnCaster4,Build13"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="3" Face="SpawnCaster59"  AbilCmd="SpawnCaster4,Build14"         />
+            <LayoutButtons Type="AbilCmd" Row="2" Column="4" Face="SpawnCaster60"  AbilCmd="SpawnCaster4,Build15"         />
+        </CardLayouts>
+    </CUnit>
+
+    <CAbilBuild id="SpawnCaster">
+        <FlagArray index="IgnoreFood" value="1"/>
+        <FlagArray index="IgnoreUnitCost" value="1"/>
+        <Range value="999"/>
+    </CAbilBuild>
+    <CAbilBuild id="SpawnCaster1" parent="SpawnCaster">
+        <InfoArray index="Build1"  Time="1"> <Button DefaultButtonFace="SpawnCaster1"/></InfoArray>
+        <InfoArray index="Build2"  Time="1"> <Button DefaultButtonFace="SpawnCaster2"/></InfoArray>
+        <InfoArray index="Build3"  Time="1"> <Button DefaultButtonFace="SpawnCaster3"/></InfoArray>
+        <InfoArray index="Build4"  Time="1"> <Button DefaultButtonFace="SpawnCaster4"/></InfoArray>
+        <InfoArray index="Build5"  Time="1"> <Button DefaultButtonFace="SpawnCaster5"/></InfoArray>
+        <InfoArray index="Build6"  Time="1"> <Button DefaultButtonFace="SpawnCaster6"/></InfoArray>
+        <InfoArray index="Build7"  Time="1"> <Button DefaultButtonFace="SpawnCaster7"/></InfoArray>
+        <InfoArray index="Build8"  Time="1"> <Button DefaultButtonFace="SpawnCaster8"/></InfoArray>
+        <InfoArray index="Build9"  Time="1"> <Button DefaultButtonFace="SpawnCaster9"/></InfoArray>
+        <InfoArray index="Build10"  Time="1"><Button DefaultButtonFace="SpawnCaster10"/></InfoArray>
+        <InfoArray index="Build11"  Time="1"><Button DefaultButtonFace="SpawnCaster11"/></InfoArray>
+        <InfoArray index="Build12"  Time="1"><Button DefaultButtonFace="SpawnCaster12"/></InfoArray>
+        <InfoArray index="Build13"  Time="1"><Button DefaultButtonFace="SpawnCaster13"/></InfoArray>
+        <InfoArray index="Build14"  Time="1"><Button DefaultButtonFace="SpawnCaster14"/></InfoArray>
+        <InfoArray index="Build15"  Time="1"><Button DefaultButtonFace="SpawnCaster15"/></InfoArray>
+    </CAbilBuild>
+
+    <CAbilBuild id="SpawnCaster2" parent="SpawnCaster">
+        <InfoArray index="Build1"  Time="1"><Button DefaultButtonFace="SpawnCaster16"/></InfoArray>
+        <InfoArray index="Build2"  Time="1"><Button DefaultButtonFace="SpawnCaster17"/></InfoArray>
+        <InfoArray index="Build3"  Time="1"><Button DefaultButtonFace="SpawnCaster18"/></InfoArray>
+        <InfoArray index="Build4"  Time="1"><Button DefaultButtonFace="SpawnCaster19"/></InfoArray>
+        <InfoArray index="Build5"  Time="1"><Button DefaultButtonFace="SpawnCaster20"/></InfoArray>
+        <InfoArray index="Build6"  Time="1"><Button DefaultButtonFace="SpawnCaster21"/></InfoArray>
+        <InfoArray index="Build7"  Time="1"><Button DefaultButtonFace="SpawnCaster22"/></InfoArray>
+        <InfoArray index="Build8"  Time="1"><Button DefaultButtonFace="SpawnCaster23"/></InfoArray>
+        <InfoArray index="Build9"  Time="1"><Button DefaultButtonFace="SpawnCaster24"/></InfoArray>
+        <InfoArray index="Build10"  Time="1"><Button DefaultButtonFace="SpawnCaster25"/></InfoArray>
+        <InfoArray index="Build11"  Time="1"><Button DefaultButtonFace="SpawnCaster26"/></InfoArray>
+        <InfoArray index="Build12"  Time="1"><Button DefaultButtonFace="SpawnCaster27"/></InfoArray>
+        <InfoArray index="Build13"  Time="1"><Button DefaultButtonFace="SpawnCaster28"/></InfoArray>
+        <InfoArray index="Build14"  Time="1"><Button DefaultButtonFace="SpawnCaster29"/></InfoArray>
+        <InfoArray index="Build15"  Time="1"><Button DefaultButtonFace="SpawnCaster30"/></InfoArray>
+    </CAbilBuild>
+    <CAbilBuild id="SpawnCaster3" parent="SpawnCaster">
+        <InfoArray index="Build1"  Time="1"> <Button DefaultButtonFace="SpawnCaster31"/></InfoArray>
+        <InfoArray index="Build2"  Time="1"> <Button DefaultButtonFace="SpawnCaster32"/></InfoArray>
+        <InfoArray index="Build3"  Time="1"> <Button DefaultButtonFace="SpawnCaster33"/></InfoArray>
+        <InfoArray index="Build4"  Time="1"> <Button DefaultButtonFace="SpawnCaster34"/></InfoArray>
+        <InfoArray index="Build5"  Time="1"> <Button DefaultButtonFace="SpawnCaster35"/></InfoArray>
+        <InfoArray index="Build6"  Time="1"> <Button DefaultButtonFace="SpawnCaster36"/></InfoArray>
+        <InfoArray index="Build7"  Time="1"> <Button DefaultButtonFace="SpawnCaster37"/></InfoArray>
+        <InfoArray index="Build8"  Time="1"> <Button DefaultButtonFace="SpawnCaster38"/></InfoArray>
+        <InfoArray index="Build9"  Time="1"> <Button DefaultButtonFace="SpawnCaster39"/></InfoArray>
+        <InfoArray index="Build10"  Time="1"><Button DefaultButtonFace="SpawnCaster40"/></InfoArray>
+        <InfoArray index="Build11"  Time="1"><Button DefaultButtonFace="SpawnCaster41"/></InfoArray>
+        <InfoArray index="Build12"  Time="1"><Button DefaultButtonFace="SpawnCaster42"/></InfoArray>
+        <InfoArray index="Build13"  Time="1"><Button DefaultButtonFace="SpawnCaster43"/></InfoArray>
+        <InfoArray index="Build14"  Time="1"><Button DefaultButtonFace="SpawnCaster44"/></InfoArray>
+        <InfoArray index="Build15"  Time="1"><Button DefaultButtonFace="SpawnCaster45"/></InfoArray>
+    </CAbilBuild>
+    <CAbilBuild id="SpawnCaster4" parent="SpawnCaster">
+        <InfoArray index="Build1"  Time="1"><Button DefaultButtonFace="SpawnCaster46"/></InfoArray>
+        <InfoArray index="Build2"  Time="1"><Button DefaultButtonFace="SpawnCaster47"/></InfoArray>
+        <InfoArray index="Build3"  Time="1"><Button DefaultButtonFace="SpawnCaster48"/></InfoArray>
+        <InfoArray index="Build4"  Time="1"><Button DefaultButtonFace="SpawnCaster49"/></InfoArray>
+        <InfoArray index="Build5"  Time="1"><Button DefaultButtonFace="SpawnCaster50"/></InfoArray>
+        <InfoArray index="Build6"  Time="1"><Button DefaultButtonFace="SpawnCaster51"/></InfoArray>
+        <InfoArray index="Build7"  Time="1"><Button DefaultButtonFace="SpawnCaster52"/></InfoArray>
+        <InfoArray index="Build8"  Time="1"><Button DefaultButtonFace="SpawnCaster53"/></InfoArray>
+        <InfoArray index="Build9"  Time="1"><Button DefaultButtonFace="SpawnCaster54"/></InfoArray>
+        <InfoArray index="Build10"  Time="1"><Button DefaultButtonFace="SpawnCaster55"/></InfoArray>
+        <InfoArray index="Build11"  Time="1"><Button DefaultButtonFace="SpawnCaster56"/></InfoArray>
+        <InfoArray index="Build12"  Time="1"><Button DefaultButtonFace="SpawnCaster57"/></InfoArray>
+        <InfoArray index="Build13"  Time="1"><Button DefaultButtonFace="SpawnCaster58"/></InfoArray>
+        <InfoArray index="Build14"  Time="1"><Button DefaultButtonFace="SpawnCaster59"/></InfoArray>
+        <InfoArray index="Build15"  Time="1"><Button DefaultButtonFace="SpawnCaster60"/></InfoArray>
+    </CAbilBuild>
+
+    <CButton id="SpawnCaster">
+        <Icon value="Assets\Textures\btn-ability-terran-cloak-color.dds"/>
+    </CButton>
+    <CButton id="SpawnCaster1" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster2" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster3" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster4" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster5" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster6" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster7" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster8" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster9" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster10" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster11" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster12" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster13" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster14" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster15" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster16" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster17" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster18" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster19" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster20" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster21" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster22" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster23" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster24" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster25" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster26" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster27" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster28" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster29" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster30" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster31" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster32" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster33" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster34" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster35" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster36" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster37" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster38" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster39" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster40" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster41" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster42" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster43" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster44" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster45" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster46" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster47" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster48" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster49" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster50" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster51" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster52" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster53" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster54" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster55" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster56" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster57" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster58" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster59" parent="SpawnCaster"/>
+    <CButton id="SpawnCaster60" parent="SpawnCaster"/>
+
+</Catalog>
