@@ -1,4 +1,4 @@
-
+<?xml version="1.0" encoding="utf-8"?>
 <Catalog>
     <!--Hide Upgrade If Research Already Started-->
     <CRequirement default="1" id="NodLearnUpgrade">
@@ -83,19 +83,21 @@
     <CRequirement id="NoMCVSupport" parent="NodRequirementUnit" requirement="REQ_MCVSupport"/>
     <CRequirement id="NoMCVOffense" parent="NodRequirementUnit" requirement="REQ_MCVOffense"/>
     <CRequirement id="NoMCVDefense" parent="NodRequirementUnit" requirement="REQ_MCVDefense"/>
-    <CRequirement id="HaveNodVertigo" parent="NodRequirementUnit" requirement="REQ_AirStrike"/>
+    <CRequirement id="HaveNodVertigo" parent="NodRequirementUnit" requirement="REQ_AirStrike">
+        <NodeArray index="Use" Link="AndCountUnitCabalVertigoLandedCompleteOnlyTechTreeCheatCountUnitCabalBomberPlatformCompleteOnlyTechTreeCheat"/>
+    </CRequirement>
     <CRequirement id="NodTempleRequirements" parent="NodRequirementUnit" requirement="REQC_NodTempleOfNod">
-        <NodeArray index="Use" Link="AndOr2790159111CountUnitNodPowerPlant2CompleteOnlyTechTreeCheatCountUnitNodPowerPlantCompleteOnlyTechTreeCheatCountUnitNodPowerPlantUpgradeCompleteOnlyTechTreeCheatCountUnitNodShrineCompleteOnlyTechTr3731317178"/>
+        <NodeArray index="Use" Link="AndOr2790159111CountUnitNodPowerPlant2CompleteOnlyTechTreeCheatCountUnitNodPowerPlantCompleteOnlyTechTreeCheatCountUnitNodPowerPlantUpgradedCompleteOnlyTechTreeCheatCountUnitNodShrineCompleteOnlyTechTr3731317178"/>
     </CRequirement>
     <CRequirement id="HaveNodHand" parent="NodRequirementUnit" requirement="REQC_NodHand">
-        <NodeArray index="Use" Link="AndOr2790159111CountUnitNodPowerPlant2CompleteOnlyTechTreeCheatCountUnitNodPowerPlantCompleteOnlyTechTreeCheatCountUnitNodPowerPlantUpgradeCompleteOnlyTechTreeCheatCountUnitNodKaneBarracksCompleteOnlyTechTreeCheat"/>
+        <NodeArray index="Use" Link="AndOr2790159111CountUnitNodPowerPlant2CompleteOnlyTechTreeCheatCountUnitNodPowerPlantCompleteOnlyTechTreeCheatCountUnitNodPowerPlantUpgradedCompleteOnlyTechTreeCheatCountUnitNodHandCompleteOnlyTechTreeCheat"/>
     </CRequirement>
     <CRequirement id="HaveNodPowerPlant" parent="NodRequirementUnit" requirement="REQC_NodPower"/>
     <CRequirement id="HaveNodAirTower" parent="NodRequirementUnit" requirement="REQC_NodHangar"/>
     <CRequirement id="HaveNodWarfactory" parent="NodRequirementUnit" requirement="REQC_NodWarFactory"/>
     <CRequirement id="LeviathanRequirements" parent="NodRequirementUnit" requirement="REQ_CabalLeviathan"/>
-    <CRequirement id="NodKaneCommandoRequirements" parent="NodRequirementUnit" requirement="REQ_NodKaneCommando">
-        <NodeArray index="Use" Link="AndCountUnitNodShrineCompleteOnlyTechTreeCheatEq1277349106CountUnitNodKaneCommandoQueuedOrBetterTechTreeCheat0"/>
+    <CRequirement id="NodCommandoRequirements" parent="NodRequirementUnit" requirement="REQ_NodCommando">
+        <NodeArray index="Use" Link="AndCountUnitNodShrineCompleteOnlyTechTreeCheatEq1277349106CountUnitNodCommandoQueuedOrBetterTechTreeCheat0"/>
     </CRequirement>
     <CRequirement id="RedeemerRequirements" parent="NodRequirementUnit" requirement="REQ_NodRedeemer"/>
     <CRequirement id="NodArmInterceptor" parent="NodRequirementUnit" requirement="REQ_NodInterceptor"/>
@@ -103,7 +105,7 @@
     <CRequirement id="HaveNodShrine" parent="NodRequirementUnit" requirement="UC_NodShrine"/>
     <CRequirement id="HaveNodRefinery" parent="NodRequirementUnit" requirement="UC_NodTiberiumRefinery"/>
     <CRequirement id="HaveNodTechPlant" parent="NodRequirementUnit" requirement="UC_NodTechLab"/>
-    <CRequirement id="HaveNodOPcenter" parent="NodRequirementUnit" requirement="UC_NodOPCenter"/>
+    <CRequirement id="HaveNodOperationsCenter" parent="NodRequirementUnit" requirement="UC_NodOperationsCenter"/>
     <CRequirement id="HaveBarracksGDI" parent="NodRequirementUnit" requirement="UC_BarracksGDI"/>
     <CRequirement id="HaveGDICommandpost" parent="NodRequirementUnit" requirement="UC_ComandPost"/>
     <CRequirement id="HaveHangarAndNodFactionNod">
@@ -258,4 +260,27 @@
         <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeAirStealthUpgradeQueuedOrBetter0"/>
         <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeAirStealthUpgradeQueuedOrBetter0"/>
     </CRequirement>
+    <CRequirementAnd id="AndCountUnitCabalVertigoLandedCompleteOnlyTechTreeCheatCountUnitCabalBomberPlatformCompleteOnlyTechTreeCheat">
+        <OperandArray value="CountUnitCabalVertigoLandedCompleteOnlyTechTreeCheat"/>
+        <OperandArray value="CountUnitCabalBomberPlatformCompleteOnlyTechTreeCheat"/>
+    </CRequirementAnd>
+    <CRequirementAnd id="AndCountUnitNodShrineCompleteOnlyTechTreeCheatEq1277349106CountUnitNodCommandoQueuedOrBetterTechTreeCheat0">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <OperandArray value="CountUnitNodShrineCompleteOnlyTechTreeCheat"/>
+        <OperandArray value="Eq1277349106CountUnitNodCommandoQueuedOrBetterTechTreeCheat0"/>
+    </CRequirementAnd>
+    <CRequirementCountUnit id="CountUnitCabalBomberPlatformCompleteOnlyTechTreeCheat">
+        <Count Link="CabalBomberPlatform" State="CompleteOnly"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitCabalVertigoLandedCompleteOnlyTechTreeCheat">
+        <Count Link="CabalVertigoLanded" State="CompleteOnly"/>
+    </CRequirementCountUnit>
+    <CRequirementCountUnit id="CountUnitNodCommandoQueuedOrBetterTechTreeCheat">
+        <Tooltip value="RequirementNode/Tooltip/##id##"/>
+        <Count Link="NodCommando" State="QueuedOrBetter"/>
+    </CRequirementCountUnit>
+    <CRequirementEq id="Eq1277349106CountUnitNodCommandoQueuedOrBetterTechTreeCheat0">
+        <OperandArray index="0" value="CountUnitNodCommandoQueuedOrBetterTechTreeCheat"/>
+        <OperandArray index="1" value="0"/>
+    </CRequirementEq>
 </Catalog>

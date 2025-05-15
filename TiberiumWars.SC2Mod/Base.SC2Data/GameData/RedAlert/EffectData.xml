@@ -11861,9 +11861,6 @@
         <EffectArray value="xfyczzdw2"/>
         <EffectArray value="CNCAirportremovestrackingaircraft"/>
     </CEffectSet>
-    <CEffectSet id="PlaneTakesOffC">
-        <TargetLocationType value="UnitOrPoint"/>
-    </CEffectSet>
     <CEffectEnumArea id="DesolatorAcidPuddleSearchA">
         <EditorCategories value="Race:Zerg"/>
         <SearchFilters value="Ground;Player,Ally,Neutral,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>

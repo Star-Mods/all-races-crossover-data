@@ -30,6 +30,11 @@
         <ShadowRadius value="0.340800"/>
         <UnitGlossaryCamera value="Star2CameraMid03"/>
     </CModel>
+    <CModel default="1" id="NodBuildingDeath" parent="BuildingDeath">
+        <Model value="Assets\Buildings\Nod\##model##.m3"/>
+        <LowQualityModel value="TerranBuildingDeathLow"/>
+        <EditorCategories value="Race:Nod"/>
+    </CModel>
     <CModel default="1" id="CabalBuilding" parent="Unit">
         <?token id="model" value="##id##"?>
         <Model value="Assets\Buildings\Cabal\##model##.m3"/>
@@ -47,24 +52,22 @@
         <Occlusion value="Show"/>
     </CModel>
     <!--Units-->
-    <CModel id="NodHand" parent="BarracksBase">
-        <Model value="Assets\Models\Nod Hand\Nod Hand.m3"/>
+    <CModel id="NodHand" parent="NodBuilding">
         <Radius value="1.200000"/>
         <ScaleMax value="1.200000,1.200000,1.200000"/>
         <ScaleMin value="1.200000,1.200000,1.200000"/>
         <SelectionRadius value="1.500000"/>
         <ShadowRadius value="1.500000"/>
-        <EditorCategories value="Race:Nod"/>
         <TextureDeclares Prefix="NB">
             <Adaptions TriggerOnSubstring="Hand" Slot="main"/>
         </TextureDeclares>
     </CModel>
-    <CModel id="NodCrane" parent="BarracksBase">
-        <Model value="Assets\Models\Nod Crane\Nod Crane.m3"/>
+    <CModel id="NodCrane" parent="NodBuilding">
+        <ScaleMax value="1.400000,1.400000,1.400000"/>
+        <ScaleMin value="1.400000,1.400000,1.400000"/>
         <Radius value="1.200000"/>
         <SelectionRadius value="1.500000"/>
         <ShadowRadius value="1.500000"/>
-        <EditorCategories value="Race:Nod"/>
     </CModel>
     <CModel id="NodBikeUpgrade" parent="Unit">
         <Model value="Assets\Models\Bike\BIKE Upgrade.m3"/>
@@ -263,22 +266,16 @@
         <ShadowRadius value="1.230700"/>
         <EditorCategories value="Race:Nod"/>
     </CModel>
-    <CModel id="NodAttackBike" parent="Unit">
-        <Model value="Assets\Models\CNC3NodBike\CNC3NodBike.m3"/>
-        <Occlusion value="Show"/>
+    <CModel id="NodBike" parent="NodUnit">
         <Radius value="0.650000"/>
+        <ScaleMax value="0.900000,0.900000,0.900000"/>
+        <ScaleMin value="0.900000,0.900000,0.900000"/>
         <SelectionRadius value="0.866400"/>
         <ShadowRadius value="0.866400"/>
         <SquibTypeDefault value="Metal"/>
         <Tipability value="0.750000"/>
         <TipabilityLength value="0.600000"/>
         <TipabilityWidth value="0.400000"/>
-        <PlanetPanelCamera value="Star2CameraMid06"/>
-        <TechPurchaseCamera value="TechPurchaseVehicle"/>
-        <UnitGlossaryCamera value="Star2CameraMid06"/>
-        <EditorCategories value="Race:Nod"/>
-        <ScaleMax value="0.800000,0.800000,0.800000"/>
-        <ScaleMin value="0.800000,0.800000,0.800000"/>
     </CModel>
     <CModel id="CabalSpider" parent="Unit">
         <Model value="Assets\Models\Nod Spider\Nod Spider Upgrade.m3"/>
@@ -336,7 +333,7 @@
         <SelectionRadius value="1.066600"/>
         <ShadowRadius value="1.066600"/>
     </CModel>
-    <CModel id="Vertigo" parent="Unit">
+    <CModel id="CabalVertigo" parent="Unit">
         <Model value="Assets\Models\Nod Vertigo\Nod Vertigo.m3"/>
         <EditorCategories value="Race:Nod"/>
         <Occlusion value="Show"/>
@@ -348,27 +345,12 @@
         <Tipability value="0.750000"/>
         <UnitGlossaryCamera value="Star2CameraLow04"/>
     </CModel>
-    <CModel id="NodCommandoCNC3" parent="Unit">
-        <Model value="Assets\Models\CNC3NodCommando\CNC3NodCommando.m3"/>
-        <EditorCategories value="Race:Nod"/>
-        <Occlusion value="Show"/>
-        <Radius value="0.375000"/>
-        <SelectionRadius value="0.340800"/>
-        <ShadowRadius value="0.340800"/>
+    <CModel id="NodCommando" parent="NodUnit">
         <ScaleMax value="1.200000,1.200000,1.200000"/>
         <ScaleMin value="1.200000,1.200000,1.200000"/>
-        <UnitGlossaryCamera value="Star2CameraMid03"/>
     </CModel>
-    <CModel id="Ascended" parent="Unit">
-        <Model value="Assets\Units\Cabal\CabalAscended.m3"/>
-        <EditorCategories value="Race:Nod"/>
-        <Occlusion value="Show"/>
-        <Radius value="0.375000"/>
-        <SelectionRadius value="0.340800"/>
-        <ShadowRadius value="0.340800"/>
-        <UnitGlossaryCamera value="Star2CameraMid03"/>
-    </CModel>
-    <CModel id="MarauderNod" parent="Unit">
+    <CModel id="CabalAscended" parent="CabalUnit"/>
+    <CModel id="CabalMarauder" parent="Unit">
         <Model value="Assets\Models\Nod Marauder\Nod Marauder.m3"/>
         <Occlusion value="Show"/>
         <PlanetPanelCamera value="Star2CameraMid06"/>
@@ -397,20 +379,14 @@
         <ScaleMin value="1.500000,1.500000,1.500000"/>
         <EditorCategories value="Race:Nod"/>
     </CModel>
-    <CModel id="NodBike" parent="Unit">
-        <Model value="Assets\Models\Bike\BIKE.m3"/>
-        <Occlusion value="Show"/>
-        <PlanetPanelCamera value="Star2CameraMid06"/>
+    <CModel id="CabalBike" parent="CabalUnit">
         <Radius value="0.650000"/>
         <SelectionRadius value="0.866400"/>
         <ShadowRadius value="0.866400"/>
         <SquibTypeDefault value="Metal"/>
-        <TechPurchaseCamera value="TechPurchaseVehicle"/>
         <Tipability value="0.750000"/>
         <TipabilityLength value="0.600000"/>
         <TipabilityWidth value="0.400000"/>
-        <UnitGlossaryCamera value="Star2CameraMid06"/>
-        <EditorCategories value="Race:Nod"/>
     </CModel>
     <CModel id="CabalCenturion" parent="Unit">
         <Model value="Assets\Models\Nod CabalCenturion\CabalCenturion Upgrade.m3"/>
@@ -425,17 +401,11 @@
         <ScaleMin value="0.800000,0.800000,0.800000"/>
         <EditorCategories value="Race:Nod"/>
     </CModel>
-    <CModel id="VenomCC3" parent="Unit">
-        <Model value="Assets\Models\CNC3NodVenom\CNC3Nod Venom.m3"/>
-        <EditorCategories value="Race:Nod"/>
-        <Occlusion value="Show"/>
-        <PlanetPanelCamera value="Star2CameraLow04"/>
+    <CModel id="NodVenom" parent="NodUnit">
         <Radius value="0.625000"/>
         <SelectionRadius value="0.625000"/>
         <ShadowRadius value="0.625000"/>
-        <TechPurchaseCamera value="TechPurchaseStarship"/>
         <Tipability value="0.750000"/>
-        <UnitGlossaryCamera value="Star2CameraLow04"/>
         <ScaleMax value="1.500000,1.500000,1.500000"/>
         <ScaleMin value="1.500000,1.500000,1.500000"/>
     </CModel>
@@ -448,7 +418,7 @@
         <ShadowRadius value="0.340800"/>
         <UnitGlossaryCamera value="Star2CameraMid03"/>
     </CModel>
-    <CModel id="NodCommando" parent="Unit">
+    <CModel id="CabalDominator" parent="Unit">
         <Model value="Assets\Models\Nod Commando\Nod Commando Upgrade.m3"/>
         <EditorCategories value="Race:Nod"/>
         <Occlusion value="Show"/>
@@ -457,7 +427,7 @@
         <ShadowRadius value="0.340800"/>
         <UnitGlossaryCamera value="Star2CameraMid03"/>
     </CModel>
-    <CModel id="Enlightened" parent="Unit">
+    <CModel id="CabalEnlightened" parent="Unit">
         <Model value="Assets\Models\Enlightened\Enlightened.m3"/>
         <EditorCategories value="Race:Nod"/>
         <Occlusion value="Show"/>
@@ -466,7 +436,7 @@
         <ShadowRadius value="0.340800"/>
         <UnitGlossaryCamera value="Star2CameraMid03"/>
     </CModel>
-    <CModel id="HighConfessor" parent="Unit">
+    <CModel id="CabalHighConfessor" parent="Unit">
         <Model value="Assets\Models\Nod High Confessor\Nod High Confessor.m3"/>
         <EditorCategories value="Race:Nod"/>
         <Occlusion value="Show"/>
@@ -484,7 +454,7 @@
         <ShadowRadius value="0.340800"/>
         <UnitGlossaryCamera value="Star2CameraMid03"/>
     </CModel>
-    <CModel id="BlackHand" parent="Unit">
+    <CModel id="CabalBlackHand" parent="Unit">
         <Model value="Assets\Models\Nod Black Hand\Nod Black Hand.m3"/>
         <EditorCategories value="Race:Nod"/>
         <Occlusion value="Show"/>
@@ -493,7 +463,7 @@
         <ShadowRadius value="0.340800"/>
         <UnitGlossaryCamera value="Star2CameraMid03"/>
     </CModel>
-    <CModel id="Scalpel" parent="Unit">
+    <CModel id="CabalScalpel" parent="Unit">
         <Model value="Assets\Models\Nod Scalpel\Nod Scalpel.m3"/>
         <EditorCategories value="Race:Nod"/>
         <Occlusion value="Show"/>
@@ -505,21 +475,21 @@
         <Tipability value="0.750000"/>
         <UnitGlossaryCamera value="Star2CameraLow04"/>
     </CModel>
-    <CModel id="Venom" parent="Unit">
+    <CModel id="CabalBane" parent="Unit">
         <Model value="Assets\Models\Nod Venom\Nod Venom.m3"/>
         <EditorCategories value="Race:Nod"/>
         <Occlusion value="Show"/>
         <PlanetPanelCamera value="Star2CameraLow04"/>
         <Radius value="0.625000"/>
+        <ScaleMax value="1.300000,1.300000,1.300000"/>
+        <ScaleMin value="1.300000,1.300000,1.300000"/>
         <SelectionRadius value="0.625000"/>
         <ShadowRadius value="0.625000"/>
         <TechPurchaseCamera value="TechPurchaseStarship"/>
         <Tipability value="0.750000"/>
         <UnitGlossaryCamera value="Star2CameraLow04"/>
-        <ScaleMax value="1.300000,1.300000,1.300000"/>
-        <ScaleMin value="1.300000,1.300000,1.300000"/>
     </CModel>
-    <CModel id="Cobra" parent="Unit">
+    <CModel id="CabalCobra" parent="Unit">
         <Model value="Assets\Models\Nod Cobra\Nod Cobra.m3"/>
         <EditorCategories value="Race:Nod"/>
         <Occlusion value="Show"/>
@@ -531,7 +501,7 @@
         <Tipability value="0.750000"/>
         <UnitGlossaryCamera value="Star2CameraLow04"/>
     </CModel>
-    <CModel id="Devout" parent="Unit">
+    <CModel id="CabalDevout" parent="Unit">
         <Model value="Assets\Models\Devout\Devout.m3"/>
         <EditorCategories value="Race:Nod"/>
         <Occlusion value="Show"/>
@@ -612,19 +582,15 @@
         <ShadowRadius value="1.000000"/>
         <EditorCategories value="Race:Nod"/>
     </CModel>
-    <CModel id="NodBeam" parent="Unit">
-        <Model value="Assets\Models\CNC3NodBeam\CNC3NodBeam.m3"/>
+    <CModel id="NodBeam" parent="NodUnit">
         <SelectionRadius value="1.000000"/>
         <ShadowRadius value="1.000000"/>
-        <EditorCategories value="Race:Nod"/>
     </CModel>
-    <CModel id="NodKaneScorpion" parent="Unit">
-        <Model value="Assets\Models\CNC3NodScorpion\CNC3Nscorpion.m3"/>
+    <CModel id="NodScorpionTank" parent="NodUnit">
         <ScaleMax value="0.900000,0.900000,0.900000"/>
         <ScaleMin value="0.900000,0.900000,0.900000"/>
         <SelectionRadius value="1.000000"/>
         <ShadowRadius value="1.000000"/>
-        <EditorCategories value="Race:Nod"/>
     </CModel>
     <CModel id="CabalDefenseCrawler" parent="Unit">
         <Model value="Assets\Models\Nod Defense MCV\Nod Defense MCV.m3"/>
@@ -635,11 +601,9 @@
         <Radius value="2.000000"/>
         <EditorCategories value="Race:Nod"/>
     </CModel>
-    <CModel id="StealthTankTankCC3" parent="Unit">
-        <Model value="Assets\Models\CNC3NodStealthTank\CNC3Nod Stealth Tank.m3"/>
+    <CModel id="NodStealthTank" parent="NodUnit">
         <SelectionRadius value="1.000000"/>
         <ShadowRadius value="1.000000"/>
-        <EditorCategories value="Race:Nod"/>
     </CModel>
     <CModel id="CabalHolySpirit" parent="Unit">
         <Model value="Assets\Models\Nod Avatar\Avatar Upgrade.m3"/>
@@ -650,7 +614,7 @@
         <TipabilityWidth value="0.100000"/>
         <EditorCategories value="Race:Nod"/>
     </CModel>
-    <CModel id="StealthTankTank" parent="Unit">
+    <CModel id="CabalStealthTank" parent="Unit">
         <Model value="Assets\Models\Nod Stealth Tank\Nod Stealth Tank Upgrade.m3"/>
         <SelectionRadius value="1.000000"/>
         <ShadowRadius value="1.000000"/>
@@ -666,16 +630,16 @@
         <Model value="Assets\Models\Nod Widow\Widow Spider.m3"/>
         <EditorCategories value="Race:Nod"/>
     </CModel>
-    <CModel id="Medusa" parent="Unit">
-        <SquibTypeDefault value="Metal"/>
+    <CModel id="CabalMedusa" parent="Unit">
+        <Model value="Assets\Models\Nod Medusa\Nod Medusa.m3"/>
+        <EditorCategories value="Race:Nod"/>
         <Occlusion value="Show"/>
         <Radius value="1.000000"/>
         <SelectionOffset value="0.000000,0.000000,-0.700000"/>
         <SelectionRadius value="1.562500"/>
-        <Tipability value="0.150000"/>
         <ShadowRadius value="1.562500"/>
-        <EditorCategories value="Race:Nod"/>
-        <Model value="Assets\Models\Nod Medusa\Nod Medusa.m3"/>
+        <SquibTypeDefault value="Metal"/>
+        <Tipability value="0.150000"/>
     </CModel>
     <CModel id="CabalSalamander" parent="Unit">
         <SquibTypeDefault value="Metal"/>
@@ -730,8 +694,10 @@
         <ShadowRadius value="1.500000"/>
         <EditorCategories value="Race:Nod"/>
     </CModel>
-    <CModel id="NodOPCenter" parent="EngineeringBayBase">
+    <CModel id="NodOperationsCenter" parent="EngineeringBayBase">
         <Model value="Assets\Models\Nod OperationCenter\Nod OPCenter.m3"/>
+        <ScaleMax value="1.400000,1.400000,1.400000"/>
+        <ScaleMin value="1.400000,1.400000,1.400000"/>
         <SelectionRadius value="1.200000"/>
         <ShadowRadius value="1.200000"/>
         <EditorCategories value="Race:Nod"/>
@@ -740,8 +706,22 @@
         <ScaleMax value="0.020000,0.020000,0.020000"/>
         <ScaleMin value="0.020000,0.020000,0.020000"/>
     </CModel>
-    <CModel id="NodPowerPlant" parent="SupplyDepotBase">
-        <Model value="Assets\Models\Nod PowerPlant\Nod PowerPlant.m3"/>
+    <CModel id="NodPowerPlant" parent="NodBuilding">
+        <Radius value="1.000000"/>
+        <ScaleMax value="1.150000,1.150000,1.150000"/>
+        <ScaleMin value="1.150000,1.150000,1.150000"/>
+        <SelectionRadius value="1.500000"/>
+        <ShadowRadius value="1.500000"/>
+        <TextureDeclares Prefix="NB">
+            <Adaptions TriggerOnSubstring="Power" Slot="main.diffuse"/>
+            <Adaptions TriggerOnSubstring="Power_Emiss" Slot="main.emissive"/>
+        </TextureDeclares>
+        <!--            <Adaptions TriggerOnSubstring="Power" Slot="main.diffuse"/>-->
+        <!--            <Adaptions TriggerOnSubstring="TibCore" Slot="main2.diffuse"/>-->
+        <!--            <Adaptions TriggerOnSubstring="TibCore_SPM" Slot="main2.specular"/>-->
+    </CModel>
+    <CModel id="NodPowerPlantPlacement" parent="SupplyDepotBase">
+        <Model value="Assets\Models\Nod PowerPlant\Nod PowerPlant Placement.m3"/>
         <Radius value="1.000000"/>
         <ScaleMax value="1.150000,1.150000,1.150000"/>
         <ScaleMin value="1.150000,1.150000,1.150000"/>
@@ -749,15 +729,15 @@
         <ShadowRadius value="1.500000"/>
         <EditorCategories value="Race:Nod"/>
     </CModel>
-    <CModel id="NodPowerPlantUpgrade" parent="SupplyDepotBase">
-        <Model value="Assets\Models\Nod PowerPlant\Nod PowerPlant Upgrade.m3"/>
-        <Radius value="1.000000"/>
-        <ScaleMax value="1.150000,1.150000,1.150000"/>
-        <ScaleMin value="1.150000,1.150000,1.150000"/>
-        <SelectionRadius value="1.500000"/>
-        <ShadowRadius value="1.500000"/>
-        <EditorCategories value="Race:Nod"/>
-    </CModel>
+    <!--    <CModel id="NodPowerPlantUpgraded" parent="SupplyDepotBase">-->
+    <!--        <Model value="Assets\Models\Nod PowerPlant\Nod PowerPlant Upgrade.m3"/>-->
+    <!--        <Radius value="1.000000"/>-->
+    <!--        <ScaleMax value="1.150000,1.150000,1.150000"/>-->
+    <!--        <ScaleMin value="1.150000,1.150000,1.150000"/>-->
+    <!--        <SelectionRadius value="1.500000"/>-->
+    <!--        <ShadowRadius value="1.500000"/>-->
+    <!--        <EditorCategories value="Race:Nod"/>-->
+    <!--    </CModel>-->
     <CModel id="NodDefenseCY" parent="CommandCenterBase">
         <Model value="Assets\Models\Nod Defense MCV\Nod Defense ConYard.m3"/>
         <SelectionRadius value="2.000000"/>
@@ -766,7 +746,7 @@
         <ScaleMax value="1.200000,1.200000,1.200000"/>
         <ScaleMin value="1.200000,1.200000,1.200000"/>
     </CModel>
-    <CModel id="NodScorpion" parent="WidowMineBase">
+    <CModel id="CabalScorpion" parent="WidowMineBase">
         <Model value="Assets\Models\Scorpion\Scorpion.m3"/>
         <EditorCategories value="Race:Nod"/>
     </CModel>
@@ -958,17 +938,19 @@
         <ShadowRadius value="1.500000"/>
         <EditorCategories value="Race:Nod"/>
     </CModel>
-    <CModel id="NodWarFactory" parent="FactoryBase">
-        <Model value="Assets\Models\Nod DropZone\Nod DropZone.m3"/>
+    <CModel id="NodWarFactory" parent="NodBuilding">
         <Radius value="1.500000"/>
-        <ScaleMax value="1.200000,1.200000,1.200000"/>
-        <ScaleMin value="1.200000,1.200000,1.200000"/>
+        <ScaleMax value="1.100000,1.100000,1.100000"/>
+        <ScaleMin value="1.100000,1.100000,1.100000"/>
         <SelectionRadius value="1.500000"/>
         <ShadowRadius value="1.500000"/>
-        <EditorCategories value="Race:Nod"/>
         <TextureDeclares Prefix="NB">
             <Adaptions TriggerOnSubstring="_DropZone" Slot="main"/>
         </TextureDeclares>
+    </CModel>
+    <CModel id="NodWarFactoryDeath" parent="NodBuildingDeath">
+        <ScaleMax value="1.100000,1.100000,1.100000"/>
+        <ScaleMin value="1.100000,1.100000,1.100000"/>
     </CModel>
     <CModel id="NodAirTower" parent="NodBuilding">
         <ScaleMax value="0.800000,0.800000,0.800000"/>
@@ -1016,17 +998,8 @@
         <Model value="Assets\Models\Nod Shrine\Nod Shrine Placement.m3"/>
         <EditorCategories value="Race:Nod"/>
     </CModel>
-    <CModel id="OPCenterPlacement" parent="EngineeringBayPlacementBase" low="NodOPCenter">
+    <CModel id="OPCenterPlacement" parent="EngineeringBayPlacementBase" low="NodOperationsCenter">
         <Model value="Assets\Models\Nod OperationCenter\Nod OPCenter Placement.m3"/>
-        <EditorCategories value="Race:Nod"/>
-    </CModel>
-    <CModel id="NodPowerPlantPM" parent="SupplyDepotBase">
-        <Model value="Assets\Models\Nod PowerPlant\Nod PowerPlant Placement.m3"/>
-        <Radius value="1.000000"/>
-        <ScaleMax value="1.150000,1.150000,1.150000"/>
-        <ScaleMin value="1.150000,1.150000,1.150000"/>
-        <SelectionRadius value="1.500000"/>
-        <ShadowRadius value="1.500000"/>
         <EditorCategories value="Race:Nod"/>
     </CModel>
     <CModel id="TempleofNodPlacement" parent="EngineeringBayPlacementBase" low="TempleofNod">
@@ -1035,13 +1008,13 @@
         <ScaleMax value="1.250000,1.250000,1.250000"/>
         <ScaleMin value="1.250000,1.250000,1.250000"/>
     </CModel>
-    <CModel id="NodCranePlacement" parent="BarracksBase">
-        <Model value="Assets\Models\Nod Crane\Nod Crane Placement.m3"/>
-        <Radius value="1.200000"/>
-        <SelectionRadius value="1.200000"/>
-        <ShadowRadius value="1.200000"/>
-        <EditorCategories value="Race:Nod"/>
-    </CModel>
+    <!--    <CModel id="NodCranePlacement" parent="BarracksBase">-->
+    <!--        <Model value="Assets\Models\Nod Crane\Nod Crane Placement.m3"/>-->
+    <!--        <Radius value="1.200000"/>-->
+    <!--        <SelectionRadius value="1.200000"/>-->
+    <!--        <ShadowRadius value="1.200000"/>-->
+    <!--        <EditorCategories value="Race:Nod"/>-->
+    <!--    </CModel>-->
     <CModel id="CabalOutpostPM" parent="SupplyDepotBase">
         <Model value="Assets\Models\Nod Outpost\Nod Outposts Placement.m3"/>
         <Radius value="1.000000"/>
@@ -1063,28 +1036,19 @@
         <ShadowRadius value="1.000000"/>
         <EditorCategories value="Race:Nod"/>
     </CModel>
-    <CModel id="NodTiberiumSilo" parent="RefineryBase">
-        <Model value="Assets\Models\NBTiberiumSilo.m3"/>
+    <CModel id="NodTiberiumSilo" parent="NodBuilding">
         <Radius value="1.000000"/>
         <ScaleMax value="1.600000,1.600000,1.600000"/>
         <ScaleMin value="1.600000,1.600000,1.600000"/>
         <SelectionRadius value="1.250000"/>
         <ShadowRadius value="1.250000"/>
     </CModel>
-    <CModel id="NodTiberiumSiloDeath" parent="RefineryDeathBase">
-        <Model value="Assets\Models\NBTiberiumSiloDeath.m3"/>
-        <Events index="0" removed="1"/>
-        <Events index="1" removed="1"/>
-        <Events index="2" removed="1"/>
-        <Events index="3" removed="1"/>
-        <Events index="4" removed="1"/>
-    </CModel>
-    <CModel id="NodTiberiumSiloPlacement" parent="FactoryPlacementBase">
-        <Model value="Assets\Models\Nod DropZone\Nod DropZone Placement.m3"/>
-        <ScaleMax value="1.200000,1.200000,1.200000"/>
-        <ScaleMin value="1.200000,1.200000,1.200000"/>
-        <EditorCategories value="Race:Nod"/>
-    </CModel>
+    <CModel id="NodTiberiumSiloDeath" parent="NodBuildingDeath"/>
+    <!--    <CModel id="NodTiberiumSiloPlacement" parent="FactoryPlacementBase">-->
+    <!--        <ScaleMax value="1.200000,1.200000,1.200000"/>-->
+    <!--        <ScaleMin value="1.200000,1.200000,1.200000"/>-->
+    <!--        <EditorCategories value="Race:Nod"/>-->
+    <!--    </CModel>-->
     <CModel id="NodHangarPlacement" parent="StarportPlacementBase" low="NodHangar">
         <Model value="Assets\Models\Nod Hangar\Nod Hangar Placement.m3"/>
         <EditorCategories value="Race:Nod"/>
@@ -1099,13 +1063,13 @@
         <EditorCategories value="Race:Nod"/>
     </CModel>
     <!--Death-->
-    <CModel id="NodBikeDeath" parent="UnitDeath">
+    <CModel id="CabalBikeDeath" parent="UnitDeath">
         <Model value="Assets\Models\Bike\BIKE Death.m3"/>
         <LowQualityModel value="TerranSmallUnitDeathLow"/>
-        <ScaleMax value="0.800000,0.800000,0.800000"/>
-        <ScaleMin value="0.800000,0.800000,0.800000"/>
         <EditorCategories value="Race:Nod"/>
         <Occlusion value="Show"/>
+        <ScaleMax value="0.800000,0.800000,0.800000"/>
+        <ScaleMin value="0.800000,0.800000,0.800000"/>
     </CModel>
     <CModel id="NodRaiderDeath" parent="UnitDeath">
         <Model value="Assets\Units\Cabal\CabalRaiderDeath.m3"/>
@@ -1162,18 +1126,7 @@
         <Model value="Assets\Models\Nod Defense MCV\Nod Defense ConYard Death.m3"/>
         <EditorCategories value="Race:Nod"/>
     </CModel>
-    <CModel id="NodCraneDeath" parent="BarracksDeathBase">
-        <Model value="Assets\Models\Nod Crane\Nod Crane Death.m3"/>
-        <Events index="0" removed="1"/>
-        <Events index="1" removed="1"/>
-        <Events index="2" removed="1"/>
-        <Events index="3" removed="1"/>
-        <Events index="4" removed="1"/>
-        <Events index="5" removed="1"/>
-        <Events index="6" removed="1"/>
-        <Events index="7" removed="1"/>
-        <EditorCategories value="Race:Nod"/>
-    </CModel>
+    <CModel id="NodCraneDeath" parent="NodBuildingDeath"/>
     <CModel id="CabalDefenseCrawlerDeath" parent="SiegeTankDeathBase">
         <ScaleMax value="1.111000,1.111000,1.111000"/>
         <ScaleMin value="1.111000,1.111000,1.111000"/>
@@ -1191,11 +1144,11 @@
         <Events index="6" removed="1"/>
         <EditorCategories value="Race:Nod"/>
     </CModel>
-    <CModel id="ScalpelDeath" parent="UnitDeath">
+    <CModel id="CabalScalpelDeath" parent="UnitDeath">
         <Model value="Assets\Models\Nod Scalpel\Nod Scalpe Deathl.m3"/>
         <LowQualityModel value="TerranMediumUnitDeathLow"/>
-        <Radius value="0.625000"/>
         <EditorCategories value="Race:Nod"/>
+        <Radius value="0.625000"/>
     </CModel>
     <CModel id="NodTurretDeathO" parent="BuildingDeath">
         <Model value="Assets\Models\Nod Turret\Nod Turret Death.m3"/>
@@ -1359,20 +1312,7 @@
         <Events index="6" removed="1"/>
         <EditorCategories value="Race:Nod"/>
     </CModel>
-    <CModel id="NodFactoryDeath" parent="FactoryDeathBase">
-        <Model value="Assets\Models\Nod DropZone\Nod DropZone Death.m3"/>
-        <Events index="0" removed="1"/>
-        <Events index="1" removed="1"/>
-        <Events index="2" removed="1"/>
-        <Events index="3" removed="1"/>
-        <Events index="4" removed="1"/>
-        <Events index="5" removed="1"/>
-        <Events index="6" removed="1"/>
-        <ScaleMax value="1.200000,1.200000,1.200000"/>
-        <ScaleMin value="1.200000,1.200000,1.200000"/>
-        <EditorCategories value="Race:Nod"/>
-    </CModel>
-    <CModel id="NodPowerPlantUpgradeDeath" parent="SupplyDepotDeathBase">
+    <CModel id="NodPowerPlantUpgradedDeath" parent="SupplyDepotDeathBase">
         <Model value="Assets\Models\Nod PowerPlant\Nod PowerPlant Upgrade Death.m3"/>
         <Events index="0" removed="1"/>
         <Events index="1" removed="1"/>
@@ -1393,22 +1333,17 @@
         <LowQualityModel value="TerranBuildingDeathLow"/>
         <EditorCategories value="Race:Nod"/>
     </CModel>
-    <CModel id="NodBuildingDeath" parent="BuildingDeath">
-        <Model value="Assets\Buildings\Terran\TerranBuildingDeathEx1\TerranBuildingDeathEx1.m3"/>
-        <LowQualityModel value="TerranBuildingDeathLow"/>
-        <EditorCategories value="Race:Nod"/>
-    </CModel>
-    <CModel id="CobraDeath" parent="UnitDeath">
+    <CModel id="CabalCobraDeath" parent="UnitDeath">
         <Model value="Assets\Models\Nod Cobra\Nod Cobra Death.m3"/>
         <LowQualityModel value="TerranMediumUnitDeathLow"/>
-        <Radius value="0.625000"/>
         <EditorCategories value="Race:Nod"/>
+        <Radius value="0.625000"/>
     </CModel>
-    <CModel id="VenomDeath" parent="UnitDeath">
+    <CModel id="CabalBaneDeath" parent="UnitDeath">
         <Model value="Assets\Models\Nod Venom\Nod Venom Death.m3"/>
         <LowQualityModel value="TerranMediumUnitDeathLow"/>
-        <Radius value="0.625000"/>
         <EditorCategories value="Race:Nod"/>
+        <Radius value="0.625000"/>
         <ScaleMax value="1.300000,1.300000,1.300000"/>
         <ScaleMin value="1.300000,1.300000,1.300000"/>
     </CModel>
@@ -1423,7 +1358,7 @@
     <CModel id="NodConfessor" parent="NodUnit"/>
     <CModel id="NodFanatic" parent="NodUnit"/>
     <CModel id="NodMilitantRocket" parent="NodUnit"/>
-    <CModel id="NodSilent" parent="NodUnit"/>
+    <CModel id="NodAwakened" parent="NodUnit"/>
     <CModel id="NodEnlightened" parent="NodUnit"/>
     <CModel id="NodTiberiumTrooper" parent="NodUnit"/>
     <CModel id="NodMilitant" parent="NodUnit"/>
@@ -1434,8 +1369,8 @@
     </CModel>
     <CModel id="NodTurretsHub" parent="NodBuilding"/>
     <CModel id="NodAirTowerDock" parent="NodBuilding">
-        <ScaleMin value="1.1,1.1,1.1"/>
-        <ScaleMax value="1.1,1.1,1.1"/>
+        <ScaleMin value="1.100000,1.100000,1.100000"/>
+        <ScaleMax value="1.100000,1.100000,1.100000"/>
     </CModel>
     <CModel id="NodDisruptionTower" parent="NodBuilding"/>
     <CModel id="NodLaserTurret" parent="NodBuilding">
@@ -1452,6 +1387,8 @@
     </CModel>
     <CModel id="NodVoiceOfKane" parent="NodBuilding"/>
     <CModel id="NodAirSupport" parent="NodBuilding">
+        <Radius value="0.600000"/>
+        <SelectionRadius value="1.200000"/>
         <ScaleMax value="0.750000,0.750000,0.750000"/>
         <ScaleMin value="0.750000,0.750000,0.750000"/>
     </CModel>
@@ -1500,32 +1437,23 @@
     <CModel id="CabalControlNodeDeath" parent="CabalBuilding"/>
     <CModel id="CabalControlNode" parent="CabalBuilding"/>
     <CModel id="CabalCrawlerHangar" parent="CabalBuilding"/>
-    <CModel id="NodTiberiumRefinery" parent="BuildingEx">
-        <Model value="Assets\Models\NBTiberiumRefinery.m3"/>
+    <CModel id="NodTiberiumRefinery" parent="NodBuilding">
         <Radius value="1.000000"/>
         <ScaleMax value="1.400000,1.400000,1.400000"/>
         <ScaleMin value="1.400000,1.400000,1.400000"/>
         <SelectionRadius value="1.200000"/>
         <ShadowRadius value="1.200000"/>
-        <EditorCategories value="Race:Nod"/>
     </CModel>
-    <CModel id="NodTiberiumRefineryPlacement" parent="PlacementEx">
-        <Model value="Assets\Models\NBTiberiumRefineryPlacement.m3"/>
-        <LowQualityModel value="NodTiberiumRefinery"/>
+    <!--    <CModel id="NodTiberiumRefineryPlacement" parent="PlacementEx">-->
+    <!--        <Model value="Assets\Models\NBTiberiumRefineryPlacement.m3"/>-->
+    <!--        <LowQualityModel value="NodTiberiumRefinery"/>-->
+    <!--        <ScaleMax value="1.400000,1.400000,1.400000"/>-->
+    <!--        <ScaleMin value="1.400000,1.400000,1.400000"/>-->
+    <!--        <EditorCategories value="Race:Nod"/>-->
+    <!--    </CModel>-->
+    <CModel id="NodTiberiumRefineryDeath" parent="NodBuildingDeath">
         <ScaleMax value="1.400000,1.400000,1.400000"/>
         <ScaleMin value="1.400000,1.400000,1.400000"/>
-        <EditorCategories value="Race:Nod"/>
-    </CModel>
-    <CModel id="NodTiberiumRefineryDeath" parent="CommandCenterDeathBase">
-        <Model value="Assets\Models\NBTiberiumRefineryDeath.m3"/>
-        <Events index="0" removed="1"/>
-        <Events index="1" removed="1"/>
-        <Events index="2" removed="1"/>
-        <Events index="3" removed="1"/>
-        <Events index="4" removed="1"/>
-        <ScaleMax value="1.400000,1.400000,1.400000"/>
-        <ScaleMin value="1.400000,1.400000,1.400000"/>
-        <EditorCategories value="Race:Nod"/>
     </CModel>
     <CModel id="NodEmissary" parent="NodUnit"/>
     <CModel id="NodArtilleryBeacon" parent="NodUnit"/>
@@ -2375,4 +2303,13 @@
     </CModel>
     <CModel id="NodAvatar" parent="NodUnit"/>
     <CModel id="NodPurifier" parent="NodUnit"/>
+    <CModel id="CnCPlacement1x1" parent="PlacementEx">
+        <Model value="Assets\Buildings\PLACEMENT\Placement1x1.m3"/>
+    </CModel>
+    <CModel id="CnCPlacement3x3" parent="PlacementEx">
+        <Model value="Assets\Buildings\PLACEMENT\Placement3x3.m3"/>
+    </CModel>
+    <CModel id="CnCPlacement5x5" parent="PlacementEx">
+        <Model value="Assets\Buildings\PLACEMENT\Placement5x5.m3"/>
+    </CModel>
 </Catalog>

@@ -59,7 +59,7 @@ void libRED3_gf_Theplanetakesoff (unit lp_airplane) {
     }
 }
 
-void libRED3_gf_SearchForAirportandLockit (unit lp_airplane, unit lp_searchTarget, int lp_radius) {
+void libRED3_gf_SearchForAirportandLockit (unit lp_airplane, unit lp_searchTarget, int lp_radius, bool lp_skipOccupied) {
     // Variable Declarations
     unit lv_searchTarget;
     unit lv_airport;
@@ -109,7 +109,10 @@ void libRED3_gf_SearchForAirportandLockit (unit lp_airplane, unit lp_searchTarge
                 }
             }
             else {
-                UnitGroupAdd(lv_priority3, autoE88C35C1_var);
+                if ((lp_skipOccupied == false)) {
+                    UnitGroupAdd(lv_priority3, autoE88C35C1_var);
+                }
+
             }
         }
 
@@ -147,7 +150,6 @@ void libRED3_gf_TargetAirport (unit lp_airplane, unit lp_airport) {
     lv_airplane = lp_airplane;
 
     // Implementation
-    TriggerDebugOutput(1, StringExternal("Param/Value/lib_RED3_0870BC06"), true);
     lv_landingpoint = PointWithOffsetPolar(PointWithOffsetPolar(UnitGetPosition(lp_airport), UnitGetCustomValue(lv_airport, 1), (-45.0 + UnitGetFacing(lv_airport))), UnitGetCustomValue(lv_airport, 2), (UnitGetFacing(lv_airport) + 45.0));
     UnitIssueOrder(lp_airplane, OrderTargetingPoint(AbilityCommand("VS_ReturnToAirport", 0), lv_landingpoint), c_orderQueueReplace);
     DataTableSetUnit(true, ("TARGETAIRPORT" + IntToString(UnitGetTag(lv_airplane))), lv_airport);
@@ -1779,49 +1781,6 @@ void libRED3_gt_Maintenancebeeheightrestored_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: MoveCommandOverrideExecute
-//--------------------------------------------------------------------------------------------------
-bool libRED3_gt_MoveCommandOverrideExecute_Func (bool testConds, bool runActions) {
-    // Variable Declarations
-    unit lv_airplane;
-    unit lv_airport;
-
-    // Automatic Variable Declarations
-    // Variable Initialization
-    lv_airplane = EventUnit();
-    lv_airport = EventUnitTargetUnit();
-
-    // Conditions
-    if (testConds) {
-        if (!((UnitAbilityExists(lv_airplane, "VS_ReturnToAirport") == true))) {
-            return false;
-        }
-    }
-
-    // Actions
-    if (!runActions) {
-        return true;
-    }
-
-    if ((UnitHasBehavior2(lv_airport, "AirSupport") == true)) {
-        libRED3_gf_SearchForAirportandLockit(lv_airplane, lv_airport, 10);
-    }
-    else {
-        if ((UnitHasBehavior2(lv_airport, "AircraftAirportParkingAircraftTracking") == true)) {
-            libRED3_gf_TargetAirport(lv_airplane, lv_airport);
-        }
-
-    }
-    return true;
-}
-
-//--------------------------------------------------------------------------------------------------
-void libRED3_gt_MoveCommandOverrideExecute_Init () {
-    libRED3_gt_MoveCommandOverrideExecute = TriggerCreate("libRED3_gt_MoveCommandOverrideExecute_Func");
-    TriggerAddEventUnitAbility(libRED3_gt_MoveCommandOverrideExecute, null, AbilityCommand("CNCAirplaneMove", 0), c_unitAbilStageExecute, false);
-}
-
-//--------------------------------------------------------------------------------------------------
 // Trigger: AIRSUPPORT CREATED
 //--------------------------------------------------------------------------------------------------
 bool libRED3_gt_AIRSUPPORTCREATED_Func (bool testConds, bool runActions) {
@@ -2022,9 +1981,52 @@ void libRED3_gt_AIRPORTsMapIINIT_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: todo CREATED - Aircraft manufacturing completed
+// Trigger: MoveCommandOverrideExecute
 //--------------------------------------------------------------------------------------------------
-bool libRED3_gt_todoCREATEDAircraftmanufacturingcompleted_Func (bool testConds, bool runActions) {
+bool libRED3_gt_MoveCommandOverrideExecute_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_airplane;
+    unit lv_airport;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_airplane = EventUnit();
+    lv_airport = EventUnitTargetUnit();
+
+    // Conditions
+    if (testConds) {
+        if (!((UnitAbilityExists(lv_airplane, "VS_ReturnToAirport") == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    if ((UnitHasBehavior2(lv_airport, "AirSupport") == true)) {
+        libRED3_gf_SearchForAirportandLockit(lv_airplane, lv_airport, 15, false);
+    }
+    else {
+        if ((UnitHasBehavior2(lv_airport, "AircraftAirportParkingAircraftTracking") == true)) {
+            libRED3_gf_TargetAirport(lv_airplane, lv_airport);
+        }
+
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libRED3_gt_MoveCommandOverrideExecute_Init () {
+    libRED3_gt_MoveCommandOverrideExecute = TriggerCreate("libRED3_gt_MoveCommandOverrideExecute_Func");
+    TriggerAddEventUnitAbility(libRED3_gt_MoveCommandOverrideExecute, null, AbilityCommand("CNCAirplaneMove", 0), c_unitAbilStageExecute, false);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: CREATED - Aircraft manufacturing completed
+//--------------------------------------------------------------------------------------------------
+bool libRED3_gt_CREATEDAircraftmanufacturingcompleted_Func (bool testConds, bool runActions) {
     // Variable Declarations
     unit lv_airport;
     unit lv_airplane;
@@ -2046,15 +2048,15 @@ bool libRED3_gt_todoCREATEDAircraftmanufacturingcompleted_Func (bool testConds, 
         return true;
     }
 
-    libRED3_gf_SearchForAirportandLockit(lv_airplane, lv_airport, 10);
+    libRED3_gf_SearchForAirportandLockit(lv_airplane, lv_airport, 15, true);
     return true;
 }
 
 //--------------------------------------------------------------------------------------------------
-void libRED3_gt_todoCREATEDAircraftmanufacturingcompleted_Init () {
-    libRED3_gt_todoCREATEDAircraftmanufacturingcompleted = TriggerCreate("libRED3_gt_todoCREATEDAircraftmanufacturingcompleted_Func");
-    TriggerAddEventUnitTrainProgress(libRED3_gt_todoCREATEDAircraftmanufacturingcompleted, null, c_unitProgressStageComplete);
-    TriggerAddEventUnitConstructProgress(libRED3_gt_todoCREATEDAircraftmanufacturingcompleted, null, c_unitProgressStageComplete);
+void libRED3_gt_CREATEDAircraftmanufacturingcompleted_Init () {
+    libRED3_gt_CREATEDAircraftmanufacturingcompleted = TriggerCreate("libRED3_gt_CREATEDAircraftmanufacturingcompleted_Func");
+    TriggerAddEventUnitTrainProgress(libRED3_gt_CREATEDAircraftmanufacturingcompleted, null, c_unitProgressStageComplete);
+    TriggerAddEventUnitConstructProgress(libRED3_gt_CREATEDAircraftmanufacturingcompleted, null, c_unitProgressStageComplete);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -2097,7 +2099,7 @@ bool libRED3_gt_LANDINGAlliedairfieldlanding_Func (bool testConds, bool runActio
     }
 
     if ((DataTableValueExists(true, lv_dataTag) == false)) {
-        libRED3_gf_SearchForAirportandLockit(lv_airplane, null, 0);
+        libRED3_gf_SearchForAirportandLockit(lv_airplane, null, 0, false);
         return true;
     }
 
@@ -2105,21 +2107,23 @@ bool libRED3_gt_LANDINGAlliedairfieldlanding_Func (bool testConds, bool runActio
     DataTableValueRemove(true, ("TARGETAIRPORT" + lv_dataTag));
     UnitBehaviorRemove(lv_airport, "LockedLandingPad", 1);
     if ((UnitHasBehavior2(lv_airport, "Docked") == true)) {
-        libRED3_gf_SearchForAirportandLockit(lv_airplane, null, 0);
+        libRED3_gf_SearchForAirportandLockit(lv_airplane, lv_airport, 15, true);
         return true;
     }
 
+    UnitBehaviorAdd(lv_airport, "Docked", lv_airplane, 1);
+    UnitBehaviorAdd(lv_airplane, "AirportCurrentlyLanding", lv_airport, 1);
     lv_aircraftheading = FixedToInt(((-45.0 + UnitGetFacing(lv_airport)) + UnitGetCustomValue(lv_airport, 4)));
     UnitIssueOrder(lv_airplane, Order(AbilityCommand("ReloadingDummy", 0)), c_orderQueueAddToFront);
     UnitIssueOrder(lv_airplane, OrderTargetingPoint(AbilityCommand("CNCAirplaneMove", 0), lv_landingpoint), c_orderQueueAddToFront);
     Wait(0.5, c_timeGame);
     if (((UnitIsAlive(lv_airplane) == false) || (UnitIsAlive(lv_airport) == false))) {
         UnitBehaviorRemove(lv_airplane, "Airportcirclingprohibitedforaperiodoftime", 1);
+        UnitBehaviorRemove(lv_airplane, "AirportCurrentlyLanding", 1);
 
     }
     else {
         UnitSetPosition(lv_airplane, lv_landingpoint, false);
-        UnitBehaviorAdd(lv_airport, "Docked", lv_airplane, 1);
         if ((UnitIsAlive(lv_airplane) == true) && (UnitIsAlive(lv_airport) == true)) {
             lv_angledifference = libRED3_gf_Angledifferencebetweenunitandtargetpoint(lv_airplane, PointWithOffsetPolar(lv_landingpoint, 1.0, lv_aircraftheading));
             lv_turningtime = (lv_angledifference / UnitGetPropertyFixed(lv_airplane, c_unitPropTurnRate, c_unitPropCurrent));
@@ -2131,11 +2135,10 @@ bool libRED3_gt_LANDINGAlliedairfieldlanding_Func (bool testConds, bool runActio
         }
         else {
             UnitBehaviorRemove(lv_airplane, "Airportcirclingprohibitedforaperiodoftime", 1);
+            UnitBehaviorRemove(lv_airplane, "AirportCurrentlyLanding", 1);
             UnitBehaviorRemove(lv_airport, "Docked", 1);
 
         }
-        Wait(lv_turningtime, c_timeGame);
-        UnitSetFacing(lv_airplane, lv_aircraftheading, 0.1);
         if ((UnitIsAlive(lv_airplane) == true) && (UnitIsAlive(lv_airport) == true)) {
             UnitBehaviorAdd(lv_airplane, "AirportNousefortakeoff", lv_airplane, 1);
             autoB21399C5_val = UnitGetType(lv_airplane);
@@ -2152,6 +2155,7 @@ bool libRED3_gt_LANDINGAlliedairfieldlanding_Func (bool testConds, bool runActio
                 lv_landingTime = 0.75;
             }
             UnitSetHeight(lv_airplane, (UnitGetHeight(lv_airport) + UnitGetCustomValue(lv_airport, 3)), lv_landingTime);
+            UnitBehaviorRemove(lv_airplane, "AirportCurrentlyLanding", 1);
             UnitBehaviorSetDuration(lv_airplane, "AirportNousefortakeoff", lv_landingTime);
             UnitBehaviorAdd(lv_airplane, "Airportlanded", lv_airplane, 1);
             UnitBehaviorAdd(lv_airplane, "Aircraftreversesurveillanceoftheairport", lv_airplane, 1);
@@ -2162,6 +2166,7 @@ bool libRED3_gt_LANDINGAlliedairfieldlanding_Func (bool testConds, bool runActio
             UnitSetHeight(lv_airplane, (UnitGetHeight(lv_airport) + UnitGetCustomValue(lv_airport, 3)), 0.0);
         }
         else {
+            UnitBehaviorRemove(lv_airplane, "AirportCurrentlyLanding", 1);
             UnitBehaviorRemove(lv_airplane, "Airportcirclingprohibitedforaperiodoftime", 1);
             UnitBehaviorRemove(lv_airport, "Docked", 1);
 
@@ -2194,7 +2199,6 @@ bool libRED3_gt_Aircraftrestorationslot_Func (bool testConds, bool runActions) {
         return true;
     }
 
-    TriggerDebugOutput(1, StringExternal("Param/Value/lib_RED3_C8869A8A"), true);
     UnitBehaviorRemove(lv_airport, "Docked", 1);
     return true;
 }
@@ -2224,10 +2228,6 @@ bool libRED3_gt_TAKEOFFTheeffectoftheplaneaftertakeoff_Func (bool testConds, boo
     }
 
     libRED3_gf_Theplanetakesoff(lv_airplane);
-    lv_waitingtime = UnitBehaviorDurationTotal(lv_airplane, "Airporttakingoff");
-    Wait(lv_waitingtime, c_timeGame);
-    UnitIssueOrder(lv_airplane, OrderTargetingPoint(null, EventPlayerEffectUsedPoint(c_effectLocationTargetPoint)), c_orderQueueReplace);
-    UnitIssueOrder(lv_airplane, OrderTargetingUnit(null, EventPlayerEffectUsedUnit(c_effectUnitTarget)), c_orderQueueReplace);
     return true;
 }
 
@@ -2235,6 +2235,43 @@ bool libRED3_gt_TAKEOFFTheeffectoftheplaneaftertakeoff_Func (bool testConds, boo
 void libRED3_gt_TAKEOFFTheeffectoftheplaneaftertakeoff_Init () {
     libRED3_gt_TAKEOFFTheeffectoftheplaneaftertakeoff = TriggerCreate("libRED3_gt_TAKEOFFTheeffectoftheplaneaftertakeoff_Func");
     TriggerAddEventPlayerEffectUsed(libRED3_gt_TAKEOFFTheeffectoftheplaneaftertakeoff, c_playerAny, "PlaneTakesOffC");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: TAKEOFF ATTACK
+//--------------------------------------------------------------------------------------------------
+bool libRED3_gt_TAKEOFFATTACK_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_airplane;
+    fixed lv_waitingtime;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_airplane = EventUnit();
+
+    // Conditions
+    if (testConds) {
+        if (!((UnitHasBehavior2(lv_airplane, "Notifyairportaftertakeofforexplosion") == true))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    UnitIssueOrder(lv_airplane, Order(AbilityCommand("CNCAirportPlanetakingoff", 0)), c_orderQueueAddToFront);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libRED3_gt_TAKEOFFATTACK_Init () {
+    libRED3_gt_TAKEOFFATTACK = TriggerCreate("libRED3_gt_TAKEOFFATTACK_Func");
+    TriggerAddEventUnitAbility(libRED3_gt_TAKEOFFATTACK, null, AbilityCommand("attack2", 0), c_unitAbilStageExecute, false);
+    TriggerAddEventUnitAbility(libRED3_gt_TAKEOFFATTACK, null, AbilityCommand("CNCAirplaneMove", 0), c_unitAbilStageExecute, false);
+    TriggerAddEventUnitAbility(libRED3_gt_TAKEOFFATTACK, null, AbilityCommand("CNCAirplaneMove", 1), c_unitAbilStageExecute, false);
+    TriggerAddEventUnitAbility(libRED3_gt_TAKEOFFATTACK, null, AbilityCommand("CNCAirplaneMove", 3), c_unitAbilStageExecute, false);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -2253,8 +2290,9 @@ bool libRED3_gt_NOAMMORETURN_Func (bool testConds, bool runActions) {
         return true;
     }
 
+    TriggerDebugOutput(1, StringExternal("Param/Value/lib_RED3_2BF83E17"), true);
     if ((UnitGetCustomValue(lv_airplane, 11) == 0.0)) {
-        libRED3_gf_SearchForAirportandLockit(lv_airplane, null, 0);
+        libRED3_gf_SearchForAirportandLockit(lv_airplane, null, 0, false);
     }
 
     return true;
@@ -2267,9 +2305,9 @@ void libRED3_gt_NOAMMORETURN_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: NO AMMO - RETURN 2
+// Trigger: NO AMMO - Attack Complete
 //--------------------------------------------------------------------------------------------------
-bool libRED3_gt_NOAMMORETURN2_Func (bool testConds, bool runActions) {
+bool libRED3_gt_NOAMMOAttackComplete_Func (bool testConds, bool runActions) {
     // Variable Declarations
     unit lv_airplane;
 
@@ -2282,17 +2320,18 @@ bool libRED3_gt_NOAMMORETURN2_Func (bool testConds, bool runActions) {
         return true;
     }
 
+    TriggerDebugOutput(1, StringExternal("Param/Value/lib_RED3_52965622"), true);
     if ((ValidatorExecute("CasterHasEnergy22", lv_airplane, lv_airplane) == 0) && (UnitGetCustomValue(lv_airplane, 11) == 0.0)) {
-        libRED3_gf_SearchForAirportandLockit(lv_airplane, null, 0);
+        libRED3_gf_SearchForAirportandLockit(lv_airplane, null, 0, false);
     }
 
     return true;
 }
 
 //--------------------------------------------------------------------------------------------------
-void libRED3_gt_NOAMMORETURN2_Init () {
-    libRED3_gt_NOAMMORETURN2 = TriggerCreate("libRED3_gt_NOAMMORETURN2_Func");
-    TriggerAddEventUnitAbility(libRED3_gt_NOAMMORETURN2, null, AbilityCommand("attack", 0), c_unitAbilStageComplete, false);
+void libRED3_gt_NOAMMOAttackComplete_Init () {
+    libRED3_gt_NOAMMOAttackComplete = TriggerCreate("libRED3_gt_NOAMMOAttackComplete_Func");
+    TriggerAddEventUnitAbility(libRED3_gt_NOAMMOAttackComplete, null, AbilityCommand("attack2", 0), c_unitAbilStageComplete, false);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -2313,8 +2352,7 @@ bool libRED3_gt_ENABLEAUTORETURN_Func (bool testConds, bool runActions) {
 
     UnitSetCustomValue(lv_airplane, 11, 0.0);
     if ((ValidatorExecute("CasterHasEnergy22", lv_airplane, lv_airplane) == 0)) {
-        TriggerDebugOutput(1, StringExternal("Param/Value/lib_RED3_41D14810"), true);
-        libRED3_gf_SearchForAirportandLockit(lv_airplane, null, 0);
+        libRED3_gf_SearchForAirportandLockit(lv_airplane, null, 0, false);
     }
 
     return true;
@@ -2400,7 +2438,7 @@ bool libRED3_gt_ABILITYRETURNTOAIRPORTGLOBAL_Func (bool testConds, bool runActio
         return true;
     }
 
-    libRED3_gf_SearchForAirportandLockit(EventPlayerEffectUsedUnit(c_effectUnitCaster), null, 0);
+    libRED3_gf_SearchForAirportandLockit(EventPlayerEffectUsedUnit(c_effectUnitCaster), null, 0, false);
     return true;
 }
 
@@ -2620,16 +2658,17 @@ void libRED3_InitTriggers () {
     libRED3_gt_Clearthecoveraftertheteleportationiscancelled_Init();
     libRED3_gt_Maintenancebeeheightadjustment_Init();
     libRED3_gt_Maintenancebeeheightrestored_Init();
-    libRED3_gt_MoveCommandOverrideExecute_Init();
     libRED3_gt_AIRSUPPORTCREATED_Init();
     libRED3_gt_AIRPODCREATED_Init();
     libRED3_gt_AIRPORTsMapIINIT_Init();
-    libRED3_gt_todoCREATEDAircraftmanufacturingcompleted_Init();
+    libRED3_gt_MoveCommandOverrideExecute_Init();
+    libRED3_gt_CREATEDAircraftmanufacturingcompleted_Init();
     libRED3_gt_LANDINGAlliedairfieldlanding_Init();
     libRED3_gt_Aircraftrestorationslot_Init();
     libRED3_gt_TAKEOFFTheeffectoftheplaneaftertakeoff_Init();
+    libRED3_gt_TAKEOFFATTACK_Init();
     libRED3_gt_NOAMMORETURN_Init();
-    libRED3_gt_NOAMMORETURN2_Init();
+    libRED3_gt_NOAMMOAttackComplete_Init();
     libRED3_gt_ENABLEAUTORETURN_Init();
     libRED3_gt_DISABLEAUTORETURN_Init();
     libRED3_gt_DOCKEDCANCELLEDremovelock_Init();

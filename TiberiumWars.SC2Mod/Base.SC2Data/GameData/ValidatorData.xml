@@ -92,7 +92,7 @@
 <!--        &lt;!&ndash;        <CombineArray value="GDICombatSupportAirfield"/>&ndash;&gt;-->
 <!--        &lt;!&ndash;        <CombineArray value="ScrinGravityStabilizer"/>&ndash;&gt;-->
 <!--        <CombineArray value="NodAirTowerDockLower"/>-->
-<!--        <CombineArray value="NodAirTowerDockUpper"/>-->
+<!--        <CombineArray value="NodAirPad"/>-->
 <!--    </CValidatorCombine>-->
 
 </Catalog>

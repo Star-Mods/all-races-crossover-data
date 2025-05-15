@@ -396,6 +396,108 @@ void libTIBW_gf_CreateDropPod (int lp_race, point lp_location, unitgroup lp_unit
 
 // Triggers
 //--------------------------------------------------------------------------------------------------
+// Trigger: Genetron Init
+//--------------------------------------------------------------------------------------------------
+bool libTIBW_gt_GenetronInit_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    playergroup lv_players;
+    int lv_genetron_energy_panel_ui;
+    int lv_genetron_energy_current_ui;
+    int lv_genetron_energy_max_ui;
+    int lv_genetron_energy_label_ui;
+
+    // Automatic Variable Declarations
+    playergroup autoB5387381_g;
+    int autoB5387381_var;
+    playergroup auto72A36947_g;
+    int auto72A36947_var;
+    playergroup autoEEDF541E_g;
+    int autoEEDF541E_var;
+    const int auto32EA2469_n = 16;
+    int auto32EA2469_i;
+    playergroup auto1FD9EA80_g;
+    int auto1FD9EA80_var;
+
+    // Variable Initialization
+    lv_players = PlayerGroupEmpty();
+    lv_genetron_energy_panel_ui = c_invalidDialogControlId;
+    lv_genetron_energy_current_ui = c_invalidDialogControlId;
+    lv_genetron_energy_max_ui = c_invalidDialogControlId;
+    lv_genetron_energy_label_ui = c_invalidDialogControlId;
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    autoB5387381_g = PlayerGroupAll();
+    autoB5387381_var = -1;
+    while (true) {
+        autoB5387381_var = PlayerGroupNextPlayer(autoB5387381_g, autoB5387381_var);
+        if (autoB5387381_var < 0) { break; }
+        if ((TechTreeUnitCount(autoB5387381_var, "GenetronPowerSupplyDummy", c_techCountCompleteOnly) == 0)) {
+            libNtve_gf_CreateUnitsWithDefaultFacing(1, "GenetronPowerSupplyDummy", 0, autoB5387381_var, Point(0.0, 0.0));
+            libTIBW_gv_sCION_POWERDUMMIES[autoB5387381_var] = UnitLastCreated();
+        }
+        else {
+            libTIBW_gv_sCION_POWERDUMMIES[autoB5387381_var] = UnitGroupUnit(UnitGroup("GenetronPowerSupplyDummy", autoB5387381_var, RegionEntireMap(), UnitFilter(0, 0, (1 << c_targetFilterMissile), (1 << (c_targetFilterDead - 32)) | (1 << (c_targetFilterHidden - 32))), 0), 1);
+        }
+    }
+    DialogControlHookupStandard(c_triggerControlTypePanel, "UIContainer/FullscreenUpperContainer/GenetronEnergyPanel");
+    lv_genetron_energy_panel_ui = DialogControlLastCreated();
+    DialogControlHookupStandard(c_triggerControlTypeCountdownLabel, "UIContainer/FullscreenUpperContainer/GenetronEnergyPanel/EnergyCurrent");
+    lv_genetron_energy_current_ui = DialogControlLastCreated();
+    DialogControlHookupStandard(c_triggerControlTypeCountdownLabel, "UIContainer/FullscreenUpperContainer/GenetronEnergyPanel/EnergyMax");
+    lv_genetron_energy_max_ui = DialogControlLastCreated();
+    DialogControlHookupStandard(c_triggerControlTypeCountdownLabel, "UIContainer/FullscreenUpperContainer/GenetronEnergyPanel/EnergyLabel");
+    lv_genetron_energy_label_ui = DialogControlLastCreated();
+    auto72A36947_g = PlayerGroupAll();
+    auto72A36947_var = -1;
+    while (true) {
+        auto72A36947_var = PlayerGroupNextPlayer(auto72A36947_g, auto72A36947_var);
+        if (auto72A36947_var < 0) { break; }
+        if ((PlayerType(auto72A36947_var) == c_playerTypeUser)) {
+            PlayerGroupAdd(lv_players, auto72A36947_var);
+        }
+
+    }
+    Wait(0.0625, c_timeGame);
+    while (true) {
+        autoEEDF541E_g = lv_players;
+        autoEEDF541E_var = -1;
+        while (true) {
+            autoEEDF541E_var = PlayerGroupNextPlayer(autoEEDF541E_g, autoEEDF541E_var);
+            if (autoEEDF541E_var < 0) { break; }
+            if ((UnitGetPropertyFixed(libTIBW_gv_sCION_POWERDUMMIES[autoEEDF541E_var], c_unitPropEnergyMax, c_unitPropCurrent) > 0.0)) {
+                libNtve_gf_SetDialogItemTooltip(lv_genetron_energy_label_ui, (StringExternal("Param/Value/lib_TIBW_27B47E6F") + (IntToText(TechTreeUnitCount(autoEEDF541E_var, "ProcessingCore", c_techCountCompleteOnly)) + ((StringExternal("Param/Value/lib_TIBW_12AC9C2C") + (StringExternal("Param/Value/lib_TIBW_CF5959AA") + IntToText(TechTreeUnitCount(autoEEDF541E_var, "Node", c_techCountCompleteOnly)))) + (StringExternal("Param/Value/lib_TIBW_760175CA") + (StringExternal("Param/Value/lib_TIBW_AB6A7235") + IntToText(TechTreeUnitCount(autoEEDF541E_var, "Generator", c_techCountCompleteOnly))))))), PlayerGroupAll());
+                DialogControlSetVisible(lv_genetron_energy_panel_ui, PlayerGroupSingle(autoEEDF541E_var), true);
+            }
+            else {
+                DialogControlSetVisible(lv_genetron_energy_panel_ui, PlayerGroupSingle(autoEEDF541E_var), false);
+            }
+        }
+        for (auto32EA2469_i = 1; auto32EA2469_i <= auto32EA2469_n; auto32EA2469_i += 1) {
+            auto1FD9EA80_g = lv_players;
+            auto1FD9EA80_var = -1;
+            while (true) {
+                auto1FD9EA80_var = PlayerGroupNextPlayer(auto1FD9EA80_g, auto1FD9EA80_var);
+                if (auto1FD9EA80_var < 0) { break; }
+                libNtve_gf_SetDialogItemCurrentValue(lv_genetron_energy_max_ui, UnitGetPropertyFixed(libTIBW_gv_sCION_POWERDUMMIES[auto1FD9EA80_var], c_unitPropEnergyMax, c_unitPropCurrent), PlayerGroupSingle(auto1FD9EA80_var));
+                libNtve_gf_SetDialogItemCurrentValue(lv_genetron_energy_current_ui, UnitGetPropertyFixed(libTIBW_gv_sCION_POWERDUMMIES[auto1FD9EA80_var], c_unitPropEnergy, c_unitPropCurrent), PlayerGroupSingle(auto1FD9EA80_var));
+            }
+            Wait(0.0625, c_timeGame);
+        }
+    }
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libTIBW_gt_GenetronInit_Init () {
+    libTIBW_gt_GenetronInit = TriggerCreate("libTIBW_gt_GenetronInit_Func");
+    TriggerAddEventMapInit(libTIBW_gt_GenetronInit);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: Test
 //--------------------------------------------------------------------------------------------------
 bool libTIBW_gt_Test_Func (bool testConds, bool runActions) {
@@ -407,9 +509,6 @@ bool libTIBW_gt_Test_Func (bool testConds, bool runActions) {
 
     PlayerOptionOverride(1, "simplecommandcard", "0");
     PlayerSetRace(1, "Nod");
-    PlayerSetAlliance(2, c_allianceIdVision, 1, true);
-    PlayerSetAlliance(2, c_allianceIdControl, 1, true);
-    PlayerSetRace(2, "Terr");
     GameSetSpeedValue(c_gameSpeedFaster);
     TriggerExecute(libTIBW_gt_PlayNod, true, false);
     libSPPN_gf_RunTester();
@@ -430,8 +529,6 @@ bool libTIBW_gt_PlayNod_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
     playergroup autoC0198CC5_g;
     int autoC0198CC5_var;
-    playergroup autoB12AAF8F_g;
-    int autoB12AAF8F_var;
 
     // Actions
     if (!runActions) {
@@ -445,27 +542,12 @@ bool libTIBW_gt_PlayNod_Func (bool testConds, bool runActions) {
         autoC0198CC5_var = PlayerGroupNextPlayer(autoC0198CC5_g, autoC0198CC5_var);
         if (autoC0198CC5_var < 0) { break; }
         if ((PlayerRace(autoC0198CC5_var) == "Nod")) {
-            UISetFrameVisible(PlayerGroupSingle(autoC0198CC5_var), c_syncFrameTypeConsolePanel, false);
-            DialogControlHookupStandard(c_triggerControlTypePanel, "UIContainer/ConsoleUIContainer");
-            DialogControlSendAnimationEvent(DialogControlLastCreated(), PlayerGroupSingle(autoC0198CC5_var), "SlimUI_On");
         }
 
     }
     TriggerEnable(libTIBW_gt_Borrowedbombercustomreturntrajectory, true);
     TriggerEnable(libTIBW_gt_BorrowedbombercreationbindingStarchainTest, true);
     TriggerEnable(libTIBW_gt_LaunchairstrikeStarchainTest, true);
-    Wait(1.0, c_timeGame);
-    DialogControlHookupStandard(c_triggerControlTypePanel, "UIContainer/ConsoleUIContainer");
-    autoB12AAF8F_g = PlayerGroupAll();
-    autoB12AAF8F_var = -1;
-    while (true) {
-        autoB12AAF8F_var = PlayerGroupNextPlayer(autoB12AAF8F_g, autoB12AAF8F_var);
-        if (autoB12AAF8F_var < 0) { break; }
-        if ((PlayerRace(autoB12AAF8F_var) == "Nod")) {
-            DialogControlSendAnimationEvent(DialogControlLastCreated(), PlayerGroupSingle(autoB12AAF8F_var), "SlimUI_On");
-        }
-
-    }
     return true;
 }
 
@@ -1059,7 +1141,7 @@ bool libTIBW_gt_LaunchairstrikeStarchainTest_Func (bool testConds, bool runActio
     for (;; autoBA573FEE_u -= 1) {
         autoBA573FEE_var = UnitGroupUnitFromEnd(autoBA573FEE_g, autoBA573FEE_u);
         if (autoBA573FEE_var == null) { break; }
-        if ((UnitGetType(autoBA573FEE_var) == "Vertigolanded") && (UnitGetOwner(autoBA573FEE_var) == EventPlayer())) {
+        if ((UnitGetType(autoBA573FEE_var) == "CabalVertigoLanded") && (UnitGetOwner(autoBA573FEE_var) == EventPlayer())) {
             UnitIssueOrder(autoBA573FEE_var, Order(AbilityCommand("Vertigotakeoff", 0)), c_orderQueueReplace);
             libTIBW_gv_bomberUsable -= 1;
             Wait(0.125, c_timeGame);
@@ -1302,6 +1384,7 @@ void libTIBW_gt__GDIDropPod_Init () {
 }
 
 void libTIBW_InitTriggers () {
+    libTIBW_gt_GenetronInit_Init();
     libTIBW_gt_Test_Init();
     libTIBW_gt_PlayNod_Init();
     libTIBW_gt_MoveCommandOverrideExecute_Init();

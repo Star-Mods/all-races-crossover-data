@@ -47,7 +47,7 @@
         <CaseArray Validator="SourceIsNodFanatic" Effect="NodRedeemerExplosivesRightAB"/>
         <CaseArray Validator="SourceIsNodTiberiumTrooper" Effect="NodRTT_RightAB"/>
         <CaseArray Validator="SourceIsNodShadow" Effect="NodRedeemerArtilleryBeaconRightAB"/>
-        <CaseArray Validator="SourceIsNodSilent" Effect="NodRedeemerEMICannonRightAB"/>
+        <CaseArray Validator="SourceIsNodAwakened" Effect="NodRedeemerEMICannonRightAB"/>
         <CaseArray Validator="SourceIsNodCommando" Effect="NodRedeemerRedemptionRightAB"/>
     </CEffectSwitch>
     <CEffectSet id="NodRedeemerPilot2Set">
@@ -64,7 +64,7 @@
         <CaseArray Validator="SourceIsNodFanatic" Effect="NodRedeemerExplosivesLeftAB"/>
         <CaseArray Validator="SourceIsNodTiberiumTrooper" Effect="NodRTT_LeftAB"/>
         <CaseArray Validator="SourceIsNodShadow" Effect="NodRedeemerArtilleryBeaconLeftAB"/>
-        <CaseArray Validator="SourceIsNodSilent" Effect="NodRedeemerEMICannonLeftAB"/>
+        <CaseArray Validator="SourceIsNodAwakened" Effect="NodRedeemerEMICannonLeftAB"/>
         <CaseArray Validator="SourceIsNodCommando" Effect="NodRedeemerRedemptionLeftAB"/>
     </CEffectSwitch>
     <CEffectRemoveBehavior id="HasEmptyPilotSlot1RB">

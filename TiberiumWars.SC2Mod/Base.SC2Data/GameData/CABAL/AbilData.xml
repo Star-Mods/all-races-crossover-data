@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Catalog>
     <CAbilBuild id="CabalSlaveBuild">
         <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
@@ -75,10 +76,10 @@
         </InfoArray>
         <InfoArray index="Train5" Time="30">
             <Button DefaultButtonFace="CabalStealthTank" Requirements="CabalShrine"/>
-            <Unit value="StealthTank"/>
+            <Unit value="CabalStealthTank"/>
         </InfoArray>
         <InfoArray index="Train6" Time="30">
-            <Button DefaultButtonFace="NodScorpion"/>
+            <Button DefaultButtonFace="CabalScorpion"/>
             <Unit value="CabalShrine"/>
         </InfoArray>
         <InfoArray index="Train7" Time="50">
@@ -128,15 +129,15 @@
         <Activity value="UI/Building"/>
         <InfoArray index="Train1" Time="30">
             <Button DefaultButtonFace="NodBane" Requirements="CabalControlNode"/>
-            <Unit value="Bane"/>
+            <Unit value="CabalBane"/>
         </InfoArray>
         <InfoArray index="Train2" Time="30">
             <Button DefaultButtonFace="NodCobra" Requirements="CabalControlNode"/>
-            <Unit value="Cobra"/>
+            <Unit value="CabalCobra"/>
         </InfoArray>
         <InfoArray index="Train3" Time="40">
             <Button DefaultButtonFace="NodScalpel" Requirements="CabalShrine"/>
-            <Unit value="Scalpel"/>
+            <Unit value="CabalScalpel"/>
         </InfoArray>
         <InfoArray index="Train4" Time="30">
             <Button DefaultButtonFace="CabalDropShip" Requirements="CabalControlNode"/>
@@ -144,7 +145,7 @@
         </InfoArray>
         <InfoArray index="Train5" Time="60">
             <Button DefaultButtonFace="NodMedusa" Requirements="CabalShrine"/>
-            <Unit value="Medusa"/>
+            <Unit value="CabalMedusa"/>
         </InfoArray>
         <InfoArray index="Train6" Time="60">
             <Button DefaultButtonFace="CabalSalamander" Requirements="CabalWeaponsLaboratory"/>
@@ -175,19 +176,19 @@
         <Range value="5"/>
         <InfoArray index="Train1" Time="30">
             <Button DefaultButtonFace="Devout" Requirements="CabalControlNode"/>
-            <Unit value="Devout"/>
+            <Unit value="CabalDevout"/>
         </InfoArray>
         <InfoArray index="Train2" Time="30">
             <Button DefaultButtonFace="Enlightened" Requirements="CabalControlNode"/>
-            <Unit value="Enlightened"/>
+            <Unit value="CabalEnlightened"/>
         </InfoArray>
         <InfoArray index="Train3" Time="30">
             <Button DefaultButtonFace="Ascended" Requirements="CabalControlNode"/>
-            <Unit value="Ascended"/>
+            <Unit value="CabalAscended"/>
         </InfoArray>
         <InfoArray index="Train4" Time="30">
             <Button DefaultButtonFace="BlackHand" Requirements="CabalMonitoringStation"/>
-            <Unit value="BlackHand"/>
+            <Unit value="CabalBlackHand"/>
         </InfoArray>
         <InfoArray index="Train5" Time="30">
             <Button DefaultButtonFace="CabalHijacker" Requirements="CabalMonitoringStation"/>
@@ -196,7 +197,7 @@
         <InfoArray index="Train6" Time="40">
             <Button DefaultButtonFace="NodHighConfessor" Requirements="CabalShrine"/>
             <Unit value="CabalReaper"/>
-            <Unit value="HighConfessor"/>
+            <Unit value="CabalHighConfessor"/>
         </InfoArray>
         <InfoArray index="Train7" Time="50">
             <Button DefaultButtonFace="CabalDominator" Requirements="CabalShrine"/>
@@ -344,7 +345,7 @@
         <Flags index="Interruptible" value="1"/>
         <Flags index="Produce" value="1"/>
         <Flags index="ShowProgress" value="1"/>
-        <InfoArray Score="1" Unit="CabalSupportCrawlerDeployed" index="0">
+        <InfoArray Score="1" Unit="CabalSupportCrawlerDeployed">
             <SectionArray index="Abils">
                 <DurationArray index="Delay" value="35"/>
             </SectionArray>
@@ -367,7 +368,7 @@
         <Flags index="Interruptible" value="1"/>
         <Flags index="Produce" value="1"/>
         <Flags index="ShowProgress" value="1"/>
-        <InfoArray Score="1" Unit="CabalOffenseCrawlerDeployed" index="0">
+        <InfoArray Score="1" Unit="CabalOffenseCrawlerDeployed">
             <SectionArray index="Abils">
                 <DurationArray index="Delay" value="35"/>
             </SectionArray>
@@ -390,7 +391,7 @@
         <Flags index="Interruptible" value="1"/>
         <Flags index="Produce" value="1"/>
         <Flags index="ShowProgress" value="1"/>
-        <InfoArray Score="1" Unit="CabalDefenseCrawlerDeployed" index="0">
+        <InfoArray Score="1" Unit="CabalDefenseCrawlerDeployed">
             <SectionArray index="Abils">
                 <DurationArray index="Delay" value="35"/>
             </SectionArray>

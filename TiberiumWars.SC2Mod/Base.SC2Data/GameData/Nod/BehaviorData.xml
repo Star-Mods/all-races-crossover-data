@@ -810,7 +810,7 @@
         </VeterancyLevelArray>
         <InfoFlags index="Hidden" value="1"/>
     </CBehaviorVeterancy>
-    <CBehaviorVeterancy id="NodKaneCommandoVeterancyUpgrade">
+    <CBehaviorVeterancy id="NodCommandoVeterancyUpgrade">
         <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
         <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
         <VeterancyLevelArray MinVeterancyXP="520">
@@ -1357,7 +1357,7 @@
         </VeterancyLevelArray>
         <InfoFlags index="Hidden" value="1"/>
     </CBehaviorVeterancy>
-    <CBehaviorVeterancy id="NodKaneScorpionVeterancyUpgrade">
+    <CBehaviorVeterancy id="NodScorpionTankVeterancyUpgrade">
         <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
         <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
         <VeterancyLevelArray MinVeterancyXP="450">
@@ -1687,7 +1687,7 @@
         </VeterancyLevelArray>
         <InfoFlags index="Hidden" value="1"/>
     </CBehaviorVeterancy>
-    <CBehaviorVeterancy id="NodCommandoVeterancyUpgrade">
+    <CBehaviorVeterancy id="CabalCommandoVeterancyUpgrade">
         <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
         <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
         <VeterancyLevelArray MinVeterancyXP="520">

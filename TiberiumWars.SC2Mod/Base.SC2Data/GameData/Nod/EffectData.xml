@@ -1,5 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Catalog>
-
     <CEffectDamage id="NodMilitantDamage">
         <EditorCategories value="Race:Nod"/>
         <ResponseFlags index="Acquire" value="1"/>
@@ -47,8 +47,6 @@
         <PeriodicPeriodArray value="0.15"/>
         <PeriodicPeriodArray value="0.15"/>
     </CEffectCreatePersistent>
-
-
     <CEffectDamage id="NodConfessorDamage">
         <EditorCategories value="Race:Nod"/>
         <ResponseFlags index="Acquire" value="1"/>
@@ -60,8 +58,6 @@
         <SearchFlags index="CallForHelp" value="1"/>
         <SearchFlags index="OffsetByUnitRadius" value="1"/>
     </CEffectDamage>
-
-
     <CEffectApplyBehavior id="AwakenBuggyEMPApplyBehavior">
         <ValidatorArray index="0" removed="1"/>
         <EditorCategories value=""/>
@@ -269,7 +265,7 @@
         <EditorCategories value="Race:Nod"/>
         <Origin Value="TargetPoint"/>
         <SpawnOwner Value="Caster"/>
-        <SpawnUnit value="Enlightened"/>
+        <SpawnUnit value="CabalEnlightened"/>
     </CEffectCreateUnit>
     <CEffectCreateUnit id="CreateMillitant">
         <EditorCategories value="Race:Nod"/>
@@ -828,7 +824,7 @@
         <EditorCategories value="Race:Nod"/>
         <Resources value="1500"/>
     </CEffectModifyUnit>
-    <CEffectDamage id="NodCommandoShockwaveDamage2" parent="DU_WEAP">
+    <CEffectDamage id="CabalCommandoShockwaveDamage2" parent="DU_WEAP">
         <EditorCategories value="Race:Nod"/>
         <AttributeBonus index="Massive" value="20"/>
         <Kind value="Ranged"/>
@@ -1031,8 +1027,8 @@
     <CEffectSet id="NodStructureSpawnSet">
         <EditorCategories value="Race:Nod"/>
         <EffectArray value="DeployableRB"/>
-        <EffectArray value="NodCreateDropPodDwithdamage"/>
-        <EffectArray value="NodUnderConstruction"/>
+        <!--        <EffectArray value="NodCreateDropPodDwithdamage"/>-->
+        <!--        <EffectArray value="NodUnderConstruction"/>-->
     </CEffectSet>
     <CEffectSet id="NodRefineryBirthSet">
         <EditorCategories value="Race:Terran"/>
@@ -1581,7 +1577,7 @@
         <WhichLocation Value="TargetUnit"/>
         <TimeScaleSource Value="Caster"/>
         <Flags index="Channeled" value="1"/>
-<!--        <InitialEffect value="CpmmandoweaponDamage"/>-->
+        <!--        <InitialEffect value="CpmmandoweaponDamage"/>-->
         <ExpireEffect value="StealthTankexposure"/>
         <PeriodCount value="1"/>
         <PeriodicEffectArray value="CpmmandoweaponDummy"/>
@@ -1874,7 +1870,7 @@
         <AmmoUnit value="CabalLeviathanRocket"/>
         <ValidatorArray index="0" value="LeviathanMissile1"/>
     </CEffectLaunchMissile>
-    <CEffectDamage id="NodCommandoShockwaveDamage" parent="DU_WEAP">
+    <CEffectDamage id="CabalCommandoShockwaveDamage" parent="DU_WEAP">
         <EditorCategories value="Race:Nod"/>
         <AttributeBonus index="Massive" value="20"/>
         <Kind value="Ranged"/>
@@ -3180,7 +3176,6 @@
         <Amount value="3"/>
         <AttributeBonus index="Light" value="3"/>
     </CEffectDamage>
-
     <CEffectCreatePersistent id="NodShadowPistolSet">
         <EditorCategories value="Race:Terran"/>
         <WhichLocation Value="TargetUnit"/>
@@ -3198,7 +3193,6 @@
         <WhichUnit Value="Caster"/>
         <Behavior value="NodHarvesterCloak"/>
     </CEffectApplyBehavior>
-
     <CEffectSet id="NodSabotage">
         <ValidatorArray value="NodSabotageTargetFilters"/>
         <EffectArray value="NodSabotageHeal"/>
@@ -3273,7 +3267,7 @@
     </CEffectCreateUnit>
     <CEffectSwitch id="NodSabotageSwitch">
         <EditorCategories value="Race:Protoss"/>
-<!--        <CaseArray Validator="TargetIsNodPurifierWreckage" Effect="NodPurifierWreckageCaptureSet"/>-->
+        <!--        <CaseArray Validator="TargetIsNodPurifierWreckage" Effect="NodPurifierWreckageCaptureSet"/>-->
         <CaseArray Validator="IsNodAvatarWreckage" Effect="NodAvatarWreckageCaptureSet"/>
         <CaseArray Validator="IsEnemyOrNeutral" Effect="NodChannelSabotageInitialSet"/>
         <CaseDefault value="NodSabotage"/>
@@ -3285,8 +3279,6 @@
         <ModifyOwnerPlayer Value="Caster"/>
         <ImpactUnit Effect="NodSabotageSwitch"/>
     </CEffectModifyUnit>
-
-
     <CEffectApplyBehavior id="NodArtilleryBeaconTimedLife">
         <EditorCategories value="Race:Zerg"/>
         <!--        <Flags index="UseDuration" value="1"/>-->
@@ -3442,7 +3434,6 @@
         <EditorCategories value="Race:UPL"/>
         <!--        <ValidatorArray value="TargetIsNotNodConfessor"/>-->
     </CEffectEnumArea>
-
     <CEffectSet id="NodAvatarCommandeerTechnologySet">
         <ValidatorArray value="IsNodAvatarCommandeerTechnologyTarget"/>
         <EffectArray value="NodAvatarCommandeerTechnologySwitch"/>
@@ -3470,8 +3461,6 @@
     <CEffectApplyBehavior id="NodAvatarBeamCannon">
         <WhichUnit Value="Caster"/>
     </CEffectApplyBehavior>
-
-
     <CEffectSet id="NodPurifierWreckageCaptureSet">
         <EffectArray value="NodSabotage"/>
         <EffectArray value="NodPurifierRebornIO"/>
@@ -3494,12 +3483,10 @@
         <EffectArray value="SuicideRemove"/>
     </CEffectSet>
     <CEffectIssueOrder id="NodAvatarRebornIO">
-        <WhichUnit Value="Target"/>
         <EditorCategories value="Race:Nod"/>
         <Abil value="NodAvatarReborn"/>
         <CmdFlags index="Preempt" value="1"/>
     </CEffectIssueOrder>
-
     <CEffectSet id="NodAvatarWreckageSet">
         <EffectArray value="NodAvatarWreckageChangeOwner"/>
         <EffectArray value="NodAvatarWreckageIO"/>
@@ -3517,15 +3504,11 @@
         <Abil value="NodAvatarWreckage"/>
         <CmdFlags index="Preempt" value="1"/>
     </CEffectIssueOrder>
-
-
     <CEffectModifyUnit id="NodAvatarWreckageChangeOwner">
         <ModifyFlags index="Owner" value="1"/>
         <ModifyOwnerPlayer Value="Neutral"/>
         <ImpactUnit Value="Source"/>
     </CEffectModifyUnit>
-
-
     <CEffectDamage id="NodAvatarBeamCannonDamage" parent="DU_WEAP">
         <EditorCategories value="Race:Nod"/>
         <AttributeBonus index="Armored" value="6"/>
@@ -3557,7 +3540,6 @@
         <Amount value="55"/>
         <Death value="Blast"/>
     </CEffectDamage>
-
     <CEffectCreatePersistent id="NodPurifierFlameThrowerCreatePersistent">
         <EditorCategories value="Race:Nod"/>
         <WhichLocation Value="SourcePoint"/>
@@ -3634,15 +3616,13 @@
         <EffectArray value="NodAvatarFlameThrowerCreatePersistent"/>
         <EffectArray value="NodAvatarFlameThrowerDamage"/>
     </CEffectSet>
-
-
     <CEffectEnumArea id="NodAvatarPilotSearchArea">
         <!--        <MaxCount value="1"/>-->
         <EditorCategories value="Race:Nod"/>
         <!--        <LaunchLocation Value="TargetPoint"/>-->
         <!--        <ImpactLocation Value="CasterUnit"/>-->
         <SearchFilters value="-;Stasis,Dead,Hidden,Invulnerable"/>
-        <AreaArray Arc="360" Radius="0.5" Effect="NodAvatarPilotSet"/>
+        <AreaArray Radius="0.5" Effect="NodAvatarPilotSet"/>
         <SearchFlags index="ExtendByUnitRadius" value="1"/>
     </CEffectEnumArea>
     <!--    <CValidatorLocationCompareRange id="NodAvatarPilotTargetCheck">-->
@@ -3663,10 +3643,8 @@
     <CEffectModifyUnit id="NodAvatarPilotedChangeOwner">
         <ModifyFlags index="Owner" value="1"/>
         <ModifyOwnerPlayer Value="Caster"/>
-        <ImpactUnit Value="Target"/>
     </CEffectModifyUnit>
     <CEffectIssueOrder id="NodAvatarRebornIOTarget">
-        <WhichUnit Value="Target"/>
         <EditorCategories value="Race:Nod"/>
         <Abil value="NodAvatarReborn"/>
         <CmdFlags index="Preempt" value="1"/>
@@ -3677,5 +3655,4 @@
         <Flags index="Kill" value="1"/>
         <Death value="Remove"/>
     </CEffectDamage>
-
 </Catalog>

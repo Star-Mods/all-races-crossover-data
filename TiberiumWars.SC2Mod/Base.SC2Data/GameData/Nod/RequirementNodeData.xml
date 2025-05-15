@@ -1,26 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Catalog>
-
-    <CRequirementAnd id="AndCountUnitNodShrineCompleteOnlyTechTreeCheatEq1277349106CountUnitNodKaneCommandoQueuedOrBetterTechTreeCheat0">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
-        <OperandArray value="CountUnitNodShrineCompleteOnlyTechTreeCheat"/>
-        <OperandArray value="Eq1277349106CountUnitNodKaneCommandoQueuedOrBetterTechTreeCheat0"/>
+    <CRequirementAnd id="AndOr2790159111CountUnitNodPowerPlant2CompleteOnlyTechTreeCheatCountUnitNodPowerPlantCompleteOnlyTechTreeCheatCountUnitNodPowerPlantUpgradedCompleteOnlyTechTreeCheatCountUnitNodHandCompleteOnlyTechTreeCheat">
+        <OperandArray value="Or2790159111CountUnitNodPowerPlant2CompleteOnlyTechTreeCheatCountUnitNodPowerPlantCompleteOnlyTechTreeCheatCountUnitNodPowerPlantUpgradedCompleteOnlyTechTreeCheat"/>
+        <OperandArray value="CountUnitNodHandCompleteOnlyTechTreeCheat"/>
     </CRequirementAnd>
-    <CRequirementAnd id="AndOr2790159111CountUnitNodPowerPlant2CompleteOnlyTechTreeCheatCountUnitNodPowerPlantCompleteOnlyTechTreeCheatCountUnitNodPowerPlantUpgradeCompleteOnlyTechTreeCheatCountUnitNodKaneBarracksCompleteOnlyTechTreeCheat">
-        <OperandArray value="Or2790159111CountUnitNodPowerPlant2CompleteOnlyTechTreeCheatCountUnitNodPowerPlantCompleteOnlyTechTreeCheatCountUnitNodPowerPlantUpgradeCompleteOnlyTechTreeCheat"/>
-        <OperandArray value="CountUnitNodKaneBarracksCompleteOnlyTechTreeCheat"/>
-    </CRequirementAnd>
-    <CRequirementAnd id="AndOr2790159111CountUnitNodPowerPlant2CompleteOnlyTechTreeCheatCountUnitNodPowerPlantCompleteOnlyTechTreeCheatCountUnitNodPowerPlantUpgradeCompleteOnlyTechTreeCheatCountUnitNodShrineCompleteOnlyTechTr3731317178">
-        <OperandArray value="Or2790159111CountUnitNodPowerPlant2CompleteOnlyTechTreeCheatCountUnitNodPowerPlantCompleteOnlyTechTreeCheatCountUnitNodPowerPlantUpgradeCompleteOnlyTechTreeCheat"/>
+    <CRequirementAnd id="AndOr2790159111CountUnitNodPowerPlant2CompleteOnlyTechTreeCheatCountUnitNodPowerPlantCompleteOnlyTechTreeCheatCountUnitNodPowerPlantUpgradedCompleteOnlyTechTreeCheatCountUnitNodShrineCompleteOnlyTechTr3731317178">
+        <OperandArray value="Or2790159111CountUnitNodPowerPlant2CompleteOnlyTechTreeCheatCountUnitNodPowerPlantCompleteOnlyTechTreeCheatCountUnitNodPowerPlantUpgradedCompleteOnlyTechTreeCheat"/>
         <OperandArray value="CountUnitNodShrineCompleteOnlyTechTreeCheat"/>
         <OperandArray value="UC_ChemicalPlant"/>
         <OperandArray value="EqCountUnitNodTempleOfNodQueuedOrBetterTechTreeCheat0"/>
     </CRequirementAnd>
-    <CRequirementCountUnit id="CountUnitNodKaneBarracksCompleteOnlyTechTreeCheat">
-        <Count Link="NodKaneBarracks" State="CompleteOnly"/>
-    </CRequirementCountUnit>
-    <CRequirementCountUnit id="CountUnitNodKaneCommandoQueuedOrBetterTechTreeCheat">
-        <Tooltip value="RequirementNode/Tooltip/##id##"/>
-        <Count Link="NodKaneCommando" State="QueuedOrBetter"/>
+    <CRequirementCountUnit id="CountUnitNodHandCompleteOnlyTechTreeCheat">
+        <Count Link="NodHand" State="CompleteOnly"/>
     </CRequirementCountUnit>
     <CRequirementCountUnit id="CountUnitNodPowerPlant2CompleteOnlyTechTreeCheat">
         <Count Link="NodPowerPlant2" State="CompleteOnly"/>
@@ -28,8 +19,8 @@
     <CRequirementCountUnit id="CountUnitNodPowerPlantCompleteOnlyTechTreeCheat">
         <Count Link="NodPowerPlant" State="CompleteOnly"/>
     </CRequirementCountUnit>
-    <CRequirementCountUnit id="CountUnitNodPowerPlantUpgradeCompleteOnlyTechTreeCheat">
-        <Count Link="NodPowerPlantUpgrade" State="CompleteOnly"/>
+    <CRequirementCountUnit id="CountUnitNodPowerPlantUpgradedCompleteOnlyTechTreeCheat">
+        <Count Link="NodPowerPlantUpgraded" State="CompleteOnly"/>
     </CRequirementCountUnit>
     <CRequirementCountUnit id="CountUnitNodShrineCompleteOnlyTechTreeCheat">
         <Count Link="NodShrine" State="CompleteOnly"/>
@@ -37,31 +28,25 @@
     <CRequirementCountUnit id="CountUnitNodTempleOfNodQueuedOrBetterTechTreeCheat">
         <Count Link="NodTempleOfNod" State="QueuedOrBetter"/>
     </CRequirementCountUnit>
-    <CRequirementEq id="Eq1277349106CountUnitNodKaneCommandoQueuedOrBetterTechTreeCheat0">
-        <OperandArray index="0" value="CountUnitNodKaneCommandoQueuedOrBetterTechTreeCheat"/>
-        <OperandArray index="1" value="0"/>
-    </CRequirementEq>
     <CRequirementEq id="EqCountUnitNodTempleOfNodQueuedOrBetterTechTreeCheat0">
         <OperandArray index="0" value="CountUnitNodTempleOfNodQueuedOrBetterTechTreeCheat"/>
         <OperandArray index="1" value="0"/>
     </CRequirementEq>
-    <CRequirementOr id="Or2790159111CountUnitNodPowerPlant2CompleteOnlyTechTreeCheatCountUnitNodPowerPlantCompleteOnlyTechTreeCheatCountUnitNodPowerPlantUpgradeCompleteOnlyTechTreeCheat">
+    <CRequirementOr id="Or2790159111CountUnitNodPowerPlant2CompleteOnlyTechTreeCheatCountUnitNodPowerPlantCompleteOnlyTechTreeCheatCountUnitNodPowerPlantUpgradedCompleteOnlyTechTreeCheat">
         <OperandArray value="CountUnitNodPowerPlant2CompleteOnlyTechTreeCheat"/>
         <OperandArray value="CountUnitNodPowerPlantCompleteOnlyTechTreeCheat"/>
-        <OperandArray value="CountUnitNodPowerPlantUpgradeCompleteOnlyTechTreeCheat"/>
+        <OperandArray value="CountUnitNodPowerPlantUpgradedCompleteOnlyTechTreeCheat"/>
     </CRequirementOr>
-    <CRequirementCountUnit id="UC_NodWarFactory" parent="UC" unit="NodKaneWarFactory"/>
+    <CRequirementCountUnit id="UC_NodWarFactory" parent="UC" unit="NodWarFactory"/>
     <CRequirementCountUnit id="UC_NodHangar" parent="UC" unit="NodAirTower"/>
-    <CRequirementCountUnit id="UC_NodVertigoPlatform" parent="UC" unit="CabalBomberPlatform"/>
-    <CRequirementCountUnit id="UC_NodOPCenter" parent="UC" unit="NodOPCenter"/>
+    <CRequirementCountUnit id="UC_NodOperationsCenter" parent="UC" unit="NodOperationsCenter"/>
     <CRequirementCountUnit id="UC_NodPowerPlant2" parent="UC" unit="NodPowerPlant2"/>
     <CRequirementCountUnit id="UC_NodPowerPlant" parent="UC" unit="NodPowerPlant"/>
-    <CRequirementCountUnit id="UC_NodPowerPlantUpgrade" parent="UC" unit="NodPowerPlantUpgrade"/>
+    <CRequirementCountUnit id="UC_NodPowerPlantUpgraded" parent="UC" unit="NodPowerPlantUpgraded"/>
     <CRequirementCountUnit id="UC_NodShrine" parent="UC" unit="NodShrine"/>
     <CRequirementCountUnit id="UC_NodTechLab" parent="UC" unit="NodTechLab"/>
     <CRequirementCountUnit id="UC_NodTempleOfNod" parent="UC" unit="NodTempleOfNod"/>
     <CRequirementCountUnit id="UC_NodTiberiumRefinery" parent="UC" unit="NodTiberiumRefinery"/>
-    <CRequirementCountUnit id="UC_Vertigolanded" parent="UC" unit="Vertigolanded"/>
     <CRequirementCountUnit id="UC_ChemicalPlant" parent="UC" unit="NodChemicalPlant"/>
     <CRequirementCountUnit id="UQ_CabalOffenseCrawler" parent="UQ" unit="CabalOffenseCrawler"/>
     <CRequirementCountUnit id="UQ_CabalSupportCrawler" parent="UQ" unit="CabalSupportCrawler"/>
@@ -155,7 +140,7 @@
     <CRequirementOr id="REQC_NodPower">
         <OperandArray value="UC_NodPowerPlant2"/>
         <OperandArray value="UC_NodPowerPlant"/>
-        <OperandArray value="UC_NodPowerPlantUpgrade"/>
+        <OperandArray value="UC_NodPowerPlantUpgraded"/>
     </CRequirementOr>
     <CRequirementAnd id="REQC_NodHangar">
         <OperandArray value="REQC_NodPower"/>
@@ -184,11 +169,6 @@
     <CRequirementAnd id="REQ_MCVDefense">
         <OperandArray value="UN_CabalDefenseCrawler"/>
         <OperandArray value="UN_CabalDefenseCrawlerDeployed"/>
-    </CRequirementAnd>
-    <!--Ability-->
-    <CRequirementAnd id="REQ_AirStrike">
-        <OperandArray value="UC_Vertigolanded"/>
-        <OperandArray value="UC_NodVertigoPlatform"/>
     </CRequirementAnd>
     <CRequirementLT id="REQ_NodInterceptor">
         <OperandArray index="0" value="UQU_NodInterceptor"/>
@@ -693,5 +673,4 @@
         <OperandArray index="0" value="CountUnitNodTechLabQueuedOnly"/>
         <OperandArray index="1" value="1"/>
     </CRequirementGTE>
-
 </Catalog>

@@ -404,7 +404,7 @@
         <Period value="1.5"/>
     </CWeaponStrafe>
     <CWeaponLegacy id="NodCommandoWeaponUpgrade" parent="NodWeapon" icon="FXNod_LasersAddonUpgrade">
-         <DisplayEffect value="NodCommandoShockwaveDamage2"/>
+         <DisplayEffect value="CabalCommandoShockwaveDamage2"/>
         <TargetFilters value="Visible;Air,Ground,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="6"/>
         <TeleportResetRange value="0"/>
@@ -412,7 +412,7 @@
             <Cooldown Location="Unit"/>
         </Cost>
         <Period value="0.86"/>
-        <Effect value="NodCommandoShockwaveDamage2"/>
+        <Effect value="CabalCommandoShockwaveDamage2"/>
         <Options index="Hidden" value="1"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="NodCommandoweaponCC3Upgrade" parent="NodWeapon" icon="FXNod_LasersAddonUpgrade">
@@ -576,7 +576,7 @@
         <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
         <AllowedMovement value="Moving"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="NodKaneCommandoWeapon" parent="NodWeapon" icon="FXNod_LasersAddonUpgrade">
+    <CWeaponLegacy id="NodCommandoWeapon" parent="NodWeapon" icon="FXNod_LasersAddonUpgrade">
          <DisplayEffect value="CpmmandoweaponDamage"/>
         <DisplayAttackCount value="1"/>
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
@@ -722,8 +722,8 @@
         <LegacyOptions index="CanRetargetWhileChanneling" value="1"/>
         <AllowedMovement value="Moving"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="NodCommandoWeapon" parent="NodWeapon" icon="FXNod_LasersAddonUpgrade">
-         <DisplayEffect value="NodCommandoShockwaveDamage"/>
+    <CWeaponLegacy id="CabalCommandoWeapon" parent="NodWeapon" icon="FXNod_LasersAddonUpgrade">
+         <DisplayEffect value="CabalCommandoShockwaveDamage"/>
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="6"/>
         <TeleportResetRange value="0"/>
@@ -731,7 +731,7 @@
             <Cooldown Location="Unit"/>
         </Cost>
         <Period value="1.75"/>
-        <Effect value="NodCommandoShockwaveDamage"/>
+        <Effect value="CabalCommandoShockwaveDamage"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="CabalReaperWeapon" parent="NodWeapon" icon="FXNod_LasersAddonUpgrade">
          <DisplayEffect value="CabalReaperShockwaveDamage"/>

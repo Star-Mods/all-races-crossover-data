@@ -128,4 +128,5 @@
     <Catalog path="Other.xml"/>
     <Catalog path="SpawnCaster.xml"/>
     <Catalog path="Air.xml"/>
+    <Catalog path="Power.xml"/>
 </Includes>

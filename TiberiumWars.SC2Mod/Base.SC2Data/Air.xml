@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Catalog>
-    <CAbilEffectTarget id="CNCAirportPlanetakingoff">
+    <CAbilEffectInstant id="CNCAirportPlanetakingoff">
         <EditorCategories value="AbilityorEffectType:Units"/>
         <Effect index="0" value="PlaneTakesOffC"/>
-        <Flags index="AllowMovement" value="1"/>
-        <Flags index="BestUnit" value="0"/>
-        <Flags index="RequireTargetVision" value="0"/>
-        <Flags index="Smart" value="1"/>
-        <Flags index="Transient" value="1"/>
-        <TargetFilters value="-;Missile,Dead,Hidden,Decaying"/>
-        <Range value="500"/>
-        <Arc value="360"/>
-        <SmartPriority value="21"/>
+<!--        <Flags index="AllowMovement" value="1"/>-->
+<!--        <Flags index="BestUnit" value="0"/>-->
+<!--        <Flags index="RequireTargetVision" value="0"/>-->
+<!--        <Flags index="Smart" value="1"/>-->
+<!--        <Flags index="Transient" value="1"/>-->
+<!--        <TargetFilters value="-;Missile,Dead,Hidden,Decaying"/>-->
+<!--        <Range value="500"/>-->
+<!--        <Arc value="360"/>-->
+<!--        <SmartPriority value="21"/>-->
         <CmdButtonArray index="Execute" DefaultButtonFace="MothershipCoreAttack" Requirements="LandOnly">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
-    </CAbilEffectTarget>
+    </CAbilEffectInstant>
+    <CEffectSet id="PlaneTakesOffC">
+<!--        <TargetLocationType value="UnitOrPoint"/>-->
+    </CEffectSet>
     <CAbilMove id="move2">
         <FleeRange value="5"/>
         <FleeTime value="5"/>
@@ -161,16 +164,34 @@
         <MaxTrackedUnits value="1"/>
 <!--        <InfoFlags index="Hidden" value="1"/>-->
     </CBehaviorUnitTracker>
-    <CBehaviorBuff id="Airportlanded">
-        <InfoFlags index="Hidden" value="1"/>
+    <CBehaviorBuff id="AirportCurrentlyLanding">
+<!--        <InfoFlags index="Hidden" value="1"/>-->
         <InfoIcon value="Assets\Textures\btn-ability-terran-land.dds"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
-        <Modification>
+        <Modification MoveSpeedMaximum="1.5">
+            <ModifyFlags index="DisableWeapons" value="1"/>
+
+            <!--            <ModifyFlags index="SuppressMoving" value="1"/>-->
+            <!--            <ModifyFlags index="SuppressTurning" value="1"/>-->
+            <StateFlags index="SuppressCollision" value="1"/>
+            <!--            <StateFlags index="SuppressCombat" value="1"/>-->
+            <AbilLinkDisableArray value="CNCAirportPlaneLanding"/>
+            <BehaviorLinkEnableArray value="Aircraftautomaticallyreplenishesammunitionpeacekeepingbomber"/>
+            <BehaviorLinkDisableArray value="ThePioneerarmedcombataircraftkeepscirclingwhenstopped"/>
+<!--            <PlaneDelta index="Ground" value="1"/>-->
+<!--            <PlaneDelta index="Air" value="-1"/>-->
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Airportlanded">
+<!--        <InfoFlags index="Hidden" value="1"/>-->
+        <InfoIcon value="Assets\Textures\btn-ability-terran-land.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Modification MoveSpeedMaximum="0.004">
             <ModifyFlags index="DisableWeapons" value="1"/>
 
 <!--            <ModifyFlags index="SuppressMoving" value="1"/>-->
 <!--            <ModifyFlags index="SuppressTurning" value="1"/>-->
-<!--            <StateFlags index="SuppressCollision" value="1"/>-->
+            <StateFlags index="SuppressCollision" value="1"/>
 <!--            <StateFlags index="SuppressCombat" value="1"/>-->
             <AbilLinkDisableArray value="CNCAirportPlaneLanding"/>
             <BehaviorLinkEnableArray value="Aircraftautomaticallyreplenishesammunitionpeacekeepingbomber"/>
@@ -301,6 +322,9 @@
         <Flags index="AutoCastOn" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <Effect index="0" value="AirReturn"/>
+        <Cost>
+            <Cooldown Link="Reinforce" Location="Unit" TimeUse="5"/>
+        </Cost>
         <CmdButtonArray index="Execute" DefaultButtonFace="ReturnAirport" Requirements="LandOnly2"/>
     </CAbilEffectInstant>
     <CAbilEffectInstant id="CNCDestroyTheBomberInside">
@@ -433,10 +457,10 @@
     <CBehaviorBuff id="Airporttakingoff">
         <InfoIcon value="Assets\Textures\btn-ability-terran-liftoff.dds"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
-        <Modification>
+        <Modification MoveSpeedMaximum="0.1">
             <ModifyFlags index="DisableWeapons" value="1"/>
-            <ModifyFlags index="SuppressMoving" value="1"/>
-            <ModifyFlags index="SuppressTurning" value="1"/>
+<!--            <ModifyFlags index="SuppressMoving" value="1"/>-->
+<!--            <ModifyFlags index="SuppressTurning" value="1"/>-->
             <AbilLinkDisableArray value="CNCAirportPlaneLanding"/>
             <BehaviorLinkDisableArray value="ThePioneerarmedcombataircraftkeepscirclingwhenstopped"/>
             <BehaviorLinkDisableArray value="VanguardIsCircling"/>

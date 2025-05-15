@@ -261,34 +261,34 @@
             <Fixed Fixed="270">
                 <Field Id="SlotsFacing" Index="4"/>
             </Fixed>
-            <Int Int="8">
+            <Int Int="4">
                 <Field Id="Slots"/>
             </Int>
             <Unit Unit="NodAirTower">
                 <Field Id="Airport"/>
             </Unit>
-            <Unit Unit="NodAirTowerDockUpper">
+            <Unit Unit="NodAirPad">
                 <Field Id="SlotUnit"/>
             </Unit>
-            <Unit Unit="NodAirTowerDockUpper">
+            <Unit Unit="NodAirPad">
                 <Field Id="SlotUnit" Index="1"/>
             </Unit>
-            <Unit Unit="NodAirTowerDockUpper">
+            <Unit Unit="NodAirPad">
                 <Field Id="SlotUnit" Index="2"/>
             </Unit>
-            <Unit Unit="NodAirTowerDockUpper">
+            <Unit Unit="NodAirPad">
                 <Field Id="SlotUnit" Index="3"/>
             </Unit>
-            <Unit Unit="NodAirTowerDockUpper">
+            <Unit Unit="NodAirPad">
                 <Field Id="SlotUnit" Index="4"/>
             </Unit>
-            <Unit Unit="NodAirTowerDockUpper">
+            <Unit Unit="NodAirPad">
                 <Field Id="SlotUnit" Index="5"/>
             </Unit>
-            <Unit Unit="NodAirTowerDockUpper">
+            <Unit Unit="NodAirPad">
                 <Field Id="SlotUnit" Index="6"/>
             </Unit>
-            <Unit Unit="NodAirTowerDockUpper">
+            <Unit Unit="NodAirPad">
                 <Field Id="SlotUnit" Index="7"/>
             </Unit>
         </Instances>
@@ -337,7 +337,7 @@
             <Fixed Fixed="0.65">
                 <Field Id="SlotsOffsetX"/>
             </Fixed>
-            <Unit Unit="NodAirTowerDockUpper">
+            <Unit Unit="NodAirPad">
                 <Field Id="Airport"/>
             </Unit>
         </Instances>

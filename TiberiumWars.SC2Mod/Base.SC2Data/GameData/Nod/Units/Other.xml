@@ -55,25 +55,6 @@
     <!--        <HotkeyAlias value="Broodling"/>-->
     <!--        <GlossaryPriority value="200"/>-->
     <!--    </CUnit>-->
-    <!--    <CTexture id="GideonFactory">-->
-    <!--        <File value="Assets\Textures\NB_DropZone2.dds"/>-->
-    <!--        <Slot value="main.diffuse"/>-->
-    <!--    </CTexture>-->
-    <!--    <CTexture id="GideonHangar">-->
-    <!--        <File value="Assets\Textures\NBHangar2.dds"/>-->
-    <!--        <Slot value="main.diffuse"/>-->
-    <!--    </CTexture>-->
-    <!--    <CTexture id="GideonHand">-->
-    <!--        <File value="Assets\Textures\NBHand2.dds"/>-->
-    <!--        <Slot value="main.diffuse"/>-->
-    <!--    </CTexture>-->
-    <!--    <CTexture id="GideonSlave">-->
-    <!--        <File value="Assets\Textures\NUS_VehicleAE2.dds"/>-->
-    <!--        <Slot value="main.diffuse"/>-->
-    <!--    </CTexture>-->
-    <!--    <CActorUnit id="CabalBarracks" parent="NodBuilding" unitName="CabalBarracks"  wireframe="HandOfNodWireframe" icon="HandOfNodIcon">-->
-    <!--    <On Terms="ActorCreation" Send="TextureSelectById GideonHand"/>-->
-    <!--    </CActorUnit>-->
 
 
     <!--    <CModel id="CabalVisceroid" parent="Unit">-->

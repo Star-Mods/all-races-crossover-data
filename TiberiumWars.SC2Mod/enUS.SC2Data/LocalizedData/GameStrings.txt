@@ -223,10 +223,10 @@ Abil/Name/NodDominateMachine=Domination Machine
 Abil/Name/NodDropFlameMines=Nod Drop Flame Mines
 Abil/Name/NodEMP7range=Awaken EMP
 Abil/Name/NodEMPAttack=Nod EMP Attack
+Abil/Name/NodHandTrain=NodHandTraining
+Abil/Name/NodHandTrainAI=NodBarracks Training AI
 Abil/Name/NodHealingField=Healing Field
 Abil/Name/NodInvertWarheadStrike=Nod Invert Warhead Strike
-Abil/Name/NodKaneBarracksTrain=NodKaneBarracksTraining
-Abil/Name/NodKaneBarracksTrainAI=NodBarracks Training AI
 Abil/Name/NodKaneMCVDeploy=Deploy MCV
 Abil/Name/NodNukeStrike=Nod Nuke Strike
 Abil/Name/NodNukeStrikeEMP=Nod Nuke Strike EMP
@@ -489,6 +489,7 @@ Behavior/Name/AirfieldAuraB28=range+2
 Behavior/Name/AirfieldAuraB3=Carrier-based aircraft
 Behavior/Name/AirfieldAuraB4=Poisoned milk recovery
 Behavior/Name/AirportNousefortakeoff=Airport-No use for takeoff
+Behavior/Name/Airportlanded=Airport-landed
 Behavior/Name/Airportslotassigned=Airport-slot assigned
 Behavior/Name/Airporttakingoff=Airport - taking off
 Behavior/Name/ArtanisTemporalField23223=Defeat the Shadow
@@ -570,7 +571,7 @@ Behavior/Name/NodHandSP=Hand of vest nod
 Behavior/Name/NodHandSP2=Hand of vest nod
 Behavior/Name/NodHandSPDefense=Vest nod's handDefense
 Behavior/Name/NodHandSPOffense=Nod's Hand Offense
-Behavior/Name/NodOPcenterSP = vest nod action center
+Behavior/Name/NodOperationsCenterSP = vest nod action center
 Behavior/Name/NodPowerPlantSP=Majia Power Plant
 Behavior/Name/NodRedeemerSP=Vest Redeemer
 Behavior/Name/NodRedeemerSP2=Vest Redeemer
@@ -1160,6 +1161,7 @@ Button/Name/BunkerUnloadAll2=Unloading all
 Button/Name/BunkerUnloadAll22=Unloading all
 Button/Name/CabalAvenger=Build Avenger Tank
 Button/Name/CabalAvengerTankFlameMine=Flame Mine
+Button/Name/CabalBane=Build Bane
 Button/Name/CabalBasilisk=Build CabalBasilisk
 Button/Name/CabalBike=Build a Combat Motorcycle
 Button/Name/CabalBlackHand=Train Black Hand Cyborg
@@ -1429,8 +1431,8 @@ Button/Name/NodArmageddon=Build Armageddon
 Button/Name/NodArtilleryBeacon=Deploy Artillery Beacon
 Button/Name/NodBane=Build Bane
 Button/Name/NodBanshee=Build Banshee
-Button/Name/NodBeamCNC3=Build Beam Cannon
-Button/Name/NodBikeCNC3=Build Attack Bike
+Button/Name/NodBeam=Build Beam Cannon
+Button/Name/NodBike=Build Attack Bike
 Button/Name/NodBlackHand=Training Black Hand Troopers
 Button/Name/NodBlade=Build Blade
 Button/Name/NodBoobyTrap=Booby Trap
@@ -1443,6 +1445,7 @@ Button/Name/NodCarryallUnloadAll=Unload All
 Button/Name/NodChemicalPLant=Build Tiberium Chemical Plant
 Button/Name/NodCloak=Scrin Fuseluge Stabilization Technology
 Button/Name/NodCobra=Build Cobra
+Button/Name/NodCommando=Train Commando
 Button/Name/NodConfessor=Train Confessor
 Button/Name/NodConfessorAura=Confessor Aura
 Button/Name/NodCrane=Build Crane
@@ -1477,10 +1480,7 @@ Button/Name/NodHarpy=Build Harpy
 Button/Name/NodHarvester=Harvester
 Button/Name/NodHighConfessor=Training the High Confessor
 Button/Name/NodInvertWarhead=Convert Warhead
-Button/Name/NodKaneCommando=Train Commando
 Button/Name/NodKaneMCVDeploy=Expand
-Button/Name/NodKaneVertigo=Build Vertigo Bomber
-Button/Name/NodKaneWarFactory=Build War Factory
 Button/Name/NodLaserTurret=Build Laser Turret
 Button/Name/NodMCV=Build MCV
 Button/Name/NodMantis=Build Mantis
@@ -1490,9 +1490,9 @@ Button/Name/NodMilitantRocket=Train Rocket Squad
 Button/Name/NodMines=Place mines
 Button/Name/NodMissileTurret=Build SAM Turret
 Button/Name/NodNukeStrike=Fusion Warhead
-Button/Name/NodOPCenter=Build Operations Center
 Button/Name/NodObelisk=Instant Obelisk
 Button/Name/NodObeliskOfLight=Build the Obelisk of Light
+Button/Name/NodOperationsCenter=Build Operations Center
 Button/Name/NodPowerPlant=Build a power plant
 Button/Name/NodPurifier=Construct Purifier
 Button/Name/NodRaider=Build Raider
@@ -1512,7 +1512,7 @@ Button/Name/NodSabotage=Sabotage
 Button/Name/NodSaboteur=Train Saboteur
 Button/Name/NodScalpel=Construct Scalpel
 Button/Name/NodScorpion=Build Scorpion
-Button/Name/NodScorpionCNC3=Cuild Scorpion Tank
+Button/Name/NodScorpionTank=Cuild Scorpion Tank
 Button/Name/NodSellStructureButton=Sell
 Button/Name/NodShadow=Train Shadow Team
 Button/Name/NodShadowExplosive=Explosive Charge
@@ -1535,13 +1535,13 @@ Button/Name/NodTiberiumSilo=Liquefied Tiberium Silo
 Button/Name/NodTiberiumTrooper=Train Tiberium Troopers Squad
 Button/Name/NodTurret=Build Viper Turret
 Button/Name/NodTurretsHub=Build Turret Hub
-Button/Name/NodVenom=Build Bane
-Button/Name/NodVenomCNC3=Build Venom Patrol Craft
+Button/Name/NodVenom=Build Venom Patrol Craft
 Button/Name/NodVertigo=Vertigo
 Button/Name/NodVertigoPassive=Vertigo Bombers
 Button/Name/NodVision=People’s Eye
 Button/Name/NodVoiceOfKane=Build Voice of Kane
 Button/Name/NodW=TrainingW
+Button/Name/NodWarFactory=Build War Factory
 Button/Name/Nodpack3=Collapse
 Button/Name/NodpackCNC3=Collapse
 Button/Name/NonaggressionPact=Neutrality Pact
@@ -2136,7 +2136,6 @@ Button/Tooltip/Armory=This light industry plant can generate additional capital 
 Button/Tooltip/Armory2=Provide upgrades for units and turrets
 Button/Tooltip/ArtanisVoid2=The Archbishop of Durham. A powerful psionic warrior, skilled at rallying troops
 Button/Tooltip/ArtanisVoid22=The Archbishop of Durham. A powerful psionic warrior, skilled at rallying troops
-Button/Tooltip/Ascended=Basic infantry unit, good at dealing with medium-sized units. <n/><n/><c val="#ColorAttackInfo">Can be used against ground and air. </c>
 Button/Tooltip/AssaultMode2=Switch to Mecha mode so that Tengo Mecha can effectively deal with ground light armor units <n/><n/><c val="ffff00"> can be ground
 Button/Tooltip/AssaultMode22=The V-X quickly lands and morphs into Hitter mode, where the V-X is effective against aerial threats. However, it cannot attack ground units and does very limited damage to light Armor targets. <n/><n/><c val="ffff00"> It can be airborne
 Button/Tooltip/AssaultMode222=Deformable auxiliary high fire support unit. Attack ground units while in helicopter mode. <n/><n/><c val="#ColorAttackInfo"></c>
@@ -2251,7 +2250,6 @@ Button/Tooltip/AutomatedAssimilatorTextKicker42=<s val="Kicker_Minerals">+150 </
 Button/Tooltip/AutomatedRefinery=Occupy the oil field, increase the income coefficient by 0.1.
 Button/Tooltip/Awaken=Basic infantry unit, good at dealing with mechanical units. <n/><n/><c val="#ColorAttackInfo">Can target the ground. </c>
 Button/Tooltip/BT7=Before 1933, Soviet policymakers did not regard tanks as a new type of heavy firepower assault force. They only regarded them as cavalry made of steel. The BT-7 was designed with this guiding ideology. It is high-speed and low-power. For protection, the weapon was only a small-caliber cannon. As the situation changed, it was finally reduced to an armored reconnaissance tool.
-Button/Tooltip/Bane=Highly mobile air unit. Good at surprise strikes. <n/><n/><c val="ffff8a">Can be used against air and ground</c>
 Button/Tooltip/Barracks2=Soldiers, the country's events, the land of life and death, the way of survival, can not ignore also. - Sun Tzu's Art of War
 Button/Tooltip/Battlecruiser2=A special battleship that once had great combat power. Now it's just a lovely collectible.
 Button/Tooltip/Battlecruiser22=A special battleship that once had great combat power. Now it's just a lovely collectible.
@@ -2265,7 +2263,6 @@ Button/Tooltip/BiodomeLoad3=Allow nearby civilians to enter the industrial park.
 Button/Tooltip/BiodomeLoad32=Put infantry into Riptide ACV
 Button/Tooltip/BiodomeUnloadAll2=Have all civilians leave the Biodome.
 Button/Tooltip/BiodomeUnloadAll3=Get all civilians out of the Biodome.
-Button/Tooltip/BlackHand=Advanced infantry unit, good at dealing with small units and buildings. <n/><n/><c val="#ColorAttackInfo">Can target the ground. </c>
 Button/Tooltip/Blimp22=Read as Succubus Writing Cucumber, this Kirov-like creature doesn't have any attack power, but it will always follow you.
 Button/Tooltip/Blink=Used to solve the stuck problem
 Button/Tooltip/Blink2=Able to quickly move the turret to the target position
@@ -2476,25 +2473,30 @@ Button/Tooltip/BunkerLoad22=Loading infantry into tanks. Infantry will receive a
 Button/Tooltip/BunkerUnloadAll2=Uninstall all units.
 Button/Tooltip/BunkerUnloadAll22=Uninstall all units.
 Button/Tooltip/CabalAfterShock=Heavy tank. Can be switched to siege mode to provide long-range artillery fire. <n/><n/><c val="FFFF8A">Can target the ground. </c>
+Button/Tooltip/CabalAscended=Basic infantry unit, good at dealing with medium-sized units. <n/><n/><c val="#ColorAttackInfo">Can be used against ground and air. </c>
 Button/Tooltip/CabalAscender=Ascender
 Button/Tooltip/CabalAvenger=An anti-ground battle tank, good at fighting armored units. Can deploy flame mines. <n/><n/><c val="#ColorAttackInfo">Can target the ground. </c>
 Button/Tooltip/CabalAvengerTank=Heavy tank. Flame mines can be deployed and ignited to cause area damage. <n/><n/><c val="FFFF8A">Can target the ground. </c>
 Button/Tooltip/CabalAvengerTankFlameMine=Allow Avenger Tank to use Deploy Flame Mine ability.
+Button/Tooltip/CabalBane=Aerial unit, good at fighting other aircraft. <n/><n/><c val="#ColorAttackInfo">Can be used against ground and air</c>
 Button/Tooltip/CabalBasilisk=A large anti-air battleship that excel against massive units. <n/><n/><c val="#ColorAttackInfo">Can be used air ground</c> <n/><c val="FFE303">Detector</c>
 Button/Tooltip/CabalBike=Reconnaissance unit, good at fighting heavily armored units. <n/><n/><c val="#ColorAttackInfo">Can be used against ground and air.</c>
-Button/Tooltip/CabalBlackHand=Advanced infantry unit, good at dealing with small units and buildings. Able to use Tiberium bomb ability. <n/><n/><c val="#ColorAttackInfo">Can target the ground. </c>
+Button/Tooltip/CabalBlackHand=Advanced infantry unit, good at dealing with small units and buildings. <n/><n/><c val="#ColorAttackInfo">Can target the ground. </c>
 Button/Tooltip/CabalBomberPlatform=Air unit production facility. <n/><n/><c val="ffff8a">Open:</c><n/>- Viking<n/>- Medical Transport
 Button/Tooltip/CabalCenturion=Infantry mecha, the defense is increased when standing<n/><n/><c val="#ColorAttackInfo">and can attack the ground. </c>
+Button/Tooltip/CabalCobra=Highly mobile air unit. Good at surprise strikes. <n/><n/><c val="ffff8a">Can be used against air and ground</c>
 Button/Tooltip/CabalDefenseCrawler=Nod Defense Group Construction Factory. Can be expanded to serve as a Nod base. <n/><n/><c val="FFFF8A">Can be used against air and ground. </c>
 Button/Tooltip/CabalDefenseCrawlerDeploy=Expand to construction factory
 Button/Tooltip/CabalDefenseCrawlerDeployed=Strong defensive fortress. <n/>Used to receive collected resources. <n/><n/><c val="ffff8a">Can target the ground. </c>
 Button/Tooltip/CabalDefenseCrawlerPack=Return to MCV mode.
+Button/Tooltip/CabalDevout=Basic infantry unit, good at dealing with small units. <n/><n/><c val="#ColorAttackInfo">Can be used against ground and air. </c>
 Button/Tooltip/CabalDevoutGuardianGroupUpgrade=Increase the life of  <c val="ffff8a">Devout</c> by 15.
 Button/Tooltip/CabalDominator=Universal infantry. <n/><n/><c val="#ColorAttackInfo">Can be used against ground and air. </c>
 Button/Tooltip/CabalDropShip=Dropship
 Button/Tooltip/CabalEngineer=Basic work unit. for repairs. <n/><n/><c val="#ColorAttackInfo"><n/><c val="FFE303">Detector</c>
 Button/Tooltip/CabalFlameColumn=Powerful defensive building<n/>can attack ground and air
 Button/Tooltip/CabalGrandTemple=Provides upgrade options for human infantry units and buildings. <n/><n/><c val="ffff8a">Enable:</c><n/>- Allows SCV to build missile towers<n/>- Allows SCV to build sensor towers<n/>- Allows The command center can be upgraded to a planetary fortress
+Button/Tooltip/CabalHighConfessor=Universal infantry. <n/><n/><c val="#ColorAttackInfo">Can be used against ground and air. </c>
 Button/Tooltip/CabalHijacker=Auxiliary Infantry. Good at fighting mechanical units. <n/><n/><c val="#ColorAttackInfo">Can target the ground. </c>
 Button/Tooltip/CabalHolyOneTaunt=For 10 seconds, Holy One increase movement speed by 25% and taunt nearby hostile units within 9 range, decreasing their movement speed by 40% at the cost of increasing their weapon damage by 70%.
 Button/Tooltip/CabalHolySpirit=A slow but powerful massive mecha that can cause a lot of damage. <n/><n/><c val="#ColorAttackInfo">Can target the ground. </c>
@@ -2505,6 +2507,7 @@ Button/Tooltip/CabalLeviathanFlagship=Early model of Leviathan, equipped with la
 Button/Tooltip/CabalLeviathanWeaponSystem=Increase <c val="ffff8a">Leviathan</c> weapon damage by 50% and increase its weapon range by 1.
 Button/Tooltip/CabalMantis=Causes area-of-effect damage to the air. After upgrading, equip the rocket rack to increase the damage to the ground. <n/><n/><c val="#ColorAttackInfo">Can attack ground and air units. </c> <n/><c val="FFE303">Detector</c>
 Button/Tooltip/CabalMarauder=Medium reconnaissance vehicle with stronger armor but relatively slow movement. <n/><n/><c val="#ColorAttackInfo">Can target the ground. </c>
+Button/Tooltip/CabalMedusa=Support battleship. After upgrading, it can provide armor to allies and restore health. <n/><n/><c val="#ColorAttackInfo">Can be used against ground. </c>
 Button/Tooltip/CabalMissilePod=Unlock the first phase of Nod technology
 Button/Tooltip/CabalMissilePodO=Unlock the first phase of Nod technology
 Button/Tooltip/CabalMissilePodUG=Automatic defense turret, burrowing when there are no enemies nearby. <n/><n/><c val="#ColorAttackInfo">Can target ground</c>
@@ -2518,12 +2521,13 @@ Button/Tooltip/CabalReaperGuerrillaCharge=Increase movement speed of Reaper by 3
 Button/Tooltip/CabalReaperTacticalChargeWeapon=Enable <c val="ffff8a">Reaper</c> to use Guerrilla Charge ability, which increases <c val="ffff8a">Reaper</c> 30% movement speed for 3 seconds and then sequentially increase <c val="ffff8a">Reaper</c> 2 weapon range and 20% weapon speed.
 Button/Tooltip/CabalSaint=Universal infantry. <n/><n/><c val="#ColorAttackInfo">Can be used against ground and air. </c>
 Button/Tooltip/CabalSalamander=Powerful Nod battleship. It has four auto-aiming  rocket launchers facing in all directions, which can drop liquefied Tiberium downwards, causing burning damage in an area. <n/><n/><c val="#ColorAttackInfo">Can be used against ground and air. </c>
+Button/Tooltip/CabalScalpel=Highly mobile air unit.Can heal friendly units.<n/><c val="FFE303">Detector</c>
 Button/Tooltip/CabalShieldGenerator=Generates a shield that lasts for a period of time after the unit leaves the shield generator.
 Button/Tooltip/CabalSlave=Basic working unit. Used to gather resources, construct human structures, and repair. <n/><n/><c val="#ColorAttackInfo">Can target the ground. </c>
 Button/Tooltip/CabalSlaveGideon=Basic working unit. Used to gather resources, construct human structures, and repair. <n/><n/><c val="#ColorAttackInfo">Can target the ground. </c>
 Button/Tooltip/CabalSpecter=Medium artillery, invisible. Unlocked when attacking.<n/><n/><c val="#ColorAttackInfo">Can attack ground units. </c>
 Button/Tooltip/CabalSpider=A small assault unit that provides buffs when loaded into the Widow<n/><n/><c val="#ColorAttackInfo">Can be used against ground and air. </c>
-Button/Tooltip/CabalStealthTank=Invisible unit, good at launching surprise attacks. <n/><n/><c val="#ColorAttackInfo">Can be used against ground and air. </c>
+Button/Tooltip/CabalStealthTank=Assault unit, uncloaked when attacking. <n/><n/><c val="FFFF8A">Can be used against ground and air. </c>
 Button/Tooltip/CabalSupportCrawler=Nod Defense Team Construction Factory. Can be expanded to serve as a Nod base. <n/><n/><c val="FFFF8A">Can be used against air and ground. </c>
 Button/Tooltip/CabalSupportCrawlerDeployed=Strong defensive fortress. <n/>Used to receive collected resources. <n/><n/><c val="ffff8a">Can target the ground. </c>
 Button/Tooltip/CabalSurvivorBug=Increase <c val="ffff8a">Spider Tank</c> life by 20 and Increase <c val="ffff8a">Tyrant</c> life by 25.
@@ -2532,6 +2536,8 @@ Button/Tooltip/CabalTrainSaint=Heavy Infantry. Strong and slow, devastating vs s
 Button/Tooltip/CabalTrainVisceroid=Snowballing attack unit, excel against small units. When killed energy target, turn them into Visceroid. <n/><n/><c val="#ColorAttackInfo">and can be used on ground. </c>
 Button/Tooltip/CabalTyrant=High mobility, can burrow into the ground, good at fighting heavy units. <n/><n/><c val="#ColorAttackInfo">Can be used against ground and air. </c><c val="FFE303">Detector</c>
 Button/Tooltip/CabalUnderminer=Heavy artillery, the trajectory cannot be detected<n/><n/><c val="#ColorAttackInfo">Can target the ground. </c>
+Button/Tooltip/CabalVertigo=Highly mobile air unit. Good at surprise strikes. <n/><n/><c val="ffff8a">Can be used against air and ground</c>
+Button/Tooltip/CabalVertigoLanded=Highly mobile air unit. Good at surprise strikes. <n/><n/><c val="ffff8a">Can be used against air and ground</c>
 Button/Tooltip/CabalWeaponsLaboratory=WeaponsLaboratory
 Button/Tooltip/CabalWidow=Heavy vehicle, when loading a spider tank, the power of the main gun is increased<n/><n/><c val="#ColorAttackInfo">It can target both ground and air. </c>
 Button/Tooltip/CabalWidowLongeron=Increase <c val="ffff8a">Widow</c> life by 120.
@@ -2641,7 +2647,6 @@ Button/Tooltip/Cnxunleitiangang=China's advanced infantry, wearing heavy mechani
 Button/Tooltip/Cnxunleitianggangspell=Gather energy in the magnetic restraint device on the back and launch ball lightning towards the target area, causing <c val="00ffff"><d ref="Effect,RAInitialExplosionDamageOfThunderTiangangElectromagneticBall,Amount"/> (for light armor<d ref= "Effect,RAInitialExplosionDamageOfThunderTiangangElectromagneticBall,Amount*10"/>) </c> damage while paralyzing enemies in the ground area <n/> making them unable to move. <c val="ffff00"> lasts 12 seconds
 Button/Tooltip/Cnzhongnupao=A powerful turret equipped with magnetic rail weapons, capable of severely damaging enemies from a long distance. <n/><n/><c val="ffff00">Role: Advanced ground defense tower
 Button/Tooltip/CoastalBattery4=The 460 heavy artillery is a defense fortification composed of large concrete permanent fortifications and large-caliber cannons. It is good at dealing with large zombies.
-Button/Tooltip/Cobra=Highly mobile air unit. Good at surprise strikes. <n/><n/><c val="ffff8a">Can be used against air and ground</c>
 Button/Tooltip/ColonistBiodomeHalfBuilt2=The ultimate building combining income and technology, which can simultaneously obtain a large number of income and technology points (money 1000+ technology 100)
 Button/Tooltip/ComandPost=Provides upgrade options for human infantry units and buildings. <n/><n/><c val="ffff8a">Enable:</c><n/>- Allows SCV to build missile towers<n/>- Allows SCV to build sensor towers<n/>- Allows The command center can be upgraded to a planetary fortress
 Button/Tooltip/CombatEngineer=Armored logistics personnel, received mechanical professional training, with field machinery maintenance tools, can deal with some mechanical problems in time.
@@ -2704,7 +2709,6 @@ Button/Tooltip/DestructibleGarageLarge=The underground communities were able to 
 Button/Tooltip/DestructibleWallStraightHorizontalBF=The special defense tower made with Soviet technology has a strong lethality and can easily penetrate the bodies of large groups of small zombies.<n/>It can further increase its power by the charging of Tesla Trooper
 Button/Tooltip/Detector2=This unit can detect cloaked, burrowed, and phantom units. <n/><c val="ffbb00">Requires a loading engineer to enable detection capabilities
 Button/Tooltip/Devourer2=Heavy air to air units can exert a strong weakening effect on hit aerial targets, reducing their attack speed.
-Button/Tooltip/Devout=Basic infantry unit, good at dealing with small units. <n/><n/><c val="#ColorAttackInfo">Can be used against ground and air. </c>
 Button/Tooltip/DevoutLeader=Basic infantry unit, good at dealing with small units. <n/><n/><c val="#ColorAttackInfo">Can be used against ground and air. </c>
 Button/Tooltip/Disband=Recycle and destroy the unit or building (return 50% of the cost)
 Button/Tooltip/Disband2=Recycle and destroy the unit or building (return 50% of the cost)
@@ -2804,7 +2808,6 @@ Button/Tooltip/Herrscher2Blink22=Enter Herrscher form and use "Hidden Box and Hi
 Button/Tooltip/Herrscher2Blink3=Able to use a special Chrono Belt for long-distance transmission, and be improved by a Chrono Shield within 15 seconds, improve damage and weapon range
 Button/Tooltip/Herrscher2ndUltimateInstant=Causes 9-12 hits to enemies in a large area in front of the character, each hit causing 1000 damage.
 Button/Tooltip/Herrscher2ndUltimateTarget=Causes 9-12 blows to enemies in a large area in front of the character, each blow causing <d ref="Effect,Herrscher2ndUltimateDamageMissileSearchTarget,Amount"/>damage
-Button/Tooltip/HighConfessor=Universal infantry. <n/><n/><c val="#ColorAttackInfo">Can be used against ground and air. </c>
 Button/Tooltip/HighTemplarShakuras=A special Dark Archon that has no attack capabilities. It just wants to follow you around.
 Button/Tooltip/HotSMetabolicBoost2=Movement speed increased by 60%.
 Button/Tooltip/Hyperjump=Jump to the target location after <d time="6"/>. <n/><n/><c val="#ColorAttackInfo">No field of view required. </c>
@@ -2968,7 +2971,6 @@ Button/Tooltip/MedicHealObelisk=Heals a friendly unit. <n/><n/><c val="f078ff">E
 Button/Tooltip/MediumTankEarly=Medium tanks were the main armored force of various countries in World War II.
 Button/Tooltip/MediumTankImproved=Medium tank is the main force of a country's armored forces, which achieves the maximum balance in firepower, protection and mobility.
 Button/Tooltip/MedivacSpeedBoost=Make the Kirov airship movement speed increased by 200%, damage increased by 200%, continuing <d ref="Behavior,MedivacSpeedBoost2,Duration"/>seconds. But it also continues to consume health until death or continues to end！！
-Button/Tooltip/Medusa=Support battleship. After upgrading, it can provide armor to allies and restore health. <n/><n/><c val="#ColorAttackInfo">Can be used against ground. </c>
 Button/Tooltip/Militant=Basic infantry unit, good at dealing with small units. <n/><n/><c val="#ColorAttackInfo">Can be used against ground. </c>
 Button/Tooltip/MilitantRocket=Basic infantry unit, good at dealing with medium-sized units. <n/><n/><c val="#ColorAttackInfo">Can be used against ground and air. </c>
 Button/Tooltip/Militants=Basic infantry unit, good at dealing with small units. <n/><n/><c val="#ColorAttackInfo">Can be used against ground.</c>
@@ -2990,13 +2992,11 @@ Button/Tooltip/NodAirTower=Aircraft Production Facility. Each Air Tower provides
 Button/Tooltip/NodAramUpgrade=The troops to which Nod belongs do not have the conventional third-level armament upgrade in the Koprulu sector, but instead have battlefield experience upgrades. <n/>Each Nod unit needs to kill units twice its own production value before it can advance. <n/>Level 1: Increase armor by 1 point. <n/>Level 2: Increase weapon damage by 15%. <n/>Level 3: Increase armor by 1 point and gain slow health recovery. <n/>If there are multiple Nod units nearby when a unit is killed, the experience gained by the killed unit will be divided equally. <n/>Each unit can be upgraded up to 3 times.
 Button/Tooltip/NodArmageddon=This fast aircraft is designed to quickly drop tactical weapons.
 Button/Tooltip/NodArtilleryBeacon=Deploys a beacon at the selected location, allowing Specters to fire in the surrounding area.
-Button/Tooltip/NodAttackBike=<sp/>
 Button/Tooltip/NodAvatar=This massive walker is equipped with a portable version of the Obelisk laser. Avatars may further enhance their immense power by literally ripping pieces from other Nod vehicles. When badly damaged, Avatars leave a husk that can be captured by Saboteurs (or their equivalents) of any side,<n/><n/><c val="#ColorAttackInfo">Can attack ground units. </c>
 Button/Tooltip/NodBane=Aerial unit, good at fighting other aircraft. <n/><n/><c val="#ColorAttackInfo">Can be used against ground and air</c>
 Button/Tooltip/NodBanshee=Advanced Nod fighter craft. Equipped with Twin plasma cannons.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
-Button/Tooltip/NodBeam=Heavy tank. Can be switched to siege mode to provide long-range artillery fire. <n/><n/><c val="FFFF8A">Can target the ground. </c>
-Button/Tooltip/NodBeamCNC3=A siege unit that can charge the Stone of Light. Can be upgraded to be used with Venom to attack air and ground targets on longer distance.<n/><n/><c val="#ColorAttackInfo">Can attack ground units. </c>
-Button/Tooltip/NodBikeCNC3=The Attack Bike is a quick and light scout vehicle, armed with anti-air rockets and equipped with a scanner array which can detect stealthed units. <n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c><n/><c val="FFE303">Detector</c>
+Button/Tooltip/NodBeam=A siege unit that can charge the Stone of Light. Can be upgraded to be used with Venom to attack air and ground targets on longer distance.<n/><n/><c val="#ColorAttackInfo">Can attack ground units. </c>
+Button/Tooltip/NodBike=The Attack Bike is a quick and light scout vehicle, armed with anti-air rockets and equipped with a scanner array which can detect stealthed units. <n/><n/><c val="#ColorAttackInfo">Can attack ground and air units.</c><n/><c val="FFE303">Detector</c>
 Button/Tooltip/NodBlackHand=Nod advanced infantry, good at fighting buildings and light armored units. <n/><n/><c val="#ColorAttackInfo">Can attack ground units. </c>
 Button/Tooltip/NodBlackHandCC3=Advanced infantry unit, good at dealing with small units and buildings. <n/><n/><c val="#ColorAttackInfo">Can target the ground. </c>
 Button/Tooltip/NodBlade=Classic Helicopter.<n/><n/><c val="ffff8a">Can attack ground units.</c>
@@ -3010,6 +3010,7 @@ Button/Tooltip/NodChemicalPlant=Provides upgrade options for battlecruisers. <n/
 Button/Tooltip/NodChemicalPlantSP=Chariot production facility. <n/><n/><c val="ffff8a">Enable:</c><n/>- Hellfire<n/>- Vulture
 Button/Tooltip/NodCloak=Decrease the amount of splash damage taken by <c val="ffff8a">Venom</c> Aircraft.
 Button/Tooltip/NodCobra=Aerial unit, good at fighting heavily armored units. <n/><n/><c val="#ColorAttackInfo">Can target ground</c>
+Button/Tooltip/NodCommando=Elite Infantry. Good against light units. Explosives can be placed on buildings.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/NodConfessor=The Confessor increases friendly units armour and rate of fire</n> Can use Hallucinogenic Grenades.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/NodConfessorAura=The Confessor increases friendly units armour and rate of fire
 Button/Tooltip/NodConstructionYard=A solid defensive fortress. <n/>Used to receive collected resources. <n/><n/><c val="ffff8a">Can target the ground. </c>
@@ -3046,7 +3047,7 @@ Button/Tooltip/NodGenericPurifyingFlames=Increase the flame weapon damage of <c 
 Button/Tooltip/NodGenericScorpionTankDozerBlade=Increase <c val="ffff8a">Scorpion Tank</c> health by 20.
 Button/Tooltip/NodGenericVenomCloakingUpgrade=Allow <c val="ffff8a">Venom</c> to cloak until attacking.
 Button/Tooltip/NodHallucinogenicGrenade=Throws hallucinogenic grenades at a target area, which cause enemy infantry units to fire at their comrades for few seconds
-Button/Tooltip/NodHand=Nod Infantry training structure.
+Button/Tooltip/NodHand=Produces Nod infantry
 Button/Tooltip/NodHandDefense=Produces Nod infantry
 Button/Tooltip/NodHandSP=Produces Nod infantry
 Button/Tooltip/NodHandSPDefense=Produces Nod infantry
@@ -3068,11 +3069,7 @@ Button/Tooltip/NodHighConfessor=Elite Infantry. Good at fighting structures. <n/
 Button/Tooltip/NodInterceptorUnit=A combat aircraft capable of automatically attacking aircraft carrier targets. Interceptors are the only weapons of the aircraft carrier. <n/><n/><c val="#ColorAttackInfo">Can be used against ground and air. </c>
 Button/Tooltip/NodInvertWarhead=Use the conversion warhead to hit the target area. The damage is low, but the biological unit can turn into an infected human after death (it will be changed into an organ beast after the model is available)
 Button/Tooltip/NodKaneAirTower=Air unit production facility. <n/><n/><c val="ffff8a">Open:</c><n/>- Viking<n/>- Medical Transport
-Button/Tooltip/NodKaneBarracks=Produces Nod infantry
-Button/Tooltip/NodKaneCommando=Elite Infantry. Good against light units. Explosives can be placed on buildings.<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c>
 Button/Tooltip/NodKaneMCVDeploy=Expand to construction factory
-Button/Tooltip/NodKaneVertigo=Due its its stealth capability, the Vertigo Bomber appears as if from nowhere and delivers its payload of Groundpounder bombs before opposing forces can muster their defences. It is also armed with a tail-mounted anti-air gun for emergencies. Stealthed. Can use Disruption Pods<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units. </c>
-Button/Tooltip/NodKaneWarFactory=Nod vehicle production facility. <n/><n/><c val="ffff8a">Enable:</c><n/>- Bike<n/>- Raider<n/>- Scorpion Tank<n/>- Nod MCV
 Button/Tooltip/NodLaserTurret=Laser Turrets can quickly focus their beams against armoured targets within range<n/><n/><c val="#ColorAttackInfo">Can attack ground units.</c><n/><c val="FFE303">Detector</c>
 Button/Tooltip/NodMCV=The Brotherhood's menacing-looking MCVs can unpack into a Construction Yard. Well-armoured , but slow and unarmed.
 Button/Tooltip/NodMLaserTurret=Base Defense. Strong vs Vehicles <n/> Place hun and then three surrounding turrets. If hub is lost all turrets are destroyed. <n/><n/><c val="#ColorAttackInfo">Can attack ground</c><n/><c val="FFE303">Detector</c>
@@ -3084,14 +3081,14 @@ Button/Tooltip/NodMilitantRocket=Nod basic anti-aircraft infantry. Also effectiv
 Button/Tooltip/NodMines=Drops fire mines in the area.
 Button/Tooltip/NodMissileTurret=Base Defense. Strong vs Air <n/> Place hun and then three surrounding turrets. If hub is lost all turrets are destroyed. <n/><n/><c val="#ColorAttackInfo">Can attack air units.</c><n/><c val="FFE303">Detector</c>
 Button/Tooltip/NodNukeStrike=Use the fusion warhead to strike the target area
-Button/Tooltip/NodOPCenter=The Operations Center contains advanced communications arrays required for Nod's higher-tier technologies and can deploy counter-intelligence support powers
-Button/Tooltip/NodOPCenterSP=Unlock the first phase of Nod technology
 Button/Tooltip/NodObelisk=Immediately build an obelisk of light in the target area
 Button/Tooltip/NodObeliskOfLight=Powerful defensive building<n/>can attack ground
+Button/Tooltip/NodOperationsCenter=The Operations Center contains advanced communications arrays required for Nod's higher-tier technologies and can deploy counter-intelligence support powers
+Button/Tooltip/NodOperationsCenterSP=Unlock the first phase of Nod technology
 Button/Tooltip/NodPowerPlant=Provides power and supply.
 Button/Tooltip/NodPowerPlant2=Provides power to the base.
 Button/Tooltip/NodPowerPlantSP=Provides power to the base
-Button/Tooltip/NodPowerPlantUpgrade=Provides supplies to Nod troops, <n/>increases the supply limit. <n/>
+Button/Tooltip/NodPowerPlantUpgraded=Provides supplies to Nod troops, <n/>increases the supply limit. <n/>
 Button/Tooltip/NodPurifier=The predecessor to the Avatar, the Purifier comes equipped with a flamethrower in addition to the standard laser. They add 25% to the armour and 50% to the rate of fire of nearby friendly infantry, also making them 50% harder to suppress. When badly damaged, Purifiers leave a husk that can be captured by Saboteurs (or their equivalents) of any side.<n/><n/><c val="#ColorAttackInfo">can attack ground units. </c>
 Button/Tooltip/NodRaider=High mobility, good at fighting light armored units. Can use EMP ability<n/><n/><c val="#ColorAttackInfo">Can attack ground units. </c>
 Button/Tooltip/NodReckoner=Transport vehicle, when deployed, members can fire from inside the vehicle. <n/><n/><c val="#ColorAttackInfo">
@@ -3112,7 +3109,7 @@ Button/Tooltip/NodSabotage=Capture enemy structure , repair friendly structure. 
 Button/Tooltip/NodSaboteur=Able to capture enemy structures, can take over downed large mechs including the Juggernaut, the Avatar, the Annihilator Tripod. Can Repair friendly structures and plant Booby Trap on neutral structures.
 Button/Tooltip/NodScalpel=Aerial maintenance unit. <n/><n/><c val="#ColorAttackInfo">No weapons</c> <n/><c val="FFE303">Detector</c>
 Button/Tooltip/NodScorpion=The old Scorpion tank, equipped with laser capacitor, looks more like a cockroach<n/><n/><c val="#ColorAttackInfo">It can attack the ground. </c>
-Button/Tooltip/NodScorpionCNC3=Equipped with a laser capacitor with high damage.<n/><n/><c val="#ColorAttackInfo">Can attack ground units. </c>
+Button/Tooltip/NodScorpionTank=Equipped with a laser capacitor with high damage.<n/><n/><c val="#ColorAttackInfo">Can attack ground units. </c>
 Button/Tooltip/NodSellStructureButton=Sells the structure, removing it and returning 75% of its mineral and gas value.
 Button/Tooltip/NodShadow=Can use their collapsible glider packs to lift off. Can plant explosives on structures. Stealthed both on ground and in air, and are only uncovered when firing<n/><n/><c val="#ColorAttackInfo">Can attack ground units</c>
 Button/Tooltip/NodShadowExplosive=Plants an explosive charge to an enemy building
@@ -3142,14 +3139,13 @@ Button/Tooltip/NodTurret=Unlock the first phase of Nod technology
 Button/Tooltip/NodTurretO=Unlock the first phase of Nod technology
 Button/Tooltip/NodTurretUG=Automatic defense turret, burrowing when there are no enemies nearby. <n/><n/><c val="#ColorAttackInfo">Can target ground</c>
 Button/Tooltip/NodTurretsHub=Nod's defensive turrets are organized in such a way that their central hub manages the operation of three turrets that are directly connected to it through visible cables. If individual turrets are destroyed, they will be automatically replaced for free after a delay. If the hub itself is destroyed, all turrets connected to it are destroyed with it. When placing Shredder, Laser and SAM Turrets, the hub has to be placed first, and then the three individual turrets, which must be placed close to the hub.
-Button/Tooltip/NodVenom=Aerial unit, good at fighting other aircraft. <n/><n/><c val="#ColorAttackInfo">Can be used against ground and air</c>
-Button/Tooltip/NodVenomCNC3=The old generation Venom is equipped with a particle beam.<n/><n/><c val="#ColorAttackInfo">Can attack ground and air units. </c>
-Button/Tooltip/NodVertigo=Vertigo
-Button/Tooltip/NodVertigoCC3=
+Button/Tooltip/NodVenom=Highly mobile air unit with bonus vs light. <n/><n/><c val="ffff8a">Can be used against air and ground</c>
+Button/Tooltip/NodVertigo=
 Button/Tooltip/NodVertigoPassive=Allow to construct Vertigo Bombers at air support platforms.
 Button/Tooltip/NodVision=Improves the vision of units in the target area and gives them detection capabilities, lasting 20s
 Button/Tooltip/NodVoiceOfKane=This statue of the great prophet himself affects nearby friendly infantry by increasing their firing rate by 50% and armour by 25%. Note: Only one Nod Voice of Kane can be built at a time per player.<n/>
 Button/Tooltip/NodW=Mercenary, in this stage where mutants can be seen everywhere, combat ability will be valued more than unique appearance. <n/><n/><c val="#ColorAttackInfo">Can be used against ground and air. Possess a variety of burst damage skills. </c>
+Button/Tooltip/NodWarFactory=Nod vehicle production facility. <n/><n/><c val="ffff8a">Enable:</c><n/>- Bike<n/>- Raider<n/>- Scorpion Tank<n/>- Nod MCV
 Button/Tooltip/NodWarFactoryDefense=War vehicle production facility. <n/><n/><c val="ffff8a">Enable:</c><n/>- Hellfire<n/>- Vulture
 Button/Tooltip/NodWarFactoryOffense=War vehicle production facility. <n/><n/><c val="ffff8a">Enable:</c><n/>- Hellfire<n/>- Vulture
 Button/Tooltip/NodWarFactorySP=War vehicle production facility. <n/><n/><c val="ffff8a">Enable:</c><n/>- Hellfire<n/>- Vulture
@@ -3403,7 +3399,6 @@ Button/Tooltip/SUTechUnlockT3=Mobilize the heavy industrial forces of the Soviet
 Button/Tooltip/SUTechUnlockT4=Fully unleash all the heavy industrial power of the Soviet Union, completely unleash the Soviet Union's super steel behemoth and secret research experimental weapons, and wipe the enemy off this planet with a torrent of steel!
 Button/Tooltip/SUTeslaTrooper=Heavily armored infantry that can face dry bruisers with enemy tanks, dealing extremely high damage to lightly armored targets，You can also charge the <c val="ffff00">Tesla Coil</c>to greatly increase its performance and power。<n/><c val="FFFF00">Role: First to ground</c>
 Button/Tooltip/Sandbags=Basic works to provide cover for the infantry
-Button/Tooltip/Scalpel=Highly mobile air unit.Can heal friendly units.<n/><c val="FFE303">Detector</c>
 Button/Tooltip/ScienceVessel2=Air support unit. Special customized version does not have any special abilities
 Button/Tooltip/SelectIndustries=Select all factories and universities
 Button/Tooltip/SelectShipyards=Select all ports
@@ -3452,7 +3447,6 @@ Button/Tooltip/SpiderMineVulture=After detonating, it ignites the ground, causin
 Button/Tooltip/SpitfireI=The Spitfire was an excellent streamlined aircraft with a water-cooled piston engine produced by Rolls-Royce.
 Button/Tooltip/SpyCentre=Contains upgrades for Ghosts. You can build Nukes for Ghosts.<n/><n/><c val="ffff8a">Enables:</c><n/>- Ghosts at the Barracks
 Button/Tooltip/Static105mmArtillery2=
-Button/Tooltip/StealthTank=Assault unit, uncloaked when attacking. <n/><n/><c val="FFFF8A">Can be used against ground and air. </c>
 Button/Tooltip/Stim2=Run very fast for a short period of time, lasting 15 seconds. You will become exhausted after a while and cannot move for 10 seconds.
 Button/Tooltip/Stim3=Able to use long-range sword energy to attack enemies and cause huge damage to enemies in the area for <c val="ffff00"><d ref="Behavior,zhukefuxingfenji3,Duration"/></c>s
 Button/Tooltip/Stim32=The Mammoth Tank can use the original Iron Curtain device against itself by calling on all Tesla energy devices, generating a shield against itself and being immune to any damage in a short period of time.
@@ -3774,11 +3768,8 @@ Button/Tooltip/UpgradetoImprovedFlakCannon=A position equipped with large-calibe
 Button/Tooltip/UpgradetoIndustry=Money income +4 per cycle
 Button/Tooltip/Us125mmSPH=The 125mm rocket is capable of firing a large number of light rockets, dealing considerable damage to enemies in the area, while having the mobility and protection of a tank
 Button/Tooltip/VehiclesPage=Go to tank page.
-Button/Tooltip/VenomCC3=Highly mobile air unit with bonus vs light. <n/><n/><c val="ffff8a">Can be used against air and ground</c>
-Button/Tooltip/Vertigo=Highly mobile air unit. Good at surprise strikes. <n/><n/><c val="ffff8a">Can be used against air and ground</c>
 Button/Tooltip/VertigoAttack=Commands all stun bombs in the target area.
 Button/Tooltip/VertigoBomb=Ignite the target area. </n></n><c val="ffff8a">Will not cause damage to friendly units. </c>
-Button/Tooltip/Vertigolanded=Highly mobile air unit. Good at surprise strikes. <n/><n/><c val="ffff8a">Can be used against air and ground</c>
 Button/Tooltip/Vertigotakeoff=Take off!
 Button/Tooltip/VikingAssault222=A deformable auxiliary unit with strong fire support. After entering helicopter mode, you can attack ground units. <n/><n/><c val="#ColorAttackInfo">can be empty</c>
 Button/Tooltip/Virophage2=Zombie’s special remote structure, capable of launching spores to attack enemies.
@@ -4565,6 +4556,8 @@ Effect/Name/CabalBlackHandLiquidTibDamage=BlackHandLiquidTib (Damage)
 Effect/Name/CabalBlackHandLiquidTibSearchArea=BlackHandLiquidTib Search Area
 Effect/Name/CabalCNCheal=CNCHeal
 Effect/Name/CabalCenturionWeaponDamage=CabalCenturionWeapon
+Effect/Name/CabalCommandoShockwaveDamage=NodCommando Shockwave (Damage)
+Effect/Name/CabalCommandoShockwaveDamage2=NodCommando Shockwave (Damage)
 Effect/Name/CabalDefenseCrawlerCannon=CabalDefenseCrawler Cannon
 Effect/Name/CabalHijackerEMPAB=CabalHijacker EMP AB
 Effect/Name/CabalHijackerTargetLockCP=CabalHijackerTargetLockCP
@@ -5285,8 +5278,6 @@ Effect/Name/NodBikeRocketUpDamage=NodBikeRocket Up (Damage)
 Effect/Name/NodBikeRocketUpLaunchMissile=NodBikeRocket Up(Launch Missile)
 Effect/Name/NodChemicalPlantSPawnSet=Nod ChemicalPlant Spawn Set
 Effect/Name/NodChemicalPlantSPawnSet2=Nod ChemicalPlant Spawn Set
-Effect/Name/NodCommandoShockwaveDamage=NodCommando Shockwave (Damage)
-Effect/Name/NodCommandoShockwaveDamage2=NodCommando Shockwave (Damage)
 Effect/Name/NodCpmmandoWeaponUpgradedDamage=Cpmmando weapon (Damage) Upgrade
 Effect/Name/NodCraneSpawnSet=NodCrane Spawn Set
 Effect/Name/NodCraneSpawnSetDefense=NodCrane Spawn Set Defense
@@ -5313,15 +5304,15 @@ Effect/Name/NodCreateNodHangar=Nod Create NodKaneAirTower
 Effect/Name/NodCreateNodHangarDefense=Nod Create NodKaneAirTower Defense
 Effect/Name/NodCreateNodHangarOffense=Nod Create Nod Hangar Offense
 Effect/Name/NodCreateNodHangarSupport=Nod Create NodKaneAirTower Support
-Effect/Name/NodCreateNodOPcenter=Nod Create OPcenter
+Effect/Name/NodCreateNodOperationsCenter=Nod Create OPcenter
 Effect/Name/NodCreateNodRefinery=Nod Create NodRefinery
 Effect/Name/NodCreateNodShrine=Nod Create NodShrine
 Effect/Name/NodCreateNodSilo=Nod Create NodTiberiumRefinery
 Effect/Name/NodCreateNodTechlab=Nod Create NodTechlab
-Effect/Name/NodCreateNodWarFactory=Nod Create NodKaneWarFactory
-Effect/Name/NodCreateNodWarFactoryDefense=Nod Create NodKaneWarFactory Defense
-Effect/Name/NodCreateNodWarFactoryOffense=Nod Create NodKaneWarFactory Offense
-Effect/Name/NodCreateNodWarFactorySupport=Nod Create NodKaneWarFactory Support
+Effect/Name/NodCreateNodWarFactory=Nod Create NodWarFactory
+Effect/Name/NodCreateNodWarFactoryDefense=Nod Create NodWarFactory Defense
+Effect/Name/NodCreateNodWarFactoryOffense=Nod Create NodWarFactory Offense
+Effect/Name/NodCreateNodWarFactorySupport=Nod Create NodWarFactory Support
 Effect/Name/NodCreatePowerPlant=Nod Create Power Plant
 Effect/Name/NodCreateRedeemer=Nod Create Redeemer
 Effect/Name/NodDeepBurrowDeepBurrow=NodDeepBurrow Deep Burrow
@@ -5367,8 +5358,8 @@ Effect/Name/NodNuclearEMPStrikeDetonate=Nod Nuclear EMP Strike (Detonate)
 Effect/Name/NodNuclearStrikeDamage=Nod Nuclear Strike (Damage)
 Effect/Name/NodNuclearStrikeDetonate=Nod Nuclear Strike (Detonate)
 Effect/Name/NodNukeEmpStrikeSet=Nod Nuke Emp Strike Set
-Effect/Name/NodOPcenterSpawnSet=Nod OPcenter Spawn Set
 Effect/Name/NodObeliskWeaponNewDamage=Nod Obelisk Weapon （New） (Damage)
+Effect/Name/NodOperationsCenterSpawnSet=Nod OPcenter Spawn Set
 Effect/Name/NodPowerPlantSpawnSet=Nod PowerPlant Spawn Set
 Effect/Name/NodRFT_CP=RedeemerFlame Thrower (Create Persistent)
 Effect/Name/NodRFT_Damage=Flame Thrower (Damage)
@@ -5510,6 +5501,7 @@ Effect/Name/ParticleBeam7=Magnetic storm coil damage
 Effect/Name/PerditionTurretFlameThrowerDamage=Flamethrower damage
 Effect/Name/PickupTib=Pickup Tib
 Effect/Name/Pioneersurroundingvesteffectmachinegun=Pioneer surrounding vest effect machine gun
+Effect/Name/PlaneTakesOffC=The plane takes off and starts the effect
 Effect/Name/PlasmaSearch=Plasma cannon paralysis effect search area
 Effect/Name/ProjectileAccelerators2=Projectile Accelerators copy
 Effect/Name/ProjectileAccelerators22=Projectile Accelerators Copy Copy
@@ -6685,7 +6677,6 @@ Effect/Name/zhukefuxingfenji=Rampage mode
 Effect/Name/zhukefuxingfenji2=Running mode
 Effect/Name/zhukefuxingfenji22=Fatigue in running mode
 Effect/Name/zhukefuxingfenji3=Divine power application behavior
-Effect/Name/PlaneTakesOffC=The plane takes off and starts the effect
 Fuka=<c val="ffcc00">The Lawyer of Knowledge
 JuYurico=<c val="ff8800">Yurico
 KianaC9=Herrscher of Fire
@@ -6703,9 +6694,12 @@ Param/Expression/lib_SPPN_D9FC2478=<s val="StandardTooltipHeader_Terr">~name~</s
 Param/Expression/lib_SPPN_FE819751=<s val="StandardTooltipHeader_Terr">~name~ [~ID~]</s><n/><n/>~min_icon~ ~min_val~ ~gas_icon~ ~gas_val~ ~food_icon~ ~food_val~<n/><n/>~desc~
 Param/Value/lib_RED3_0870BC06=RETURN INITIATED
 Param/Value/lib_RED3_117EF6D7=CRCL2
+Param/Value/lib_RED3_13624C70=Occupied! Search again
 Param/Value/lib_RED3_266EF012=LANDING INIT
+Param/Value/lib_RED3_2BF83E17=RETURN NO AMMO
 Param/Value/lib_RED3_2C48F79D=LANDING CONTINUE C
 Param/Value/lib_RED3_41D14810=search again
+Param/Value/lib_RED3_52965622=RETURN 2
 Param/Value/lib_RED3_6089A5EB=LANDING NOT CONTINUE
 Param/Value/lib_RED3_8CBA38FD=CIRC
 Param/Value/lib_RED3_90A600C2=LANDING NOT CONTINUE 2
@@ -6715,14 +6709,19 @@ Param/Value/lib_RED3_D832BCAB=LANDING CONTINUE D
 Param/Value/lib_RED3_DB2A973F=CRCL3
 Param/Value/lib_RED3_E0C5CBDF=LANDING NOT CONTINUE 3
 Param/Value/lib_TIBW_06F7264C=MCV was destroyed! Redeployment coming soon
+Param/Value/lib_TIBW_12AC9C2C=</n>
 Param/Value/lib_TIBW_1A61AA67=MCV was destroyed! Redeployment coming soon
+Param/Value/lib_TIBW_27B47E6F=<img path="Assets/Textures/btn-building-genetron-processingcore.dds" alignment="absolutemiddle" width="32" height="32"/> 
 Param/Value/lib_TIBW_4337F561=MCV was destroyed! Redeployment coming soon
 Param/Value/lib_TIBW_450B571B=Beacons
 Param/Value/lib_TIBW_75FED3F4=MCV was destroyed! Redeployment coming soon
+Param/Value/lib_TIBW_760175CA=</n>
 Param/Value/lib_TIBW_991E0E3C=<s val="ZPlanetPanelObjective">Deploy an MCV (cannot be changed after deployment)</s>
+Param/Value/lib_TIBW_AB6A7235=<img path="Assets/Textures/btn-building-genetron-generator.dds" alignment="absolutemiddle" width="32" height="32"/> 
 Param/Value/lib_TIBW_B653B3CD=MCV is destroyed! Redeployment coming soon
 Param/Value/lib_TIBW_BD95D571=<c val="FF8000">SlimUI deactivated</c>
 Param/Value/lib_TIBW_C33C01A4=MCV is destroyed! Redeployment coming soon
+Param/Value/lib_TIBW_CF5959AA=<img path="Assets/Textures/btn-building-genetron-node.dds" alignment="absolutemiddle" width="32" height="32"/> 
 Param/Value/lib_TIBW_D8DA35AF=<c val="FF8000">SlimUI activated</c>
 Race/Name/Allied=Allied
 Race/Name/CABAL=CABAL
@@ -6816,7 +6815,7 @@ RequirementNode/Tooltip/CountUpgradeUnknownUpgrade6CompleteOnly3295209674=Invest
 RequirementNode/Tooltip/CountUpgradeUpgradeReinforcedConcreteCompleteOnly3490997453=Unlocked reinforced concrete
 RequirementNode/Tooltip/CountUpgradeWarpGateResearchCompleteOnly3556108412=Technology needed: automation
 RequirementNode/Tooltip/CountUpgradeWarpGateResearchCompleteOnly406619800=Technology needed: automation（Unlock at least one item）
-RequirementNode/Tooltip/Eq1277349106CountUnitNodKaneCommandoQueuedOrBetterTechTreeCheat0=No Commando
+RequirementNode/Tooltip/Eq1277349106CountUnitNodCommandoQueuedOrBetterTechTreeCheat0=No Commando
 RequirementNode/Tooltip/GTE1045210514CountUpgradeZombieUpgrade3CompleteOnly40=The tank has a damage level of 40
 RequirementNode/Tooltip/GTE108191500CountUpgradeZombieUpgrade332CompleteOnly20=Tower defense Attack and defense level reached 20
 RequirementNode/Tooltip/GTE1115273347CountUpgradeUnknownUpgrade2322CompleteOnly5=Hero Skill level：10
@@ -6983,7 +6982,7 @@ RequirementNode/Tooltip/Not1758163331CountUnitNukeQueuedOrBetterAtUnit=There is 
 RequirementNode/Tooltip/Not2669235783CountUpgradeUnknownUpgrade39CompleteOnly=Revelation is not available
 RequirementNode/Tooltip/Or1102341502CountUnitJpBarracksCompleteOnlyCountUnitAuBarrackCompleteOnlyCountUnitSuBarracksCompleteOnlyCountUnitCnBarracksCompleteOnlyCountUnitBarracks2CompleteOnly=Own any barracks
 RequirementNode/Tooltip/Or1867868878CountUpgradeTechnologyRadarCompleteOnlyCountUpgradeWarpGateResearchCompleteOnly=Unlock one of the automation or large industrial parks
-RequirementNode/Tooltip/Or2790159111CountUnitNodPowerPlant2CompleteOnlyTechTreeCheatCountUnitNodPowerPlantCompleteOnlyTechTreeCheatCountUnitNodPowerPlantUpgradeCompleteOnlyTechTreeCheat=Nod Power Plant
+RequirementNode/Tooltip/Or2790159111CountUnitNodPowerPlant2CompleteOnlyTechTreeCheatCountUnitNodPowerPlantCompleteOnlyTechTreeCheatCountUnitNodPowerPlantUpgradedCompleteOnlyTechTreeCheat=Nod Power Plant
 RequirementNode/Tooltip/Or3219389284CountUpgradeTechnologyCombatAircraft1CompleteOnly=Unlock one of large industrial parks or automation
 RequirementNode/Tooltip/Or3219389284CountUpgradeWarpGateResearchCompleteOnlyCountUpgradeTechnologyRadarCompleteOnly=Unlock a large industrial park or automate one of them
 RequirementNode/Tooltip/Or3441158499GTECountUpgradeZombieUpgrade36CompleteOnly5GTECountUpgradeZombieUpgrade334CompleteOnly5=Need to complete all upgrades of tank attack power
@@ -7168,7 +7167,6 @@ Unit/Name/Argus=Argus bomber
 Unit/Name/Armory=Light Industry Factory (+20money for all players)
 Unit/Name/ArtanisVoid2=Strongest
 Unit/Name/ArtanisVoid22=Artanis
-Unit/Name/Ascended=Ascended
 Unit/Name/AscendedMissileUp=Ascended Missile Up
 Unit/Name/AssaultInfantryger=SS
 Unit/Name/AttackAircraft=Jet Fighter (Improved)
@@ -7247,7 +7245,6 @@ Unit/Name/Auspy=Spy
 Unit/Name/AutomatedRefinery=Oilfield
 Unit/Name/Awaken=Awaken
 Unit/Name/BT7=BT-7 light tank
-Unit/Name/Bane=Bane
 Unit/Name/Barracks2=headquarters
 Unit/Name/BattleStationMineralField2=Crystal vein
 Unit/Name/BattleStationMineralField22=Crystal Vein
@@ -7264,7 +7261,6 @@ Unit/Name/Battleshipussr=Gangut-class battleship
 Unit/Name/Biodome=Industrial Park
 Unit/Name/BiodomeHalfBuilt=Ecological Pavilion
 Unit/Name/Black Hand=Black Hand
-Unit/Name/BlackHand=Black Hand Cyborg
 Unit/Name/Blimp22=Succubus
 Unit/Name/BritishInfantry=Conscript
 Unit/Name/BritishInfantry2=Elite mobilization
@@ -7274,21 +7270,27 @@ Unit/Name/Broodling=Black Broodworm
 Unit/Name/Bunker2=Infantry Bunker
 Unit/Name/Bunker4=Bunker
 Unit/Name/CabalAfterShock=Aftershock
+Unit/Name/CabalAscended=CabalAscended
 Unit/Name/CabalAscender=Ascender
 Unit/Name/CabalAvengerTank=Avenger Tank
+Unit/Name/CabalBane=CabalBane
 Unit/Name/CabalBasilisk=CabalBasilisk
 Unit/Name/CabalBike=Combat Motorcycle
-Unit/Name/CabalBlackHand=Gideon Black Hand Cyborg
+Unit/Name/CabalBlackHand=Cabal Black Hand
 Unit/Name/CabalBlackHandRocket=CabalBlackHandRocket
 Unit/Name/CabalBomberPlatform=Bomber Platform
 Unit/Name/CabalCenturion=CabalCenturion
+Unit/Name/CabalCobra=Cobra
 Unit/Name/CabalDefenseCrawler=Defense MCV
 Unit/Name/CabalDefenseCrawlerDeployed=Construction Yard Defense Team
+Unit/Name/CabalDevout=Devout
 Unit/Name/CabalDominator=Dominator
 Unit/Name/CabalDropShip=Dropship
 Unit/Name/CabalEngineer=Nod Engineer
+Unit/Name/CabalEnlightened=CabalEnlightened
 Unit/Name/CabalFlameColumn=Column of Fire
 Unit/Name/CabalGrandTemple=Grand Temple
+Unit/Name/CabalHighConfessor=High Confessor
 Unit/Name/CabalHijacker=CabalHijacker
 Unit/Name/CabalHolySpirit=Holy One
 Unit/Name/CabalIncinerator=Incinerator
@@ -7296,6 +7298,7 @@ Unit/Name/CabalLeviathan=Leviathan
 Unit/Name/CabalLeviathanFlagship=Leviathan Flagship
 Unit/Name/CabalLeviathanRocket=CabalLeviathanRocket
 Unit/Name/CabalMarauder=Marauder
+Unit/Name/CabalMedusa=Medusa
 Unit/Name/CabalMissilePod=Missile Pod
 Unit/Name/CabalMissilePodO=Missile Pod
 Unit/Name/CabalMissilePodUG=Missile Pod
@@ -7307,17 +7310,21 @@ Unit/Name/CabalReaper=Reaper
 Unit/Name/CabalSaint=Saint
 Unit/Name/CabalSalamander=CabalSalamander
 Unit/Name/CabalSalamanderRocket=CabalSalamanderRocket
+Unit/Name/CabalScalpel=Scalpel
 Unit/Name/CabalShieldGenerator=Shield Generator
 Unit/Name/CabalShieldGeneratorBiulding=Nod Shield Generator
 Unit/Name/CabalSlave=Slave
 Unit/Name/CabalSlaveGideon=Slave
 Unit/Name/CabalSpider=Spider Tank
 Unit/Name/CabalSpider2=Spider Tank
+Unit/Name/CabalStealthTank=Stealth Tank
 Unit/Name/CabalSupportCrawler=Support MCV
 Unit/Name/CabalSupportCrawlerDeployed=Construction Yard Support Team
 Unit/Name/CabalTunnel=Tunnel
 Unit/Name/CabalTyrant=Tyrant
 Unit/Name/CabalUnderminer=Seismic Cannon
+Unit/Name/CabalVertigo=CabalVertigo
+Unit/Name/CabalVertigoLanded=CabalVertigo
 Unit/Name/CabalVisceroid=Visceroid
 Unit/Name/CabalWeaponsLaboratory=WeaponsLaboratory
 Unit/Name/CabalWidow=Widow
@@ -7410,7 +7417,6 @@ Unit/Name/Cnpojia=Armor-breaking Iron Guard
 Unit/Name/CnqingfengWeapon=Smoke Bomb
 Unit/Name/CnqingfengWeapon2=Electromagnetic Ball
 Unit/Name/Cnxunleitiangang=Thunder Tiangang
-Unit/Name/Cobra=Cobra
 Unit/Name/ColonistBiodome2=Industrial zone(100 money)
 Unit/Name/ColonistBiodomeHalfBuilt2=Fusion Technology Reactor (Tech 120)
 Unit/Name/ComandPost=ComandPost
@@ -7452,7 +7458,6 @@ Unit/Name/DestructibleGarageLarge=Basement 7 Level Community (50 supplies)
 Unit/Name/DestructibleWallStraightHorizontalBF=Tesla Coil
 Unit/Name/DestructibleWallVerticalLF=High voltage power tower
 Unit/Name/Devourer2=Devourer (Level 9)
-Unit/Name/Devout=Devout
 Unit/Name/DevoutLeader=Believer
 Unit/Name/Do 17=Do 17 light bomber
 Unit/Name/Dozer=Dozer
@@ -7469,7 +7474,6 @@ Unit/Name/DukesRevengeussr=Tsar Nicholas-class battleship
 Unit/Name/DumpTruck2=Miner
 Unit/Name/E50=E-50 main battle tank
 Unit/Name/Einberufene=Levy
-Unit/Name/Enlightened=Enlightened
 Unit/Name/EnlightenedLMWeapon=EnlightenedWeapon
 Unit/Name/Fanteria=Italian Infantry
 Unit/Name/FeldSanitater=Military doctor
@@ -7593,7 +7597,6 @@ Unit/Name/Herrscher2Weapon=Archon Spear
 Unit/Name/Herrscher2ndUltimate=Space Core
 Unit/Name/Herrscher2ndUltimateMissile=Herrscher2ndUltimate Missile
 Unit/Name/Hetzer=Panzer IV anti-tank destroyer
-Unit/Name/HighConfessor=High Confessor
 Unit/Name/Hummel=Bee Self-Propelled Cannon
 Unit/Name/HybridBehemoth=Hybrid Behemoth (Level 12)
 Unit/Name/HybridDestroyer=Hybrid Destroyer (Level 11)
@@ -7745,7 +7748,6 @@ Unit/Name/MediumTankImproved=Medium Tank (Improved)
 Unit/Name/MediumTankImprovedfra=Renault G1 medium tank
 Unit/Name/MediumTankImprovedita=Amat M15 medium tank
 Unit/Name/MediumTankImprovedsl=T-34 medium tank
-Unit/Name/Medusa=Medusa
 Unit/Name/MercHellion=Flame Tower
 Unit/Name/MineralDiamond=Mineral Diamond
 Unit/Name/MineralField2=MineralField
@@ -7761,10 +7763,10 @@ Unit/Name/NodAirSupport=AirSupport
 Unit/Name/NodArmageddon=Armageddon
 Unit/Name/NodArtillery=Nod Artillery
 Unit/Name/NodArtilleryBeacon=Artillery Beacon
-Unit/Name/NodAttackBike=Attack Bike
 Unit/Name/NodAwakenBuggyEMP=Nod - Awaken - Buggy EMP
 Unit/Name/NodBanshee=Banshee
 Unit/Name/NodBeam=Beam Cannon
+Unit/Name/NodBike=Attack Bike
 Unit/Name/NodBikeRocket=NodBikeRocket
 Unit/Name/NodBikeRocketCC3=NodBikeRocketCC3
 Unit/Name/NodBikeRocketUp=NodBikeRocket Up
@@ -7775,6 +7777,7 @@ Unit/Name/NodCarryall=Carryall
 Unit/Name/NodCaster=Nod Caster
 Unit/Name/NodChemicalPlant=Chemical Plant
 Unit/Name/NodChemicalPlantSP=Chemical Plant Vest
+Unit/Name/NodCommando=Commando
 Unit/Name/NodCommandoCNC3=Commando
 Unit/Name/NodConfessor=Confessor
 Unit/Name/NodConstructionYard=Construction Yard
@@ -7799,6 +7802,7 @@ Unit/Name/NodFactoryCPOffense=Chariot Factory
 Unit/Name/NodFactoryCPSupport=Chariot Factory
 Unit/Name/NodFactoryDefense=Chariot Factory
 Unit/Name/NodFactoryOffense=Chariot Factory
+Unit/Name/NodHand=Hand of Nod
 Unit/Name/NodHandDefense=Hand of Nod
 Unit/Name/NodHandOffense=Hand of Nod
 Unit/Name/NodHandSP=Hand of Nod Vest
@@ -7820,9 +7824,6 @@ Unit/Name/NodHarpy=Harpy
 Unit/Name/NodHarvester=Harvester
 Unit/Name/NodInterceptor=Leviathan Interceptor
 Unit/Name/NodKaneAirTower=Helipad
-Unit/Name/NodKaneBarracks=Hand of Nod
-Unit/Name/NodKaneCommando=Commando
-Unit/Name/NodKaneWarFactory=War Factory
 Unit/Name/NodLaserTurret=Laser Turret
 Unit/Name/NodMCV=MCV
 Unit/Name/NodMCVRocket=NodMCVRocket
@@ -7834,13 +7835,13 @@ Unit/Name/NodMilitant=Militant
 Unit/Name/NodMilitantRocket=Militant Rocketeer
 Unit/Name/NodMilitantRocketWeapon=MilitantRocket anti-air weapon
 Unit/Name/NodMissileTurret=MissileTurret
-Unit/Name/NodOPCenter=Operation Center
-Unit/Name/NodOPCenterSP=Operation Center Vest
 Unit/Name/NodObeliskOfLight=Obelisk of Light
+Unit/Name/NodOperationsCenter=Operation Center
+Unit/Name/NodOperationsCenterSP=Operation Center Vest
 Unit/Name/NodPowerPlant=Power Plant
 Unit/Name/NodPowerPlant2=Power plant
 Unit/Name/NodPowerPlantSP=Power Plant Vest
-Unit/Name/NodPowerPlantUpgrade=Power Plant
+Unit/Name/NodPowerPlantUpgraded=Power Plant
 Unit/Name/NodPurifier=Purifier
 Unit/Name/NodRaider=Four-wheel drive
 Unit/Name/NodReckoner=Reckoner
@@ -7875,9 +7876,11 @@ Unit/Name/NodTurret=Viper Turret
 Unit/Name/NodTurretO=Viper Turret
 Unit/Name/NodTurretUG=Viper Turret
 Unit/Name/NodTurretsHub=TurretsHub
+Unit/Name/NodVenom=Venom
 Unit/Name/NodVertigo=Vertigo
 Unit/Name/NodVertigoweapon=Nod Vertigo weapon
 Unit/Name/NodVoiceOfKane=Voice Of Kane
+Unit/Name/NodWarFactory=War Factory
 Unit/Name/NodWarFactoryDefense=War Vehicle Factory Defense Group
 Unit/Name/NodWarFactoryOffense=War Vehicle Factory
 Unit/Name/NodWarFactorySP=War Vehicle Factory Vest
@@ -7953,7 +7956,6 @@ Unit/Name/SUTeslaTrooper=Tesla Trooper
 Unit/Name/Salaampuja=blitzer
 Unit/Name/Sandbags=sandbag
 Unit/Name/Sandbags2=Sandbags
-Unit/Name/Scalpel=Scalpel
 Unit/Name/Scharfschutze=Sniper
 Unit/Name/ScienceVessel2=Economic mobilization
 Unit/Name/Scourge=Suicide Bug (Level 3)
@@ -8008,7 +8010,6 @@ Unit/Name/SpitfireI=Spitfire MK.I
 Unit/Name/SporeCrawler=Super spore reptile
 Unit/Name/SpyCentre=Spy Center
 Unit/Name/Static105mmArtillery2=gudinghuopao
-Unit/Name/StealthTank=Stealth Tank
 Unit/Name/StoneZealot=KingOni
 Unit/Name/StoneZealot4=Ghost King
 Unit/Name/StrategicBombShell=Strategic Bomber Shell
@@ -8131,11 +8132,8 @@ Unit/Name/University2=daxue (abolition case) copy
 Unit/Name/University3=daxue(obsolete)
 Unit/Name/University4=Key universities（Tech 6）
 Unit/Name/Us125mmSPH=125mm armored rocket launcher
-Unit/Name/VenomCC3=Venom
 Unit/Name/VenomWeapon=Venom anti-air weapon
 Unit/Name/VenomWeaponup=Venom anti-air weapon
-Unit/Name/Vertigo=Vertigo
-Unit/Name/Vertigolanded=Vertigo
 Unit/Name/VickersVI=Vickers Light Mk.VI tank
 Unit/Name/Virophage2=Virus-eating
 Unit/Name/Virophage22=Pivovirus
@@ -8404,6 +8402,7 @@ Upgrade/Name/NodInfantryAccuracyUpgradeLevel2=Accuracy Upgrade
 Upgrade/Name/NodInfantryAccuracyUpgradeLevel3=Accuracy Upgrade
 Upgrade/Name/NodNuke=Nuke
 Upgrade/Name/NodTurretUP=turret reinforcement
+Upgrade/Name/NodVenom=Venom old model
 Upgrade/Name/ObeliskCharge=Obelisk Charge
 Upgrade/Name/ObeliskUpgrade=Enhanced Obelisk
 Upgrade/Name/ParticalBeam=Reaper Chestnut Beam
@@ -8587,7 +8586,6 @@ Upgrade/Name/UpgradeReinforcedConcrete3=Technology:Primary defense tower
 Upgrade/Name/UpgradeReinforcedConcrete32=Technology:Intermediate defense tower
 Upgrade/Name/UpgradeSemiautomaticRifles=Upgrade: Semi-automatic rifle
 Upgrade/Name/VehicleaccuracyUpgrade=Accuracy Upgrade
-Upgrade/Name/VenomCC3=Venom old model
 Upgrade/Name/VenomStealth=Venom Stealth
 Upgrade/Name/Venomcloaking=Venom cloaking
 Upgrade/Name/WarpGateResearch=Automation
@@ -8995,14 +8993,13 @@ Weapon/Name/NodBeamCannonWeapon=Beam Cannon Laser
 Weapon/Name/NodBikeRocket=Nod Bike Rocket
 Weapon/Name/NodBikeRocketCC3=Nod Bike Rocket
 Weapon/Name/NodCobraLaser=Cobra Weapon Laser
-Weapon/Name/NodCommandoWeapon=Nod Commando Weapon
+Weapon/Name/NodCommandoWeapon=Commando Weapon
 Weapon/Name/NodCommandoWeaponUpgrade=Nod Commando Weapon Upgrade
 Weapon/Name/NodCommandoweaponCC3Upgrade=CommandoweaponCC3Upgrade=Commando Weapon Upgrade
 Weapon/Name/NodFlameTankFlamethrowerBlue=FlameTank Flamethrower Blue
 Weapon/Name/NodHCWeapon=Saint's Weapon
 Weapon/Name/NodHailstormMissilePods=Hellstorm Missile Pods
 Weapon/Name/NodHailstormMissilePodsO=Hellstorm Missile Pods
-Weapon/Name/NodKaneCommandoWeapon=Commando Weapon
 Weapon/Name/NodLaserCannon=Nod Laser Cannon
 Weapon/Name/NodMCVRocket=NodMCV Rocket
 Weapon/Name/NodObeliskLaser=Obelisk Laser of Light

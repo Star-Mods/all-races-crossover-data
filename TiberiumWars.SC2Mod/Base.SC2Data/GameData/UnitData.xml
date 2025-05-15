@@ -138,7 +138,7 @@
 <!--            <LayoutButtons Face="MothershipCoreAttack" Type="AbilCmd" AbilCmd="VS_ReturnToAirport,Execute" Row="2" Column="3"/>-->
 <!--            <LayoutButtons Face="MothershipCoreAttack" Type="AbilCmd" AbilCmd="ReloadingDummy,Execute" Row="2" Column="4"/>-->
             <LayoutButtons Face="ReturnAirport3" Type="AbilCmd" AbilCmd="CNCReturnToTheAirport,Execute" Row="2" Column="0"/>
-            <LayoutButtons Face="PlaneTakeOff" Type="AbilCmd" AbilCmd="CNCAirportPlanetakingoff,255" Row="2" Column="1"/>
+            <LayoutButtons Face="PlaneTakeOff" Type="AbilCmd" AbilCmd="CNCAirportPlanetakingoff,Execute" Row="2" Column="1"/>
         </CardLayouts>
         <EditorCategories value="ObjectType:Unit,ObjectFamily:CNC"/>
         <StationaryTurningRate value="990"/>
