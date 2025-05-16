@@ -79,11 +79,36 @@
     </CBehaviorBuff>
 
     <!--power source-->
-    <CBehaviorPowerSource id="CNCconstructionRadius">
+    <CBehaviorPowerSource id="CNCConstructionRadius">
+<!--        <PowerLink value="PowerSource"/>-->
         <InfoFlags index="Hidden" value="1"/>
         <InfoIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
         <EditorCategories value="Race:Neut,AbilityorEffectType:Structures"/>
         <Radius value="14.5"/>
+        <CliffLevelFlags index="Higher" value="0"/>
+    </CBehaviorPowerSource>
+    <CBehaviorPowerSource id="CNCConstructionRadiusMedium">
+        <PowerLink value="CNCConstructionRadius"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <EditorCategories value="Race:Neut,AbilityorEffectType:Structures"/>
+        <Radius value="10"/>
+        <CliffLevelFlags index="Higher" value="0"/>
+    </CBehaviorPowerSource>
+    <CBehaviorPowerSource id="CNCConstructionRadiusRefinery">
+        <PowerLink value="CNCConstructionRadius"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <EditorCategories value="Race:Neut,AbilityorEffectType:Structures"/>
+        <Radius value="8"/>
+        <CliffLevelFlags index="Higher" value="0"/>
+    </CBehaviorPowerSource>
+    <CBehaviorPowerSource id="CNCConstructionRadiusSmall">
+        <PowerLink value="CNCConstructionRadius"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <EditorCategories value="Race:Neut,AbilityorEffectType:Structures"/>
+        <Radius value="6"/>
         <CliffLevelFlags index="Higher" value="0"/>
     </CBehaviorPowerSource>
     <!--buff-->
@@ -310,7 +335,7 @@
         <Alignment value="Positive"/>
         <InfoIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
         <EditorCategories value="Race:Neut,AbilityorEffectType:Units"/>
-        <PowerLink value="CNCconstructionRadius"/>
+        <PowerLink value="CNCConstructionRadius"/>
         <PlacementMinPowerLevel value="1"/>
         <PoweredWhileUnderConstruction value="1"/>
         <PowerStageArray/>
@@ -2207,6 +2232,12 @@
     <CBehaviorBuff id="HasEmptyPilotSlot2">
         <InfoFlags index="Hidden" value="1"/>
     </CBehaviorBuff>
+
+    <CBehaviorBuff id="NodTiberiumInfusion">
+        <DisableValidatorArray value="PlayerHasNodTiberiumInfusion"/>
+<!--        <InfoFlags index="Hidden" value="1"/>-->
+    </CBehaviorBuff>
+
 
 
 

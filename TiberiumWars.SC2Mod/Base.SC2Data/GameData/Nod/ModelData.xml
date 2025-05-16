@@ -587,8 +587,8 @@
         <ShadowRadius value="1.000000"/>
     </CModel>
     <CModel id="NodScorpionTank" parent="NodUnit">
-        <ScaleMax value="0.900000,0.900000,0.900000"/>
-        <ScaleMin value="0.900000,0.900000,0.900000"/>
+        <ScaleMax value="0.8,0.8,0.8"/>
+        <ScaleMin value="0.8,0.8,0.8"/>
         <SelectionRadius value="1.000000"/>
         <ShadowRadius value="1.000000"/>
     </CModel>
@@ -1499,12 +1499,12 @@
         <Model value="Assets\Effects\Neutral\Stun_Void\Stun_Void.m3"/>
         <EditorCategories value="Race:Neutral"/>
     </CModel>
-    <CModel id="DeployZoneVisual" parent="UIFeedback">
+    <CModel id="CNCDeployZoneVisual" parent="UIFeedback">
         <Model value="Assets\Models\CNCnodRadius.m3"/>
         <ScaleMax value="2.100000,2.100000,2.100000"/>
         <ScaleMin value="2.100000,2.100000,2.100000"/>
     </CModel>
-    <CModel id="Deployzone">
+    <CModel id="CNCDeployZone">
         <Model value="Assets\Models\DeployZone.m3"/>
         <EditorCategories value="Race:Neut"/>
     </CModel>
@@ -1891,7 +1891,7 @@
         <EditorCategories value="Race:Nod"/>
         <RadiusLoose value="1.000000"/>
     </CModel>
-    <CModel id="ScorpionWeaponCC3AttackBeam" parent="PersistentSpellFX">
+    <CModel id="NosScorpionTankWeaponUpgradedAttackBeam" parent="PersistentSpellFX">
         <Model value="Assets\Effects\Protoss\Alarak_COOP_LightningStrikes_Beam\Alarak_COOP_LightningStrikes_Beam.m3"/>
         <LowQualityModel value="ArchonAttackBeamLow"/>
         <AnimSpeed value="4.000000"/>
@@ -2311,5 +2311,11 @@
     </CModel>
     <CModel id="CnCPlacement5x5" parent="PlacementEx">
         <Model value="Assets\Buildings\PLACEMENT\Placement5x5.m3"/>
+    </CModel>
+    <CModel id="NodTiberiumInfusion" parent="PersistentSpellFX">
+        <Model value="Assets\Effects\Zerg\DisablingCloud\DisablingCloud.m3"/>
+        <ScaleMax value="0.05,0.05,0.05"/>
+        <ScaleMin value="0.05,0.05,0.05"/>
+        <RadiusLoose value="0.05"/>
     </CModel>
 </Catalog>

@@ -6,7 +6,7 @@
     </CWeaponLegacy>
 
     <CWeaponLegacy id="NodMilitantWeapon" parent="NodWeapon"  >
-         <DisplayEffect value="NodMilitantDamage"/>
+         <DisplayEffect value="NodMilitantWeaponDamage"/>
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Period value="0.75"/>
         <DisplayAttackCount value="2"/>
@@ -17,7 +17,7 @@
         <Range value="4"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="NodConfessorWeapon" parent="NodWeapon"  >
-         <DisplayEffect value="NodMilitantDamage"/>
+         <DisplayEffect value="NodConfessorWeaponDamage"/>
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Period value="0.4"/>
         <DisplayAttackCount value="2"/>
@@ -612,17 +612,17 @@
         <LegacyOptions index="FaceTargetWhileInCooldown" value="0"/>
         <AllowedMovement value="Moving"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="ScorpionWeaponCC3" parent="NodWeapon" icon="FXNod_LasersAddonUpgrade">
+    <CWeaponLegacy id="NosScorpionTankWeaponUpgraded" parent="NodWeapon" icon="FXNod_LasersAddonUpgrade">
         <Options index="OnlyFireWhileInAttackOrder" value="0"/>
         <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
-         <DisplayEffect value="ScorpionWeaponCC3Damage"/>
+         <DisplayEffect value="NosScorpionTankWeaponUpgradedDamage"/>
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <Range value="6"/>
+        <Range value="8"/>
         <TeleportResetRange value="0"/>
-        <Period value="1.876"/>
-        <Effect value="ScorpionWeaponCC3Damage"/>
+        <Period value="1.2"/>
+        <Effect value="NosScorpionTankWeaponUpgradedDamage"/>
         <AllowedMovement value="Moving"/>
-        <MinScanRange value="6"/>
+        <MinScanRange value="8"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="CabalMarauderWeapon" parent="NodWeapon" >
         <Options index="OnlyFireWhileInAttackOrder" value="0"/>
@@ -958,13 +958,12 @@
     <CWeaponLegacy id="NodRaiderMachinegun" parent="NodWeapon" >
          <DisplayEffect value="NodRaiderDamage"/>
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <Period value="2.75"/>
+        <Period value="1.2"/>
         <Backswing value="0.75"/>
         <Effect value="NodRaiderWS"/>
         <Options index="OnlyFireWhileInAttackOrder" value="0"/>
         <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
         <AllowedMovement value="Moving"/>
-        <DisplayAttackCount value="6"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="NodObeliskLaser" parent="NodWeapon" icon="FXNod_LasersAddonUpgrade">
         <Options index="OnlyFireWhileInAttackOrder" value="0"/>

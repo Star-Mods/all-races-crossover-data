@@ -96,6 +96,7 @@
     <CRequirementCountUpgrade id="RC_TechII" parent="RC" upgrade="TechII"/>
     <CRequirementCountUpgrade id="RC_TechIII" parent="RC" upgrade="TechIII"/>
     <CRequirementCountUpgrade id="RC_TibBomb" parent="RC" upgrade="TibBomb"/>
+    <CRequirementCountUpgrade id="RC_NodTiberiumInfusion" parent="RC" upgrade="NodTiberiumInfusion"/>
     <CRequirementCountUpgrade id="RC_VenomStealth" parent="RC" upgrade="VenomStealth"/>
     <CRequirementCountUpgrade id="RC_accuracyUpgrade" parent="RC" upgrade="accuracyUpgrade"/>
     <CRequirementCountUpgrade id="RC_NodFactionMOK" parent="RC" upgrade="NodFactionMOK"/>

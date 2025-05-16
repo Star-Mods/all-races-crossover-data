@@ -82,17 +82,4 @@
         <Behavior value="AircraftAirportParkingAircraftTracking"/>
     </CValidatorUnitCompareBehaviorCount>
 
-<!--    <CValidatorCombine id="Airporttarget">-->
-<!--        &lt;!&ndash;        <CombineArray value="AlliedAirfield"/>&ndash;&gt;-->
-<!--        &lt;!&ndash;        <CombineArray value="SovietAirport"/>&ndash;&gt;-->
-<!--        &lt;!&ndash;        <CombineArray value="ShenzhouAirport"/>&ndash;&gt;-->
-<!--        &lt;!&ndash;        <CombineArray value="NodAirTower"/>&ndash;&gt;-->
-<!--        &lt;!&ndash;        <CombineArray value="NodAirSupport"/>&ndash;&gt;-->
-<!--        &lt;!&ndash;        <CombineArray value="GDIAirfield"/>&ndash;&gt;-->
-<!--        &lt;!&ndash;        <CombineArray value="GDICombatSupportAirfield"/>&ndash;&gt;-->
-<!--        &lt;!&ndash;        <CombineArray value="ScrinGravityStabilizer"/>&ndash;&gt;-->
-<!--        <CombineArray value="NodAirTowerDockLower"/>-->
-<!--        <CombineArray value="NodAirPad"/>-->
-<!--    </CValidatorCombine>-->
-
 </Catalog>

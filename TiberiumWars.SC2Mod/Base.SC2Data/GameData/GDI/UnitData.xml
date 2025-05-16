@@ -150,7 +150,7 @@
         <AbilArray Link="GDIRefineryTrain"/>
         <AbilArray Link="CommandCenterTransport"/>
         <AbilArray Link="GDIDefenseMCVpack"/>
-        <BehaviorArray Link="CNCconstructionRadius"/>
+        <BehaviorArray Link="CNCConstructionRadius"/>
         <!--        <BehaviorArray Link="CommandCenterQueue"/>-->
         <!--        <BehaviorArray Link="CabalShieldGenerator"/>-->
         <WeaponArray Link="TwinIbiksCannon" Turret="PlanetaryFortress"/>
@@ -231,7 +231,7 @@
         <RepairTime value="150"/>
         <AttackTargetPriority value="20"/>
         <AbilArray Link="GDIMCVpackCC3"/>
-        <BehaviorArray Link="CNCconstructionRadius"/>
+        <BehaviorArray Link="CNCConstructionRadius"/>
         <CardLayouts index="0">
             <LayoutButtons Face="GDIMCVUndeploy" Type="AbilCmd" AbilCmd="GDIMCVpackCC3,Execute" Row="2" Column="2"/>
         </CardLayouts>

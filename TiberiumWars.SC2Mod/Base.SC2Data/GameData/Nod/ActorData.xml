@@ -102,6 +102,7 @@
         <SoundArray index="ClickError" value="MarineClickError"/>
         <SoundArray index="Highlight" value="MarineHighlight"/>
     </CActorUnit>
+
     <CActorUnit default="1" id="NodVehicleBase" parent="NodUnitBase">
         <Aliases value="_UnitLarge"/>
         <Macros value="TerrainSquibAnimations"/>
@@ -514,6 +515,7 @@
         <!--        <Model value="NodPowerPlant"/>-->
         <!--        <On Terms="ActorCreation" Send="GlowStart"/>-->
         <On Terms="ActorCreation" Send="SetOpacity 0.400000"/>
+        <On Terms="ActorCreation" Send="SetCastShadows"/>
         <!--        <On Terms="ActorCreation" Send="TextureSelectById HoloMainDiff"/>-->
         <!--        <On Terms="ActorCreation" Send="TextureSelectById HoloMainEmis"/>-->
         <!--        <On Terms="ActorCreation" Send="AnimPlay CoverA Cover,A PlayForever 0.000000"/>-->
@@ -2181,44 +2183,8 @@
         <SoundArray index="Attack" value="Cobra_Attack"/>
         <SoundArray index="Movement" value="Cobra_Movement"/>
     </CActorUnit>
-    <CActorUnit id="NodBeam" parent="NodUnitBase" wireframe="NodBeamCannonWireframe" unitName="NodBeam" icon="NodBeamCannon">
-        <DeathArray index="Normal" ModelLink="CabalAvengerTankDeathRagdoll" SoundLink="SiegeTank_Explode"/>
-        <StandAnimTurnTime value="3.33"/>
-        <WalkAnimMoveSpeed value="1"/>
-        <SoundArray index="Movement" value="CabalAvengerTank_Movement"/>
-    </CActorUnit>
-    <CActorUnit id="NodScorpionTank" parent="NodUnitBase" wireframe="NodScorpionTankWireframe">
-        <Aliases value="_UnitLarge"/>
-        <Macros value="TerrainSquibAnimations"/>
-        <Macros value="PhysicsDeathsSwarmGround"/>
-        <Macros value="PhysicsDeathsVoidGround"/>
-        <Inherits index="ModelMaterials" value="1"/>
-        <AcceptedTransfers index="ModelMaterials" value="1"/>
-        <On Terms="UnitHeightUpdate.*.Land" Send="Create SiegeTank_Land"/>
-        <CreepHeightClass value="Tiny"/>
-        <DeathArray index="Normal" ModelLink="CabalAvengerTankDeathRagdoll" SoundLink="SiegeTank_Explode"/>
-        <DeathCustomData Name="RagdollBasic"/>
-        <DeathActorModel value="UnitDeathModelWithDeathMotionGround"/>
-        <StandAnimTurnTime value="3.33"/>
-        <TerrainSquibs>
-            <MovementDistance value="0.150000,0.150000"/>
-            <IdlePeriod value="0.100000,0.250000"/>
-            <RangeUp value="1.000000"/>
-            <RangeDown value="1.000000"/>
-            <AttachQuery Methods="AMFilterCenter"/>
-            <Visuals TerrainPhysicsMaterial="Water" ActorModel="TerrainSquibHarnessContinuous" ModelLink="WaterRippleSiegeTank"/>
-        </TerrainSquibs>
-        <WalkAnimMoveSpeed value="1"/>
-        <AbilSoundArray/>
-        <BarOffset value="80"/>
-        <BarWidth value="102"/>
-        <ErrorArray Error="CantSeeBuildLocation" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
-        <ErrorArray Error="CantSeeLandLocation" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
-        <ErrorArray Error="CantBuildLocationInvalid" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
-        <ErrorArray Error="CantLandLocationInvalid" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
-        <ErrorArray Error="CouldntReachTarget" Sound="UI_GenericError" GroupSound="UI_GenericError"/>
-        <SoundArray index="Movement" value="CabalAvengerTank_Movement"/>
-    </CActorUnit>
+    <CActorUnit id="NodBeam" parent="NodWheelerBase" wireframe="NodBeamCannonWireframe" icon="NodBeamCannon"/>
+    <CActorUnit id="NodScorpionTank" parent="NodVehicleBase" wireframe="NodScorpionTankWireframe"/>
     <CActorUnit id="CabalSpecter" parent="NodUnitBase" wireframe="GhostWireframe" unitName="CabalSpecter" icon="GhostIcon">
         <Aliases value="_UnitLarge"/>
         <Macros value="TerrainSquibAnimations"/>
@@ -3509,7 +3475,7 @@
     </CActorModel>
     <CActorAction id="CabalSpiderAttack" parent="GenericAttack" effectAttack="SpiderWeaponDamage">
         <LaunchAssets Sound="CabalSpider_AttackLaunch"/>
-        <Beam value="ScorpionWeaponCC3AttackBeam"/>
+        <Beam value="NosScorpionTankWeaponUpgradedAttackBeam"/>
         <BeamScope value="Caster"/>
         <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeNoVizEnhance VoidRaySOpForwardLaunch"/>
         <ImpactMap index="None" Model="" Sound="HC_AttackImpact"/>
@@ -3635,14 +3601,14 @@
         <ImpactMap index="None" Model="HailstormMissileVolleyImpact" Sound="NodBikeRocketAttackImpact" ModelReaction="HailstormMissileVolleyImpactReaction"/>
         <ImpactMap index="Shield" Sound="HailstormMissileVolleyImpactShield" ModelReaction="HailstormMissileVolleyImpactReactionShield"/>
     </CActorAction>
-    <CActorAction id="ScorpionWeaponCC3Attack" parent="GenericAttack" effectAttack="ScorpionWeaponCC3Damage">
+    <CActorAction id="NosScorpionTankWeaponUpgradedAttack" parent="GenericAttack" effectAttack="NosScorpionTankWeaponUpgradedDamage">
         <LaunchAssets Sound="NodCommando_AttackLaunch"/>
         <BeamScope value="Caster"/>
         <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeNoVizEnhance VoidRaySOpForwardLaunch"/>
         <ImpactMap index="None" Model="" Sound="HC_AttackImpact"/>
         <ActionFlags index="ImpactMonitorsTeleports" value="1"/>
     </CActorAction>
-    <CActorBeamSimple id="ScorpionWeaponCC3AttackBeam" parent="BeamSimpleAnimationStyleOneShot">
+    <CActorBeamSimple id="NosScorpionTankWeaponUpgradedAttackBeam" parent="BeamSimpleAnimationStyleOneShot">
         <Macros value="ActionTargetTeleportDestroy"/>
         <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="ModelSwap DarkArchonAttackBeam"/>
         <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="AnimBracketStart BSDb Birth Stand Death ContentPlayOnce"/>
@@ -3688,10 +3654,10 @@
         <Model value="DefenderAWeapon2"/>
     </CActorMissile>
     <CActorAction id="NodMilitantAttack" parent="GenericAttack" effectAttack="KelmorianMinerDamage">
-        <On index="0" Terms="Effect.NodMilitantDamage.Stop; FromEffectTreeDescendant" Send="ActionImpactPhysics"/>
-        <On index="5" Terms="Effect.NodMilitantDamage.Start; At Caster" Send="Create"/>
-        <On Terms="Effect.NodConfessorDamage.Stop; FromEffectTreeDescendant" Send="ActionImpactPhysics"/>
-        <On Terms="Effect.NodConfessorDamage.Start; At Caster" Send="Create"/>
+        <On index="0" Terms="Effect.NodMilitantWeaponDamage.Stop; FromEffectTreeDescendant" Send="ActionImpactPhysics"/>
+        <On index="5" Terms="Effect.NodMilitantWeaponDamage.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.NodConfessorWeaponDamage.Stop; FromEffectTreeDescendant" Send="ActionImpactPhysics"/>
+        <On Terms="Effect.NodConfessorWeaponDamage.Start; At Caster" Send="Create"/>
         <LaunchSiteOps HoldPosition="1" HoldRotation="1"/>
         <LaunchAttachQuery Methods="AMFilterWeapon"/>
         <LaunchAssets Model="GhostAttackLaunch" Sound="NodMilitant_AttackLaunch"/>
@@ -4560,12 +4526,13 @@
         <SoundArray index="What" value="SupplyDepot_What"/>
         <UnitFlags index="ShowBlobShadow" value="0"/>
         <PlacementModel value="NodEmissary"/>
+        <BuildModel value="NodEmissary"/>
         <PlaceholderActorModel value="NodEmissaryDeployedPM"/>
         <PlacementActorModel value="NodEmissaryDeployedPM"/>
     </CActorUnit>
     <CActorModel id="NodEmissaryDeployedPM" parent="NodPlaceholderActorModel">
 <!--        <Baselines index="Stand" AnimProps="Stand,B"/>-->
-        <On Terms="AbilMorph.*.Finish; MorphTo NodEmissaryDeployed" Send="AnimPlay Stand Stand,B "/>
+        <On Terms="ActorCreation" Send="AnimPlay Stand Stand,B PlayForever 0.000000"/>
     </CActorModel>
 
 
@@ -4981,4 +4948,17 @@
         <ScaleMax value="0.100000,0.100000,0.100000"/>
         <ScaleMin value="0.100000,0.100000,0.100000"/>
     </CModel>
+
+
+    <CActorModel id="NodTiberiumInfusion" parent="ModelAnimationStyleContinuous">
+        <On Terms="Behavior.NodTiberiumInfusion.On" Send="Create"/>
+        <On Terms="Behavior.NodTiberiumInfusion.Off" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart GL_BSD GLbirth GLstand GLdeath"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="ActorCreation" Send="AnimBracketStart $BSD"/>
+        <On Terms="ActorCreation" Send="SetOpacity 0.600000"/>
+    </CActorModel>
+
+
+
 </Catalog>

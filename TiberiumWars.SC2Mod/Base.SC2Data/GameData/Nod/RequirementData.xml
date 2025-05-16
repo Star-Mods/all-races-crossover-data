@@ -34,15 +34,7 @@
     <CRequirement id="learnspeedupgrade" parent="NodLearnUpgrade" upgrade="SpeedUpgrade"/>
     <CRequirement id="learnTECHII" parent="NodLearnUpgrade" upgrade="TechII"/>
     <CRequirement id="ChemicalFactoryUp" parent="NodLearnUpgrade" upgrade="TibField"/>
-    <CRequirement id="NodLearnNodFactionMOK" parent="NodLearnUpgrade">
-        <NodeArray index="Show" Link="REQ_LearnFaction"/>
-    </CRequirement>
-    <CRequirement id="NodLearnNodFactionNBH" parent="NodLearnUpgrade">
-        <NodeArray index="Show" Link="REQ_LearnFaction"/>
-    </CRequirement>
-    <CRequirement id="NodLearnNodFactionNod" parent="NodLearnUpgrade">
-        <NodeArray index="Show" Link="REQ_LearnFaction"/>
-    </CRequirement>
+    <CRequirement id="NodTiberiumInfusion" parent="NodRequireUpgrade" upgrade="NodTiberiumInfusion"/>
     <CRequirement id="LearnRocketRag" parent="NodRequireUpgrade" upgrade="MantisRocketrag"/>
     <CRequirement id="LearnHealMedusa" parent="NodRequireUpgrade" upgrade="MedusaHeal"/>
     <CRequirement id="LearnTibBomb" parent="NodRequireUpgrade" upgrade="TibBomb"/>
@@ -68,18 +60,6 @@
     <CRequirement id="HaveGDIjetpack" parent="NodRequireUpgrade" upgrade="GDIJetPack"/>
     <CRequirement id="AccuracyUpgradeUes" parent="NodRequireUpgrade" upgrade="accuracyUpgrade"/>
     <CRequirement id="UseNodCobraCloak" parent="NodRequireUpgrade" upgrade="CobraStealth"/>
-    <CRequirement id="UseNodFactionMOK" parent="NodRequireUpgrade" upgrade="NodFactionMOK">
-        <NodeArray index="Show" Link="RC_NodFactionMOK"/>
-    </CRequirement>
-    <CRequirement id="UseNodFactionNBH" parent="NodRequireUpgrade" upgrade="NodFactionNBH">
-        <NodeArray index="Show" Link="RC_NodFactionNBH"/>
-    </CRequirement>
-    <CRequirement id="UseNodFactionNod" parent="NodRequireUpgrade" upgrade="NodFactionNod">
-        <NodeArray index="Show" Link="RC_NodFactionNod"/>
-    </CRequirement>
-    <CRequirement id="UseNodFactionAny" parent="NodRequireUpgrade">
-        <NodeArray index="Use" Link="REQ_UseNodFactionAny"/>
-    </CRequirement>
     <CRequirement id="NoMCVSupport" parent="NodRequirementUnit" requirement="REQ_MCVSupport"/>
     <CRequirement id="NoMCVOffense" parent="NodRequirementUnit" requirement="REQ_MCVOffense"/>
     <CRequirement id="NoMCVDefense" parent="NodRequirementUnit" requirement="REQ_MCVDefense"/>

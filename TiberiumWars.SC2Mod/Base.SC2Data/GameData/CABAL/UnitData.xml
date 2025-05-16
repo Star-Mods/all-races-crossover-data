@@ -105,7 +105,7 @@
     <CUnit id="CabalDefenseCrawlerDeployed" parent="CabalStructure">
         <BehaviorArray Link="CNCTabEconomy"/>
         <BehaviorArray Link="CNCTabVehicles"/>
-        <BehaviorArray Link="CNCconstructionRadius"/>
+        <BehaviorArray Link="CNCConstructionRadius"/>
         <BehaviorArray Link="DefenseMCVAura"/>
         <FlagArray index="PreventReveal" value="1"/>
         <FlagArray index="TownCamera" value="1"/>
@@ -179,10 +179,10 @@
     <CUnit id="CabalOffenseCrawlerDeployed" parent="CabalStructure">
         <BehaviorArray Link="CNCTabEconomy"/>
         <BehaviorArray Link="CNCTabInfantry"/>
-        <BehaviorArray Link="CNCconstructionRadius"/>
+        <BehaviorArray Link="CNCConstructionRadius"/>
         <!--        <BehaviorArray Link="CommandCenterQueue"/>-->
         <BehaviorArray Link="FireSuppressionSystem"/>
-        <BehaviorArray Link="CNCconstructionRadius"/>
+        <BehaviorArray Link="CNCConstructionRadius"/>
         <FlagArray index="PreventReveal" value="1"/>
         <FlagArray index="TownCamera" value="1"/>
         <Attributes index="Heroic" value="1"/>
@@ -257,7 +257,7 @@
     <CUnit id="CabalSupportCrawlerDeployed" parent="CabalStructure">
         <BehaviorArray Link="CNCTabEconomy"/>
         <BehaviorArray Link="CNCTabAirforce"/>
-        <BehaviorArray Link="CNCconstructionRadius"/>
+        <BehaviorArray Link="CNCConstructionRadius"/>
         <FlagArray index="PreventReveal" value="1"/>
         <FlagArray index="TownCamera" value="1"/>
         <Attributes index="Heroic" value="1"/>
@@ -1823,7 +1823,7 @@
         <CostResource index="Minerals" value="100"/>
         <RepairTime value="30"/>
         <BehaviorArray Link="TerranBuildingBurnDown"/>
-        <BehaviorArray Link="CNCconstructionRadius"/>
+        <BehaviorArray Link="CNCConstructionRadius"/>
         <Radius value="1.25"/>
         <SeparationRadius value="1.25"/>
         <ScoreMake value="100"/>
@@ -2454,7 +2454,7 @@
     </CUnit>
     <CUnit id="CabalCrawlerHangar" parent="CabalStructure">
         <BehaviorArray Link="CNCTabEconomy"/>
-        <BehaviorArray Link="CNCconstructionRadius"/>
+        <BehaviorArray Link="CNCConstructionRadius"/>
         <FlagArray index="PreventReveal" value="1"/>
         <FlagArray index="TownCamera" value="1"/>
         <ResourceDropOff index="Minerals" value="1"/>

@@ -6294,7 +6294,7 @@ Effect/Name/SandbagAuraS83=Broadcast Tower Halo S
 Effect/Name/SandbagAuraS832=Broadcast Tower Halo S vs. Enemy
 Effect/Name/SandbagAuraS833=Broadcast Tower Halo S restores health to yourself
 Effect/Name/ScorpionBeamDamage=Scorpion Damage
-Effect/Name/ScorpionWeaponCC3Damage=ScorpionWeaponCC3 (Damage)
+Effect/Name/NosScorpionTankWeaponUpgradedDamage=NosScorpionTankWeaponUpgraded (Damage)
 Effect/Name/SeekerMissileApplyBehavior2=Natasha call bombing locks app behavior
 Effect/Name/SeekerMissileApplyBehavior22=Guardian tank laser calibration application behavior
 Effect/Name/SiegeTankSiegedVoid=Tank explodes
@@ -9054,7 +9054,7 @@ Weapon/Name/RaynorLabWeapon2=12L machine gun
 Weapon/Name/RedeemerLaser=Redeemer Laser
 Weapon/Name/Rifle=Old rifle
 Weapon/Name/SalmanderFlamethrower=CabalSalamander Flamethrower
-Weapon/Name/ScorpionWeaponCC3=Old Scorpion Tank Laser
+Weapon/Name/NosScorpionTankWeaponUpgraded=Old Scorpion Tank Laser
 Weapon/Name/SovietDesolatorDeathspray=Death spray
 Weapon/Name/SovietDesolatorSputtergun=Sputter gun
 Weapon/Name/SpecterWeapon=Spectre Weapon
@@ -9358,3 +9358,11 @@ e_unitAttributeUser1=Map object
 lunitevel1=<IMG path="Assets\Textures\UnitLevel1.dds" height="30" width="30"/>
 lunitevel2=<IMG path="Assets\Textures\UnitLevel2.dds" height="38" width="30"/>
 lunitevel3=<IMG path="Assets\Textures\ui_glues_icons_ladder_tier0_star.dds" height="32" width="30"/>
+
+
+
+Button/Name/NodTiberiumInfusionUpgrade=Research Tiberium Infusion
+Button/Name/NodTiberiumInfusion=Tiberium Infusion
+Button/Tooltip/NodTiberiumInfusionUpgrade=Renders Militants, Militant Rocket Squads, Confessors, and Fanatics immune to Tiberium, also giving them a 25% speed boost and 10 hit point increase.
+Button/Tooltip/NodTiberiumInfusion=Renders Militants, Militant Rocket Squads, Confessors, and Fanatics immune to Tiberium, also giving them a 25% speed boost and 10 hit point increase.
+Upgrade/Name/NodTiberiumInfusion=Tiberium Infusion

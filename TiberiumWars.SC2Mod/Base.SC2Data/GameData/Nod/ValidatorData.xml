@@ -40,10 +40,6 @@
     <CValidatorUnitFilters id="NodC4Targets">
         <Filters value="Ground,Visible;Self,Light,Biological,RawResource,HarvestableResource,Missile,Stasis,Dead,Hidden,Invulnerable"/>
     </CValidatorUnitFilters>
-    <CValidatorUnitCompareBehaviorCount id="HasNoTiberiumProtection">
-        <Compare value="LE"/>
-        <Behavior value="TiberiumProtection"/>
-    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="SpiderCountmorethan2">
         <Compare value="GE"/>
         <Value value="2"/>
@@ -578,4 +574,15 @@
         <CombineArray value="IsNodTiberiumRefinery"/>
         <CombineArray value="IsGDIRefinery"/>
     </CValidatorCombine>
+
+
+
+    <CValidatorPlayerRequirement id="PlayerHasNodTiberiumInfusion">
+        <Find value="1"/>
+        <Value value="NodTiberiumInfusion"/>
+    </CValidatorPlayerRequirement>
+    <CValidatorUnitCompareBehaviorCount id="UnitHasNoNodTiberiumInfusion">
+        <Compare value="LE"/>
+        <Behavior value="NodTiberiumInfusion"/>
+    </CValidatorUnitCompareBehaviorCount>
 </Catalog>

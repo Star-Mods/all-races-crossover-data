@@ -222,6 +222,8 @@
     <CButton id="Nodpack3" parent="NodButton" icon="NodSupportGroupMCVIcon">
         <HotkeySet value="TankModes"/>
     </CButton>
+    <CButton id="NodTiberiumInfusion" parent="NodButton"/>
+    <CButton id="NodTiberiumInfusionUpgrade" parent="NodTiberiumInfusion"/>
     <CButton id="SelfRepairNod" parent="NodButton" icon="BackUpSystemsUpgrade"/>
     <CButton id="Aftershock" parent="NodButton" icon="AftershockIcon"/>
     <CButton id="BlackHand" parent="NodButton" icon="BlackHandIcon"/>

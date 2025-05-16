@@ -326,7 +326,7 @@
             <RenderPriority val="100"/>
 
             <Frame type="Image" name="Icon">           
-                <Texture val="Assets\Icons\Nod\NodBarracks.dds"/>
+                <Texture val="Assets\Icons\Nod\NodHand.dds"/>
                 <Anchor side="Top" relative="$parent" pos="Min" offset="0"/>	
                 <Anchor side="Bottom" relative="$parent" pos="Max" offset="0"/>	
                 <Anchor side="Left" relative="$parent" pos="min" offset="0"/>	
