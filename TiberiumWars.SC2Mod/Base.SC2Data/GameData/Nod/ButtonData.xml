@@ -192,7 +192,7 @@
     </CButton>
     <CButton id="NodEMPWarhead" parent="NodButton" icon="BTN_EMPWarhead"/>
     <CButton id="NodInvertWarhead" parent="NodButton" icon="BTN_InvertWarhead"/>
-    <CButton id="NodCarryall" parent="NodButton" icon="NodTransportIcon"/>
+    <CButton id="NodCarryall" parent="NodButton"/>
     <CButton id="NodSpawnTib" parent="NodButton" icon="FXNod_TiberiumCatalystUpgrade"/>
     <CButton id="NodObelisk" parent="NodButton" icon="BrightstoneIcon"/>
     <CButton id="CabalShieldGenerator" parent="NodButton" icon="btn-nodgenerator"/>

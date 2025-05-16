@@ -12,7 +12,6 @@ const int libTIBW_gv_beaconGroups = 5;
 const int libTIBW_gv_platformMaxCountRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = 100;
 
 // Variable Declarations
-unit[17] libTIBW_gv_sCION_POWERDUMMIES;
 string[libTIBW_gv_beaconGroups + 1] libTIBW_gv_watchTypes;
 unitgroup[16][libTIBW_gv_beaconGroups + 1] libTIBW_gv_productionUnits;
 int[libTIBW_gv_beaconGroups + 1] libTIBW_gv_labels;
@@ -52,7 +51,6 @@ void libTIBW_gf__GDIDropPod (point lp_location, unitgroup lp_units, int lp_playe
 void libTIBW_gf_CreateDropPod (int lp_race, point lp_location, unitgroup lp_units, bool lp_waitDontWait, int lp_playerinteger);
 
 // Trigger Declarations
-trigger libTIBW_gt_GenetronInit;
 trigger libTIBW_gt_Test;
 trigger libTIBW_gt_PlayNod;
 trigger libTIBW_gt_MoveCommandOverrideExecute;

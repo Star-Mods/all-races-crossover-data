@@ -1337,7 +1337,19 @@
         <AbilArray Link="UpgradepowerplantNod"/>
         <CardLayouts index="0">
             <LayoutButtons Face="UpgradePowerPlantNod" Type="AbilCmd" AbilCmd="UpgradepowerplantNod,Train1" Row="0" Column="0"/>
+
         </CardLayouts>
+<!--        <BehaviorArray Link="CNCEnergyGenerator15"/>-->
+        <BehaviorArray Link="GenetronEnergyStateNotFull"/>
+        <BehaviorArray Link="GenetronPowerSupplyTracker"/>
+        <BehaviorArray Link="TrackAndMirrorGenetronPowerSupply"/>
+        <BehaviorArray Link="NPP_Power"/>
+        <BehaviorArray Link="UnderConstruction"/>
+
+
+<!--        <BehaviorArray Link="LockdownMode"/>-->
+<!--        <EffectArray index="Birth" value="GenetronUpdatePowerGenerationTargetSA"/>-->
+
     </CUnit>
     <!--    <CUnit id="NodPowerPlantUpgraded" parent="NodPowerPlant">-->
     <!--        <Food value="16"/>-->
@@ -1367,7 +1379,7 @@
         <AbilArray Link="RallyCommand"/>
         <!--        <BehaviorArray Link="CommandCenterQueue"/>-->
         <!--        <BehaviorArray Link="GameTime5Seconds"/>-->
-        <!--        <BehaviorArray Link="NodSpawnTibSmallOnDeath"/>-->
+        <BehaviorArray Link="NodSpawnTibSmallOnDeath"/>
         <EffectArray index="Create" value="CCCreateSet"/>
         <EffectArray index="Birth" value="NodRefineryBirthSet"/>
         <CardLayouts index="0">
@@ -1430,6 +1442,7 @@
         <TechTreeProducedUnitArray value="NodShadow"/>
         <TechTreeProducedUnitArray value="NodConfessor"/>
         <TechTreeProducedUnitArray value="NodCommando"/>
+        <BehaviorArray Link="CNCEnergyDrain5"/>
     </CUnit>
     <CUnit id="NodWarFactory" parent="NodStructure">
         <BehaviorArray Link="Deployable"/>
@@ -1479,8 +1492,10 @@
         <TechTreeProducedUnitArray value="NodSpecter"/>
         <TechTreeProducedUnitArray value="NodPurifier"/>
         <TechTreeProducedUnitArray value="NodMCV"/>
+        <BehaviorArray Link="CNCEnergyDrain5"/>
     </CUnit>
     <CUnit id="NodRedeemerFacility" parent="NodStructure">
+        <BehaviorArray Link="CNCEnergyDrain10"/>
         <BehaviorArray Link="Deployable"/>
         <BehaviorArray Link="FastBuild"/>
         <BehaviorArray Link="MCVVReapirZonefactory"/>
@@ -1575,6 +1590,7 @@
     <!--        <FlagArray index="Invulnerable" value="1"/>-->
     <!--    </CUnit>-->
     <CUnit id="NodAirTower" parent="NodStructure">
+        <BehaviorArray Link="CNCEnergyDrain5"/>
         <BehaviorArray Link="CNCTabAirforce"/>
         <BehaviorArray Link="AirSupport"/>
         <BehaviorArray Link="Deployable"/>
@@ -1638,10 +1654,12 @@
         <!--        <MinimapRadius value="1.8"/>-->
     </CUnit>
     <CUnit id="NodAirSupport" parent="NodStructure">
+        <BehaviorArray Link="CNCEnergyDrain5"/>
         <BehaviorArray Link="AirSupport"/>
     </CUnit>
     <!--tech-->
     <CUnit id="NodChemicalPlant" parent="NodStructure">
+        <BehaviorArray Link="CNCEnergyDrain15"/>
         <BehaviorArray Link="Deployable"/>
         <BehaviorArray Link="NodSpawnTibSmallOnDeath"/>
         <Facing value="315"/>
@@ -1674,6 +1692,7 @@
         <TechTreeUnlockedUnitArray value="Battlecruiser"/>
     </CUnit>
     <CUnit id="NodTechLab" parent="NodStructure">
+        <BehaviorArray Link="CNCEnergyDrain15"/>
         <BehaviorArray Link="Deployable"/>
         <Facing value="315"/>
         <LifeStart value="750"/>
@@ -1709,6 +1728,7 @@
         <TechTreeUnlockedUnitArray value="WidowMine"/>
     </CUnit>
     <CUnit id="NodOperationsCenter" parent="NodStructure">
+        <BehaviorArray Link="CNCEnergyDrain10"/>
         <BehaviorArray Link="Deployable"/>
         <LifeStart value="750"/>
         <LifeMax value="750"/>
@@ -1766,8 +1786,10 @@
         <SubgroupPriority value="3"/>
         <MinimapRadius value="1.75"/>
         <GlossaryPriority value="256"/>
+        <BehaviorArray Link="CNCEnergyDrain15"/>
     </CUnit>
     <CUnit id="NodShrine" parent="NodStructure">
+        <BehaviorArray Link="CNCEnergyDrain10"/>
         <BehaviorArray Link="Deployable"/>
         <LifeStart value="1000"/>
         <LifeMax value="1000"/>
@@ -1799,6 +1821,7 @@
     </CUnit>
     <!--defense-->
     <CUnit id="NodVoiceOfKane" parent="NodStructure">
+        <BehaviorArray Link="CNCEnergyDrain5"/>
         <BehaviorArray Link="Deployable"/>
         <FlagArray index="AIDefense" value="1"/>
         <LifeStart value="200"/>
@@ -1818,6 +1841,7 @@
         <GlossaryPriority value="310"/>
     </CUnit>
     <CUnit id="NodTurretsHub" parent="NodStructure">
+        <BehaviorArray Link="CNCEnergyDrain5"/>
         <BehaviorArray Link="Deployable"/>
         <FlagArray index="AIDefense" value="1"/>
         <LifeStart value="200"/>
@@ -1843,6 +1867,7 @@
         <AbilArray Link="NodTurretsHubBuild"/>
     </CUnit>
     <CUnit id="NodDisruptionTower" parent="NodStructure">
+        <BehaviorArray Link="CNCEnergyDrain15"/>
         <BehaviorArray Link="Deployable"/>
         <FlagArray index="AIDefense" value="1"/>
         <LifeStart value="500"/>
@@ -1945,6 +1970,7 @@
         <EffectArray index="Birth" value="NodUnderConstruction"/>
     </CUnit>
     <CUnit id="NodObeliskOfLight" parent="NodStructure">
+        <BehaviorArray Link="CNCEnergyDrain10"/>
         <BehaviorArray Link="Deployable"/>
         <FlagArray index="AIDefense" value="1"/>
         <LifeStart value="500"/>
@@ -1971,10 +1997,10 @@
         <MinimapRadius value="0.75"/>
         <GlossaryPriority value="310"/>
     </CUnit>
+    <!--missiles-->
     <CUnit id="NodMilitantRocketWeapon" parent="NodMissile">
         <Mover value="PunisherGrenadesWeapon"/>
     </CUnit>
-    <!--missiles-->
     <CUnit id="AscendedMissileUp" parent="NodMissile">
         <Mover value="DefenderMissile"/>
     </CUnit>

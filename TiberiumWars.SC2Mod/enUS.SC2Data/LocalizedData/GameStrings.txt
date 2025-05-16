@@ -4132,7 +4132,7 @@ ConversationState/Tech/Tech_Wraith_1/Info/Tooltip=<s val="TooltipTitle_Tech">Pha
 ConversationState/Tech/Tech_Wraith_2=Melting chain reaction
 ConversationState/Tech/Tech_Wraith_2/Info/Description=<s val="TechSummary">- When the Ares interceptor attacks an air target, it will add 5% of the target's current health as damage</s><n/><n/><s val="TechDescription">By improving The reaction rate of the 100mm proton cannon launcher can trigger a melting chain reaction and quickly dissolve the opponent's armor when it hits an enemy air force unit. It is very effective against large targets and powerful enemies. </s>
 ConversationState/Tech/Tech_Wraith_2/Info/Tooltip=<s val="TooltipTitle_Tech">Melting reaction</s><n/><s val="TooltipDescription_Tech">When the Ares interceptor attacks an air target, it will add 5% of the target's current health as damage. </s>
-DocInfo/DescLong=Command and Conquer factions  
+DocInfo/DescLong=Command and Conquer factions   
 DocInfo/Name=[ARX] Nod Data
 DocInfo/ScreenshotHowToPlay01=Play Nod Faction
 Effect/Name/100mmATT=100mm assault gun
@@ -6709,19 +6709,14 @@ Param/Value/lib_RED3_D832BCAB=LANDING CONTINUE D
 Param/Value/lib_RED3_DB2A973F=CRCL3
 Param/Value/lib_RED3_E0C5CBDF=LANDING NOT CONTINUE 3
 Param/Value/lib_TIBW_06F7264C=MCV was destroyed! Redeployment coming soon
-Param/Value/lib_TIBW_12AC9C2C=</n>
 Param/Value/lib_TIBW_1A61AA67=MCV was destroyed! Redeployment coming soon
-Param/Value/lib_TIBW_27B47E6F=<img path="Assets/Textures/btn-building-genetron-processingcore.dds" alignment="absolutemiddle" width="32" height="32"/> 
 Param/Value/lib_TIBW_4337F561=MCV was destroyed! Redeployment coming soon
 Param/Value/lib_TIBW_450B571B=Beacons
 Param/Value/lib_TIBW_75FED3F4=MCV was destroyed! Redeployment coming soon
-Param/Value/lib_TIBW_760175CA=</n>
 Param/Value/lib_TIBW_991E0E3C=<s val="ZPlanetPanelObjective">Deploy an MCV (cannot be changed after deployment)</s>
-Param/Value/lib_TIBW_AB6A7235=<img path="Assets/Textures/btn-building-genetron-generator.dds" alignment="absolutemiddle" width="32" height="32"/> 
 Param/Value/lib_TIBW_B653B3CD=MCV is destroyed! Redeployment coming soon
 Param/Value/lib_TIBW_BD95D571=<c val="FF8000">SlimUI deactivated</c>
 Param/Value/lib_TIBW_C33C01A4=MCV is destroyed! Redeployment coming soon
-Param/Value/lib_TIBW_CF5959AA=<img path="Assets/Textures/btn-building-genetron-node.dds" alignment="absolutemiddle" width="32" height="32"/> 
 Param/Value/lib_TIBW_D8DA35AF=<c val="FF8000">SlimUI activated</c>
 Race/Name/Allied=Allied
 Race/Name/CABAL=CABAL

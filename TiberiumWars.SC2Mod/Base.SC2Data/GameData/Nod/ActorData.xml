@@ -502,6 +502,13 @@
         <UnitFlags index="ShowBlobShadow" value="0"/>
         <On Terms="ActorCreation" Send="AnimPlay CoverA Cover,A PlayForever 0.000000"/>
         <!--        <PlacementModel value="NodPowerPlantPlacement"/>-->
+        <StatusColors index="Energy">
+            <ColorArray index="0" value="255,0,128,255"/>
+        </StatusColors>
+        <VitalColors index="Energy">
+            <ColorArray value="255,120,240,255"/>
+        </VitalColors>
+        <VitalNames index="Energy" value="UI/VitalName/Power"/>
     </CActorUnit>
     <CActorModel id="NodPlaceholderActorModel" parent="PlacementModel">
         <!--        <Model value="NodPowerPlant"/>-->
@@ -4557,7 +4564,7 @@
         <PlacementActorModel value="NodEmissaryDeployedPM"/>
     </CActorUnit>
     <CActorModel id="NodEmissaryDeployedPM" parent="NodPlaceholderActorModel">
-        <Baselines index="Stand" AnimProps="Stand,B"/>
+<!--        <Baselines index="Stand" AnimProps="Stand,B"/>-->
         <On Terms="AbilMorph.*.Finish; MorphTo NodEmissaryDeployed" Send="AnimPlay Stand Stand,B "/>
     </CActorModel>
 
