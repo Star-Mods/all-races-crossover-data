@@ -5775,13 +5775,13 @@
         <Missile value="ATRocketMissile4"/>
         <ImpactMap index="None" Model="TychusTossGrenadeImpact2232" Sound="UnknownSound34"/>
     </CActorAction>
-    <CActorRange id="SiegeTankSiegedRange2">
+    <CActorRange id="AlliedSpectralTowerWeaponRange">
         <Inherits index="TeamColor" value="1"/>
         <On Terms="SelectionLocalUpdate.AuSpectrumTower.Start" Send="Create"/>
         <On Terms="SelectionLocalUpdate.AuSpectrumTower.StartEditorGround" Send="Create"/>
         <On Terms="SelectionLocalUpdate.AuSpectrumTower" Send="Create"/>
         <On Terms="SelectionLocalUpdate.AuSpectrumTower.Stop" Send="Destroy"/>
-        <Weapon value="ParticleBeam33"/>
+        <Weapon value="Allied_SpectrumTower_Weapon"/>
         <Icon value="Assets\Textures\radaricon2.dds"/>
         <IconArcLength value="0.300000"/>
     </CActorRange>
@@ -6496,8 +6496,8 @@
     <CActorSound id="RALowBatterySoundEffect" parent="SoundOneShot">
         <FogVisibility value="Visible"/>
         <On Terms="Behavior.Lowpower.On" Send="Create"/>
-        <On Terms="Behavior.Lowpower2.On" Send="Create"/>
-        <On Terms="Behavior.Lowpower2.Off" Send="Destroy"/>
+        <On Terms="Behavior.RALowPowerForitifcations.On" Send="Create"/>
+        <On Terms="Behavior.RALowPowerForitifcations.Off" Send="Destroy"/>
         <On Terms="Behavior.Lowpower.Off" Send="Destroy"/>
         <On Terms="Behavior.Lowpower22.On" Send="Create"/>
         <On Terms="Behavior.Lowpower22.Off" Send="Destroy"/>
@@ -6505,7 +6505,7 @@
     </CActorSound>
     <CActorSound id="RAPowerRestorationSoundEffect" parent="SoundOneShot">
         <FogVisibility value="Visible"/>
-        <On Terms="Behavior.Lowpower2.Off" Send="Create"/>
+        <On Terms="Behavior.RALowPowerForitifcations.Off" Send="Create"/>
         <On Terms="Behavior.Lowpower.Off" Send="Create"/>
         <On Terms="Behavior.Lowpower22.Off" Send="Create"/>
         <Sound value="Ghost_NukeExplode2332"/>
@@ -6516,8 +6516,8 @@
         <Filter index="Enemy" value="1"/>
         <FogVisibility value="Visible"/>
         <On Terms="Behavior.Lowpower.On" Send="Create"/>
-        <On Terms="Behavior.Lowpower2.On" Send="Create"/>
-        <On Terms="Behavior.Lowpower2.Off" Send="Destroy"/>
+        <On Terms="Behavior.RALowPowerForitifcations.On" Send="Create"/>
+        <On Terms="Behavior.RALowPowerForitifcations.Off" Send="Destroy"/>
         <On Terms="Behavior.Lowpower.Off" Send="Destroy"/>
         <On Terms="Behavior.Lowpower22.On" Send="Create"/>
         <On Terms="Behavior.Lowpower22.Off" Send="Destroy"/>
@@ -10599,9 +10599,9 @@
         <On Terms="Behavior.MindControl23.On" Send="Create"/>
         <On Terms="Behavior.MindControl23.Off" Send="Destroy"/>
         <On Terms="Behavior.Lowpower.On" Send="Create"/>
-        <On Terms="Behavior.Lowpower2.On" Send="Create"/>
+        <On Terms="Behavior.RALowPowerForitifcations.On" Send="Create"/>
         <On Terms="Behavior.Lowpower.Off" Send="Destroy"/>
-        <On Terms="Behavior.Lowpower2.Off" Send="Destroy"/>
+        <On Terms="Behavior.RALowPowerForitifcations.Off" Send="Destroy"/>
         <On Terms="Behavior.Lowpower22.On" Send="Create"/>
         <On Terms="Behavior.Lowpower22.Off" Send="Destroy"/>
         <Host Subject="_Unit"/>
@@ -15860,13 +15860,13 @@
         <DamageSiteOps Ops="SOpAttachWeapon"/>
         <ActionFlags index="LaunchForceSite" value="1"/>
     </CActorAction>
-    <CActorAction id="ProbeAttack432" parent="GenericAttack" effectAttack="ParticleBeam4222">
+    <CActorAction id="ProbeAttack432" parent="GenericAttack" effectAttack="AlliedSpectralTowerDamageLevel1">
         <LaunchSiteOps Ops="SOpAttachWeapon"/>
         <Beam value="ProbeAttackBeam432"/>
         <ImpactMap index="None" Model="ProbeAttackImpact4" Sound="Karass_PsionicStormImpact2522"/>
         <ActionFlags index="LaunchForceSite" value="1"/>
     </CActorAction>
-    <CActorAction id="ProbeAttack4322" parent="GenericAttack" effectAttack="ParticleBeam42222">
+    <CActorAction id="ProbeAttack4322" parent="GenericAttack" effectAttack="AlliedSpectralTowerDamageLevel2">
         <LaunchSiteOps Ops="SOpAttachWeapon"/>
         <Beam value="ProbeAttackBeam4322"/>
         <ImpactMap index="None" Model="ProbeAttackImpact4" Sound="Karass_PsionicStormImpact2522" ModelReaction="ProbeAttack432ImpactReaction"/>
@@ -15875,7 +15875,7 @@
         <DamageMap index="Shield" Sound="ProbeAttack432DamageShield" ModelReaction="ProbeAttack432DamageReactionShield"/>
         <ActionFlags index="LaunchForceSite" value="1"/>
     </CActorAction>
-    <CActorAction id="ProbeAttack4323" parent="GenericAttack" effectAttack="ParticleBeam42223">
+    <CActorAction id="ProbeAttack4323" parent="GenericAttack" effectAttack="AlliedSpectralTowerDamageLevel3">
         <LaunchSiteOps Ops="SOpAttachWeapon"/>
         <Beam value="ProbeAttackBeam4323"/>
         <ImpactMap index="None" Model="ProbeAttackImpact4" Sound="Karass_PsionicStormImpact2522" ModelReaction="ProbeAttack432ImpactReaction"/>
@@ -15884,7 +15884,7 @@
         <DamageMap index="Shield" Sound="ProbeAttack432DamageShield" ModelReaction="ProbeAttack432DamageReactionShield"/>
         <ActionFlags index="LaunchForceSite" value="1"/>
     </CActorAction>
-    <CActorAction id="ProbeAttack4324" parent="GenericAttack" effectAttack="ParticleBeam42224">
+    <CActorAction id="ProbeAttack4324" parent="GenericAttack" effectAttack="AlliedSpectralTowerDamageLevel4">
         <LaunchSiteOps Ops="SOpAttachWeapon"/>
         <Beam value="ProbeAttackBeam4324"/>
         <ImpactMap index="None" Model="ProbeAttackImpact4" Sound="Karass_PsionicStormImpact2522" ModelReaction="ProbeAttack432ImpactReaction"/>
@@ -15893,7 +15893,7 @@
         <DamageMap index="Shield" Sound="ProbeAttack432DamageShield" ModelReaction="ProbeAttack432DamageReactionShield"/>
         <ActionFlags index="LaunchForceSite" value="1"/>
     </CActorAction>
-    <CActorAction id="ProbeAttack4325" parent="GenericAttack" effectAttack="ParticleBeam42225">
+    <CActorAction id="ProbeAttack4325" parent="GenericAttack" effectAttack="AlliedSpectralTowerDamageLevel5">
         <LaunchSiteOps Ops="SOpAttachWeapon"/>
         <Beam value="ProbeAttackBeam4325"/>
         <ImpactMap index="None" Model="ProbeAttackImpact4" Sound="Karass_PsionicStormImpact2522" ModelReaction="ProbeAttack432ImpactReaction"/>
@@ -16869,11 +16869,11 @@
         <On Terms="Behavior.PsiDisruption224.Off" Send="Destroy"/>
         <On Terms="Behavior.PsiDisruption224.Off" Target="_Unit" Send="ClearTintColor 0.500000 SeekerTarget"/>
         <On Terms="Behavior.Lowpower.On" Send="Create"/>
-        <On Terms="Behavior.Lowpower2.On" Send="Create"/>
+        <On Terms="Behavior.RALowPowerForitifcations.On" Send="Create"/>
         <On Terms="Behavior.Lowpower.Off" Send="Destroy"/>
-        <On Terms="Behavior.Lowpower2.Off" Send="Destroy"/>
+        <On Terms="Behavior.RALowPowerForitifcations.Off" Send="Destroy"/>
         <On Terms="Behavior.Lowpower.Off" Target="_Unit" Send="ClearTintColor 0.500000 SeekerTarget"/>
-        <On Terms="Behavior.Lowpower2.Off" Target="_Unit" Send="ClearTintColor 0.500000 SeekerTarget"/>
+        <On Terms="Behavior.RALowPowerForitifcations.Off" Target="_Unit" Send="ClearTintColor 0.500000 SeekerTarget"/>
         <On Terms="Behavior.Lowpower22.On" Send="Create"/>
         <On Terms="Behavior.Lowpower22.Off" Send="Destroy"/>
         <On Terms="Behavior.Lowpower22.Off" Target="_Unit" Send="ClearTintColor 0.500000 SeekerTarget"/>
@@ -24668,14 +24668,14 @@
         <On index="68" Send="AnimBracketStart GL_BSD GLbirth GLstand GLdeath"/>
         <On index="69" Terms="Upgrade.DarkProtoss.Add" Send="ModelSwap DarkCarrier"/>
         <On index="70" Terms="UnitBirth; ValidateUnit NoDarkProtoss" Send="ModelSwap CarrierWarpInStargate"/>
-        <On index="71" Terms="UnitDeathCustomize; ValidateUnit NoDarkProtoss" Send="DeathCustomize DarkProtoss"/>
-        <On index="72" Terms="UnitHeightUpdate.*.Land" Send="Create Carrier_Land"/>
-        <On index="73" Terms="Upgrade.DarkProtoss.Add" Send="DeathCustomsEnablePhysics 0"/>
-        <On index="74" Terms="UnitBirth; ValidateUnit NoDarkProtoss" Send="ModelSwap DarkCarrier"/>
-        <On index="75" Terms="Behavior.WarpInEffect.On; !ValidateUnit NoDarkProtoss" Send="ModelSwap CarrierWarpInStargate"/>
-        <On index="76" Terms="UnitDeathCustomize; ValidateUnit NoDarkProtoss" Send="$Spell"/>
-        <On index="77" Terms="UnitHeightUpdate.*.Land" Send="AnimBaselineStop"/>
-        <On index="78" Terms="Behavior.WarpInEffect.Off; !ValidateUnit NoDarkProtoss" Send="ModelSwap Carrier"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit NoDarkProtoss" Send="DeathCustomize DarkProtoss"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="Create Carrier_Land"/>
+        <On Terms="Upgrade.DarkProtoss.Add" Send="DeathCustomsEnablePhysics 0"/>
+        <On Terms="UnitBirth; ValidateUnit NoDarkProtoss" Send="ModelSwap DarkCarrier"/>
+        <On Terms="Behavior.WarpInEffect.On; !ValidateUnit NoDarkProtoss" Send="ModelSwap CarrierWarpInStargate"/>
+        <On Terms="UnitDeathCustomize; ValidateUnit NoDarkProtoss" Send="$Spell"/>
+        <On Terms="UnitHeightUpdate.*.Land" Send="AnimBaselineStop"/>
+        <On Terms="Behavior.WarpInEffect.Off; !ValidateUnit NoDarkProtoss" Send="ModelSwap Carrier"/>
         <On Terms="UnitBirth; ValidateUnit NoDarkProtoss" Send="AnimBracketStart GL_BSD GLbirth GLstand GLdeath"/>
         <On Terms="Behavior.WarpInEffect.On; !ValidateUnit NoDarkProtoss" Send="AnimBaselineStart"/>
         <On Terms="UnitBirth; ValidateUnit HasPurifierProtoss" Send="TextureSelectById PurifierHackDiffuse"/>

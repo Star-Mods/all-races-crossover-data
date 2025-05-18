@@ -1,0 +1,291 @@
+<catalog>
+    <CUpgrade default="1" id="NodCampaignUpgrade">
+        <?token id="icon" value="FXNod_ArachnophobiaUpgrade"?>
+        <EditorCategories value="Race:Nod,UpgradeType:SpellResearch"/>
+        <Icon value="Assets\Icons\Nod\##icon##.dds"/>
+        <Race value="Neut"/>
+    </CUpgrade>
+    <CUpgrade id="TacticalChargeDevice" parent="NodCampaignUpgrade" icon="DarkArmamentsUpgrade">
+        <Icon value="Assets\Textures\btn-upgrade-terran-nova-superscience.dds"/>
+    </CUpgrade>
+    <CUpgrade id="CabalWidowLongerons" parent="NodCampaignUpgrade" icon="DarkArmamentsUpgrade">
+        <EffectArray Reference="Unit,CabalWidow,LifeMax" Value="120"/>
+        <EffectArray Reference="Unit,CabalWidow,LifeStart" Value="120"/>
+    </CUpgrade>
+    <CUpgrade id="CabalSurvivorBug" parent="NodCampaignUpgrade" icon="DarkArmamentsUpgrade">
+        <EffectArray Reference="Unit,CabalSpider,LifeMax" Value="20"/>
+        <EffectArray Reference="Unit,CabalSpider,LifeStart" Value="20"/>
+        <EffectArray Reference="Unit,CabalTyrant,LifeMax" Value="25"/>
+        <EffectArray Reference="Unit,CabalTyrant,LifeStart" Value="25"/>
+        <EffectArray Reference="Unit,CabalTyrantBurrow,LifeMax" Value="25"/>
+        <EffectArray Reference="Unit,CabalTyrantBurrow,LifeStart" Value="25"/>
+    </CUpgrade>
+    <CUpgrade id="CabalDevoutUpgradeGuardianGroup">
+        <Icon value="Assets\Textures\btn-upgrade-karax-anionpulsecrystals.dds"/>
+        <EffectArray Reference="Unit,CabalDevout,LifeStart" Value="15"/>
+        <EffectArray Reference="Unit,CabalDevout,LifeMax" Value="15"/>
+    </CUpgrade>
+    <CUpgrade id="CabalLeviathanWeaponSystem" parent="NodCampaignUpgrade" icon="DarkArmamentsUpgrade">
+        <EffectArray Reference="Effect,LeviathanLiquidTibCreatePersistent,PeriodCount" Value="10"/>
+        <EffectArray Reference="Effect,NodLaserCannonDamage,Amount" Value="20"/>
+        <EffectArray Reference="Effect,PulseCannonDamageNod,Amount" Value="1"/>
+        <EffectArray Reference="Weapon,LeviathanMissile1,Range" Value="1"/>
+        <EffectArray Reference="Weapon,LeviathanMissile2,Range" Value="1"/>
+        <EffectArray Reference="Weapon,LeviathanMissile3,Range" Value="1"/>
+        <EffectArray Reference="Weapon,NodLaserCannon,Range" Value="1"/>
+        <EffectArray Reference="Weapon,InterceptorBeamNod,Range" Value="1"/>
+        <EffectArray Reference="Weapon,InterceptorLaunchNod,Range" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="CabalWidowReconstitutionStructure" parent="NodCampaignUpgrade" icon="DarkArmamentsUpgrade">
+        <Icon value="Assets\Textures\btn-ability-protoss-carrierrepairdrones.dds"/>
+        <EffectArray Reference="Unit,CabalWidowWreckage,LifeMax" Value="300"/>
+        <EffectArray Reference="Unit,CabalWidowWreckage,LifeStart" Value="300"/>
+    </CUpgrade>
+    <CUpgrade id="CabalFlameMine" parent="NodCampaignUpgrade" icon="DarkArmamentsUpgrade">
+        <LeaderAlias value="FlameZone"/>
+    </CUpgrade>
+    <CUpgrade id="AirStealthUpgrade" parent="NodCampaignUpgrade" icon="CloakModuleUpgrade"/>
+    <CUpgrade id="BikeSpeed" parent="NodCampaignUpgrade">
+        <EffectArray Reference="Unit,CabalBike,Speed" Value="0.250000"/>
+        <EffectArray Reference="Unit,NodRaider,Speed" Value="0.250000"/>
+        <EffectArray Operation="Set" Reference="Weapon,NodBikeRocket,AllowedMovement" Value="Moving"/>
+        <EffectArray Reference="Weapon,NodRaiderMachinegun,Range" Value="1"/>
+        <AffectedUnitArray value="CabalBike"/>
+        <AffectedUnitArray value="NodRaider"/>
+    </CUpgrade>
+    <CUpgrade id="BirthObelisk" parent="NodCampaignUpgrade"/>
+    <CUpgrade id="BuildTurret" parent="NodCampaignUpgrade"/>
+    <CUpgrade id="COmmandoUpgrade" parent="NodCampaignUpgrade"/>
+    <CUpgrade id="CarryallCapacity" parent="NodCampaignUpgrade">
+        <EffectArray Reference="Abil,SpecOpsDropshipTransport,TotalCargoSpace" Value="8"/>
+    </CUpgrade>
+    <CUpgrade id="ChemicalPlantUpgrade" parent="NodCampaignUpgrade">
+        <EffectArray Operation="Set" Reference="Abil,NodBuild,InfoArray[Train5].Button.Requirements" Value="NodChemicalPlantRequirements3"/>
+    </CUpgrade>
+    <CUpgrade id="CobraStealth" parent="NodCampaignUpgrade">
+        <AffectedUnitArray value="CabalCobra"/>
+    </CUpgrade>
+    <CUpgrade id="CarryallSupply" parent="NodCampaignUpgrade">
+        <EffectArray Operation="Subtract" Reference="Unit,NodCarryall,Food" Value="2"/>
+    </CUpgrade>
+    <CUpgrade id="CommandoUpgrade1" parent="NodCampaignUpgrade">
+        <EffectArray Operation="Set" Reference="Weapon,CabalCommandoWeapon,Options[Hidden]" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,CabalCommandoWeaponUpgrade,Options[Hidden]" Value="0"/>
+        <EffectArray Operation="Set" Reference="Weapon,CabalCommandoWeapon,TargetFilters" Value="Visible;Air,Ground,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <EffectArray Operation="Set" Reference="Weapon,CabalCommandoWeaponUpgrade,TargetFilters" Value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CUpgrade>
+    <CUpgrade id="CyberCommanderUpgrade" parent="NodCampaignUpgrade">
+        <EffectArray Operation="Set" Reference="Abil,NodHandTrain,InfoArray[Train13].Button.Requirements" Value="NodComandoRequirementCC3X3"/>
+    </CUpgrade>
+    <CUpgrade id="CyberCommandoUpgrade2" parent="NodCampaignUpgrade">
+        <EffectArray Operation="Set" Reference="Weapon,NodCommandoweaponCC3Upgrade,Options[Hidden]" Value="0"/>
+        <EffectArray Operation="Set" Reference="Weapon,NodCommandoWeapon,Options[Hidden]" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,NodCommandoWeapon,TargetFilters" Value="Visible;Air,Ground,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <EffectArray Operation="Set" Reference="Weapon,NodCommandoweaponCC3Upgrade,TargetFilters" Value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CUpgrade>
+    <CUpgrade id="FactorySpeed" parent="NodCampaignUpgrade"/>
+    <CUpgrade id="GatherUpgrade" parent="NodCampaignUpgrade">
+        <EffectArray Reference="Abil,SCVHarvest,ResourceAmountBonus[Minerals]" Value="1"/>
+        <EffectArray Reference="Abil,SCVHarvest,ResourceAmountBonus[Vespene]" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="InvertWarHead" parent="NodCampaignUpgrade"/>
+    <CUpgrade id="LightVehicleJump" parent="NodCampaignUpgrade">
+        <EffectArray Operation="Set" Reference="Unit,CabalBike,Mover" Value="CliffJumper"/>
+        <EffectArray Operation="Set" Reference="Unit,NodRaider,Mover" Value="CliffJumper"/>
+    </CUpgrade>
+    <CUpgrade id="MantisRocketrag" parent="NodCampaignUpgrade" icon="DarkArmamentsUpgrade">
+        <AffectedUnitArray value="NodMantis"/>
+    </CUpgrade>
+    <CUpgrade id="MantisRange" parent="NodCampaignUpgrade" icon="DarkArmamentsUpgrade">
+        <EffectArray Reference="Weapon,MantisMissile,Range" Value="2"/>
+    </CUpgrade>
+    <CUpgrade id="MedusaHeal" parent="NodCampaignUpgrade"/>
+    <CUpgrade id="MedusaHalo" parent="NodCampaignUpgrade"/>
+    <CUpgrade id="NodNuke" parent="NodCampaignUpgrade"/>
+    <CUpgrade id="ObeliskCharge" parent="NodCampaignUpgrade" icon="FXNod_AmplificationOverridesUpgrade"/>
+    <CUpgrade id="ObeliskUpgrade" parent="NodCampaignUpgrade">
+        <EffectArray Reference="Unit,NodObeliskOfLight,LifeStart" Value="100"/>
+        <EffectArray Reference="Unit,NodObeliskOfLight,LifeMax" Value="100"/>
+    </CUpgrade>
+    <CUpgrade id="RadiusofReapair" parent="NodCampaignUpgrade"/>
+    <CUpgrade id="CabalSalamanderFire" parent="NodCampaignUpgrade">
+        <EffectArray Reference="Effect,LiquidTibCreatePersistent,PeriodCount" Value="129"/>
+    </CUpgrade>
+    <CUpgrade id="CabalSalamanderFlameThrower" parent="NodCampaignUpgrade">
+        <EffectArray Operation="Set" Reference="Weapon,SalmanderFlamethrower,Options[Hidden]" Value="0"/>
+        <EffectArray Operation="Set" Reference="Weapon,SalmanderFlamethrower,TargetFilters" Value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CUpgrade>
+    <CUpgrade id="SpecterStealth" parent="NodCampaignUpgrade"/>
+    <CUpgrade id="StealthInvertField" parent="NodCampaignUpgrade"/>
+    <CUpgrade id="StealthTankRocket" parent="NodCampaignUpgrade">
+        <EffectArray Reference="Effect,NodStealthRocketCreatePersistentNod,PeriodCount" Value="6"/>
+        <EffectArray Reference="Effect,NodStealthRocketCreatePersistentUP,PeriodCount" Value="6"/>
+        <EffectArray Reference="Weapon,NodStealthRocket,DisplayAttackCount" Value="6"/>
+    </CUpgrade>
+    <CUpgrade id="SpecterWarhead" parent="NodCampaignUpgrade">
+        <EffectArray Operation="Set" Reference="Weapon,SpecterWeapon,Options[Hidden]" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,SpecterWeapon,Options[Disabled]" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,SpecterWeaponUpgrade,Options[Hidden]" Value="0"/>
+        <EffectArray Operation="Set" Reference="Weapon,SpecterWeaponUpgrade,Options[Disabled]" Value="0"/>
+        <AffectedUnitArray value="NodSpecter"/>
+    </CUpgrade>
+    <CUpgrade id="IntelligenceHighground" parent="NodCampaignUpgrade" icon="DarkArmamentsUpgrade">
+        <Icon value="Assets\Textures\btn-upgrade-terran-nova-superscience.dds"/>
+    </CUpgrade>
+    <CUpgrade id="TechII" parent="NodCampaignUpgrade"/>
+    <CUpgrade id="TechIII" parent="NodCampaignUpgrade"/>
+    <CUpgrade id="TibBomb" parent="NodCampaignUpgrade" icon="DarkArmamentsUpgrade">
+        <AffectedUnitArray value="CabalBlackHand"/>
+    </CUpgrade>
+    <CUpgrade id="NodGenericBlackDisciple" parent="NodCampaignUpgrade" icon="DarkArmamentsUpgrade">
+        <EffectArray Reference="Unit,NodBlackHand,LifeMax" Value="20"/>
+        <EffectArray Reference="Unit,NodBlackHand,LifeStart" Value="20"/>
+    </CUpgrade>
+    <CUpgrade id="EngineerHeal" parent="NodCampaignUpgrade" icon="DarkArmamentsUpgrade">
+        <EffectArray Reference="Effect,CNCheal,RechargeVitalRate" Value="3.000000"/>
+    </CUpgrade>
+    <CUpgrade id="DarkArmorEnlightened" parent="NodCampaignUpgrade" icon="FXNod_LasersAddonUpgrade">
+        <EffectArray Operation="Set" Reference="Weapon,EnlightenedWeapon,Options[Hidden]" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,CabalAwakenLaser,Options[Hidden]" Value="0"/>
+        <EffectArray Operation="Set" Reference="Weapon,EnlightenedWeapon,TargetFilters" Value="Visible;Air,Ground,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <EffectArray Operation="Set" Reference="Weapon,CabalAwakenLaser,TargetFilters" Value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CUpgrade>
+    <CUpgrade id="EngineerCost" parent="NodCampaignUpgrade" icon="DarkArmamentsUpgrade">
+        <EffectArray Operation="Subtract" Reference="Unit,CabalEngineer,CostResource[Vespene]" Value="25"/>
+    </CUpgrade>
+    <CUpgrade id="FlameZone" parent="NodCampaignUpgrade" icon="DarkArmamentsUpgrade"/>
+    <CUpgrade id="ParticalBeam" parent="NodCampaignUpgrade" icon="DarkArmamentsUpgrade">
+        <EffectArray Operation="Set" Reference="Weapon,CabalReaperWeapon,Options[Hidden]" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,CabalReaperWeaponUpgrade,Options[Hidden]" Value="0"/>
+        <EffectArray Operation="Set" Reference="Weapon,CabalReaperWeapon,TargetFilters" Value="Visible;Air,Ground,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <EffectArray Operation="Set" Reference="Weapon,CabalReaperWeaponUpgrade,TargetFilters" Value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+    </CUpgrade>
+    <CUpgrade id="Leader" parent="NodCampaignUpgrade" icon="DarkArmamentsUpgrade"/>
+    <CUpgrade id="SuicideEnlightened" parent="NodCampaignUpgrade" icon="FXNod_TiberiumCatalystUpgrade"/>
+    <CUpgrade id="RepairUpgrade" parent="NodCampaignUpgrade" icon="BackUpSystemsUpgrade">
+        <EffectArray Reference="Unit,CabalHolySpirit,LifeRegenRate" Value="3.000000"/>
+        <EffectArray Reference="Unit,NodPurifier,LifeRegenRate" Value="3.000000"/>
+        <EffectArray Reference="Unit,NodRedeemer,LifeRegenRate" Value="3.000000"/>
+        <EffectArray Reference="Unit,CabalWidow,LifeRegenRate" Value="3.000000"/>
+        <EffectArray Reference="Unit,CabalSalamander,LifeRegenRate" Value="3.000000"/>
+    </CUpgrade>
+    <CUpgrade id="RangeUpgrade" parent="NodCampaignUpgrade" icon="RangeUpgradeBTN">
+        <EffectArray Reference="Weapon,Devoutweapon,Range" Value="1"/>
+        <EffectArray Reference="Weapon,EnlightenedWeapon,Range" Value="1"/>
+        <EffectArray Reference="Weapon,AscendedMissile,Range" Value="1"/>
+        <EffectArray Reference="Weapon,MilitantWeapon,Range" Value="1"/>
+        <EffectArray Reference="Weapon,NodRocketCC3,Range" Value="1"/>
+        <EffectArray Reference="Weapon,NodRaiderMachinegun,Range" Value="1"/>
+        <EffectArray Reference="Weapon,NodBikeRocket,Range" Value="1"/>
+        <EffectArray Reference="Weapon,NodBikeRocketCC3,Range" Value="1"/>
+        <EffectArray Reference="Weapon,NosScorpionTankWeaponUpgraded,Range" Value="1"/>
+        <EffectArray Reference="Weapon,NodAvenger90mmCannons,Range" Value="1"/>
+        <EffectArray Reference="Weapon,VenomMissile,Range" Value="1"/>
+        <EffectArray Reference="Weapon,CobraWeapon,Range" Value="1"/>
+        <EffectArray Reference="Weapon,CabalCenturionWeapon,Range" Value="1"/>
+        <EffectArray Reference="Weapon,CabalMarauderWeapon,Range" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="ReloadUpgrade" parent="NodCampaignUpgrade" icon="ReloadUpgrade">
+        <EffectArray Operation="SubtractBaseMultiply" Reference="Weapon,Devoutweapon,Period" Value="0.100000"/>
+        <EffectArray Operation="SubtractBaseMultiply" Reference="Weapon,EnlightenedWeapon,Period" Value="0.100000"/>
+        <EffectArray Operation="SubtractBaseMultiply" Reference="Weapon,AscendedMissile,Period" Value="0.100000"/>
+        <EffectArray Operation="SubtractBaseMultiply" Reference="Weapon,MilitantWeapon,Period" Value="0.100000"/>
+        <EffectArray Operation="SubtractBaseMultiply" Reference="Weapon,NodRocketCC3,Period" Value="0.100000"/>
+        <EffectArray Operation="SubtractBaseMultiply" Reference="Weapon,NodRaiderMachinegun,Period" Value="0.100000"/>
+        <EffectArray Operation="SubtractBaseMultiply" Reference="Weapon,NodBikeRocket,Period" Value="0.100000"/>
+        <EffectArray Operation="SubtractBaseMultiply" Reference="Weapon,NodBikeRocketCC3,Period" Value="0.100000"/>
+        <EffectArray Operation="SubtractBaseMultiply" Reference="Weapon,NosScorpionTankWeaponUpgraded,Period" Value="0.100000"/>
+        <EffectArray Operation="SubtractBaseMultiply" Reference="Weapon,NodAvenger90mmCannons,Period" Value="0.100000"/>
+        <EffectArray Operation="SubtractBaseMultiply" Reference="Weapon,VenomMissile,Period" Value="0.100000"/>
+        <EffectArray Operation="SubtractBaseMultiply" Reference="Weapon,CobraWeapon,Period" Value="0.100000"/>
+        <EffectArray Operation="SubtractBaseMultiply" Reference="Weapon,CabalCenturionWeapon,Period" Value="0.100000"/>
+        <EffectArray Operation="SubtractBaseMultiply" Reference="Weapon,CabalMarauderWeapon,Period" Value="0.100000"/>
+    </CUpgrade>
+    <CUpgrade id="DarkArmor" parent="NodCampaignUpgrade" icon="DarkArmamentsUpgrade">
+        <EffectArray Reference="Unit,CabalDevout,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,CabalAscended,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,Militant,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,MilitantRocket,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,CabalBlackHand,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,CabalBlackHand,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Militant,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,MilitantRocket,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Awaken,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,CabalDevout,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,CabalAscended,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,Awaken,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,NodBlackHand,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,NodBlackHand,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,NodCommando,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,NodCommando,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,CabalHighConfessor,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,CabalHighConfessor,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,CabalCenturion,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,CabalCenturion,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,CabalReaper,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,CabalReaper,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,GideonAwaken,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,GideonAwaken,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,CabalReaper,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,CabalReaper,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,CabalEngineer,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,CabalEngineer,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,CabalHijacker,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,CabalHijacker,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,CabalSaint,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,CabalSaint,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,CabalBlackHand,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,CabalBlackHand,LifeArmorLevel" Value="1"/>
+        <EffectArray Reference="Unit,CabalDominator,LifeArmor" Value="1"/>
+        <EffectArray Reference="Unit,CabalDominator,LifeArmorLevel" Value="1"/>
+    </CUpgrade>
+    <CUpgrade id="DarkArmorDevout" parent="NodCampaignUpgrade" icon="DarkArmamentsUpgrade">
+        <EffectArray Operation="Set" Reference="Weapon,Devoutweapon,Effect" Value="DevoutSet"/>
+        <EffectArray Operation="Set" Reference="Weapon,Devoutweapon,DisplayAttackCount" Value="2"/>
+        <AffectedUnitArray value="CabalDevout"/>
+    </CUpgrade>
+    <CUpgrade id="CobraLaser" parent="NodCampaignUpgrade">
+        <EffectArray Operation="Set" Reference="Weapon,CobraWeapon,Options[Hidden]" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,CobraWeapon,Options[Disabled]" Value="1"/>
+        <EffectArray Operation="Set" Reference="Weapon,NodCobraLaser,Options[Hidden]" Value="0"/>
+        <EffectArray Operation="Set" Reference="Weapon,NodCobraLaser,Options[Disabled]" Value="0"/>
+        <AffectedUnitArray value="CabalCobra"/>
+    </CUpgrade>
+    <CUpgrade id="TibField" parent="NodCampaignUpgrade"/>
+    <CUpgrade id="TopEMP" parent="NodCampaignUpgrade"/>
+    <CUpgrade id="TopEyesofPeople" parent="NodCampaignUpgrade"/>
+    <CUpgrade id="TurretWeaponUP" parent="NodCampaignUpgrade">
+        <EffectArray Operation="Set" Reference="Weapon,NodHailstormMissilePods,TargetFilters" Value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <EffectArray Operation="Set" Reference="Weapon,NodHailstormMissilePodsO,TargetFilters" Value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <EffectArray Operation="Subtract" Reference="Unit,NodTurret,CostResource[Minerals]" Value="25"/>
+        <EffectArray Operation="Subtract" Reference="Unit,NodTurretO,CostResource[Minerals]" Value="25"/>
+        <EffectArray Operation="Subtract" Reference="Unit,NodTurretUG,CostResource[Minerals]" Value="25"/>
+    </CUpgrade>
+    <CUpgrade id="VenomStealth" parent="NodCampaignUpgrade"/>
+    <CUpgrade id="NodVenom" parent="NodCampaignUpgrade">
+        <EffectArray Operation="Set" Reference="Abil,CabalAirTowerTrain,InfoArray[Train2].Unit[0]" Value="NodVenom"/>
+    </CUpgrade>
+    <CUpgrade id="Venomcloaking" parent="NodCampaignUpgrade">
+        <Icon value="Assets\Textures\btn-upgrade-vorazun-stasiswardpermanentlycloaked.dds"/>
+        <LeaderAlias value="VenomStealth"/>
+    </CUpgrade>
+    <CUpgrade id="WidowSpace" parent="NodCampaignUpgrade">
+        <EffectArray Reference="Abil,WidowTransport,TotalCargoSpace" Value="4"/>
+    </CUpgrade>
+    <CUpgrade id="SpeedUpgrade" parent="NodCampaignUpgrade" icon="SpeedupgradeBTN">
+        <EffectArray Operation="AddBaseMultiply" Reference="Unit,Awaken,Speed" Value="0.101500"/>
+        <EffectArray Operation="AddBaseMultiply" Reference="Unit,Militant,Speed" Value="0.101500"/>
+        <EffectArray Operation="AddBaseMultiply" Reference="Unit,MilitantRocket,Speed" Value="0.101500"/>
+        <EffectArray Operation="AddBaseMultiply" Reference="Unit,NodBlackHand,Speed" Value="0.101500"/>
+        <EffectArray Operation="AddBaseMultiply" Reference="Unit,NodCommando,Speed" Value="0.101500"/>
+    </CUpgrade>
+    <CUpgrade id="enrichedTib" parent="NodCampaignUpgrade">
+        <EffectArray Reference="Unit,NodPowerPlantUpgraded,Food" Value="8"/>
+    </CUpgrade>
+    <CUpgrade id="NodTurretUP" parent="NodCampaignUpgrade">
+        <EffectArray Operation="Set" Reference="Abil,GDIBuild,InfoArray[Build23].Unit" Value="NodTurret"/>
+        <EffectArray Operation="Set" Reference="Abil,GDIBuild,InfoArray[Build24].Unit" Value="CabalMissilePod"/>
+    </CUpgrade>
+
+
+</catalog>

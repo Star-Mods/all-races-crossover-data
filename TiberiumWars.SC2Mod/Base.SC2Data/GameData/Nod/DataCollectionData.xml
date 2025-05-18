@@ -1,0 +1,103 @@
+<Catalog>
+
+    <CDataCollectionUnit default="1" id="NodUnit">
+        <?token id="unitName" type="CUnitLink" value="##id##"?>
+        <EditorCategories value="DataGroup:Unit,Race:Nod"/>
+        <EditorIconSource value="Unit"/>
+        <DataRecord Entry="Unit,##id##"/>
+        <DataRecord Entry="Actor,##id##"/>
+        <DataRecord Entry="Model,##id##"/>
+        <DataRecord Entry="Sound,##id##_Help"/>
+        <DataRecord Entry="Sound,##id##_What"/>
+        <DataRecord Entry="Sound,##id##_Yes"/>
+        <DataRecord Entry="Sound,##id##_Ready"/>
+        <DataRecord Entry="Sound,##id##_Attack"/>
+        <DataRecord Entry="Sound,##id##_Death"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit default="1" id="NodInfantry" parent="NodUnit">
+        <TechInfoUpgradeUsed value="NodInfantryArmorsLevel1"/>
+        <TechInfoUpgradeUsed value="NodInfantryArmorsLevel2"/>
+        <TechInfoUpgradeUsed value="NodInfantryArmorsLevel3"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="NodMilitant" parent="NodInfantry">
+        <TechInfoUpgradeUsed value="NodTiberiumInfusion"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="NodMilitantRocket" parent="NodInfantry">
+        <TechInfoUpgradeUsed value="NodTiberiumInfusion"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="NodConfessor" parent="NodInfantry">
+        <TechInfoUpgradeUsed value="NodTiberiumInfusion"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="NodFanatic" parent="NodInfantry">
+        <TechInfoUpgradeUsed value="NodTiberiumInfusion"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit id="NodBlackHand" parent="NodInfantry"/>
+    <CDataCollectionUnit id="NodTiberiumTrooper" parent="NodInfantry"/>
+    <CDataCollectionUnit id="NodCommando" parent="NodInfantry"/>
+    <CDataCollectionUnit id="NodEnlightened" parent="NodInfantry"/>
+    <CDataCollectionUnit id="NodSaboteur" parent="NodInfantry"/>
+    <CDataCollectionUnit id="NodShadow" parent="NodInfantry"/>
+    <CDataCollectionUnit id="NodShadowFlying" parent="NodInfantry"/>
+    <CDataCollectionUnit id="ChangelingMilitant" parent="NodInfantry"/>
+
+    <CDataCollectionUnit default="1" id="NodVehicle" parent="NodUnit">
+        <TechInfoUpgradeUsed value="NodVehiclesArmorsLevel1"/>
+        <TechInfoUpgradeUsed value="NodVehiclesArmorsLevel2"/>
+        <TechInfoUpgradeUsed value="NodVehiclesArmorsLevel3"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit parent="NodVehicle" id="NodHarvester"/>
+    <CDataCollectionUnit parent="NodVehicle" id="NodEmissary"/>
+    <CDataCollectionUnit parent="NodVehicle" id="NodMCV"/>
+    <CDataCollectionUnit parent="NodVehicle" id="NodFlameTank"/>
+    <CDataCollectionUnit parent="NodVehicle" id="NodRaider"/>
+    <CDataCollectionUnit parent="NodVehicle" id="NodMantis"/>
+    <CDataCollectionUnit parent="NodVehicle" id="NodReckonerPack">
+        <TechInfoUpgradeUsed value="NodDozerBlades"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit parent="NodVehicle" id="NodReckonerUnpack"/>
+    <CDataCollectionUnit parent="NodVehicle" id="NodBike"/>
+    <CDataCollectionUnit parent="NodVehicle" id="NodAvatar"/>
+    <CDataCollectionUnit parent="NodVehicle" id="NodPurifier"/>
+    <CDataCollectionUnit parent="NodVehicle" id="NodBeam"/>
+    <CDataCollectionUnit parent="NodVehicle" id="NodScorpionTank">
+        <TechInfoUpgradeUsed value="NodDozerBlades"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit parent="NodVehicle" id="NodSpecter"/>
+    <CDataCollectionUnit parent="NodVehicle" id="NodStealthTank"/>
+    <CDataCollectionUnit parent="NodVehicle" id="NodAvatarWreckage"/>
+    <CDataCollectionUnit parent="NodVehicle" id="NodPurifierWreckage"/>
+    <CDataCollectionUnit parent="NodVehicle" id="NodRedeemer"/>
+
+    <CDataCollectionUnit id="NodWeapon" default="1">
+        <?token id="damageUpgrade" type="CUpgradeLink"?>
+        <EditorCategories value="DataGroup:Weapon,Race:Nod,ObjectType:Projectile"/>
+        <EditorIconSource value="Weapon"/>
+        <DataRecord Entry="Effect,##id##Damage"/>
+        <DataRecord Entry="Weapon,##id##Weapon"/>
+        <TechInfoUpgradeUsed value="##damageUpgrade##Level1"/>
+        <TechInfoUpgradeUsed value="##damageUpgrade##Level2"/>
+        <TechInfoUpgradeUsed value="##damageUpgrade##Level3"/>
+    </CDataCollectionUnit>
+    <CDataCollectionUnit  parent="NodWeapon" id="NodAvatarFlameThrower" damageUpgrade="NodPiercingWeapons"/>
+    <CDataCollectionUnit  parent="NodWeapon" id="NodAvatarLaser" damageUpgrade="NodPiercingWeapons"/>
+    <CDataCollectionUnit  parent="NodWeapon" id="NodAvatarBeamCannon" damageUpgrade="NodPiercingWeapons"/>
+    <CDataCollectionUnit  parent="NodWeapon" id="NodBeamCannonWeapon" damageUpgrade="NodPiercingWeapons"/>
+    <CDataCollectionUnit  parent="NodWeapon" id="NodRaiderMachinegun" damageUpgrade="NodPiercingWeapons"/>
+    <CDataCollectionUnit  parent="NodWeapon" id="NosScorpionTankWeaponUpgraded" damageUpgrade="NodPiercingWeapons"/>
+    <CDataCollectionUnit  parent="NodWeapon" id="NodRedeemerThermalLances" damageUpgrade="NodPiercingWeapons"/>
+    <CDataCollectionUnit  parent="NodWeapon" id="NodMilitantWeapon" damageUpgrade="NodPiercingWeapons"/>
+    <CDataCollectionUnit  parent="NodWeapon" id="NodConfessorWeapon" damageUpgrade="NodPiercingWeapons"/>
+    <CDataCollectionUnit  parent="NodWeapon" id="NodBikeRocketLauncher" damageUpgrade="NodExplosiveWeapons"/>
+    <CDataCollectionUnit  parent="NodWeapon" id="FlameTankFlamethrower" damageUpgrade="NodExplosiveWeapons"/>
+    <CDataCollectionUnit  parent="NodWeapon" id="NodFlameTankFlamethrowerBlue" damageUpgrade="NodExplosiveWeapons"/>
+    <CDataCollectionUnit  parent="NodWeapon" id="MantisMissile" damageUpgrade="NodExplosiveWeapons"/>
+    <CDataCollectionUnit  parent="NodWeapon" id="SpecterWeapon" damageUpgrade="NodExplosiveWeapons"/>
+    <CDataCollectionUnit  parent="NodWeapon" id="NodStealthTankRocketLauncher" damageUpgrade="NodExplosiveWeapons"/>
+    <CDataCollectionUnit  parent="NodWeapon" id="NodRocketCC3" damageUpgrade="NodExplosiveWeapons"/>
+    <CDataCollectionUnit  parent="NodWeapon" id="NodVolatileBurstDummy" damageUpgrade="NodExplosiveWeapons"/>
+
+
+
+
+
+</Catalog>

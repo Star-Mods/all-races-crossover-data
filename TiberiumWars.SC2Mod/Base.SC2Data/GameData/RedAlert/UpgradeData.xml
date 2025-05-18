@@ -387,7 +387,7 @@
         <Icon value="Assets\Textures\btn-upgrade-swann-improvedturretattackspeed.dds"/>
         <EffectArray Operation="Multiply" Reference="Weapon,M603,Period" Value="0.800000"/>
         <EffectArray Operation="Multiply" Reference="Weapon,LongboltMissile242223,Period" Value="0.800000"/>
-        <EffectArray Operation="Multiply" Reference="Weapon,ParticleBeam33,Period" Value="0.800000"/>
+        <EffectArray Operation="Multiply" Reference="Weapon,Allied_SpectrumTower_Weapon,Period" Value="0.800000"/>
         <EffectArray Operation="Multiply" Reference="Weapon,75mmATT3,Period" Value="0.800000"/>
         <EffectArray Operation="Multiply" Reference="Weapon,ParticleBeam524,Period" Value="0.800000"/>
         <EffectArray Operation="Multiply" Reference="Abil,AuDefenceAdvancedCharge,Cost[0].Cooldown.TimeUse" Value="0.800000"/>
@@ -1270,7 +1270,7 @@
         <EffectArray Reference="Unit,SovietConstructionYard,LifeMax" Value="40000"/>
         <EffectArray Reference="Unit,AuConstructionYard,LifeMax" Value="40000"/>
         <EffectArray Reference="Unit,AuConstructionYard,LifeStart" Value="40000"/>
-        <EffectArray Reference="Behavior,RAMovementSpeedAndArmor20Percent67,Modification.RateMultiplierArray[Cooldown]" Value="1"/>
+        <EffectArray Reference="Behavior,RATowerdefensemovementCDreduced,Modification.RateMultiplierArray[Cooldown]" Value="1"/>
         <EffectArray Operation="Multiply" Reference="Behavior,AuBuildSpeedUPLV1,Modification.RateMultiplierArray[Queueable]" Value="20"/>
         <EffectArray Operation="Set" Reference="Effect,RALaunchQuantumPackagingDrone,Movers[0].Link" Value="Fly22422"/>
         <EditorCategories value="Race:Terran"/>
@@ -1585,7 +1585,7 @@
         <EffectArray Reference="Unit,SuBigGun,Sight" Value="5"/>
         <EffectArray Reference="Unit,AuGrandCannon,Sight" Value="5"/>
         <EffectArray Reference="Unit,JpWaveenergythreeguns,Sight" Value="5"/>
-        <EffectArray Reference="Behavior,RAMovementSpeedAndArmor20Percent67,Modification.RateMultiplierArray[Cooldown]" Value="8"/>
+        <EffectArray Reference="Behavior,RATowerdefensemovementCDreduced,Modification.RateMultiplierArray[Cooldown]" Value="8"/>
         <EffectArray Operation="Subtract" Reference="Weapon,ParticleBeam222,Period" Value="0.500000"/>
         <EffectArray Operation="Set" Reference="Effect,RALaunchQuantumPackagingDrone,Movers[0].Link" Value="Fly224222"/>
         <EffectArray Operation="Set" Reference="Effect,RALaunchQuantumPackagingDrone,AmmoLife" Value="6000.000000"/>
@@ -2338,17 +2338,17 @@
         <EffectArray Reference="Unit,SuMagneticStormCoil,LifeArmor" Value="4"/>
         <EffectArray Reference="Unit,SuMagneticStormCoil,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Weapon,WraithG2432,Level" Value="1"/>
-        <EffectArray Reference="Weapon,ParticleBeam33,Level" Value="1"/>
+        <EffectArray Reference="Weapon,Allied_SpectrumTower_Weapon,Level" Value="1"/>
         <EffectArray Reference="Weapon,SuzzbMolotov2,Level" Value="1"/>
         <EffectArray Reference="Weapon,ParticleBeam524,Level" Value="1"/>
         <EffectArray Reference="Effect,WraithGU2332,Amount" Value="1.5"/>
         <EffectArray Reference="Effect,ParticleBeam623,Amount" Value="12"/>
-        <EffectArray Reference="Effect,ParticleBeam4222,Amount" Value="15"/>
-        <EffectArray Reference="Effect,ParticleBeam42222,Amount" Value="30"/>
-        <EffectArray Reference="Effect,ParticleBeam42223,Amount" Value="45"/>
-        <EffectArray Reference="Effect,ParticleBeam42224,Amount" Value="60"/>
-        <EffectArray Reference="Effect,ParticleBeam42225,Amount" Value="75"/>
-        <EffectArray Reference="Effect,ParticleBeam42226,Amount" Value="30"/>
+        <EffectArray Reference="Effect,AlliedSpectralTowerDamageLevel1,Amount" Value="15"/>
+        <EffectArray Reference="Effect,AlliedSpectralTowerDamageLevel2,Amount" Value="30"/>
+        <EffectArray Reference="Effect,AlliedSpectralTowerDamageLevel3,Amount" Value="45"/>
+        <EffectArray Reference="Effect,AlliedSpectralTowerDamageLevel4,Amount" Value="60"/>
+        <EffectArray Reference="Effect,AlliedSpectralTowerDamageLevel5,Amount" Value="75"/>
+        <EffectArray Reference="Effect,AlliedSpectrumTowerdamagedisplay,Amount" Value="30"/>
         <EffectArray Reference="Effect,RAFireballExplosionDamage,Amount" Value="6"/>
         <EffectArray Reference="Weapon,SuzzbMolotov2,Range" Value="1"/>
         <EffectArray Reference="Unit,CnGatlingCannon,LifeArmor" Value="15"/>
@@ -2417,7 +2417,7 @@
         <EffectArray Reference="Unit,SUTeslaTrooper,LifeArmor" Value="9"/>
         <EffectArray Reference="Unit,SUTeslaTrooper,LifeArmorLevel" Value="1"/>
         <EffectArray Reference="Weapon,ParticleBeam4,Level" Value="1"/>
-        <EffectArray Reference="Weapon,ParticleBeam33,Level" Value="1"/>
+        <EffectArray Reference="Weapon,Allied_SpectrumTower_Weapon,Level" Value="1"/>
         <EffectArray Reference="Abil,RATechnologyCenterResearch5,InfoArray[Research14].Time" Value="5.000000"/>
         <EffectArray Reference="Unit,JpWaveTower,LifeArmor" Value="10"/>
         <EffectArray Reference="Unit,AuBankGun,LifeArmorLevel" Value="1"/>

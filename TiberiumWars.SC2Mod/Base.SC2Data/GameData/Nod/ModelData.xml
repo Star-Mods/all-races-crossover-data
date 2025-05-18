@@ -696,8 +696,8 @@
     </CModel>
     <CModel id="NodOperationsCenter" parent="EngineeringBayBase">
         <Model value="Assets\Models\Nod OperationCenter\Nod OPCenter.m3"/>
-        <ScaleMax value="1.400000,1.400000,1.400000"/>
-        <ScaleMin value="1.400000,1.400000,1.400000"/>
+        <ScaleMax value="1.100000,1.1,1.1"/>
+        <ScaleMin value="1.1,1.1,1.1"/>
         <SelectionRadius value="1.200000"/>
         <ShadowRadius value="1.200000"/>
         <EditorCategories value="Race:Nod"/>

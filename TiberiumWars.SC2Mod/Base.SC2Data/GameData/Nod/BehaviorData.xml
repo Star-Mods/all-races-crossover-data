@@ -1,5 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Catalog>
-
     <CBehaviorBuff id="AwakenBuggyEMPStunned">
         <BehaviorCategories index="Stun" value="1"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
@@ -77,10 +77,9 @@
             <StateFlags index="Stun" value="1"/>
         </Modification>
     </CBehaviorBuff>
-
     <!--power source-->
     <CBehaviorPowerSource id="CNCConstructionRadius">
-<!--        <PowerLink value="PowerSource"/>-->
+        <!--        <PowerLink value="PowerSource"/>-->
         <InfoFlags index="Hidden" value="1"/>
         <InfoIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
         <EditorCategories value="Race:Neut,AbilityorEffectType:Structures"/>
@@ -316,9 +315,9 @@
             <StateFlags index="SuppressFoodMade" value="1"/>
             <StateFlags index="SuppressEnergyRegen" value="1"/>
             <AbilClassDisableArray index="CAbilAttack" value="1"/>
-            <AbilClassDisableArray index="CAbilWarpTrain" value="1"/>
-            <AbilClassDisableArray index="CAbilTrain" value="1"/>
             <AbilClassDisableArray index="CAbilBuild" value="1"/>
+            <AbilClassDisableArray index="CAbilTrain" value="1"/>
+            <AbilClassDisableArray index="CAbilWarpTrain" value="1"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="Earthquake">
@@ -537,13 +536,13 @@
     </CBehaviorBuff>
     <CBehaviorBuff id="GhostHoldFire">
         <Modification>
-            <WeaponDisableArray value="NodStealthRocket"/>
+            <WeaponDisableArray value="NodStealthTankRocketLauncher"/>
         </Modification>
         <EditorCategories value="Race:Neut,AbilityorEffectType:Units"/>
     </CBehaviorBuff>
     <CBehaviorBuff id="GhostHoldFireB">
         <Modification>
-            <WeaponDisableArray value="NodStealthRocket"/>
+            <WeaponDisableArray value="NodStealthTankRocketLauncher"/>
         </Modification>
         <EditorCategories value="Race:Neut,AbilityorEffectType:Units"/>
     </CBehaviorBuff>
@@ -2012,7 +2011,6 @@
         </VeterancyLevelArray>
         <InfoFlags index="Hidden" value="1"/>
     </CBehaviorVeterancy>
-
     <CBehaviorBuff id="NodShadowFlyIssueMorph">
         <InfoFlags index="Hidden" value="1"/>
         <RemoveValidatorArray value="SourceIsNodShadow"/>
@@ -2069,8 +2067,6 @@
         <LandArrivalRange value="0.05"/>
         <LandCheckRadius value="5"/>
     </CBehaviorJump>
-
-
     <CBehaviorBuff id="NodHarvesterCloak">
         <Alignment value="Positive"/>
         <InfoIcon value="Assets\Textures\btn-ability-terran-cloak.dds"/>
@@ -2086,7 +2082,6 @@
         <ExpireEffect value="NodC4Damage"/>
         <InfoFlags index="Hidden" value="1"/>
     </CBehaviorBuff>
-
     <CBehaviorBuff id="NodChannelSabotageCombat">
         <Alignment value="Positive"/>
         <InfoIcon value="Assets\Textures\btn-ability-terran-snipe-color.dds"/>
@@ -2103,8 +2098,6 @@
         <DisplayDuration index="Enemy" value="1"/>
         <Duration value="4"/>
     </CBehaviorBuff>
-
-
     <CBehaviorBuff id="NodAvatarDontDie">
         <Alignment value="Positive"/>
         <InfoFlags index="Hidden" value="1"/>
@@ -2115,17 +2108,16 @@
             <Chance value="1"/>
         </DamageResponse>
     </CBehaviorBuff>
-<!--    <CBehaviorBuff id="NodPurifierDontDie">-->
-<!--        <Alignment value="Positive"/>-->
-<!--        <InfoFlags index="Hidden" value="1"/>-->
-<!--        <InfoIcon value="Assets\Textures\BTN-techupgrade-terran-combatshield-color.dds"/>-->
-<!--        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>-->
-<!--        &lt;!&ndash;        <Requirements value="UseMechanicalRebirth"/>&ndash;&gt;-->
-<!--        <DamageResponse Fatal="1" Handled="NodPurifierWreckageIO" ModifyFraction="0">-->
-<!--            <Chance value="1"/>-->
-<!--        </DamageResponse>-->
-<!--    </CBehaviorBuff>-->
-
+    <!--    <CBehaviorBuff id="NodPurifierDontDie">-->
+    <!--        <Alignment value="Positive"/>-->
+    <!--        <InfoFlags index="Hidden" value="1"/>-->
+    <!--        <InfoIcon value="Assets\Textures\BTN-techupgrade-terran-combatshield-color.dds"/>-->
+    <!--        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>-->
+    <!--        &lt;!&ndash;        <Requirements value="UseMechanicalRebirth"/>&ndash;&gt;-->
+    <!--        <DamageResponse Fatal="1" Handled="NodPurifierWreckageIO" ModifyFraction="0">-->
+    <!--            <Chance value="1"/>-->
+    <!--        </DamageResponse>-->
+    <!--    </CBehaviorBuff>-->
     <CBehaviorBuff id="NodAvatarStealthGenerator">
         <DisableValidatorArray value="IsNotStructure"/>
         <BehaviorFlags index="Permanent" value="1"/>
@@ -2159,10 +2151,6 @@
             <WeaponEnableArray value="NodAvatarBeamCannon"/>
         </Modification>
     </CBehaviorBuff>
-
-
-
-
     <CBehaviorBuff id="NodArtilleryBeaconTimedLife" parent="TimedLife">
         <InfoIcon value="Assets\Textures\btn-ability-zerg-explode.dds"/>
         <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
@@ -2212,15 +2200,11 @@
             <WeaponDisableArray value="NodVolatileBurst"/>
         </Modification>
     </CBehaviorBuff>
-
-
-
     <CBehaviorBuff id="NodAvatarPilot">
         <InfoFlags index="Hidden" value="1"/>
         <Period value="0.0625"/>
         <PeriodicEffect value="NodAvatarPilotSearchArea"/>
     </CBehaviorBuff>
-
     <CBehaviorBuff id="NodRedeemerPilot">
         <InfoFlags index="Hidden" value="1"/>
         <Period value="0.0625"/>
@@ -2232,15 +2216,8 @@
     <CBehaviorBuff id="HasEmptyPilotSlot2">
         <InfoFlags index="Hidden" value="1"/>
     </CBehaviorBuff>
-
     <CBehaviorBuff id="NodTiberiumInfusion">
         <DisableValidatorArray value="PlayerHasNodTiberiumInfusion"/>
-<!--        <InfoFlags index="Hidden" value="1"/>-->
+        <!--        <InfoFlags index="Hidden" value="1"/>-->
     </CBehaviorBuff>
-
-
-
-
-
-
 </Catalog>

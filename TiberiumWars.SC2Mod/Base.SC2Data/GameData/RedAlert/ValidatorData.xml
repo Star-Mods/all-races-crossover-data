@@ -758,32 +758,32 @@
     </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="RASpectrumTowerChargingStackVerifierLevel1">
         <Value value="1"/>
-        <Behavior value="RAMovementSpeedAndArmor20Percent41"/>
+        <Behavior value="RASpectraltowerchargingbehaviorverificationbehavior"/>
         <WhichUnit Value="Caster"/>
     </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="RASpectrumTowerChargingStackVerifier2ndFloor">
         <Value value="2"/>
-        <Behavior value="RAMovementSpeedAndArmor20Percent41"/>
+        <Behavior value="RASpectraltowerchargingbehaviorverificationbehavior"/>
         <WhichUnit Value="Caster"/>
     </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="RASpectrumTowerChargingStackVerifier3rdFloor">
         <Value value="3"/>
-        <Behavior value="RAMovementSpeedAndArmor20Percent41"/>
+        <Behavior value="RASpectraltowerchargingbehaviorverificationbehavior"/>
         <WhichUnit Value="Caster"/>
     </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="RASpectrumTowerChargingStackVerifier4thFloor">
         <Value value="4"/>
-        <Behavior value="RAMovementSpeedAndArmor20Percent41"/>
+        <Behavior value="RASpectraltowerchargingbehaviorverificationbehavior"/>
         <WhichUnit Value="Caster"/>
     </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="RATheSpectrumTowerChargingStackValidatorCannotExceed4Layers">
         <Compare value="LE"/>
         <Value value="4"/>
-        <Behavior value="RAMovementSpeedAndArmor20Percent41"/>
+        <Behavior value="RASpectraltowerchargingbehaviorverificationbehavior"/>
     </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="RATheSpectralTowerDetectsThatTheTargetHasAttackChargingBehavior">
         <Value value="1"/>
-        <Behavior value="RAMovementSpeedAndArmor20Percent422"/>
+        <Behavior value="BehaviorofSpectrumTowerAttackApplicationDetection"/>
     </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="RAImmunityAfterChargingTheMagneticStormCoil">
         <Behavior value="RATheTeslaCoilHasBeenChargedAttackSpeedDamageAndRangeAreGreatlyIncreased"/>

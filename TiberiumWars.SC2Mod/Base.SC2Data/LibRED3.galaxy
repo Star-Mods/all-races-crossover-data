@@ -1917,9 +1917,9 @@ void libRED3_gt_AIRPODCREATED_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: AIRPORTs MapI INIT
+// Trigger: AIRPORTS Map INIT
 //--------------------------------------------------------------------------------------------------
-bool libRED3_gt_AIRPORTsMapIINIT_Func (bool testConds, bool runActions) {
+bool libRED3_gt_AIRPORTSMapINIT_Func (bool testConds, bool runActions) {
     // Variable Declarations
     unit lv_airport;
     unit lv_slotUnit;
@@ -1936,7 +1936,6 @@ bool libRED3_gt_AIRPORTsMapIINIT_Func (bool testConds, bool runActions) {
     const int auto62E3E901_ai = 1;
 
     // Variable Initialization
-    lv_airport = EventUnitCreatedUnit();
 
     // Actions
     if (!runActions) {
@@ -1975,9 +1974,9 @@ bool libRED3_gt_AIRPORTsMapIINIT_Func (bool testConds, bool runActions) {
 }
 
 //--------------------------------------------------------------------------------------------------
-void libRED3_gt_AIRPORTsMapIINIT_Init () {
-    libRED3_gt_AIRPORTsMapIINIT = TriggerCreate("libRED3_gt_AIRPORTsMapIINIT_Func");
-    TriggerAddEventMapInit(libRED3_gt_AIRPORTsMapIINIT);
+void libRED3_gt_AIRPORTSMapINIT_Init () {
+    libRED3_gt_AIRPORTSMapINIT = TriggerCreate("libRED3_gt_AIRPORTSMapINIT_Func");
+    TriggerAddEventMapInit(libRED3_gt_AIRPORTSMapINIT);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -2057,6 +2056,81 @@ void libRED3_gt_CREATEDAircraftmanufacturingcompleted_Init () {
     libRED3_gt_CREATEDAircraftmanufacturingcompleted = TriggerCreate("libRED3_gt_CREATEDAircraftmanufacturingcompleted_Func");
     TriggerAddEventUnitTrainProgress(libRED3_gt_CREATEDAircraftmanufacturingcompleted, null, c_unitProgressStageComplete);
     TriggerAddEventUnitConstructProgress(libRED3_gt_CREATEDAircraftmanufacturingcompleted, null, c_unitProgressStageComplete);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Shadow Glide
+//--------------------------------------------------------------------------------------------------
+bool libRED3_gt_ShadowGlide_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_airport;
+    unit lv_airplane;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_airport = EventUnitProgressUnit();
+    lv_airplane = EventUnit();
+
+    // Conditions
+    if (testConds) {
+        if (!((UnitAbilityExists(lv_airplane, "CNCAirplaneMove") == false))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TriggerDebugOutput(1, StringExternal("Param/Value/lib_RED3_5648FD98"), true);
+    Wait(0.2, c_timeGame);
+    UnitAbilityAdd(lv_airplane, "CNCAirplaneMove");
+    UnitAbilityAdd(lv_airplane, "attack2");
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libRED3_gt_ShadowGlide_Init () {
+    libRED3_gt_ShadowGlide = TriggerCreate("libRED3_gt_ShadowGlide_Func");
+    TriggerAddEventUnitBehaviorChange(libRED3_gt_ShadowGlide, null, "VanguardIsCircling", c_unitBehaviorChangeIncrease);
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: Shadow Landing
+//--------------------------------------------------------------------------------------------------
+bool libRED3_gt_ShadowLanding_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_airplane;
+
+    // Automatic Variable Declarations
+    // Variable Initialization
+    lv_airplane = EventUnit();
+
+    // Conditions
+    if (testConds) {
+        if (!((UnitAbilityExists(lv_airplane, "CNCAirplaneMove") == false))) {
+            return false;
+        }
+    }
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    Wait(0.05, c_timeGame);
+    UnitAbilityRemove(lv_airplane, "CNCAirplaneMove");
+    UnitAbilityRemove(lv_airplane, "attack2");
+    UnitAbilityAdd(lv_airplane, "move");
+    UnitAbilityAdd(lv_airplane, "attack");
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libRED3_gt_ShadowLanding_Init () {
+    libRED3_gt_ShadowLanding = TriggerCreate("libRED3_gt_ShadowLanding_Func");
+    TriggerAddEventUnitAbility(libRED3_gt_ShadowLanding, null, AbilityCommand("NodShadowLand", 0), c_unitAbilStageExecute, false);
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -2616,7 +2690,7 @@ bool libRED3_gt_CIRCLEAlliedfighterplanesautomaticallycirclewhenstopped_Func (bo
     lv_angle = (UnitGetFacing(lv_attackingunit) - 150.0);
     lv_centerpoint = PointWithOffsetPolar(UnitGetPosition(lv_attackingunit), 0.1, lv_angle);
     while (true) {
-        if (((UnitIsAlive(lv_attackingunit) == true) && (UnitBehaviorCount(lv_attackingunit, "PioneerDisablesStoppingAutoCirclingA") == 0) && (UnitBehaviorCount(lv_attackingunit, "DisablestopautoandattackinVanguardmovementcommand") == 0) && (UnitBehaviorCount(lv_attackingunit, "StopautocirclingdisabledinPeacekeeperbomberattackcommand") == 0) && (UnitOrderHasAbil(lv_attackingunit, "VS_ReturnToAirport") == false))) {
+        if (((UnitIsAlive(lv_attackingunit) == true) && (UnitBehaviorCount(lv_attackingunit, "PioneerDisablesStoppingAutoCirclingA") == 0) && (UnitBehaviorCount(lv_attackingunit, "DisablestopautoandattackinVanguardmovementcommand") == 0) && (UnitBehaviorCount(lv_attackingunit, "StopautocirclingdisabledinPeacekeeperbomberattackcommand") == 0) && (UnitOrderCount(lv_attackingunit) == 0))) {
             libRED3_gf_OnecruisewhilestationaryAlliedfighteraircraft(lv_attackingunit, lv_centerpoint);
             Wait(0.0625, c_timeGame);
         }
@@ -2660,9 +2734,11 @@ void libRED3_InitTriggers () {
     libRED3_gt_Maintenancebeeheightrestored_Init();
     libRED3_gt_AIRSUPPORTCREATED_Init();
     libRED3_gt_AIRPODCREATED_Init();
-    libRED3_gt_AIRPORTsMapIINIT_Init();
+    libRED3_gt_AIRPORTSMapINIT_Init();
     libRED3_gt_MoveCommandOverrideExecute_Init();
     libRED3_gt_CREATEDAircraftmanufacturingcompleted_Init();
+    libRED3_gt_ShadowGlide_Init();
+    libRED3_gt_ShadowLanding_Init();
     libRED3_gt_LANDINGAlliedairfieldlanding_Init();
     libRED3_gt_Aircraftrestorationslot_Init();
     libRED3_gt_TAKEOFFTheeffectoftheplaneaftertakeoff_Init();

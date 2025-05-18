@@ -92,6 +92,37 @@
         <NodeArray index="Use" Link="REQC_BomberPlatform"/>
         <NodeArray index="Show" Link="RC_NodFactionNod"/>
     </CRequirement>
+
+    <CRequirement id="LearnNodInfantryArmorsLevel1">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="RN_NodInfantryArmorsLevel1"/>
+    </CRequirement>
+    <CRequirement id="LearnNodInfantryArmorsLevel2">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="LearnNodInfantryArmorsLevel2"/>
+        <NodeArray index="Show" Link="RN_NodInfantryArmorsLevel2"/>
+    </CRequirement>
+    <CRequirement id="LearnNodInfantryArmorsLevel3">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="LearnNodInfantryArmorsLevel3"/>
+        <NodeArray index="Show" Link="RN_NodInfantryArmorsLevel3"/>
+    </CRequirement>
+    <CRequirement id="LearnNodPiercingWeaponsPowerLevel1">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Show" Link="RN_NodPiercingWeaponsLevel1"/>
+    </CRequirement>
+    <CRequirement id="LearnNodPiercingWeaponsLevel2">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="LearnNodPiercingWeaponsLevel2"/>
+        <NodeArray index="Show" Link="RN_NodPiercingWeaponsLevel2"/>
+    </CRequirement>
+    <CRequirement id="LearnNodPiercingWeaponsLevel3">
+        <EditorCategories value="Race:Terran,TechType:Upgrade"/>
+        <NodeArray index="Use" Link="LearnNodPiercingWeaponsLevel3"/>
+        <NodeArray index="Show" Link="RN_NodPiercingWeaponsLevel3"/>
+    </CRequirement>
+
+
     <!--    Terrarn-->
     <CRequirement id="CabalGuerillaChargeUseRequirement" upgrade="FlameZone">
         <NodeArray index="Use" Link="CountUpgradeTacticalChargeDeviceCompleteOnlyTechTreeCheat"/>
@@ -127,8 +158,8 @@
         <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeNodGenericBlackDiscipleQueuedOrBetter0"/>
     </CRequirement>
     <CRequirement id="DozerBladeUpgradeRequirement">
-        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeNodGenericDozerBladeQueuedOrBetter0"/>
-        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeNodGenericDozerBladeQueuedOrBetter0"/>
+        <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeNodDozerBladesQueuedOrBetter0"/>
+        <NodeArray index="Show" Link="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeNodDozerBladesQueuedOrBetter0"/>
     </CRequirement>
     <CRequirement id="InfantrySpeedUpgradeRequirement">
         <NodeArray index="Use" Link="AndEqCountUpgradeNodFactionNodQueuedOrBetter1EqCountUpgradeSpeedUpgradeQueuedOrBetter0"/>

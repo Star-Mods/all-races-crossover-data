@@ -273,7 +273,7 @@
         <AutoCastValidatorArray value="RATheSpectrumTowerChargingStackValidatorCannotExceed4Layers"/>
         <AutoCastValidatorArray value="RATheSpectralTowerDetectsThatTheTargetHasAttackChargingBehavior"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="RASpectralRefractionSuperposition"/>
-        <PrepEffect value="AuDefenceAdvanced"/>
+        <PrepEffect value="AlliedTurnoffattackskillswhentheSpectralTowerischarging"/>
         <Effect index="0" value="RASpectrumTowerChargingStartDelay"/>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="AucryoShrinBeam">
@@ -475,7 +475,7 @@
         </Cost>
         <Range value="35"/>
         <Arc value="360"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2" Requirements="towercommander">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets" Requirements="towercommander">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="JpWaveenergythreeguns"/>
@@ -499,7 +499,7 @@
         <Range value="35"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2" Requirements="towercommander">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets" Requirements="towercommander">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="SuBigGun"/>
@@ -524,7 +524,7 @@
         <Range value="35"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2" Requirements="towercommander">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets" Requirements="towercommander">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="DestructibleWallStraightHorizontalBF"/>
@@ -549,7 +549,7 @@
         <Range value="35"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2" Requirements="towercommander">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets" Requirements="towercommander">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="AuGrandCannon"/>
@@ -574,7 +574,7 @@
         <Range value="35"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2" Requirements="towercommander">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets" Requirements="towercommander">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="CnFixedartilleryposition"/>
@@ -599,7 +599,7 @@
         <Range value="35"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2" Requirements="towercommander">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets" Requirements="towercommander">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="GDIAntitankbunker"/>
@@ -624,7 +624,7 @@
         <Range value="35"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2" Requirements="towercommander">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets" Requirements="towercommander">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="GDI460mmDevoidgun"/>
@@ -649,7 +649,7 @@
         <Range value="35"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2" Requirements="towercommander">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets" Requirements="towercommander">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="JpWaveTower"/>
@@ -674,7 +674,7 @@
         <Range value="35"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2" Requirements="towercommander">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets" Requirements="towercommander">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="JpDfenderVX"/>
@@ -699,7 +699,7 @@
         <Range value="35"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2" Requirements="towercommander">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets" Requirements="towercommander">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="AuMachinegunBunker"/>
@@ -724,7 +724,7 @@
         <Range value="50"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="AuAirport"/>
@@ -749,7 +749,7 @@
         <Range value="50"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="CnAirport"/>
@@ -774,7 +774,7 @@
         <Range value="50"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="SuAirport"/>
@@ -849,7 +849,7 @@
         <Range value="35"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2" Requirements="towercommander">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets" Requirements="towercommander">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="CnWatchtower"/>
@@ -874,7 +874,7 @@
         <Range value="35"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2" Requirements="towercommander">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets" Requirements="towercommander">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="CnGatlingCannon"/>
@@ -899,7 +899,7 @@
         <Range value="35"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2" Requirements="towercommander">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets" Requirements="towercommander">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="CnTowerofFire"/>
@@ -924,7 +924,7 @@
         <Range value="35"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2" Requirements="towercommander">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets" Requirements="towercommander">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="CnHeavyBallista"/>
@@ -949,7 +949,7 @@
         <Range value="35"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2" Requirements="towercommander">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets" Requirements="towercommander">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="CnEagleStrikeMissileLaunchTower"/>
@@ -974,7 +974,7 @@
         <Range value="35"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2" Requirements="towercommander">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets" Requirements="towercommander">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="CnBroadcastTower"/>
@@ -999,7 +999,7 @@
         <Range value="35"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2" Requirements="towercommander">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets" Requirements="towercommander">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="CnHuntianTower"/>
@@ -1024,7 +1024,7 @@
         <Range value="35"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2" Requirements="towercommander">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets" Requirements="towercommander">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="AlliedAntitankgun"/>
@@ -1049,7 +1049,7 @@
         <Range value="35"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2" Requirements="towercommander">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets" Requirements="towercommander">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="AuPatriotMissile"/>
@@ -1074,7 +1074,7 @@
         <Range value="35"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2" Requirements="towercommander">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets" Requirements="towercommander">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="SuFlakTurret"/>
@@ -1099,7 +1099,7 @@
         <Range value="35"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2" Requirements="towercommander">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets" Requirements="towercommander">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="AuSpectrumTower"/>
@@ -1124,7 +1124,7 @@
         <Range value="35"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2" Requirements="towercommander">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets" Requirements="towercommander">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="AuLightPrismTower"/>
@@ -1149,7 +1149,7 @@
         <Range value="35"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2" Requirements="towercommander">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets" Requirements="towercommander">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="AuBankGun"/>
@@ -1174,7 +1174,7 @@
         <Range value="35"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2" Requirements="towercommander">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets" Requirements="towercommander">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="SuBunker"/>
@@ -1199,7 +1199,7 @@
         <Range value="35"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2" Requirements="towercommander">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets" Requirements="towercommander">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="SuSentinel"/>
@@ -1224,7 +1224,7 @@
         <Range value="35"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2" Requirements="towercommander">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets" Requirements="towercommander">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="SuSentryGun"/>
@@ -1249,7 +1249,7 @@
         <Range value="35"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2" Requirements="towercommander">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets" Requirements="towercommander">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="SuSpitfireTower"/>
@@ -1272,7 +1272,7 @@
         <Range value="35"/>
         <Arc value="360"/>
         <AINotifyEffect value="Blink2"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="Blink2" Requirements="towercommander">
+        <CmdButtonArray index="Execute" DefaultButtonFace="RAHandlingturrets" Requirements="towercommander">
             <Flags index="ToSelection" value="1"/>
         </CmdButtonArray>
         <PlaceUnit value="GDIPlasmacannon"/>

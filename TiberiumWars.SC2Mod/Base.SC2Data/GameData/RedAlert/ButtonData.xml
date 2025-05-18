@@ -253,7 +253,7 @@
     <CButton id="BiodomeUnloadAll3">
         <Icon value="Assets\Textures\btn-ability-terran-unloadall.dds"/>
     </CButton>
-    <CButton id="Blink2">
+    <CButton id="RAHandlingturrets">
         <Icon value="Assets\Textures\btn-tips-challengecounter.dds"/>
         <Hotkey value="Button/Hotkey/TowerMove"/>
     </CButton>

@@ -412,7 +412,6 @@ bool libTIBW_gt_Test_Func (bool testConds, bool runActions) {
     GameSetSpeedValue(c_gameSpeedFaster);
     TriggerExecute(libTIBW_gt_PlayNod, true, false);
     libSPPN_gf_RunTester();
-    TriggerExecute(libTIBW_gt_NodTopPanelStarchainTest, true, false);
     TriggerExecute(libScio_gt_GenetronInit, true, false);
     return true;
 }
@@ -430,6 +429,8 @@ bool libTIBW_gt_PlayNod_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
     playergroup autoC0198CC5_g;
     int autoC0198CC5_var;
+    playergroup autoB12AAF8F_g;
+    int autoB12AAF8F_var;
 
     // Actions
     if (!runActions) {
@@ -443,12 +444,27 @@ bool libTIBW_gt_PlayNod_Func (bool testConds, bool runActions) {
         autoC0198CC5_var = PlayerGroupNextPlayer(autoC0198CC5_g, autoC0198CC5_var);
         if (autoC0198CC5_var < 0) { break; }
         if ((PlayerRace(autoC0198CC5_var) == "Nod")) {
+            UISetFrameVisible(PlayerGroupSingle(autoC0198CC5_var), c_syncFrameTypeConsolePanel, false);
+            DialogControlHookupStandard(c_triggerControlTypePanel, "UIContainer/ConsoleUIContainer");
+            DialogControlSendAnimationEvent(DialogControlLastCreated(), PlayerGroupSingle(autoC0198CC5_var), "SlimUI_On");
         }
 
     }
     TriggerEnable(libTIBW_gt_Borrowedbombercustomreturntrajectory, true);
     TriggerEnable(libTIBW_gt_BorrowedbombercreationbindingStarchainTest, true);
     TriggerEnable(libTIBW_gt_LaunchairstrikeStarchainTest, true);
+    Wait(1.0, c_timeGame);
+    DialogControlHookupStandard(c_triggerControlTypePanel, "UIContainer/ConsoleUIContainer");
+    autoB12AAF8F_g = PlayerGroupAll();
+    autoB12AAF8F_var = -1;
+    while (true) {
+        autoB12AAF8F_var = PlayerGroupNextPlayer(autoB12AAF8F_g, autoB12AAF8F_var);
+        if (autoB12AAF8F_var < 0) { break; }
+        if ((PlayerRace(autoB12AAF8F_var) == "Nod")) {
+            DialogControlSendAnimationEvent(DialogControlLastCreated(), PlayerGroupSingle(autoB12AAF8F_var), "SlimUI_On");
+        }
+
+    }
     return true;
 }
 
@@ -837,7 +853,6 @@ bool libTIBW_gt_BeaconsButtonUsed_Func (bool testConds, bool runActions) {
 //--------------------------------------------------------------------------------------------------
 void libTIBW_gt_BeaconsButtonUsed_Init () {
     libTIBW_gt_BeaconsButtonUsed = TriggerCreate("libTIBW_gt_BeaconsButtonUsed_Func");
-    TriggerEnable(libTIBW_gt_BeaconsButtonUsed, false);
     TriggerAddEventDialogControl(libTIBW_gt_BeaconsButtonUsed, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeHotkeyPressed);
     TriggerAddEventDialogControl(libTIBW_gt_BeaconsButtonUsed, c_playerAny, c_invalidDialogControlId, c_triggerControlEventTypeClick);
 }

@@ -118,7 +118,7 @@
         <AbilArray Link="Blink226"/>
         <BehaviorArray Link="PowerUserQueue"/>
         <BehaviorArray Link="PowerSource2"/>
-        <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
+        <BehaviorArray Link="RATowerdefensemovementCDreduced"/>
         <CardLayouts index="0">
             <LayoutButtons Face="AttackRedirect" Type="AbilCmd" AbilCmd="AttackRedirect,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="StopRedirect,Execute" Row="0" Column="1"/>
@@ -128,7 +128,7 @@
             <LayoutButtons Face="BunkerUnloadAll" Type="AbilCmd" AbilCmd="BunkerTransport22,UnloadAll" Row="2" Column="2"/>
             <LayoutButtons Face="Disband3" Type="AbilCmd" AbilCmd="Disband2,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="CommanderNovaUnlockGriffinTransport22333333" Type="Passive" Row="1" Column="2"/>
-            <LayoutButtons Face="Blink2" Type="AbilCmd" AbilCmd="Blink226,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="RAHandlingturrets" Type="AbilCmd" AbilCmd="Blink226,Execute" Row="0" Column="0"/>
         </CardLayouts>
         <Radius value="1.25"/>
         <SeparationRadius value="1.25"/>
@@ -210,7 +210,7 @@
         <BehaviorArray Link="UpgradeLevel122"/>
         <BehaviorArray Link="PowerUserQueue"/>
         <BehaviorArray Link="PowerSource2"/>
-        <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
+        <BehaviorArray Link="RATowerdefensemovementCDreduced"/>
         <WeaponArray Link="ParticleBeam6" Turret="SiegeTankSieged"/>
         <WeaponArray Link="ParticleBeam5" Turret="SiegeTankSieged"/>
         <CardLayouts index="0">
@@ -218,7 +218,7 @@
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="TossGrenadeTychus22222752" Type="Passive" Requirements="HaveHeavyArtillery2463" Row="1" Column="4"/>
-            <LayoutButtons Face="Blink2" Type="AbilCmd" AbilCmd="Blink2210,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="RAHandlingturrets" Type="AbilCmd" AbilCmd="Blink2210,Execute" Row="0" Column="0"/>
         </CardLayouts>
         <Footprint value="Footprint1x1CreepNormal"/>
         <PlacementFootprint value="Footprint1x1CreepNormal"/>
@@ -285,13 +285,13 @@
         <BehaviorArray Link="T2unitveteranbehaviorantiaircraftcrawler"/>
         <BehaviorArray Link="PowerUserQueue"/>
         <BehaviorArray Link="PowerSource2"/>
-        <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
+        <BehaviorArray Link="RATowerdefensemovementCDreduced"/>
         <WeaponArray Link="47mm22" Turret="GunTower23"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="Disband3" Type="AbilCmd" AbilCmd="Disband2,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="Blink2" Type="AbilCmd" AbilCmd="Blink222,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="RAHandlingturrets" Type="AbilCmd" AbilCmd="Blink222,Execute" Row="0" Column="0"/>
         </CardLayouts>
         <Radius value="1.25"/>
         <SeparationRadius value="1.25"/>
@@ -375,13 +375,13 @@
         <BehaviorArray Link="UpgradeLevel14"/>
         <BehaviorArray Link="PowerUserQueue"/>
         <BehaviorArray Link="PowerSource2"/>
-        <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
+        <BehaviorArray Link="RATowerdefensemovementCDreduced"/>
         <WeaponArray Link="WraithG243" Turret="GunTower23"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="Disband3" Type="AbilCmd" AbilCmd="Disband2,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="Blink2" Type="AbilCmd" AbilCmd="Blink227,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="RAHandlingturrets" Type="AbilCmd" AbilCmd="Blink227,Execute" Row="0" Column="0"/>
         </CardLayouts>
         <Radius value="1.25"/>
         <SeparationRadius value="1.25"/>
@@ -412,13 +412,13 @@
         <BehaviorArray Link="UpgradeLevel12"/>
         <BehaviorArray Link="PowerSource2"/>
         <BehaviorArray Link="PowerUserQueue"/>
-        <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
+        <BehaviorArray Link="RATowerdefensemovementCDreduced"/>
         <WeaponArray Link="SuzzbMolotov2"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="Disband3" Type="AbilCmd" AbilCmd="Disband2,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="Blink2" Type="AbilCmd" AbilCmd="Blink229,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="RAHandlingturrets" Type="AbilCmd" AbilCmd="Blink229,Execute" Row="0" Column="0"/>
         </CardLayouts>
         <Radius value="1.25"/>
         <SeparationRadius value="1.25"/>
@@ -617,13 +617,13 @@
         <BehaviorArray Link="UpgradeLevel1"/>
         <BehaviorArray Link="PowerUserQueue"/>
         <BehaviorArray Link="PowerSource2"/>
-        <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
+        <BehaviorArray Link="RATowerdefensemovementCDreduced"/>
         <WeaponArray Link="M6032" Turret="GunTower23"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="Disband3" Type="AbilCmd" AbilCmd="Disband2,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="Blink2" Type="AbilCmd" AbilCmd="Blink228,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="RAHandlingturrets" Type="AbilCmd" AbilCmd="Blink228,Execute" Row="0" Column="0"/>
         </CardLayouts>
         <Radius value="1.25"/>
         <SeparationRadius value="1.25"/>
@@ -955,13 +955,13 @@
         <BehaviorArray Link="SovietT4unitveteranbehavior"/>
         <BehaviorArray Link="PowerSource2"/>
         <BehaviorArray Link="PowerUserQueue"/>
-        <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
+        <BehaviorArray Link="RATowerdefensemovementCDreduced"/>
         <WeaponArray Link="CoastalBattery22" Turret="GunTower2"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Disband3" Type="AbilCmd" AbilCmd="Disband2,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
-            <LayoutButtons Face="Blink2" Type="AbilCmd" AbilCmd="Blink22,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="RAHandlingturrets" Type="AbilCmd" AbilCmd="Blink22,Execute" Row="0" Column="0"/>
         </CardLayouts>
         <Radius value="1.25"/>
         <SeparationRadius value="1.25"/>
@@ -1318,16 +1318,16 @@
         <BehaviorArray Link="UpgradeLevel122"/>
         <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <BehaviorArray Link="PowerUserQueue"/>
-        <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
+        <BehaviorArray Link="RATowerdefensemovementCDreduced"/>
         <BehaviorArray Link="AutowerUnderConstruction"/>
-        <BehaviorArray Link="Lowpower2"/>
-        <BehaviorArray Link="Lowpower3"/>
+        <BehaviorArray Link="RALowPowerForitifcations"/>
+        <BehaviorArray Link="RASufficientpower"/>
         <WeaponArray Link="ParticleBeam524"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Disband3" Type="AbilCmd" AbilCmd="Disband2,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
-            <LayoutButtons Face="Blink2" Type="AbilCmd" AbilCmd="Blink224,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="RAHandlingturrets" Type="AbilCmd" AbilCmd="Blink224,Execute" Row="0" Column="0"/>
         </CardLayouts>
         <Footprint value="Footprint1x1"/>
         <PlacementFootprint value="Footprint1x1"/>
@@ -1351,18 +1351,18 @@
         <BehaviorArray Link="UpgradeLevel122"/>
         <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <BehaviorArray Link="PowerUserQueue"/>
-        <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
+        <BehaviorArray Link="RATowerdefensemovementCDreduced"/>
         <BehaviorArray Link="AutowerUnderConstruction"/>
-        <BehaviorArray Link="Lowpower2"/>
-        <BehaviorArray Link="Lowpower3"/>
-        <WeaponArray Link="ParticleBeam33"/>
+        <BehaviorArray Link="RALowPowerForitifcations"/>
+        <BehaviorArray Link="RASufficientpower"/>
+        <WeaponArray Link="Allied_SpectrumTower_Weapon"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Disband3" Type="AbilCmd" AbilCmd="Disband2,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="RASpectralRefractionSuperposition" Type="Passive" Row="1" Column="0"/>
             <LayoutButtons Face="RASpectralRefractionSuperposition" Type="AbilCmd" AbilCmd="AuDefenceAdvancedCharge,Execute" Row="1" Column="0"/>
-            <LayoutButtons Face="Blink2" Type="AbilCmd" AbilCmd="Blink223,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="RAHandlingturrets" Type="AbilCmd" AbilCmd="Blink223,Execute" Row="0" Column="0"/>
         </CardLayouts>
         <Footprint value="Footprint1x1"/>
         <PlacementFootprint value="Footprint1x1"/>
@@ -1390,7 +1390,7 @@
         <BehaviorArray Link="PowerUserQueue"/>
         <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <BehaviorArray Link="Lowpower"/>
-        <BehaviorArray Link="Lowpower3"/>
+        <BehaviorArray Link="RASufficientpower"/>
         <EffectArray index="Birth" value="JurefinerycreateMiner2"/>
         <CardLayouts index="0">
             <LayoutButtons Face="BuildTankTrap2242" Type="AbilCmd" AbilCmd="CityTrain,Train13" Row="0" Column="0"/>
@@ -1426,16 +1426,16 @@
         <BehaviorArray Link="RAMovementSpeedAndArmor20Percent61"/>
         <BehaviorArray Link="PowerUserQueue"/>
         <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
-        <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
+        <BehaviorArray Link="RATowerdefensemovementCDreduced"/>
         <BehaviorArray Link="AutowerUnderConstruction"/>
-        <BehaviorArray Link="Lowpower2"/>
-        <BehaviorArray Link="Lowpower3"/>
+        <BehaviorArray Link="RALowPowerForitifcations"/>
+        <BehaviorArray Link="RASufficientpower"/>
         <WeaponArray Link="75mmATT3" Turret="GunTower22"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Disband3" Type="AbilCmd" AbilCmd="Disband2,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
-            <LayoutButtons Face="Blink2" Type="AbilCmd" AbilCmd="Blink2211,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="RAHandlingturrets" Type="AbilCmd" AbilCmd="Blink2211,Execute" Row="0" Column="0"/>
         </CardLayouts>
         <Radius value="1.25"/>
         <SeparationRadius value="1.25"/>
@@ -1512,10 +1512,10 @@
         <BehaviorArray Link="UpgradeLevel12"/>
         <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <BehaviorArray Link="PowerUserQueue"/>
-        <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
+        <BehaviorArray Link="RATowerdefensemovementCDreduced"/>
         <BehaviorArray Link="AutowerUnderConstruction"/>
-        <BehaviorArray Link="Lowpower2"/>
-        <BehaviorArray Link="Lowpower3"/>
+        <BehaviorArray Link="RALowPowerForitifcations"/>
+        <BehaviorArray Link="RASufficientpower"/>
         <WeaponArray Link="LongboltMissile242223" Turret="RABeamTankTurret2"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -1569,7 +1569,7 @@
         <BehaviorArray Link="AuBuildSpeedUPLV1"/>
         <BehaviorArray Link="VoidPylonPowerSource22"/>
         <BehaviorArray Link="Lowpower"/>
-        <BehaviorArray Link="Lowpower3"/>
+        <BehaviorArray Link="RASufficientpower"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Cancel" Type="AbilCmd" AbilCmd="SubuildBuildings2,Halt" Row="2" Column="4"/>
             <LayoutButtons Face="AuBuildCancle" Type="AbilCmd" AbilCmd="ReturnAirport22,Execute" Row="2" Column="4"/>
@@ -1662,7 +1662,7 @@
         <AbilArray Link="Blink22172322"/>
         <BehaviorArray Link="VoidPylonPowerSource2"/>
         <BehaviorArray Link="Lowpower"/>
-        <BehaviorArray Link="Lowpower3"/>
+        <BehaviorArray Link="RASufficientpower"/>
         <CardLayouts index="0">
             <LayoutButtons Face="AutechUnlockT1" Type="AbilCmd" AbilCmd="RA3TechLevel,Research25" Row="0" Column="0"/>
             <LayoutButtons Face="AutechUnlockT2" Type="AbilCmd" AbilCmd="RA3TechLevel,Research26" Row="0" Column="0"/>
@@ -1693,7 +1693,7 @@
         <BehaviorArray Link="PowerUserQueue"/>
         <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <BehaviorArray Link="Lowpower"/>
-        <BehaviorArray Link="Lowpower3"/>
+        <BehaviorArray Link="RASufficientpower"/>
         <BehaviorArray Link="MassProduction2"/>
         <CardLayouts index="0">
             <LayoutButtons Face="TrainSuConscript22" Type="AbilCmd" AbilCmd="SovietBarracksTrain,Train18" Row="0" Column="0"/>
@@ -1726,7 +1726,7 @@
         <BehaviorArray Link="PowerUserQueue"/>
         <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <BehaviorArray Link="Lowpower22"/>
-        <BehaviorArray Link="Lowpower3"/>
+        <BehaviorArray Link="RASufficientpower"/>
         <WeaponArray Turret="RAProtonColliderMainCannon"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
@@ -1759,7 +1759,7 @@
         <BehaviorArray Link="PowerUserQueue"/>
         <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <BehaviorArray Link="Lowpower22"/>
-        <BehaviorArray Link="Lowpower3"/>
+        <BehaviorArray Link="RASufficientpower"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
@@ -1789,7 +1789,7 @@
         <BehaviorArray Link="UpgradeLevel14"/>
         <BehaviorArray Link="PowerUserQueue"/>
         <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
-        <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
+        <BehaviorArray Link="RATowerdefensemovementCDreduced"/>
         <BehaviorArray Link="AutowerUnderConstruction"/>
         <WeaponArray Link="M603" Turret="GunTower23"/>
         <CardLayouts index="0">
@@ -1841,7 +1841,7 @@
         <BehaviorArray Link="PowerUserQueue"/>
         <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <BehaviorArray Link="Lowpower"/>
-        <BehaviorArray Link="Lowpower3"/>
+        <BehaviorArray Link="RASufficientpower"/>
         <CardLayouts index="0">
             <LayoutButtons Face="RadarField" Type="Passive" Row="1" Column="0"/>
             <LayoutButtons Face="Scan" Type="AbilCmd" AbilCmd="ScannerSweep2,Execute" Row="2" Column="1"/>
@@ -1880,7 +1880,7 @@
         <BehaviorArray Link="PowerUserQueue"/>
         <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <BehaviorArray Link="Lowpower22"/>
-        <BehaviorArray Link="Lowpower3"/>
+        <BehaviorArray Link="RASufficientpower"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
@@ -1955,7 +1955,7 @@
         <BehaviorArray Link="MassProduction2"/>
         <BehaviorArray Link="Maintenancebeedetectshalorange"/>
         <BehaviorArray Link="Lowpower"/>
-        <BehaviorArray Link="Lowpower3"/>
+        <BehaviorArray Link="RASufficientpower"/>
         <CardLayouts index="0">
             <LayoutButtons Face="BuildMediumTankAdvanced" Type="AbilCmd" AbilCmd="WarFactoryTrain,Train28" Row="0" Column="1"/>
             <LayoutButtons Face="BuildHeavyTankAdvanced2" Type="AbilCmd" AbilCmd="WarFactoryTrain2,Train7" Row="1" Column="1"/>
@@ -2049,7 +2049,7 @@
         <BehaviorArray Link="PowerUserQueue"/>
         <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <BehaviorArray Link="Lowpower"/>
-        <BehaviorArray Link="Lowpower3"/>
+        <BehaviorArray Link="RASufficientpower"/>
         <CardLayouts index="0">
             <LayoutButtons Face="RAUpgradeTankSDamageT1" Type="AbilCmd" AbilCmd="RATechnologyCenterResearch2,Research20" Row="0" Column="0"/>
             <LayoutButtons Face="RAUpgradeTankSDamageT2" Type="AbilCmd" AbilCmd="RATechnologyCenterResearch3,Research16" Row="0" Column="0"/>
@@ -2146,14 +2146,14 @@
         <BehaviorArray Link="UpgradeLevel122"/>
         <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
         <BehaviorArray Link="PowerUserQueue"/>
-        <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
+        <BehaviorArray Link="RATowerdefensemovementCDreduced"/>
         <BehaviorArray Link="AutowerUnderConstruction"/>
         <WeaponArray Link="CoastalBattery2" Turret="GunTower2"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Disband3" Type="AbilCmd" AbilCmd="Disband2,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
-            <LayoutButtons Face="Blink2" Type="AbilCmd" AbilCmd="Blink225,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="RAHandlingturrets" Type="AbilCmd" AbilCmd="Blink225,Execute" Row="0" Column="0"/>
         </CardLayouts>
         <Radius value="1.25"/>
         <SeparationRadius value="1.25"/>
@@ -2230,13 +2230,13 @@
         <BehaviorArray Link="UpgradeLevel1"/>
         <BehaviorArray Link="PowerUserQueue"/>
         <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
-        <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
+        <BehaviorArray Link="RATowerdefensemovementCDreduced"/>
         <WeaponArray Link="BunkerAT" Turret="GunTower23"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="Disband" Type="AbilCmd" AbilCmd="Disband2,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="Blink2" Type="AbilCmd" AbilCmd="Blink2218,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="RAHandlingturrets" Type="AbilCmd" AbilCmd="Blink2218,Execute" Row="0" Column="0"/>
         </CardLayouts>
         <Radius value="0.125"/>
         <SeparationRadius value="0.1"/>
@@ -2265,7 +2265,7 @@
         <BehaviorArray Link="Airportisfull"/>
         <BehaviorArray Link="Maintenancebeedetectshalorange"/>
         <BehaviorArray Link="Lowpower"/>
-        <BehaviorArray Link="Lowpower3"/>
+        <BehaviorArray Link="RASufficientpower"/>
         <EffectArray index="Death" value="CNCAirporttraversaltrackingaircraft"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Rally" Type="AbilCmd" AbilCmd="Rally,Rally1" Row="1" Column="4"/>
@@ -2337,7 +2337,7 @@
         <AbilArray Link="Disband2"/>
         <AbilArray Link="SuMotoModeSwhich2322"/>
         <AbilArray Link="Blink2215"/>
-        <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
+        <BehaviorArray Link="RATowerdefensemovementCDreduced"/>
         <BehaviorArray Link="UpgradeLevel1222"/>
         <WeaponArray Link="LaserDrillTripodLaserBeam3" Turret="RAPacifierTurret2"/>
         <WeaponArray Link="LaserDrillTripodLaserBeam32" Turret="RAPacifierTurret2"/>
@@ -2347,7 +2347,7 @@
             <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="AuJavaModeSwitch423" Type="AbilCmd" AbilCmd="SuMotoModeSwhich2322,On" Row="1" Column="1"/>
             <LayoutButtons Face="AuJavaModeSwitch53" Type="AbilCmd" AbilCmd="SuMotoModeSwhich2322,Off" Row="1" Column="2"/>
-            <LayoutButtons Face="Blink2" Type="AbilCmd" AbilCmd="Blink2215,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="RAHandlingturrets" Type="AbilCmd" AbilCmd="Blink2215,Execute" Row="0" Column="0"/>
         </CardLayouts>
         <Radius value="1.25"/>
         <SeparationRadius value="1.25"/>
@@ -2511,7 +2511,7 @@
         <AbilArray Link="VolatileBurstBuilding244"/>
         <AbilArray Link="Blink2216"/>
         <BehaviorArray Link="UpgradeLevel12"/>
-        <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
+        <BehaviorArray Link="RATowerdefensemovementCDreduced"/>
         <WeaponArray Link="WraithG2432" Turret="GunTower23"/>
         <WeaponArray Link="VXWeaponGround23" Turret="GunTower23"/>
         <CardLayouts index="0">
@@ -2520,7 +2520,7 @@
             <LayoutButtons Face="Disband3" Type="AbilCmd" AbilCmd="Disband2,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="TossGrenadeTychus2222254" Type="AbilCmd" AbilCmd="VolatileBurstBuilding244,On" Row="1" Column="1"/>
             <LayoutButtons Face="TossGrenadeTychus22222244" Type="AbilCmd" AbilCmd="VolatileBurstBuilding244,Off" Row="1" Column="2"/>
-            <LayoutButtons Face="Blink2" Type="AbilCmd" AbilCmd="Blink2216,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="RAHandlingturrets" Type="AbilCmd" AbilCmd="Blink2216,Execute" Row="0" Column="0"/>
         </CardLayouts>
         <Radius value="1.25"/>
         <SeparationRadius value="1.25"/>
@@ -2808,14 +2808,14 @@
         <AbilArray Link="attack"/>
         <AbilArray Link="Disband2"/>
         <AbilArray Link="Blink2"/>
-        <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
+        <BehaviorArray Link="RATowerdefensemovementCDreduced"/>
         <BehaviorArray Link="SovietT4unitveteranbehavior"/>
         <WeaponArray Link="ParticleBeam222" Turret="GunTower2"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Disband3" Type="AbilCmd" AbilCmd="Disband2,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
-            <LayoutButtons Face="Blink2" Type="AbilCmd" AbilCmd="Blink2,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="RAHandlingturrets" Type="AbilCmd" AbilCmd="Blink2,Execute" Row="0" Column="0"/>
         </CardLayouts>
         <Radius value="1.25"/>
         <SeparationRadius value="1.25"/>
@@ -3178,13 +3178,13 @@
         <AbilArray Link="Blink221732"/>
         <AbilArray Link="BunkerTransport2222"/>
         <BehaviorArray Link="UpgradeLevel1"/>
-        <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
+        <BehaviorArray Link="RATowerdefensemovementCDreduced"/>
         <WeaponArray Link="M6033"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="Disband3" Type="AbilCmd" AbilCmd="Disband2,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="Blink2" Type="AbilCmd" AbilCmd="Blink221732,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="RAHandlingturrets" Type="AbilCmd" AbilCmd="Blink221732,Execute" Row="0" Column="0"/>
             <LayoutButtons Face="BiodomeLoad2" Type="AbilCmd" AbilCmd="BunkerTransport2222,Load" Row="1" Column="3"/>
             <LayoutButtons Face="BunkerUnloadAll22" Type="AbilCmd" AbilCmd="BunkerTransport2222,UnloadAll" Row="1" Column="4"/>
         </CardLayouts>
@@ -3217,13 +3217,13 @@
         <AbilArray Link="Disband2"/>
         <AbilArray Link="Blink221734"/>
         <BehaviorArray Link="UpgradeLevel12"/>
-        <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
+        <BehaviorArray Link="RATowerdefensemovementCDreduced"/>
         <WeaponArray Link="Flamethrower2" Turret="RAShenzhouTankTurret2"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="Disband3" Type="AbilCmd" AbilCmd="Disband2,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="Blink2" Type="AbilCmd" AbilCmd="Blink221734,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="RAHandlingturrets" Type="AbilCmd" AbilCmd="Blink221734,Execute" Row="0" Column="0"/>
         </CardLayouts>
         <Radius value="1.25"/>
         <SeparationRadius value="1.25"/>
@@ -3256,14 +3256,14 @@
         <AbilArray Link="Blink221733"/>
         <AbilArray Link="SuMotoModeSwhich65"/>
         <BehaviorArray Link="UpgradeLevel129"/>
-        <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
+        <BehaviorArray Link="RATowerdefensemovementCDreduced"/>
         <WeaponArray Link="Twin792mm243223" Turret="RAShenzhouTankTurret2"/>
         <WeaponArray Link="Twin792mm2432232" Turret="RAShenzhouTankTurret2"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="Disband3" Type="AbilCmd" AbilCmd="Disband2,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="Blink2" Type="AbilCmd" AbilCmd="Blink221733,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="RAHandlingturrets" Type="AbilCmd" AbilCmd="Blink221733,Execute" Row="0" Column="0"/>
             <LayoutButtons Face="TossGrenadeTychus222222664" Type="AbilCmd" AbilCmd="SuMotoModeSwhich65,Off" Row="1" Column="0"/>
             <LayoutButtons Face="TossGrenadeTychus22222764" Type="AbilCmd" AbilCmd="SuMotoModeSwhich65,On" Row="1" Column="1"/>
         </CardLayouts>
@@ -3297,13 +3297,13 @@
         <AbilArray Link="Disband2"/>
         <AbilArray Link="Blink221735"/>
         <BehaviorArray Link="UpgradeLevel12"/>
-        <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
+        <BehaviorArray Link="RATowerdefensemovementCDreduced"/>
         <WeaponArray Link="88cmKwK362423" Turret="RAShenzhouTankTurret2"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="Disband3" Type="AbilCmd" AbilCmd="Disband2,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="Blink2" Type="AbilCmd" AbilCmd="Blink221735,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="RAHandlingturrets" Type="AbilCmd" AbilCmd="Blink221735,Execute" Row="0" Column="0"/>
         </CardLayouts>
         <Radius value="1.25"/>
         <SeparationRadius value="1.25"/>
@@ -3335,12 +3335,12 @@
         <AbilArray Link="Disband2"/>
         <AbilArray Link="Blink221737"/>
         <BehaviorArray Link="SandbagAuraA63"/>
-        <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
+        <BehaviorArray Link="RATowerdefensemovementCDreduced"/>
         <WeaponArray Link="RAConcealedWeaponsInBroadcastTower"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="Disband3" Type="AbilCmd" AbilCmd="Disband2,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="Blink2" Type="AbilCmd" AbilCmd="Blink221737,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="RAHandlingturrets" Type="AbilCmd" AbilCmd="Blink221737,Execute" Row="0" Column="0"/>
             <LayoutButtons Face="BuildHeavyTankAdvanced4332" Type="Passive" Row="1" Column="4"/>
         </CardLayouts>
         <Radius value="1.25"/>
@@ -3374,13 +3374,13 @@
         <AbilArray Link="Disband2"/>
         <AbilArray Link="Blink221736"/>
         <BehaviorArray Link="UpgradeLevel122"/>
-        <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
+        <BehaviorArray Link="RATowerdefensemovementCDreduced"/>
         <WeaponArray Link="DutchConcussiveGrenade24"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="Disband3" Type="AbilCmd" AbilCmd="Disband2,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="Blink2" Type="AbilCmd" AbilCmd="Blink221736,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="RAHandlingturrets" Type="AbilCmd" AbilCmd="Blink221736,Execute" Row="0" Column="0"/>
         </CardLayouts>
         <Radius value="1.25"/>
         <SeparationRadius value="1.25"/>
@@ -3413,13 +3413,13 @@
         <AbilArray Link="Disband2"/>
         <AbilArray Link="Blink221738"/>
         <BehaviorArray Link="UpgradeLevel12327"/>
-        <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
+        <BehaviorArray Link="RATowerdefensemovementCDreduced"/>
         <WeaponArray Link="LaserDrillTripodLaserBeam2222"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Attack" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="Disband3" Type="AbilCmd" AbilCmd="Disband2,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="Blink2" Type="AbilCmd" AbilCmd="Blink221738,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="RAHandlingturrets" Type="AbilCmd" AbilCmd="Blink221738,Execute" Row="0" Column="0"/>
         </CardLayouts>
         <Radius value="1.25"/>
         <SeparationRadius value="1.25"/>
@@ -3674,13 +3674,13 @@
         <AbilArray Link="Disband2"/>
         <AbilArray Link="Blink2214"/>
         <BehaviorArray Link="UpgradeLevel12"/>
-        <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
+        <BehaviorArray Link="RATowerdefensemovementCDreduced"/>
         <WeaponArray Link="CoastalBattery" Turret="GunTower"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Disband3" Type="AbilCmd" AbilCmd="Disband2,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
-            <LayoutButtons Face="Blink2" Type="AbilCmd" AbilCmd="Blink2214,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="RAHandlingturrets" Type="AbilCmd" AbilCmd="Blink2214,Execute" Row="0" Column="0"/>
         </CardLayouts>
         <Radius value="1.25"/>
         <SeparationRadius value="1.25"/>
@@ -3704,13 +3704,13 @@
         <AbilArray Link="Disband2"/>
         <AbilArray Link="Blink23"/>
         <BehaviorArray Link="UpgradeLevel122"/>
-        <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
+        <BehaviorArray Link="RATowerdefensemovementCDreduced"/>
         <WeaponArray Link="RAParticleCannon" Turret="GunTower"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Disband3" Type="AbilCmd" AbilCmd="Disband2,Execute" Row="2" Column="3"/>
             <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
             <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
-            <LayoutButtons Face="Blink2" Type="AbilCmd" AbilCmd="Blink23,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="RAHandlingturrets" Type="AbilCmd" AbilCmd="Blink23,Execute" Row="0" Column="0"/>
         </CardLayouts>
         <Radius value="1.25"/>
         <SeparationRadius value="1.25"/>
@@ -3729,11 +3729,11 @@
         <AbilArray Link="Disband2"/>
         <AbilArray Link="Blink2213"/>
         <BehaviorArray Link="UpgradeLevel1"/>
-        <BehaviorArray Link="RAMovementSpeedAndArmor20Percent67"/>
+        <BehaviorArray Link="RATowerdefensemovementCDreduced"/>
         <WeaponArray Link="BunkerAT" Turret="GunTower23"/>
         <CardLayouts index="0">
             <LayoutButtons Face="Disband3" Type="AbilCmd" AbilCmd="Disband2,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="Blink2" Type="AbilCmd" AbilCmd="Blink2213,Execute" Row="0" Column="0"/>
+            <LayoutButtons Face="RAHandlingturrets" Type="AbilCmd" AbilCmd="Blink2213,Execute" Row="0" Column="0"/>
         </CardLayouts>
         <Radius value="0.125"/>
         <SeparationRadius value="0.1"/>

@@ -810,7 +810,7 @@
             <Resource index="Vespene" value="100"/>
             <Button DefaultButtonFace="ChargedParticleBeam" Requirements="ChargedParticleBeamsUpgradeRequirement"/>
         </InfoArray>
-        <InfoArray index="Research21" Time="70" Upgrade="NodGenericDozerBlade">
+        <InfoArray index="Research21" Time="70" Upgrade="NodDozerBlades">
             <Resource index="Minerals" value="50"/>
             <Resource index="Vespene" value="50"/>
             <Button DefaultButtonFace="NodGenericScorpionTankDozerBlade" Requirements="DozerBladeUpgradeRequirement"/>
@@ -2257,4 +2257,33 @@
             <Button DefaultButtonFace="NodCallRedeemer"/>
         </InfoArray>
     </CAbilBuild>
+
+
+    <CAbilResearch id="NodArmyResearch">
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Structures"/>
+        <InfoArray index="Research1" Time="160" Upgrade="NodPiercingWeaponsLevel1">
+            <Resource index="Minerals" value="100"/><Resource index="Vespene" value="100"/>
+            <Button DefaultButtonFace="TerranInfantryWeaponsLevel1" Requirements="LearnNodPiercingWeaponsLevel1"/>
+        </InfoArray>
+        <InfoArray index="Research2" Time="190" Upgrade="NodPiercingWeaponsLevel2">
+            <Resource index="Minerals" value="150"/><Resource index="Vespene" value="150"/>
+            <Button DefaultButtonFace="TerranInfantryWeaponsLevel2" Requirements="LearnNodPiercingWeaponsLevel2"/>
+        </InfoArray>
+        <InfoArray index="Research3" Time="220" Upgrade="NodPiercingWeaponsLevel3">
+            <Resource index="Minerals" value="200"/><Resource index="Vespene" value="200"/>
+            <Button DefaultButtonFace="TerranInfantryWeaponsLevel3" Requirements="LearnNodPiercingWeaponsLevel3"/>
+        </InfoArray>
+        <InfoArray index="Research4" Time="160" Upgrade="NodInfantryArmorsLevel1">
+            <Resource index="Minerals" value="100"/><Resource index="Vespene" value="100"/>
+            <Button DefaultButtonFace="TerranInfantryArmorLevel1" Requirements="LearnNodInfantryArmorsLevel1"/>
+        </InfoArray>
+        <InfoArray index="Research5" Time="190" Upgrade="NodInfantryArmorsLevel2">
+            <Resource index="Minerals" value="150"/><Resource index="Vespene" value="150"/>
+            <Button DefaultButtonFace="TerranInfantryArmorLevel2" Requirements="LearnNodInfantryArmorsLevel2"/>
+        </InfoArray>
+        <InfoArray index="Research6" Time="220" Upgrade="NodInfantryArmorsLevel3">
+            <Resource index="Minerals" value="200"/><Resource index="Vespene" value="200"/>
+            <Button DefaultButtonFace="TerranInfantryArmorLevel3" Requirements="LearnNodInfantryArmorsLevel3"/>
+        </InfoArray>
+    </CAbilResearch>
 </Catalog>

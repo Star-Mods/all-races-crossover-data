@@ -572,13 +572,13 @@
         <Amount value="8"/>
         <Death value="Blast"/>
     </CEffectDamage>
-    <CEffectCreatePersistent id="BlackHandFlameThrowerCreatePersistentCC3">
+    <CEffectCreatePersistent id="NodBlackHandFlameThrowerCreatePersistent">
         <EditorCategories value="Race:Nod"/>
         <WhichLocation Value="SourcePoint"/>
         <OffsetVectorStartLocation Value="SourcePoint"/>
         <Flags index="Channeled" value="1"/>
         <PeriodCount value="14"/>
-        <PeriodicEffectArray value="BlackHandFlameThrowerSearchArea2"/>
+        <PeriodicEffectArray value="NodBlackHandFlameThrowerSearchArea"/>
         <PeriodicOffsetArray value="0.5,-0.5,0"/>
         <PeriodicOffsetArray value="-0.5,-0.5,0"/>
         <PeriodicOffsetArray value="0.5,-1,0"/>
@@ -608,23 +608,23 @@
         <PeriodicPeriodArray value="0.022"/>
         <PeriodicPeriodArray value="0.022"/>
     </CEffectCreatePersistent>
-    <CEffectDamage id="BlackHandFlameThrowerDamageCC3" parent="DU_WEAP_SPLASH">
+    <CEffectDamage id="NodBlackHandFlameThrowerDamage" parent="DU_WEAP_SPLASH">
         <ValidatorArray value="noMarkers"/>
         <EditorCategories value="Race:Nod"/>
-        <Amount value="10"/>
         <AttributeBonus index="Light" value="10"/>
         <AttributeBonus index="Structure" value="10"/>
+        <Amount value="10"/>
         <Death value="Fire"/>
     </CEffectDamage>
-    <CEffectEnumArea id="BlackHandFlameThrowerSearchArea2" parent="EA_WEAP">
+    <CEffectEnumArea id="NodBlackHandFlameThrowerSearchArea" parent="EA_WEAP">
         <EditorCategories value="Race:Nod"/>
         <SearchFilters value="Ground;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <AreaArray Radius="0.5" Effect="BlackHandFlameThrowerDamageCC3"/>
+        <AreaArray Radius="0.5" Effect="NodBlackHandFlameThrowerDamage"/>
     </CEffectEnumArea>
-    <CEffectSet id="BlackHandFlameThrowerSet2">
+    <CEffectSet id="NodBlackHandFlameThrowerSet">
         <EditorCategories value="Race:Nod"/>
-        <EffectArray value="BlackHandFlameThrowerCreatePersistentCC3"/>
-        <EffectArray value="BlackHandFlameThrowerDamageCC3"/>
+        <EffectArray value="NodBlackHandFlameThrowerCreatePersistent"/>
+        <EffectArray value="NodBlackHandFlameThrowerDamage"/>
     </CEffectSet>
     <CEffectEnumArea id="BlackHandLeaderSearchArea">
         <EditorCategories value="Race:Nod"/>
@@ -909,15 +909,15 @@
     </CEffectSet>
     <CEffectLaunchMissile id="MantisWeaponALM2">
         <EditorCategories value="Race:Nod"/>
-        <ImpactEffect value="MantisWeaponMissilePackCP"/>
+        <ImpactEffect value="MantisWeaponMissilePackDamage"/>
         <AmmoUnit value="MantisWeapon"/>
     </CEffectLaunchMissile>
     <CEffectLaunchMissile id="MantisWeaponALM">
         <EditorCategories value="Race:Nod"/>
-        <ImpactEffect value="MantisWeaponMissilePackCP"/>
+        <ImpactEffect value="MantisWeaponMissilePackDamage"/>
         <AmmoUnit value="MantisWeapon"/>
     </CEffectLaunchMissile>
-    <CEffectDamage id="MantisWeaponMissilePackCP" parent="DU_WEAP_MISSILE">
+    <CEffectDamage id="MantisWeaponMissilePackDamage" parent="DU_WEAP_MISSILE">
         <EditorCategories value="Race:Nod"/>
         <Amount value="16"/>
         <AreaArray Radius="1" Fraction="0.2"/>
@@ -1435,7 +1435,7 @@
         <AmmoUnit value="SpecterWeapon"/>
         <ImpactLocation Value="TargetPoint"/>
     </CEffectLaunchMissile>
-    <CEffectDamage id="BeamWeaponCC3Damage" parent="DU_WEAP">
+    <CEffectDamage id="NodBeamCannonWeaponDamage" parent="DU_WEAP">
         <EditorCategories value="Race:Nod"/>
         <AttributeBonus index="Armored" value="6"/>
         <Kind value="Ranged"/>
@@ -1559,7 +1559,7 @@
         <Kind value="Ranged"/>
         <ArmorReduction value="1"/>
     </CEffectDamage>
-    <CEffectDamage id="CpmmandoweaponDamage">
+    <CEffectDamage id="NodCommandoWeaponDamage">
         <EditorCategories value="Race:Nod"/>
         <ResponseFlags index="Acquire" value="1"/>
         <ResponseFlags index="Flee" value="1"/>
@@ -1571,7 +1571,6 @@
         <SearchFlags index="CallForHelp" value="1"/>
         <SearchFlags index="OffsetByUnitRadius" value="1"/>
     </CEffectDamage>
-    <CEffectDamage id="CpmmandoweaponDummy" parent="CpmmandoweaponDamage"/>
     <CEffectCreatePersistent id="CC3CommaCP">
         <EditorCategories value="Race:Nod"/>
         <WhichLocation Value="TargetUnit"/>
@@ -1586,6 +1585,10 @@
         <PeriodicPeriodArray value="0.2"/>
         <PeriodicPeriodArray value="0.2"/>
     </CEffectCreatePersistent>
+    <CEffectDamage id="CpmmandoweaponDummy" parent="NodCommandoWeaponDamage">
+        <Name value="Effect/Name/CpmmandoweaponDamage"/>
+        <Marker Link="Effect/CpmmandoweaponDamage"/>
+    </CEffectDamage>
     <CEffectEnumArea id="DistortSearchArea">
         <EditorCategories value="Race:Nod"/>
         <SearchFilters value="Ground;Neutral,Enemy,RawResource,HarvestableResource,Stasis,Dead,Hidden,Invulnerable"/>
@@ -1598,7 +1601,7 @@
         <PeriodicEffectArray value="NodBikeRocketLaunchMissileCC3"/>
         <PeriodicPeriodArray value="0.0625"/>
     </CEffectCreatePersistent>
-    <CEffectDamage id="NodBikeRocketDamageCC3">
+    <CEffectDamage id="NodBikeRocketLauncherDamage">
         <EditorCategories value="Race:Nod"/>
         <ResponseFlags index="Acquire" value="1"/>
         <ResponseFlags index="Flee" value="1"/>
@@ -1610,7 +1613,7 @@
     </CEffectDamage>
     <CEffectLaunchMissile id="NodBikeRocketLaunchMissileCC3">
         <EditorCategories value="Race:Nod"/>
-        <ImpactEffect value="NodBikeRocketDamageCC3"/>
+        <ImpactEffect value="NodBikeRocketLauncherDamage"/>
         <AmmoUnit value="NodBikeRocketCC3"/>
     </CEffectLaunchMissile>
     <CEffectDamage id="NosScorpionTankWeaponUpgradedDamage" parent="DU_WEAP">
@@ -3123,18 +3126,18 @@
     <CEffectApplyBehavior id="NodShadowLandPrecursorAB">
         <Behavior value="NodShadowLandPrecursor"/>
     </CEffectApplyBehavior>
+    <CEffectDamage id="NodShadowPistolDamage" parent="DU_WEAP">
+        <ValidatorArray value="NotInvulnerable"/>
+        <EditorCategories value="Race:Terran"/>
+        <AttributeBonus index="Light" value="3"/>
+        <Kind value="Ranged"/>
+        <Amount value="3"/>
+    </CEffectDamage>
     <CEffectSet id="NodShadowLandPrecursorSet">
         <EffectArray value="NodShadowLandPrecursorAB"/>
         <EffectArray value="NodShadowLandLM"/>
         <TargetLocationType value="Point"/>
     </CEffectSet>
-    <CEffectDamage id="NodShadowPistol" parent="DU_WEAP">
-        <ValidatorArray value="NotInvulnerable"/>
-        <EditorCategories value="Race:Terran"/>
-        <Kind value="Ranged"/>
-        <Amount value="3"/>
-        <AttributeBonus index="Light" value="3"/>
-    </CEffectDamage>
     <CEffectCreatePersistent id="NodShadowPistolSet">
         <EditorCategories value="Race:Terran"/>
         <WhichLocation Value="TargetUnit"/>
@@ -3142,8 +3145,8 @@
         <Flags index="Channeled" value="1"/>
         <PeriodCount value="3"/>
         <PeriodicEffectArray value="StealthTankexposure"/>
-        <PeriodicEffectArray value="NodShadowPistol"/>
-        <PeriodicEffectArray value="NodShadowPistol"/>
+        <PeriodicEffectArray value="NodShadowPistolDamage"/>
+        <PeriodicEffectArray value="NodShadowPistolDamage"/>
         <PeriodicPeriodArray value="0.12"/>
         <PeriodicPeriodArray value="0.12"/>
     </CEffectCreatePersistent>

@@ -178,10 +178,9 @@ void libSPPN_gf_SelectRace (string lp_race, int lp_triggeringPlayer) {
     auto4923750B_ae = libSPPN_gf_CountWords(libSPPN_gv_allUpgradesLevels);
     lv_wordIndex = 1;
     for ( ; ( (auto4923750B_ai >= 0 && lv_wordIndex <= auto4923750B_ae) || (auto4923750B_ai < 0 && lv_wordIndex >= auto4923750B_ae) ) ; lv_wordIndex += auto4923750B_ai ) {
-        lv_upgradeID = StringWord(libSPPN_gv_allUpgradesLevels, lv_wordIndex);
-        lv_raceID = CatalogFieldValueGet(c_gameCatalogUpgrade, lv_upgradeID, "Race", c_playerAny);
-        if ((lv_raceID == lv_raceID2)) {
-            libSPPN_gv_currentUpgradesLevels = (libSPPN_gv_currentUpgradesLevels + ((lv_upgradeID) + " "));
+        lv_upgradeID = (StringWord(libSPPN_gv_allUpgradesLevels, lv_wordIndex) + "1");
+        if ((CatalogEntryIsValid(c_gameCatalogUpgrade, lv_upgradeID) == true) && (CatalogFieldValueGet(c_gameCatalogUpgrade, lv_upgradeID, "Race", c_playerAny) == lv_raceID2)) {
+            libSPPN_gv_currentUpgradesLevels = (libSPPN_gv_currentUpgradesLevels + (StringWord(libSPPN_gv_allUpgradesLevels, lv_wordIndex) + " "));
         }
 
     }
@@ -326,7 +325,10 @@ void libSPPN_gf_SetupUnitTesterData () {
         if (((lv_upgradeLevelString == "1") || (lv_upgradeLevelString == "2") || (lv_upgradeLevelString == "3") || (lv_upgradeLevelString == "4") || (lv_upgradeLevelString == "5") || (lv_upgradeLevelString == "6") || (lv_upgradeLevelString == "7"))) {
             lv_upgradeLevel = StringToInt(StringSub(lv_upgradeID, StringLength(lv_upgradeID), (StringLength(lv_upgradeID) + 1)));
             lv_upgradeBase = StringSub(lv_upgradeID, 1, (StringLength(lv_upgradeID) - 1));
-            libSPPN_gv_allUpgradesLevels = (libSPPN_gv_allUpgradesLevels + (lv_upgradeID + " "));
+            if ((StringFind((" " + libSPPN_gv_allUpgradesLevels), lv_upgradeBase, c_stringCase) <= 0)) {
+                libSPPN_gv_allUpgradesLevels = (libSPPN_gv_allUpgradesLevels + (lv_upgradeBase + " "));
+            }
+
         }
         else {
             lv_upgradeLevel = 0;
@@ -514,6 +516,7 @@ void libSPPN_gf_RenderUnitTesterPlacementCard (int lp_player) {
     int lv_buttons_panel;
     string lv_factionString;
     int lv_p;
+    int lv_level;
     int lv_buttonSetIndex;
     int lv_abilityCommandIndex;
     string lv_casterAbility;
@@ -611,14 +614,29 @@ void libSPPN_gf_RenderUnitTesterPlacementCard (int lp_player) {
         }
     }
     else if (autoF5995DA1_val == 4) {
-        lv_maxTotal = libSPPN_gf_CountWords(libSPPN_gv_currentUpgradesSkills);
+        lv_maxTotal = (libSPPN_gf_CountWords(libSPPN_gv_currentUpgradesSkills) + libSPPN_gf_CountWords(libSPPN_gv_currentUpgradesLevels));
         lv_minShow = (1 + (libSPPN_gv_placementCardOffset[lv_selectedTab] * libSPPN_gv_placementCardColumns));
         lv_maxShow = MinI(lv_maxTotal, ((lv_minShow - 1) + (libSPPN_gv_placementCardColumns * libSPPN_gv_placementCardRows)));
         autoDC56FA66_ae = lv_maxShow;
         lv_itemIndex = lv_minShow;
         for ( ; ( (autoDC56FA66_ai >= 0 && lv_itemIndex <= autoDC56FA66_ae) || (autoDC56FA66_ai < 0 && lv_itemIndex >= autoDC56FA66_ae) ) ; lv_itemIndex += autoDC56FA66_ai ) {
             lv_buttonIndex = (lv_itemIndex - lv_minShow);
-            lv_upgrade = (StringWord(libSPPN_gv_currentUpgradesSkills, lv_itemIndex));
+            if ((lv_itemIndex <= libSPPN_gf_CountWords(libSPPN_gv_currentUpgradesLevels))) {
+                lv_level = 1;
+                while ((CatalogEntryIsValid(c_gameCatalogUpgrade, (StringWord(libSPPN_gv_currentUpgradesLevels, lv_itemIndex) + IntToString(lv_level))) == true) && (TechTreeUpgradeCount(libSPPN_gv_creator_selectedPlayer[lp_player], ((StringWord(libSPPN_gv_currentUpgradesLevels, lv_itemIndex) + IntToString(lv_level))), c_techCountCompleteOnly) > 0)) {
+                    lv_level = (lv_level + 1);
+                }
+                lv_level = (lv_level - 1);
+                if ((lv_level == 0)) {
+                    lv_upgrade = ((StringWord(libSPPN_gv_currentUpgradesLevels, lv_itemIndex) + IntToString(1)));
+                }
+                else {
+                    lv_upgrade = ((StringWord(libSPPN_gv_currentUpgradesLevels, lv_itemIndex) + IntToString(lv_level)));
+                }
+            }
+            else {
+                lv_upgrade = (StringWord(libSPPN_gv_currentUpgradesSkills, (lv_itemIndex - libSPPN_gf_CountWords(libSPPN_gv_currentUpgradesLevels))));
+            }
             lv_command = TechTreeUpgradeProducedAbilCmd(lv_upgrade, 0);
             libSPPN_gv_creator_itemunit[lv_selectedTab][lv_buttonIndex] = (lv_upgrade);
             if ((lv_command != null)) {
@@ -638,11 +656,21 @@ void libSPPN_gf_RenderUnitTesterPlacementCard (int lp_player) {
             DialogControlSetVisible(libSPPN_gv_creator_itembutton[lv_selectedTab][lv_buttonIndex], lv_players, true);
             DialogControlSetEnabled(libSPPN_gv_creator_itembutton[lv_selectedTab][lv_buttonIndex], lv_players, true);
             libNtve_gf_SetDialogItemImage(libSPPN_gv_creator_itemface[lv_selectedTab][lv_buttonIndex], (CatalogFieldValueGet(c_gameCatalogUpgrade, lv_upgrade, "Icon", c_playerAny)), lv_players);
-            if ((TechTreeUpgradeCount(libSPPN_gv_creator_selectedPlayer[lp_player], lv_upgrade, c_techCountCompleteOnly) > 0)) {
-                DialogControlSetEnabled(libSPPN_gv_creator_itemface[lv_selectedTab][lv_buttonIndex], PlayerGroupSingle(lp_player), true);
+            if ((lv_itemIndex <= libSPPN_gf_CountWords(libSPPN_gv_currentUpgradesLevels))) {
+                if ((lv_level > 0)) {
+                    DialogControlSetEnabled(libSPPN_gv_creator_itemface[lv_selectedTab][lv_buttonIndex], PlayerGroupSingle(lp_player), true);
+                }
+                else {
+                    DialogControlSetEnabled(libSPPN_gv_creator_itemface[lv_selectedTab][lv_buttonIndex], PlayerGroupSingle(lp_player), false);
+                }
             }
             else {
-                DialogControlSetEnabled(libSPPN_gv_creator_itemface[lv_selectedTab][lv_buttonIndex], PlayerGroupSingle(lp_player), false);
+                if ((TechTreeUpgradeCount(libSPPN_gv_creator_selectedPlayer[lp_player], lv_upgrade, c_techCountCompleteOnly) > 0)) {
+                    DialogControlSetEnabled(libSPPN_gv_creator_itemface[lv_selectedTab][lv_buttonIndex], PlayerGroupSingle(lp_player), true);
+                }
+                else {
+                    DialogControlSetEnabled(libSPPN_gv_creator_itemface[lv_selectedTab][lv_buttonIndex], PlayerGroupSingle(lp_player), false);
+                }
             }
             DialogControlSetVisible(libSPPN_gv_creator_itemface[lv_selectedTab][lv_buttonIndex], lv_players, true);
         }
@@ -671,8 +699,13 @@ void libSPPN_gf_RenderUnitTesterPlacementCard (int lp_player) {
             lv_buttonIndex = (lv_itemIndex - lv_minShow);
             lv_unit = (StringWord(lv_unitsDataString, lv_itemIndex));
             lv_actor = DataTableGetString(true, ("^ACTOR_" + (lv_unit)));
+            if ((CatalogEntryIsValid(c_gameCatalogActor, lv_actor) == true)) {
+                lv_icon = CatalogFieldValueGet(c_gameCatalogActor, lv_actor, "UnitIcon", lp_player);
+            }
+            else {
+                lv_icon = ("Assets\\Textures\\sc2_ui_glues_icons_purchasewarning.dds");
+            }
             libSPPN_gv_creator_itemunit[lv_selectedTab][lv_buttonIndex] = (lv_unit);
-            lv_icon = CatalogFieldValueGet(c_gameCatalogActor, lv_actor, "UnitIcon", lp_player);
             DialogControlSetVisible(libSPPN_gv_creator_itembutton[lv_selectedTab][lv_buttonIndex], lv_players, false);
             if ((lv_buttonIndex >= 15)) {
                 if ((lv_buttonIndex >= 30)) {
@@ -718,6 +751,58 @@ void libSPPN_gf_RenderUnitTesterPlacementCard (int lp_player) {
 
 // Triggers
 //--------------------------------------------------------------------------------------------------
+// Trigger: Show Unit Abilities And behaviors
+//--------------------------------------------------------------------------------------------------
+bool libSPPN_gt_UntitledTrigger001_Func (bool testConds, bool runActions) {
+    // Variable Declarations
+    unit lv_unit;
+    string lv_abil;
+    string lv_beh;
+    string lv_abils;
+    string lv_behs;
+
+    // Automatic Variable Declarations
+    unit auto235E1E06_unit;
+    int auto235E1E06_i;
+    unit auto0D27C247_u;
+    int auto0D27C247_i;
+
+    // Variable Initialization
+    lv_unit = UnitGroupUnit(UnitGroupSelected(EventPlayer()), 1);
+    lv_abils = "";
+    lv_behs = "";
+
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    auto235E1E06_unit = lv_unit;
+    auto235E1E06_i = 1;
+    for ( ; auto235E1E06_i <= UnitAbilityCount(auto235E1E06_unit) ; auto235E1E06_i += 1 ) {
+        lv_abil = UnitAbilityGet(auto235E1E06_unit, auto235E1E06_i);
+        lv_abils = (lv_abils + " ");
+        lv_abils = (lv_abils + (lv_abil));
+    }
+    auto0D27C247_u = lv_unit;
+    auto0D27C247_i = 1;
+    for ( ; auto0D27C247_i <= UnitBehaviorCountAll(auto0D27C247_u) ; auto0D27C247_i += BoolToInt(lv_beh == UnitBehaviorGet(auto0D27C247_u, auto0D27C247_i)) ) {
+        lv_beh = UnitBehaviorGet(auto0D27C247_u, auto0D27C247_i);
+        lv_behs = (lv_behs + " ");
+        lv_behs = (lv_behs + (lv_beh));
+    }
+    TriggerDebugOutput(1, StringToText(lv_abils), true);
+    TriggerDebugOutput(1, StringToText(lv_behs), true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libSPPN_gt_UntitledTrigger001_Init () {
+    libSPPN_gt_UntitledTrigger001 = TriggerCreate("libSPPN_gt_UntitledTrigger001_Func");
+    TriggerAddEventChatMessage(libSPPN_gt_UntitledTrigger001, c_playerAny, "-d", true);
+}
+
+//--------------------------------------------------------------------------------------------------
 // Trigger: Change Spawned Unit Owner
 //--------------------------------------------------------------------------------------------------
 bool libSPPN_gt_ChangeSpawnedUnitOwner_Func (bool testConds, bool runActions) {
@@ -747,7 +832,10 @@ bool libSPPN_gt_CardButtonCliked_Func (bool testConds, bool runActions) {
     // Variable Declarations
     int lv_cardlayout;
     string lv_unit;
+    int lv_offset;
+    int lv_itemIndex;
     string lv_upgrade;
+    int lv_level;
 
     // Automatic Variable Declarations
     const int auto86E26A31_ae = libSPPN_gv_panels;
@@ -849,16 +937,39 @@ bool libSPPN_gt_CardButtonCliked_Func (bool testConds, bool runActions) {
 
     }
     lv_cardlayout = (lv_cardlayout + 1);
+    lv_offset = (1 + (libSPPN_gv_placementCardOffset[lv_cardlayout] * libSPPN_gv_placementCardColumns));
     autoB7B877E5_ae = (libSPPN_gv_placementCardColumns * libSPPN_gv_placementCardRows);
     autoB7B877E5_var = 0;
     for ( ; autoB7B877E5_var <= autoB7B877E5_ae; autoB7B877E5_var += 1 ) {
         if ((EventDialogControl() == libSPPN_gv_creator_itembutton[lv_cardlayout][autoB7B877E5_var])) {
-            lv_upgrade = (libSPPN_gv_creator_itemunit[lv_cardlayout][autoB7B877E5_var]);
-            if ((TechTreeUpgradeCount(libSPPN_gv_creator_selectedPlayer[EventPlayer()], lv_upgrade, c_techCountCompleteOnly) == 1)) {
-                libNtve_gf_SetUpgradeLevelForPlayer(libSPPN_gv_creator_selectedPlayer[EventPlayer()], lv_upgrade, 0);
+            lv_itemIndex = (autoB7B877E5_var - lv_offset);
+            lv_itemIndex = (lv_itemIndex + 2);
+            if ((lv_itemIndex <= libSPPN_gf_CountWords(libSPPN_gv_currentUpgradesLevels))) {
+                lv_level = 1;
+                while ((CatalogEntryIsValid(c_gameCatalogUpgrade, (StringWord(libSPPN_gv_currentUpgradesLevels, lv_itemIndex) + IntToString(lv_level))) == true) && (TechTreeUpgradeCount(libSPPN_gv_creator_selectedPlayer[EventPlayer()], ((StringWord(libSPPN_gv_currentUpgradesLevels, lv_itemIndex) + IntToString(lv_level))), c_techCountCompleteOnly) > 0)) {
+                    lv_level = (lv_level + 1);
+                }
+                if ((CatalogEntryIsValid(c_gameCatalogUpgrade, (StringWord(libSPPN_gv_currentUpgradesLevels, lv_itemIndex) + IntToString(lv_level))) == true)) {
+                    lv_upgrade = ((StringWord(libSPPN_gv_currentUpgradesLevels, lv_itemIndex) + IntToString(lv_level)));
+                    libNtve_gf_SetUpgradeLevelForPlayer(libSPPN_gv_creator_selectedPlayer[EventPlayer()], lv_upgrade, 1);
+                }
+                else {
+                    lv_level = 1;
+                    while ((CatalogEntryIsValid(c_gameCatalogUpgrade, (StringWord(libSPPN_gv_currentUpgradesLevels, lv_itemIndex) + IntToString(lv_level))) == true)) {
+                        lv_upgrade = ((StringWord(libSPPN_gv_currentUpgradesLevels, lv_itemIndex) + IntToString(lv_level)));
+                        libNtve_gf_SetUpgradeLevelForPlayer(libSPPN_gv_creator_selectedPlayer[EventPlayer()], lv_upgrade, 0);
+                        lv_level = (lv_level + 1);
+                    }
+                }
             }
             else {
-                libNtve_gf_SetUpgradeLevelForPlayer(libSPPN_gv_creator_selectedPlayer[EventPlayer()], lv_upgrade, 1);
+                lv_upgrade = (libSPPN_gv_creator_itemunit[lv_cardlayout][autoB7B877E5_var]);
+                if ((TechTreeUpgradeCount(libSPPN_gv_creator_selectedPlayer[EventPlayer()], lv_upgrade, c_techCountCompleteOnly) == 1)) {
+                    libNtve_gf_SetUpgradeLevelForPlayer(libSPPN_gv_creator_selectedPlayer[EventPlayer()], lv_upgrade, 0);
+                }
+                else {
+                    libNtve_gf_SetUpgradeLevelForPlayer(libSPPN_gv_creator_selectedPlayer[EventPlayer()], lv_upgrade, 1);
+                }
             }
             libSPPN_gf_RenderUnitTesterPlacementCard(EventPlayer());
             break;
@@ -875,6 +986,7 @@ void libSPPN_gt_CardButtonCliked_Init () {
 }
 
 void libSPPN_InitTriggers () {
+    libSPPN_gt_UntitledTrigger001_Init();
     libSPPN_gt_ChangeSpawnedUnitOwner_Init();
     libSPPN_gt_CardButtonCliked_Init();
 }

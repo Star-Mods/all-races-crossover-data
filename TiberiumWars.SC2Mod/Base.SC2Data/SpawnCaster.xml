@@ -12,10 +12,10 @@
         <AbilArray Link="##id##"/>
     </CUnit>
 
-    <CActorUnit id="SpawnCaster1"><Model value="SpawnCaster"/></CActorUnit>
-    <CActorUnit id="SpawnCaster2"><Model value="SpawnCaster"/></CActorUnit>
-    <CActorUnit id="SpawnCaster3"><Model value="SpawnCaster"/></CActorUnit>
-    <CActorUnit id="SpawnCaster4"><Model value="SpawnCaster"/></CActorUnit>
+    <CActorUnit id="SpawnCaster1" unitName="SpawnCaster1"><Model value="SpawnCaster"/></CActorUnit>
+    <CActorUnit id="SpawnCaster2" unitName="SpawnCaster2"><Model value="SpawnCaster"/></CActorUnit>
+    <CActorUnit id="SpawnCaster3" unitName="SpawnCaster3"><Model value="SpawnCaster"/></CActorUnit>
+    <CActorUnit id="SpawnCaster4" unitName="SpawnCaster4"><Model value="SpawnCaster"/></CActorUnit>
     <CUnit id="SpawnCaster1" parent="SpawnCaster">
         <CardLayouts>
             <LayoutButtons Type="AbilCmd" Row="0" Column="0" Face="SpawnCaster1"  AbilCmd="SpawnCaster1,Build1"         />

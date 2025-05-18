@@ -17,6 +17,7 @@
     <Catalog path="GameData/Nod/AttachMethodData.xml"/>
     <Catalog path="GameData/Nod/AlertData.xml"/>
     <Catalog path="GameData/Nod/MoverData.xml"/>
+    <Catalog path="GameData/Nod/DataCollectionData.xml"/>
     <Catalog path="GameData/Nod/Units/Redeemer.xml"/>
     <Catalog path="GameData/Nod/Units/TurretHub.xml"/>
     <Catalog path="GameData/CABAL/AbilData.xml"/>
@@ -36,6 +37,7 @@
     <Catalog path="GameData/CABAL/AlertData.xml"/>
     <Catalog path="GameData/CABAL/WeaponData.xml"/>
     <Catalog path="GameData/CABAL/MoverData.xml"/>
+    <Catalog path="GameData/CABAL/DataCollectionData.xml"/>
     <Catalog path="GameData/GDI/AbilData.xml"/>
     <Catalog path="GameData/GDI/BehaviorData.xml"/>
     <Catalog path="GameData/GDI/UnitData.xml"/>
@@ -53,6 +55,7 @@
     <Catalog path="GameData/GDI/AlertData.xml"/>
     <Catalog path="GameData/GDI/WeaponData.xml"/>
     <Catalog path="GameData/GDI/MoverData.xml"/>
+    <Catalog path="GameData/GDI/DataCollectionData.xml"/>
     <Catalog path="GameData/Scrin/AbilData.xml"/>
     <Catalog path="GameData/Scrin/BehaviorData.xml"/>
     <Catalog path="GameData/Scrin/UnitData.xml"/>
@@ -70,6 +73,7 @@
     <Catalog path="GameData/Scrin/AlertData.xml"/>
     <Catalog path="GameData/Scrin/WeaponData.xml"/>
     <Catalog path="GameData/Scrin/MoverData.xml"/>
+    <Catalog path="GameData/Scrin/DataCollectionData.xml"/>
     <Catalog path="GameData/Neutral/AbilData.xml"/>
     <Catalog path="GameData/Neutral/BehaviorData.xml"/>
     <Catalog path="GameData/Neutral/UnitData.xml"/>
@@ -123,6 +127,7 @@
     <Catalog path="GameData/RedAlert/WaterData.xml"/>
     <Catalog path="GameData/RedAlert/WeaponData.xml"/>
     <Catalog path="GameData/RedAlert/UnitDataUnsorted.xml"/>
+    <Catalog path="GameData/RedAlert/DataCollectionData.xml"/>
     <Catalog path="GameData/RedAlert/Units/SovietDesolator.xml"/>
     <Catalog path="ChangelingData.xml"/>
     <Catalog path="Other.xml"/>

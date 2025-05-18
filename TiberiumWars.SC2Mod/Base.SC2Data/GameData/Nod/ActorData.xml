@@ -102,7 +102,6 @@
         <SoundArray index="ClickError" value="MarineClickError"/>
         <SoundArray index="Highlight" value="MarineHighlight"/>
     </CActorUnit>
-
     <CActorUnit default="1" id="NodVehicleBase" parent="NodUnitBase">
         <Aliases value="_UnitLarge"/>
         <Macros value="TerrainSquibAnimations"/>
@@ -357,11 +356,11 @@
         <UnitFlags index="StandAnimBirthVariation" value="0"/>
         <Scale value="1.200000"/>
     </CActorUnit>
-    <CActorUnit id="NodOperationsCenter" parent="NodBuilding" wireframe="OperationsCenterWireframe">
+    <CActorUnit id="NodOperationsCenter" parent="NodBuilding" wireframe="NodOperationsCenterWireframe">
         <Aliases value="_UnitHuge"/>
         <Macros value="QueueAnim"/>
         <CreepHeightClass value="Medium"/>
-        <DeathArray index="Normal" ModelLink="OPCenterDeath" SoundLink="NodOperationsCenterDeath"/>
+        <DeathArray index="Normal" ModelLink="OPCenterDeath"/>
         <!--        <PlacementModel value="OPCenterPlacement"/>-->
         <SoundArray index="Ready" value="EngineeringBay_Ready"/>
         <SoundArray index="What" value="EngineeringBay_What"/>
@@ -705,7 +704,7 @@
         <DeathArray index="Normal" ModelLink="NodShadowDeath" SoundLink="NodShadow_Death"/>
         <SoundArray index="Movement" value="Reaper_Movement"/>
     </CActorMissile>
-    <CActorAction id="NodShadowAttack" parent="GenericAttack" effectAttack="NodShadowPistol">
+    <CActorAction id="NodShadowAttack" parent="GenericAttack" effectAttack="NodShadowPistolDamage">
         <LaunchAttachQuery Methods="AMPatternReaper"/>
         <LaunchAssets Model="ReaperAttackLaunch" Sound="Reaper_AttackLaunch"/>
         <ContainerAssets Model="ReaperBunkerAttackLaunch" Sound="Reaper_BunkerAttackLaunch"/>
@@ -1020,7 +1019,7 @@
         <Macros value="QueueAnim"/>
         <On Terms="Behavior.ColonyInfestation.On" Send="Create InfestationEngineeringBay"/>
         <CreepHeightClass value="Medium"/>
-        <DeathArray index="Normal" ModelLink="OPCenterDeath" SoundLink="NodOperationsCenterDeath"/>
+        <DeathArray index="Normal" ModelLink="OPCenterDeath"/>
         <!--        <PlacementModel value="OPCenterPlacement"/>-->
         <Scale value="1.200000"/>
         <SoundArray index="Ready" value="EngineeringBay_Ready"/>
@@ -2184,7 +2183,17 @@
         <SoundArray index="Movement" value="Cobra_Movement"/>
     </CActorUnit>
     <CActorUnit id="NodBeam" parent="NodWheelerBase" wireframe="NodBeamCannonWireframe" icon="NodBeamCannon"/>
-    <CActorUnit id="NodScorpionTank" parent="NodVehicleBase" wireframe="NodScorpionTankWireframe"/>
+    <CActorUnit id="NodScorpionTank" parent="NodVehicleBase" wireframe="NodScorpionTankWireframe">
+        <On Terms="ActorCreation" Send="AnimPlay CoverA Cover,A PlayForever 0.000000"/>
+        <On Terms="ActorCreation" Send="AnimPlay CoverB Cover,B PlayForever 0.000000"/>
+        <On Terms="ActorCreation" Send="AnimPlay CoverC Cover,C PlayForever 0.000000"/>
+
+<!--        <On Terms="UnitBirth; ValidateUnit HasBikeUpgrade" Send="AnimClear CoverA"/>-->
+        <On Terms="Upgrade.NodDozerBlades.Add" Send="AnimClear CoverA"/>
+        <On Terms="Upgrade.NodDozerBlades.Remove" Send="AnimPlay CoverA Cover,A PlayForever 0.000000"/>
+        <On Terms="Upgrade.NodLaserCapacitors.Add" Send="AnimClear CoverB"/>
+        <On Terms="Upgrade.NodLaserCapacitors.Remove" Send="AnimPlay CoverB Cover,B PlayForever 0.000000"/>
+    </CActorUnit>
     <CActorUnit id="CabalSpecter" parent="NodUnitBase" wireframe="GhostWireframe" unitName="CabalSpecter" icon="GhostIcon">
         <Aliases value="_UnitLarge"/>
         <Macros value="TerrainSquibAnimations"/>
@@ -2625,14 +2634,14 @@
     </CActorSound>
     <CActorModel id="BlackHandImpactModelFlames2" parent="ModelAnimationStyleOneShot">
         <Terms value="Cap 1"/>
-        <On Terms="Effect.BlackHandFlameThrowerDamageCC3.Start; At Target" Send="Create"/>
+        <On Terms="Effect.NodBlackHandFlameThrowerDamage.Start; At Target" Send="Create"/>
         <On Terms="ActorOrphan" Send="Destroy"/>
         <Host Subject="_Selectable"/>
         <HostSiteOps Ops="SOpAttachRandomDamage"/>
         <Model value="ImpactModelBlackHand"/>
     </CActorModel>
     <CActorAction id="BlackHandTurretAttack2" parent="GenericAttackBase">
-        <On Terms="Effect.BlackHandFlameThrowerSet2.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.NodBlackHandFlameThrowerSet.Start; At Caster" Send="Create"/>
         <On Terms="Effect.PerditionTurretFlameThrowerDamage.Start; At Target" Send="ActionImpact"/>
         <On Terms="Effect.PerditionTurretFlameThrowerDamage.Start; At Caster; FromEffectTreeDescendant" Send="ActionDamage"/>
         <LaunchAttachQuery Methods="AMFilterWeapon"/>
@@ -3004,14 +3013,14 @@
         <ImpactMap index="None" Model="" Sound="HC_AttackImpact"/>
         <ActionFlags index="ImpactMonitorsTeleports" value="1"/>
     </CActorAction>
-    <CActorAction id="MantisWeaponAttack2" parent="GenericAttack" effectImpact="MantisWeaponMissilePackCP" effectLaunch="MantisWeaponALM2">
+    <CActorAction id="MantisWeaponAttack2" parent="GenericAttack" effectImpact="MantisWeaponMissilePackDamage" effectLaunch="MantisWeaponALM2">
         <LaunchAttachQuery Methods="AMFilterWeapon02"/>
         <LaunchAssets Model="MantisWeaponAttackLaunch" Sound="Defender_AttackLaunch"/>
         <Missile value="MantisWeaponAttackMissile"/>
         <ImpactMap index="None" Model="MantisWeaponAttackImpact" Sound="Defender_AttackImpact"/>
         <ImpactPhysics Name="JavelinImpact" MatchKeys="Basic" Physics="ThorAAAttackForce"/>
     </CActorAction>
-    <CActorAction id="MantisWeaponAttack" parent="GenericAttack" effectImpact="MantisWeaponMissilePackCP" effectLaunch="MantisWeaponALM">
+    <CActorAction id="MantisWeaponAttack" parent="GenericAttack" effectImpact="MantisWeaponMissilePackDamage" effectLaunch="MantisWeaponALM">
         <LaunchAttachQuery Methods="AMFilterWeapon01"/>
         <LaunchAssets Sound="Defender_AttackLaunch"/>
         <ImpactMap index="None" Sound="Defender_AttackImpact"/>
@@ -3260,10 +3269,10 @@
         <On Terms="Effect.NodVisionSearchArea.Start" Send="Create"/>
     </CActorSound>
     <CActorBeamSimple id="CommandoCC3AttackBeam" parent="BeamSimpleAnimationStyleContinuous">
-        <On Terms="Effect.CpmmandoweaponDamage.Start; At Caster" Send="Create"/>
+        <On Terms="Effect.NodCommandoWeaponDamage.Start; At Caster" Send="Create"/>
         <On Terms="ActorCreation" Send="TimerSet 0.125000 Die"/>
         <On Terms="TimerExpired; TimerName Die" Send="Destroy"/>
-        <On Terms="Effect.CpmmandoweaponDamage; At Caster" Send="Create"/>
+        <On Terms="Effect.NodCommandoWeaponDamage; At Caster" Send="Create"/>
         <Model value="CommandoCC3DroneAttackBeam"/>
         <HostLaunch Subject="_Selectable" Actor="Find"/>
         <HostLaunchSiteOps Ops="SOpAttachWeapon"/>
@@ -3422,7 +3431,7 @@
         <HostSiteOps Ops="SOpAttachRandomDamage"/>
         <Model value="ImpactModelFlames2"/>
     </CActorModel>
-    <CActorAction id="BeamWeaponCC3Attack" parent="GenericAttack" effectAttack="BeamWeaponCC3Damage">
+    <CActorAction id="BeamWeaponCC3Attack" parent="GenericAttack" effectAttack="NodBeamCannonWeaponDamage">
         <LaunchAssets Sound="BeamWeaponCC3_AttackLaunch"/>
         <BeamScope value="Caster"/>
         <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeNoVizEnhance VoidRaySOpForwardLaunch"/>
@@ -3594,7 +3603,7 @@
         <On Terms="ActorDestruction" Send="Create NodMissileDeath"/>
         <Model value="NodRocketCC3Weapon"/>
     </CActorMissile>
-    <CActorAction id="NodBikeRocketVolleyCC3" parent="GenericAttack" effectImpact="NodBikeRocketDamageCC3" effectLaunch="NodBikeRocketLaunchMissileCC3">
+    <CActorAction id="NodBikeRocketVolleyCC3" parent="GenericAttack" effectImpact="NodBikeRocketLauncherDamage" effectLaunch="NodBikeRocketLaunchMissileCC3">
         <LaunchAttachQuery Methods="NodBikeRocketNodCC3"/>
         <LaunchAssets Sound="NodBikeRocketAttackLaunch"/>
         <Missile value="NodBikeRocketMissileCC3"/>
@@ -4501,15 +4510,15 @@
         <On Terms="AbilMorph.*.Start; MorphTo NodEmissaryDeployed" Send="AnimBracketStart Morph Morph,Start Morph Morph,End"/>
         <On Terms="AbilMorph.*.Finish; MorphFrom NodEmissary" Send="Destroy"/>
     </CActorUnit>
-<!--    <CActorUnit id="NodEmissaryMorph" parent="NodUnitBase" wireframe="NodEmissaryDeployed" unitName="SiegeModeMorphModel" icon="NodEmissaryDeployed">-->
-<!--        <On Terms="AbilMorph.*.Start; MorphTo NodEmissaryDeployed" Send="Create"/>-->
-<!--        <On Terms="AbilMorph.*.Start; MorphTo NodEmissaryDeployed" Send="AnimPlay Start Morph,Start"/>-->
-<!--        <On Terms="AbilMorph.*.Finish; MorphFrom NodEmissary" Send="Destroy"/>-->
-<!--        <Model value="NodEmissary"/>-->
-<!--    </CActorUnit>-->
+    <!--    <CActorUnit id="NodEmissaryMorph" parent="NodUnitBase" wireframe="NodEmissaryDeployed" unitName="SiegeModeMorphModel" icon="NodEmissaryDeployed">-->
+    <!--        <On Terms="AbilMorph.*.Start; MorphTo NodEmissaryDeployed" Send="Create"/>-->
+    <!--        <On Terms="AbilMorph.*.Start; MorphTo NodEmissaryDeployed" Send="AnimPlay Start Morph,Start"/>-->
+    <!--        <On Terms="AbilMorph.*.Finish; MorphFrom NodEmissary" Send="Destroy"/>-->
+    <!--        <Model value="NodEmissary"/>-->
+    <!--    </CActorUnit>-->
     <CActorUnit id="NodEmissaryDeployed" parent="NodBuilding">
         <On Terms="AbilMorph.*.Finish; MorphTo NodEmissaryDeployed" Send="Create"/>
-        <On Terms="AbilMorph.*.Finish; MorphTo NodEmissaryDeployed" Send="AnimPlay Morph Morph,End "/>
+        <On Terms="AbilMorph.*.Finish; MorphTo NodEmissaryDeployed" Send="AnimPlay Morph Morph,End"/>
         <Aliases value="_UnitLarge"/>
         <CreepHeightClass value="Small"/>
         <Model value="NodEmissary"/>
@@ -4531,11 +4540,9 @@
         <PlacementActorModel value="NodEmissaryDeployedPM"/>
     </CActorUnit>
     <CActorModel id="NodEmissaryDeployedPM" parent="NodPlaceholderActorModel">
-<!--        <Baselines index="Stand" AnimProps="Stand,B"/>-->
-        <On Terms="ActorCreation" Send="AnimPlay Stand Stand,B PlayForever 0.000000"/>
+        <!--        <Baselines index="Stand" AnimProps="Stand,B"/>-->
+        <On Terms="ActorCreation" Send="$Stand,B PlayForever 0.000000"/>
     </CActorModel>
-
-
     <CActorUnit id="NodHarvester" parent="NodVehicleBase">
         <On Terms="Abil.NodHarvest.Start" Send="TimerSet 0.000000,0.300000 Gather"/>
         <On Terms="Abil.NodHarvest.Stop" Send="AnimClear Gather"/>
@@ -4552,13 +4559,10 @@
         <On Terms="TimerExpired; TimerName Gather" Send="AnimPlay Gather Work NonLooping"/>
         <On Terms="TimerExpired; TimerName Gather" Send="Create SCVGatherSound"/>
         <On Terms="UnitHeightUpdate.*.Land" Send="Create SCV_Land"/>
-
-
         <On Terms="ActorCreation" Send="AnimPlay CoverA Cover,A PlayForever 0.000000"/>
         <On Terms="ActorCreation" Send="AnimPlay CoverB Cover,B PlayForever 0.000000"/>
         <On Terms="ActorCreation" Send="AnimPlay CoverC Cover,C PlayForever 0.000000"/>
         <On Terms="ActorCreation" Send="AnimPlay CoverD Cover,D PlayForever 0.000000"/>
-
         <On Terms="Behavior.CarryMineralFieldMinerals.Create" Send="AnimClear CoverB"/>
         <On Terms="Behavior.CarryMineralFieldMinerals.Destroy" Send="AnimPlay CoverB Cover,B PlayForever 0.000000"/>
         <On Terms="Behavior.CarryHighYieldMineralFieldMinerals.Create" Send="AnimClear CoverC"/>
@@ -4567,11 +4571,10 @@
         <On Terms="Behavior.CarryHarvestableVespeneGeyserGas.Destroy" Send="AnimPlay CoverA Cover,A PlayForever 0.000000"/>
         <On Terms="Behavior.CarryHarvestableTerrazineGeyserGas.Create" Send="AnimClear CoverD"/>
         <On Terms="Behavior.CarryHarvestableTerrazineGeyserGas.Destroy" Send="AnimPlay CoverD Cover,D PlayForever 0.000000"/>
-
-<!--        <On Terms="Behavior.CarryHarvestableTerrazineGeyserGas.Create" Send="AnimGroupApply Gather D"/>-->
-<!--        <On Terms="Behavior.CarryHarvestableTerrazineGeyserGas.Destroy" Send="AnimGroupRemove Gather D"/>-->
-<!--        <On Terms="Behavior.CarryMineralFieldMineralsNoRemove.Create" Send="AnimGroupApply Gather E"/>-->
-<!--        <On Terms="Behavior.CarryMineralFieldMineralsNoRemove.Destroy" Send="AnimGroupRemove Gather E"/>-->
+        <!--        <On Terms="Behavior.CarryHarvestableTerrazineGeyserGas.Create" Send="AnimGroupApply Gather D"/>-->
+        <!--        <On Terms="Behavior.CarryHarvestableTerrazineGeyserGas.Destroy" Send="AnimGroupRemove Gather D"/>-->
+        <!--        <On Terms="Behavior.CarryMineralFieldMineralsNoRemove.Create" Send="AnimGroupApply Gather E"/>-->
+        <!--        <On Terms="Behavior.CarryMineralFieldMineralsNoRemove.Destroy" Send="AnimGroupRemove Gather E"/>-->
     </CActorUnit>
     <CActorUnit id="NodAirSupport" parent="NodBuilding">
         <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="Starport_Explode"/>
@@ -4942,14 +4945,6 @@
         <!--        <On Terms="AnimDone; AnimName Morph" Send="AnimPlay MorphEnd Morph,End"/>-->
         <!--        <On Terms="AnimDone; AnimName MorphEnd" Send="$Stand PlayForever,NonLooping"/>-->
     </CActorUnit>
-    <CModel id="NodHallucinogenicGrenadeImpactModel" parent="OneShotSpellFX">
-        <Model value="Assets\Effects\Terran\HyperionEMP\HyperionEMP.m3"/>
-        <EditorCategories value="Race:Terran"/>
-        <ScaleMax value="0.100000,0.100000,0.100000"/>
-        <ScaleMin value="0.100000,0.100000,0.100000"/>
-    </CModel>
-
-
     <CActorModel id="NodTiberiumInfusion" parent="ModelAnimationStyleContinuous">
         <On Terms="Behavior.NodTiberiumInfusion.On" Send="Create"/>
         <On Terms="Behavior.NodTiberiumInfusion.Off" Send="Destroy"/>
@@ -4958,7 +4953,10 @@
         <On Terms="ActorCreation" Send="AnimBracketStart $BSD"/>
         <On Terms="ActorCreation" Send="SetOpacity 0.600000"/>
     </CActorModel>
-
-
-
+    <CModel id="NodHallucinogenicGrenadeImpactModel" parent="OneShotSpellFX">
+        <Model value="Assets\Effects\Terran\HyperionEMP\HyperionEMP.m3"/>
+        <EditorCategories value="Race:Terran"/>
+        <ScaleMax value="0.100000,0.100000,0.100000"/>
+        <ScaleMin value="0.100000,0.100000,0.100000"/>
+    </CModel>
 </Catalog>

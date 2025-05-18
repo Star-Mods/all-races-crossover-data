@@ -2720,7 +2720,7 @@
             <RateMultiplierArray index="Queueable" value="0.5"/>
         </Modification>
     </CBehaviorBuff>
-    <CBehaviorBuff id="Lowpower2">
+    <CBehaviorBuff id="RALowPowerForitifcations">
         <InfoIcon value="Assets\Textures\LowPowerBuff.dds"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
         <DisableValidatorArray value="FoodAvailableOneHalf2"/>
@@ -2744,7 +2744,7 @@
             <RateMultiplierArray index="Queueable" value="0.01"/>
         </Modification>
     </CBehaviorBuff>
-    <CBehaviorBuff id="Lowpower3">
+    <CBehaviorBuff id="RASufficientpower">
         <InfoFlags index="Hidden" value="1"/>
         <InfoIcon value="Assets\Textures\btn-progression-stetmann-02-energyconfiguration.dds"/>
         <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
@@ -3519,7 +3519,7 @@
             <BehaviorLinkDisableArray index="0" removed="1"/>
         </Modification>
     </CBehaviorBuff>
-    <CBehaviorBuff id="SalvagePsiDisruptor23" parent="Salvage">
+    <CBehaviorBuff id="RARecycling" parent="Salvage">
         <Name value="Behavior/Name/Salvage2"/>
         <Duration value="4"/>
         <ExpireEffect value="SalvageShared23"/>
@@ -4521,19 +4521,19 @@
             <VitalRegenArray index="Life" value="48"/>
         </Modification>
     </CBehaviorBuff>
-    <CBehaviorBuff id="RAMovementSpeedAndArmor20Percent41">
+    <CBehaviorBuff id="RASpectraltowerchargingbehaviorverificationbehavior">
+        <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
+        <BuffFlags index="RefreshStack" value="1"/>
         <MaxStackCount value="4"/>
         <Duration value="4"/>
-        <InfoFlags index="Hidden" value="1"/>
-        <BuffFlags index="RefreshStack" value="1"/>
     </CBehaviorBuff>
-    <CBehaviorBuff id="RAMovementSpeedAndArmor20Percent42">
+    <CBehaviorBuff id="AlliedTurnoffattackskillswhentheSpectralTowerischarging">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <Duration value="3.05"/>
     </CBehaviorBuff>
-    <CBehaviorBuff id="RAMovementSpeedAndArmor20Percent422">
+    <CBehaviorBuff id="BehaviorofSpectrumTowerAttackApplicationDetection">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
         <Duration value="0.5"/>
@@ -4933,7 +4933,7 @@
         <DisableValidatorArray value="HasCargo22"/>
         <Modification AttackSpeedMultiplier="0.25"/>
     </CBehaviorBuff>
-    <CBehaviorBuff id="RAMovementSpeedAndArmor20Percent67">
+    <CBehaviorBuff id="RATowerdefensemovementCDreduced">
         <InfoFlags index="Hidden" value="1"/>
         <EditorCategories value="AbilityorEffectType:Units"/>
     </CBehaviorBuff>

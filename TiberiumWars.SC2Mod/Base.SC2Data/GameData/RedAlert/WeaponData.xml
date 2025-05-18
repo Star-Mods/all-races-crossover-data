@@ -1804,17 +1804,17 @@
         <MinimumRange value="3"/>
         <LegacyOptions index="NoDeceleration" value="1"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="ParticleBeam33">
+    <CWeaponLegacy id="Allied_SpectrumTower_Weapon">
         <EditorCategories value="Race:Protoss"/>
         <Options index="LinkedCooldown" value="0"/>
         <Options index="DisplayCooldown" value="1"/>
         <Icon value="Assets\Textures\btn-upgrade-protoss-fenix-adept-recochetglaive.dds"/>
-        <DisplayEffect value="ParticleBeam42226"/>
+        <DisplayEffect value="AlliedSpectrumTowerdamagedisplay"/>
         <TargetFilters value="Ground,Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="10"/>
-        <Period value="3"/>
-        <Effect value="RASpectralTowerAttackSet"/>
         <Arc value="360"/>
+        <Period value="3"/>
+        <Effect value="AlliedSpectralTowerAttackSet"/>
         <RandomDelayMax value="0"/>
     </CWeaponLegacy>
     <CWeaponLegacy id="ParticleBeam34">

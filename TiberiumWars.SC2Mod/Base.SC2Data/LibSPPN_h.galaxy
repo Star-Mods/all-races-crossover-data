@@ -49,6 +49,7 @@ void libSPPN_gf_MakeUnitTesterPlacementCard ();
 void libSPPN_gf_RenderUnitTesterPlacementCard (int lp_player);
 
 // Trigger Declarations
+trigger libSPPN_gt_UntitledTrigger001;
 trigger libSPPN_gt_ChangeSpawnedUnitOwner;
 trigger libSPPN_gt_CardButtonCliked;
 

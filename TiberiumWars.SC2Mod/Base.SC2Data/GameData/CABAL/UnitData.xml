@@ -648,7 +648,7 @@
         <BehaviorArray Link="StealthTankVeterancyUpgrade"/>
         <BehaviorArray Link="CloakSpecter"/>
         <!--        <WeaponArray Link="CabalStealthRocket" Turret="SiegeTank"/>-->
-        <WeaponArray Link="NodStealthRocket" Turret="SiegeTank"/>
+        <WeaponArray Link="NodStealthTankRocketLauncher" Turret="SiegeTank"/>
         <CardLayouts index="0">
             <LayoutButtons Face="GhostHoldFire" Type="AbilCmd" AbilCmd="GhostHoldFire,Execute" Row="1" Column="2"/>
             <LayoutButtons Face="WeaponsFree" Type="AbilCmd" AbilCmd="GhostWeaponsFree,Execute" Row="1" Column="3"/>
