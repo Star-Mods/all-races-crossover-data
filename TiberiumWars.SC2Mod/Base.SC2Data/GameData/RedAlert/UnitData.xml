@@ -1335,40 +1335,6 @@
         <TacticalAI value="PreviewBunkerUpgraded"/>
         <AIEvaluateAlias value="PreviewBunkerUpgraded"/>
     </CUnit>
-    <CUnit id="AuSpectrumTower" parent="AlliedStructure">
-        <Facing value="135"/>
-        <Attributes index="Light" value="1"/>
-        <LifeStart value="200"/>
-        <LifeMax value="200"/>
-        <LifeArmorName value="Unit/LifeArmorName/Auormor"/>
-        <Sight value="12"/>
-        <!--Food value="-2"/-->
-        <CostResource index="Minerals" value="1200"/>
-        <AbilArray Link="attack"/>
-        <AbilArray Link="Disband2"/>
-        <AbilArray Link="AuDefenceAdvancedCharge"/>
-        <AbilArray Link="Blink223"/>
-        <BehaviorArray Link="UpgradeLevel122"/>
-        <BehaviorArray Link="Alliedforcesbuildsmallenergycircle"/>
-        <BehaviorArray Link="PowerUserQueue"/>
-        <BehaviorArray Link="RATowerdefensemovementCDreduced"/>
-        <BehaviorArray Link="AutowerUnderConstruction"/>
-        <BehaviorArray Link="RALowPowerForitifcations"/>
-        <BehaviorArray Link="RASufficientpower"/>
-        <WeaponArray Link="Allied_SpectrumTower_Weapon"/>
-        <CardLayouts index="0">
-            <LayoutButtons Face="Disband3" Type="AbilCmd" AbilCmd="Disband2,Execute" Row="2" Column="3"/>
-            <LayoutButtons Face="Stop" Type="AbilCmd" AbilCmd="stop,Stop" Row="0" Column="1"/>
-            <LayoutButtons Face="AttackBuilding" Type="AbilCmd" AbilCmd="attack,Execute" Row="0" Column="4"/>
-            <LayoutButtons Face="RASpectralRefractionSuperposition" Type="Passive" Row="1" Column="0"/>
-            <LayoutButtons Face="RASpectralRefractionSuperposition" Type="AbilCmd" AbilCmd="AuDefenceAdvancedCharge,Execute" Row="1" Column="0"/>
-            <LayoutButtons Face="RAHandlingturrets" Type="AbilCmd" AbilCmd="Blink223,Execute" Row="0" Column="0"/>
-        </CardLayouts>
-        <Footprint value="Footprint1x1"/>
-        <PlacementFootprint value="Footprint1x1"/>
-        <TacticalAI value="PreviewBunkerUpgraded"/>
-        <AIEvaluateAlias value="PreviewBunkerUpgraded"/>
-    </CUnit>
     <CUnit id="AuRefinery" parent="AlliedStructure">
         <ResourceDropOff index="Minerals" value="1"/>
         <ResourceDropOff index="Vespene" value="1"/>

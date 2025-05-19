@@ -190,10 +190,6 @@
         <ResultFailed value="CantLoadThatUnit"/>
         <Value value="DestructibleWallStraightHorizontalBF"/>
     </CValidatorUnitType>
-    <CValidatorUnitType id="IsNotHellionTank2352">
-        <ResultFailed value="CantLoadThatUnit"/>
-        <Value value="AuSpectrumTower"/>
-    </CValidatorUnitType>
     <CValidatorUnitType id="IsNotHellionTank23522">
         <ResultFailed value="CantLoadThatUnit"/>
         <Value value="HeavyTankAdvanced23"/>
@@ -755,35 +751,6 @@
         <Compare value="GE"/>
         <Value value="2"/>
         <Behavior value="RAMovementSpeedAndArmor20Percent39"/>
-    </CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="RASpectrumTowerChargingStackVerifierLevel1">
-        <Value value="1"/>
-        <Behavior value="RASpectraltowerchargingbehaviorverificationbehavior"/>
-        <WhichUnit Value="Caster"/>
-    </CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="RASpectrumTowerChargingStackVerifier2ndFloor">
-        <Value value="2"/>
-        <Behavior value="RASpectraltowerchargingbehaviorverificationbehavior"/>
-        <WhichUnit Value="Caster"/>
-    </CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="RASpectrumTowerChargingStackVerifier3rdFloor">
-        <Value value="3"/>
-        <Behavior value="RASpectraltowerchargingbehaviorverificationbehavior"/>
-        <WhichUnit Value="Caster"/>
-    </CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="RASpectrumTowerChargingStackVerifier4thFloor">
-        <Value value="4"/>
-        <Behavior value="RASpectraltowerchargingbehaviorverificationbehavior"/>
-        <WhichUnit Value="Caster"/>
-    </CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="RATheSpectrumTowerChargingStackValidatorCannotExceed4Layers">
-        <Compare value="LE"/>
-        <Value value="4"/>
-        <Behavior value="RASpectraltowerchargingbehaviorverificationbehavior"/>
-    </CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="RATheSpectralTowerDetectsThatTheTargetHasAttackChargingBehavior">
-        <Value value="1"/>
-        <Behavior value="BehaviorofSpectrumTowerAttackApplicationDetection"/>
     </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="RAImmunityAfterChargingTheMagneticStormCoil">
         <Behavior value="RATheTeslaCoilHasBeenChargedAttackSpeedDamageAndRangeAreGreatlyIncreased"/>

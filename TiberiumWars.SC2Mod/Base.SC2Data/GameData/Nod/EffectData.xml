@@ -1472,20 +1472,6 @@
         <TargetLocationType value="Point"/>
         <EditorCategories value="Race:Nod"/>
     </CEffectSet>
-    <CEffectApplyBehavior id="ObeliskChargeAP">
-        <EditorCategories value="Race:Nod"/>
-        <Behavior value="ObeliskCharge"/>
-        <ValidatorArray index="0" value="isObelisk"/>
-    </CEffectApplyBehavior>
-    <CEffectCreatePersistent id="ObeliskChargeCP">
-        <EditorCategories value="Race:Nod"/>
-        <PeriodicEffectArray value="ObeliskChargeAP"/>
-        <PeriodicPeriodArray value="1"/>
-        <ValidatorArray value="isObelisk"/>
-        <PeriodCount value="1"/>
-        <WhichLocation Value="TargetUnit"/>
-        <Flags index="Channeled" value="1"/>
-    </CEffectCreatePersistent>
     <CEffectDamage id="SpiderWeaponDamage" parent="DU_WEAP">
         <EditorCategories value="Race:Nod"/>
         <AttributeBonus index="Massive" value="2"/>

@@ -257,25 +257,6 @@
         <Alert value="UpgradeComplete_Prot2222"/>
         <Activity value="UI/Morphing3"/>
     </CAbilMorphPlacement>
-    <CAbilEffectTarget id="AuDefenceAdvancedCharge">
-        <EditorCategories value="AbilityorEffectType:Units"/>
-        <Flags index="AutoCast" value="1"/>
-        <Flags index="AutoCastOn" value="1"/>
-        <Cost>
-            <Cooldown TimeUse="3.1"/>
-        </Cost>
-        <Range value="14"/>
-        <Arc value="360"/>
-        <AutoCastFilters value="Ground,Structure,Visible;Self,Ally,Neutral,Enemy"/>
-        <AutoCastRange value="14"/>
-        <AutoCastValidatorArray value="IsNotHellionTank2352"/>
-        <AutoCastValidatorArray value="TargetIsFiringWeapon"/>
-        <AutoCastValidatorArray value="RATheSpectrumTowerChargingStackValidatorCannotExceed4Layers"/>
-        <AutoCastValidatorArray value="RATheSpectralTowerDetectsThatTheTargetHasAttackChargingBehavior"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="RASpectralRefractionSuperposition"/>
-        <PrepEffect value="AlliedTurnoffattackskillswhentheSpectralTowerischarging"/>
-        <Effect index="0" value="RASpectrumTowerChargingStartDelay"/>
-    </CAbilEffectTarget>
     <CAbilEffectTarget id="AucryoShrinBeam">
         <Alignment value="Positive"/>
         <OrderArray index="0" Model="Assets\UI\Cursors\WayPointConfirm_Void\WayPointConfirm_Void.m3"/>

@@ -1201,21 +1201,6 @@
         <CursorEffect value="MarkofKaneSearchArea"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="MarkofKane" Requirements="HaveNodTechPlant"/>
     </CAbilEffectTarget>
-    <CAbilEffectTarget id="ObeliskCharge">
-        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
-        <Effect index="0" value="ObeliskChargeCP"/>
-        <Range value="5"/>
-        <CmdButtonArray index="Execute" DefaultButtonFace="NodEnergize" Requirements="ObeliskCharge"/>
-        <Flags index="AutoCast" value="1"/>
-        <Flags index="AutoCastOn" value="1"/>
-        <Cost>
-            <Cooldown TimeUse="1"/>
-        </Cost>
-        <SmartValidatorArray value="isObelisk"/>
-        <AutoCastValidatorArray value="isObelisk"/>
-        <AutoCastRange value="5"/>
-        <AutoCastFilters value="Visible;Neutral,Enemy"/>
-    </CAbilEffectTarget>
     <CAbilEffectTarget id="NodVision">
         <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
         <Effect index="0" value="NodVisionSearchArea"/>

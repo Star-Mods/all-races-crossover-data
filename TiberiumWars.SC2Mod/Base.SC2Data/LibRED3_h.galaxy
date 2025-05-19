@@ -36,6 +36,8 @@ point libRED3_gf_HoveringAcquisitionPointPeacekeeperBomber (unit lp_attackinguni
 point libRED3_gf_Circleacquisitionpointotherlargebombers (unit lp_attackingunit, point lp_locationoftheattackedunit);
 
 // Trigger Declarations
+trigger libRED3_gt_Charging;
+trigger libRED3_gt_BeamReflector;
 trigger libRED3_gt_Unitupgradespecialeffects;
 trigger libRED3_gt_Unitsgainexperiencebyrisingstars;
 trigger libRED3_gt_InitialminecartsoundeffectSoviet;

@@ -498,10 +498,14 @@
         <RepairTime value="45"/>
         <KillXP value="50"/>
         <AbilArray Link="ObeliskCharge"/>
+        <AbilArray Link="BeamCannonVenomCharge"/>
+        <AbilArray Link="BeamCannonDistantAttack"/>
         <BehaviorArray Link="NodBeamVeterancyUpgrade"/>
         <WeaponArray Link="NodBeamCannonWeapon" Turret="SiegeTank"/>
         <CardLayouts index="0">
-            <LayoutButtons Face="NodEnergize" Type="AbilCmd" AbilCmd="ObeliskCharge,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="NodChargeDefenses" Type="AbilCmd" AbilCmd="ObeliskCharge,Execute" Row="2" Column="0"/>
+            <LayoutButtons Face="NodBeamReflector" Type="AbilCmd" AbilCmd="BeamCannonVenomCharge,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="NodBeamReflector" Type="AbilCmd" AbilCmd="BeamCannonDistantAttack,Execute" Row="2" Column="2"/>
         </CardLayouts>
         <Radius value="0.875"/>
         <SeparationRadius value="1"/>
@@ -1132,6 +1136,12 @@
         <BehaviorArray Link="CloakVenom"/>
         <BehaviorArray Link="VenomCC3VeterancyUpgrade"/>
         <BehaviorArray Link="CloakVenomReal"/>
+        <AbilArray Link="BeamCannonVenomCharge"/>
+        <AbilArray Link="BeamCannonDistantAttackFinal"/>
+        <CardLayouts index="0">
+            <LayoutButtons Face="NodBeamReflector" Type="AbilCmd" AbilCmd="BeamCannonVenomCharge,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="NodBeamReflector" Type="AbilCmd" AbilCmd="BeamCannonDistantAttackFinal,Execute" Row="2" Column="2"/>
+        </CardLayouts>  
         <WeaponArray Link="NodVenomparticlebeam" Turret="SiegeTank"/>
         <Radius value="0.625"/>
         <SeparationRadius value="0.625"/>

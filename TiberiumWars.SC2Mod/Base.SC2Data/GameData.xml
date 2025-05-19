@@ -20,6 +20,7 @@
     <Catalog path="GameData/Nod/DataCollectionData.xml"/>
     <Catalog path="GameData/Nod/Units/Redeemer.xml"/>
     <Catalog path="GameData/Nod/Units/TurretHub.xml"/>
+    <Catalog path="GameData/Nod/Units/BeamCannon.xml"/>
     <Catalog path="GameData/CABAL/AbilData.xml"/>
     <Catalog path="GameData/CABAL/BehaviorData.xml"/>
     <Catalog path="GameData/CABAL/UnitData.xml"/>
@@ -129,6 +130,7 @@
     <Catalog path="GameData/RedAlert/UnitDataUnsorted.xml"/>
     <Catalog path="GameData/RedAlert/DataCollectionData.xml"/>
     <Catalog path="GameData/RedAlert/Units/SovietDesolator.xml"/>
+    <Catalog path="GameData/RedAlert/Units/SpectrumTower.xml"/>
     <Catalog path="ChangelingData.xml"/>
     <Catalog path="Other.xml"/>
     <Catalog path="SpawnCaster.xml"/>

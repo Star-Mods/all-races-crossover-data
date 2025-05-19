@@ -2654,16 +2654,6 @@
         <On Terms="Abil.NodNukeStrikeEMP.Cursor" Send="Create"/>
         <On Terms="Abil.NodInvertWarheadStrike.Cursor" Send="Create"/>
     </CActorSplat>
-    <CActorBeamSimple id="NodChargeBeam" parent="BeamSimpleAnimationStyleContinuous">
-        <Inherits index="Visibility" value="1"/>
-        <On Terms="Effect.ObeliskChargeCP.Start" Send="Create"/>
-        <On Terms="Effect.ObeliskChargeCP.Stop" Send="Destroy"/>
-        <HostForProps Subject="_Unit" Scope="Caster" Actor="Find"/>
-        <HostLaunch Subject="_Unit" Scope="Caster" Actor="Find"/>
-        <HostLaunchSiteOps Ops="SOpAttachWeapon"/>
-        <HostImpact Subject="_Unit" Scope="Target" Actor="Find"/>
-        <HostImpactSiteOps Ops="SOpAttachCenter"/>
-    </CActorBeamSimple>
     <CActorAction id="CabalCenturionWeapon" parent="GenericAttack" effectAttack="CabalCenturionWeaponDamage">
         <LaunchAttachQuery Methods="AMFilterWeapon"/>
         <LaunchAssets Model="SiegeTankAttackLaunch" Sound="CabalAvengerTank_AttackLaunch"/>

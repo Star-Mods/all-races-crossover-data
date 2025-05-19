@@ -3034,9 +3034,6 @@
         <TeleportEffect value="RAApplyInvincibilityWithin7SecondsAfterTeleportation"/>
         <ValidatorArray value="IsNotHellionTank2344"/>
     </CEffectTeleport>
-    <CEffectApplyBehavior id="AlliedTurnoffattackskillswhentheSpectralTowerischarging">
-        <WhichUnit Value="Caster"/>
-    </CEffectApplyBehavior>
     <CEffectCreateUnit id="Auchrono2">
         <WhichLocation Value="TargetPoint"/>
         <SpawnUnit value="AuChronoTeleportationCoverUnit"/>
@@ -5392,48 +5389,6 @@
     <CEffectDamage id="ParticleBeam422" parent="DU_WEAP">
         <Kind value="Ranged"/>
         <Amount value="25"/>
-        <SearchFilters value="-;Player,Ally,Neutral"/>
-        <SearchFlags index="OffsetByUnitRadius" value="0"/>
-        <SearchFlags index="SameCliff" value="0"/>
-    </CEffectDamage>
-    <CEffectDamage id="AlliedSpectralTowerDamageLevel1" parent="DU_WEAP">
-        <Kind value="Ranged"/>
-        <Amount value="15"/>
-        <SearchFilters value="-;Player,Ally,Neutral"/>
-        <SearchFlags index="OffsetByUnitRadius" value="0"/>
-        <SearchFlags index="SameCliff" value="0"/>
-    </CEffectDamage>
-    <CEffectDamage id="AlliedSpectralTowerDamageLevel2" parent="DU_WEAP">
-        <Kind value="Ranged"/>
-        <Amount value="30"/>
-        <SearchFilters value="-;Player,Ally,Neutral"/>
-        <SearchFlags index="OffsetByUnitRadius" value="0"/>
-        <SearchFlags index="SameCliff" value="0"/>
-    </CEffectDamage>
-    <CEffectDamage id="AlliedSpectralTowerDamageLevel3" parent="DU_WEAP">
-        <Kind value="Ranged"/>
-        <Amount value="45"/>
-        <SearchFilters value="-;Player,Ally,Neutral"/>
-        <SearchFlags index="OffsetByUnitRadius" value="0"/>
-        <SearchFlags index="SameCliff" value="0"/>
-    </CEffectDamage>
-    <CEffectDamage id="AlliedSpectralTowerDamageLevel4" parent="DU_WEAP">
-        <Kind value="Ranged"/>
-        <Amount value="60"/>
-        <SearchFilters value="-;Player,Ally,Neutral"/>
-        <SearchFlags index="OffsetByUnitRadius" value="0"/>
-        <SearchFlags index="SameCliff" value="0"/>
-    </CEffectDamage>
-    <CEffectDamage id="AlliedSpectralTowerDamageLevel5" parent="DU_WEAP">
-        <Kind value="Ranged"/>
-        <Amount value="75"/>
-        <SearchFilters value="-;Player,Ally,Neutral"/>
-        <SearchFlags index="OffsetByUnitRadius" value="0"/>
-        <SearchFlags index="SameCliff" value="0"/>
-    </CEffectDamage>
-    <CEffectDamage id="AlliedSpectrumTowerdamagedisplay" parent="DU_WEAP">
-        <Kind value="Ranged"/>
-        <Amount value="30"/>
         <SearchFilters value="-;Player,Ally,Neutral"/>
         <SearchFlags index="OffsetByUnitRadius" value="0"/>
         <SearchFlags index="SameCliff" value="0"/>
@@ -8263,12 +8218,6 @@
         <SpawnEffect value="RAPhantomTankDamageSearch"/>
         <SpawnUnit value="RAPhantomTankSpectralVestUnit"/>
     </CEffectCreateUnit>
-    <CEffectCreateUnit id="RASpectralTowerScatteringVestUnit">
-        <WhichLocation Value="TargetUnitOrPoint"/>
-        <Origin Value="TargetUnitOrPoint"/>
-        <SpawnEffect value="RASpectralTowerSplashDamageEffectSwitching5Stages"/>
-        <SpawnUnit value="RAPhantomTankSpectralVestUnit"/>
-    </CEffectCreateUnit>
     <CEffectCreateUnit id="RAPrismaticTankVestUnit">
         <WhichLocation Value="TargetUnitOrPoint"/>
         <Origin Value="TargetUnitOrPoint"/>
@@ -8279,71 +8228,6 @@
         <EffectArray value="88cmKwK3634"/>
         <EffectArray value="PsiDisruptionSearchArea2"/>
     </CEffectSet>
-    <CEffectSet id="RACollectionOfSpectralTowerChargingEffects">
-        <EffectArray value="RASpectralTowerChargesFakeDamage"/>
-        <EffectArray value="RASpectrumTowerChargingImposesBehavioralVerification"/>
-    </CEffectSet>
-    <CEffectApplyBehavior id="RASpectrumTowerChargingImposesBehavioralVerification">
-        <Behavior value="RASpectraltowerchargingbehaviorverificationbehavior"/>
-    </CEffectApplyBehavior>
-    <CEffectCreatePersistent id="RASpectrumTowerChargingStartDelay">
-        <WhichLocation Value="TargetUnitOrPoint"/>
-        <InitialDelay value="0.05"/>
-        <Flags index="Channeled" value="1"/>
-        <PeriodCount value="1"/>
-        <PeriodicEffectArray value="RACollectionOfSpectralTowerChargingEffects"/>
-        <PeriodicPeriodArray value="0.02"/>
-    </CEffectCreatePersistent>
-    <CEffectCreatePersistent id="RASpectrumTowerAttackStartDelay">
-        <WhichLocation Value="TargetUnitOrPoint"/>
-        <Flags index="Channeled" value="1"/>
-        <InitialDelay value="1"/>
-        <InitialEffect value="RASpectralTowerDamageEffectSwitching5Stages"/>
-        <ExpireDelay value="0.1"/>
-        <FinalEffect value="RASpectralTowerRemovesDamageBonusVerificationBehavior"/>
-        <PeriodCount value="1"/>
-        <PeriodicEffectArray value="RASpectralTowerScatteringVestUnit"/>
-        <PeriodicPeriodArray value="0"/>
-    </CEffectCreatePersistent>
-    <CEffectCreatePersistent id="RALightPrismTowerAttackStartDelay">
-        <WhichLocation Value="TargetUnitOrPoint"/>
-        <Flags index="Channeled" value="1"/>
-        <ExpireDelay value="0.1"/>
-        <PeriodCount value="5"/>
-        <PeriodicPeriodArray value="0.2"/>
-        <FinalEffect value="RARASelfPropelledRocketLauncherWeaponEffectSet2"/>
-    </CEffectCreatePersistent>
-    <CEffectSwitch id="RASpectralTowerSplashDamageEffectSwitching5Stages">
-        <CaseArray Validator="RASpectrumTowerChargingStackVerifierLevel1" Effect="RASpectralSplashDamageSearchLevel2"/>
-        <CaseArray Validator="RASpectrumTowerChargingStackVerifier2ndFloor" Effect="RASpectralSplashDamageSearchLevel3"/>
-        <CaseArray Validator="RASpectrumTowerChargingStackVerifier3rdFloor" Effect="RASpectralSplashDamageSearchLevel4"/>
-        <CaseArray Validator="RASpectrumTowerChargingStackVerifier4thFloor" Effect="RASpectralSplashDamageSearchLevel5"/>
-        <CaseDefault value="RASpectralSplashDamageSearchLevel1"/>
-        <TargetLocationType value="UnitOrPoint"/>
-    </CEffectSwitch>
-    <CEffectSwitch id="RASpectralTowerDamageEffectSwitching5Stages">
-        <CaseArray Validator="RASpectrumTowerChargingStackVerifierLevel1" Effect="AlliedSpectralTowerDamageLevel2"/>
-        <CaseArray Validator="RASpectrumTowerChargingStackVerifier2ndFloor" Effect="AlliedSpectralTowerDamageLevel3"/>
-        <CaseArray Validator="RASpectrumTowerChargingStackVerifier3rdFloor" Effect="AlliedSpectralTowerDamageLevel4"/>
-        <CaseArray Validator="RASpectrumTowerChargingStackVerifier4thFloor" Effect="AlliedSpectralTowerDamageLevel5"/>
-        <CaseDefault value="AlliedSpectralTowerDamageLevel1"/>
-        <TargetLocationType value="UnitOrPoint"/>
-    </CEffectSwitch>
-    <CEffectDamage id="RASpectralTowerChargesFakeDamage"/>
-    <CEffectSet id="AlliedSpectralTowerAttackSet">
-        <EffectArray value="RASpectrumTowerAttackStartDelay"/>
-        <EffectArray value="RASpectrumTowerAttacksItsOwnApplicationBehaviorDetection"/>
-        <TargetLocationType value="Unknown"/>
-    </CEffectSet>
-    <CEffectApplyBehavior id="RASpectrumTowerAttacksItsOwnApplicationBehaviorDetection">
-        <ValidatorArray index="0" removed="1"/>
-        <WhichUnit Value="Caster"/>
-        <Behavior value="BehaviorofSpectrumTowerAttackApplicationDetection"/>
-    </CEffectApplyBehavior>
-    <CEffectRemoveBehavior id="RASpectralTowerRemovesDamageBonusVerificationBehavior">
-        <WhichUnit Value="Caster"/>
-        <BehaviorLink value="RASpectraltowerchargingbehaviorverificationbehavior"/>
-    </CEffectRemoveBehavior>
     <CEffectApplyBehavior id="SovietDesolatorDestroybehaviorimposedononeself1">
         <WhichUnit Value="Caster"/>
         <Behavior value="SuRecycling"/>
@@ -9202,6 +9086,14 @@
         <Death value="Disintegrate"/>
         <ArmorReduction value="1"/>
     </CEffectDamage>
+    <CEffectCreatePersistent id="RALightPrismTowerAttackStartDelay">
+        <WhichLocation Value="TargetUnitOrPoint"/>
+        <Flags index="Channeled" value="1"/>
+        <ExpireDelay value="0.1"/>
+        <PeriodCount value="5"/>
+        <PeriodicPeriodArray value="0.2"/>
+        <FinalEffect value="RARASelfPropelledRocketLauncherWeaponEffectSet2"/>
+    </CEffectCreatePersistent>
     <CEffectSet id="RARASelfPropelledRocketLauncherWeaponEffectSet2">
         <EffectArray value="ParticleBeam623"/>
         <EffectArray value="AuPrismTwrAB"/>
@@ -10981,31 +10873,6 @@
         <SearchFilters value="Ground;Player,Ally,Neutral,Missile,Dead,Hidden,Invulnerable"/>
         <AreaArray MaxCount="6" Radius="2" Effect="ParticleBeam4"/>
         <ExcludeArray Value="Target"/>
-    </CEffectEnumArea>
-    <CEffectEnumArea id="RASpectralSplashDamageSearchLevel1">
-        <ExcludeArray Value="Target"/>
-        <SearchFilters value="Ground;Self,Player,Ally,Neutral,Missile,Dead,Invulnerable"/>
-        <AreaArray MaxCount="4" Radius="2" Effect="AlliedSpectralTowerDamageLevel1"/>
-    </CEffectEnumArea>
-    <CEffectEnumArea id="RASpectralSplashDamageSearchLevel2">
-        <ExcludeArray Value="Target"/>
-        <SearchFilters value="Ground;Self,Player,Ally,Neutral,Missile,Dead,Invulnerable"/>
-        <AreaArray MaxCount="5" Radius="2.5" Effect="AlliedSpectralTowerDamageLevel2"/>
-    </CEffectEnumArea>
-    <CEffectEnumArea id="RASpectralSplashDamageSearchLevel3">
-        <ExcludeArray Value="Target"/>
-        <SearchFilters value="Ground;Self,Player,Ally,Neutral,Missile,Dead,Invulnerable"/>
-        <AreaArray MaxCount="6" Radius="3" Effect="AlliedSpectralTowerDamageLevel3"/>
-    </CEffectEnumArea>
-    <CEffectEnumArea id="RASpectralSplashDamageSearchLevel5">
-        <ExcludeArray Value="Target"/>
-        <SearchFilters value="Ground;Self,Player,Ally,Neutral,Missile,Dead,Invulnerable"/>
-        <AreaArray MaxCount="8" Radius="4" Effect="AlliedSpectralTowerDamageLevel5"/>
-    </CEffectEnumArea>
-    <CEffectEnumArea id="RASpectralSplashDamageSearchLevel4">
-        <ExcludeArray Value="Target"/>
-        <SearchFilters value="Ground;Self,Player,Ally,Neutral,Missile,Dead,Invulnerable"/>
-        <AreaArray MaxCount="7" Radius="3.5" Effect="AlliedSpectralTowerDamageLevel4"/>
     </CEffectEnumArea>
     <CEffectApplyBehavior id="RAPhantomTankExposedDuringAttack">
         <WhichUnit Value="Caster"/>
