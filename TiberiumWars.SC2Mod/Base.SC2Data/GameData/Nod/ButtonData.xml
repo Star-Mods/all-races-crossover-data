@@ -331,6 +331,7 @@
     <CButton id="CabalDefenseCrawlerPack" parent="NodButton" icon="NodDefenseGroupMCVIcon">
         <HotkeySet value="TankModes"/>
     </CButton>
+    <CButton id="NodCarryallCommandeerTechnology" parent="NodButton" icon="NAAvatarCommandeerTechnology"/>
     <CButton id="NodAvatarCommandeerTechnology" parent="NodButton" icon="NAAvatarCommandeerTechnology"/>
     <CButton id="NodHallucinogenicGrenade" parent="NodButton" icon="NAHallucinogenicGrenades"/>
     <CButton id="NodConfessorAura" parent="NodButton"/>

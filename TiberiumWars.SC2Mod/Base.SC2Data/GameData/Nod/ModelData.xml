@@ -325,9 +325,8 @@
         <EditorCategories value="Race:Nod"/>
         <Occlusion value="Show"/>
     </CModel>
-    <CModel id="NodCarryall" parent="Unit">
-        <Model value="Assets\Models\Nod Carryall\nodCarryall.m3"/>
-        <EditorCategories value="Race:Nod"/>
+    <CModel id="NodCarryall" parent="NodUnit">
+        <!-- <Model value="Assets\Models\Nod Carryall\nodCarryall.m3"/> -->
         <Radius value="0.800000"/>
         <SelectionOffset value="0.000000,0.000000,-0.500000"/>
         <SelectionRadius value="1.066600"/>

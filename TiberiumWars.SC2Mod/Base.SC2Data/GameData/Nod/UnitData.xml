@@ -208,8 +208,8 @@
         <Collide index="Small" value="1"/>
         <Attributes index="Light" value="1"/>
         <Attributes index="Mechanical" value="1"/>
-        <LifeStart value="65"/>
-        <LifeMax value="65"/>
+        <LifeStart value="75"/>
+        <LifeMax value="75"/>
         <Speed value="3.6015"/>
         <Acceleration value="4.25"/>
         <LateralAcceleration value="46"/>
@@ -1108,9 +1108,17 @@
         <KillXP value="40"/>
         <AbilArray Link="NodCarryallTransport"/>
         <CardLayouts index="0">
+            <LayoutButtons Face="NodCarryallCommandeerTechnology" Type="AbilCmd" AbilCmd="NodCarryallCommandeerTechnology,Execute" Row="2" Column="2"/>
+
             <LayoutButtons Face="NodCarryallLoad" Type="AbilCmd" AbilCmd="NodCarryall,Load" Row="2" Column="0"/>
             <LayoutButtons Face="NodCarryallUnloadAll" Type="AbilCmd" AbilCmd="NodCarryall,UnloadAt" Row="2" Column="1"/>
         </CardLayouts>
+        <WeaponArray Link="FakeWeaponDummy" Turret="NodCarryallTurret"/>
+
+
+
+        <AbilArray Link="NodCarryallCommandeerTechnology"/>
+
         <Radius value="0.75"/>
         <SeparationRadius value="0.75"/>
         <ScoreMake value="100"/>

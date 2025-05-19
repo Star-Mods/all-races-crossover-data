@@ -838,11 +838,110 @@
         <On Terms="ActorCreation" Send="Create SpecialOpsDropship_FlyIn"/>
         <On Terms="Abil.SpecOpsDropshipTransport.TransportUnloadStart" Target="SpecialOpsDropship_FlyIn" Send="Destroy"/>
         <On Terms="Abil.SpecOpsDropshipTransport.TransportUnloadStop" Send="Create SpecialOpsDropship_FlyOut"/>
+       
+       
+       
+         <On index="65" Terms="WeaponStart.NodAvatarBeamCannon.AttackStart" Send="AnimBracketStart Attack Attack,B"/>
+        <On index="67" Terms="WeaponStop.NodAvatarBeamCannon.AttackStop" Send="AnimBracketStop Attack,B"/>
+        <On Terms="UnitMovementUpdate.*.Walk" Send="TimerSet 0.250000 KillBeam"/>
+        <On Terms="Abil.attack.ReadyStop" Send="TimerSet 0.250000 KillBeam"/>
+        
+        <On Terms="TimerExpired; TimerName KillBeam" Target="MercHellionAttackBeam" Send="Destroy"/>
+        <On Terms="TimerExpired; TimerName KillBeam" Target="MercHellionAttackSecondaryBeam" Send="Destroy"/>
+
+        <On Terms="ActorCreation" Send="AnimPlay CoverA Cover,A PlayForever 0.000000"/>
+        <On Terms="ActorCreation" Send="AnimPlay CoverB Cover,B PlayForever 0.000000"/>
+        
+        <On Terms="Effect.NodCarryallDetector.Start; At Caster" Send="AnimClear CoverB"/>
+        <On Terms="Abil.NodCarryallTransport.TransportOccupy" Send="AnimClear CoverA"/>
+        <On Terms="Abil.NodCarryallTransport.TransportEmpty" Send="AnimPlay CoverA Cover,A PlayForever 0.000000"/>
+
+
+        <On Terms="Effect.NodCarryallFlameTank.Start; At Caster" Send="AnimPlay Morph Morph NonLooping"/>
+        <On Terms="Effect.NodCarryallStealthTank.Start; At Caster" Send="AnimPlay Morph Morph NonLooping"/>
+        <On Terms="Effect.NodCarryallBeamCannon.Start; At Caster" Send="AnimPlay Morph Morph NonLooping"/>
+        <On Terms="AnimDone; AnimName Morph" Send="AnimPlay Stand Stand,Morph PlayForever 0.000000"/>
+
+
+        <On Terms="UnitDeath.##unitName##; AnimPlaying CoverA" Target="_DeathModel" Send="AnimPlay CoverA Cover,A PlayForever"/>
+        <On Terms="UnitDeath.##unitName##; AnimPlaying CoverB" Target="_DeathModel" Send="AnimPlay CoverB Cover,B PlayForever"/>
+       
+       
+    
         <DeathArray index="Normal" ModelLink="ExplodingBarrelLarge" SoundLink="SpecialOpsDropship_Explode"/>
         <BarOffset value="50"/>
         <BarWidth value="102"/>
         <Scale value="0.800000"/>
     </CActorUnit>
+    <CActorTurret id="NodCarryallTurret">
+        <On Terms="TurretEnable.NodCarryallTurret" Send="Create"/>
+        <TurretBody Subject="NodCarryallTurretActorModel"/>
+    </CActorTurret>
+    <CTurret id="NodCarryallTurret">
+        <YawArc value="360"/>
+        <YawRate value="720"/>
+        <YawIdleRate value="45"/>
+        <Fidget DelayMax="30" DelayMin="10"/>
+    </CTurret>
+    <CActorSite id="NodCarryallTurretAS">
+        <On Terms="UnitBirth.NodCarryall" Send="Create"/>
+        <On Terms="UnitDeath.NodCarryall" Send="Destroy"/>
+        <Host Subject="NodCarryallTurretActorModel"/>
+        <HostSiteOps Ops="SOpAttachHardPoint01"/>
+    </CActorSite>
+
+    <CActorModel id="NodCarryallTurretActorModel" parent="ModelAddition">
+        <On Terms="Behavior.NodCarryallFlameTank.On" Send="Create"/>
+        <On Terms="Behavior.NodCarryallBeamCannon.On" Send="Create"/>
+        <On Terms="Behavior.NodCarryallStealthTank.On" Send="Create"/>
+        
+        <On Terms="WeaponStart.*.AttackStart" Send="AnimBracketStart Attack Attack"/>
+        <On Terms="WeaponStop.*.AttackStop" Send="AnimBracketStop Attack"/>
+        <On Terms="WeaponStart.*.AttackStart; WeaponTargetElevation GE 20.000000" Send="AnimBracketStart Attack Attack,Superior"/>
+        <On Terms="WeaponStart.*.AttackStart; WeaponTargetElevation LE -20.000000" Send="AnimBracketStart Attack Attack,Inferior"/>
+     
+        <On Terms="Behavior.NodCarryallFlameTank.On" Send="ModelSwap NodFlameTank"/>
+        <On Terms="Behavior.NodCarryallBeamCannon.On" Send="ModelSwap NodBeam"/>
+        <On Terms="Behavior.NodCarryallStealthTank.On" Send="ModelSwap NodStealthTank"/>
+
+
+        <On Terms="ActorCreation" Send="AnimPlay CoverZ Cover,Z PlayForever 0.000000"/>
+        <!--todo-->
+        <Model value="NodRaider"/>
+        <Host Subject="NodCarryall"/>
+        <HostSiteOps Ops="SOpAttachHardPoint01"/>
+    </CActorModel>
+
+
+
+
+
+    <CBehaviorBuff default="1" id="NodCarryallTurret">
+        <?token id="icon" value="##id##"?>
+        <?token id="weapon" value="##id##"?>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Icons\Weapons\##icon##.dds"/>
+        <EditorCategories value="Race:WZ,AbilityorEffectType:Units"/>
+        <Modification>
+            <WeaponArray Link="##weapon##" Turret="NodCarryallTurret"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodCarryallDetector">
+        <InfoFlags index="Hidden" value="1"/>
+        <DisableValidatorArray value="IsNotStructure"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <Modification Detect="11"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodCarryallFlameTank" weapon="FlameTankFlamethrower" parent="NodCarryallTurret"/>
+    <CBehaviorBuff id="NodCarryallBeamCannon" weapon="NodBeamCannonWeapon" parent="NodCarryallTurret"/>
+    <CBehaviorBuff id="NodCarryallStealthTank" weapon="NodStealthTankRocketLauncher" parent="NodCarryallTurret"/>
+
+
+
+
+
+
+
     <CActorUnit id="CabalVertigo" parent="NodUnitBase" wireframe="VertigoBomberWireframe" unitName="CabalVertigo" icon="VertigoBomberIcon">
         <Aliases value="_UnitLarge"/>
         <On Terms="UnitBirth.CabalVertigoLanded" Send="Create"/>

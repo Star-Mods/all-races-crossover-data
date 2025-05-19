@@ -1435,16 +1435,6 @@
         <AmmoUnit value="SpecterWeapon"/>
         <ImpactLocation Value="TargetPoint"/>
     </CEffectLaunchMissile>
-    <CEffectDamage id="NodBeamCannonWeaponDamage" parent="DU_WEAP">
-        <EditorCategories value="Race:Nod"/>
-        <AttributeBonus index="Armored" value="6"/>
-        <Kind value="Ranged"/>
-        <KindSplash value="Ranged"/>
-        <Amount value="11"/>
-        <SearchFilters value="-;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <SearchFlags index="OffsetByUnitRadius" value="0"/>
-        <SearchFlags index="SameCliff" value="0"/>
-    </CEffectDamage>
     <CEffectDamage id="CabalWidowLaserDamage" parent="DU_WEAP">
         <EditorCategories value="Race:Nod"/>
         <AttributeBonus index="Massive" value="30"/>
@@ -3382,6 +3372,38 @@
         <EditorCategories value="Race:UPL"/>
         <!--        <ValidatorArray value="TargetIsNotNodConfessor"/>-->
     </CEffectEnumArea>
+
+
+    <CEffectSet id="NodCarryallCommandeerTechnologySet">
+        <ValidatorArray value="IsNodCarryallCommandeerTechnologyTarget"/>
+        <EffectArray value="NodCarryallCommandeerTechnologySwitch"/>
+        <EffectArray value="KillTargetDeathNormal"/>
+    </CEffectSet>
+    <CEffectSwitch id="NodCarryallCommandeerTechnologySwitch">
+        <ValidatorArray value="NotWarpingIn"/>
+        <ValidatorArray value="NotFrenzied"/>
+        <ValidatorArray value="NotHeroic"/>
+        <ValidatorArray value="NotHeroic"/>
+        <CaseArray Validator="IsNodCarryallCommandeerTechnologyFlameTank" Effect="NodCarryallFlameTank"/>
+        <CaseArray Validator="IsNodCarryallCommandeerTechnologyStealthTank" Effect="NodCarryallStealthTank"/>
+        <CaseArray Validator="IsNodCarryallCommandeerTechnologyDetector" Effect="NodCarryallDetector"/>
+        <CaseArray Validator="IsNodCarryallCommandeerTechnologyBeam" Effect="NodCarryallBeamCannon"/>
+    </CEffectSwitch>
+    <CEffectApplyBehavior id="NodCarryallFlameTank">
+        <WhichUnit Value="Caster"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="NodCarryallStealthTank">
+        <WhichUnit Value="Caster"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="NodCarryallDetector">
+        <WhichUnit Value="Caster"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="NodCarryallBeamCannon">
+        <WhichUnit Value="Caster"/>
+    </CEffectApplyBehavior>
+
+
+
     <CEffectSet id="NodAvatarCommandeerTechnologySet">
         <ValidatorArray value="IsNodAvatarCommandeerTechnologyTarget"/>
         <EffectArray value="NodAvatarCommandeerTechnologySwitch"/>

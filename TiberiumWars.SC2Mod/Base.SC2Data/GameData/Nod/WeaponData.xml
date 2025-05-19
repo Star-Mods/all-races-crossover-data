@@ -242,17 +242,6 @@
         <Effect value="NodPurifierFlameThrowerSet"/>
         <AllowedMovement value="Moving"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="NodBeamCannonWeapon" parent="NodWeapon" icon="FXNod_LasersAddonUpgrade">
-        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
-        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
-        <DisplayEffect value="NodBeamCannonWeaponDamage"/>
-        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
-        <Range value="10"/>
-        <TeleportResetRange value="0"/>
-        <Period value="3"/>
-        <Effect value="NodBeamCannonWeaponDamage"/>
-        <AllowedMovement value="Moving"/>
-    </CWeaponLegacy>
     <CWeaponLegacy id="NodCobraLaser" parent="NodWeapon">
         <Options index="Disabled" value="1"/>
         <Options index="Hidden" value="1"/>

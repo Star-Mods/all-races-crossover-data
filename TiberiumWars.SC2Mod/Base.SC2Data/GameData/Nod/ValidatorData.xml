@@ -304,6 +304,30 @@
     <CValidatorCombine id="IsNodAvatarCommandeerTechnologyStealth">
         <CombineArray value="IsNodStealthTank"/>
     </CValidatorCombine>
+
+    <CValidatorCombine id="IsNodCarryallCommandeerTechnologyTarget">
+        <CombineArray value="IsNodCarryallCommandeerTechnologyFlameTank"/>
+        <CombineArray value="IsNodCarryallCommandeerTechnologyDetector"/>
+        <CombineArray value="IsNodCarryallCommandeerTechnologyBeam"/>
+        <CombineArray value="IsNodCarryallCommandeerTechnologyStealthTank"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="IsNodCarryallCommandeerTechnologyFlameTank">
+        <CombineArray value="IsNodFlameTank"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="IsNodCarryallCommandeerTechnologyDetector">
+        <CombineArray value="IsNodAttackBike"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="IsNodCarryallCommandeerTechnologyBeam">
+        <CombineArray value="IsNodBeam"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="IsNodCarryallCommandeerTechnologyStealthTank">
+        <CombineArray value="IsNodStealthTank"/>
+    </CValidatorCombine>
+
+
+
+
+    
     <CValidatorPlayerRequirement id="UseBikeUpgrade">
         <Find value="1"/>
         <Value value="UseBikeUpgrade"/>

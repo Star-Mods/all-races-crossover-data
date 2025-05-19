@@ -83,39 +83,6 @@
             <Cooldown TimeUse="1"/>
         </Cost>
     </CAbilEffectTarget>
-    <CEffectCreatePersistent id="BeamCannonVenomChargeCP">
-        <EditorCategories value="Race:Nod"/>
-        <PeriodicEffectArray value="BeamCannonVenomChargeAP"/>
-        <PeriodicPeriodArray value="1"/>
-        <ValidatorArray value="IsBeamReflector"/>
-        <PeriodCount value="1"/>
-        <WhichLocation Value="TargetUnit"/>
-        <Flags index="Channeled" value="1"/>
-        <Flags index="PersistUntilDestroyed" value="1"/>
-    </CEffectCreatePersistent>
-
-
-
-
-
-
-
-
-
-
-    <CEffectApplyBehavior id="BeamCannonVenomChargeAP">
-        <EditorCategories value="Race:Nod"/>
-        <Behavior value="BeamCannonVenomCharged"/>
-        <ValidatorArray index="0" value="IsBeamReflector"/>
-    </CEffectApplyBehavior>
-    <CBehaviorBuff id="BeamCannonVenomCharged">
-        <InfoIcon value="Assets\icons\SpiderTankIcon.dds"/>
-        <EditorCategories value="Race:Nod,AbilityorEffectType:Structures"/>
-        <MaxStackCount value="5"/>
-        <Duration value="1.3"/>
-        <MaxStackCountPerCaster value="1"/>
-    </CBehaviorBuff>
-
     <CAbilEffectTarget id="BeamCannonDistantAttack">
         <Effect index="0" value="BeamCannonDistantAttackCP"/>
         <Flags index="DeferCooldown" value="1"/>
@@ -134,8 +101,23 @@
         </Cost>
         <TargetFilters value="Visible;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="11"/>
+        <!-- <InitialEffect value="BeamCannonReflectorActive"/> wrong field-->
         <CmdButtonArray index="Execute" DefaultButtonFace="NodBeamReflector"/>
     </CAbilEffectTarget>
+    <CEffectCreatePersistent id="BeamCannonVenomChargeCP">
+        <EditorCategories value="Race:Nod"/>
+        <PeriodicEffectArray value="BeamCannonVenomChargeAP"/>
+        <PeriodicPeriodArray value="1"/>
+        <ValidatorArray value="IsBeamReflector"/>
+         <PeriodicValidator value="BeamCannonVenomCharged"/>
+        <!-- <PeriodicValidator value="BeamCannonReflectorActive"/> -->
+        <PeriodCount value="1"/>
+        <WhichLocation Value="TargetUnit"/>
+        <Flags index="Channeled" value="1"/>
+        <Flags index="PersistUntilDestroyed" value="1"/>
+        <InitialEffect value="BeamCannonReflectorActive"/>
+        <FinalEffect value="BeamCannonReflectorActiveRB"/>
+    </CEffectCreatePersistent>
     <CEffectCreatePersistent id="BeamCannonDistantAttackCPFinal">
         <WhichLocation Value="TargetUnit"/>
         <TimeScaleSource Value="Caster"/>
@@ -144,8 +126,64 @@
         <PeriodicEffectArray value="BeamCannonDistantAttackDamage"/>
         <InitialEffect value="BeamCannonDistantAttackDamage"/>
         <PeriodicValidator value="BeamCannonDistantAttackTargetFilters"/>
+         <PeriodicValidator value="BeamCannonVenomCharged"/>
+        <!-- <PeriodicValidator value="BeamCannonReflectorActive"/> -->
         <PeriodicPeriodArray value="1"/>
+        <FinalEffect value="BeamCannonReflectorActiveRB"/>
     </CEffectCreatePersistent>
+    <CEffectApplyBehavior id="BeamCannonReflectorActive">
+        <Behavior value="BeamCannonReflectorActive"/>
+    </CEffectApplyBehavior>
+    <CEffectRemoveBehavior id="BeamCannonReflectorActiveRB">
+        <BehaviorLink value="BeamCannonReflectorActive"/>
+    </CEffectRemoveBehavior>
+
+
+
+    <CBehaviorBuff id="BeamCannonReflectorActive">
+        <Duration value="3"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="BeamCannonVenomCharged">
+        <InfoIcon value="Assets\icons\SpiderTankIcon.dds"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Structures"/>
+        <MaxStackCount value="5"/>
+        <Duration value="3"/>
+        <MaxStackCountPerCaster value="1"/>
+    </CBehaviorBuff>
+
+
+
+
+
+    <CWeaponLegacy id="NodBeamCannonWeapon" parent="NodWeapon" icon="FXNod_LasersAddonUpgrade">
+        <Options index="OnlyFireWhileInAttackOrder" value="0"/>
+        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
+        <DisplayEffect value="NodBeamCannonWeaponDamage"/>
+        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="11"/>
+        <TeleportResetRange value="0"/>
+        <Period value="3"/>
+        <Effect value="NodBeamCannonWeaponDamage"/>
+        <AllowedMovement value="Moving"/>
+    </CWeaponLegacy>
+    <CEffectDamage id="NodBeamCannonWeaponDamage" parent="DU_WEAP">
+        <EditorCategories value="Race:Nod"/>
+        <AttributeBonus index="Armored" value="6"/>
+        <Kind value="Ranged"/>
+        <KindSplash value="Ranged"/>
+        <Amount value="6"/>
+        <SearchFilters value="-;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <SearchFlags index="OffsetByUnitRadius" value="0"/>
+        <SearchFlags index="SameCliff" value="0"/>
+    </CEffectDamage>
+
+
+    <CEffectApplyBehavior id="BeamCannonVenomChargeAP">
+        <EditorCategories value="Race:Nod"/>
+        <Behavior value="BeamCannonVenomCharged"/>
+        <ValidatorArray index="0" value="IsBeamReflector"/>
+    </CEffectApplyBehavior>
+
 
     <CEffectCreatePersistent id="BeamCannonDistantAttackCP">
         <WhichLocation Value="TargetUnit"/>
@@ -160,6 +198,16 @@
         <ValidatorArray value="VenomInBeamFocusRangeTarget"/>
     </CEffectCreatePersistent>
 
+    <CValidatorUnitCompareBehaviorCount id="BeamCannonVenomCharged">
+        <Value value="1"/>
+        <Behavior value="BeamCannonVenomCharged"/>
+        <WhichUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="BeamCannonReflectorActive">
+        <Value value="1"/>
+        <Behavior value="BeamCannonReflectorActive"/>
+        <WhichUnit Value="Target"/>
+    </CValidatorUnitCompareBehaviorCount>
 
     <CEffectDamage id="BeamCannonDistantAttackTargetDummy" parent="DU_WEAP_MISSILE">
         <EditorCategories value="Race:Zerg"/>

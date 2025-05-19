@@ -2229,6 +2229,18 @@
         <CmdButtonArray index="Execute" DefaultButtonFace="NodAvatarCommandeerTechnology"/>
         <PrepTime value="1"/>
     </CAbilEffectTarget>
+    <CAbilEffectTarget id="NodCarryallCommandeerTechnology">
+        <Effect index="0" value="NodCarryallCommandeerTechnologySet"/>
+        <Cost>
+            <Cooldown TimeUse="4"/>
+        </Cost>
+        <TargetFilters value="Mechanical;Neutral,Structure,Missile,Item,Stasis,Dead,Hidden,Invulnerable"/>
+        <Range value="1"/>
+        <RangeSlop value="2"/>
+        <Arc value="4.9987"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="NodCarryallCommandeerTechnology"/>
+        <PrepTime value="1"/>
+    </CAbilEffectTarget>
     <CAbilBuild id="NodCasterBuild">
         <Range value="999"/>
         <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
