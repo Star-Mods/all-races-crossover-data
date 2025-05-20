@@ -1,0 +1,83 @@
+include "TriggerLibs/natives"
+
+//--------------------------------------------------------------------------------------------------
+// Library: CNC
+//--------------------------------------------------------------------------------------------------
+// Preset Declarations
+
+// Constants
+const int libD4966BDA_gv_beaconGroups = 5;
+
+// Variable Declarations
+string[libD4966BDA_gv_beaconGroups + 1] libD4966BDA_gv_watchTypes;
+unitgroup[16][libD4966BDA_gv_beaconGroups + 1] libD4966BDA_gv_productionUnits;
+int[libD4966BDA_gv_beaconGroups + 1] libD4966BDA_gv_labels;
+int[libD4966BDA_gv_beaconGroups + 1] libD4966BDA_gv_buttons;
+playergroup libD4966BDA_gv_aF_SlimUI_PlayerGroup;
+int libD4966BDA_gv_alliancepanel;
+
+// Function Declarations
+void libD4966BDA_gf_RegisterUnit (unit lp_unit, int lp_player);
+void libD4966BDA_gf_UnRegisterUnit (unit lp_unit, int lp_player);
+void libD4966BDA_gf_AddproductionUnit (unit lp_unit, int lp_player, int lp_productionTabIndex);
+void libD4966BDA_gf_DeleteProductionUnit (unit lp_unit, int lp_player, int lp_productionTabIndex);
+void libD4966BDA_gf_AttachUnitModelToUnit (unit lp_attachmentUnit, unit lp_targetUnit, string lp_attachPont2, fixed lp_xOffset, fixed lp_yOffset, fixed lp_zOffset, string lp_facingAdjustment);
+void libD4966BDA_gf_Theplanetakesoff (unit lp_airplane);
+void libD4966BDA_gf_SearchForAirportandLockit (unit lp_airplane, unit lp_searchTarget, int lp_radius, bool lp_skipOccupied);
+void libD4966BDA_gf_TargetAirport (unit lp_airplane, unit lp_airport);
+point libD4966BDA_gf_Circledunitsturntoacquisitionpoint (unit lp_attackingunit, point lp_locationoftheattackedunit, bool lp_whetherthetargetpointistotheleftoftheunit);
+void libD4966BDA_gf_Accuraterotation (fixed lp_angleX, fixed lp_angleY, fixed lp_angleZ, actor lp_actor);
+string libD4966BDA_gf_ZhunQueXuanZhuanFunc (fixed lp_angleX, fixed lp_angleY, fixed lp_angleZ);
+string libD4966BDA_gf_Combinedaccuraterotation (fixed lp_forward_X, fixed lp_forward_Y, fixed lp_forward_Z, fixed lp_up_X, fixed lp_up_Y, fixed lp_up_Z);
+bool libD4966BDA_gf_Theanglebetweentheunitandthetargetpointisabout (unit lp_unit, point lp_point);
+void libD4966BDA_gf_Actormessagerotation (unit lp_attackingunit, fixed lp_headtiltangle, fixed lp_sidewaistangle);
+fixed libD4966BDA_gf_Angledifferencebetweenunitandtargetpoint (unit lp_unit, point lp_point);
+void libD4966BDA_gf_Continuemovingtotargetpoint (unit lp_attackingunit, point lp_point, fixed lp_movingdistance);
+void libD4966BDA_gf_ContinuousOrientationAlgorithm (unit lp_attackingunit, point lp_point);
+void libD4966BDA_gf_OnecruisewhilestationaryAlliedfighteraircraft (unit lp_attackingunit, point lp_centerpoint);
+void libD4966BDA_gf_Cruiseoncewhilestopped (unit lp_attackingunit, point lp_centerpoint);
+void libD4966BDA_gf_Cruiseoncewhendestroyingatarget (unit lp_attackingunit, point lp_centerpoint);
+point libD4966BDA_gf_SurroundAttackAcquisitionPoint (unit lp_attackingunit, point lp_locationoftheattackedunit);
+point libD4966BDA_gf_SurroundAttackAcquisitionPointLargeBomber (unit lp_attackingunit, point lp_locationoftheattackedunit);
+point libD4966BDA_gf_OrbitalAttackAcquisitionPointPeacekeeperBomber (unit lp_attackingunit, point lp_locationoftheattackedunit);
+point libD4966BDA_gf_HoveringAcquisitionPointPeacekeeperBomber (unit lp_attackingunit, point lp_locationoftheattackedunit);
+point libD4966BDA_gf_Circleacquisitionpointotherlargebombers (unit lp_attackingunit, point lp_locationoftheattackedunit);
+
+// Trigger Declarations
+trigger libD4966BDA_gt_WatchUnitCreation;
+trigger libD4966BDA_gt_WatchUnitOwner;
+trigger libD4966BDA_gt_WatchUnitDeath;
+trigger libD4966BDA_gt_WatchUnitBehaviors;
+trigger libD4966BDA_gt_RecalculateBeacons;
+trigger libD4966BDA_gt_InitBeaconsButton;
+trigger libD4966BDA_gt_BeaconsButtonUsed;
+trigger libD4966BDA_gt_ProductionUI;
+trigger libD4966BDA_gt_Unitupgradespecialeffects;
+trigger libD4966BDA_gt_Unitsgainexperiencebyrisingstars;
+trigger libD4966BDA_gt_Maintenancebeeheightadjustment;
+trigger libD4966BDA_gt_Maintenancebeeheightrestored;
+trigger libD4966BDA_gt_AIRSUPPORTCREATED;
+trigger libD4966BDA_gt_AIRPODCREATED;
+trigger libD4966BDA_gt_AIRPORTSMapINIT;
+trigger libD4966BDA_gt_MoveCommandOverrideExecute;
+trigger libD4966BDA_gt_CREATEDAircraftmanufacturingcompleted;
+trigger libD4966BDA_gt_ShadowGlide;
+trigger libD4966BDA_gt_ShadowLanding;
+trigger libD4966BDA_gt_LANDINGAlliedairfieldlanding;
+trigger libD4966BDA_gt_Aircraftrestorationslot;
+trigger libD4966BDA_gt_TAKEOFFTheeffectoftheplaneaftertakeoff;
+trigger libD4966BDA_gt_TAKEOFFATTACK;
+trigger libD4966BDA_gt_NOAMMORETURN;
+trigger libD4966BDA_gt_NOAMMOAttackComplete;
+trigger libD4966BDA_gt_ENABLEAUTORETURN;
+trigger libD4966BDA_gt_DISABLEAUTORETURN;
+trigger libD4966BDA_gt_DOCKEDCANCELLEDremovelock;
+trigger libD4966BDA_gt_ABILITYRETURNTOAIRPORTGLOBAL;
+trigger libD4966BDA_gt_ABILITYRETURNTOAIRPORTTARGET;
+trigger libD4966BDA_gt_Pioneermobileresetcd;
+trigger libD4966BDA_gt_VanguardAttackSurround;
+trigger libD4966BDA_gt_CIRCLEAlliedfighterplanesautomaticallycirclewhenstopped;
+
+// Library Initialization
+void libD4966BDA_InitVariables ();
+

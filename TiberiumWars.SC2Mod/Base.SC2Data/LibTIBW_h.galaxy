@@ -8,16 +8,9 @@ const int libTIBW_ge_DropPodRace_Terran = 0;
 const int libTIBW_ge_DropPodRace_Zerg = 1;
 
 // Constants
-const int libTIBW_gv_beaconGroups = 5;
 const int libTIBW_gv_platformMaxCountRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel = 100;
 
 // Variable Declarations
-string[libTIBW_gv_beaconGroups + 1] libTIBW_gv_watchTypes;
-unitgroup[16][libTIBW_gv_beaconGroups + 1] libTIBW_gv_productionUnits;
-int[libTIBW_gv_beaconGroups + 1] libTIBW_gv_labels;
-int[libTIBW_gv_beaconGroups + 1] libTIBW_gv_buttons;
-playergroup libTIBW_gv_aF_SlimUI_PlayerGroup;
-int libTIBW_gv_alliancepanel;
 int libTIBW_gv_platformNowCountRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel;
 int libTIBW_gv_bomberUsable;
 unitgroup[libTIBW_gv_platformMaxCountRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel + 1] libTIBW_gv_bomberPFUnitsGroupRoyalGuardExperienceGainingUnitGroupReturnedworkunitgroupPickedupweaponsetWeaponPickupUnitGroupStarChargeLevel;
@@ -39,10 +32,6 @@ int libTIBW_gv_playerIntegerRoyalGuardExperienceGainingUnitGroupReturnedworkunit
 
 // Function Declarations
 void libTIBW_gf_ApplyPlayerVoicePack (int lp_player, string lp_voiceID);
-void libTIBW_gf_RegisterUnit (unit lp_unit, int lp_player);
-void libTIBW_gf_UnRegisterUnit (unit lp_unit, int lp_player);
-void libTIBW_gf_AddproductionUnit (unit lp_unit, int lp_player, int lp_productionTabIndex);
-void libTIBW_gf_DeleteProductionUnit (unit lp_unit, int lp_player, int lp_productionTabIndex);
 void libTIBW_gf_NodAirRaid (unit lp_unit, region lp_area);
 void libTIBW_gf_ShowhideNodtoppanel (bool lp_showHide, int lp_player);
 void libTIBW_gf_Showhidetoppanel (bool lp_showHide);
@@ -51,19 +40,13 @@ void libTIBW_gf__GDIDropPod (point lp_location, unitgroup lp_units, int lp_playe
 void libTIBW_gf_CreateDropPod (int lp_race, point lp_location, unitgroup lp_units, bool lp_waitDontWait, int lp_playerinteger);
 
 // Trigger Declarations
-trigger libTIBW_gt_Test;
-trigger libTIBW_gt_PlayNod;
+trigger libTIBW_gt_BeamReflector;
+trigger libTIBW_gt_UntitledTrigger001;
 trigger libTIBW_gt_MoveCommandOverrideExecute;
 trigger libTIBW_gt_MoveCommandOverrideCancel;
 trigger libTIBW_gt_MoveCommandOverrideComplete;
-trigger libTIBW_gt_WatchUnitCreation;
-trigger libTIBW_gt_WatchUnitOwner;
-trigger libTIBW_gt_WatchUnitDeath;
-trigger libTIBW_gt_WatchUnitBehaviors;
-trigger libTIBW_gt_RecalculateBeacons;
-trigger libTIBW_gt_InitBeaconsButton;
-trigger libTIBW_gt_BeaconsButtonUsed;
-trigger libTIBW_gt_ProductionUI;
+trigger libTIBW_gt_Test;
+trigger libTIBW_gt_PlayNod;
 trigger libTIBW_gt_Borrowedbombercustomreturntrajectory;
 trigger libTIBW_gt_BorrowedbombercreationbindingStarchainTest;
 trigger libTIBW_gt_LaunchairstrikeStarchainTest;

@@ -1144,10 +1144,10 @@
         <BehaviorArray Link="CloakVenom"/>
         <BehaviorArray Link="VenomCC3VeterancyUpgrade"/>
         <BehaviorArray Link="CloakVenomReal"/>
-        <AbilArray Link="BeamCannonVenomCharge"/>
+        <AbilArray Link="VenomBeamRetargetCharge"/>
         <AbilArray Link="BeamCannonDistantAttackFinal"/>
         <CardLayouts index="0">
-            <LayoutButtons Face="NodBeamReflector" Type="AbilCmd" AbilCmd="BeamCannonVenomCharge,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="NodBeamReflector" Type="AbilCmd" AbilCmd="VenomBeamRetargetCharge,Execute" Row="2" Column="1"/>
             <LayoutButtons Face="NodBeamReflector" Type="AbilCmd" AbilCmd="BeamCannonDistantAttackFinal,Execute" Row="2" Column="2"/>
         </CardLayouts>  
         <WeaponArray Link="NodVenomparticlebeam" Turret="SiegeTank"/>

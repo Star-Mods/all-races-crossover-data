@@ -1,5 +1,4 @@
 ﻿1sspider=can only load spider tanks
-Error/ShouldTargetVenom=Should Target Venom
 Abil/Name/ActivateDragonFlameArmyDragonBreathBullet=Activate Dragon Flame Army Dragon Breath Bullet
 Abil/Name/ActivateTheZhigeForceField=Activate the Zhige force field!
 Abil/Name/AirSuperiority=Economic mobilization!
@@ -6685,6 +6684,7 @@ Effect/Name/zhukefuxingfenji=Rampage mode
 Effect/Name/zhukefuxingfenji2=Running mode
 Effect/Name/zhukefuxingfenji22=Fatigue in running mode
 Effect/Name/zhukefuxingfenji3=Divine power application behavior
+Error/ShouldTargetVenom=Should Target Venom
 Fuka=<c val="ffcc00">The Lawyer of Knowledge
 JuYurico=<c val="ff8800">Yurico
 KianaC9=Herrscher of Fire
@@ -6693,40 +6693,41 @@ Maxlevelnatasha=<c val="ff0000">Natasha
 Maxnatasha=<c val="ff0000">Natasha
 MirrageTank=<c val="00ffff">Star class Mirage Tank
 Param/Expression/lib_60AE651C_46EE1FDB=~A~
-Param/Expression/lib_RED3_BA18C0F9=LANDING CONTINUE E ~A~
+Param/Expression/lib_D4966BDA_25509B27=LANDING CONTINUE E ~A~
 Param/Expression/lib_SPPN_1C662B5D=SHOW ~A~ ~B~
 Param/Expression/lib_SPPN_304FD0B1=HIDE ~A~ ~B~
 Param/Expression/lib_SPPN_94E0AF4B=<s val="StandardTooltipHeader_Terr">~name~</s>
 Param/Expression/lib_SPPN_CAF2A48D=<s val="StandardTooltipHeader_Terr">~name~</s>
 Param/Expression/lib_SPPN_D9FC2478=<s val="StandardTooltipHeader_Terr">~name~</s></n></n>~min_icon~ ~min_val~ ~gas_icon~ ~gas_val~</n></n>~desc~
 Param/Expression/lib_SPPN_FE819751=<s val="StandardTooltipHeader_Terr">~name~ [~ID~]</s><n/><n/>~min_icon~ ~min_val~ ~gas_icon~ ~gas_val~ ~food_icon~ ~food_val~<n/><n/>~desc~
-Param/Value/lib_RED3_0870BC06=RETURN INITIATED
-Param/Value/lib_RED3_117EF6D7=CRCL2
-Param/Value/lib_RED3_13624C70=Occupied! Search again
-Param/Value/lib_RED3_266EF012=LANDING INIT
-Param/Value/lib_RED3_2BF83E17=RETURN NO AMMO
-Param/Value/lib_RED3_2C48F79D=LANDING CONTINUE C
-Param/Value/lib_RED3_41D14810=search again
-Param/Value/lib_RED3_52965622=RETURN 2
-Param/Value/lib_RED3_5648FD98=SHADOW
-Param/Value/lib_RED3_6089A5EB=LANDING NOT CONTINUE
-Param/Value/lib_RED3_8CBA38FD=CIRC
-Param/Value/lib_RED3_90A600C2=LANDING NOT CONTINUE 2
-Param/Value/lib_RED3_AA81A955=LANDING CONTINUE B
-Param/Value/lib_RED3_C8869A8A=AIRPLANE DIES  OR TAKE OFF?
-Param/Value/lib_RED3_D832BCAB=LANDING CONTINUE D
-Param/Value/lib_RED3_DB2A973F=CRCL3
-Param/Value/lib_RED3_E0C5CBDF=LANDING NOT CONTINUE 3
+Param/Expression/lib_TIBW_D68B19F9=BEAM ~A~
+Param/Value/lib_D4966BDA_041EF1B1=CRCL2
+Param/Value/lib_D4966BDA_0C0F049F=<c val="FF8000">SlimUI deactivated</c>
+Param/Value/lib_D4966BDA_1C999FD2=LANDING CONTINUE B
+Param/Value/lib_D4966BDA_2F42BC7B=RETURN NO AMMO
+Param/Value/lib_D4966BDA_3B8474EA=LANDING NOT CONTINUE 2
+Param/Value/lib_D4966BDA_5173EB41=search again
+Param/Value/lib_D4966BDA_6AE5ED23=LANDING NOT CONTINUE
+Param/Value/lib_D4966BDA_8779543B=RETURN 2
+Param/Value/lib_D4966BDA_8820AABB=CIRC
+Param/Value/lib_D4966BDA_8F8A34D8=<c val="FF8000">SlimUI activated</c>
+Param/Value/lib_D4966BDA_9483EFC8=LANDING CONTINUE D
+Param/Value/lib_D4966BDA_994FB08C=LANDING CONTINUE C
+Param/Value/lib_D4966BDA_9E8E0052=Beacons
+Param/Value/lib_D4966BDA_B0BB902B=Occupied! Search again
+Param/Value/lib_D4966BDA_B2216C2D=LANDING INIT
+Param/Value/lib_D4966BDA_C4F15889=SHADOW
+Param/Value/lib_D4966BDA_D5FFBF41=AIRPLANE DIES  OR TAKE OFF?
+Param/Value/lib_D4966BDA_ED3E62D9=CRCL3
+Param/Value/lib_D4966BDA_F483CABF=LANDING NOT CONTINUE 3
+Param/Value/lib_D4966BDA_F5E13EB0=RETURN INITIATED
 Param/Value/lib_TIBW_06F7264C=MCV was destroyed! Redeployment coming soon
 Param/Value/lib_TIBW_1A61AA67=MCV was destroyed! Redeployment coming soon
 Param/Value/lib_TIBW_4337F561=MCV was destroyed! Redeployment coming soon
-Param/Value/lib_TIBW_450B571B=Beacons
 Param/Value/lib_TIBW_75FED3F4=MCV was destroyed! Redeployment coming soon
 Param/Value/lib_TIBW_991E0E3C=<s val="ZPlanetPanelObjective">Deploy an MCV (cannot be changed after deployment)</s>
 Param/Value/lib_TIBW_B653B3CD=MCV is destroyed! Redeployment coming soon
-Param/Value/lib_TIBW_BD95D571=<c val="FF8000">SlimUI deactivated</c>
 Param/Value/lib_TIBW_C33C01A4=MCV is destroyed! Redeployment coming soon
-Param/Value/lib_TIBW_D8DA35AF=<c val="FF8000">SlimUI activated</c>
 Race/Name/Allied=Allied
 Race/Name/CABAL=CABAL
 Race/Name/China=China
