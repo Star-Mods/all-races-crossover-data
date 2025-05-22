@@ -1850,13 +1850,6 @@
         <Model value="Assets\Effects\Terran\MiraHorner_NapalmBomb_Coop_Explosion\MiraHorner_NapalmBomb_Coop_Explosion.m3"/>
         <EditorCategories value="Race:Nod"/>
     </CModel>
-    <CModel id="BeamWeaponCC3CC3AttackBeam" parent="PersistentSpellFX">
-        <Model value="Assets\Effects\Protoss\Alarak_COOP_LightningStrikes_Beam\Alarak_COOP_LightningStrikes_Beam.m3"/>
-        <LowQualityModel value="ArchonAttackBeamLow"/>
-        <AnimSpeed value="4.000000"/>
-        <EditorCategories value="Race:Nod"/>
-        <RadiusLoose value="1.000000"/>
-    </CModel>
     <CModel id="CabalWidowLaserAttackBeam" parent="PersistentSpellFX">
         <Model value="Assets\Effects\Protoss\Alarak_COOP_LightningStrikes_Beam\Alarak_COOP_LightningStrikes_Beam.m3"/>
         <LowQualityModel value="DiamondbackAttackBeamLow"/>

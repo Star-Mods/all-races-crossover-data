@@ -240,7 +240,7 @@
         <LifeStart value="200"/>
         <LifeMax value="200"/>
         <LifeArmor value="1"/>
-        <Speed value="2.25"/>
+        <Speed value="2.45"/>
         <Acceleration value="2.25"/>
         <LateralAcceleration value="64"/>
         <TurningRate value="360"/>
@@ -487,8 +487,8 @@
         <LifeStart value="200"/>
         <LifeMax value="200"/>
         <LifeArmor value="1"/>
-        <Speed value="2.25"/>
-        <Acceleration value="2.25"/>
+        <Speed value="2.8125"/>
+        <Acceleration value="3.5"/>
         <LateralAcceleration value="64"/>
         <TurningRate value="360"/>
         <Sight value="11"/>
@@ -500,12 +500,14 @@
         <AbilArray Link="ObeliskCharge"/>
         <AbilArray Link="BeamCannonVenomCharge"/>
         <AbilArray Link="BeamCannonDistantAttack"/>
+        <AbilArray Link="BeamCannonFocusCharge"/>
         <BehaviorArray Link="NodBeamVeterancyUpgrade"/>
         <WeaponArray Link="NodBeamCannonWeapon" Turret="SiegeTank"/>
         <CardLayouts index="0">
             <LayoutButtons Face="NodChargeDefenses" Type="AbilCmd" AbilCmd="ObeliskCharge,Execute" Row="2" Column="0"/>
-            <LayoutButtons Face="NodBeamReflector" Type="AbilCmd" AbilCmd="BeamCannonVenomCharge,Execute" Row="2" Column="1"/>
-            <LayoutButtons Face="NodBeamReflector" Type="AbilCmd" AbilCmd="BeamCannonDistantAttack,Execute" Row="2" Column="2"/>
+            <LayoutButtons Face="NodBeamReflector" Type="AbilCmd" AbilCmd="BeamCannonDistantAttack,Execute" Row="2" Column="1"/>
+            <!-- <LayoutButtons Face="NodBeamReflector" Type="AbilCmd" AbilCmd="BeamCannonVenomCharge,Execute" Row="2" Column="1"/> -->
+            <!-- <LayoutButtons Face="BeamCannonFocusCharge" Type="AbilCmd" AbilCmd="BeamCannonFocusCharge,Execute" Row="2" Column="3"/> -->
         </CardLayouts>
         <Radius value="0.875"/>
         <SeparationRadius value="1"/>
@@ -1147,8 +1149,8 @@
         <AbilArray Link="VenomBeamRetargetCharge"/>
         <AbilArray Link="BeamCannonDistantAttackFinal"/>
         <CardLayouts index="0">
-            <LayoutButtons Face="NodBeamReflector" Type="AbilCmd" AbilCmd="VenomBeamRetargetCharge,Execute" Row="2" Column="1"/>
-            <LayoutButtons Face="NodBeamReflector" Type="AbilCmd" AbilCmd="BeamCannonDistantAttackFinal,Execute" Row="2" Column="2"/>
+            <!-- <LayoutButtons Face="NodBeamReflector" Type="AbilCmd" AbilCmd="VenomBeamRetargetCharge,Execute" Row="2" Column="1"/>
+            <LayoutButtons Face="NodBeamReflector" Type="AbilCmd" AbilCmd="BeamCannonDistantAttackFinal,Execute" Row="2" Column="2"/> -->
         </CardLayouts>  
         <WeaponArray Link="NodVenomparticlebeam" Turret="SiegeTank"/>
         <Radius value="0.625"/>

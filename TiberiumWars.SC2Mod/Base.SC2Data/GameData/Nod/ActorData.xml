@@ -862,6 +862,10 @@
         <On Terms="Effect.NodCarryallBeamCannon.Start; At Caster" Send="AnimPlay Morph Morph NonLooping"/>
         <On Terms="AnimDone; AnimName Morph" Send="AnimPlay Stand Stand,Morph PlayForever 0.000000"/>
 
+        <On Terms="Effect.NodCarryallFlameTank.Start; At Caster" Send="AnimPlay CoverC Cover,C PlayForever 0.000000"/>
+        <On Terms="Effect.NodCarryallStealthTank.Start; At Caster" Send="AnimPlay CoverC Cover,C PlayForever 0.000000"/>
+        <On Terms="Effect.NodCarryallBeamCannon.Start; At Caster" Send="AnimPlay CoverC Cover,C PlayForever 0.000000"/>
+
 
         <On Terms="UnitDeath.##unitName##; AnimPlaying CoverA" Target="_DeathModel" Send="AnimPlay CoverA Cover,A PlayForever"/>
         <On Terms="UnitDeath.##unitName##; AnimPlaying CoverB" Target="_DeathModel" Send="AnimPlay CoverB Cover,B PlayForever"/>
@@ -887,7 +891,7 @@
         <On Terms="UnitBirth.NodCarryall" Send="Create"/>
         <On Terms="UnitDeath.NodCarryall" Send="Destroy"/>
         <Host Subject="NodCarryallTurretActorModel"/>
-        <HostSiteOps Ops="SOpAttachHardPoint01"/>
+        <HostSiteOps Ops="SOpAttachHardPoint02"/>
     </CActorSite>
 
     <CActorModel id="NodCarryallTurretActorModel" parent="ModelAddition">
@@ -909,7 +913,7 @@
         <!--todo-->
         <Model value="NodRaider"/>
         <Host Subject="NodCarryall"/>
-        <HostSiteOps Ops="SOpAttachHardPoint01"/>
+        <HostSiteOps Ops="SOpAttachHardPoint02"/>
     </CActorModel>
 
 
@@ -3520,21 +3524,6 @@
         <HostSiteOps Ops="SOpAttachRandomDamage"/>
         <Model value="ImpactModelFlames2"/>
     </CActorModel>
-    <CActorAction id="BeamWeaponCC3Attack" parent="GenericAttack" effectAttack="NodBeamCannonWeaponDamage">
-        <LaunchAssets Sound="BeamWeaponCC3_AttackLaunch"/>
-        <BeamScope value="Caster"/>
-        <ImpactSiteOps Ops="SOpAttachHarness SOpAttachVolumeNoVizEnhance VoidRaySOpForwardLaunch"/>
-        <ImpactMap index="None" Model="" Sound="HC_AttackImpact"/>
-        <ActionFlags index="ImpactMonitorsTeleports" value="1"/>
-    </CActorAction>
-    <CActorBeamSimple id="BeamWeaponCC3AttackBeam" parent="BeamSimpleAnimationStyleOneShot">
-        <Macros value="ActionTargetTeleportDestroy"/>
-        <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="ModelSwap DarkArchonAttackBeam"/>
-        <On Terms="ActorCreation; ValidateUnit NoDarkProtoss" Send="AnimBracketStart BSDb Birth Stand Death ContentPlayOnce"/>
-        <On Terms="AnimBracketState.*.AfterClosing; AnimName BSDb" Send="Destroy"/>
-        <Model value="BeamWeaponCC3CC3AttackBeam"/>
-        <Scale value="0.500000"/>
-    </CActorBeamSimple>
     <CActorAction id="CabalWidowLaserAttack" parent="GenericAttack" effectAttack="CabalWidowLaserDamage">
         <LaunchAttachQuery Methods="Weapon 7"/>
         <LaunchAssets Sound="CabalWidowLaser_AttackLaunch"/>

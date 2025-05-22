@@ -3,7 +3,7 @@ include "TriggerLibs/NativeLib"
 include "LibRED3_h"
 
 //--------------------------------------------------------------------------------------------------
-// Library: Red Alert 3
+// Library: Red Alert
 //--------------------------------------------------------------------------------------------------
 // External Library Initialization
 void libRED3_InitLibraries () {

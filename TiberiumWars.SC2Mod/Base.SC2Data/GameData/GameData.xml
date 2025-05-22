@@ -28,6 +28,7 @@
         <TriggerLibs Id="TIBW"/>
         <TriggerLibs Id="SPPN"/>
         <TriggerLibs Id="RED3"/>
+        <TriggerLibs Id="CNCC"/>
         <!--        <TriggerLibs Id="60AE651C"/>-->
     </CGame>
 </Catalog>

@@ -1,7 +1,7 @@
 include "TriggerLibs/natives"
 
 //--------------------------------------------------------------------------------------------------
-// Library: Mods - CNC
+// Library: Tiberium Wars
 //--------------------------------------------------------------------------------------------------
 // Preset Declarations
 const int libTIBW_ge_DropPodRace_Terran = 0;
@@ -41,7 +41,8 @@ void libTIBW_gf_CreateDropPod (int lp_race, point lp_location, unitgroup lp_unit
 
 // Trigger Declarations
 trigger libTIBW_gt_BeamReflector;
-trigger libTIBW_gt_UntitledTrigger001;
+trigger libTIBW_gt_Delay;
+trigger libTIBW_gt_REFLECTIONPAthBROKEN;
 trigger libTIBW_gt_MoveCommandOverrideExecute;
 trigger libTIBW_gt_MoveCommandOverrideCancel;
 trigger libTIBW_gt_MoveCommandOverrideComplete;
