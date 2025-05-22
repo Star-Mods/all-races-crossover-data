@@ -7740,6 +7740,7 @@ Unit/Name/MantisUpWeapon=Mantis Up Weapon
 Unit/Name/MantisWeapon=Mantis Weapon
 Unit/Name/Marauder=Marauder (future tank weapon launch reference)
 Unit/Name/Marder II=Leopard Assault Cannon
+Unit/Name/Marine=Beam Focus
 Unit/Name/MastodonDamageMissile=Mastodon Damage Missile
 Unit/Name/MatildaII=Matilda II medium tank
 Unit/Name/Me 109=Bf 109 fighter

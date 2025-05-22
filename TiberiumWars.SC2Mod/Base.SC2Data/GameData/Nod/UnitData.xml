@@ -501,9 +501,13 @@
         <AbilArray Link="BeamCannonVenomCharge"/>
         <AbilArray Link="BeamCannonDistantAttack"/>
         <AbilArray Link="BeamCannonFocusCharge"/>
+        <AbilArray Link="CreateBeamCannonFocus"/>
+
+        
         <BehaviorArray Link="NodBeamVeterancyUpgrade"/>
         <WeaponArray Link="NodBeamCannonWeapon" Turret="SiegeTank"/>
         <CardLayouts index="0">
+            <LayoutButtons Face="NodChargeDefenses" Type="AbilCmd" AbilCmd="CreateBeamCannonFocus,Execute" Row="2" Column="2"/>
             <LayoutButtons Face="NodChargeDefenses" Type="AbilCmd" AbilCmd="ObeliskCharge,Execute" Row="2" Column="0"/>
             <LayoutButtons Face="NodBeamReflector" Type="AbilCmd" AbilCmd="BeamCannonDistantAttack,Execute" Row="2" Column="1"/>
             <!-- <LayoutButtons Face="NodBeamReflector" Type="AbilCmd" AbilCmd="BeamCannonVenomCharge,Execute" Row="2" Column="1"/> -->
@@ -1408,7 +1412,7 @@
     <!--        </CardLayouts>-->
     <!--    </CUnit>-->
     <!--production-->
-    <CUnit id="NodTiberiumRefinery" parent="NodStructure">
+    <CUnit id="NodTiberiumRefinery" parent="CommandCenter">
         <BehaviorArray Link="CNCTabEconomy"/>
         <BehaviorArray Link="Deployable"/>
         <!--        <BehaviorArray Link="CommandCenterQueue"/>-->

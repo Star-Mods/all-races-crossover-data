@@ -488,7 +488,7 @@ bool libTIBW_gt_Delay_Func (bool testConds, bool runActions) {
     for (;; auto3A59EBB8_u -= 1) {
         lv_beam = UnitGroupUnitFromEnd(auto3A59EBB8_g, auto3A59EBB8_u);
         if (lv_beam == null) { break; }
-        UnitIssueOrder(lv_beam, OrderTargetingUnit(AbilityCommand("BeamCannonFocusCharge", 0), lv_focus), c_orderQueueAddToFront);
+        UnitCreateEffectUnit(lv_beam, "BeamCannonFocusChargeCP", lv_focus);
         UnitBehaviorAdd(lv_focus, "BeamCannonVenomCharged", lv_beam, 1);
     }
     UnitIssueOrder(lv_focus, OrderTargetingUnit(AbilityCommand("BeamCannonDistantAttackFinal", 0), lv_target), c_orderQueueAddToFront);
