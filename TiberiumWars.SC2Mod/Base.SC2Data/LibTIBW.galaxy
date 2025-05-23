@@ -407,7 +407,6 @@ bool libTIBW_gt_NodBeamCannonDistantAttackDelay_Func (bool testConds, bool runAc
             UnitIssueOrder(lv_venom, OrderTargetingUnit(AbilityCommand("BeamCannonDistantAttackStage2", 0), UnitGroupUnit(lv_path, (auto8BEC13BF_var + 1))), c_orderQueueAddToFront);
         }
         lv_venom = UnitGroupUnit(lv_path, UnitGroupCount(lv_path, c_unitCountAlive));
-        UnitCreateEffectUnit(lv_venom, "BeamCannonTargetTrackerATU", lv_target);
         UnitIssueOrder(lv_venom, OrderTargetingUnit(AbilityCommand("BeamCannonDistantAttackStage3", 0), lv_target), c_orderQueueAddToFront);
     }
 
@@ -590,9 +589,49 @@ void libTIBW_gt_BeamCannonDistantAttackStage2RemoveTrackers_Init () {
 }
 
 //--------------------------------------------------------------------------------------------------
-// Trigger: BeamCannonDistantAttackRemoveTrackers
+// Trigger: BeamCannonIsFocusing
 //--------------------------------------------------------------------------------------------------
-bool libTIBW_gt_BeamCannonDistantAttackRemoveTrackers_Func (bool testConds, bool runActions) {
+bool libTIBW_gt_BeamCannonIsFocusing_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TriggerDebugOutput(1, StringExternal("Param/Value/lib_TIBW_9DBC7AFC"), true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libTIBW_gt_BeamCannonIsFocusing_Init () {
+    libTIBW_gt_BeamCannonIsFocusing = TriggerCreate("libTIBW_gt_BeamCannonIsFocusing_Func");
+    TriggerAddEventPlayerEffectUsed(libTIBW_gt_BeamCannonIsFocusing, c_playerAny, "BeamCannonDistantAttackFocusingSet");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: BeamCannonDistantAttackFocusingSet
+//--------------------------------------------------------------------------------------------------
+bool libTIBW_gt_BeamCannonDistantAttackFocusingSet_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TriggerDebugOutput(1, StringExternal("Param/Value/lib_TIBW_D1537ED2"), true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libTIBW_gt_BeamCannonDistantAttackFocusingSet_Init () {
+    libTIBW_gt_BeamCannonDistantAttackFocusingSet = TriggerCreate("libTIBW_gt_BeamCannonDistantAttackFocusingSet_Func");
+    TriggerAddEventPlayerEffectUsed(libTIBW_gt_BeamCannonDistantAttackFocusingSet, c_playerAny, "BeamCannonDistantAttackFocusingSet");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: BeamCannonFocusingInitialETU
+//--------------------------------------------------------------------------------------------------
+bool libTIBW_gt_BeamCannonFocusingInitialETU_Func (bool testConds, bool runActions) {
     // Automatic Variable Declarations
     // Actions
     if (!runActions) {
@@ -604,9 +643,29 @@ bool libTIBW_gt_BeamCannonDistantAttackRemoveTrackers_Func (bool testConds, bool
 }
 
 //--------------------------------------------------------------------------------------------------
-void libTIBW_gt_BeamCannonDistantAttackRemoveTrackers_Init () {
-    libTIBW_gt_BeamCannonDistantAttackRemoveTrackers = TriggerCreate("libTIBW_gt_BeamCannonDistantAttackRemoveTrackers_Func");
-    TriggerAddEventPlayerEffectUsed(libTIBW_gt_BeamCannonDistantAttackRemoveTrackers, c_playerAny, "BeamCannonDistantAttackRemoveTrackers");
+void libTIBW_gt_BeamCannonFocusingInitialETU_Init () {
+    libTIBW_gt_BeamCannonFocusingInitialETU = TriggerCreate("libTIBW_gt_BeamCannonFocusingInitialETU_Func");
+    TriggerAddEventPlayerEffectUsed(libTIBW_gt_BeamCannonFocusingInitialETU, c_playerAny, "BeamCannonFocusingInitialETU");
+}
+
+//--------------------------------------------------------------------------------------------------
+// Trigger: BeamCannonFocusingInitialETUSet
+//--------------------------------------------------------------------------------------------------
+bool libTIBW_gt_BeamCannonFocusingInitialETUSet_Func (bool testConds, bool runActions) {
+    // Automatic Variable Declarations
+    // Actions
+    if (!runActions) {
+        return true;
+    }
+
+    TriggerDebugOutput(1, StringExternal("Param/Value/lib_TIBW_E1E1D726"), true);
+    return true;
+}
+
+//--------------------------------------------------------------------------------------------------
+void libTIBW_gt_BeamCannonFocusingInitialETUSet_Init () {
+    libTIBW_gt_BeamCannonFocusingInitialETUSet = TriggerCreate("libTIBW_gt_BeamCannonFocusingInitialETUSet_Func");
+    TriggerAddEventPlayerEffectUsed(libTIBW_gt_BeamCannonFocusingInitialETUSet, c_playerAny, "BeamCannonFocusingInitialETUSet");
 }
 
 //--------------------------------------------------------------------------------------------------
@@ -1199,7 +1258,10 @@ void libTIBW_InitTriggers () {
     libTIBW_gt_Debugging_Init();
     libTIBW_gt_BeamCannonDistantAttackRemoveTargetTrackersETUSet_Init();
     libTIBW_gt_BeamCannonDistantAttackStage2RemoveTrackers_Init();
-    libTIBW_gt_BeamCannonDistantAttackRemoveTrackers_Init();
+    libTIBW_gt_BeamCannonIsFocusing_Init();
+    libTIBW_gt_BeamCannonDistantAttackFocusingSet_Init();
+    libTIBW_gt_BeamCannonFocusingInitialETU_Init();
+    libTIBW_gt_BeamCannonFocusingInitialETUSet_Init();
     libTIBW_gt_MoveCommandOverrideExecute_Init();
     libTIBW_gt_MoveCommandOverrideCancel_Init();
     libTIBW_gt_MoveCommandOverrideComplete_Init();

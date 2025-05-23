@@ -6729,11 +6729,14 @@ Param/Value/lib_TIBW_2282A3EF=kkk
 Param/Value/lib_TIBW_4337F561=MCV was destroyed! Redeployment coming soon
 Param/Value/lib_TIBW_75FED3F4=MCV was destroyed! Redeployment coming soon
 Param/Value/lib_TIBW_991E0E3C=<s val="ZPlanetPanelObjective">Deploy an MCV (cannot be changed after deployment)</s>
+Param/Value/lib_TIBW_9DBC7AFC=EFFECT0
 Param/Value/lib_TIBW_AF7E508C=BeamCannonDistantAttackRemoveTargetTrackersETUSe
 Param/Value/lib_TIBW_B5FA5FF1=BeamCannonDistantAttackStage2RemoveTrackers
 Param/Value/lib_TIBW_B653B3CD=MCV is destroyed! Redeployment coming soon
 Param/Value/lib_TIBW_C33C01A4=MCV is destroyed! Redeployment coming soon
-Param/Value/lib_TIBW_FF21D99B=BeamCannonDistantAttackRemoveTrackers
+Param/Value/lib_TIBW_D1537ED2=EFFECT0
+Param/Value/lib_TIBW_E1E1D726=EFFECT2
+Param/Value/lib_TIBW_FF21D99B=EFFECT
 Race/Name/Allied=Allied
 Race/Name/CABAL=CABAL
 Race/Name/China=China
