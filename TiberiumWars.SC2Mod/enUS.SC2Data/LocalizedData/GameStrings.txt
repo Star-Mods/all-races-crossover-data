@@ -6700,6 +6700,8 @@ Param/Expression/lib_SPPN_94E0AF4B=<s val="StandardTooltipHeader_Terr">~name~</s
 Param/Expression/lib_SPPN_CAF2A48D=<s val="StandardTooltipHeader_Terr">~name~</s>
 Param/Expression/lib_SPPN_D9FC2478=<s val="StandardTooltipHeader_Terr">~name~</s></n></n>~min_icon~ ~min_val~ ~gas_icon~ ~gas_val~</n></n>~desc~
 Param/Expression/lib_SPPN_FE819751=<s val="StandardTooltipHeader_Terr">~name~ [~ID~]</s><n/><n/>~min_icon~ ~min_val~ ~gas_icon~ ~gas_val~ ~food_icon~ ~food_val~<n/><n/>~desc~
+Param/Expression/lib_TIBW_498260C9=u ~D~  t ~B~ c ~A~  r ~C~ p ~E~
+Param/Expression/lib_TIBW_55AAC2E8=focus iter ~A~
 Param/Expression/lib_TIBW_D68B19F9=BEAM ~A~
 Param/Value/lib_CNCC_041EF1B1=CRCL2
 Param/Value/lib_CNCC_0C0F049F=<c val="FF8000">SlimUI deactivated</c>
@@ -6723,11 +6725,15 @@ Param/Value/lib_CNCC_F483CABF=LANDING NOT CONTINUE 3
 Param/Value/lib_CNCC_F5E13EB0=RETURN INITIATED
 Param/Value/lib_TIBW_06F7264C=MCV was destroyed! Redeployment coming soon
 Param/Value/lib_TIBW_1A61AA67=MCV was destroyed! Redeployment coming soon
+Param/Value/lib_TIBW_2282A3EF=kkk
 Param/Value/lib_TIBW_4337F561=MCV was destroyed! Redeployment coming soon
 Param/Value/lib_TIBW_75FED3F4=MCV was destroyed! Redeployment coming soon
 Param/Value/lib_TIBW_991E0E3C=<s val="ZPlanetPanelObjective">Deploy an MCV (cannot be changed after deployment)</s>
+Param/Value/lib_TIBW_AF7E508C=BeamCannonDistantAttackRemoveTargetTrackersETUSe
+Param/Value/lib_TIBW_B5FA5FF1=BeamCannonDistantAttackStage2RemoveTrackers
 Param/Value/lib_TIBW_B653B3CD=MCV is destroyed! Redeployment coming soon
 Param/Value/lib_TIBW_C33C01A4=MCV is destroyed! Redeployment coming soon
+Param/Value/lib_TIBW_FF21D99B=BeamCannonDistantAttackRemoveTrackers
 Race/Name/Allied=Allied
 Race/Name/CABAL=CABAL
 Race/Name/China=China
@@ -7740,7 +7746,6 @@ Unit/Name/MantisUpWeapon=Mantis Up Weapon
 Unit/Name/MantisWeapon=Mantis Weapon
 Unit/Name/Marauder=Marauder (future tank weapon launch reference)
 Unit/Name/Marder II=Leopard Assault Cannon
-Unit/Name/Marine=Beam Focus
 Unit/Name/MastodonDamageMissile=Mastodon Damage Missile
 Unit/Name/MatildaII=Matilda II medium tank
 Unit/Name/Me 109=Bf 109 fighter

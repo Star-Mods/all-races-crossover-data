@@ -537,7 +537,7 @@
         <Options index="OnlyFireAtAttackOrderTarget" value="0"/>
         <AllowedMovement value="Moving"/>
     </CWeaponLegacy>
-    <CWeaponLegacy id="NodVenomparticlebeam" parent="NodWeapon" icon="FXNod_LasersAddonUpgrade">
+    <CWeaponLegacy id="NodVenomParticleBeam" parent="NodWeapon" icon="FXNod_LasersAddonUpgrade">
         <DisplayEffect value="VenomparticlebeamDamage"/>
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="6"/>

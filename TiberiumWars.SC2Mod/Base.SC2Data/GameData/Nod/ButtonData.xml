@@ -385,7 +385,6 @@
     <CButton id="CabalDropShip" parent="CabalButton"/>
     <CButton id="CabalAscender" parent="CabalButton"/>
     <CButton id="NodArmageddon" parent="NodButton"/>
-    <CButton id="NodBeamReflector" parent="NodButton"/>
     <CButton id="NodChargeDefenses" parent="NodButton"/>
     <CButton id="NodVertigo" parent="NodButton"/>
     <CButton id="NodSabotage" parent="NodButton" icon="NACapture"/>

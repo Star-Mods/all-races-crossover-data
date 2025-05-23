@@ -478,58 +478,6 @@
         <BehaviorArray Link="NodPurifierVeterancyUpgrade"/>
         <BehaviorArray Link="NodPurifierDontDie"/>
     </CUnit>
-    <CUnit id="NodBeam" parent="NodGround">
-        <FlagArray index="AIPressForwardDisabled" value="1"/>
-        <PushPriority value="15"/>
-        <Collide index="Small" value="1"/>
-        <Attributes index="Armored" value="1"/>
-        <Attributes index="Mechanical" value="1"/>
-        <LifeStart value="200"/>
-        <LifeMax value="200"/>
-        <LifeArmor value="1"/>
-        <Speed value="2.8125"/>
-        <Acceleration value="3.5"/>
-        <LateralAcceleration value="64"/>
-        <TurningRate value="360"/>
-        <Sight value="11"/>
-        <Food value="-3"/>
-        <CostResource index="Minerals" value="150"/>
-        <CostResource index="Vespene" value="125"/>
-        <RepairTime value="45"/>
-        <KillXP value="50"/>
-        <AbilArray Link="ObeliskCharge"/>
-        <AbilArray Link="BeamCannonVenomCharge"/>
-        <AbilArray Link="BeamCannonDistantAttack"/>
-        <AbilArray Link="BeamCannonFocusCharge"/>
-        <AbilArray Link="CreateBeamCannonFocus"/>
-
-        
-        <BehaviorArray Link="NodBeamVeterancyUpgrade"/>
-        <WeaponArray Link="NodBeamCannonWeapon" Turret="SiegeTank"/>
-        <CardLayouts index="0">
-            <LayoutButtons Face="NodChargeDefenses" Type="AbilCmd" AbilCmd="CreateBeamCannonFocus,Execute" Row="2" Column="2"/>
-            <LayoutButtons Face="NodChargeDefenses" Type="AbilCmd" AbilCmd="ObeliskCharge,Execute" Row="2" Column="0"/>
-            <LayoutButtons Face="NodBeamReflector" Type="AbilCmd" AbilCmd="BeamCannonDistantAttack,Execute" Row="2" Column="1"/>
-            <!-- <LayoutButtons Face="NodBeamReflector" Type="AbilCmd" AbilCmd="BeamCannonVenomCharge,Execute" Row="2" Column="1"/> -->
-            <!-- <LayoutButtons Face="BeamCannonFocusCharge" Type="AbilCmd" AbilCmd="BeamCannonFocusCharge,Execute" Row="2" Column="3"/> -->
-        </CardLayouts>
-        <Radius value="0.875"/>
-        <SeparationRadius value="1"/>
-        <InnerRadius value="0.875"/>
-        <CargoSize value="4"/>
-        <ScoreMake value="275"/>
-        <ScoreKill value="275"/>
-        <SubgroupPriority value="13"/>
-        <MinimapRadius value="1"/>
-        <TacticalAI value="SiegeTank"/>
-        <AIEvalFactor value="1.5"/>
-        <GlossaryPriority value="120"/>
-        <Fidget>
-            <ChanceArray index="Anim" value="33"/>
-            <ChanceArray index="Idle" value="33"/>
-            <ChanceArray index="Turn" value="33"/>
-        </Fidget>
-    </CUnit>
     <CUnit id="NodScorpionTank" parent="NodGround">
         <FlagArray index="TurnBeforeMove" value="1"/>
         <FlagArray index="AIPressForwardDisabled" value="1"/>
@@ -878,7 +826,7 @@
         <Speed value="2"/>
         <Food value="1"/>
         <CostResource index="Minerals" value="50"/>
-        <CostResource index="Vespene" value="25"/>
+        <CostResource index="Vespene" value="50"/>
         <GlossaryPriority value="75"/>
         <AbilArray Link="NodSabotage"/>
         <AbilArray Link="NodBoobyTrap"/>
@@ -890,10 +838,12 @@
     </CUnit>
     <CUnit id="NodShadow" parent="NodInfantry">
         <SubgroupPriority value="55"/>
-        <LifeStart value="50"/>
-        <LifeMax value="50"/>
+        <LifeStart value="75"/>
+        <LifeMax value="75"/>
         <Speed value="2.3984"/>
-        <CostResource index="Minerals" value="50"/>
+        <Food value="1"/>
+        <CostResource index="Minerals" value="75"/>
+        <CostResource index="Vespene" value="75"/>
         <BehaviorArray Link="NodMilitantVeterancyUpgrade"/>
         <BehaviorArray Link="NodShadowJump"/>
         <BehaviorArray Link="CloakNod"/>
@@ -1015,7 +965,7 @@
         <BehaviorArray Link="VenomCC3VeterancyUpgrade"/>
         <BehaviorArray Link="CloakVenomReal"/>
         <BehaviorArray Link="SOAOverWatch"/>
-        <WeaponArray Link="NodVenomparticlebeam" Turret="SiegeTank"/>
+        <WeaponArray Link="NodVenomParticleBeam" Turret="SiegeTank"/>
         <AbilArray Link="NodEMPAttack"/>
         <AbilArray Link="NodVision"/>
         <AbilArray Link="NodDropFlameMines"/>
@@ -1089,7 +1039,7 @@
         <BehaviorArray Link="CloakVenom"/>
         <BehaviorArray Link="VenomCC3VeterancyUpgrade"/>
         <BehaviorArray Link="CloakVenomReal"/>
-        <WeaponArray Link="NodVenomparticlebeam" Turret="SiegeTank"/>
+        <WeaponArray Link="NodVenomParticleBeam" Turret="SiegeTank"/>
         <Radius value="0.625"/>
         <SeparationRadius value="0.625"/>
         <ScoreMake value="125"/>
@@ -1134,37 +1084,6 @@
         <LeaderAlias value=""/>
         <GlossaryPriority value="195"/>
     </CUnit>
-    <CUnit id="NodVenom" parent="NodAir">
-        <Attributes index="Light" value="1"/>
-        <Attributes index="Mechanical" value="1"/>
-        <LifeStart value="80"/>
-        <LifeMax value="80"/>
-        <Speed value="3.75"/>
-        <Acceleration value="3.75"/>
-        <Sight value="8"/>
-        <Food value="-1"/>
-        <CostResource index="Minerals" value="100"/>
-        <CostResource index="Vespene" value="25"/>
-        <RepairTime value="14"/>
-        <KillXP value="35"/>
-        <BehaviorArray Link="CloakVenom"/>
-        <BehaviorArray Link="VenomCC3VeterancyUpgrade"/>
-        <BehaviorArray Link="CloakVenomReal"/>
-        <AbilArray Link="VenomBeamRetargetCharge"/>
-        <AbilArray Link="BeamCannonDistantAttackFinal"/>
-        <CardLayouts index="0">
-            <!-- <LayoutButtons Face="NodBeamReflector" Type="AbilCmd" AbilCmd="VenomBeamRetargetCharge,Execute" Row="2" Column="1"/>
-            <LayoutButtons Face="NodBeamReflector" Type="AbilCmd" AbilCmd="BeamCannonDistantAttackFinal,Execute" Row="2" Column="2"/> -->
-        </CardLayouts>  
-        <WeaponArray Link="NodVenomparticlebeam" Turret="SiegeTank"/>
-        <Radius value="0.625"/>
-        <SeparationRadius value="0.625"/>
-        <ScoreMake value="125"/>
-        <ScoreKill value="125"/>
-        <SubgroupPriority value="14"/>
-        <MinimapRadius value="0.625"/>
-        <GlossaryPriority value="160"/>
-    </CUnit>
     <CUnit id="NodBlade" parent="NodAir">
         <Attributes index="Light" value="1"/>
         <Attributes index="Mechanical" value="1"/>
@@ -1181,7 +1100,7 @@
         <BehaviorArray Link="CloakVenom"/>
         <BehaviorArray Link="VenomCC3VeterancyUpgrade"/>
         <BehaviorArray Link="CloakVenomReal"/>
-        <WeaponArray Link="NodVenomparticlebeam" Turret="SiegeTank"/>
+        <WeaponArray Link="NodVenomParticleBeam" Turret="SiegeTank"/>
         <Radius value="0.625"/>
         <SeparationRadius value="0.625"/>
         <ScoreMake value="125"/>
@@ -1206,7 +1125,7 @@
         <BehaviorArray Link="CloakVenom"/>
         <BehaviorArray Link="VenomCC3VeterancyUpgrade"/>
         <BehaviorArray Link="CloakVenomReal"/>
-        <WeaponArray Link="NodVenomparticlebeam" Turret="SiegeTank"/>
+        <WeaponArray Link="NodVenomParticleBeam" Turret="SiegeTank"/>
         <Radius value="0.625"/>
         <SeparationRadius value="0.625"/>
         <ScoreMake value="125"/>
@@ -1372,6 +1291,14 @@
         <SubgroupPriority value="1"/>
         <GlossaryPriority value="244"/>
     </CUnit>
+<!--    <CUnit id="RefineryRich">-->
+<!--        <BehaviorArray Link="HarvestableRichVespeneGeyserGas"/>-->
+<!--        <EffectArray index="Create" value="RefineryRichSearch"/>-->
+<!--        <BuiltOn value="RichVespeneGeyser"/>-->
+<!--    </CUnit>-->
+
+
+
     <CUnit id="NodPowerPlant" parent="NodStructure">
         <BehaviorArray Link="Deployable"/>
         <!--        <BehaviorArray Link="CNCEnergyGenerator15"/>-->

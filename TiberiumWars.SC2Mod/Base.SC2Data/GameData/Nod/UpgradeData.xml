@@ -394,7 +394,7 @@
         <EffectArray Reference="Weapon,CabalWidowLaser,Level" Value="1"/>
         <EffectArray Reference="Weapon,AftershockWeapon,Level" Value="1"/>
         <EffectArray Reference="Weapon,NodAvatar90mmCannons,Level" Value="1"/>
-        <EffectArray Reference="Weapon,NodVenomparticlebeam,Level" Value="1"/>
+        <EffectArray Reference="Weapon,NodVenomParticleBeam,Level" Value="1"/>
         <EffectArray Reference="Weapon,CabalBasiliskWeapon,Level" Value="1"/>
         <EffectArray Reference="Weapon,SalmanderFlamethrower,Level" Value="1"/>
         <EffectArray Reference="Weapon,CabalSalamanderRocket,Level" Value="1"/>
@@ -498,7 +498,7 @@
         <EffectArray Reference="Weapon,CabalWidowLaser,Level" Value="1"/>
         <EffectArray Reference="Weapon,AftershockWeapon,Level" Value="1"/>
         <EffectArray Reference="Weapon,NodAvatar90mmCannons,Level" Value="1"/>
-        <EffectArray Reference="Weapon,NodVenomparticlebeam,Level" Value="1"/>
+        <EffectArray Reference="Weapon,NodVenomParticleBeam,Level" Value="1"/>
         <EffectArray Reference="Weapon,CabalBasiliskWeapon,Level" Value="1"/>
         <EffectArray Reference="Weapon,SalmanderFlamethrower,Level" Value="1"/>
         <EffectArray Reference="Weapon,CabalSalamanderRocket,Level" Value="1"/>
@@ -602,7 +602,7 @@
         <EffectArray Reference="Weapon,CabalWidowLaser,Level" Value="1"/>
         <EffectArray Reference="Weapon,AftershockWeapon,Level" Value="1"/>
         <EffectArray Reference="Weapon,NodAvatar90mmCannons,Level" Value="1"/>
-        <EffectArray Reference="Weapon,NodVenomparticlebeam,Level" Value="1"/>
+        <EffectArray Reference="Weapon,NodVenomParticleBeam,Level" Value="1"/>
         <EffectArray Reference="Weapon,CabalBasiliskWeapon,Level" Value="1"/>
         <EffectArray Reference="Weapon,SalmanderFlamethrower,Level" Value="1"/>
         <EffectArray Reference="Weapon,CabalSalamanderRocket,Level" Value="1"/>
