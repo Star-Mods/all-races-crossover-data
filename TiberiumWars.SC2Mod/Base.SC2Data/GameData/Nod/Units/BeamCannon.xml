@@ -316,8 +316,8 @@
         <Collide index="Small" value="1"/>
         <Attributes index="Armored" value="1"/>
         <Attributes index="Mechanical" value="1"/>
-        <LifeStart value="200"/>
-        <LifeMax value="200"/>
+        <LifeStart value="175"/>
+        <LifeMax value="175"/>
         <LifeArmor value="1"/>
         <Acceleration value="3.5"/>
         <LateralAcceleration value="64"/>
@@ -497,7 +497,7 @@
 <!--        <Options index="OnlyFireWhileInAttackOrder" value="0"/>-->
 <!--        <Options index="OnlyFireAtAttackOrderTarget" value="0"/>-->
         <DisplayEffect value="NodBeamCannonWeaponDamage1"/>
-        <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
+        <TargetFilters value="Visible,Ground;Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="11"/>
         <TeleportResetRange value="0"/>
         <Period value="0.25"/>
@@ -518,6 +518,7 @@
     
     <!--ABILITIES-->
     <CAbilEffectTarget id="BeamCannonDistantAttack">
+        <Flags index="BestUnit" value="0"/>
         <Effect index="0" value="BeamCannonDistantAttackStage1"/>
         <Flags index="DeferCooldown" value="1"/>
         <Cost>

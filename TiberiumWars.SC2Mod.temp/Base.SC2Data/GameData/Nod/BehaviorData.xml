@@ -1,0 +1,2223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CBehaviorBuff id="AwakenBuggyEMPStunned">
+        <BehaviorCategories index="Stun" value="1"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Duration value="8.4"/>
+        <Modification>
+            <ModifyFlags index="Reveal" value="1"/>
+            <StateFlags index="Stun" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CloakVenomReal">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-cloak.dds"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+        <Requirements value="NodUseVenomCloaking"/>
+        <Modification>
+            <StateFlags index="Cloak" value="1"/>
+            <BehaviorLinkDisableArray value="AttackReveal"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DefenseMCVAura">
+        <BehaviorFlags index="Permanent" value="1"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Period value="2"/>
+        <PeriodicEffect value="DefenseMCVArmorAuraSearchArea"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodDefensiveMCVAuraTargetBehavior">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="3"/>
+        <Modification>
+            <LifeArmorBonus value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CabalHolyOneTauntCasterBehavior">
+        <InfoIcon value="Assets\Textures\btn-tips-rubble.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="14"/>
+        <Period value="0.1"/>
+        <PeriodCount value="140"/>
+        <PeriodicEffect value="HolyOneTauntingAuraSearchArea"/>
+        <Modification MoveSpeedMultiplier="1.25"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CabalHolyOneTauntTargetBehavior">
+        <InfoIcon value="Assets\Textures\btn-tips-rubble.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="0.2"/>
+        <Modification MoveSpeedMultiplier="0.6">
+            <DamageDealtFraction index="Spell" value="0.7"/>
+            <DamageDealtFraction index="Melee" value="0.7"/>
+            <DamageDealtFraction index="Ranged" value="0.7"/>
+            <DamageDealtFraction index="Splash" value="0.7"/>
+            <DamageDealtFraction index="NoProc" value="0.7"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CabalReaperGuerrillaChargeRange">
+        <InfoIcon value="Assets\Textures\btn-upgrade-terran-nova-superscience.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="4.2"/>
+        <Modification AttackSpeedMultiplier="1.2" WeaponRange="2" WeaponScanBonus="2"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CabalReaperGuerrillaChargeSpeed">
+        <InfoIcon value="Assets\Textures\btn-upgrade-terran-nova-superscience.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Duration value="4.2"/>
+        <FinalEffect value="CabalReaperGuerrillaChargeWeaponAB"/>
+        <Modification MoveSpeedMultiplier="1.3"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodAwakenBuggyCasterStunned">
+        <InfoFlags index="Hidden" value="1"/>
+        <BehaviorCategories index="Stun" value="1"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <TimeScaleSource Value="Caster"/>
+        <Duration value="0.7"/>
+        <Modification>
+            <StateFlags index="Stun" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <!--power source-->
+    <CBehaviorPowerSource id="CNCConstructionRadius">
+        <!--        <PowerLink value="PowerSource"/>-->
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <EditorCategories value="Race:Neut,AbilityorEffectType:Structures"/>
+        <Radius value="14.5"/>
+        <CliffLevelFlags index="Higher" value="0"/>
+    </CBehaviorPowerSource>
+    <CBehaviorPowerSource id="CNCConstructionRadiusMedium">
+        <PowerLink value="CNCConstructionRadius"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <EditorCategories value="Race:Neut,AbilityorEffectType:Structures"/>
+        <Radius value="10"/>
+        <CliffLevelFlags index="Higher" value="0"/>
+    </CBehaviorPowerSource>
+    <CBehaviorPowerSource id="CNCConstructionRadiusRefinery">
+        <PowerLink value="CNCConstructionRadius"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <EditorCategories value="Race:Neut,AbilityorEffectType:Structures"/>
+        <Radius value="8"/>
+        <CliffLevelFlags index="Higher" value="0"/>
+    </CBehaviorPowerSource>
+    <CBehaviorPowerSource id="CNCConstructionRadiusSmall">
+        <PowerLink value="CNCConstructionRadius"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <EditorCategories value="Race:Neut,AbilityorEffectType:Structures"/>
+        <Radius value="6"/>
+        <CliffLevelFlags index="Higher" value="0"/>
+    </CBehaviorPowerSource>
+    <!--buff-->
+    <CBehaviorBuff id="NodQueueMove">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <Period value="0.125"/>
+        <PeriodicEffect value="NodQueueMove"/>
+        <RemoveValidatorArray value="TargetHasNoOrders"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodFactionBlackHand">
+        <InfoFlags index="Hidden" value="1"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodFactionMarkedOfKane">
+        <InfoFlags index="Hidden" value="1"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodDominateMachine">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\btn-upgrade-terran-nova-dominationvisor.dds"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <DisplayDuration index="Neutral" value="1"/>
+        <DisplayDuration index="Enemy" value="1"/>
+        <Duration value="10"/>
+        <Player Value="Caster"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="LiquidTibUnit">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\BTN-Ability-Protoss-TimeBomb.dds"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+        <TimeScaleSource Value="Global"/>
+        <Duration value="0.125"/>
+        <Modification SightMaximum="0" TimeScale="0.2"/>
+        <BehaviorCategories index="Slow" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodRepair">
+        <EditorCategories value="AbilityorEffectType:Units"/>
+        <Period value="0.275"/>
+        <PeriodicEffect value="NodRepair"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ReckonerPlacement">
+        <Duration value="0.1"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+        <FinalEffect value="SuicideRemove"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ReckonerPlacementRemove">
+        <Duration value="0.1"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+        <FinalEffect value="SuicideRemove"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AccuracyUpgradesmall">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\icons\InfusionEngineUpgrade.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <Requirements value="AccuracyUpgradeUes"/>
+        <Modification>
+            <DamageDealtUnscaled index="Spell" value="1"/>
+            <DamageDealtUnscaled index="Melee" value="1"/>
+            <DamageDealtUnscaled index="Ranged" value="1"/>
+            <DamageDealtUnscaled index="Splash" value="1"/>
+            <DamageDealtUnscaled index="NoProc" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="AccuracyUpgradeLarge">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\icons\InfusionEngineUpgrade.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <Requirements value="AccuracyUpgradeUes"/>
+        <Modification>
+            <DamageDealtScaled index="Spell" value="0.1"/>
+            <DamageDealtScaled index="Melee" value="0.1"/>
+            <DamageDealtScaled index="Ranged" value="0.1"/>
+            <DamageDealtScaled index="Splash" value="0.1"/>
+            <DamageDealtScaled index="NoProc" value="0.1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Tech2">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\icons\NodFXTier2TechUpgrade.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <Requirements value="TechIINod"/>
+        <Modification>
+            <DamageDealtUnscaled index="Ranged" value="2"/>
+            <LifeArmorBonus value="2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ChemicalPlantReload">
+        <InfoIcon value="Assets\Textures\icon-mineral-terran.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neut"/>
+        <Period value="5"/>
+        <PeriodicEffect value="ModifyResources"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CloakSpecter">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-cloak.dds"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+        <Requirements value="UseNodSpecterCloak"/>
+        <Modification>
+            <StateFlags index="Cloak" value="1"/>
+        </Modification>
+        <DisableValidatorArray value="AttackCheck"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CloakNod">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-cloak.dds"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+        <DisableValidatorArray value="AttackCheck"/>
+        <Modification>
+            <StateFlags index="Cloak" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DistortionSensors">
+        <Modification Detect="11"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="FastBuild">
+        <InfoIcon value="Assets\icons\NodHeavyPlantIcon.dds"/>
+        <Requirements value="FactorySpeed"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodBuildingsunits">
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\icons\AwakenerIcon.dds"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+        <BuffFlags index="DisableWhileUnderConstruction" value="1"/>
+        <Modification>
+            <DeathResponse Effect="CreateMillitant">
+                <Type index="Remove" value="0"/>
+            </DeathResponse>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MedusaEffect">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\icons\InfusionEngineUpgrade.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <Duration value="5"/>
+        <Modification ShieldArmorBonus="3"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="BlackHandLeadergive">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <Requirements value="BlackHandLeader"/>
+        <Period value="2"/>
+        <PeriodicEffect value="BlackHandLeaderSearchArea"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Medusagive">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <Requirements value="MedusaEffect"/>
+        <Period value="2"/>
+        <PeriodicEffect value="MedusaEffectSearchArea"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ChemicalPlantharvest">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neut"/>
+        <Requirements value="ChemicalFactoryUp"/>
+        <Duration value="0.5"/>
+        <ExpireEffect value="ChemicalPlantAP"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CloakVenom">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-cloak.dds"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+        <Requirements value="UseNodCloakVenom"/>
+        <Modification>
+            <DamageTakenFraction index="Spell" value="-0.5"/>
+            <DamageTakenFraction index="Splash" value="-0.5"/>
+        </Modification>
+        <!--        <Modification>-->
+        <!--            <StateFlags index="Cloak" value="1"/>-->
+        <!--        </Modification>-->
+        <!--        <DisableValidatorArray value="AttackCheck"/>-->
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CloakCobra">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-cloak.dds"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+        <Requirements value="UseNodCobraCloak"/>
+        <Modification>
+            <StateFlags index="Cloak" value="1"/>
+        </Modification>
+        <DisableValidatorArray value="AttackCheck"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DroppodSuicide">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neut"/>
+        <Duration value="8"/>
+        <ExpireEffect value="DroppodSuicide"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodUnderConstruction">
+        <InfoIcon value="Assets\icons\CNC3MCVConstructionFactoryIcon.dds"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <Duration value="5"/>
+        <Modification>
+            <!--            <ModifyFlags index="DisableAbils" value="1"/>-->
+            <ModifyFlags index="DisableWeapons" value="1"/>
+            <!--            <StateFlags index="SuppressDropOff" value="1"/>-->
+            <StateFlags index="SuppressFoodMade" value="1"/>
+            <StateFlags index="SuppressEnergyRegen" value="1"/>
+            <AbilClassDisableArray index="CAbilAttack" value="1"/>
+            <AbilClassDisableArray index="CAbilBuild" value="1"/>
+            <AbilClassDisableArray index="CAbilTrain" value="1"/>
+            <AbilClassDisableArray index="CAbilWarpTrain" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Earthquake">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <Duration value="3.2"/>
+        <Modification MoveSpeedMultiplier="0.6"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="EarthquakeSearch">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <Period value="3"/>
+        <PeriodicEffect value="EarthquakeSearch"/>
+    </CBehaviorBuff>
+    <CBehaviorPowerUser id="Deployable">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-building-protoss-pylon.dds"/>
+        <EditorCategories value="Race:Neut,AbilityorEffectType:Units"/>
+        <PowerLink value="CNCConstructionRadius"/>
+        <PlacementMinPowerLevel value="1"/>
+        <PoweredWhileUnderConstruction value="1"/>
+        <PowerStageArray/>
+    </CBehaviorPowerUser>
+    <CBehaviorBuff id="GiveTib">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <BuffFlags index="DisableWhileUnderConstruction" value="1"/>
+        <TimeScaleSource Value="Caster"/>
+        <PeriodicEffect value="PickupTib"/>
+        <Period value="2.5"/>
+    </CBehaviorBuff>
+    <CBehaviorResource id="HighYieldMineralFieldMineralsChemicalFactory">
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\icon-mineral.dds"/>
+        <Capacity value="1500"/>
+        <Contents value="1500"/>
+        <HarvestTime value="2.786"/>
+        <HarvestAmount value="10"/>
+        <Flags index="HideHarvesters" value="1"/>
+        <ReturnDelay value="0.5"/>
+        <ExhaustedAlert value="ResourceExhausted_HighYieldMineral"/>
+        <CarryResourceBehavior value="CarryHighYieldMineralFieldMinerals"/>
+        <IdealHarvesterCount value="3"/>
+    </CBehaviorResource>
+    <CBehaviorBuff id="BlackHandLeader">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\icons\InfusionEngineUpgrade.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <Duration value="5"/>
+        <Modification>
+            <DamageDealtUnscaled index="Spell" value="2"/>
+            <DamageDealtUnscaled index="Melee" value="2"/>
+            <DamageDealtUnscaled index="Ranged" value="2"/>
+            <DamageDealtUnscaled index="Splash" value="2"/>
+            <DamageDealtUnscaled index="NoProc" value="2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpecterTib">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-irradiate.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <Duration value="15"/>
+        <Period value="0.5"/>
+        <PeriodicEffect value="SpecterTibDamage"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MCVVReapirZone">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neut"/>
+        <Period value="5"/>
+        <PeriodicEffect value="MCVRepairSearch"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MCVVReapirZonefactory">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neut"/>
+        <Requirements value="NodRepairRange"/>
+        <Period value="5"/>
+        <PeriodicEffect value="MCVRepairSearch"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MarkofKane">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\icons\InfusionEngineUpgrade.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <Duration value="30"/>
+        <Modification AttackSpeedMultiplier="1.5"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MercAirDrop2">
+        <InfoFlags index="Hidden" value="1"/>
+        <Duration value="0.1"/>
+        <ExpireEffect value="MercAirDropB"/>
+        <Modification Height="10" MoveSpeedMultiplier="0.1">
+            <StateFlags index="Invulnerable" value="1"/>
+            <StateFlags index="Unselectable" value="1"/>
+            <StateFlags index="Untargetable" value="1"/>
+            <HeightTime index="Stop" value="3"/>
+            <AbilClassDisableArray index="CAbilAttack" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CabalShieldGeneratorRecharge">
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-shieldslevel1.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <Duration value="40"/>
+        <Modification>
+            <VitalMaxArray index="Shields" value="100"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodVision">
+        <InfoIcon value="Assets\Textures\btn-ability-dehaka-detector.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <Modification SightBonus="2" Detect="9"/>
+        <Duration value="20"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SJHyperionLightningStormStun2">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-ultrasonicpulse.dds"/>
+        <BehaviorCategories index="Stun" value="1"/>
+        <EditorCategories value="Race:Neut,AbilityorEffectType:Units"/>
+        <Duration value="6"/>
+        <Modification>
+            <ModifyFlags index="DisableAbils" value="1"/>
+            <ModifyFlags index="SuppressMoving" value="1"/>
+            <ModifyFlags index="SuppressTurning" value="1"/>
+            <StateFlags index="Stun" value="1"/>
+            <StateFlags index="SuppressAttack" value="1"/>
+            <StateFlags index="SuppressCloak" value="1"/>
+            <StateFlags index="SuppressDetection" value="1"/>
+            <StateFlags index="SuppressRadar" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodShield">
+        <InfoIcon value="Assets\Textures\btn-upgrade-protoss-shieldslevel1.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <Modification>
+            <VitalRegenArray index="Shields" value="1"/>
+        </Modification>
+        <Duration value="1.5"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CabalShieldGenerator">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <Period value="1"/>
+        <InitialEffect value="CabalShieldGeneratorSearch"/>
+        <PeriodicEffect value="CabalShieldGeneratorSet"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpiderCount2">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <DisableValidatorArray value="SpiderCountmorethan2"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpiderCount3">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <DisableValidatorArray value="SpiderCountmorethan3"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpiderCount4">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <DisableValidatorArray value="SpiderCountmorethan4"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpiderCount5">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <DisableValidatorArray value="SpiderCountmorethan5"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpiderCount6">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <DisableValidatorArray value="SpiderCountmorethan6"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="SpiderTankloaded">
+        <InfoIcon value="Assets\icons\SpiderTankIcon.dds"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Structures"/>
+        <MaxStackCount value="6"/>
+        <Modification WeaponRange="0.5">
+            <DamageDealtUnscaled index="Spell" value="10"/>
+            <DamageDealtUnscaled index="Melee" value="10"/>
+            <DamageDealtUnscaled index="Ranged" value="10"/>
+            <DamageDealtUnscaled index="Splash" value="10"/>
+            <DamageDealtUnscaled index="NoProc" value="10"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CabalCenturionShield">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <DisableValidatorArray value="SourceIsStationary"/>
+        <Modification>
+            <DamageTakenFraction index="Spell" value="-0.5"/>
+            <DamageTakenFraction index="Melee" value="-0.5"/>
+            <DamageTakenFraction index="Ranged" value="-0.5"/>
+            <DamageTakenFraction index="Splash" value="-0.5"/>
+            <DamageTakenFraction index="NoProc" value="-0.5"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CloakDistortionFieldNod">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-cloak.dds"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+        <Duration value="5"/>
+        <DamageResponse ModifyFraction="0" ModifyMinimumDamage="1">
+            <Chance value="0.2"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="DistortAB">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neut"/>
+        <Requirements value="StealhField"/>
+        <Period value="3"/>
+        <PeriodicEffect value="DistortSearchArea"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="EnlightenedExplosion">
+        <InfoFlags index="Hidden" value="1"/>
+        <Modification>
+            <DeathResponse Chance="1" Effect="EnlightenedExplosionPersistent"/>
+        </Modification>
+        <Requirements value="EnlightenedSuicide"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="GenericStun">
+        <InfoIcon value="Assets\Textures\btn-ability-terran-ultrasonicpulse.dds"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="GhostHoldFire">
+        <Modification>
+            <WeaponDisableArray value="NodStealthTankRocketLauncher"/>
+        </Modification>
+        <EditorCategories value="Race:Neut,AbilityorEffectType:Units"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="GhostHoldFireB">
+        <Modification>
+            <WeaponDisableArray value="NodStealthTankRocketLauncher"/>
+        </Modification>
+        <EditorCategories value="Race:Neut,AbilityorEffectType:Units"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="RedeemerConfusion">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-confusion.dds"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+        <Duration value="4.2"/>
+        <Period value="1"/>
+        <InitialEffect value="RedeemerConfusionStopInitialSet"/>
+        <PeriodicEffect value="RedeemerConfusionAttackSearch"/>
+        <ExpireEffect value="RedeemerConfusionEndSet"/>
+        <Modification>
+            <StateFlags index="Passive" value="1"/>
+            <StateFlags index="IgnorePlayerAlliedFlags" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="RedeemerConfusionInitial">
+        <Alignment value="Negative"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+        <Duration value="0.0625"/>
+        <FinalEffect value="RedeemerConfusionAttackSearch"/>
+        <Modification>
+            <StateFlags index="Passive" value="1"/>
+            <AbilClassDisableArray index="CAbilAttack" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CabalHijackerEMPStun">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-ultrasonicpulse.dds"/>
+        <BehaviorCategories index="Stun" value="1"/>
+        <EditorCategories value="Race:Neut,AbilityorEffectType:Units"/>
+        <Duration value="7"/>
+        <Modification>
+            <StateFlags index="Stun" value="1"/>
+            <StateFlags index="SuppressAttack" value="1"/>
+            <StateFlags index="SuppressCloak" value="1"/>
+            <StateFlags index="SuppressDetection" value="1"/>
+            <StateFlags index="SuppressRadar" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="ObeliskCharge">
+        <InfoIcon value="Assets\icons\SpiderTankIcon.dds"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Structures"/>
+        <MaxStackCount value="5"/>
+        <Duration value="1.3"/>
+        <Modification WeaponRange="0.5">
+            <DamageDealtUnscaled index="Spell" value="10"/>
+            <DamageDealtUnscaled index="Melee" value="10"/>
+            <DamageDealtUnscaled index="Ranged" value="10"/>
+            <DamageDealtUnscaled index="Splash" value="10"/>
+            <DamageDealtUnscaled index="NoProc" value="10"/>
+        </Modification>
+        <MaxStackCountPerCaster value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="StasisField">
+        <Alignment value="Negative"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-psistorm.dds"/>
+        <EditorCategories value="Race:Neut,AbilityorEffectType:Units"/>
+        <Duration value="3"/>
+        <Modification>
+            <StateFlags index="Invulnerable" value="1"/>
+            <StateFlags index="Stasis" value="1"/>
+            <StateFlags index="Stun" value="1"/>
+            <AbilClassDisableArray index="CAbilAttack" value="1"/>
+            <BehaviorLinkDisableArray value="Detector7"/>
+            <BehaviorLinkDisableArray value="Detector8"/>
+            <BehaviorLinkDisableArray value="Detector9"/>
+            <BehaviorLinkDisableArray value="Detector10"/>
+            <BehaviorLinkDisableArray value="Detector11"/>
+            <BehaviorLinkDisableArray value="Detector12"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CabalSalamanderMissileTarget1">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <Duration value="0.7"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="LeviathanMissileTarget1">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <Duration value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CabalSalamanderMissileTarget2">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <Duration value="0.7"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="LeviathanMissileTarget2">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <Duration value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CabalSalamanderMissileTarget3">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <Duration value="0.7"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="LeviathanMissileTarget3">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <Duration value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CabalSalamanderMissileTarget4">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <Duration value="0.7"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CabalSalamanderWeaponSearch">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <Period value="0.5"/>
+        <PeriodicEffect value="CabalSalamanderWeaponsearchSet"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CommandoD8">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+        <Duration value="0.5"/>
+        <FinalEffect value="NodC4Damage"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <DisplayDuration index="Enemy" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodGroundDrop">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <Duration value="1"/>
+        <Modification MoveSpeedMultiplier="0.1">
+            <StateFlags index="Invulnerable" value="1"/>
+            <StateFlags index="Unselectable" value="1"/>
+            <StateFlags index="Untargetable" value="1"/>
+            <AbilClassDisableArray index="CAbilAttack" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="CabalMissilePodBurrow">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Structures"/>
+        <Period value="2"/>
+        <PeriodicEffect value="MissilePodBurrowOrder"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodTurretBurrow">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Structures"/>
+        <Period value="1"/>
+        <PeriodicEffect value="NodTurretBurrowOrder"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MedusaChargeBeamCounter">
+        <InfoFlags index="Hidden" value="1"/>
+        <BuffFlags index="RefreshStack" value="1"/>
+        <MaxStackCount value="30"/>
+        <Duration value="5"/>
+        <InitialEffect value="MedusaChargeBeamCounterCheck"/>
+        <RefreshEffect value="MedusaChargeBeamCounterCheck"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MedusaChargeBeamPhase2">
+        <InfoFlags index="Hidden" value="1"/>
+        <Duration value="5"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="MedusaChargeBeamPhase3">
+        <InfoFlags index="Hidden" value="1"/>
+        <Duration value="5"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="LeviathanWeaponSearch">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <Period value="0.5"/>
+        <PeriodicEffect value="LeviathanWeaponsearchSet"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="StealthTankexposure">
+        <Alignment value="Negative"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <Duration value="3"/>
+        <Modification>
+            <StateFlags index="SuppressCloak" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Neutralexposure">
+        <Alignment value="Negative"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neut"/>
+        <Modification>
+            <StateFlags index="SuppressCloak" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="FactorySpeed">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-protoss-chronoboost.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <Modification TimeScale="1.3" MoveSpeedMultiplier="1.225">
+            <RateMultiplierArray index="Charge" value="1.225"/>
+            <RateMultiplierArray index="Cooldown" value="1.225"/>
+            <RateMultiplierArray index="Progress" value="1.225"/>
+            <RateMultiplierArray index="Queueable" value="1.225"/>
+            <RateMultiplierArray index="Spawn" value="1.225"/>
+            <RateMultiplierArray index="Creep" value="1.225"/>
+        </Modification>
+        <TimeScaleSource Value="Global"/>
+        <BehaviorCategories index="Fast" value="1"/>
+        <Requirements value="FactorySpeed"/>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="Tech3">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\icons\NodFXTier2TechUpgrade.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <Requirements value="TechIIINod"/>
+        <Modification>
+            <DamageDealtUnscaled index="Ranged" value="3"/>
+            <LifeArmorBonus value="2"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="WidowDontDie">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\BTN-techupgrade-terran-combatshield-color.dds"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+        <Requirements value="UseMechanicalRebirth"/>
+        <DamageResponse Fatal="1" Handled="CabalWidowWreckageAbil" ModifyFraction="0">
+            <Chance value="1"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="abletoharvest">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Neut"/>
+        <Requirements value="ChemicalFactoryUp"/>
+    </CBehaviorBuff>
+    <!--Veterancy-->
+    <CBehaviorVeterancy id="DevoutVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="100">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="100">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="100">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="BlackHandVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="320">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="320">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="320">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="NodCommandoVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="520">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="520">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="520">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="CabalAfterShockVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="650">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="650">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="650">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="CabalCenturionVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="450">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="450">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="450">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="VertigoVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="400">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="400">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="400">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="NodSpecterVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="650">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="650">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="650">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="CabalReaperVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="240">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="240">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="240">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="CabalWidowVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="850">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="850">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="850">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="NodBeamVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="550">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.1"/>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="550">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.1"/>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="550">
+            <Modification>
+                <DamageTotalMultiplier index="Spell" value="0.1"/>
+                <DamageTotalMultiplier index="Melee" value="0.1"/>
+                <DamageTotalMultiplier index="Ranged" value="0.1"/>
+                <DamageTotalMultiplier index="Splash" value="0.1"/>
+                <DamageTotalMultiplier index="NoProc" value="0.1"/>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="CabalSalamanderVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="1110">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1110">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1110">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="CabalBasiliskVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="1110">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1110">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1110">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="MedusaVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="1000">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1000">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1000">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="CabalAvengerTankVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="450">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="450">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="450">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="NodBlackHandCC3VeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="200">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="200">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="200">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="FlameTankVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="550">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="550">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="550">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="NodRedeemerVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="2000">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="2000">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="2000">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="EnlightenedVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="210">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="210">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="210">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="HighConfessorVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="1040">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1040">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1040">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="NodMantisVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="450">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="450">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="450">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="NodScorpionTankVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="450">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="450">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="450">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="CabalUnderminerVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="650">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="650">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="650">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="NodMilitantVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="30">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="30">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="30">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="NodMilitantRocketVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="104">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="104">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="104">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="NodPurifierVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="700">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="700">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="700">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="CabalLeviathanVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="1600">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1600">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="1600">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="NodBikeVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="150">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="150">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="150">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="NodAttackBikeVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="150">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="150">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="150">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="AscendedVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="120">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="120">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="120">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="NodAvatarVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="650">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="650">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="650">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="NodRaiderVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="150">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="150">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="150">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="CabalCommandoVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="520">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="520">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="520">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="CabalSpiderVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="200">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="200">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="200">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="CabalMarauderVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="250">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="250">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="250">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="CabalTyrantVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="350">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="350">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="350">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="NodScorpionVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="450">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="450">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="450">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="VenomVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="150">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="150">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="150">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="StealthTankVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="650">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="650">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="650">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="StealthTankCC3VeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="450">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="450">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="450">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="VenomCC3VeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="230">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="230">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="230">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorVeterancy id="CobraVeterancyUpgrade">
+        <EditorCategories value="AbilityorEffectType:Units,Race:Nod"/>
+        <ShareFilters index="Kills" value="-;Neutral,Enemy"/>
+        <VeterancyLevelArray MinVeterancyXP="400">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="400">
+            <Modification>
+                <DamageTotalMultiplier index="Ranged" value="0.15"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <VeterancyLevelArray MinVeterancyXP="400">
+            <Modification>
+                <LifeArmorBonus value="1"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Life" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Shields" value="0"/>
+                <VitalMaxIncreaseAffectsCurrentArray index="Energy" value="0"/>
+                <VitalRegenArray index="Life" value="0.5"/>
+            </Modification>
+        </VeterancyLevelArray>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorVeterancy>
+    <CBehaviorBuff id="NodShadowFlyIssueMorph">
+        <InfoFlags index="Hidden" value="1"/>
+        <RemoveValidatorArray value="SourceIsNodShadow"/>
+        <Period value="0.0625"/>
+        <InitialEffect value="NodShadowFlyIssueMorph"/>
+        <PeriodicEffect value="NodShadowFlyIssueMorph"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodShadowLandIssueLandRetry">
+        <InfoFlags index="Hidden" value="1"/>
+        <RemoveValidatorArray value="NotMoverNodShadowLand"/>
+        <Period value="0.5"/>
+        <InitialEffect value="NodShadowLandCreatePrecursor"/>
+        <PeriodicEffect value="NodShadowLandCreatePrecursor"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodShadowLandIssueMorph">
+        <InfoFlags index="Hidden" value="1"/>
+        <RemoveValidatorArray value="SourceIsNodShadowFlying"/>
+        <Period value="0.0625"/>
+        <InitialEffect value="NodShadowLandIssueMorph"/>
+        <PeriodicEffect value="NodShadowLandIssueMorph"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodShadowLandPrecursor">
+        <InfoFlags index="Hidden" value="1"/>
+        <Duration value="0.5"/>
+        <FinalEffect value="SuicideRemove"/>
+        <Modification SightMaximum="0">
+            <ModifyFlags index="DisableAbils" value="1"/>
+            <ModifyFlags index="SuppressMoving" value="1"/>
+            <StateFlags index="Invulnerable" value="1"/>
+            <StateFlags index="SuppressCollision" value="1"/>
+            <StateFlags index="SuppressFoodUsed" value="1"/>
+            <StateFlags index="NoDraw" value="1"/>
+            <StateFlags index="Uncommandable" value="1"/>
+            <StateFlags index="Unselectable" value="1"/>
+            <StateFlags index="Untargetable" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorJump id="NodShadowJump">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <TriggerHeightDeltaMin value="1.5"/>
+        <TriggerHeightDeltaMax value="4.5"/>
+        <InitiateRangeUp value="1.5"/>
+        <InitiateRangeDown value="0.5"/>
+        <JumpRangeMax value="12"/>
+        <Mover value="CliffJumper"/>
+        <MoverUp value="ReaperJumpDown"/>
+        <MoverDown value="ReaperJumpDown"/>
+        <DurationPreLaunch value="0.05"/>
+        <DurationPostLand value="0.075"/>
+        <DurationMoveOut value="0.08"/>
+        <Placeholder value="NodShadowPlaceholder"/>
+        <LandAdjustmentDown value="1"/>
+        <LandArrivalRange value="0.05"/>
+        <LandCheckRadius value="5"/>
+    </CBehaviorJump>
+    <CBehaviorBuff id="NodHarvesterCloak">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-cloak.dds"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+        <Duration value="8.4"/>
+        <Modification>
+            <StateFlags index="Cloak" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodC4">
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+        <Duration value="1.5"/>
+        <ExpireEffect value="NodC4Damage"/>
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodChannelSabotageCombat">
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-snipe-color.dds"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <!--        <DamageResponse Chance="1" Handled="NodChannelSabotageCombatRB"/>-->
+        <!--        <FinalEffect value="NodChannelSabotageRefundSet"/>-->
+        <Modification>
+            <StateFlags index="RevealProgress" value="1"/>
+            <StateFlags index="SuppressPassenger" value="1"/>
+        </Modification>
+        <InfoFlags index="Hidden" value="1"/>
+        <DisplayDuration index="Self" value="1"/>
+        <DisplayDuration index="Ally" value="1"/>
+        <DisplayDuration index="Enemy" value="1"/>
+        <Duration value="4"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodAvatarDontDie">
+        <Alignment value="Positive"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\Textures\BTN-techupgrade-terran-combatshield-color.dds"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+        <!--        <Requirements value="UseMechanicalRebirth"/>-->
+        <DamageResponse Fatal="1" Handled="NodAvatarWreckageSet" ModifyFraction="0">
+            <Chance value="1"/>
+        </DamageResponse>
+    </CBehaviorBuff>
+    <!--    <CBehaviorBuff id="NodPurifierDontDie">-->
+    <!--        <Alignment value="Positive"/>-->
+    <!--        <InfoFlags index="Hidden" value="1"/>-->
+    <!--        <InfoIcon value="Assets\Textures\BTN-techupgrade-terran-combatshield-color.dds"/>-->
+    <!--        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>-->
+    <!--        &lt;!&ndash;        <Requirements value="UseMechanicalRebirth"/>&ndash;&gt;-->
+    <!--        <DamageResponse Fatal="1" Handled="NodPurifierWreckageIO" ModifyFraction="0">-->
+    <!--            <Chance value="1"/>-->
+    <!--        </DamageResponse>-->
+    <!--    </CBehaviorBuff>-->
+    <CBehaviorBuff id="NodAvatarStealthGenerator">
+        <DisableValidatorArray value="IsNotStructure"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <Alignment value="Positive"/>
+        <InfoIcon value="Assets\Textures\btn-ability-terran-cloak.dds"/>
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Units"/>
+        <Modification>
+            <StateFlags index="Cloak" value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodAvatarDetector">
+        <InfoFlags index="Hidden" value="1"/>
+        <DisableValidatorArray value="IsNotStructure"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <Modification Detect="11"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodAvatarFlameCannon">
+        <DisableValidatorArray value="IsNotStructure"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <Modification>
+            <WeaponEnableArray value="NodAvatarFlameThrower"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodAvatarBeamCannon">
+        <DisableValidatorArray value="IsNotStructure"/>
+        <BehaviorFlags index="Permanent" value="1"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <Modification>
+            <WeaponEnableArray value="NodAvatarBeamCannon"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodArtilleryBeaconTimedLife" parent="TimedLife">
+        <InfoIcon value="Assets\Textures\btn-ability-zerg-explode.dds"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <Duration value="40"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodConfessorAura">
+        <InfoFlags index="Hidden" value="1"/>
+        <InfoIcon value="Assets\icons\Nod\NBConfessorAura.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+        <DisableValidatorArray value="NotHidden"/>
+        <Period value="1"/>
+        <PeriodicEffect value="NodConfessorAuraSearch"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodConfessorInspired">
+        <InfoIcon value="Assets\icons\Nod\NBConfessorAura.dds"/>
+        <EditorCategories value="AbilityorEffectType:Units,Race:UPL"/>
+        <MaxStackCountPerCaster value="1"/>
+        <Duration value="1.1"/>
+        <!--        <Modification MoveSpeedBonus="0.1992">-->
+        <!--            <DamageDealtUnscaled index="Melee" value="1"/>-->
+        <!--            <DamageDealtUnscaled index="Ranged" value="1"/>-->
+        <!--            <DamageDealtUnscaled index="Splash" value="1"/>-->
+        <!--        </Modification>-->
+        <Modification MoveSpeedMultiplier="1.05" UnifiedAttackSpeedFactor="0.05">
+            <DamageTakenFraction index="Spell" value="-0.05"/>
+            <DamageTakenFraction index="Melee" value="-0.05"/>
+            <DamageTakenFraction index="Ranged" value="-0.05"/>
+            <DamageTakenFraction index="Splash" value="-0.05"/>
+            <DamageTakenFraction index="NoProc" value="-0.05"/>
+            <LifeArmorBonus value="1"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodFanaticExplode">
+        <Alignment value="Positive"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <InfoFlags index="Hidden" value="1"/>
+        <Modification>
+            <DeathResponse Chance="1" Effect="NodVolatileBurst"/>
+        </Modification>
+        <AINotifyEffect value="NodVolatileBurstU"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodVolatileBurstBuilding">
+        <InfoFlags index="Hidden" value="1"/>
+        <EditorCategories value="Race:Zerg,AbilityorEffectType:Units"/>
+        <Modification>
+            <WeaponEnableArray value="NodVolatileBurstBuilding"/>
+            <WeaponDisableArray value="NodVolatileBurst"/>
+        </Modification>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodAvatarPilot">
+        <InfoFlags index="Hidden" value="1"/>
+        <Period value="0.0625"/>
+        <PeriodicEffect value="NodAvatarPilotSearchArea"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodRedeemerPilot">
+        <InfoFlags index="Hidden" value="1"/>
+        <Period value="0.0625"/>
+        <PeriodicEffect value="NodRedeemerPilotSearchArea"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HasEmptyPilotSlot1">
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="HasEmptyPilotSlot2">
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorBuff>
+    <CBehaviorBuff id="NodTiberiumInfusion">
+        <DisableValidatorArray value="PlayerHasNodTiberiumInfusion"/>
+        <!--        <InfoFlags index="Hidden" value="1"/>-->
+    </CBehaviorBuff>
+</Catalog>

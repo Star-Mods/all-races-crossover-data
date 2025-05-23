@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Catalog>
+    <CAbilBuild id="CabalSlaveBuild">
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+        <FlagArray index="Interruptible" value="1"/>
+        <FlagArray index="PeonDisableCollision" value="1"/>
+        <InfoArray index="Build1" Unit="CabalOutpost" Time="30">
+            <Button DefaultButtonFace="Outpost"/>
+        </InfoArray>
+        <InfoArray index="Build2" Unit="CabalControlNode" Time="65">
+            <Button DefaultButtonFace="CabalControlNode"/>
+        </InfoArray>
+        <InfoArray index="Build3" Unit="NodTiberiumSilo" Time="30">
+            <Button DefaultButtonFace="NodTiberiumSilo"/>
+            <ValidatorArray value="HasVespene"/>
+        </InfoArray>
+        <InfoArray index="Build4" Unit="CabalMonitoringStation" Time="35">
+            <Button DefaultButtonFace="CabalMonitoringStation"/>
+        </InfoArray>
+        <InfoArray index="Build5" Unit="CabalShrine" Time="50">
+            <Button DefaultButtonFace="CabalShrine" Requirements="HaveFactory"/>
+        </InfoArray>
+        <InfoArray index="Build6" Unit="CabalWeaponsLaboratory" Time="65">
+            <Button DefaultButtonFace="CabalWeaponsLaboratory" Requirements="HaveFactory"/>
+        </InfoArray>
+        <InfoArray index="Build7" Unit="CabalGrandTemple" Time="50">
+            <Button DefaultButtonFace="CabalGrandTemple" Requirements="HaveFactory"/>
+        </InfoArray>
+        <InfoArray index="Build8" Unit="CabalPyramid" Time="50">
+            <Button DefaultButtonFace="CabalPyramid" Requirements="HaveFactory"/>
+        </InfoArray>
+        <InfoArray index="Build10" Unit="NodTurretO" Time="30">
+            <Button DefaultButtonFace="NodTurret" Requirements="CabalMonitoringStation"/>
+        </InfoArray>
+        <InfoArray index="Build11" Unit="CabalMissilePodO" Time="25">
+            <Button DefaultButtonFace="CabalMissilePod" Requirements="CabalMonitoringStation"/>
+        </InfoArray>
+        <InfoArray index="Build12" Unit="CabalFlameColumn" Time="45">
+            <Button DefaultButtonFace="CabalFlameColumn" Requirements="CabalWeaponsLaboratory"/>
+        </InfoArray>
+        <InfoArray index="Build13" Unit="CabalIncinerator" Time="55">
+            <Button DefaultButtonFace="CabalIncinerator" Requirements="CabalGrandTemple"/>
+        </InfoArray>
+        <InfoArray index="Build14" Unit="CabalObeliskOfLife" Time="45">
+            <Button DefaultButtonFace="CabalObeliskOfLife" Requirements="CabalShrine"/>
+        </InfoArray>
+        <InfoArray index="Build15" Unit="CabalShieldGenerator" Time="45">
+            <Button DefaultButtonFace="CabalShieldGenerator" Requirements="CabalShrine"/>
+        </InfoArray>
+        <InfoArray index="Build16" Unit="CabalBomberPlatform" Time="25">
+            <Button DefaultButtonFace="CabalBomberPlatform" Requirements="HaveEngineeringBay"/>
+        </InfoArray>
+        <FidgetDelayMin value="5"/>
+        <FidgetDelayMax value="10"/>
+        <ConstructionMover value="Construction"/>
+    </CAbilBuild>
+    <CAbilTrain id="CabalWarFactoryTrain">
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Structures"/>
+        <Range value="5"/>
+        <Activity value="UI/Building"/>
+        <InfoArray index="Train1" Time="20">
+            <Button DefaultButtonFace="CabalBike" Requirements="CabalControlNode"/>
+            <Unit value="CabalBike"/>
+        </InfoArray>
+        <InfoArray index="Train2" Time="30">
+            <Button DefaultButtonFace="CabalMarauder" Requirements="CabalControlNode"/>
+            <Unit value="CabalMarauder"/>
+        </InfoArray>
+        <InfoArray index="Train3" Time="35">
+            <Button DefaultButtonFace="CabalAvenger" Requirements="CabalMonitoringStation"/>
+            <Unit value="CabalAvengerTank"/>
+        </InfoArray>
+        <InfoArray index="Train4" Time="20">
+            <Button DefaultButtonFace="CabalTyrant" Requirements="CabalMonitoringStation"/>
+            <Unit value="CabalTyrant"/>
+        </InfoArray>
+        <InfoArray index="Train5" Time="30">
+            <Button DefaultButtonFace="CabalStealthTank" Requirements="CabalShrine"/>
+            <Unit value="CabalStealthTank"/>
+        </InfoArray>
+        <InfoArray index="Train6" Time="30">
+            <Button DefaultButtonFace="CabalScorpion"/>
+            <Unit value="CabalShrine"/>
+        </InfoArray>
+        <InfoArray index="Train7" Time="50">
+            <Button DefaultButtonFace="CabalWidow" Requirements="CabalWeaponsLaboratory"/>
+            <Unit value="CabalWidow"/>
+        </InfoArray>
+        <InfoArray index="Train8" Time="40">
+            <Button DefaultButtonFace="CabalUnderminer" Requirements="CabalWeaponsLaboratory"/>
+            <Unit value="CabalUnderminer"/>
+        </InfoArray>
+        <InfoArray index="Train9" Time="50">
+            <Button DefaultButtonFace="Aftershock" Requirements="CabalWeaponsLaboratory"/>
+            <Unit value="CabalAfterShock"/>
+        </InfoArray>
+        <InfoArray index="Train10" Time="50">
+            <Button DefaultButtonFace="CabalHolySpirit" Requirements="CabalGrandTemple"/>
+            <Unit value="CabalHolySpirit"/>
+        </InfoArray>
+        <InfoArray index="Train11" Time="30">
+            <Button DefaultButtonFace="CabalSpider"/>
+            <Unit value="CabalSpider"/>
+        </InfoArray>
+        <InfoArray index="Train12" Time="20">
+            <Button DefaultButtonFace="CabalRaider" Requirements="CabalControlNode"/>
+            <Unit value="CabalRaider"/>
+        </InfoArray>
+        <InfoArray index="Train13" Time="20">
+            <Button DefaultButtonFace="CabalFlameTank" Requirements="CabalControlNode"/>
+            <Unit value="CabalFlameTank"/>
+        </InfoArray>
+        <InfoArray index="Train14" Time="20">
+            <Button DefaultButtonFace="CabalMantis" Requirements="CabalControlNode"/>
+            <Unit value="CabalMantis"/>
+        </InfoArray>
+        <InfoArray index="Train15" Time="20">
+            <Button DefaultButtonFace="CabalReckoner" Requirements="CabalControlNode"/>
+            <Unit value="CabalReckoner"/>
+        </InfoArray>
+        <InfoArray index="Train16" Time="20">
+            <Button DefaultButtonFace="CabalSpecter" Requirements="CabalControlNode"/>
+            <Unit value="CabalSpecter"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilTrain id="CabalAirTowerTrain">
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Structures"/>
+        <Range value="5"/>
+        <Activity value="UI/Building"/>
+        <InfoArray index="Train1" Time="30">
+            <Button DefaultButtonFace="NodBane" Requirements="CabalControlNode"/>
+            <Unit value="CabalBane"/>
+        </InfoArray>
+        <InfoArray index="Train2" Time="30">
+            <Button DefaultButtonFace="NodCobra" Requirements="CabalControlNode"/>
+            <Unit value="CabalCobra"/>
+        </InfoArray>
+        <InfoArray index="Train3" Time="40">
+            <Button DefaultButtonFace="NodScalpel" Requirements="CabalShrine"/>
+            <Unit value="CabalScalpel"/>
+        </InfoArray>
+        <InfoArray index="Train4" Time="30">
+            <Button DefaultButtonFace="CabalDropShip" Requirements="CabalControlNode"/>
+            <Unit value="CabalDropShip"/>
+        </InfoArray>
+        <InfoArray index="Train5" Time="60">
+            <Button DefaultButtonFace="NodMedusa" Requirements="CabalShrine"/>
+            <Unit value="CabalMedusa"/>
+        </InfoArray>
+        <InfoArray index="Train6" Time="60">
+            <Button DefaultButtonFace="CabalSalamander" Requirements="CabalWeaponsLaboratory"/>
+            <Unit value="CabalSalamander"/>
+        </InfoArray>
+        <InfoArray index="Train7" Time="60">
+            <Button DefaultButtonFace="CabalBasilisk" Requirements="CabalWeaponsLaboratory"/>
+            <Unit value="CabalBasilisk"/>
+        </InfoArray>
+        <InfoArray index="Train8" Time="100">
+            <Button DefaultButtonFace="CabalLeviathan" Requirements="CabalGrandTemple"/>
+            <Unit value="CabalLeviathan"/>
+        </InfoArray>
+        <InfoArray index="Train9" Time="30">
+            <Button DefaultButtonFace="CabalAscender" Requirements="CabalShrine"/>
+            <Unit value="CabalAscender"/>
+        </InfoArray>
+        <InfoArray index="Train10" Time="30">
+            <Button DefaultButtonFace="CabalVertigo" Requirements="CabalWeaponsLaboratory"/>
+            <Unit value="CabalVertigo"/>
+        </InfoArray>
+        <!--LeviathanRequirements-->
+        <!--     VERTIGO-->
+        <!--        <InfoArray index="Train30" Time="30"><Button DefaultButtonFace="DeploySupportMCV" Requirements="NoMCVSupport"/><Unit value="CabalSupportCrawler"/></InfoArray>-->
+    </CAbilTrain>
+    <CAbilTrain id="CabalBarracksTrain">
+        <EditorCategories value="Race:MNK,AbilityorEffectType:Structures"/>
+        <Range value="5"/>
+        <InfoArray index="Train1" Time="30">
+            <Button DefaultButtonFace="Devout" Requirements="CabalControlNode"/>
+            <Unit value="CabalDevout"/>
+        </InfoArray>
+        <InfoArray index="Train2" Time="30">
+            <Button DefaultButtonFace="Enlightened" Requirements="CabalControlNode"/>
+            <Unit value="CabalEnlightened"/>
+        </InfoArray>
+        <InfoArray index="Train3" Time="30">
+            <Button DefaultButtonFace="Ascended" Requirements="CabalControlNode"/>
+            <Unit value="CabalAscended"/>
+        </InfoArray>
+        <InfoArray index="Train4" Time="30">
+            <Button DefaultButtonFace="BlackHand" Requirements="CabalMonitoringStation"/>
+            <Unit value="CabalBlackHand"/>
+        </InfoArray>
+        <InfoArray index="Train5" Time="30">
+            <Button DefaultButtonFace="CabalHijacker" Requirements="CabalMonitoringStation"/>
+            <Unit value="CabalHijacker"/>
+        </InfoArray>
+        <InfoArray index="Train6" Time="40">
+            <Button DefaultButtonFace="NodHighConfessor" Requirements="CabalShrine"/>
+            <Unit value="CabalReaper"/>
+            <Unit value="CabalHighConfessor"/>
+        </InfoArray>
+        <InfoArray index="Train7" Time="50">
+            <Button DefaultButtonFace="CabalDominator" Requirements="CabalShrine"/>
+            <Unit value="CabalDominator"/>
+        </InfoArray>
+        <InfoArray index="Train8" Time="30">
+            <Button DefaultButtonFace="CabalEngineer" Requirements="CabalMonitoringStation"/>
+            <Unit value="CabalEngineer"/>
+        </InfoArray>
+        <InfoArray index="Train9" Time="35">
+            <Button DefaultButtonFace="CabalCenturion" Requirements="CabalGrandTemple"/>
+            <Unit value="CabalCenturion"/>
+        </InfoArray>
+        <!--        <InfoArray index="Train22" Time="7"><Button DefaultButtonFace="CabalTrainVisceroid" Requirements="HaveNodShrine"/><Unit value="CabalVisceroid"/></InfoArray>-->
+    </CAbilTrain>
+    <CAbilTrain id="CabalCrawlerTrain">
+        <EditorCategories value="Race:MNK,AbilityorEffectType:Structures"/>
+        <Alert value="TrainWorkerComplete"/>
+        <Range value="5"/>
+        <InfoArray index="Train1" Time="17">
+            <Button DefaultButtonFace="Slave"/>
+            <Unit value="CabalSlave"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilTrain id="CabalWidowTrain">
+        <InfoArray index="Train1" Time="25" Effect="NodUnitOrderQueueSwitch">
+            <Button DefaultButtonFace="CabalSpider"/>
+            <Unit value="CabalSpider"/>
+        </InfoArray>
+    </CAbilTrain>
+    <CAbilMorph id="CabalSupportCrawlerPack" parent="TerranBuildingLiftOff">
+        <Name value="Abil/Name/CabalSupportCrawlerPack"/>
+        <AbilSetId value="Unsieged"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="packD">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <ActorKey value="CabalSupportCrawlerPack"/>
+        <Flags index="RallyReset" value="0"/>
+        <InfoArray index="0" Unit="CabalSupportCrawler" RandomDelayMax="0.5">
+            <SectionArray index="Actor">
+                <DurationArray index="Duration" value="3.5417"/>
+            </SectionArray>
+            <SectionArray index="Mover">
+                <DurationArray index="Delay" value="1.7"/>
+                <DurationArray index="Duration" value="1.5"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Delay" value="0"/>
+                <DurationArray index="Duration" value="3.5417"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorph>
+    <CAbilMorph id="CabalOffenseCrawlerPack">
+        <AbilSetId value="Unsieged"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="packD">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <Flags index="IgnoreFacing" value="1"/>
+        <InfoArray Unit="CabalOffenseCrawler" RandomDelayMax="0.5">
+            <SectionArray index="Actor">
+                <DurationArray index="Duration" value="3.5417"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Duration" value="3.5417"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorph>
+    <CAbilMorph id="CabalDefenseCrawlerPack">
+        <AbilSetId value="Unsieged"/>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:Units"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="packD">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <Flags index="IgnoreFacing" value="1"/>
+        <InfoArray Unit="CabalDefenseCrawler" RandomDelayMax="0.5">
+            <SectionArray index="Actor">
+                <DurationArray index="Duration" value="3.5417"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Duration" value="3.5417"/>
+            </SectionArray>
+        </InfoArray>
+    </CAbilMorph>
+    <CAbilMorphPlacement id="CabalOffenseCrawlerDeploy" parent="TerranBuildingLand" unit="CabalOffenseCrawlerDeployed">
+        <Name value="Abil/Name/CabalOffenseCrawlerDeploy"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="DeployD"/>
+        <InfoArray index="0" Unit="CabalOffenseCrawlerDeployed" CollideRange="0">
+            <SectionArray index="Actor">
+                <DurationArray index="Duration" value="3.5417"/>
+            </SectionArray>
+            <SectionArray index="Mover">
+                <DurationArray index="Duration" value="0"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Delay" value="0.5"/>
+                <DurationArray index="Duration" value="3.5417"/>
+            </SectionArray>
+        </InfoArray>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:MorphsandBurrows"/>
+    </CAbilMorphPlacement>
+    <CAbilMorphPlacement id="CabalSupportCrawlerDeploy" parent="TerranBuildingLand" unit="CabalSupportCrawlerDeployed">
+        <Name value="Abil/Name/CabalSupportCrawlerDeploy"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="DeployD"/>
+        <InfoArray index="0" Unit="CabalSupportCrawlerDeployed" CollideRange="0">
+            <SectionArray index="Actor">
+                <DurationArray index="Delay" value="1.7"/>
+                <DurationArray index="Duration" value="3.5417"/>
+            </SectionArray>
+            <SectionArray index="Mover">
+                <DurationArray index="Duration" value="1.5"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Delay" value="0.5"/>
+                <DurationArray index="Duration" value="3.5417"/>
+            </SectionArray>
+        </InfoArray>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:MorphsandBurrows"/>
+    </CAbilMorphPlacement>
+    <CAbilMorphPlacement id="CabalDefenseCrawlerDeploy" parent="TerranBuildingLand" unit="CabalDefenseCrawlerDeployed">
+        <Name value="Abil/Name/CabalDefenseCrawlerDeploy"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="DeployD"/>
+        <InfoArray index="0" Unit="CabalDefenseCrawlerDeployed" CollideRange="0">
+            <SectionArray index="Actor">
+                <DurationArray index="Duration" value="3.5417"/>
+            </SectionArray>
+            <SectionArray index="Mover">
+                <DurationArray index="Duration" value="0"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Delay" value="0.5"/>
+                <DurationArray index="Duration" value="3.5417"/>
+            </SectionArray>
+        </InfoArray>
+        <EditorCategories value="Race:Nod,AbilityorEffectType:MorphsandBurrows"/>
+    </CAbilMorphPlacement>
+    <CAbilMorph id="UpgradeToCabalSupportCrawlerDeployed">
+        <Alert value="UpgradeComplete"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="DeploySupportMCV"/>
+        <Flags index="BestUnit" value="1"/>
+        <Flags index="Birth" value="1"/>
+        <Flags index="DisableAbils" value="1"/>
+        <Flags index="FastBuild" value="1"/>
+        <Flags index="Interruptible" value="1"/>
+        <Flags index="Produce" value="1"/>
+        <Flags index="ShowProgress" value="1"/>
+        <InfoArray Score="1" Unit="CabalSupportCrawlerDeployed">
+            <SectionArray index="Abils">
+                <DurationArray index="Delay" value="35"/>
+            </SectionArray>
+            <SectionArray index="Actor">
+                <DurationArray index="Duration" value="35"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Delay" value="35"/>
+            </SectionArray>
+        </InfoArray>
+        <ValidatorArray value="HasNoCargo"/>
+    </CAbilMorph>
+    <CAbilMorph id="UpgradeToCabalOffenseCrawlerDeployed">
+        <Alert value="UpgradeComplete"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="DeployOffenseMCV"/>
+        <Flags index="BestUnit" value="1"/>
+        <Flags index="Birth" value="1"/>
+        <Flags index="DisableAbils" value="1"/>
+        <Flags index="FastBuild" value="1"/>
+        <Flags index="Interruptible" value="1"/>
+        <Flags index="Produce" value="1"/>
+        <Flags index="ShowProgress" value="1"/>
+        <InfoArray Score="1" Unit="CabalOffenseCrawlerDeployed">
+            <SectionArray index="Abils">
+                <DurationArray index="Delay" value="35"/>
+            </SectionArray>
+            <SectionArray index="Actor">
+                <DurationArray index="Duration" value="35"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Delay" value="35"/>
+            </SectionArray>
+        </InfoArray>
+        <ValidatorArray value="HasNoCargo"/>
+    </CAbilMorph>
+    <CAbilMorph id="UpgradeToCabalDefenseCrawlerDeployed">
+        <Alert value="UpgradeComplete"/>
+        <CmdButtonArray index="Execute" DefaultButtonFace="DeployDefenseMCV"/>
+        <Flags index="BestUnit" value="1"/>
+        <Flags index="Birth" value="1"/>
+        <Flags index="DisableAbils" value="1"/>
+        <Flags index="FastBuild" value="1"/>
+        <Flags index="Interruptible" value="1"/>
+        <Flags index="Produce" value="1"/>
+        <Flags index="ShowProgress" value="1"/>
+        <InfoArray Score="1" Unit="CabalDefenseCrawlerDeployed">
+            <SectionArray index="Abils">
+                <DurationArray index="Delay" value="35"/>
+            </SectionArray>
+            <SectionArray index="Actor">
+                <DurationArray index="Duration" value="35"/>
+            </SectionArray>
+            <SectionArray index="Stats">
+                <DurationArray index="Delay" value="35"/>
+            </SectionArray>
+        </InfoArray>
+        <ValidatorArray value="HasNoCargo"/>
+    </CAbilMorph>
+    <CAbilTransport id="CabalCrawlerHangarTransport">
+        <EditorCategories value="Race:Terran,AbilityorEffectType:Structures"/>
+        <MaxCargoCount value="8"/>
+        <MaxCargoSize value="8"/>
+        <TotalCargoSpace value="8"/>
+        <SearchRadius value="8"/>
+        <CmdButtonArray index="Load">
+            <Flags index="Hidden" value="1"/>
+        </CmdButtonArray>
+        <CmdButtonArray index="UnloadAll" DefaultButtonFace="CommandCenterUnloadAll">
+            <Flags index="ToSelection" value="1"/>
+        </CmdButtonArray>
+        <CmdButtonArray index="UnloadAt">
+            <Flags index="Hidden" value="1"/>
+        </CmdButtonArray>
+        <CmdButtonArray index="UnloadUnit">
+            <Flags index="Hidden" value="1"/>
+        </CmdButtonArray>
+        <CmdButtonArray index="LoadAll" DefaultButtonFace="CommandCenterLoad"/>
+        <!--        <Flags index="AllowPassengerSmartCmd" value="0"/>-->
+        <!--        <Flags index="AllowSmartCmd" value="0"/>-->
+        <!--        <LoadValidatorArray value="CabalCrawlerHangarTransportCombine"/>-->
+        <!--        <LoadCargoBehavior value="CCTransportDummy"/>-->
+        <!--        <AbilSetId value="ULdS"/>-->
+        <!--        <DeathUnloadEffect value="RemoveCommandCenterCargo"/>-->
+        <!--        <LoadCargoEffect value="CCLoadDummy"/>-->
+        <!--        <UnloadCargoEffect value="CCUnloadDummy"/>-->
+    </CAbilTransport>
+</Catalog>

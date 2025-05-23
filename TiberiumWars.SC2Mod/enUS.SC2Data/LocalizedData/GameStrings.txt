@@ -6700,9 +6700,16 @@ Param/Expression/lib_SPPN_94E0AF4B=<s val="StandardTooltipHeader_Terr">~name~</s
 Param/Expression/lib_SPPN_CAF2A48D=<s val="StandardTooltipHeader_Terr">~name~</s>
 Param/Expression/lib_SPPN_D9FC2478=<s val="StandardTooltipHeader_Terr">~name~</s></n></n>~min_icon~ ~min_val~ ~gas_icon~ ~gas_val~</n></n>~desc~
 Param/Expression/lib_SPPN_FE819751=<s val="StandardTooltipHeader_Terr">~name~ [~ID~]</s><n/><n/>~min_icon~ ~min_val~ ~gas_icon~ ~gas_val~ ~food_icon~ ~food_val~<n/><n/>~desc~
+Param/Expression/lib_TIBW_1218F9D8=VALIDATOR PASSED
+Param/Expression/lib_TIBW_47AFA10A=VALIDATOR NOT  PASSED
 Param/Expression/lib_TIBW_498260C9=u ~D~  t ~B~ c ~A~  r ~C~ p ~E~
 Param/Expression/lib_TIBW_55AAC2E8=focus iter ~A~
+Param/Expression/lib_TIBW_90B3D49A=VALIDATOR PASSED
+Param/Expression/lib_TIBW_BC64FCEB=VALIDATOR PASSED
 Param/Expression/lib_TIBW_D68B19F9=BEAM ~A~
+Param/Expression/lib_TIBW_DF546835=venoms ~A~
+Param/Expression/lib_TIBW_F821827E=VALIDATOR NOT  PASSED
+Param/Expression/lib_TIBW_F99E6574=VALIDATOR NOT  PASSED
 Param/Value/lib_CNCC_041EF1B1=CRCL2
 Param/Value/lib_CNCC_0C0F049F=<c val="FF8000">SlimUI deactivated</c>
 Param/Value/lib_CNCC_1C999FD2=LANDING CONTINUE B
@@ -6724,6 +6731,7 @@ Param/Value/lib_CNCC_ED3E62D9=CRCL3
 Param/Value/lib_CNCC_F483CABF=LANDING NOT CONTINUE 3
 Param/Value/lib_CNCC_F5E13EB0=RETURN INITIATED
 Param/Value/lib_TIBW_06F7264C=MCV was destroyed! Redeployment coming soon
+Param/Value/lib_TIBW_119E9FD7=EFFECT2
 Param/Value/lib_TIBW_1A61AA67=MCV was destroyed! Redeployment coming soon
 Param/Value/lib_TIBW_2282A3EF=kkk
 Param/Value/lib_TIBW_4337F561=MCV was destroyed! Redeployment coming soon
