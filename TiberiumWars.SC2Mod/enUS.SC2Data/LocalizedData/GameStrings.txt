@@ -368,7 +368,7 @@ Abil/Name/UpgradeToAdvancedBattleLab=Upgrade to Advanced Battle Lab
 Abil/Name/UpgradeToSuperIndustrialZone=Upgrade to Super Industrial zone
 Abil/Name/UpgradeToUndergraduateUniversity=Upgrade to Undergraduate University
 Abil/Name/Upgradepowerplant=Upgrade power plant
-Abil/Name/UpgradepowerplantNod=Upgrade power plant
+Abil/Name/NodUpgradePowerPlant=Upgrade power plant
 Abil/Name/UpgradetoAdvancedIndustry=Upgrade to Advanced Industry
 Abil/Name/UpgradetoAdvancedIndustry2=Build Undergraduate University
 Abil/Name/UpgradetoHeavyIndustry=Upgrade to Progress Industry
@@ -2006,7 +2006,7 @@ Button/Name/UnpackToJubuildings=Expand to Nano Host
 Button/Name/UnpackToJubuildings2=Expand to Type 92 Infantry support gun
 Button/Name/UpgradeBuildingArmorLevel1=Composite armor
 Button/Name/UpgradePowerPlant=Upgrade Power Plant
-Button/Name/UpgradePowerPlantNod=Upgrade Power Plant
+Button/Name/NodUpgradePowerPlant=Upgrade Power Plant
 Button/Name/UpgradeRailRockets=Upgrade: Ballistic rockets
 Button/Name/UpgradeReinforcedConcrete=Technology: reinforced concrete
 Button/Name/UpgradeReinforcedConcrete2=Technology: primary defense tower
@@ -3757,7 +3757,7 @@ Button/Tooltip/UnpackToJubuildings=Expand to nano host, provide units or artille
 Button/Tooltip/UnpackToJubuildings2=The Type 92 Infantry support gun can strike groups of light armored targets at an early stage< <n/><n/><c val="FFFF00">Character: Basic Turret/Anti Light Armor</c>
 Button/Tooltip/UpgradeBuildingArmorLevel1=Increased main battle tank health and defense<n/>Composite armor is a heterogeneous tank armor composed of at least different types of protective materials, and its protective capability is significantly improved compared with homogeneous steel plate
 Button/Tooltip/UpgradePowerPlant=Double the power provided by the power plant!
-Button/Tooltip/UpgradePowerPlantNod=Let the power provided by the power plant +8
+Button/Tooltip/NodUpgradePowerPlant=Let the power provided by the power plant +8
 Button/Tooltip/UpgradeRailRockets=Unlock self propelled rocket<n/>Increased jet fighter rocket damage
 Button/Tooltip/UpgradeReinforcedConcrete=Invest in cutting-edge scientific research institutions to significantly increase the lives and injuries of all fortifications。<n/>Also activate advanced Defense tower:<c val="ffff00">unlock：Experimental laser gun、Brighton shore artillery、Ukrainian cannon、SuperWaveForceArtillery
 Button/Tooltip/UpgradeReinforcedConcrete2=unlock：Flame jet tower、460mmCannon

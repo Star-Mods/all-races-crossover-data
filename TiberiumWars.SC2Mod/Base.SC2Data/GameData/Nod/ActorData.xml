@@ -488,6 +488,31 @@
         <SoundArray index="What" value="Barracks_What"/>
         <SoundArray index="Movement" value="Barracks_Movement"/>
     </CActorUnit>
+    <CActorModel id="NodPlaceholderActorModel" parent="PlacementModel">
+        <!--        <Model value="NodPowerPlant"/>-->
+        <!--        <On Terms="ActorCreation" Send="GlowStart"/>-->
+        <On Terms="ActorCreation" Send="SetOpacity 0.400000"/>
+        <On Terms="ActorCreation" Send="SetCastShadows"/>
+        <!--        <On Terms="ActorCreation" Send="TextureSelectById HoloMainDiff"/>-->
+        <!--        <On Terms="ActorCreation" Send="TextureSelectById HoloMainEmis"/>-->
+        <!--        <On Terms="ActorCreation" Send="AnimPlay CoverA Cover,A PlayForever 0.000000"/>-->
+        <On Terms="ActorCreation" Send="SetTintColor {233,0,0 10.000000}"/>
+    </CActorModel>
+    <CActorModel id="CNCRumble" parent="ModelAddition">
+        <Model value="NydusRumble"/>
+        <On Terms="ActorOrphan" Send="Destroy"/>
+        <On Terms="UnitConstruction.*.Finish" Send="Destroy"/>
+    </CActorModel>
+    <CActorUnit id="NodHand" parent="NodBuilding">
+        <DeathArray index="UnderConstruction" ModelLink="TerranLargeBuildingDeath" SoundLink="Barracks_Explode"/>
+        <BarOffset value="155"/>
+        <BarWidth value="160"/>
+        <SoundArray index="Ready" value="Barracks_Ready"/>
+        <SoundArray index="What" value="Barracks_What"/>
+        <SoundArray index="Movement" value="Barracks_Movement"/>
+        <!--        <BuildModel value="NodHand"/>-->
+        <!--                <PlacementModel value="NodHandPlacement"/>-->
+    </CActorUnit>
     <CActorUnit id="NodPowerPlant" parent="NodBuilding">
         <Aliases value="_UnitLarge"/>
         <CreepHeightClass value="Small"/>
@@ -509,56 +534,11 @@
             <ColorArray value="255,120,240,255"/>
         </VitalColors>
         <VitalNames index="Energy" value="UI/VitalName/Power"/>
-    </CActorUnit>
-    <CActorModel id="NodPlaceholderActorModel" parent="PlacementModel">
-        <!--        <Model value="NodPowerPlant"/>-->
-        <!--        <On Terms="ActorCreation" Send="GlowStart"/>-->
-        <On Terms="ActorCreation" Send="SetOpacity 0.400000"/>
-        <On Terms="ActorCreation" Send="SetCastShadows"/>
-        <!--        <On Terms="ActorCreation" Send="TextureSelectById HoloMainDiff"/>-->
-        <!--        <On Terms="ActorCreation" Send="TextureSelectById HoloMainEmis"/>-->
-        <!--        <On Terms="ActorCreation" Send="AnimPlay CoverA Cover,A PlayForever 0.000000"/>-->
-        <On Terms="ActorCreation" Send="SetTintColor {233,0,0 10.000000}"/>
-    </CActorModel>
-    <CActorUnit id="NodHand" parent="NodBuilding">
-        <DeathArray index="UnderConstruction" ModelLink="TerranLargeBuildingDeath" SoundLink="Barracks_Explode"/>
-        <BarOffset value="155"/>
-        <BarWidth value="160"/>
-        <SoundArray index="Ready" value="Barracks_Ready"/>
-        <SoundArray index="What" value="Barracks_What"/>
-        <SoundArray index="Movement" value="Barracks_Movement"/>
-        <!--        <BuildModel value="NodHand"/>-->
-        <!--                <PlacementModel value="NodHandPlacement"/>-->
-    </CActorUnit>
-    <CActorModel id="CNCRumble" parent="ModelAddition">
-        <Model value="NydusRumble"/>
-        <On Terms="ActorOrphan" Send="Destroy"/>
-        <On Terms="UnitConstruction.*.Finish" Send="Destroy"/>
-    </CActorModel>
-    <CActorUnit id="NodPowerPlant2" parent="NodBuilding" wireframe="PowerPlantWireframe" unitName="NodPowerPlant2" icon="PowerPlantIcon">
-        <Aliases value="_UnitLarge"/>
-        <On index="69" Terms="UnitConstruction.NodPowerPlant2.Start" Send="Create GDIbuild"/>
-        <On Terms="Signal.*.Incoming" Send="RefSetFromMsg ::actor.SupplyDropModel ::Sender"/>
-        <On Terms="Signal.*.Incoming" Target="::actor.SupplyDropModel" Send="Signal Raised"/>
-        <Model value="NodPowerPlant"/>
-        <CreepHeightClass value="Small"/>
-        <BuildModel value="NodPowerPlant"/>
-        <DeathArray index="Normal" ModelLink="NodPowerPlantDeath" SoundLink="SupplyDepot_Explode"/>
-        <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="SupplyDepot_Explode"/>
-        <!--        <PlacementModel value="NodPowerPlantPM"/>-->
-        <PlacementSound value="Terran_BuildingPlacementSmall"/>
-        <BarOffset value="70"/>
-        <BarWidth value="80"/>
-        <NameOffset value="40"/>
-        <SoundArray index="Ready" value="SupplyDepot_Ready"/>
-        <SoundArray index="What" value="SupplyDepot_What"/>
-        <UnitFlags index="ShowBlobShadow" value="0"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo NodPowerPlantUpgraded" Send="Destroy"/>
     </CActorUnit>
     <CActorUnit id="NodPowerPlantUpgraded" parent="NodBuilding">
+        <On Terms="AbilMorph.*.Finish; MorphTo NodPowerPlantUpgraded" Send="Create"/>
         <Aliases value="_UnitLarge"/>
-        <On index="69" Terms="UnitConstruction.NodPowerPlantUpgraded.Start" Send="Create GDIbuild"/>
-        <On Terms="Signal.*.Incoming" Send="RefSetFromMsg ::actor.SupplyDropModel ::Sender"/>
-        <On Terms="Signal.*.Incoming" Target="::actor.SupplyDropModel" Send="Signal Raised"/>
         <CreepHeightClass value="Small"/>
         <DeathArray index="Normal" SoundLink="SupplyDepot_Explode"/>
         <DeathArray index="UnderConstruction" ModelLink="TerranBuildingDeath" SoundLink="SupplyDepot_Explode"/>
@@ -570,6 +550,14 @@
         <SoundArray index="Ready" value="SupplyDepot_Ready"/>
         <SoundArray index="What" value="SupplyDepot_What"/>
         <UnitFlags index="ShowBlobShadow" value="0"/>
+        <StatusColors index="Energy">
+            <ColorArray index="0" value="255,0,128,255"/>
+        </StatusColors>
+        <VitalColors index="Energy">
+            <ColorArray value="255,120,240,255"/>
+        </VitalColors>
+        <VitalNames index="Energy" value="UI/VitalName/Power"/>
+        <On Terms="AbilMorph.*.Finish; MorphTo NodPowerPlantUpgraded" Send="Destroy"/>
     </CActorUnit>
     <CActorUnit id="NodMCV" parent="NodVehicleBase" wireframe="CNC3MCVWireframe" unitName="NodMCV" icon="CNC3MCVIcon">
         <On Terms="AbilMorph.*.Finish; MorphTo NodMCV" Send="Create"/>
