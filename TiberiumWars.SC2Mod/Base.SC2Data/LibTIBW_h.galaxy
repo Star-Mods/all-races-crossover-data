@@ -42,6 +42,8 @@ void libTIBW_gf_CreateDropPod (int lp_race, point lp_location, unitgroup lp_unit
 // Trigger Declarations
 trigger libTIBW_gt_NodBeamCannonDistantAttackDelay;
 trigger libTIBW_gt_NodBeamCannonWeaponDelay;
+trigger libTIBW_gt_Debugging;
+trigger libTIBW_gt_BeamCannonIsFocusing;
 trigger libTIBW_gt_MoveCommandOverrideExecute;
 trigger libTIBW_gt_MoveCommandOverrideCancel;
 trigger libTIBW_gt_MoveCommandOverrideComplete;

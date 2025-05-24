@@ -17,39 +17,51 @@
         <Kind value="Ranged"/>
         <Death value="Fire"/>
         <KindSplash value="Ranged"/>
-        <Amount value="3"/>
+s        <Amount value="4"/>
         <SearchFilters value="-;Player,Ally,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <SearchFlags index="OffsetByUnitRadius" value="0"/>
         <SearchFlags index="SameCliff" value="0"/>
     </CEffectDamage>
     <CEffectDamage id="NodBeamCannonWeaponDamage10" parent="NodBeamCannonWeaponDamage">
-        <Amount value="30"/>
+        <Amount value="40"/>
+        <AttributeBonus index="Armored" value="20"/>
     </CEffectDamage>
     <CEffectDamage id="NodBeamCannonWeaponDamage9" parent="NodBeamCannonWeaponDamage">
-        <Amount value="27"/>
+        <Amount value="36"/>
+        <AttributeBonus index="Armored" value="18"/>
     </CEffectDamage>
     <CEffectDamage id="NodBeamCannonWeaponDamage8" parent="NodBeamCannonWeaponDamage">
-        <Amount value="24"/>
+        <Amount value="32"/>
+        <AttributeBonus index="Armored" value="16"/>
     </CEffectDamage>
     <CEffectDamage id="NodBeamCannonWeaponDamage7" parent="NodBeamCannonWeaponDamage">
-        <Amount value="21"/>
+        <Amount value="28"/>
+        <AttributeBonus index="Armored" value="14"/>
     </CEffectDamage>
     <CEffectDamage id="NodBeamCannonWeaponDamage6" parent="NodBeamCannonWeaponDamage">
-        <Amount value="18"/>
+        <Amount value="24"/>
+        <AttributeBonus index="Armored" value="12"/>
     </CEffectDamage>
     <CEffectDamage id="NodBeamCannonWeaponDamage5" parent="NodBeamCannonWeaponDamage">
-        <Amount value="15"/>
+        <Amount value="20"/>
+        <AttributeBonus index="Armored" value="10"/>
     </CEffectDamage>
     <CEffectDamage id="NodBeamCannonWeaponDamage4" parent="NodBeamCannonWeaponDamage">
-        <Amount value="12"/>
+        <Amount value="16"/>
+        <AttributeBonus index="Armored" value="8"/>
     </CEffectDamage>
     <CEffectDamage id="NodBeamCannonWeaponDamage3" parent="NodBeamCannonWeaponDamage">
-        <Amount value="9"/>
+        <Amount value="12"/>
+        <AttributeBonus index="Armored" value="6"/>
     </CEffectDamage>
     <CEffectDamage id="NodBeamCannonWeaponDamage2" parent="NodBeamCannonWeaponDamage">
-        <Amount value="6"/>
+        <Amount value="8"/>
+        <AttributeBonus index="Armored" value="4"/>
     </CEffectDamage>
-    <CEffectDamage id="NodBeamCannonWeaponDamage1" parent="NodBeamCannonWeaponDamage"/>
+    <CEffectDamage id="NodBeamCannonWeaponDamage1" parent="NodBeamCannonWeaponDamage">
+        <Amount value="4"/>
+        <AttributeBonus index="Armored" value="2"/>
+    </CEffectDamage>
     
     <CValidatorCompareTrackedUnitsCount id="BeamCannonCasterTracker" deafult="1">
         <Value value="0"/>
@@ -211,6 +223,16 @@
         <Behavior value="BeamCannonIsPreparing"/>
         <WhichUnit Value="Caster"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="NotDistantAttacking">
+        <Value value="0"/>
+        <Behavior value="DistantAttacking"/>
+        <WhichUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="DistantAttacking">
+        <Value value="1"/>
+        <Behavior value="DistantAttacking"/>
+        <WhichUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="BeamCannonIsNotPreparing">
         <Behavior value="BeamCannonIsPreparing"/>
         <WhichUnit Value="Caster"/>
@@ -274,10 +296,16 @@
     </CValidatorCombine>
 
     <CButton id="NodBeamReflector" parent="NodButton"/>
-<!--    <CButton id="BeamCannonDistantAttackStage1" parent="NodButton" icon="NodBeamReflector"/>-->
     <CButton id="BeamCannonDistantAttackStage2" parent="NodButton" icon="NodBeamReflector"/>
     <CButton id="BeamCannonDistantAttackStage3" parent="NodButton" icon="NodBeamReflector"/>
 
+    <CBehaviorBuff id="DistantAttacking">
+        <!--        <InfoFlags index="Hidden" value="1"/>-->
+        <Modification>
+            <WeaponDisableArray value="NodBeamCannonWeapon"/>
+            <WeaponDisableArray value="NodVenomParticleBeam"/>
+        </Modification>
+    </CBehaviorBuff>
     <CBehaviorBuff id="BeamCannonIsPreparing"/>
     <CBehaviorBuff id="BeamCannonIsFocusing"/>
     <CBehaviorUnitTracker id="BeamCannonTargetTracker">
@@ -297,7 +325,14 @@
         <BehaviorLink value="BeamCannonIsPreparing"/>
         <WhichUnit Value="Caster"/>
     </CEffectRemoveBehavior>
+    <CEffectRemoveBehavior id="DistantAttackingRB">
+        <BehaviorLink value="DistantAttacking"/>
+        <WhichUnit Value="Caster"/>
+    </CEffectRemoveBehavior>
     <CEffectApplyBehavior id="BeamCannonIsPreparing">
+        <WhichUnit Value="Caster"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="DistantAttacking">
         <WhichUnit Value="Caster"/>
     </CEffectApplyBehavior>
     <CEffectRemoveBehavior id="BeamCannonIsFocusingRB">
@@ -364,8 +399,8 @@
     <CUnit id="NodVenom" parent="NodAir">
         <Attributes index="Light" value="1"/>
         <Attributes index="Mechanical" value="1"/>
-        <LifeStart value="80"/>
-        <LifeMax value="80"/>
+        <LifeStart value="100"/>
+        <LifeMax value="100"/>
         <Speed value="3.75"/>
         <Acceleration value="3.75"/>
         <Sight value="8"/>
@@ -492,6 +527,11 @@
         <Model value="BeamWeaponCC3CC3AttackBeam"/>
     </CActorBeamSimple>
 
+
+
+
+
+
     <!--WEAPONS-->
     <CWeaponLegacy id="NodBeamCannonWeapon" parent="NodWeapon" icon="FXNod_LasersAddonUpgrade">
 <!--        <Options index="OnlyFireWhileInAttackOrder" value="0"/>-->
@@ -500,7 +540,7 @@
         <TargetFilters value="Visible,Ground;Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="11"/>
         <TeleportResetRange value="0"/>
-        <Period value="0.25"/>
+        <Period value="0.07"/>
         <Effect value="BeamCannonAttackCP"/>
         <!-- <AllowedMovement value="Moving"/> -->
     </CWeaponLegacy>
@@ -511,7 +551,7 @@
         <TargetFilters value="Visible;Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="50"/>
         <TeleportResetRange value="0"/>
-        <Period value="0.25"/>
+        <Period value="0.07"/>
         <Effect value="BeamCannonAttackCP"/>
         <AllowedMovement value="Moving"/>
     </CWeaponLegacy>
@@ -520,10 +560,6 @@
     <CAbilEffectTarget id="BeamCannonDistantAttack">
         <Flags index="BestUnit" value="0"/>
         <Effect index="0" value="BeamCannonDistantAttackStage1"/>
-        <Flags index="DeferCooldown" value="1"/>
-        <Cost>
-            <Cooldown TimeUse="1"/>
-        </Cost>
         <TargetFilters value="Visible;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="999"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="NodBeamReflector"/>
@@ -632,21 +668,18 @@
         <PeriodicEffectArray value="NodBeamCannonWeaponSwitch"/>
         <InitialEffect value="NodBeamCannonWeaponDamageDelay"/>
         <PeriodicPeriodArray value="0.6"/>
-        <PeriodicPeriodArray value="0.25"/>
+        <PeriodicPeriodArray value="0.07"/>
         <FinalEffect value="BeamCannonAttackCPFinal"/>
     </CEffectCreatePersistent>
 
     <CEffectCreatePersistent id="BeamCannonDistantAttackStage1">
         <EditorCategories value="Race:Nod"/>
         <PeriodicPeriodArray value="0.6"/>
-        <PeriodicPeriodArray value="0.25"/>
-
+        <PeriodicPeriodArray value="0.07"/>
         <ValidatorArray value="BeamCannonDistantAttackTargetFilters"/>
         <ValidatorArray value="VenomInBeamFocusRangeSource"/>
         <ValidatorArray value="VenomInBeamFocusRangeTarget"/>
-
-        <PeriodicValidator value="BeamCannonDistantAttackValidatorOr"/>
-<!--        <PeriodicValidator value="BeamCannonTargetTrackerGT0"/>-->
+        <PeriodicValidator value="BeamCannonDistantAttackValidatorAnd"/>
         <WhichLocation Value="TargetUnit"/>
         <Flags index="Channeled" value="1"/>
         <Flags index="PersistUntilDestroyed" value="1"/>
@@ -655,6 +688,7 @@
         <FinalEffect value="BeamCannonDistantAttackStage1Final"/>
     </CEffectCreatePersistent>
     <CEffectSet id="BeamCannonDistantAttackDelay">
+        <EffectArray value="DistantAttacking"/>
         <EffectArray value="BeamCannonIsPreparing"/>
     </CEffectSet>
     <CEffectSwitch id="BeamCannonDistantAttackSwitch">
@@ -666,6 +700,7 @@
         <EffectArray value="BeamCannonFocusingInitialETU"/>
     </CEffectSet>
     <CEffectSet id="BeamCannonDistantAttackStage1Final">
+        <EffectArray value="DistantAttackingRB"/>
         <EffectArray value="BeamCannonDistantAttackRemoveTargetTrackersETU"/>
         <EffectArray value="BeamCannonDistantAttackRemovePathTrackersETU"/>
         <EffectArray value="BeamCannonIsPreparingRB"/>
@@ -674,21 +709,22 @@
     <CEffectSet id="BeamCannonDistantAttackDummy"/>
 
 
+    <CValidatorCombine id="BeamCannonDistantAttackValidatorAnd">
+        <CombineArray value="NotDistantAttacking"/>
+        <CombineArray value="BeamCannonDistantAttackValidatorOr"/>
+        <CombineArray value="BeamCannonDistantAttackTargetFilters"/>
+    </CValidatorCombine>
+
     <CValidatorCombine id="BeamCannonDistantAttackValidatorOr">
         <Type value="Or"/>
         <CombineArray value="BeamCannonIsPreparing"/>
-        <CombineArray value="BeamCannonDistantAttackValidator"/>
+        <CombineArray value="BeamCannonTargetTrackerGT0"/>
     </CValidatorCombine>
 
-    <CValidatorCombine id="BeamCannonDistantAttackValidator">
-        <Type value="And"/>
-        <CombineArray value="BeamCannonTargetTrackerGT0"/>
-        <CombineArray value="BeamCannonDistantAttackTargetFilters"/>
-    </CValidatorCombine>
     <CEffectCreatePersistent id="BeamCannonDistantAttackStage2">
         <EditorCategories value="Race:Nod"/>
         <PeriodicPeriodArray value="0.6"/>
-        <PeriodicPeriodArray value="0.25"/>
+        <PeriodicPeriodArray value="0.07"/>
         <ValidatorArray value="IsBeamReflector"/>
         <ValidatorArray value="BeamCannonCasterTrackerGT0_And_BeamCannonReflectorTrackerGT0"/>
         <PeriodicValidator value="BeamCannonCasterTrackerGT0_And_BeamCannonTargetTrackerGT0_BeamCannonReflectorTrackerGT0"/>
@@ -701,10 +737,12 @@
     </CEffectCreatePersistent>
     <CEffectSet id="BeamCannonDistantAttackDelayStage2Delay">
         <EffectArray value="BeamCannonIsPreparing"/>
+        <EffectArray value="DistantAttacking"/>
     </CEffectSet>
     <CEffectSet id="BeamCannonDistantAttackStage2Final">
         <EffectArray value="BeamCannonIsPreparingRB"/>
         <EffectArray value="BeamCannonIsFocusingRB"/>
+        <EffectArray value="DistantAttackingRB"/>
         <EffectArray value="BeamCannonDistantAttackRemoveTargetTrackersETU"/>
         <EffectArray value="BeamCannonDistantAttackRemoveReflectorTrackersETU"/>
     </CEffectSet>
@@ -720,7 +758,7 @@
         <PeriodicValidator value="BeamCannonDistantAttackFinalValidator"/>
         <ValidatorArray value="BeamCannonDistantAttackFinalValidator"/>
         <PeriodicPeriodArray value="0.6"/>
-        <PeriodicPeriodArray value="0.25"/>
+        <PeriodicPeriodArray value="0.07"/>
         <FinalEffect value="BeamCannonDistantAttackStage3Final"/>
     </CEffectCreatePersistent>
     <CEffectSwitch id="BeamCannonDistantAttackStage3Switch">
@@ -729,8 +767,10 @@
     </CEffectSwitch>
     <CEffectSet id="BeamCannonDistantAttackDelayStage3Delay">
         <EffectArray value="BeamCannonIsPreparing"/>
+        <EffectArray value="DistantAttacking"/>
     </CEffectSet>
     <CEffectSet id="BeamCannonDistantAttackStage3Final">
+        <EffectArray value="DistantAttackingRB"/>
         <EffectArray value="BeamCannonIsPreparingRB"/>
         <EffectArray value="BeamCannonIsFocusingRB"/>
         <!--        <EffectArray value="BeamCannonDistantAttackRemoveTargetTrackersETU"/>-->
