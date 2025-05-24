@@ -1422,11 +1422,11 @@
     <CEffectDamage id="NodSpecterDamage" parent="DU_WEAP">
         <EditorCategories value="Race:Nod"/>
         <Kind value="Ranged"/>
-        <Amount value="16"/>
+        <Amount value="50"/>
         <Death value="Blast"/>
         <AreaArray Radius="1" Fraction="1"/>
         <AreaArray Radius="1.75" Fraction="0.5"/>
-        <SearchFilters value="Ground;Player,Ally,Neutral,Stasis,Dead,Hidden,Invulnerable"/>
+        <SearchFilters value="Ground;Stasis,Dead,Hidden,Invulnerable"/>
         <KindSplash value="Splash"/>
     </CEffectDamage>
     <CEffectLaunchMissile id="NodSpecterLaunchMissile">

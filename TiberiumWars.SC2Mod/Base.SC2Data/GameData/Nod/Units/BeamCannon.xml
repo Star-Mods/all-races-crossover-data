@@ -223,6 +223,11 @@ s        <Amount value="4"/>
         <Behavior value="BeamCannonIsPreparing"/>
         <WhichUnit Value="Caster"/>
     </CValidatorUnitCompareBehaviorCount>
+    <CValidatorUnitCompareBehaviorCount id="BeamCannonIsPreparingDistantAttack">
+        <Value value="1"/>
+        <Behavior value="BeamCannonIsPreparingDistantAttack"/>
+        <WhichUnit Value="Caster"/>
+    </CValidatorUnitCompareBehaviorCount>
     <CValidatorUnitCompareBehaviorCount id="NotDistantAttacking">
         <Value value="0"/>
         <Behavior value="DistantAttacking"/>
@@ -233,10 +238,10 @@ s        <Amount value="4"/>
         <Behavior value="DistantAttacking"/>
         <WhichUnit Value="Caster"/>
     </CValidatorUnitCompareBehaviorCount>
-    <CValidatorUnitCompareBehaviorCount id="BeamCannonIsNotPreparing">
-        <Behavior value="BeamCannonIsPreparing"/>
-        <WhichUnit Value="Caster"/>
-    </CValidatorUnitCompareBehaviorCount>
+<!--    <CValidatorUnitCompareBehaviorCount id="BeamCannonIsNotPreparing">-->
+<!--        <Behavior value="BeamCannonIsPreparing"/>-->
+<!--        <WhichUnit Value="Caster"/>-->
+<!--    </CValidatorUnitCompareBehaviorCount>-->
     <CValidatorUnitCompareBehaviorCount id="BeamCannonIsFocusing">
         <Value value="1"/>
         <Behavior value="BeamCannonIsFocusing"/>
@@ -246,20 +251,10 @@ s        <Amount value="4"/>
         <Behavior value="BeamCannonIsFocusing"/>
         <WhichUnit Value="Caster"/>
     </CValidatorUnitCompareBehaviorCount>
-    <CValidatorCombine id="BeamCannonTargetTrackerGT0_And_BeamCannonIsNotFocusing">
+    <CValidatorCombine id="BeamCannonFocusTrackerGT0_And_BeamCannonIsNotFocusing">
         <Type value="And"/>
         <CombineArray value="BeamCannonIsNotFocusing"/>
-        <CombineArray value="BeamCannonTargetTrackerGT0"/>
-    </CValidatorCombine>
-    <CValidatorCombine id="BeamCannonTargetTrackerGT0_And_BeamCannonIsFocusing">
-        <Type value="And"/>
-        <CombineArray value="BeamCannonIsFocusing"/>
-        <CombineArray value="BeamCannonTargetTrackerGT0"/>
-    </CValidatorCombine>
-    <CValidatorCombine id="BeamCannonTargetTrackerLE0_And_BeamCannonIsFocusing">
-        <Type value="And"/>
-        <CombineArray value="BeamCannonIsFocusing"/>
-        <CombineArray value="BeamCannonTargetTrackerLE0"/>
+        <CombineArray value="BeamCannonFocusTrackerGT0"/>
     </CValidatorCombine>
     <CValidatorCompareTrackedUnitsCount id="BeamCannonCasterTrackerLT2">
         <Compare value="LT"/>
@@ -268,14 +263,9 @@ s        <Amount value="4"/>
         <TrackedUnitFilters value="-;Dead"/>
         <TrackerUnit Value="Target"/>
     </CValidatorCompareTrackedUnitsCount>
-    <CValidatorCompareTrackedUnitsCount id="BeamCannonTargetTrackerLE0">
-        <Compare value="LE"/>
-        <BehaviorLink value="BeamCannonTargetTracker"/>
-        <TrackedUnitFilters value="-;Dead"/>
-    </CValidatorCompareTrackedUnitsCount>
     <CValidatorCompareTrackedUnitsCount id="BeamCannonTargetTrackerGT0">
         <Compare value="GT"/>
-        <BehaviorLink value="BeamCannonTargetTracker"/>
+        <BehaviorLink value="BeamCannonFocusTracker"/>
         <TrackedUnitFilters value="-;Dead"/>
     </CValidatorCompareTrackedUnitsCount>
     <CValidatorCompareTrackedUnitsCount id="BeamCannonReflectorTrackerGT0">
@@ -307,7 +297,11 @@ s        <Amount value="4"/>
         </Modification>
     </CBehaviorBuff>
     <CBehaviorBuff id="BeamCannonIsPreparing"/>
+    <CBehaviorBuff id="BeamCannonIsPreparingDistantAttack"/>
     <CBehaviorBuff id="BeamCannonIsFocusing"/>
+    <CBehaviorUnitTracker id="BeamCannonFocusTracker">
+        <InfoFlags index="Hidden" value="1"/>
+    </CBehaviorUnitTracker>
     <CBehaviorUnitTracker id="BeamCannonTargetTracker">
         <InfoFlags index="Hidden" value="1"/>
     </CBehaviorUnitTracker>
@@ -325,11 +319,18 @@ s        <Amount value="4"/>
         <BehaviorLink value="BeamCannonIsPreparing"/>
         <WhichUnit Value="Caster"/>
     </CEffectRemoveBehavior>
+    <CEffectRemoveBehavior id="BeamCannonIsPreparingDistantAttackRB">
+        <BehaviorLink value="BeamCannonIsPreparingDistantAttack"/>
+        <WhichUnit Value="Caster"/>
+    </CEffectRemoveBehavior>
     <CEffectRemoveBehavior id="DistantAttackingRB">
         <BehaviorLink value="DistantAttacking"/>
         <WhichUnit Value="Caster"/>
     </CEffectRemoveBehavior>
     <CEffectApplyBehavior id="BeamCannonIsPreparing">
+        <WhichUnit Value="Caster"/>
+    </CEffectApplyBehavior>
+    <CEffectApplyBehavior id="BeamCannonIsPreparingDistantAttack">
         <WhichUnit Value="Caster"/>
     </CEffectApplyBehavior>
     <CEffectApplyBehavior id="DistantAttacking">
@@ -368,6 +369,7 @@ s        <Amount value="4"/>
         <AbilArray Link="BeamCannonDistantAttack"/>
 <!--        <AbilArray Link="BeamCannonFocusCharge"/>-->
 <!--        <AbilArray Link="CreateBeamCannonFocus"/>-->
+        <BehaviorArray Link="BeamCannonFocusTracker"/>
         <BehaviorArray Link="BeamCannonTargetTracker"/>
         <BehaviorArray Link="BeamCannonPathTracker"/>
         <BehaviorArray Link="NodBeamVeterancyUpgrade"/>
@@ -460,51 +462,17 @@ s        <Amount value="4"/>
 <!--        <Model value="StormSphereAttachment"/>-->
         <MinimapIconScale value="0.0"/>
         <On Terms="ActorCreation" Send="SetCastShadows"/>
-        <Model value="Invisible"/> 
+        <Model value="Invisible"/>
     </CActorUnit>
-    <CActorBeamSimple id="NodDistantAttackChargeBeam" parent="BeamSimpleAnimationStyleContinuous">
+    <CActorBeamSimple id="NodWeaponAttackChargeBeam" parent="BeamSimpleAnimationStyleContinuous">
         <Inherits index="Visibility" value="1"/>
-        <!--        <On Terms="Effect.BeamCannonAttackCP.Stop" Send="Destroy"/>-->
-<!--        <On Terms="Effect.BeamCannonDistantAttackInitialEffect.Start" Send="Create"/>-->
-        <On Terms="Effect.BeamCannonDistantAttackStage1.Stop" Send="Destroy"/>
-        <On Terms="Effect.BeamCannonDistantAttackStage2.Start" Send="Create"/>
-        <On Terms="Effect.BeamCannonDistantAttackStage2.Stop" Send="Destroy"/>
-        <On Terms="Effect.BeamCannonDistantAttackStage3.Start" Send="Create"/>
-        <On Terms="Effect.BeamCannonDistantAttackStage3.Stop" Send="Destroy"/>
-        <!-- <On Terms="Effect.BeamCannonAttackCP.Start" Send="Create"/>
-        <On Terms="Effect.BeamCannonAttackCP.Stop" Send="Destroy"/> -->
-        <!--        <On Terms="Effect.BeamCannonTargetTrackerATU.Start" Send="Create"/>-->
-        <!--        <On Terms="Effect.BeamCannonFocusChargeCP.Start" Send="Create"/>-->
-        <!--        <On Terms="Effect.BeamCannonFocusChargeCP.Stop" Send="Destroy"/>-->
+
         <On Terms="Effect.BeamCannonAttackCPFinal.Start" Send="Destroy"/>
         <On Terms="Effect.BeamCannonAttackFinalSet.Start" Send="Destroy"/>
         <On Terms="Effect.BeamCannonTargetTrackerRTU.Start" Send="Destroy"/>
         <On Terms="Effect.BeamCannonSwitchToFocusing.Start" Send="Destroy"/>
         <On Terms="Effect.BeamCannonDamageInitial.Start" Send="Create"/>
         <On Terms="Effect.BeamCannonFocusingInitialETUSet.Start" Send="Create"/>
-
-        <!--                <On Terms="Effect.BeamCannonCasterTrackerATU.Start; ValidateUnit BeamCannonCasterTracker10" Send="ModelSwap BeamWeaponCC3CC3AttackBeam10"/>-->
-        <!--                <On Terms="Effect.BeamCannonCasterTrackerATU.Start; ValidateUnit BeamCannonCasterTracker9" Send="ModelSwap BeamWeaponCC3CC3AttackBeam9"/>-->
-        <!--                <On Terms="Effect.BeamCannonCasterTrackerATU.Start; ValidateUnit BeamCannonCasterTracker8" Send="ModelSwap BeamWeaponCC3CC3AttackBeam8"/>-->
-        <!--                <On Terms="Effect.BeamCannonCasterTrackerATU.Start; ValidateUnit BeamCannonCasterTracker7" Send="ModelSwap BeamWeaponCC3CC3AttackBeam7"/>-->
-        <!--                <On Terms="Effect.BeamCannonCasterTrackerATU.Start; ValidateUnit BeamCannonCasterTracker6" Send="ModelSwap BeamWeaponCC3CC3AttackBeam6"/>-->
-        <!--                <On Terms="Effect.BeamCannonCasterTrackerATU.Start; ValidateUnit BeamCannonCasterTracker5" Send="ModelSwap BeamWeaponCC3CC3AttackBeam5"/>-->
-        <!--                <On Terms="Effect.BeamCannonCasterTrackerATU.Start; ValidateUnit BeamCannonCasterTracker4" Send="ModelSwap BeamWeaponCC3CC3AttackBeam4"/>-->
-        <!--                <On Terms="Effect.BeamCannonCasterTrackerATU.Start; ValidateUnit BeamCannonCasterTracker3" Send="ModelSwap BeamWeaponCC3CC3AttackBeam3"/>-->
-        <!--                <On Terms="Effect.BeamCannonCasterTrackerATU.Start; ValidateUnit BeamCannonCasterTracker2" Send="ModelSwap BeamWeaponCC3CC3AttackBeam2"/>-->
-        <!--                <On Terms="Effect.BeamCannonCasterTrackerATU.Start; ValidateUnit BeamCannonCasterTracker1" Send="ModelSwap BeamWeaponCC3CC3AttackBeam1"/>-->
-
-
-        <!--        <On Terms="Effect.BeamCannonCasterTrackerRTU.Start; ValidateUnit BeamCannonCasterTracker10" Send="ModelSwap BeamWeaponCC3CC3AttackBeam10"/>-->
-        <!--        <On Terms="Effect.BeamCannonCasterTrackerRTU.Start; ValidateUnit BeamCannonCasterTracker9" Send="ModelSwap BeamWeaponCC3CC3AttackBeam9"/>-->
-        <!--        <On Terms="Effect.BeamCannonCasterTrackerRTU.Start; ValidateUnit BeamCannonCasterTracker8" Send="ModelSwap BeamWeaponCC3CC3AttackBeam8"/>-->
-        <!--        <On Terms="Effect.BeamCannonCasterTrackerRTU.Start; ValidateUnit BeamCannonCasterTracker7" Send="ModelSwap BeamWeaponCC3CC3AttackBeam7"/>-->
-        <!--        <On Terms="Effect.BeamCannonCasterTrackerRTU.Start; ValidateUnit BeamCannonCasterTracker6" Send="ModelSwap BeamWeaponCC3CC3AttackBeam6"/>-->
-        <!--        <On Terms="Effect.BeamCannonCasterTrackerRTU.Start; ValidateUnit BeamCannonCasterTracker5" Send="ModelSwap BeamWeaponCC3CC3AttackBeam5"/>-->
-        <!--        <On Terms="Effect.BeamCannonCasterTrackerRTU.Start; ValidateUnit BeamCannonCasterTracker4" Send="ModelSwap BeamWeaponCC3CC3AttackBeam4"/>-->
-        <!--        <On Terms="Effect.BeamCannonCasterTrackerRTU.Start; ValidateUnit BeamCannonCasterTracker3" Send="ModelSwap BeamWeaponCC3CC3AttackBeam3"/>-->
-        <!--        <On Terms="Effect.BeamCannonCasterTrackerRTU.Start; ValidateUnit BeamCannonCasterTracker2" Send="ModelSwap BeamWeaponCC3CC3AttackBeam2"/>-->
-        <!--        <On Terms="Effect.BeamCannonCasterTrackerRTU.Start; ValidateUnit BeamCannonCasterTracker1" Send="ModelSwap BeamWeaponCC3CC3AttackBeam1"/>-->
 
 
         <On Terms="Effect.NodBeamCannonWeaponDamage10.Start" Send="ModelSwap BeamWeaponCC3CC3AttackBeam10"/>
@@ -518,6 +486,34 @@ s        <Amount value="4"/>
         <On Terms="Effect.NodBeamCannonWeaponDamage2.Start" Send="ModelSwap BeamWeaponCC3CC3AttackBeam2"/>
         <On Terms="Effect.NodBeamCannonWeaponDamage1.Start" Send="ModelSwap BeamWeaponCC3CC3AttackBeam1"/>
 
+        <HostForProps Subject="_Unit" Scope="Caster" Actor="Find"/>
+        <HostLaunch Subject="_Unit" Scope="Caster" Actor="Find"/>
+        <HostLaunchSiteOps Ops="SOpAttachWeapon"/>
+        <HostImpact Subject="_Unit" Scope="Target" Actor="Find"/>
+        <HostImpactSiteOps Ops="SOpAttachCenter"/>
+        <Model value="BeamWeaponCC3CC3AttackBeam"/>
+    </CActorBeamSimple>
+    <CActorBeamSimple id="NodDistantAttackChargeBeam" parent="BeamSimpleAnimationStyleContinuous">
+        <Inherits index="Visibility" value="1"/>
+        <On Terms="Effect.BeamCannonDistantAttackStage1.Stop" Send="Destroy"/>
+        <On Terms="Effect.BeamCannonDistantAttackStage2.Start" Send="Create"/>
+        <On Terms="Effect.BeamCannonDistantAttackStage2.Stop" Send="Destroy"/>
+        <On Terms="Effect.BeamCannonDistantAttackStage3.Start" Send="Create"/>
+        <On Terms="Effect.BeamCannonDistantAttackStage3.Stop" Send="Destroy"/>
+
+        <On Terms="Effect.BeamCannonDistantAttackStage1PreparingETUSet.Start" Send="Create"/>
+        <On Terms="Effect.BeamCannonDistantAttackStage3Preparing.Start" Send="Create"/>
+
+        <On Terms="Effect.NodBeamCannonWeaponDamage10.Start" Send="ModelSwap BeamWeaponCC3CC3AttackBeam10"/>
+        <On Terms="Effect.NodBeamCannonWeaponDamage9.Start" Send="ModelSwap BeamWeaponCC3CC3AttackBeam9"/>
+        <On Terms="Effect.NodBeamCannonWeaponDamage8.Start" Send="ModelSwap BeamWeaponCC3CC3AttackBeam8"/>
+        <On Terms="Effect.NodBeamCannonWeaponDamage7.Start" Send="ModelSwap BeamWeaponCC3CC3AttackBeam7"/>
+        <On Terms="Effect.NodBeamCannonWeaponDamage6.Start" Send="ModelSwap BeamWeaponCC3CC3AttackBeam6"/>
+        <On Terms="Effect.NodBeamCannonWeaponDamage5.Start" Send="ModelSwap BeamWeaponCC3CC3AttackBeam5"/>
+        <On Terms="Effect.NodBeamCannonWeaponDamage4.Start" Send="ModelSwap BeamWeaponCC3CC3AttackBeam4"/>
+        <On Terms="Effect.NodBeamCannonWeaponDamage3.Start" Send="ModelSwap BeamWeaponCC3CC3AttackBeam3"/>
+        <On Terms="Effect.NodBeamCannonWeaponDamage2.Start" Send="ModelSwap BeamWeaponCC3CC3AttackBeam2"/>
+        <On Terms="Effect.NodBeamCannonWeaponDamage1.Start" Send="ModelSwap BeamWeaponCC3CC3AttackBeam1"/>
 
         <HostForProps Subject="_Unit" Scope="Caster" Actor="Find"/>
         <HostLaunch Subject="_Unit" Scope="Caster" Actor="Find"/>
@@ -526,6 +522,10 @@ s        <Amount value="4"/>
         <HostImpactSiteOps Ops="SOpAttachCenter"/>
         <Model value="BeamWeaponCC3CC3AttackBeam"/>
     </CActorBeamSimple>
+
+
+
+
 
 
 
@@ -569,97 +569,15 @@ s        <Amount value="4"/>
         <Effect index="0" value="BeamCannonDistantAttackStage2"/>
         <Range value="11"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="BeamCannonDistantAttackStage2"/>
-        <Cost>
-            <Cooldown TimeUse="1"/>
-        </Cost>
     </CAbilEffectTarget>
     <CAbilEffectTarget id="BeamCannonDistantAttackStage3">
         <Effect index="0" value="BeamCannonDistantAttackStage3"/>
-        <Flags index="DeferCooldown" value="1"/>
-        <Cost>
-            <Cooldown TimeUse="1"/>
-        </Cost>
         <TargetFilters value="Visible;Self,Missile,Stasis,Dead,Hidden,Invulnerable"/>
         <Range value="11"/>
         <CmdButtonArray index="Execute" DefaultButtonFace="BeamCannonDistantAttackStage3"/>
     </CAbilEffectTarget>
 
-    <!--EFFECTS-->
-
-    <CEffectCreateUnit id="BeamCannonFocusCU">
-        <WhichLocation Value="TargetPoint"/>
-        <SpawnEffect value="BeamCannonFocusCUSet"/>
-        <SpawnUnit value="BeamCannonFocus"/>
-        <!-- <RallyUnit Value="Caster"/> -->
-    </CEffectCreateUnit>
-    <CEffectSet id="BeamCannonFocusCUSet">
-        <!-- <EffectArray value="ReaverSCBWWeapon@HallucinationScarab"/> -->
-        <!-- <EffectArray value="BeamCannonFocusAttackIO"/> -->
-        <EffectArray value="BeamCannonTargetTrackerATU"/>
-        <EffectArray value="BeamCannonCasterTrackerATU"/>
-        <EffectArray value="KillsToCaster"/>
-    </CEffectSet>
-    <CEffectDamage id="BeamCannonFocusSuicideRemove">
-        <ValidatorArray value="BeamCannonCasterTrackerLT2"/>
-        <ImpactLocation Value="TargetUnit"/>
-        <Flags index="Kill" value="1"/>
-        <Death value="Remove"/>
-    </CEffectDamage>
-    <CEffectSet id="BeamCannonAttackCPFinal">
-        <EffectArray value="BeamCannonIsFocusingRB"/>
-        <EffectArray value="BeamCannonIsPreparingRB"/>
-        <EffectArray value="BeamCannonAttackFinalETU"/>
-    </CEffectSet>
-    <CEffectEnumTrackedUnits id="BeamCannonAttackFinalETU">
-        <BehaviorLink value="BeamCannonTargetTracker"/>
-        <Effect value="BeamCannonAttackFinalSet"/>
-        <!-- <TrackerUnit Value="Target"/> -->
-    </CEffectEnumTrackedUnits>
-    <CEffectEnumTrackedUnits id="BeamCannonTargetTrackerETU">
-        <BehaviorLink value="BeamCannonTargetTracker"/>
-<!--        <Effect value="BeamCannonDistantAttackStage1AP"/>/-->
-        <!-- <TrackerUnit Value="Target"/> -->
-    </CEffectEnumTrackedUnits>
-
-    <CEffectEnumTrackedUnits id="BeamCannonFocusingInitialETU">
-        <BehaviorLink value="BeamCannonTargetTracker"/>
-        <Effect value="BeamCannonFocusingInitialETUSet"/>
-    </CEffectEnumTrackedUnits>
-    <CEffectEnumTrackedUnits id="BeamCannonFocusingInitialETUSet"/>
-    <CEffectSet id="BeamCannonAttackFinalSet">
-        <EffectArray value="BeamCannonCasterTrackerRTU"/>
-        <EffectArray value="BeamCannonTargetTrackerRTU"/>
-        <EffectArray value="BeamCannonFocusSuicideRemove"/>
-    </CEffectSet>
-    <CEffectSet id="NodBeamCannonWeaponDamageDelay">
-        <EffectArray value="BeamCannonIsPreparing"/>
-    </CEffectSet>
-    <CEffectSwitch id="NodBeamCannonWeaponSwitch">
-        <CaseArray Validator="BeamCannonTargetTrackerGT0_And_BeamCannonIsNotFocusing" Effect="BeamCannonSwitchToFocusing"/>
-        <CaseArray Validator="BeamCannonTargetTrackerGT0_And_BeamCannonIsFocusing" Effect="BeamCannonTargetTrackerETU"/>
-        <CaseArray Validator="BeamCannonTargetTrackerLE0_And_BeamCannonIsFocusing" Effect="BeamCannonFocusingFinal"/>
-        <CaseArray Validator="BeamCannonIsPreparing" Effect="BeamCannonDamageInitial"/>
-        <CaseDefault value="NodBeamCannonWeaponDamageSwitch"/>
-    </CEffectSwitch>
-    <CEffectSet id="BeamCannonSwitchToFocusing">
-        <EffectArray value="BeamCannonFocusingInitial"/>
-    </CEffectSet>
-    <CEffectSet id="BeamCannonFocusingInitial">
-        <EffectArray value="BeamCannonIsFocusing"/>
-        <EffectArray value="BeamCannonIsPreparingRB"/>
-        <EffectArray value="BeamCannonFocusingInitialETU"/>
-    </CEffectSet>
-    <CEffectSet id="BeamCannonFocusingFinal">
-        <EffectArray value="BeamCannonIsFocusingRB"/>
-        <EffectArray value="BeamCannonIsPreparing"/>
-        <EffectArray value="BeamCannonTargetTrackerRTU"/>
-    </CEffectSet>
-    <CEffectSet id="BeamCannonDamageInitial">
-        <EffectArray value="BeamCannonIsFocusingRB"/>
-        <EffectArray value="BeamCannonIsPreparingRB"/>
-    </CEffectSet>
-
-    <!--PERSISTENT-->
+    <!--PERSISTENT ATTACK-->
     <CEffectCreatePersistent id="BeamCannonAttackCP">
         <WhichLocation Value="TargetUnit"/>
         <TimeScaleSource Value="Caster"/>
@@ -671,7 +589,98 @@ s        <Amount value="4"/>
         <PeriodicPeriodArray value="0.07"/>
         <FinalEffect value="BeamCannonAttackCPFinal"/>
     </CEffectCreatePersistent>
+    <CEffectSet id="NodBeamCannonWeaponDamageDelay">
+        <EffectArray value="BeamCannonIsPreparing"/>
+    </CEffectSet>
+    <CEffectSwitch id="NodBeamCannonWeaponSwitch">
+        <CaseArray Validator="BeamCannonFocusTrackerGT0_And_BeamCannonIsNotFocusing" Effect="BeamCannonSwitchToFocusing"/>
+        <CaseArray Validator="BeamCannonFocusTrackerGT0_And_BeamCannonIsFocusing" Effect="BeamCannonFocusTrackerETU"/>
+        <CaseArray Validator="BeamCannonFocusTrackerLE0_And_BeamCannonIsFocusing" Effect="BeamCannonFocusingFinal"/>
+        <CaseArray Validator="BeamCannonIsPreparing" Effect="BeamCannonDamageInitial"/>
+        <CaseDefault value="NodBeamCannonWeaponDamageSwitch"/>
+    </CEffectSwitch>
+    <CEffectSet id="BeamCannonSwitchToFocusing">
+        <EffectArray value="BeamCannonFocusingInitial"/>
+    </CEffectSet>
+    <CEffectSet id="BeamCannonFocusingInitial">
+        <EffectArray value="BeamCannonIsFocusing"/>
+        <EffectArray value="BeamCannonIsPreparingRB"/>
+        <EffectArray value="BeamCannonFocusingInitialETU"/>
+    </CEffectSet>
+    <CEffectEnumTrackedUnits id="BeamCannonFocusingInitialETU">
+        <BehaviorLink value="BeamCannonFocusTracker"/>
+        <Effect value="BeamCannonFocusingInitialETUSet"/>
+    </CEffectEnumTrackedUnits>
+    <CEffectEnumTrackedUnits id="BeamCannonFocusingInitialETUSet"/>
+    <CEffectSet id="BeamCannonAttackCPFinal">
+        <EffectArray value="BeamCannonIsFocusingRB"/>
+        <EffectArray value="BeamCannonIsPreparingRB"/>
+        <EffectArray value="BeamCannonAttackFinalETU"/>
+    </CEffectSet>
+    <CEffectEnumTrackedUnits id="BeamCannonAttackFinalETU">
+        <BehaviorLink value="BeamCannonFocusTracker"/>
+        <Effect value="BeamCannonAttackFinalSet"/>
+    </CEffectEnumTrackedUnits>
+    <CEffectSet id="BeamCannonAttackFinalSet">
+        <EffectArray value="BeamCannonCasterTrackerRTU"/>
+        <EffectArray value="BeamCannonFocusTrackerRTU"/>
+        <EffectArray value="BeamCannonFocusSuicideRemove"/>
+    </CEffectSet>
+    <CEffectSet id="BeamCannonDamageInitial">
+        <EffectArray value="BeamCannonIsFocusingRB"/>
+        <EffectArray value="BeamCannonIsPreparingRB"/>
+    </CEffectSet>
+    <CEffectDamage id="BeamCannonFocusSuicideRemove">
+        <ValidatorArray value="BeamCannonCasterTrackerLT2"/>
+        <ImpactLocation Value="TargetUnit"/>
+        <Flags index="Kill" value="1"/>
+        <Death value="Remove"/>
+    </CEffectDamage>
+    <CEffectEnumTrackedUnits id="BeamCannonFocusTrackerETU">
+        <BehaviorLink value="BeamCannonFocusTracker"/>
+    </CEffectEnumTrackedUnits>
+    <CEffectSet id="BeamCannonFocusingFinal">
+        <EffectArray value="BeamCannonIsFocusingRB"/>
+        <EffectArray value="BeamCannonIsPreparing"/>
+        <EffectArray value="BeamCannonFocusTrackerRTU"/>
+    </CEffectSet>
+    <CValidatorCombine id="BeamCannonFocusTrackerGT0_And_BeamCannonIsFocusing">
+        <Type value="And"/>
+        <CombineArray value="BeamCannonIsFocusing"/>
+        <CombineArray value="BeamCannonFocusTrackerGT0"/>
+    </CValidatorCombine>
+    <CValidatorCombine id="BeamCannonFocusTrackerLE0_And_BeamCannonIsFocusing">
+        <Type value="And"/>
+        <CombineArray value="BeamCannonIsFocusing"/>
+        <CombineArray value="BeamCannonFocusTrackerLE0"/>
+    </CValidatorCombine>
+    <CValidatorCompareTrackedUnitsCount id="BeamCannonFocusTrackerLE0">
+        <Compare value="LE"/>
+        <BehaviorLink value="BeamCannonFocusTracker"/>
+        <TrackedUnitFilters value="-;Dead"/>
+    </CValidatorCompareTrackedUnitsCount>
+    <CValidatorCompareTrackedUnitsCount id="BeamCannonFocusTrackerGT0">
+        <Compare value="GT"/>
+        <BehaviorLink value="BeamCannonFocusTracker"/>
+        <TrackedUnitFilters value="-;Dead"/>
+    </CValidatorCompareTrackedUnitsCount>
+<!--    <CEffectCreateUnit id="BeamCannonFocusCU">-->
+<!--        <WhichLocation Value="TargetPoint"/>-->
+<!--        <SpawnEffect value="BeamCannonFocusCUSet"/>-->
+<!--        <SpawnUnit value="BeamCannonFocus"/>-->
+<!--        &lt;!&ndash; <RallyUnit Value="Caster"/> &ndash;&gt;-->
+<!--    </CEffectCreateUnit>-->
+<!--    <CEffectSet id="BeamCannonFocusCUSet">-->
+<!--        &lt;!&ndash; <EffectArray value="ReaverSCBWWeapon@HallucinationScarab"/> &ndash;&gt;-->
+<!--        &lt;!&ndash; <EffectArray value="BeamCannonFocusAttackIO"/> &ndash;&gt;-->
+<!--        <EffectArray value="BeamCannonFocusTrackerATU"/>-->
+<!--        <EffectArray value="BeamCannonCasterTrackerATU"/>-->
+<!--        <EffectArray value="KillsToCaster"/>-->
+<!--    </CEffectSet>-->
 
+
+
+    <!--DISTANT ATTACK-->
     <CEffectCreatePersistent id="BeamCannonDistantAttackStage1">
         <EditorCategories value="Race:Nod"/>
         <PeriodicPeriodArray value="0.6"/>
@@ -689,37 +698,40 @@ s        <Amount value="4"/>
     </CEffectCreatePersistent>
     <CEffectSet id="BeamCannonDistantAttackDelay">
         <EffectArray value="DistantAttacking"/>
-        <EffectArray value="BeamCannonIsPreparing"/>
+        <EffectArray value="BeamCannonIsPreparingDistantAttack"/>
     </CEffectSet>
     <CEffectSwitch id="BeamCannonDistantAttackSwitch">
-        <CaseArray Validator="BeamCannonIsPreparing" Effect="BeamCannonDistantAttackFocusingSet"/>
+        <CaseArray Validator="BeamCannonIsPreparingDistantAttack" Effect="BeamCannonDistantAttackPreparing"/>
         <CaseDefault value="BeamCannonDistantAttackDummy"/>
     </CEffectSwitch>
-    <CEffectSet id="BeamCannonDistantAttackFocusingSet">
-        <EffectArray value="BeamCannonIsPreparingRB"/>
-        <EffectArray value="BeamCannonFocusingInitialETU"/>
+    <CEffectSet id="BeamCannonDistantAttackPreparing">
+        <EffectArray value="BeamCannonIsPreparingDistantAttackRB"/>
+        <EffectArray value="BeamCannonDistantAttackStage1PreparingETU"/>
     </CEffectSet>
+    <CEffectEnumTrackedUnits id="BeamCannonDistantAttackStage1PreparingETU">
+        <BehaviorLink value="BeamCannonTargetTracker"/>
+        <Effect value="BeamCannonDistantAttackStage1PreparingETUSet"/>
+    </CEffectEnumTrackedUnits>
+    <CEffectEnumTrackedUnits id="BeamCannonDistantAttackStage1PreparingETUSet"/>
     <CEffectSet id="BeamCannonDistantAttackStage1Final">
         <EffectArray value="DistantAttackingRB"/>
         <EffectArray value="BeamCannonDistantAttackRemoveTargetTrackersETU"/>
         <EffectArray value="BeamCannonDistantAttackRemovePathTrackersETU"/>
-        <EffectArray value="BeamCannonIsPreparingRB"/>
-        <EffectArray value="BeamCannonIsFocusingRB"/>
+        <EffectArray value="BeamCannonIsPreparingDistantAttackRB"/>
+<!--        <EffectArray value="BeamCannonIsFocusingRB"/>-->
     </CEffectSet>
     <CEffectSet id="BeamCannonDistantAttackDummy"/>
-
-
     <CValidatorCombine id="BeamCannonDistantAttackValidatorAnd">
         <CombineArray value="NotDistantAttacking"/>
         <CombineArray value="BeamCannonDistantAttackValidatorOr"/>
         <CombineArray value="BeamCannonDistantAttackTargetFilters"/>
     </CValidatorCombine>
-
     <CValidatorCombine id="BeamCannonDistantAttackValidatorOr">
         <Type value="Or"/>
-        <CombineArray value="BeamCannonIsPreparing"/>
+        <CombineArray value="BeamCannonIsPreparingDistantAttack"/>
         <CombineArray value="BeamCannonTargetTrackerGT0"/>
     </CValidatorCombine>
+    
 
     <CEffectCreatePersistent id="BeamCannonDistantAttackStage2">
         <EditorCategories value="Race:Nod"/>
@@ -736,12 +748,12 @@ s        <Amount value="4"/>
         <FinalEffect value="BeamCannonDistantAttackStage2Final"/>
     </CEffectCreatePersistent>
     <CEffectSet id="BeamCannonDistantAttackDelayStage2Delay">
-        <EffectArray value="BeamCannonIsPreparing"/>
+        <EffectArray value="BeamCannonIsPreparingDistantAttack"/>
         <EffectArray value="DistantAttacking"/>
     </CEffectSet>
     <CEffectSet id="BeamCannonDistantAttackStage2Final">
-        <EffectArray value="BeamCannonIsPreparingRB"/>
-        <EffectArray value="BeamCannonIsFocusingRB"/>
+        <EffectArray value="BeamCannonIsPreparingDistantAttackRB"/>
+<!--        <EffectArray value="BeamCannonIsFocusingRB"/>-->
         <EffectArray value="DistantAttackingRB"/>
         <EffectArray value="BeamCannonDistantAttackRemoveTargetTrackersETU"/>
         <EffectArray value="BeamCannonDistantAttackRemoveReflectorTrackersETU"/>
@@ -762,31 +774,33 @@ s        <Amount value="4"/>
         <FinalEffect value="BeamCannonDistantAttackStage3Final"/>
     </CEffectCreatePersistent>
     <CEffectSwitch id="BeamCannonDistantAttackStage3Switch">
-        <CaseArray Validator="BeamCannonIsPreparing" Effect="BeamCannonFocusingInitial"/>
+        <CaseArray Validator="BeamCannonIsPreparingDistantAttack" Effect="BeamCannonDistantAttackStage3Preparing"/>
         <CaseDefault value="NodBeamCannonWeaponDamageSwitch"/>
     </CEffectSwitch>
     <CEffectSet id="BeamCannonDistantAttackDelayStage3Delay">
-        <EffectArray value="BeamCannonIsPreparing"/>
+        <EffectArray value="BeamCannonIsPreparingDistantAttack"/>
         <EffectArray value="DistantAttacking"/>
+    </CEffectSet>
+    <CEffectSet id="BeamCannonDistantAttackStage3Preparing">
+        <EffectArray value="BeamCannonIsPreparingDistantAttackRB"/>
     </CEffectSet>
     <CEffectSet id="BeamCannonDistantAttackStage3Final">
         <EffectArray value="DistantAttackingRB"/>
-        <EffectArray value="BeamCannonIsPreparingRB"/>
-        <EffectArray value="BeamCannonIsFocusingRB"/>
+        <EffectArray value="BeamCannonIsPreparingDistantAttackRB"/>
+<!--        <EffectArray value="BeamCannonIsFocusingRB"/>-->
         <!--        <EffectArray value="BeamCannonDistantAttackRemoveTargetTrackersETU"/>-->
         <EffectArray value="BeamCannonDistantAttackRemoveReflectorTrackersETU"/>
     </CEffectSet>
-
     <CValidatorCombine id="BeamCannonDistantAttackFinalValidator">
         <Type value="And"/>
         <CombineArray value="BeamCannonDistantAttackTargetFilters"/>
         <CombineArray value="BeamCannonCasterTrackerGT0_And_BeamCannonReflectorTrackerGT0"/>
     </CValidatorCombine>
 
-    <CEffectSet id="BeamCannonDistantAttackAddTrackers">
-        <EffectArray value="BeamCannonTargetTrackerATU"/>
-        <EffectArray value="BeamCannonReflectorTrackerATU"/>
-    </CEffectSet>
+<!--    <CEffectSet id="BeamCannonDistantAttackAddTrackers">-->
+<!--        <EffectArray value="BeamCannonTargetTrackerATU"/>-->
+<!--        <EffectArray value="BeamCannonReflectorTrackerATU"/>-->
+<!--    </CEffectSet>-->
 
     <CEffectEnumTrackedUnits id="BeamCannonDistantAttackRemoveTargetTrackersETU">
         <BehaviorLink value="BeamCannonTargetTracker"/>
@@ -796,8 +810,6 @@ s        <Amount value="4"/>
         <EffectArray value="BeamCannonReflectorTrackerRTU"/>
         <EffectArray value="BeamCannonTargetTrackerRTU"/>
     </CEffectSet>
-
-
     <CEffectEnumTrackedUnits id="BeamCannonDistantAttackRemoveReflectorTrackersETU">
         <BehaviorLink value="BeamCannonReflectorTracker"/>
         <Effect value="BeamCannonDistantAttackRemoveReflectorTrackersETUSet"/>
@@ -819,6 +831,10 @@ s        <Amount value="4"/>
 
 
     
+    <CEffectRemoveTrackedUnit id="BeamCannonFocusTrackerRTU">
+        <BehaviorLink value="BeamCannonFocusTracker"/>
+        <TrackedUnit Value="Target"/>
+    </CEffectRemoveTrackedUnit>
     <CEffectRemoveTrackedUnit id="BeamCannonTargetTrackerRTU">
         <BehaviorLink value="BeamCannonTargetTracker"/>
         <TrackedUnit Value="Target"/>
@@ -847,6 +863,10 @@ s        <Amount value="4"/>
     </CEffectRemoveTrackedUnit>
 
 
+    <CEffectAddTrackedUnit id="BeamCannonFocusTrackerATU">
+        <BehaviorLink value="BeamCannonFocusTracker"/>
+        <TrackedUnit Value="Target"/>
+    </CEffectAddTrackedUnit>
     <CEffectAddTrackedUnit id="BeamCannonTargetTrackerATU">
         <BehaviorLink value="BeamCannonTargetTracker"/>
         <TrackedUnit Value="Target"/>

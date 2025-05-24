@@ -2835,6 +2835,7 @@
             <SubFunctionType Type="SubFuncType" Library="Ntve" Id="00000007"/>
             <FunctionCall Type="FunctionCall" Library="TIBW" Id="1F4AB905"/>
             <FunctionCall Type="FunctionCall" Library="TIBW" Id="B8C61F87"/>
+            <FunctionCall Type="FunctionCall" Library="TIBW" Id="B1D5A42D"/>
         </Element>
         <Element Type="FunctionCall" Id="1F4AB905">
             <FunctionDef Type="FunctionDef" Library="Ntve" Id="9435D821"/>
@@ -2890,6 +2891,41 @@
         <Element Type="Param" Id="52968451">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
             <Variable Type="Variable" Library="TIBW" Id="8EEB4F47"/>
+        </Element>
+        <Element Type="FunctionCall" Id="B1D5A42D">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="C439C375"/>
+            <SubFunctionType Type="SubFuncType" Library="Ntve" Id="00000003"/>
+            <Parameter Type="Param" Library="TIBW" Id="84F4E758"/>
+            <Parameter Type="Param" Library="TIBW" Id="A93028A2"/>
+            <Parameter Type="Param" Library="TIBW" Id="3D441375"/>
+        </Element>
+        <Element Type="Param" Id="84F4E758">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="ABB380C4"/>
+            <FunctionCall Type="FunctionCall" Library="TIBW" Id="58530F50"/>
+        </Element>
+        <Element Type="FunctionCall" Id="58530F50">
+            <FunctionDef Type="FunctionDef" Library="Ntve" Id="142FF15A"/>
+            <Parameter Type="Param" Library="TIBW" Id="2F6682F3"/>
+            <Parameter Type="Param" Library="TIBW" Id="D6AA7C99"/>
+        </Element>
+        <Element Type="Param" Id="2F6682F3">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="033DFD05"/>
+            <Variable Type="Variable" Library="TIBW" Id="5B5EC1B0"/>
+        </Element>
+        <Element Type="Param" Id="D6AA7C99">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="B29EDD13"/>
+            <Value>DistantAttacking</Value>
+            <ValueType Type="gamelink"/>
+            <ValueGameType Type="Behavior"/>
+        </Element>
+        <Element Type="Param" Id="A93028A2">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="51567265"/>
+            <Preset Type="PresetValue" Library="Ntve" Id="1E7A4625"/>
+        </Element>
+        <Element Type="Param" Id="3D441375">
+            <ParameterDef Type="ParamDef" Library="Ntve" Id="4A15EC5F"/>
+            <Value>false</Value>
+            <ValueType Type="bool"/>
         </Element>
         <Element Type="FunctionCall" Id="680640FA">
             <FunctionDef Type="FunctionDef" Library="Ntve" Id="00000137"/>
@@ -3006,7 +3042,7 @@
         </Element>
         <Element Type="Param" Id="53B63066">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="9A7F392A"/>
-            <Value>BeamCannonTargetTrackerATU</Value>
+            <Value>BeamCannonFocusTrackerATU</Value>
             <ValueType Type="gamelink"/>
             <ValueGameType Type="Effect"/>
         </Element>
@@ -3190,7 +3226,7 @@
         </Element>
         <Element Type="Param" Id="8C2652C9">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="9A7F392A"/>
-            <Value>BeamCannonTargetTrackerATU</Value>
+            <Value>BeamCannonFocusTrackerATU</Value>
             <ValueType Type="gamelink"/>
             <ValueGameType Type="Effect"/>
         </Element>
@@ -3393,7 +3429,6 @@
             <ValueType Type="int"/>
         </Element>
         <Element Type="FunctionCall" Id="197D4E29">
-            <Disabled/>
             <FunctionDef Type="FunctionDef" Library="Ntve" Id="9FFA06A7"/>
             <Parameter Type="Param" Library="TIBW" Id="B40E88A8"/>
             <Parameter Type="Param" Library="TIBW" Id="6BF6A1D5"/>
@@ -3404,7 +3439,7 @@
         </Element>
         <Element Type="Param" Id="6BF6A1D5">
             <ParameterDef Type="ParamDef" Library="Ntve" Id="6FB1C942"/>
-            <Value>BeamCannonDistantAttackSwitch</Value>
+            <Value>BeamCannonDistantAttackPreparing</Value>
             <ValueType Type="gamelink"/>
             <ValueGameType Type="Effect"/>
         </Element>
